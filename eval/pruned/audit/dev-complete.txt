@@ -1,0 +1,18 @@
+Development complete:40/40 graded;10 matched runs per arm. Costs include failures.
+Replicate labels are execution-order seeds, not controlled model sampling seeds.
+All rows are development evidence, not heldout validation.
+
+arm | solved | total tokens | tokens per solve | round42 solves,TPS | round73 solves,TPS
+baseline | 8/10 | 2077844 | 259730.50 | 4/5,268869.50 | 4/5,250591.50
+latest | 9/10 | 2179469 | 242163.22 | 5/5,220425.00 | 4/5,269336.00
+karpathy | 7/10 | 2197310 | 313901.43 | 4/5,281474.25 | 3/5,357137.67
+karpathy_latest | 8/10 | 2527898 | 315987.25 | 4/5,309594.00 | 4/5,322380.50
+
+Latest comparisons:
+latest vs baseline: {"newly_failing_cells": [], "consistent_round_cost_direction": false, "round_cost_direction": {"42": true, "73": false}, "strict_preregistered_adoption_screen": false, "grade_infrastructure_review_required": false, "quality_screen": true, "observed_dominance": true, "supported_efficiency": false, "tokens_per_solve_delta": -17567.27777777778, "task_cluster_ci95": [-204419.32142857142, 15420.899999999994], "valid_bootstrap_fraction": 0.9995, "mean_tokens_delta_ci95": [-3561.1, 24173.4]}
+latest vs karpathy: {"newly_failing_cells": [], "consistent_round_cost_direction": true, "round_cost_direction": {"42": true, "73": true}, "strict_preregistered_adoption_screen": true, "grade_infrastructure_review_required": false, "quality_screen": true, "observed_dominance": true, "supported_efficiency": true, "tokens_per_solve_delta": -71738.20634920636, "task_cluster_ci95": [-425452.19047619053, -1388.1000000000058], "valid_bootstrap_fraction": 0.9995, "mean_tokens_delta_ci95": [-23068.1, 20935.5]}
+latest vs karpathy_latest: {"newly_failing_cells": [], "consistent_round_cost_direction": true, "round_cost_direction": {"42": true, "73": true}, "strict_preregistered_adoption_screen": true, "grade_infrastructure_review_required": false, "quality_screen": true, "observed_dominance": true, "supported_efficiency": false, "tokens_per_solve_delta": -73824.02777777778, "task_cluster_ci95": [-362183.25, 2387.0999999999767], "valid_bootstrap_fraction": 0.9995, "mean_tokens_delta_ci95": [-70559.2, 5391.4]}
+
+Source identity errors: []
+Task-cluster CIs can be optimistic because d1/d5 share ceiling-division behavior.
+Do not treat zero new failing cells or an aggregate resolution gain as proven statistical noninferiority.

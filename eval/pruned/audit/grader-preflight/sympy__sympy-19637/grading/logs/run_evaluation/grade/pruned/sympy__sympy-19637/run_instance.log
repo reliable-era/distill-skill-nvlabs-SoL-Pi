@@ -1,0 +1,49 @@
+2026-10-02 04:59:35,357 - INFO - Creating container for sympy__sympy-19637...
+2026-10-02 04:59:35,376 - INFO - Container for sympy__sympy-19637 created: bf256eb47b488e36dd3abd63b75e75a1bb7e99f7641755790b6544cfcc67b818
+2026-10-02 04:59:35,569 - INFO - Container for sympy__sympy-19637 started: bf256eb47b488e36dd3abd63b75e75a1bb7e99f7641755790b6544cfcc67b818
+2026-10-02 04:59:35,569 - INFO - Intermediate patch for sympy__sympy-19637 written to logs/run_evaluation/grade/pruned/sympy__sympy-19637/patch.diff, now applying to container...
+2026-10-02 04:59:35,720 - INFO - >>>>> Applied Patch:
+Checking patch sympy/core/sympify.py...
+Applied patch sympy/core/sympify.py cleanly.
+
+2026-10-02 04:59:36,097 - INFO - Git diff before:
+diff --git a/sympy/core/sympify.py b/sympy/core/sympify.py
+index a3f1ce2851..cc76b36915 100644
+--- a/sympy/core/sympify.py
++++ b/sympy/core/sympify.py
+@@ -513,7 +513,9 @@ def kernS(s):
+             while kern in s:
+                 kern += choice(string.ascii_letters + string.digits)
+             s = s.replace(' ', kern)
+-        hit = kern in s
++            hit = kern in s
++        else:
++            hit = False
+ 
+     for i in range(2):
+         try:
+2026-10-02 04:59:36,097 - INFO - Eval script for sympy__sympy-19637 written to logs/run_evaluation/grade/pruned/sympy__sympy-19637/eval.sh; copying to container...
+2026-10-02 04:59:39,059 - INFO - Test runtime: 2.86 seconds
+2026-10-02 04:59:39,060 - INFO - Test output for sympy__sympy-19637 written to logs/run_evaluation/grade/pruned/sympy__sympy-19637/test_output.txt
+2026-10-02 04:59:39,126 - INFO - Git diff after:
+diff --git a/sympy/core/sympify.py b/sympy/core/sympify.py
+index a3f1ce2851..cc76b36915 100644
+--- a/sympy/core/sympify.py
++++ b/sympy/core/sympify.py
+@@ -513,7 +513,9 @@ def kernS(s):
+             while kern in s:
+                 kern += choice(string.ascii_letters + string.digits)
+             s = s.replace(' ', kern)
+-        hit = kern in s
++            hit = kern in s
++        else:
++            hit = False
+ 
+     for i in range(2):
+         try:
+2026-10-02 04:59:39,126 - INFO - Grading answer for sympy__sympy-19637...
+2026-10-02 04:59:39,127 - INFO - report: {'sympy__sympy-19637': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_kernS'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_issue_3538', 'test_sympify1', 'test_sympify_Fraction', 'test_sympify_gmpy', 'test_sympify_mpmath', 'test_sympify2', 'test_sympify3', 'test_sympify_keywords', 'test_sympify_float', 'test_sympify_bool', 'test_sympyify_iterables', 'test_issue_16859', 'test_sympify4', 'test_sympify_text', 'test_sympify_function', 'test_sympify_poly', 'test_sympify_factorial', 'test_sage', 'test_issue_3595', 'test_lambda', 'test_lambda_raises', 'test_sympify_raises', 'test__sympify', 'test_sympifyit', 'test_int_float', 'test_issue_4133', 'test_issue_3982', 'test_S_sympify', 'test_issue_4788', 'test_issue_4798_None', 'test_issue_3218', 'test_issue_4988_builtins', 'test_geometry', 'test_issue_6540_6552', 'test_issue_6046', 'test_issue_8821_highprec_from_str', 'test_Range', 'test_sympify_set', 'test_issue_5939', 'test_issue_16759'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-19637: resolved: True
+2026-10-02 04:59:39,128 - INFO - Attempting to stop container sweb.eval.sympy__sympy-19637.grade...
+2026-10-02 04:59:54,380 - INFO - Attempting to remove container sweb.eval.sympy__sympy-19637.grade...
+2026-10-02 04:59:54,427 - INFO - Container sweb.eval.sympy__sympy-19637.grade removed.

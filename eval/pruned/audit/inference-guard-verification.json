@@ -1,0 +1,14 @@
+{
+  "scope": "Audit collectors only; frozen campaign sources untouched",
+  "verification": [
+    "DEV40 arm summaries and all original pair values unchanged",
+    "Complete candidate cross-stage original pair values unchanged",
+    "Single task cluster suppresses CI and rejects supported/strict claims",
+    "Incomplete stage with multiple task clusters preserves provisional CIs and rejects supported/strict claims",
+    "Complete multi-cluster comparison retains original gate behavior"
+  ],
+  "hashes": {
+    "eval/pruned/audit/collect.py": "199dd3414008e075990df51c361364cec2e15607a3e8afd6292035f6c6bd8ce7",
+    "eval/pruned/audit/cross_stage.py": "4b89ab415e5bc31efdb2423eca83b0b13bc214ebd15b4ae93d25af2d10a530fc"
+  }
+}

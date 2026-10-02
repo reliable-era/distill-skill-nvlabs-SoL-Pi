@@ -1,0 +1,333 @@
+{
+  "scope": "Completed graded heldout runs only; provisional, no causal overhead attribution. Tool result bytes are not model tokens. Direct skill reads require content verification.",
+  "traces": [
+    {
+      "run": "pruned/campaign/heldout/baseline/runs/stress/d1_large_log/baseline/r42",
+      "requests": 12,
+      "input_by_request": [
+        15643,
+        16158,
+        16797,
+        17197,
+        17370,
+        19735,
+        20104,
+        20376,
+        20961,
+        21288,
+        21847,
+        21994
+      ],
+      "tool_counts": {
+        "Bash": 8,
+        "Read": 5,
+        "Edit": 2
+      },
+      "reference_calls": [],
+      "skill_file_calls": [],
+      "helper_calls": [],
+      "skill_request_indices_zero_based": [],
+      "first_successful_efficient_coding_request_index": null,
+      "tool_validation_errors": 4,
+      "skill_validation_errors": 0,
+      "api_error_results": 0,
+      "skill_request_input_tokens": 0,
+      "separate_edit_then_bash_requests": 1,
+      "assistant_text_chars": 2008,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 4740,
+      "compact_events": 0,
+      "fusion_claim_texts": [],
+      "resolved": true,
+      "stream_sha256": "43943d47b2d7f0f0da014c1fcf12f503d10b78b7c1c84e02c83820e66e099a12"
+    },
+    {
+      "run": "pruned/campaign/heldout/baseline/runs/stress/d5_small_control/baseline/r42",
+      "requests": 7,
+      "input_by_request": [
+        15641,
+        15935,
+        16348,
+        16595,
+        16749,
+        17369,
+        17802
+      ],
+      "tool_counts": {
+        "Bash": 5,
+        "Read": 5
+      },
+      "reference_calls": [],
+      "skill_file_calls": [],
+      "helper_calls": [],
+      "skill_request_indices_zero_based": [],
+      "first_successful_efficient_coding_request_index": null,
+      "tool_validation_errors": 3,
+      "skill_validation_errors": 0,
+      "api_error_results": 0,
+      "skill_request_input_tokens": 0,
+      "separate_edit_then_bash_requests": 0,
+      "assistant_text_chars": 1132,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 345,
+      "compact_events": 0,
+      "fusion_claim_texts": [],
+      "resolved": true,
+      "stream_sha256": "d070f554ff3306654c11964dff2115406a7d25154dcc02f00e54049e56b0f1cc"
+    },
+    {
+      "run": "pruned/campaign/heldout/karpathy/runs/stress/d1_large_log/karpathy/r42",
+      "requests": 15,
+      "input_by_request": [
+        15692,
+        16267,
+        16986,
+        17524,
+        18035,
+        18207,
+        18462,
+        20690,
+        21146,
+        21635,
+        22791,
+        23130,
+        23438,
+        23596,
+        24106
+      ],
+      "tool_counts": {
+        "Bash": 8,
+        "Skill": 1,
+        "Read": 10,
+        "Edit": 2
+      },
+      "reference_calls": [],
+      "skill_file_calls": [],
+      "helper_calls": [],
+      "skill_request_indices_zero_based": [
+        1
+      ],
+      "first_successful_efficient_coding_request_index": null,
+      "tool_validation_errors": 6,
+      "skill_validation_errors": 0,
+      "api_error_results": 0,
+      "skill_request_input_tokens": 16267,
+      "separate_edit_then_bash_requests": 2,
+      "assistant_text_chars": 2974,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 4110,
+      "compact_events": 0,
+      "fusion_claim_texts": [],
+      "resolved": true,
+      "stream_sha256": "8f915f0189dae9c825a5503842d3c698a54f0a0a682bfd49862d1ec075e47633"
+    },
+    {
+      "run": "pruned/campaign/heldout/karpathy/runs/stress/d5_small_control/karpathy/r42",
+      "requests": 9,
+      "input_by_request": [
+        15690,
+        16014,
+        16808,
+        17067,
+        17170,
+        18219,
+        18587,
+        18870,
+        19119
+      ],
+      "tool_counts": {
+        "Bash": 3,
+        "Skill": 1,
+        "Read": 3,
+        "Edit": 2
+      },
+      "reference_calls": [],
+      "skill_file_calls": [],
+      "helper_calls": [],
+      "skill_request_indices_zero_based": [
+        1
+      ],
+      "first_successful_efficient_coding_request_index": null,
+      "tool_validation_errors": 1,
+      "skill_validation_errors": 0,
+      "api_error_results": 0,
+      "skill_request_input_tokens": 16014,
+      "separate_edit_then_bash_requests": 1,
+      "assistant_text_chars": 1637,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 654,
+      "compact_events": 0,
+      "fusion_claim_texts": [],
+      "resolved": true,
+      "stream_sha256": "0dcd2d462a4929c1e0912429b40f550786b992ac1a93df0f8303111f732c4d1d"
+    },
+    {
+      "run": "pruned/campaign/heldout/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r42",
+      "requests": 12,
+      "input_by_request": [
+        15688,
+        16035,
+        16898,
+        17544,
+        18304,
+        18621,
+        18809,
+        19261,
+        19956,
+        20247,
+        21669,
+        21825
+      ],
+      "tool_counts": {
+        "Bash": 6,
+        "Skill": 3,
+        "Read": 8,
+        "Edit": 2
+      },
+      "reference_calls": [],
+      "skill_file_calls": [],
+      "helper_calls": [],
+      "skill_request_indices_zero_based": [
+        1,
+        2
+      ],
+      "first_successful_efficient_coding_request_index": 2,
+      "tool_validation_errors": 6,
+      "skill_validation_errors": 1,
+      "api_error_results": 0,
+      "skill_request_input_tokens": 32933,
+      "separate_edit_then_bash_requests": 1,
+      "assistant_text_chars": 3104,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 952,
+      "compact_events": 0,
+      "fusion_claim_texts": [],
+      "resolved": true,
+      "stream_sha256": "3308088b6ce01440d24d39db45ebecce820553b74c62c1b6b02afb65fe2d0afd"
+    },
+    {
+      "run": "pruned/campaign/heldout/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r42",
+      "requests": 10,
+      "input_by_request": [
+        15686,
+        15990,
+        16751,
+        17376,
+        17629,
+        17786,
+        17899,
+        18208,
+        18651,
+        18943
+      ],
+      "tool_counts": {
+        "Bash": 3,
+        "Skill": 3,
+        "Read": 5,
+        "Edit": 1
+      },
+      "reference_calls": [],
+      "skill_file_calls": [],
+      "helper_calls": [],
+      "skill_request_indices_zero_based": [
+        1,
+        2
+      ],
+      "first_successful_efficient_coding_request_index": 2,
+      "tool_validation_errors": 3,
+      "skill_validation_errors": 1,
+      "api_error_results": 0,
+      "skill_request_input_tokens": 32741,
+      "separate_edit_then_bash_requests": 1,
+      "assistant_text_chars": 999,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 334,
+      "compact_events": 0,
+      "fusion_claim_texts": [],
+      "resolved": true,
+      "stream_sha256": "deb24bc2dea0800de55b9277f22eaaf10bb767c1b711b101bdcdfd38d7fecef4"
+    },
+    {
+      "run": "pruned/campaign/heldout/latest/runs/stress/d1_large_log/sol-pi/r42",
+      "requests": 12,
+      "input_by_request": [
+        15681,
+        16247,
+        16851,
+        17304,
+        17968,
+        20010,
+        21103,
+        21332,
+        22716,
+        23334,
+        23603,
+        23731
+      ],
+      "tool_counts": {
+        "Bash": 11,
+        "Read": 1,
+        "Skill": 1,
+        "Edit": 2
+      },
+      "reference_calls": [],
+      "skill_file_calls": [],
+      "helper_calls": [],
+      "skill_request_indices_zero_based": [
+        3
+      ],
+      "first_successful_efficient_coding_request_index": 3,
+      "tool_validation_errors": 3,
+      "skill_validation_errors": 0,
+      "api_error_results": 0,
+      "skill_request_input_tokens": 17304,
+      "separate_edit_then_bash_requests": 1,
+      "assistant_text_chars": 2504,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 2964,
+      "compact_events": 0,
+      "fusion_claim_texts": [],
+      "resolved": true,
+      "stream_sha256": "038e31235c7ac8170f67ed57fb583618f8b5ffb4cd2ddb8f8674dc7c4d81ec4b"
+    },
+    {
+      "run": "pruned/campaign/heldout/latest/runs/stress/d5_small_control/sol-pi/r42",
+      "requests": 8,
+      "input_by_request": [
+        15680,
+        15945,
+        16581,
+        16964,
+        17344,
+        17511,
+        18231,
+        18622
+      ],
+      "tool_counts": {
+        "Bash": 3,
+        "Skill": 1,
+        "Read": 6,
+        "Edit": 1
+      },
+      "reference_calls": [],
+      "skill_file_calls": [],
+      "helper_calls": [],
+      "skill_request_indices_zero_based": [
+        1
+      ],
+      "first_successful_efficient_coding_request_index": 1,
+      "tool_validation_errors": 4,
+      "skill_validation_errors": 0,
+      "api_error_results": 0,
+      "skill_request_input_tokens": 15945,
+      "separate_edit_then_bash_requests": 1,
+      "assistant_text_chars": 796,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 442,
+      "compact_events": 0,
+      "fusion_claim_texts": [],
+      "resolved": true,
+      "stream_sha256": "7e1eec5174db90ec6f57112afcd940809adce136871aee14bd6bfc671a92264c"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+diff --git a/tests/test_slug.py b/tests/test_slug.py
+index 2ffba28..b11ad6c 100644
+--- a/tests/test_slug.py
++++ b/tests/test_slug.py
+@@ -3,3 +3,11 @@ from textkit.slug import slugify
+ 
+ def test_basic():
+     assert slugify("hello") == "hello"
++
++
++def test_collapses_runs_and_strips():
++    assert slugify("  Hello,   World!  ") == "hello-world"
++
++
++def test_strips_leading_and_trailing_dashes():
++    assert slugify("--hello--") == "hello"
+diff --git a/textkit/slug.py b/textkit/slug.py
+index 9893757..c8028da 100644
+--- a/textkit/slug.py
++++ b/textkit/slug.py
+@@ -4,5 +4,5 @@ import re
+ def slugify(text):
+     """Lowercase, replace runs of non-alphanumerics with a single '-', strip leading/trailing '-'."""
+     text = text.lower()
+-    text = re.sub(r"[^a-z0-9]", "-", text)
+-    return text
++    text = re.sub(r"[^a-z0-9]+", "-", text)
++    return text.strip("-")

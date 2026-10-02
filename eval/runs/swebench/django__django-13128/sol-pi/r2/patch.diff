@@ -1,0 +1,55 @@
+diff --git a/django/db/models/expressions.py b/django/db/models/expressions.py
+index d913658291..f72c12d7b7 100644
+--- a/django/db/models/expressions.py
++++ b/django/db/models/expressions.py
+@@ -442,6 +442,25 @@ class CombinedExpression(SQLiteNumericMixin, Expression):
+     def set_source_expressions(self, exprs):
+         self.lhs, self.rhs = exprs
+ 
++    @property
++    def is_temporal_subtraction(self):
++        """
++        True when this expression subtracts two temporal fields of the same
++        type (date, datetime, or time), producing a duration.
++        """
++        if self.connector != self.SUB:
++            return False
++        try:
++            lhs_type = self.lhs.output_field.get_internal_type()
++        except FieldError:
++            lhs_type = None
++        try:
++            rhs_type = self.rhs.output_field.get_internal_type()
++        except FieldError:
++            rhs_type = None
++        datetime_fields = {'DateField', 'DateTimeField', 'TimeField'}
++        return lhs_type in datetime_fields and lhs_type == rhs_type
++
+     def as_sql(self, compiler, connection):
+         try:
+             lhs_type = self.lhs.output_field.get_internal_type()
+@@ -457,8 +476,7 @@ class CombinedExpression(SQLiteNumericMixin, Expression):
+             lhs_type != rhs_type
+         ):
+             return DurationExpression(self.lhs, self.connector, self.rhs).as_sql(compiler, connection)
+-        datetime_fields = {'DateField', 'DateTimeField', 'TimeField'}
+-        if self.connector == self.SUB and lhs_type in datetime_fields and lhs_type == rhs_type:
++        if self.is_temporal_subtraction:
+             return TemporalSubtraction(self.lhs, self.rhs).as_sql(compiler, connection)
+         expressions = []
+         expression_params = []
+@@ -473,6 +491,14 @@ class CombinedExpression(SQLiteNumericMixin, Expression):
+         sql = connection.ops.combine_expression(self.connector, expressions)
+         return expression_wrapper % sql, expression_params
+ 
++    def _resolve_output_field(self):
++        # Subtracting two temporal fields of the same type results in a
++        # duration, so infer that output type without requiring an
++        # ExpressionWrapper.
++        if self.is_temporal_subtraction:
++            return fields.DurationField()
++        return super()._resolve_output_field()
++
+     def resolve_expression(self, query=None, allow_joins=True, reuse=None, summarize=False, for_save=False):
+         c = self.copy()
+         c.is_summary = summarize

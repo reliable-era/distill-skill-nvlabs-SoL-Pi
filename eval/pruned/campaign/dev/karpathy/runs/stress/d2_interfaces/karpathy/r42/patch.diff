@@ -1,0 +1,21 @@
+diff --git a/lookup.py b/lookup.py
+index 16dfae0..a8051bc 100644
+--- a/lookup.py
++++ b/lookup.py
+@@ -1,2 +1,3 @@
++from normalization import key
+ def get(index, name):
+-    return index.get(name.lower())
++    return index.get(key(name))
+diff --git a/tests/test_lookup.py b/tests/test_lookup.py
+index b17188e..82a44d2 100644
+--- a/tests/test_lookup.py
++++ b/tests/test_lookup.py
+@@ -2,3 +2,7 @@ from index import build
+ from lookup import get
+ def test_simple():
+     assert get(build([("ALPHA",7)]),"alpha")==7
++def test_whitespace():
++    assert get(build([("ALPHA",7)])," alpha ")==7
++def test_unicode_case():
++    assert get(build([("ÉLÈVE",2)]),"élève ")==2

@@ -1,0 +1,160 @@
+[
+  {
+    "case": "dev/d1_large_log",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "7 passed in 0.03s",
+    "sha256": {
+      "hidden/test_hidden.py": "971bda39576a9614405ecd291eda2b6e39603fffebd09e69b5266b567b33a20b",
+      "prompt.txt": "2d503c9f89a75dae0cb0873f9f2a43fe66b4d2bc4f91f5cf80cdc01baff6621c",
+      "reference/pipeline.py": "cb5639650c07dc2de78801645edebe388dfd3fc5b991bd1b8871b8db2353a24a",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/logs/worker.log": "8836b41d316300ad9cc3d06c23d04b143fe66cf3fda7c54470843f849d19845b",
+      "repo/pipeline.py": "5d9823bf512ec396a0140d36f4abe174cf545dda41a9e82e7f0bf24a63e28917",
+      "repo/tests/test_pipeline.py": "6e696babb0d3b4f4e64fdb03b04ab1c4cd63801c523f2a624748d9f4cbd8c4c1"
+    }
+  },
+  {
+    "case": "dev/d2_interfaces",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "6 passed in 0.04s",
+    "sha256": {
+      "hidden/test_hidden.py": "1df4700a0af9a44c78d32edbf6b48eef6cdef4c414f03b468bb704423aff49a4",
+      "prompt.txt": "42c40848a7a3e3e3eea20f45bab675694feddad5dbf887f85293b4e96e63367c",
+      "reference/lookup.py": "764a98cac360fe3899244b4ca1cd9890217cae75bcb25bf9d3338d01abcd586e",
+      "reference/normalization.py": "90501189847b6fce4aed03ae22d6f3d2eaf6770df7aea7ad7d8742a8fd4c946e",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/index.py": "239cd1c590cc494706968f56e0964f28424318f917d821b52de7bca24da31db9",
+      "repo/lookup.py": "b10823e2fb1ee5ad9b7776b3442d30abc89f695354c5f56bc1fa1c8a2c9c17f1",
+      "repo/normalization.py": "a80fa49e3aaf589e74bb2a78a1a25076b92e0e8896a358826462ac27ba293ff3",
+      "repo/tests/test_lookup.py": "154d3845e00d8d85e718ce43fd3add48f445d763f32a73b6d55e3620142230e3"
+    }
+  },
+  {
+    "case": "dev/d3_stale_resume",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "8 passed in 0.04s",
+    "sha256": {
+      "hidden/test_hidden.py": "144a77572590e82199572d04d1e697e0dce82865132cbc15dda689137a3e7a39",
+      "prompt.txt": "5870b412f53d04e26bf6de4426cfb0f6a132cf3c5d5faba38b5568ea202aaa73",
+      "reference/billing.py": "6d31c9ed22ba79bc99c9b95ccc4c2dba507dd8567a08cfa1a4e5208d126cab92",
+      "repo/CONTINUATION.md": "ddfbde2b242aea3fb78906af67b01683256fc55f489fa2f8d748b000629aeb2d",
+      "repo/README.md": "f387b2508528222b827fde0cfa5048525458b5148b8208472cc77eb7d663284e",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/billing.py": "e19228d434b851d29a07e85a09b6dcaafa551970a487b40c8bbd726c19f8941a",
+      "repo/tests/test_billing.py": "0bf8ff8a676dc8e2224a5cd747e5e2c40ab3aa8dff4261f5d3adf9c4b1857fd3"
+    }
+  },
+  {
+    "case": "dev/d4_integrated_failure",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "7 passed in 0.04s",
+    "sha256": {
+      "hidden/test_hidden.py": "1c24c3d2970d6e8b7068821c8998601ce18d6e178aedbe6bc2430fac5b152cca",
+      "prompt.txt": "13eacad56044a3360fec220b469aa7c011360c02de476e49d74ee686c940377a",
+      "reference/export.py": "c31e82486a858e84ecb071d39f32ad7f5d7372fc00124ee576096adc995173d2",
+      "reference/names.py": "0f1ca8862ad885ccea567874721f5068ed9a3fb88316c92d7e9a9c310d6cad2d",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/export.py": "884ee96e9c0ca83cc3a1522444adff447d1b350c8cdcccbd964f20544e7d514d",
+      "repo/names.py": "35fdcaebc5fa8f894f35bc2159e658670c266b6a700a0af804b31448e1b2ca0b",
+      "repo/tests/test_export.py": "85a3497c91a919bc5534690278e134633ce0e9250b49c4ca4054991296176fb0",
+      "repo/tests/test_names.py": "96329ac320e4952d68b55a33c4a47a1f2e42be6306ae3b32a03ae783f45178db"
+    }
+  },
+  {
+    "case": "dev/d5_small_control",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "6 passed in 0.03s",
+    "sha256": {
+      "hidden/test_hidden.py": "e0b215d977bd9d42e0d23e0760f8cebdbbd1410177015a93cb661f071597ff47",
+      "prompt.txt": "aa02777967ac18508ccd5b95cc0fe2c0de1fe8b3ee68c1b772f8d529bbbc6639",
+      "reference/paging.py": "b5e49c277b4e1ab1dd60b5cd206a855f1db6633abb7414cae98097be369d9740",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/paging.py": "0060eada8f3824388465148caa4c9880f861c78ee5df0a554a600f64fdb91c23",
+      "repo/tests/test_paging.py": "2b548436e336ed723900672bdb53dea4c1826891f611a44a010e4bfcd56dfe48"
+    }
+  },
+  {
+    "case": "heldout/d1_large_log",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "7 passed in 0.03s",
+    "sha256": {
+      "hidden/test_hidden.py": "d893ad0b29abf7a39c9af9fcc0fcfa91c88ee41418bf62cd99fdb12af7659e1d",
+      "prompt.txt": "2d503c9f89a75dae0cb0873f9f2a43fe66b4d2bc4f91f5cf80cdc01baff6621c",
+      "reference/scheduler.py": "ba44b511d2ef15adfaf715f9115ddcda81688c59b9e8f02b6ddd7ef3a5281ea0",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/logs/worker.log": "e82a0a57c48186551664c561839f2d7deb2d1dfc7c6b03b0c62244b882091a59",
+      "repo/scheduler.py": "e2c9f5d14b185593c76ad484cb3f284b7d4d471cab96d49651efaf8f4a097846",
+      "repo/tests/test_scheduler.py": "f9a3fb8c92607e77644c03ad621769c5f1a5b3e4dd798a1fac70b6534b768af7"
+    }
+  },
+  {
+    "case": "heldout/d2_interfaces",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "6 passed in 0.03s",
+    "sha256": {
+      "hidden/test_hidden.py": "e4a175a82d9a4cc19fbd018a51ca0379d78c5809fa055c9cf0d8eaf2c748b146",
+      "prompt.txt": "7498a5bcfbf1f11a5151d5c7d2db2a62c8a1fbc4c08070afb528f7dcfb8c0e44",
+      "reference/canonical.py": "90501189847b6fce4aed03ae22d6f3d2eaf6770df7aea7ad7d8742a8fd4c946e",
+      "reference/query.py": "090d96bddbade191963e1a99c5d62b6be9006a58c508d6f201a40a531852482d",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/canonical.py": "a80fa49e3aaf589e74bb2a78a1a25076b92e0e8896a358826462ac27ba293ff3",
+      "repo/catalog.py": "609a64039bca48fd5dc76a005bc0c103d7be8b37959985748b3f263545bab9cf",
+      "repo/query.py": "b242a2711ae4fbff9ff36e49b04fef88ffdc09bddc5489522672902082ca1507",
+      "repo/tests/test_query.py": "a2d50b965a163b9871d166139775ec63e5fa9e16c55ceb05c70dc8cf1af6ced0"
+    }
+  },
+  {
+    "case": "heldout/d3_stale_resume",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "8 passed in 0.04s",
+    "sha256": {
+      "hidden/test_hidden.py": "7acf3f6341ee0c0d9ffa06d00fa416c1d38d389b45c469e3d445f375eff9c2d4",
+      "prompt.txt": "5870b412f53d04e26bf6de4426cfb0f6a132cf3c5d5faba38b5568ea202aaa73",
+      "reference/checkout.py": "e879a6a00c24f243f3a18e57fcdc710ca158c1c1306a88a27be9c670720b94d6",
+      "repo/CONTINUATION.md": "c6225686fa7013c4c7385c653a20ee7183b7741084d6610cb51a0f62476b4c19",
+      "repo/README.md": "fac5d26a8b1654c8793a8ce20ef26f326bbee2500dde5f285bec24078ac12e5e",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/checkout.py": "2f54a47f9d93bde5c127d9cfb76751ae40406f07fffa8896b98bd9f12c356f7b",
+      "repo/tests/test_checkout.py": "83cf3c849e9235ad059fa45599c03981b99ded893d2f3eb4e50f4ae040ea7f6f"
+    }
+  },
+  {
+    "case": "heldout/d4_integrated_failure",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "7 passed in 0.04s",
+    "sha256": {
+      "hidden/test_hidden.py": "8181929767179bf68d9cd1867b1015d5a6080281b96f7d81718cc312af1bd430",
+      "prompt.txt": "9448eb6681498069f5bef10ae635d8a28052ccfa279280ca53370999b22c227f",
+      "reference/labels.py": "0f1ca8862ad885ccea567874721f5068ed9a3fb88316c92d7e9a9c310d6cad2d",
+      "reference/render.py": "2d83f4421db1362c4f8bfd210882db1522974814af40ad6ccf98fb8153ca77e8",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/labels.py": "35fdcaebc5fa8f894f35bc2159e658670c266b6a700a0af804b31448e1b2ca0b",
+      "repo/render.py": "38755c18957c2cd4242c979a19ecd9a81b988793c1b4176acc74f0b0e0af2958",
+      "repo/tests/test_labels.py": "73f8de25fab489eacf3ec59a86df7e260f8c805c251e6eb3de5d557fc6eeeb26",
+      "repo/tests/test_render.py": "23a45fcdcc461aa00f8ec4809c219643842141df670cf9411231a514c009d269"
+    }
+  },
+  {
+    "case": "heldout/d5_small_control",
+    "buggy_hidden_exit": 1,
+    "reference_exit": 0,
+    "reference_summary": "6 passed in 0.03s",
+    "sha256": {
+      "hidden/test_hidden.py": "02c7910d11a7659baad5d9f4cb11767f16cafa02f63fcc4e59de595455f06e60",
+      "prompt.txt": "7e1e8635a7f1bd17ffb3f173c4f2eebea5db42769bcb0d3dbbe4cb02c76ea920",
+      "reference/pagination.py": "0e93719ef0b369526dd97579b542ea0c5aea79b2fdc3af446d5f7cd0abcaab6c",
+      "repo/README_TESTS.md": "1dbb6f94467c56a098967e892bb1ed79f9d64c2d24949c2d870612710b7c6d30",
+      "repo/pagination.py": "e7d53664c2aed6ffc9db3b33619c0d51e9c86d574f0eb701b34507580aeada0e",
+      "repo/tests/test_pagination.py": "c54920aa2111a1cd9596da65eab6077672d1676cad38b0ae0bd69b7e478482ca"
+    }
+  }
+]

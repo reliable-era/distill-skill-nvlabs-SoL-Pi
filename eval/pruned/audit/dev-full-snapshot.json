@@ -1,0 +1,3451 @@
+{
+  "source_errors": [],
+  "plan": "eval/pruned/plan.v1.json",
+  "model_seed_controlled": false,
+  "warning": "Exploratory small-sample task-cluster intervals; partial matched summaries provisional. No statistical noninferiority claim.",
+  "cells": [
+    {
+      "stage": "dev",
+      "case": "d1_large_log",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d1_large_log/baseline/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 35.0,
+      "patch_bytes": 674,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 216967,
+      "input_tokens": 213868,
+      "output_tokens": 3099,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d1_large_log",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d1_large_log/sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 37.0,
+      "patch_bytes": 677,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 228856,
+      "input_tokens": 225623,
+      "output_tokens": 3233,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d1_large_log",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d1_large_log/karpathy/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 48.0,
+      "patch_bytes": 623,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 163286,
+      "input_tokens": 158746,
+      "output_tokens": 4540,
+      "requests": 8,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d1_large_log",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 44.9,
+      "patch_bytes": 613,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 243714,
+      "input_tokens": 240046,
+      "output_tokens": 3668,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d2_interfaces",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d2_interfaces/baseline/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 151.9,
+      "patch_bytes": 942,
+      "resolved": false,
+      "grade_exit_code": 1,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 216376,
+      "input_tokens": 209996,
+      "output_tokens": 6380,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d2_interfaces",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d2_interfaces/sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 261.3,
+      "patch_bytes": 1075,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 262356,
+      "input_tokens": 253372,
+      "output_tokens": 8984,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d2_interfaces",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d2_interfaces/karpathy/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 63.9,
+      "patch_bytes": 661,
+      "resolved": false,
+      "grade_exit_code": 1,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 248367,
+      "input_tokens": 244018,
+      "output_tokens": 4349,
+      "requests": 13,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d2_interfaces",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d2_interfaces/karpathy+sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 132.7,
+      "patch_bytes": 618,
+      "resolved": false,
+      "grade_exit_code": 1,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 257697,
+      "input_tokens": 252819,
+      "output_tokens": 4878,
+      "requests": 13,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d3_stale_resume",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d3_stale_resume/baseline/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 184.4,
+      "patch_bytes": 1697,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 224888,
+      "input_tokens": 220713,
+      "output_tokens": 4175,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d3_stale_resume",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d3_stale_resume/sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 79.6,
+      "patch_bytes": 1857,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 236763,
+      "input_tokens": 231745,
+      "output_tokens": 5018,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d3_stale_resume",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d3_stale_resume/karpathy/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 79.9,
+      "patch_bytes": 936,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 339531,
+      "input_tokens": 331825,
+      "output_tokens": 7706,
+      "requests": 16,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d3_stale_resume",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d3_stale_resume/karpathy+sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 157.0,
+      "patch_bytes": 1645,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 214215,
+      "input_tokens": 209142,
+      "output_tokens": 5073,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d4_integrated_failure",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d4_integrated_failure/baseline/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 38.6,
+      "patch_bytes": 517,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 243170,
+      "input_tokens": 239078,
+      "output_tokens": 4092,
+      "requests": 13,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d4_integrated_failure",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d4_integrated_failure/sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 170.8,
+      "patch_bytes": 545,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 233958,
+      "input_tokens": 229506,
+      "output_tokens": 4452,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d4_integrated_failure/karpathy/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 156.3,
+      "patch_bytes": 477,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 231534,
+      "input_tokens": 227059,
+      "output_tokens": 4475,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d4_integrated_failure/karpathy+sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 261.3,
+      "patch_bytes": 492,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 253564,
+      "input_tokens": 248510,
+      "output_tokens": 5054,
+      "requests": 13,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d5_small_control",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d5_small_control/baseline/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 23.6,
+      "patch_bytes": 606,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 174077,
+      "input_tokens": 171823,
+      "output_tokens": 2254,
+      "requests": 10,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d5_small_control",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d5_small_control/sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 23.2,
+      "patch_bytes": 202,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 140192,
+      "input_tokens": 137955,
+      "output_tokens": 2237,
+      "requests": 8,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d5_small_control",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d5_small_control/karpathy/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 25.0,
+      "patch_bytes": 537,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 143179,
+      "input_tokens": 140754,
+      "output_tokens": 2425,
+      "requests": 8,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d5_small_control",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r42",
+      "round": 42,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 45.8,
+      "patch_bytes": 520,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 269186,
+      "input_tokens": 265381,
+      "output_tokens": 3805,
+      "requests": 14,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d1_large_log",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d1_large_log/baseline/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 177.0,
+      "patch_bytes": 741,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 205373,
+      "input_tokens": 202635,
+      "output_tokens": 2738,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d1_large_log",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d1_large_log/sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 39.1,
+      "patch_bytes": 611,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 183619,
+      "input_tokens": 180539,
+      "output_tokens": 3080,
+      "requests": 9,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d1_large_log",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d1_large_log/karpathy/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 36.6,
+      "patch_bytes": 613,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 211331,
+      "input_tokens": 208180,
+      "output_tokens": 3151,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d1_large_log",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 45.1,
+      "patch_bytes": 227,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 206511,
+      "input_tokens": 203934,
+      "output_tokens": 2577,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d2_interfaces",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d2_interfaces/baseline/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 49.6,
+      "patch_bytes": 879,
+      "resolved": false,
+      "grade_exit_code": 1,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 211198,
+      "input_tokens": 206513,
+      "output_tokens": 4685,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d2_interfaces",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d2_interfaces/sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 44.8,
+      "patch_bytes": 706,
+      "resolved": false,
+      "grade_exit_code": 1,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 223418,
+      "input_tokens": 219452,
+      "output_tokens": 3966,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d2_interfaces",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d2_interfaces/karpathy/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 40.1,
+      "patch_bytes": 653,
+      "resolved": false,
+      "grade_exit_code": 1,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 166027,
+      "input_tokens": 162905,
+      "output_tokens": 3122,
+      "requests": 9,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d2_interfaces",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d2_interfaces/karpathy+sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 277.7,
+      "patch_bytes": 682,
+      "resolved": false,
+      "grade_exit_code": 1,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 328544,
+      "input_tokens": 322363,
+      "output_tokens": 6181,
+      "requests": 16,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d3_stale_resume",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d3_stale_resume/baseline/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 106.4,
+      "patch_bytes": 2278,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 276685,
+      "input_tokens": 271161,
+      "output_tokens": 5524,
+      "requests": 14,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d3_stale_resume",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d3_stale_resume/sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 280.7,
+      "patch_bytes": 1895,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 324116,
+      "input_tokens": 319367,
+      "output_tokens": 4749,
+      "requests": 16,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d3_stale_resume",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d3_stale_resume/karpathy/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 76.3,
+      "patch_bytes": 1765,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 244825,
+      "input_tokens": 238990,
+      "output_tokens": 5835,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d3_stale_resume",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d3_stale_resume/karpathy+sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 177.9,
+      "patch_bytes": 1911,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 263082,
+      "input_tokens": 255497,
+      "output_tokens": 7585,
+      "requests": 12,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d4_integrated_failure",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d4_integrated_failure/baseline/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 211.0,
+      "patch_bytes": 525,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 191407,
+      "input_tokens": 185814,
+      "output_tokens": 5593,
+      "requests": 10,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d4_integrated_failure",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d4_integrated_failure/sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 244.1,
+      "patch_bytes": 545,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 208447,
+      "input_tokens": 205029,
+      "output_tokens": 3418,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d4_integrated_failure/karpathy/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 216.6,
+      "patch_bytes": 473,
+      "resolved": false,
+      "grade_exit_code": 1,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 271830,
+      "input_tokens": 258738,
+      "output_tokens": 13092,
+      "requests": 11,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d4_integrated_failure/karpathy+sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 301.1,
+      "patch_bytes": 477,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 293510,
+      "input_tokens": 286366,
+      "output_tokens": 7144,
+      "requests": 14,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d5_small_control",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/baseline/runs/stress/d5_small_control/baseline/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 17.6,
+      "patch_bytes": 871,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {},
+      "total_tokens": 117703,
+      "input_tokens": 116046,
+      "output_tokens": 1657,
+      "requests": 7,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d5_small_control",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/latest/runs/stress/d5_small_control/sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 20.2,
+      "patch_bytes": 202,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 137744,
+      "input_tokens": 135924,
+      "output_tokens": 1820,
+      "requests": 8,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d5_small_control",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy/runs/stress/d5_small_control/karpathy/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 23.2,
+      "patch_bytes": 546,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "total_tokens": 177400,
+      "input_tokens": 175188,
+      "output_tokens": 2212,
+      "requests": 10,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "dev",
+      "case": "d5_small_control",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/dev/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r73",
+      "round": 73,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_s": 45.3,
+      "patch_bytes": 590,
+      "resolved": true,
+      "grade_exit_code": 0,
+      "grade_timed_out": false,
+      "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+      "image_id": "sha256:14b1f47eab490a147a80e32c6966bdcc9dc72d2f851fa6bef9f81a21265840a2",
+      "skill_file_sha256": {
+        "karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+        "efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+        "efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      },
+      "total_tokens": 197875,
+      "input_tokens": 193445,
+      "output_tokens": 4430,
+      "requests": 10,
+      "end": "success",
+      "usage_source": "result",
+      "status": "graded"
+    },
+    {
+      "stage": "original_calibration",
+      "case": "d1_large_log",
+      "arm": "original",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d1_large_log/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "original_calibration",
+      "case": "d2_interfaces",
+      "arm": "original",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d2_interfaces/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "original_calibration",
+      "case": "d3_stale_resume",
+      "arm": "original",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d3_stale_resume/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "original_calibration",
+      "case": "d4_integrated_failure",
+      "arm": "original",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d4_integrated_failure/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "original_calibration",
+      "case": "d5_small_control",
+      "arm": "original",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d5_small_control/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d1_large_log/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d1_large_log/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d1_large_log/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d2_interfaces/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d2_interfaces/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d2_interfaces/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d2_interfaces/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d3_stale_resume/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d3_stale_resume/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d3_stale_resume/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d3_stale_resume/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d4_integrated_failure/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d4_integrated_failure/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d4_integrated_failure/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d4_integrated_failure/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d5_small_control/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d5_small_control/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d5_small_control/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d1_large_log/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d1_large_log/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d1_large_log/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d2_interfaces/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d2_interfaces/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d2_interfaces/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d2_interfaces/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d3_stale_resume/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d3_stale_resume/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d3_stale_resume/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d3_stale_resume/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d4_integrated_failure/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d4_integrated_failure/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d4_integrated_failure/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d4_integrated_failure/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d5_small_control/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d5_small_control/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d5_small_control/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "baseline",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d1_large_log/baseline/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d1_large_log/sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "karpathy",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d1_large_log/karpathy/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d1_large_log",
+      "arm": "karpathy_latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "baseline",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d2_interfaces/baseline/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d2_interfaces/sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "karpathy",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d2_interfaces/karpathy/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d2_interfaces",
+      "arm": "karpathy_latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d2_interfaces/karpathy+sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "baseline",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d3_stale_resume/baseline/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d3_stale_resume/sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "karpathy",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d3_stale_resume/karpathy/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d3_stale_resume",
+      "arm": "karpathy_latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d3_stale_resume/karpathy+sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "baseline",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d4_integrated_failure/baseline/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d4_integrated_failure/sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d4_integrated_failure/karpathy/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d4_integrated_failure",
+      "arm": "karpathy_latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d4_integrated_failure/karpathy+sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "baseline",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d5_small_control/baseline/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d5_small_control/sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "karpathy",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d5_small_control/karpathy/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "heldout",
+      "case": "d5_small_control",
+      "arm": "karpathy_latest",
+      "seed": 101,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r101",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/pylint-dev__pylint-4551/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/pylint-dev__pylint-4551/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/pylint-dev__pylint-4551/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/pylint-dev__pylint-4551/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "django__django-13195",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/django__django-13195/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "django__django-13195",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/django__django-13195/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "django__django-13195",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/django__django-13195/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "django__django-13195",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/django__django-13195/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "astropy__astropy-13033",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/astropy__astropy-13033/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "astropy__astropy-13033",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/astropy__astropy-13033/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "astropy__astropy-13033",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/astropy__astropy-13033/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "astropy__astropy-13033",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/astropy__astropy-13033/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "sympy__sympy-19637",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/sympy__sympy-19637/baseline/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "sympy__sympy-19637",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/sympy__sympy-19637/sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "sympy__sympy-19637",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/sympy__sympy-19637/karpathy/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "sympy__sympy-19637",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/sympy__sympy-19637/karpathy+sol-pi/r42",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/pylint-dev__pylint-4551/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/pylint-dev__pylint-4551/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/pylint-dev__pylint-4551/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/pylint-dev__pylint-4551/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "django__django-13195",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/django__django-13195/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "django__django-13195",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/django__django-13195/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "django__django-13195",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/django__django-13195/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "django__django-13195",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/django__django-13195/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "astropy__astropy-13033",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/astropy__astropy-13033/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "astropy__astropy-13033",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/astropy__astropy-13033/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "astropy__astropy-13033",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/astropy__astropy-13033/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "astropy__astropy-13033",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/astropy__astropy-13033/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "sympy__sympy-19637",
+      "arm": "baseline",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/sympy__sympy-19637/baseline/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "sympy__sympy-19637",
+      "arm": "latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/sympy__sympy-19637/sol-pi/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "sympy__sympy-19637",
+      "arm": "karpathy",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/sympy__sympy-19637/karpathy/r73",
+      "status": "missing_result"
+    },
+    {
+      "stage": "real_swe",
+      "case": "sympy__sympy-19637",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/sympy__sympy-19637/karpathy+sol-pi/r73",
+      "status": "missing_result"
+    }
+  ],
+  "stages": {
+    "dev": {
+      "complete": true,
+      "expected": 40,
+      "graded": 40,
+      "missing": [],
+      "matched_per_arm": 10,
+      "arms": {
+        "baseline": {
+          "n": 10,
+          "solved": 8,
+          "tokens_per_solve": 259730.5,
+          "total_tokens": 2077844,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 2,
+          "tokens_p50": 211198,
+          "tokens_p90": 243170,
+          "tokens_max": 276685,
+          "rounds": {
+            "42": {
+              "solved": 4,
+              "n": 5,
+              "tokens_per_solve": 268869.5
+            },
+            "73": {
+              "solved": 4,
+              "n": 5,
+              "tokens_per_solve": 250591.5
+            }
+          },
+          "task_solve_frequency": {
+            "d1_large_log": 1.0,
+            "d2_interfaces": 0.0,
+            "d3_stale_resume": 1.0,
+            "d4_integrated_failure": 1.0,
+            "d5_small_control": 1.0
+          }
+        },
+        "latest": {
+          "n": 10,
+          "solved": 9,
+          "tokens_per_solve": 242163.22222222222,
+          "total_tokens": 2179469,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 1,
+          "tokens_p50": 223418,
+          "tokens_p90": 262356,
+          "tokens_max": 324116,
+          "rounds": {
+            "42": {
+              "solved": 5,
+              "n": 5,
+              "tokens_per_solve": 220425.0
+            },
+            "73": {
+              "solved": 4,
+              "n": 5,
+              "tokens_per_solve": 269336.0
+            }
+          },
+          "task_solve_frequency": {
+            "d1_large_log": 1.0,
+            "d2_interfaces": 0.5,
+            "d3_stale_resume": 1.0,
+            "d4_integrated_failure": 1.0,
+            "d5_small_control": 1.0
+          }
+        },
+        "karpathy": {
+          "n": 10,
+          "solved": 7,
+          "tokens_per_solve": 313901.4285714286,
+          "total_tokens": 2197310,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 3,
+          "tokens_p50": 211331,
+          "tokens_p90": 271830,
+          "tokens_max": 339531,
+          "rounds": {
+            "42": {
+              "solved": 4,
+              "n": 5,
+              "tokens_per_solve": 281474.25
+            },
+            "73": {
+              "solved": 3,
+              "n": 5,
+              "tokens_per_solve": 357137.6666666667
+            }
+          },
+          "task_solve_frequency": {
+            "d1_large_log": 1.0,
+            "d2_interfaces": 0.0,
+            "d3_stale_resume": 1.0,
+            "d4_integrated_failure": 0.5,
+            "d5_small_control": 1.0
+          }
+        },
+        "karpathy_latest": {
+          "n": 10,
+          "solved": 8,
+          "tokens_per_solve": 315987.25,
+          "total_tokens": 2527898,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 2,
+          "tokens_p50": 253564,
+          "tokens_p90": 293510,
+          "tokens_max": 328544,
+          "rounds": {
+            "42": {
+              "solved": 4,
+              "n": 5,
+              "tokens_per_solve": 309594.0
+            },
+            "73": {
+              "solved": 4,
+              "n": 5,
+              "tokens_per_solve": 322380.5
+            }
+          },
+          "task_solve_frequency": {
+            "d1_large_log": 1.0,
+            "d2_interfaces": 0.0,
+            "d3_stale_resume": 1.0,
+            "d4_integrated_failure": 1.0,
+            "d5_small_control": 1.0
+          }
+        }
+      },
+      "pairs": {
+        "baseline vs latest": {
+          "newly_failing_cells": [
+            {
+              "case": "d2_interfaces",
+              "seed": 42
+            }
+          ],
+          "consistent_round_cost_direction": false,
+          "round_cost_direction": {
+            "42": false,
+            "73": true
+          },
+          "strict_preregistered_adoption_screen": false,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": false,
+          "observed_dominance": false,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": 17567.27777777778,
+          "task_cluster_ci95": [
+            -15420.899999999994,
+            204419.32142857142
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -24173.4,
+            3561.1
+          ]
+        },
+        "baseline vs karpathy": {
+          "newly_failing_cells": [],
+          "consistent_round_cost_direction": true,
+          "round_cost_direction": {
+            "42": true,
+            "73": true
+          },
+          "strict_preregistered_adoption_screen": true,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": true,
+          "observed_dominance": true,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": -54170.92857142858,
+          "task_cluster_ci95": [
+            -222249.33333333337,
+            15501.166666666686
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -33193.9,
+            9300.7
+          ]
+        },
+        "baseline vs karpathy_latest": {
+          "newly_failing_cells": [],
+          "consistent_round_cost_direction": true,
+          "round_cost_direction": {
+            "42": true,
+            "73": true
+          },
+          "strict_preregistered_adoption_screen": true,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": true,
+          "observed_dominance": true,
+          "supported_efficiency": true,
+          "tokens_per_solve_delta": -56256.75,
+          "task_cluster_ci95": [
+            -169791.75,
+            -11971.5
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -76377.9,
+            -11372.4
+          ]
+        },
+        "latest vs baseline": {
+          "newly_failing_cells": [],
+          "consistent_round_cost_direction": false,
+          "round_cost_direction": {
+            "42": true,
+            "73": false
+          },
+          "strict_preregistered_adoption_screen": false,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": true,
+          "observed_dominance": true,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": -17567.27777777778,
+          "task_cluster_ci95": [
+            -204419.32142857142,
+            15420.899999999994
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -3561.1,
+            24173.4
+          ]
+        },
+        "latest vs karpathy": {
+          "newly_failing_cells": [],
+          "consistent_round_cost_direction": true,
+          "round_cost_direction": {
+            "42": true,
+            "73": true
+          },
+          "strict_preregistered_adoption_screen": true,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": true,
+          "observed_dominance": true,
+          "supported_efficiency": true,
+          "tokens_per_solve_delta": -71738.20634920636,
+          "task_cluster_ci95": [
+            -425452.19047619053,
+            -1388.1000000000058
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -23068.1,
+            20935.5
+          ]
+        },
+        "latest vs karpathy_latest": {
+          "newly_failing_cells": [],
+          "consistent_round_cost_direction": true,
+          "round_cost_direction": {
+            "42": true,
+            "73": true
+          },
+          "strict_preregistered_adoption_screen": true,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": true,
+          "observed_dominance": true,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": -73824.02777777778,
+          "task_cluster_ci95": [
+            -362183.25,
+            2387.0999999999767
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -70559.2,
+            5391.4
+          ]
+        },
+        "karpathy vs baseline": {
+          "newly_failing_cells": [
+            {
+              "case": "d4_integrated_failure",
+              "seed": 73
+            }
+          ],
+          "consistent_round_cost_direction": false,
+          "round_cost_direction": {
+            "42": false,
+            "73": false
+          },
+          "strict_preregistered_adoption_screen": false,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": false,
+          "observed_dominance": false,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": 54170.92857142858,
+          "task_cluster_ci95": [
+            -15501.166666666686,
+            222249.33333333337
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -9300.7,
+            33193.9
+          ]
+        },
+        "karpathy vs latest": {
+          "newly_failing_cells": [
+            {
+              "case": "d2_interfaces",
+              "seed": 42
+            },
+            {
+              "case": "d4_integrated_failure",
+              "seed": 73
+            }
+          ],
+          "consistent_round_cost_direction": false,
+          "round_cost_direction": {
+            "42": false,
+            "73": false
+          },
+          "strict_preregistered_adoption_screen": false,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": false,
+          "observed_dominance": false,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": 71738.20634920636,
+          "task_cluster_ci95": [
+            1388.1000000000058,
+            425452.19047619053
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -20935.5,
+            23068.1
+          ]
+        },
+        "karpathy vs karpathy_latest": {
+          "newly_failing_cells": [
+            {
+              "case": "d4_integrated_failure",
+              "seed": 73
+            }
+          ],
+          "consistent_round_cost_direction": false,
+          "round_cost_direction": {
+            "42": true,
+            "73": false
+          },
+          "strict_preregistered_adoption_screen": false,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": false,
+          "observed_dominance": false,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": -2085.8214285714203,
+          "task_cluster_ci95": [
+            -138741.0,
+            147646.8333333333
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -71226.6,
+            10562.0
+          ]
+        },
+        "karpathy_latest vs baseline": {
+          "newly_failing_cells": [],
+          "consistent_round_cost_direction": false,
+          "round_cost_direction": {
+            "42": false,
+            "73": false
+          },
+          "strict_preregistered_adoption_screen": false,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": true,
+          "observed_dominance": false,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": 56256.75,
+          "task_cluster_ci95": [
+            11971.5,
+            169791.75
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            11372.4,
+            76377.9
+          ]
+        },
+        "karpathy_latest vs latest": {
+          "newly_failing_cells": [
+            {
+              "case": "d2_interfaces",
+              "seed": 42
+            }
+          ],
+          "consistent_round_cost_direction": false,
+          "round_cost_direction": {
+            "42": false,
+            "73": false
+          },
+          "strict_preregistered_adoption_screen": false,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": false,
+          "observed_dominance": false,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": 73824.02777777778,
+          "task_cluster_ci95": [
+            -2387.0999999999767,
+            362183.25
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -10832.7,
+            70559.2
+          ]
+        },
+        "karpathy_latest vs karpathy": {
+          "newly_failing_cells": [],
+          "consistent_round_cost_direction": false,
+          "round_cost_direction": {
+            "42": false,
+            "73": true
+          },
+          "strict_preregistered_adoption_screen": false,
+          "grade_infrastructure_review_required": false,
+          "quality_screen": true,
+          "observed_dominance": false,
+          "supported_efficiency": false,
+          "tokens_per_solve_delta": 2085.8214285714203,
+          "task_cluster_ci95": [
+            -147646.8333333333,
+            138741.0
+          ],
+          "valid_bootstrap_fraction": 0.9995,
+          "mean_tokens_delta_ci95": [
+            -10562.0,
+            71226.6
+          ]
+        }
+      }
+    },
+    "original_calibration": {
+      "complete": false,
+      "expected": 5,
+      "graded": 0,
+      "missing": [
+        {
+          "stage": "original_calibration",
+          "case": "d1_large_log",
+          "arm": "original",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d1_large_log/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "original_calibration",
+          "case": "d2_interfaces",
+          "arm": "original",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d2_interfaces/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "original_calibration",
+          "case": "d3_stale_resume",
+          "arm": "original",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d3_stale_resume/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "original_calibration",
+          "case": "d4_integrated_failure",
+          "arm": "original",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d4_integrated_failure/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "original_calibration",
+          "case": "d5_small_control",
+          "arm": "original",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/original_calibration/original/runs/stress/d5_small_control/sol-pi/r42",
+          "status": "missing_result"
+        }
+      ],
+      "matched_per_arm": 0,
+      "arms": {
+        "original": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        }
+      },
+      "pairs": {}
+    },
+    "heldout": {
+      "complete": false,
+      "expected": 60,
+      "graded": 0,
+      "missing": [
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d1_large_log/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d1_large_log/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d1_large_log/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d2_interfaces/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d2_interfaces/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d2_interfaces/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d2_interfaces/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d3_stale_resume/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d3_stale_resume/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d3_stale_resume/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d3_stale_resume/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d4_integrated_failure/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d4_integrated_failure/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d4_integrated_failure/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d4_integrated_failure/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d5_small_control/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d5_small_control/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d5_small_control/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d1_large_log/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d1_large_log/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d1_large_log/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d2_interfaces/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d2_interfaces/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d2_interfaces/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d2_interfaces/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d3_stale_resume/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d3_stale_resume/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d3_stale_resume/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d3_stale_resume/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d4_integrated_failure/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d4_integrated_failure/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d4_integrated_failure/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d4_integrated_failure/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d5_small_control/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d5_small_control/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d5_small_control/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "baseline",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d1_large_log/baseline/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d1_large_log/sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "karpathy",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d1_large_log/karpathy/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d1_large_log",
+          "arm": "karpathy_latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "baseline",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d2_interfaces/baseline/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d2_interfaces/sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "karpathy",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d2_interfaces/karpathy/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d2_interfaces",
+          "arm": "karpathy_latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d2_interfaces/karpathy+sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "baseline",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d3_stale_resume/baseline/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d3_stale_resume/sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "karpathy",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d3_stale_resume/karpathy/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d3_stale_resume",
+          "arm": "karpathy_latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d3_stale_resume/karpathy+sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "baseline",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d4_integrated_failure/baseline/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d4_integrated_failure/sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "karpathy",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d4_integrated_failure/karpathy/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d4_integrated_failure",
+          "arm": "karpathy_latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d4_integrated_failure/karpathy+sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "baseline",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/baseline/runs/stress/d5_small_control/baseline/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/latest/runs/stress/d5_small_control/sol-pi/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "karpathy",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy/runs/stress/d5_small_control/karpathy/r101",
+          "status": "missing_result"
+        },
+        {
+          "stage": "heldout",
+          "case": "d5_small_control",
+          "arm": "karpathy_latest",
+          "seed": 101,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/heldout/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r101",
+          "status": "missing_result"
+        }
+      ],
+      "matched_per_arm": 0,
+      "arms": {
+        "baseline": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        },
+        "latest": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        },
+        "karpathy": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        },
+        "karpathy_latest": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        }
+      },
+      "pairs": {}
+    },
+    "real_swe": {
+      "complete": false,
+      "expected": 32,
+      "graded": 0,
+      "missing": [
+        {
+          "stage": "real_swe",
+          "case": "pylint-dev__pylint-4551",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/pylint-dev__pylint-4551/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "pylint-dev__pylint-4551",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/pylint-dev__pylint-4551/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "pylint-dev__pylint-4551",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/pylint-dev__pylint-4551/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "pylint-dev__pylint-4551",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/pylint-dev__pylint-4551/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "django__django-13195",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/django__django-13195/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "django__django-13195",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/django__django-13195/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "django__django-13195",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/django__django-13195/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "django__django-13195",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/django__django-13195/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "astropy__astropy-13033",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/astropy__astropy-13033/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "astropy__astropy-13033",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/astropy__astropy-13033/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "astropy__astropy-13033",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/astropy__astropy-13033/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "astropy__astropy-13033",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/astropy__astropy-13033/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "sympy__sympy-19637",
+          "arm": "baseline",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/sympy__sympy-19637/baseline/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "sympy__sympy-19637",
+          "arm": "latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/sympy__sympy-19637/sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "sympy__sympy-19637",
+          "arm": "karpathy",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/sympy__sympy-19637/karpathy/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "sympy__sympy-19637",
+          "arm": "karpathy_latest",
+          "seed": 42,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/sympy__sympy-19637/karpathy+sol-pi/r42",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "pylint-dev__pylint-4551",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/pylint-dev__pylint-4551/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "pylint-dev__pylint-4551",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/pylint-dev__pylint-4551/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "pylint-dev__pylint-4551",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/pylint-dev__pylint-4551/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "pylint-dev__pylint-4551",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/pylint-dev__pylint-4551/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "django__django-13195",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/django__django-13195/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "django__django-13195",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/django__django-13195/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "django__django-13195",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/django__django-13195/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "django__django-13195",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/django__django-13195/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "astropy__astropy-13033",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/astropy__astropy-13033/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "astropy__astropy-13033",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/astropy__astropy-13033/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "astropy__astropy-13033",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/astropy__astropy-13033/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "astropy__astropy-13033",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/astropy__astropy-13033/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "sympy__sympy-19637",
+          "arm": "baseline",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/sympy__sympy-19637/baseline/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "sympy__sympy-19637",
+          "arm": "latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/sympy__sympy-19637/sol-pi/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "sympy__sympy-19637",
+          "arm": "karpathy",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/sympy__sympy-19637/karpathy/r73",
+          "status": "missing_result"
+        },
+        {
+          "stage": "real_swe",
+          "case": "sympy__sympy-19637",
+          "arm": "karpathy_latest",
+          "seed": 73,
+          "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/sympy__sympy-19637/karpathy+sol-pi/r73",
+          "status": "missing_result"
+        }
+      ],
+      "matched_per_arm": 0,
+      "arms": {
+        "baseline": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        },
+        "latest": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        },
+        "karpathy": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        },
+        "karpathy_latest": {
+          "n": 0,
+          "solved": 0,
+          "tokens_per_solve": null,
+          "total_tokens": 0,
+          "timeouts": 0,
+          "grade_timeouts": 0,
+          "false_completion": 0,
+          "tokens_p50": null,
+          "tokens_p90": null,
+          "tokens_max": null,
+          "rounds": {},
+          "task_solve_frequency": {}
+        }
+      },
+      "pairs": {}
+    }
+  }
+}

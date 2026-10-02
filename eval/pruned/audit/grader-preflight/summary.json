@@ -1,0 +1,95 @@
+{
+  "purpose": "Official grader infrastructure preflight; reference results are not model performance. Empty predictions are skipped by official harness and counted unresolved; that alone is not a measured test execution on original source.",
+  "reference_runs": [
+    {
+      "instance_id": "pylint-dev__pylint-4551",
+      "patch_sha256": "06a5ae87f8794dff30b6733c4427cf46fed7ae67c545449b3168977be5cf215c",
+      "harness_version": "4.1.0",
+      "exit_code": 0,
+      "wall_s": 27.129130601882935,
+      "prediction_sha256": "41820a327ac368506baa22f52d6d5efa08f07d1555457ce870620de168cf6dbf",
+      "report_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/audit/grader-preflight/pylint-dev__pylint-4551/grading/logs/run_evaluation/grade/pruned/pylint-dev__pylint-4551/report.json",
+      "resolved": true,
+      "grade_status": "official_report"
+    },
+    {
+      "instance_id": "django__django-13195",
+      "patch_sha256": "72c9740f89e88304565d49a9aa1c37d38633215b9fd69aaca3a9f277821b02cf",
+      "harness_version": "4.1.0",
+      "exit_code": 0,
+      "wall_s": 30.084795713424683,
+      "prediction_sha256": "ff6e8561b31747acf370ebd227a76007f6844063861bacba7789919133d01e37",
+      "report_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/audit/grader-preflight/django__django-13195/grading/logs/run_evaluation/grade/pruned/django__django-13195/report.json",
+      "resolved": true,
+      "grade_status": "official_report"
+    },
+    {
+      "instance_id": "astropy__astropy-13033",
+      "patch_sha256": "7de34e6ed106dd91f81473f3646ed1340692a28c437324bf78adaf093d2c0c8d",
+      "harness_version": "4.1.0",
+      "exit_code": 0,
+      "wall_s": 72.21742606163025,
+      "prediction_sha256": "1a62092cd26c12a29463b127f3649254396226fead099512b163dba9892acb03",
+      "report_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/audit/grader-preflight/astropy__astropy-13033/grading/logs/run_evaluation/grade/pruned/astropy__astropy-13033/report.json",
+      "resolved": true,
+      "grade_status": "official_report"
+    },
+    {
+      "instance_id": "sympy__sympy-19637",
+      "patch_sha256": "dd1eacb8e24bdf90c3483442372f2bb2f6e3549c35ff9182f78422ceeb61bdb8",
+      "harness_version": "4.1.0",
+      "exit_code": 0,
+      "wall_s": 27.523986339569092,
+      "prediction_sha256": "b1086cedc6e2abb262fa09bd5f38af8bdb46c0ee87f8c3871213a9c17264e16d",
+      "report_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/audit/grader-preflight/sympy__sympy-19637/grading/logs/run_evaluation/grade/pruned/sympy__sympy-19637/report.json",
+      "resolved": true,
+      "grade_status": "official_report"
+    }
+  ],
+  "empty_prediction_runs": [
+    {
+      "instance_id": "pylint-dev__pylint-4551",
+      "harness_version": "4.1.0",
+      "exit_code": 0,
+      "wall_s": 7.831093788146973,
+      "prediction_sha256": "9058ea99a417082d02183751a98921cd81e0470c70ded4fac73b22ed54f46ea6",
+      "report_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/audit/grader-preflight/pylint-dev__pylint-4551/empty-grading/logs/run_evaluation/grade/pruned/pylint-dev__pylint-4551/report.json",
+      "resolved": false,
+      "grade_status": "empty_patch",
+      "interpretation": "Official empty prediction skip counted unresolved; original source tests were not executed."
+    },
+    {
+      "instance_id": "django__django-13195",
+      "harness_version": "4.1.0",
+      "exit_code": 0,
+      "wall_s": 7.832802772521973,
+      "prediction_sha256": "d1eee3bab79e3266844fd7a03b4cee41f17ae9d3d7dc195e2ff2a44a6ff4057b",
+      "report_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/audit/grader-preflight/django__django-13195/empty-grading/logs/run_evaluation/grade/pruned/django__django-13195/report.json",
+      "resolved": false,
+      "grade_status": "empty_patch",
+      "interpretation": "Official empty prediction skip counted unresolved; original source tests were not executed."
+    },
+    {
+      "instance_id": "astropy__astropy-13033",
+      "harness_version": "4.1.0",
+      "exit_code": 0,
+      "wall_s": 7.975876092910767,
+      "prediction_sha256": "50168a49f194eb0efde8326ebf174cd5c1a329d0065534e9ddb4e9f323a1f695",
+      "report_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/audit/grader-preflight/astropy__astropy-13033/empty-grading/logs/run_evaluation/grade/pruned/astropy__astropy-13033/report.json",
+      "resolved": false,
+      "grade_status": "empty_patch",
+      "interpretation": "Official empty prediction skip counted unresolved; original source tests were not executed."
+    },
+    {
+      "instance_id": "sympy__sympy-19637",
+      "harness_version": "4.1.0",
+      "exit_code": 0,
+      "wall_s": 7.8266282081604,
+      "prediction_sha256": "d9b34d297eb66b6dddbd9877876051f0563793ed98f0213249cb8835aebff368",
+      "report_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/audit/grader-preflight/sympy__sympy-19637/empty-grading/logs/run_evaluation/grade/pruned/sympy__sympy-19637/report.json",
+      "resolved": false,
+      "grade_status": "empty_patch",
+      "interpretation": "Official empty prediction skip counted unresolved; original source tests were not executed."
+    }
+  ]
+}

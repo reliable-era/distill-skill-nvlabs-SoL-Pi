@@ -1,0 +1,8 @@
+diff --git a/pipeline.py b/pipeline.py
+index a277ced..1abfff5 100644
+--- a/pipeline.py
++++ b/pipeline.py
+@@ -1,2 +1,2 @@
+ def batch_count(items, size):
+-    return len(items) // size
++    return (len(items) + size - 1) // size

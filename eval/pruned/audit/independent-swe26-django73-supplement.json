@@ -1,0 +1,113 @@
+{
+  "errors": [],
+  "resolved": true,
+  "tests": {
+    "FAIL_TO_PASS": {
+      "success": 5,
+      "failure": 0
+    },
+    "PASS_TO_PASS": {
+      "success": 382,
+      "failure": 0
+    },
+    "FAIL_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    },
+    "PASS_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    }
+  },
+  "report_sha256": "c2fc583e56e8f9c45fe9470ab655058ab1d746910596d6f8c820552d37f2aef3",
+  "prediction_sha256": "1cc03f01f895019a1c5a96083bd1c257801b16c767cbb48280b3e507a89b24dd",
+  "usage": {
+    "total_tokens": 1545943,
+    "input_tokens": 1545943,
+    "output_tokens": 0,
+    "requests": 42,
+    "usage_complete": false,
+    "terminal_count": 0,
+    "timed_out": true
+  },
+  "network": [
+    {
+      "tool": "Bash",
+      "urls": [
+        "https://raw.githubusercontent.com/django/django/3.2/django/contrib/sessions/middleware.py"
+      ],
+      "input_excerpt": "{\"command\": \"cd /tmp && timeout 30 curl -sSL \\\"https://raw.githubusercontent.com/django/django/3.2/django/contrib/sessions/middleware.py\\\" 2>&1 | grep -n -A6 \\\"delete_cookie\\\" | head -30; echo \\\"EXIT: $?\\\"\", \"description\": \"Fetch Django 3.2 sessions middleware via curl\"}",
+      "is_error": false,
+      "result_characters": 375,
+      "result_prefix": "39:            response.delete_cookie(\n40-                settings.SESSION_COOKIE_NAME,\n41-                path=settings.SESSION_COOKIE_PATH,\n42-                domain=settings.SESSION_COOKIE_DOMAIN,\n43-                samesite=settings.SESSION_COOKIE_SAMESITE,\n44-            )\n45-            patch_vary_headers(response, ('Cookie',))\nEXIT: 0\nShell cwd was reset to /testbed",
+      "returned_source_or_diff_pattern": false
+    },
+    {
+      "tool": "Bash",
+      "urls": [
+        "https://raw.githubusercontent.com/django/django/3.2/django/http/response.py",
+        "https://raw.githubusercontent.com/django/django/3.2/django/contrib/messages/storage/cookie.py"
+      ],
+      "input_excerpt": "{\"command\": \"cd /tmp && echo \\\"=== response.py delete_cookie ===\\\"; timeout 30 curl -sSL \\\"https://raw.githubusercontent.com/django/django/3.2/django/http/response.py\\\" 2>&1 | grep -n -A8 \\\"def delete_cookie\\\"; echo; echo \\\"=== messages/storage/cookie.py ===\\\"; timeout 30 curl -sSL \\\"https://raw.githubusercontent.com/django/django/3.2/django/contri",
+      "is_error": false,
+      "result_characters": 785,
+      "result_prefix": "=== response.py delete_cookie ===\n246:    def delete_cookie(self, key, path='/', domain=None, samesite=None):\n247-        # Browsers can ignore the Set-Cookie header if the cookie doesn't use\n248-        # the secure flag and:\n249-        # - the cookie name starts with \"__Host-\" or \"__Secure-\", or\n250-        # - the samesite is \"none\".\n251-        secure = (\n252-            key.startswith(('__Secure-', '__Host-')) or\n253-            (samesite and samesite.lower() == 'none')\n254-        )\n\n=== messages/storage/cookie.py ===\n107:            response.delete_cookie(\n108-                self.cookie_name,\n109-                domain=settings.SESSI",
+      "returned_source_or_diff_pattern": true
+    },
+    {
+      "tool": "Bash",
+      "urls": [
+        "https://raw.githubusercontent.com/django/django/3.2/django/http/response.py"
+      ],
+      "input_excerpt": "{\"command\": \"cd /tmp && timeout 30 curl -sSL \\\"https://raw.githubusercontent.com/django/django/3.2/django/http/response.py\\\" 2>&1 | sed -n '246,260p'\", \"description\": \"Get full delete_cookie method from Django 3.2\"}",
+      "is_error": false,
+      "result_characters": 673,
+      "result_prefix": "    def delete_cookie(self, key, path='/', domain=None, samesite=None):\n        # Browsers can ignore the Set-Cookie header if the cookie doesn't use\n        # the secure flag and:\n        # - the cookie name starts with \"__Host-\" or \"__Secure-\", or\n        # - the samesite is \"none\".\n        secure = (\n            key.startswith(('__Secure-', '__Host-')) or\n            (samesite and samesite.lower() == 'none')\n        )\n        self.set_cookie(\n            key, max_age=0, path=path, domain=domain, secure=secure,\n            expires='Thu, 01 Jan 1970 00:00:00 GMT', samesite=samesite,\n        )\n\n    # Common methods used by subclasses\nShell cw",
+      "returned_source_or_diff_pattern": true
+    },
+    {
+      "tool": "Bash",
+      "urls": [
+        "https://raw.githubusercontent.com/django/django/3.2/docs/ref/request-response.txt"
+      ],
+      "input_excerpt": "{\"command\": \"cd /tmp && timeout 30 curl -sSL \\\"https://raw.githubusercontent.com/django/django/3.2/docs/ref/request-response.txt\\\" 2>&1 | grep -n -A14 \\\"method:: HttpResponse.delete_cookie\\\"\", \"description\": \"Fetch Django 3.2 docs for delete_cookie\"}",
+      "is_error": false,
+      "result_characters": 540,
+      "result_prefix": "943:.. method:: HttpResponse.delete_cookie(key, path='/', domain=None, samesite=None)\n944-\n945-    Deletes the cookie with the given key. Fails silently if the key doesn't\n946-    exist.\n947-\n948-    Due to the way cookies work, ``path`` and ``domain`` should be the same\n949-    values you used in ``set_cookie()`` -- otherwise the cookie may not be\n950-    deleted.\n951-\n952-    .. versionchanged:: 2.2.15\n953-\n954-        The ``samesite`` argument was added.\n955-\n956-.. method:: HttpResponse.close()\n957-\nShell cwd was reset to /testbed",
+      "returned_source_or_diff_pattern": false
+    }
+  ],
+  "web": [
+    {
+      "tool": "WebFetch",
+      "url": "https://raw.githubusercontent.com/django/django/stable/4.2.x/django/contrib/sessions/middleware.py",
+      "query": null,
+      "is_error": true,
+      "result_prefix": "API Error: 500 Internal server error. This is a server-side issue, usually temporary \u2014 try again in a moment. If it persists, check your inference gateway (127.0.0.1:8000)."
+    },
+    {
+      "tool": "WebFetch",
+      "url": "https://raw.githubusercontent.com/django/django/stable/4.2.x/django/http/response.py",
+      "query": null,
+      "is_error": true,
+      "result_prefix": "API Error: 500 Internal server error. This is a server-side issue, usually temporary \u2014 try again in a moment. If it persists, check your inference gateway (127.0.0.1:8000)."
+    },
+    {
+      "tool": "WebFetch",
+      "url": "https://raw.githubusercontent.com/django/django/3.2/django/contrib/sessions/middleware.py",
+      "query": null,
+      "is_error": true,
+      "result_prefix": "API Error: 500 Internal server error. This is a server-side issue, usually temporary \u2014 try again in a moment. If it persists, check your inference gateway (127.0.0.1:8000)."
+    }
+  ],
+  "history_reads": [
+    {
+      "command": "cat /testbed/django/__init__.py; echo \"---VERSION---\"; ls /testbed/docs/releases/ 2>/dev/null | tail -20; echo \"---git log---\"; git log --oneline -3",
+      "description": "Check Django version and release docs"
+    }
+  ],
+  "test_writes": [],
+  "final_test_files": [],
+  "agent_calls": 0,
+  "exposure_interpretation": "Successful upstream Django3.2 response/messages/session source and API documentation retrieved through Bash; no retrieved upstream test/target commit diff observed. Local git log is initial base history. No temporary or final test-write attempts observed. Missing terminal usage remains lower bound, not actual zero generated output."
+}

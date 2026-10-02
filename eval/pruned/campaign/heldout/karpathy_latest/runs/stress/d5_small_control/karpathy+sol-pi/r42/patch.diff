@@ -1,0 +1,8 @@
+diff --git a/pagination.py b/pagination.py
+index 8efd41b..15b7ad4 100644
+--- a/pagination.py
++++ b/pagination.py
+@@ -1,2 +1,2 @@
+ def page_count(count,size):
+-    return count // size
++    return (count + size - 1) // size

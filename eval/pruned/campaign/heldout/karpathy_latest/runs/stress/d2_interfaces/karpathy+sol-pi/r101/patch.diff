@@ -1,0 +1,17 @@
+diff --git a/canonical.py b/canonical.py
+index 073a4d4..8566ded 100644
+--- a/canonical.py
++++ b/canonical.py
+@@ -1,2 +1,2 @@
+ def key(value):
+-    return value.strip().lower()
++    return value.strip().casefold()
+diff --git a/query.py b/query.py
+index b71a9d0..f51cd01 100644
+--- a/query.py
++++ b/query.py
+@@ -1,2 +1,3 @@
++from canonical import key
+ def get(catalog, name):
+-    return catalog.get(name.lower())
++    return catalog.get(key(name))

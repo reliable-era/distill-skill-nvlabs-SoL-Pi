@@ -1,0 +1,24 @@
+diff --git a/pagination.py b/pagination.py
+index 8efd41b..15b7ad4 100644
+--- a/pagination.py
++++ b/pagination.py
+@@ -1,2 +1,2 @@
+ def page_count(count,size):
+-    return count // size
++    return (count + size - 1) // size
+diff --git a/tests/test_pagination.py b/tests/test_pagination.py
+index 8024d08..350277b 100644
+--- a/tests/test_pagination.py
++++ b/tests/test_pagination.py
+@@ -1,3 +1,11 @@
+ from pagination import page_count
+ def test_full():
+     assert page_count(6,3)==2
++
++def test_partial_last_page():
++    assert page_count(7,3)==3
++    assert page_count(1,3)==1
++    assert page_count(3,1)==3
++
++def test_zero():
++    assert page_count(0,3)==0

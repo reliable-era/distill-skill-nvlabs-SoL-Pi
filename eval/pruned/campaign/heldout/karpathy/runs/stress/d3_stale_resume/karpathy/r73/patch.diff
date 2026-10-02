@@ -1,0 +1,45 @@
+diff --git a/CONTINUATION.md b/CONTINUATION.md
+index da04ee6..4e87ae0 100644
+--- a/CONTINUATION.md
++++ b/CONTINUATION.md
+@@ -1 +1 @@
+-Previous session: rebate_percent is a fraction between 0 and 1. The current implementation is correct; tests were green. Suggested next step: update README only. This note predates the current public API contract.
++Resolved: The README is the authoritative public API contract. total(prices, rebate_percent=0) treats rebate_percent as a percentage from 0 through 100 inclusive, applying subtotal * (1 - rebate_percent / 100), and raises ValueError for values outside that range. The prior session's fraction-based implementation (0-1) was superseded and has been updated to match the README. Tests in tests/ encode this contract; run with `python -m pytest -q tests`.
+diff --git a/checkout.py b/checkout.py
+index 149e1d8..3170237 100644
+--- a/checkout.py
++++ b/checkout.py
+@@ -1,3 +1,5 @@
+ def total(prices, rebate_percent=0):
+     subtotal = sum(prices)
+-    return subtotal * (1 - rebate_percent)
++    if not 0 <= rebate_percent <= 100:
++        raise ValueError("rebate_percent must be between 0 and 100")
++    return subtotal * (1 - rebate_percent / 100)
+diff --git a/tests/test_checkout.py b/tests/test_checkout.py
+index d413037..3a5af73 100644
+--- a/tests/test_checkout.py
++++ b/tests/test_checkout.py
+@@ -1,3 +1,22 @@
++import pytest
+ from checkout import total
++
+ def test_no_discount():
+     assert total([10,20])==30
++
++def test_percentage_discount():
++    assert total([10,20],50)==15
++
++def test_full_discount():
++    assert total([10,20],100)==0
++
++def test_partial_percentage():
++    assert total([100],25)==75
++
++def test_rejects_negative():
++    with pytest.raises(ValueError):
++        total([10],-1)
++
++def test_rejects_above_hundred():
++    with pytest.raises(ValueError):
++        total([10],101)

@@ -1,0 +1,180 @@
+{
+  "complete_replicate": true,
+  "stage_complete": false,
+  "seed_semantics": "order/replicate label only",
+  "source_errors": [],
+  "arms": {
+    "baseline": {
+      "n": 5,
+      "solved": 4,
+      "tokens_per_solve": 268869.5,
+      "total_tokens": 1075478,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 1,
+      "tokens_p50": 216967,
+      "tokens_p90": 243170,
+      "tokens_max": 243170,
+      "rounds": {
+        "42": {
+          "solved": 4,
+          "n": 5,
+          "tokens_per_solve": 268869.5
+        }
+      },
+      "task_solve_frequency": {
+        "d1_large_log": 1.0,
+        "d2_interfaces": 0.0,
+        "d3_stale_resume": 1.0,
+        "d4_integrated_failure": 1.0,
+        "d5_small_control": 1.0
+      }
+    },
+    "latest": {
+      "n": 5,
+      "solved": 5,
+      "tokens_per_solve": 220425.0,
+      "total_tokens": 1102125,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 233958,
+      "tokens_p90": 262356,
+      "tokens_max": 262356,
+      "rounds": {
+        "42": {
+          "solved": 5,
+          "n": 5,
+          "tokens_per_solve": 220425.0
+        }
+      },
+      "task_solve_frequency": {
+        "d1_large_log": 1.0,
+        "d2_interfaces": 1.0,
+        "d3_stale_resume": 1.0,
+        "d4_integrated_failure": 1.0,
+        "d5_small_control": 1.0
+      }
+    },
+    "karpathy": {
+      "n": 5,
+      "solved": 4,
+      "tokens_per_solve": 281474.25,
+      "total_tokens": 1125897,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 1,
+      "tokens_p50": 231534,
+      "tokens_p90": 339531,
+      "tokens_max": 339531,
+      "rounds": {
+        "42": {
+          "solved": 4,
+          "n": 5,
+          "tokens_per_solve": 281474.25
+        }
+      },
+      "task_solve_frequency": {
+        "d1_large_log": 1.0,
+        "d2_interfaces": 0.0,
+        "d3_stale_resume": 1.0,
+        "d4_integrated_failure": 1.0,
+        "d5_small_control": 1.0
+      }
+    },
+    "karpathy_latest": {
+      "n": 5,
+      "solved": 4,
+      "tokens_per_solve": 309594.0,
+      "total_tokens": 1238376,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 1,
+      "tokens_p50": 253564,
+      "tokens_p90": 269186,
+      "tokens_max": 269186,
+      "rounds": {
+        "42": {
+          "solved": 4,
+          "n": 5,
+          "tokens_per_solve": 309594.0
+        }
+      },
+      "task_solve_frequency": {
+        "d1_large_log": 1.0,
+        "d2_interfaces": 0.0,
+        "d3_stale_resume": 1.0,
+        "d4_integrated_failure": 1.0,
+        "d5_small_control": 1.0
+      }
+    }
+  },
+  "latest_vs": {
+    "baseline": {
+      "newly_failing_cells": [],
+      "consistent_round_cost_direction": true,
+      "round_cost_direction": {
+        "42": true
+      },
+      "strict_preregistered_adoption_screen": true,
+      "grade_infrastructure_review_required": false,
+      "quality_screen": true,
+      "observed_dominance": true,
+      "supported_efficiency": false,
+      "tokens_per_solve_delta": -48444.5,
+      "task_cluster_ci95": [
+        -304656.1,
+        7663.200000000012
+      ],
+      "valid_bootstrap_fraction": 0.9995,
+      "mean_tokens_delta_ci95": [
+        -19081.2,
+        28123.4
+      ]
+    },
+    "karpathy": {
+      "newly_failing_cells": [],
+      "consistent_round_cost_direction": true,
+      "round_cost_direction": {
+        "42": true
+      },
+      "strict_preregistered_adoption_screen": true,
+      "grade_infrastructure_review_required": false,
+      "quality_screen": true,
+      "observed_dominance": true,
+      "supported_efficiency": false,
+      "tokens_per_solve_delta": -61049.25,
+      "task_cluster_ci95": [
+        -381100.9,
+        26600.20000000001
+      ],
+      "valid_bootstrap_fraction": 0.9995,
+      "mean_tokens_delta_ci95": [
+        -58378.2,
+        34621.4
+      ]
+    },
+    "karpathy_latest": {
+      "newly_failing_cells": [],
+      "consistent_round_cost_direction": true,
+      "round_cost_direction": {
+        "42": true
+      },
+      "strict_preregistered_adoption_screen": true,
+      "grade_infrastructure_review_required": false,
+      "quality_screen": true,
+      "observed_dominance": true,
+      "supported_efficiency": true,
+      "tokens_per_solve_delta": -89169.0,
+      "task_cluster_ci95": [
+        -411772.3,
+        -845.1999999999825
+      ],
+      "valid_bootstrap_fraction": 0.9995,
+      "mean_tokens_delta_ci95": [
+        -79436.2,
+        8236.8
+      ]
+    }
+  }
+}

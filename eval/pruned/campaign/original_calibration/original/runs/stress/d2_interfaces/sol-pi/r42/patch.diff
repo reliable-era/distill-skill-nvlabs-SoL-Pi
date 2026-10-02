@@ -1,0 +1,39 @@
+diff --git a/lookup.py b/lookup.py
+index 16dfae0..7182bac 100644
+--- a/lookup.py
++++ b/lookup.py
+@@ -1,2 +1,4 @@
++from normalization import key
++
+ def get(index, name):
+-    return index.get(name.lower())
++    return index.get(key(name))
+diff --git a/normalization.py b/normalization.py
+index 073a4d4..8566ded 100644
+--- a/normalization.py
++++ b/normalization.py
+@@ -1,2 +1,2 @@
+ def key(value):
+-    return value.strip().lower()
++    return value.strip().casefold()
+diff --git a/tests/test_lookup.py b/tests/test_lookup.py
+index b17188e..948f1fc 100644
+--- a/tests/test_lookup.py
++++ b/tests/test_lookup.py
+@@ -2,3 +2,16 @@ from index import build
+ from lookup import get
+ def test_simple():
+     assert get(build([("ALPHA",7)]),"alpha")==7
++
++def test_whitespace_normalized_both_sides():
++    idx = build([("  ALPHA ", 7)])
++    assert get(idx, "alpha") == 7
++    assert get(idx, "  ALPHA  ") == 7
++    assert get(idx, "AlPhA") == 7
++
++def test_unicode_casefold():
++    # 'ß'.casefold() == 'ss', so STRASSE/straße/strasse all collapse to one key
++    idx = build([("Straße", 7)])
++    assert get(idx, "STRASSE") == 7
++    assert get(idx, "straße") == 7
++    assert get(idx, "strasse") == 7

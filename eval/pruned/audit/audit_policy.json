@@ -1,0 +1,11 @@
+{
+  "quality_policy": "Exploratory acceptable quality requires candidate resolved count >= comparator on complete matched runs, no higher timeout count, and no worse minimum per-round resolution. This is a screen, not statistical noninferiority proof.",
+  "efficiency_policy": "Compare total input+output tokens across ALL attempts divided by independently verified solves. Zero solves means undefined/infinite cost. Include failures and timeouts. No dollar estimates unless serving price and cache policy are established.",
+  "stability_policy": "Report per-round solve counts and tokens-per-solve, per-task solve frequencies, token p50/p90/max, timeouts and failed normal exits. Two replicates cannot establish stable tails.",
+  "uncertainty_policy": "Paired bootstrap at task cluster level retaining all repeats within sampled task. Main exploratory estimand is difference in aggregate tokens per verified solve. Report paired mean token difference too. Small task count yields coarse uncertain inference.",
+  "dominance_policy": "Observed dominance requires passing quality screen and strictly lower aggregate tokens per verified solve. Supported efficiency advantage additionally requires paired task-cluster 95% bootstrap interval entirely below zero. Claim beat most only when observed dominance holds against > half of preregistered comparators; distinguish observed from supported.",
+  "completeness_policy": "List every expected cell; missing grade != unresolved and must not be silently dropped. Main comparison requires all planned cells graded. Partial matched summaries clearly marked provisional. Hidden tests must be inaccessible to model.",
+  "seed_policy": "Execution-order seed and bootstrap seed do not equal model sampling seed. Label repeats stochastic replicates unless transport/backend logs verify model seed forwarded on all requests.",
+  "ceiling_policy": "All-arms 100% correctness demonstrates no resolution advantage; evaluate efficiency and failure robustness separately. Do not remove expensive cases after observing ranking.",
+  "selection_policy": "No candidate revision from heldout outcomes. Development results may inform revision; freeze content/hash before independently scored heldout. Never task-select based on observed arm performance."
+}

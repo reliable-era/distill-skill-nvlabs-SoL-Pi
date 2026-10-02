@@ -1,0 +1,33 @@
+diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py
+index c6a5f9f063..b24eb5661d 100644
+--- a/sympy/polys/factortools.py
++++ b/sympy/polys/factortools.py
+@@ -1146,6 +1146,11 @@ def dmp_ext_factor(f, u, K):
+     if all(d <= 0 for d in dmp_degree_list(f, u)):
+         return lc, []
+ 
++    # Split off the content in the leading variable: it is independent of
++    # that variable and would otherwise be dropped by the square-free part
++    # computation below, so it is factored separately and recombined.
++    G, f = dmp_primitive(f, u, K)
++
+     f, F = dmp_sqf_part(f, u, K), f
+     s, g, r = dmp_sqf_norm(f, u, K)
+ 
+@@ -1162,7 +1167,15 @@ def dmp_ext_factor(f, u, K):
+             h = dmp_compose(h, H, u, K)
+             factors[i] = h
+ 
+-    return lc, dmp_trial_division(F, factors, u, K)
++    factors = dmp_trial_division(F, factors, u, K)
++
++    if any(d > 0 for d in dmp_degree_list(G, u - 1)):
++        lc, gfactors = lc*dmp_ext_factor(G, u - 1, K)[0], dmp_ext_factor(G, u - 1, K)[1]
++
++        for g, k in gfactors:
++            factors.insert(0, ([g], k))
++
++    return lc, _sort_factors(factors)
+ 
+ 
+ def dup_gf_factor(f, K):

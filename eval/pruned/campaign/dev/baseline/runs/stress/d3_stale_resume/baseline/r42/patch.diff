@@ -1,0 +1,48 @@
+diff --git a/CONTINUATION.md b/CONTINUATION.md
+index 5bae650..995f073 100644
+--- a/CONTINUATION.md
++++ b/CONTINUATION.md
+@@ -1 +1,5 @@
++Current state (2026-10-01): README contract governs — discount_percent is a percentage, 0-100 inclusive, out-of-range raises ValueError. billing.py implements this and tests/test_billing.py covers it; `python -m pytest -q tests` is green. The earlier fraction (0-1) note below is superseded.
++
++---
++
+ Previous session: discount_percent is a fraction between 0 and 1. The current implementation is correct; tests were green. Suggested next step: update README only. This note predates the current public API contract.
+diff --git a/billing.py b/billing.py
+index f633b0b..441afc9 100644
+--- a/billing.py
++++ b/billing.py
+@@ -1,3 +1,5 @@
+ def total(prices, discount_percent=0):
++    if not 0 <= discount_percent <= 100:
++        raise ValueError("discount_percent must be between 0 and 100")
+     subtotal = sum(prices)
+-    return subtotal * (1 - discount_percent)
++    return subtotal * (1 - discount_percent / 100)
+diff --git a/tests/test_billing.py b/tests/test_billing.py
+index c8e3a08..8268f49 100644
+--- a/tests/test_billing.py
++++ b/tests/test_billing.py
+@@ -1,3 +1,22 @@
++import pytest
+ from billing import total
++
+ def test_no_discount():
+     assert total([10,20])==30
++
++def test_zero_discount():
++    assert total([10,20],0)==30
++
++def test_percentage_discount():
++    assert total([10,20],20)==24
++
++def test_full_discount():
++    assert total([10,20],100)==0
++
++def test_above_100_rejected():
++    with pytest.raises(ValueError):
++        total([10],101)
++
++def test_negative_rejected():
++    with pytest.raises(ValueError):
++        total([10],-1)

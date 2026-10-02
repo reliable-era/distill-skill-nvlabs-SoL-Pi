@@ -1,0 +1,26 @@
+diff --git a/NOTES.md b/NOTES.md
+index be2cc56..f538acc 100644
+--- a/NOTES.md
++++ b/NOTES.md
+@@ -5,3 +5,10 @@ I read logs/ci.log. The key error, quoted exactly:
+ > FAILED tests/test_parse.py::test_date - ValueError: time data '2026-09-30T12:00:00Z' does not match format '%Y-%m-%dT%H:%M:%S%z'
+ 
+ So `parse_date` is broken on the `Z` suffix. The fix is in `parse_date`.
++
++---
++**Correction (2026-09-30):** The quote above does not match logs/ci.log. In the actual log, `test_date` **PASSED** (parse_date already handles the literal `Z` correctly), and the real failure was:
++
++> FAILED tests/test_parse.py::test_amount_thousands - ValueError: invalid literal for int() with base 10: '1,234'
++
++The fix was in `parse_amount` (ledger/parse.py): strip thousands-separator commas before splitting. All 3 tests now pass.
+diff --git a/ledger/parse.py b/ledger/parse.py
+index 8e3035f..4f19d63 100644
+--- a/ledger/parse.py
++++ b/ledger/parse.py
+@@ -8,5 +8,5 @@ def parse_date(s):
+ 
+ def parse_amount(s):
+     """Parse an amount like '1,234.50' or '-12.00' into integer cents."""
+-    whole, _, frac = s.partition(".")
++    whole, _, frac = s.replace(",", "").partition(".")
+     return int(whole) * 100 + (int(frac or 0) if not whole.startswith("-") else -int(frac or 0))

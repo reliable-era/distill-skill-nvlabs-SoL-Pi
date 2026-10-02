@@ -1,0 +1,33 @@
+diff --git a/canonical.py b/canonical.py
+index 073a4d4..8566ded 100644
+--- a/canonical.py
++++ b/canonical.py
+@@ -1,2 +1,2 @@
+ def key(value):
+-    return value.strip().lower()
++    return value.strip().casefold()
+diff --git a/query.py b/query.py
+index b71a9d0..f51cd01 100644
+--- a/query.py
++++ b/query.py
+@@ -1,2 +1,3 @@
++from canonical import key
+ def get(catalog, name):
+-    return catalog.get(name.lower())
++    return catalog.get(key(name))
+diff --git a/tests/test_query.py b/tests/test_query.py
+index 4378fe8..c444213 100644
+--- a/tests/test_query.py
++++ b/tests/test_query.py
+@@ -2,3 +2,11 @@ from catalog import build
+ from query import get
+ def test_simple():
+     assert get(build([("ALPHA",7)]),"alpha")==7
++def test_whitespace():
++    assert get(build([("ALPHA",7)]),"  alpha  ")==7
++    assert get(build([(" ALPHA ",7)]),"alpha")==7
++def test_unicode_caseless():
++    assert get(build([("ß",1)]),"SS")==1
++    assert get(build([("straße",2)]),"STRASSE")==2
++def test_stored_value_unchanged():
++    assert build([("ALPHA",7)])["alpha"]==7

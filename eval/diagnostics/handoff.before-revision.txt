@@ -1,0 +1,118 @@
+# Handoff: skill A/B/C/D evaluation (efficient-coding vs. karpathy-guidelines)
+
+Written 2026-10-02 00:50 +08, results updated 00:58. Plan of record: [`goal.md`](goal.md). Current output: [`report.md`](report.md)
+(**interim**: stress suite only). Benchmark rationale: [`docs/benchmark.md`](docs/benchmark.md).
+
+## Result handoff
+
+- **Task:** measure whether the `efficient-coding` skill (nvlab-sol-pi-skills, `.claude/skills/efficient-coding.zip`)
+  cuts Claude Code token cost without losing verified resolution, alone and on top of `karpathy-guidelines`.
+  Four arms: 1 `sol-pi`, 2 `baseline`, 3 `karpathy`, 4 `karpathy+sol-pi`. Rows = benchmarks. Finish line:
+  final `report.md` in this folder.
+- **Status:** run matrix **~90% done and still running** (driver PID 1578706, `eval/run_all.py`, started
+  2026-10-01 02:51). Stress suite done (60/60). SWE-bench: 87/96 runs done, 86 graded (all of round 1, plus the
+  finished round-2 runs, which were graded early at 00:55). About 9 runs (≈3 h) are left: round 2 of `sphinx-doc__sphinx-7440`
+  (baseline), `sympy__sympy-16886` and `django__django-15380`. When it finishes, the driver grades the remaining runs and prints
+  `ALL DONE` to `eval/results/run_all.log`.
+- **Changed paths (all new, written by this session):** `goal.md`, `report.md`, `handoff.md`, everything under `eval/`.
+  `docs/` and `.claude/skills/efficient-coding.zip` are untouched.
+- **Checks actually run:**
+  - Each stress case's hidden test fails on the original repo and passes with the reference fix (`eval/stress/reference/apply.sh`).
+  - SWE-bench harness (swebench **4.1.0**) grades the gold patch of `django__django-14752` as resolved (`eval/grading/logs/run_evaluation/gold-check/`).
+  - Skill installation is asserted per run (the runner fails if `.claude/skills` ≠ the arm's list); the skill was
+    actually invoked in every skill-arm run so far (column `skills_invoked` in `eval/results/runs.csv`).
+- **Unrun checks / uncertainty / blockers:** see "Open items" below.
+- **Server launch args** (goal.md requirement): saved to `eval/results/server_args.txt`; cite it in the final report.
+- **Next integration action:** wait for `ALL DONE`, check grading, aggregate, and rewrite `report.md` as final.
+- **Worker status:** submitted (in progress, not blocked).
+
+## Current results (2026-10-02 00:58, partial; do not quote as final)
+
+Comparisons use only matched cells (task × round finished in all 4 arms): stress 15 per arm, SWE-bench 21 per arm (of 24).
+Source: `eval/results/tables.md` / `summary.json` (regenerate with step 4 below).
+
+| Benchmark | 1 sol-pi | 2 baseline | 3 karpathy | 4 karpathy+sol-pi |
+|---|---|---|---|---|
+| Stress suite, solved | 15/15 | 15/15 | 15/15 | 15/15 |
+| Stress suite, mean tokens/run | 209k | 194k | 226k | 244k |
+| SWE-bench, solved | 17/21 (81%) | 17/21 (81%) | 17/21 (81%) | 17/21 (81%) |
+| SWE-bench, mean tokens/run | 2.11M | 1.94M | 1.86M | 1.99M |
+| SWE-bench, **tokens / verified solve** | 2.61M | 2.39M | 2.30M | 2.46M |
+| SWE-bench, mean output tokens/run | 26k | 29k | 29k | 28k |
+| SWE-bench, mean requests / wall min per run | 45.7 / 15.4 | 44.9 / 13.2 | 42.2 / 13.4 | 43.4 / 14.1 |
+| SWE-bench, hit turn/time limit | 6 | 8 | 5 | 7 |
+| SWE-bench, said done but grader failed | 2 | 0 | 2 | 2 |
+| SWE-bench, runs that invoked a skill | 20 | 0 | 21 | 21 |
+
+Paired SWE-bench differences (n = 21, bootstrap 95% CI):
+
+| Comparison | Δ resolve rate [CI] | wins/losses | Δ tokens/run [CI] |
+|---|---|---|---|
+| 1 sol-pi − 2 baseline | 0 [−14%, +14%] | 1/1 | +176k [−113k, +502k] |
+| 4 karpathy+sol-pi − 3 karpathy | 0 | 0/0 | +136k [−174k, +477k] |
+| 1 sol-pi − 3 karpathy | 0 | 0/0 | +256k [−18k, +514k] |
+
+Stress paired Δ tokens/run (n = 15): sol-pi − baseline +15k [−20k, +54k]; karpathy+sol-pi − karpathy +18k [−19k, +50k];
+sol-pi − karpathy −17k [−50k, +24k]. All resolve-rate differences are 0.
+
+**Reading so far:** no quality difference between any arms. The efficient-coding skill shows no token saving: it costs about
++9% vs. baseline and about +7% on top of karpathy, and neither difference is significant. By the goal's success rule the
+bundle does **not** win, because tokens per verified solve went up. karpathy alone is cheapest, also within noise.
+
+## Open items for the next agent
+
+1. **Wait for the driver.** Check: `pgrep -f run_all.py; tail -3 eval/results/run_all.log; ls eval/runs/swebench/*/*/r[12]/result.json | wc -l` (target 96).
+   If the driver died, rerun `cd eval && nohup setsid .venv/bin/python run_all.py > results/run_all.log 2>&1 &`.
+   It skips any run that already has `result.json` and resumes. Do not delete existing runs.
+2. **Done, but disclose it:** `eval/runs/swebench/sympy__sympy-19040/karpathy+sol-pi/r1` was marked **unresolved** by hand
+   (`graded.json` carries a `note`). The harness reported `Test timed out after 1800 seconds`, because the patch makes the
+   tests hang (`eval/grading/logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log`).
+   State this in the report. Handle any new grading timeout the same way.
+3. **Check round-2 grading:** `ls eval/runs/swebench/*/*/r2/graded.json | wc -l` should be 48 (or 47 plus another timeout handled as in item 2).
+   `cd eval && .venv/bin/python grade_swe.py` is idempotent (it only grades runs without `graded.json`).
+4. **Aggregate and render:** `cd eval && .venv/bin/python aggregate.py && .venv/bin/python make_report.py > results/tables.md`.
+5. **Rewrite `report.md` as final.** Keep the existing Setup section, replace the tables with `results/tables.md`,
+   remove the INTERIM banner, and write findings for both rows against the goal's success rule: the bundle wins only
+   if tokens per verified solve drop **and** resolution is not significantly lower. Report 1−2, 4−3 and 1−3 paired
+   differences with CIs, the max-turn and timeout rates, and the limitations already listed.
+   Each SKILL.md is ~1–2k tokens: efficient-coding 6.6 KB, karpathy 2.5 KB.
+6. Optional, only if asked: Terminal-Bench 4.0 row, or a 3rd SWE-bench round (`run_all.py` loops `for rnd in (1, 2)`).
+
+## Gotchas already solved (don't rediscover)
+
+- **Effort:** the server's chat template rejects Claude Code's default effort `high` (HTTP 500), so every run uses `--effort medium`.
+- **Skills don't auto-trigger** with this 27B model. Every arm's prompt ends with the same `SKILL_HINT` sentence
+  (`eval/run_swe.py`) asking it to load installed skills; for baseline this does nothing. This is a declared limitation.
+- **Host isolation:** fresh container and `HOME=/tmp/home` per run, so the host `~/.claude/CLAUDE.md` (which mandates
+  karpathy-guidelines) and plugins never leak in. The Claude binary (2.1.285) is bind-mounted read-only from the host.
+- **Patch hygiene:** `core.fileMode false` (otherwise every file shows a mode change), `.claude/` and `__pycache__/`
+  excluded via `.git/info/exclude`. Stress repos need `chown root` or git refuses ("dubious ownership").
+- **Harness version:** swebench 5.x needs a new dataset schema; use the pinned **4.1.0** in `eval/.venv` with `--namespace swebench`.
+  All 49 sampled instance images are already pulled.
+- **Tokens:** the server reports no cache fields, so input = full prompt per request. Report token traffic, not dollars.
+- Runs ending in `error_max_turns` can still be resolved; resolution comes only from the grader.
+
+## Constraints
+
+- **Shared model server.** `ykw-qwen38-dflash2-tp2` (sglang, `127.0.0.1:8000`, `--max-running-requests 1`) is not ours.
+  Never restart or reconfigure it, and never run agent runs in parallel: they queue on one slot and would distort wall time.
+- Do not change skill contents (frozen hashes efficient-coding `abdedfe3…`, karpathy `2d9f49c1…`), prompts, or limits
+  mid-matrix; that breaks matching.
+- `eval/runs/_discarded/` holds the failed smoke runs (kept as evidence; not scored). Round `r0` is smoke only;
+  `aggregate.py` skips it.
+- Some files under `eval/runs/` were written by root-owned containers. Remove them through a container, not `rm`.
+
+## File map
+
+| Path | What |
+|---|---|
+| `eval/run_swe.py` | one SWE-bench run: `python run_swe.py <instance_id> <arm> <round>` |
+| `eval/run_stress.py` | one stress run, graded in-container by the hidden test |
+| `eval/run_all.py` | the full matrix (seed 42 arm order); resumable |
+| `eval/grade_swe.py` | official harness over ungraded SWE runs → `graded.json` |
+| `eval/aggregate.py` | → `results/runs.csv`, `results/summary.json` (matched pairs, bootstrap CIs) |
+| `eval/make_report.py` | → markdown tables (`results/tables.md`) |
+| `eval/tasks/` | frozen task lists (`swebench_verified_12.txt` is the scored one) |
+| `eval/stress/` | 5 cases (`repo/`, `prompt.txt`, `hidden/test_hidden.py`) + `Dockerfile` (`stress-base:1`) + `reference/` |
+| `eval/skills/` | frozen copies of both skills, copied into each run's workspace |
+| `eval/runs/<bench>/<task>/<arm>/r<k>/` | `prompt.txt`, `stream.jsonl` (full transcript + usage), `patch.diff`, `result.json`, `graded.json`/`grade.txt` |

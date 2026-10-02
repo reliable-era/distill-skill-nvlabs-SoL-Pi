@@ -1,0 +1,26 @@
+diff --git a/scheduler.py b/scheduler.py
+index 62b9582..65a9b7d 100644
+--- a/scheduler.py
++++ b/scheduler.py
+@@ -1,2 +1,3 @@
+ def partition_count(items, size):
+-    return len(items) // size
++    # Ceil division: a partial final batch still counts as one batch.
++    return (len(items) + size - 1) // size
+diff --git a/tests/test_scheduler.py b/tests/test_scheduler.py
+index 6d1cd91..ef15c9f 100644
+--- a/tests/test_scheduler.py
++++ b/tests/test_scheduler.py
+@@ -1,3 +1,12 @@
+ from scheduler import partition_count
+ def test_full():
+     assert partition_count(list(range(8)),4)==2
++
++def test_partial_tail():
++    assert partition_count(list(range(17)),5)==4
++
++def test_smaller_than_size():
++    assert partition_count(list(range(2)),5)==1
++
++def test_empty():
++    assert partition_count([],5)==0

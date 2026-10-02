@@ -1,0 +1,36 @@
+{
+  "errors": [],
+  "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/pylint-dev__pylint-4551/baseline/r73",
+  "resolved": true,
+  "tests": {
+    "FAIL_TO_PASS": {
+      "success": 10,
+      "failure": 0
+    },
+    "PASS_TO_PASS": {
+      "success": 0,
+      "failure": 0
+    },
+    "FAIL_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    },
+    "PASS_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    }
+  },
+  "report_sha256": "7313f8e114e281867d03d00ad237718bc96142fd53a4c86afab9558c650d8d9f",
+  "prediction_sha256": "0fbfb7f4b98250fff25758db7d179baa47cea90b5d752495e661b8720793e0df",
+  "total_tokens": 1952281,
+  "main_loop_total_tokens": 1951436,
+  "auxiliary_pipeline_tokens": 845,
+  "usage_complete": true,
+  "terminal_count": 1,
+  "target_repair_exposure": "Successful GitHub API retrieval of benchmark-linked commit 1e55ae6462 (#4551), full per-file source and test patch content returned through curl+Python. Failed initial redirect/parsing attempt is distinct from subsequent successful calls. No upstream clone/local repair-history reads observed; initial git log is base checkout history.",
+  "temporary_test_fixture": "/tmp/test_fix_verification.py explicitly mirrors upstream repair tests, runs 12 passing checks, then removed. No final tracked test modifications.",
+  "network_calls": 5,
+  "web_calls": 1,
+  "agent_calls": 0,
+  "final_test_files": []
+}

@@ -1,0 +1,113 @@
+{
+  "selection_seed": 42,
+  "rule": "Sorted pre-pulled prior49 candidates excluding all prior task directories (including smoke/discarded) and scored12; choose without replacement from hard, medium, medium, easy strata; exclude previously chosen repos. No outcome data consulted.",
+  "dataset_sha256": "7303cc5795e3707162f9b0ffcc5694f3fd67e20bd9d514cfdce63146fdebc196",
+  "excluded_ids": [
+    "astropy__astropy-7336",
+    "django__django-11149",
+    "django__django-11292",
+    "django__django-13128",
+    "django__django-14155",
+    "django__django-14752",
+    "django__django-15380",
+    "pytest-dev__pytest-8399",
+    "sphinx-doc__sphinx-7440",
+    "sphinx-doc__sphinx-8265",
+    "sympy__sympy-16886",
+    "sympy__sympy-19040"
+  ],
+  "eligible_ids": [
+    "astropy__astropy-13033",
+    "astropy__astropy-14096",
+    "django__django-10554",
+    "django__django-11964",
+    "django__django-12050",
+    "django__django-12276",
+    "django__django-13195",
+    "django__django-13212",
+    "django__django-13807",
+    "django__django-13964",
+    "django__django-14238",
+    "django__django-14500",
+    "django__django-14608",
+    "django__django-14672",
+    "django__django-14999",
+    "django__django-15022",
+    "django__django-15569",
+    "django__django-15695",
+    "django__django-15973",
+    "django__django-16819",
+    "django__django-16899",
+    "django__django-17029",
+    "matplotlib__matplotlib-23299",
+    "matplotlib__matplotlib-23314",
+    "matplotlib__matplotlib-26208",
+    "psf__requests-6028",
+    "pylint-dev__pylint-4551",
+    "sphinx-doc__sphinx-7910",
+    "sphinx-doc__sphinx-8269",
+    "sphinx-doc__sphinx-8475",
+    "sphinx-doc__sphinx-8638",
+    "sympy__sympy-12419",
+    "sympy__sympy-12481",
+    "sympy__sympy-13647",
+    "sympy__sympy-19637",
+    "sympy__sympy-20590",
+    "sympy__sympy-22914"
+  ],
+  "grader": "swebench==4.1.0",
+  "tasks": [
+    {
+      "instance_id": "pylint-dev__pylint-4551",
+      "repo": "pylint-dev/pylint",
+      "difficulty": "1-4 hours",
+      "base_commit": "99589b08de8c5a2c6cc61e13a37420a868c80599",
+      "problem_sha256": "28e19b9ac4f2a25215824cc162bb26d6ef73d661478746cd0cfc2e0432fadb18",
+      "metadata_sha256": "ce6e10b6da42177d4fe472ae33d5486a9092bc63ecf9d1e178e7e3bccfab8abc",
+      "image": "swebench/sweb.eval.x86_64.pylint-dev_1776_pylint-4551:latest",
+      "image_id": "sha256:da002762f29d4a55bbd7b2874ff0187525e0cf23b0c1705411a5d54c25702ed5",
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.pylint-dev_1776_pylint-4551@sha256:910cb070fc5e1c02b715b561c2f5783bb5f5e5935d9a169b4c91bdcfdd015f52"
+      ]
+    },
+    {
+      "instance_id": "django__django-13195",
+      "repo": "django/django",
+      "difficulty": "15 min - 1 hour",
+      "base_commit": "156a2138db20abc89933121e4ff2ee2ce56a173a",
+      "problem_sha256": "0e4d0ef4cd6f3ef28f227f6d3eb1c9db8a5249e7dbb5361922695786e5394fce",
+      "metadata_sha256": "68c2d329b52a070c54b56ac1ddc0632c50ad6aef97aca67b54d53cb4d42eb87c",
+      "image": "swebench/sweb.eval.x86_64.django_1776_django-13195:latest",
+      "image_id": "sha256:9498cb73bd069497b910d57b6abf464bc078acce9cfb585978f8d7b93bbc0cbd",
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.django_1776_django-13195@sha256:b42fb9c9d19e0f503e0353b77195524e6dff1997ce7cf2e53e38950af3f1cc11"
+      ]
+    },
+    {
+      "instance_id": "astropy__astropy-13033",
+      "repo": "astropy/astropy",
+      "difficulty": "15 min - 1 hour",
+      "base_commit": "298ccb478e6bf092953bca67a3d29dc6c35f6752",
+      "problem_sha256": "a295c83e68ff62290947b0796b75659b94621b7f2340d6f0055512d04be3f1d1",
+      "metadata_sha256": "bcd91be26999bd7edc182a2f125ad8875346345371444a664b407a07e634d106",
+      "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-13033:latest",
+      "image_id": "sha256:3dc0897645867bfadbeaac2b5ff2d91add0b249252c9da60bd05b37e86f75d05",
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.astropy_1776_astropy-13033@sha256:22f4f193fbf69d61c59e285494be18041934f8b528190dfe8c6c0d8051d8d6de"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-19637",
+      "repo": "sympy/sympy",
+      "difficulty": "<15 min fix",
+      "base_commit": "63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef",
+      "problem_sha256": "684f607f31cc768c385029a235053287b43082a993b8c6f631e6e1859e49e12d",
+      "metadata_sha256": "ad0cbdd4f8b73cc529a779385615dc092301355f916ac98e512eb1ad56111950",
+      "image": "swebench/sweb.eval.x86_64.sympy_1776_sympy-19637:latest",
+      "image_id": "sha256:021e152255c56386157eae3ee9ace29256f4ed3255be5ba8a9632954d35b2466",
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.sympy_1776_sympy-19637@sha256:956f0b8b048011ead5ff6d46007527a4cb4e1007e4f74fd1c935df6420730d8f"
+      ]
+    }
+  ]
+}

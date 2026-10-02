@@ -1,0 +1,86 @@
+diff --git a/tasks_cli/cli.py b/tasks_cli/cli.py
+index 844f9ff..676a3de 100644
+--- a/tasks_cli/cli.py
++++ b/tasks_cli/cli.py
+@@ -9,11 +9,29 @@ ITEMS = [
+ ]
+ 
+ 
++def positive_int(s):
++    try:
++        value = int(s)
++    except ValueError:
++        raise argparse.ArgumentTypeError(f"expected an integer, got {s!r}")
++    if value <= 0:
++        raise argparse.ArgumentTypeError("expected a positive integer")
++    return value
++
++
+ def main(argv=None):
+     p = argparse.ArgumentParser(prog="tasks")
+     p.add_argument("--json", action="store_true", help="print as JSON")
++    p.add_argument("--limit", type=positive_int, help="print only the first N items")
++    p.add_argument("--sort", choices=["name", "priority"], help="sort items")
+     args = p.parse_args(argv)
+     items = list(ITEMS)
++    if args.sort == "name":
++        items.sort(key=lambda it: it["name"])
++    elif args.sort == "priority":
++        items.sort(key=lambda it: (it["priority"], it["name"]))
++    if args.limit is not None:
++        items = items[: args.limit]
+     if args.json:
+         print(json.dumps({"items": items}))
+     else:
+diff --git a/tests/test_cli.py b/tests/test_cli.py
+index 6090d83..65dcb23 100644
+--- a/tests/test_cli.py
++++ b/tests/test_cli.py
+@@ -1,4 +1,5 @@
+ import json
++import pytest
+ from tasks_cli.cli import main
+ 
+ 
+@@ -6,3 +7,41 @@ def test_json(capsys):
+     main(["--json"])
+     out = json.loads(capsys.readouterr().out)
+     assert list(out) == ["items"] and len(out["items"]) == 4
++
++
++def test_limit(capsys):
++    main(["--limit", "2"])
++    out = capsys.readouterr().out
++    assert out == "2 write report\n1 backup db\n"
++
++
++def test_sort_name(capsys):
++    main(["--sort", "name"])
++    out = capsys.readouterr().out
++    assert [line.split(" ", 1)[1] for line in out.splitlines()] == [
++        "archive logs", "backup db", "call vendor", "write report",
++    ]
++
++
++def test_sort_priority_ties_by_name(capsys):
++    main(["--sort", "priority"])
++    out = capsys.readouterr().out
++    assert out == "1 backup db\n2 archive logs\n2 write report\n3 call vendor\n"
++
++
++def test_limit_applies_after_sort(capsys):
++    main(["--sort", "priority", "--limit", "2"])
++    out = capsys.readouterr().out
++    assert out == "1 backup db\n2 archive logs\n"
++
++
++def test_json_with_limit_and_sort(capsys):
++    main(["--json", "--sort", "name", "--limit", "1"])
++    out = json.loads(capsys.readouterr().out)
++    assert out == {"items": [{"name": "archive logs", "priority": 2}]}
++
++
++@pytest.mark.parametrize("bad", ["0", "-1", "abc"])
++def test_limit_rejects_non_positive(bad):
++    with pytest.raises(SystemExit):
++        main(["--limit", bad])

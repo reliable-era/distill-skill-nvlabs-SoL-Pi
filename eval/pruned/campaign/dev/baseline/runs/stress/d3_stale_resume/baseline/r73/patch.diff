@@ -1,0 +1,54 @@
+diff --git a/CONTINUATION.md b/CONTINUATION.md
+index 5bae650..7a4041e 100644
+--- a/CONTINUATION.md
++++ b/CONTINUATION.md
+@@ -1 +1,16 @@
+-Previous session: discount_percent is a fraction between 0 and 1. The current implementation is correct; tests were green. Suggested next step: update README only. This note predates the current public API contract.
++Reconciled against README.md (the current public API contract) — this note supersedes the earlier one, which was stale.
++
++Contract: `total(prices, discount_percent=0)` where `discount_percent` is a
++PERCENTAGE from 0 through 100 inclusive. Values outside that range raise ValueError.
++
++Earlier note (now WRONG) claimed it was a fraction 0–1 and that the code was
++correct / only the README needed updating. That was backwards: the README already
++documents the percentage contract, so the implementation was the bug.
++
++Fixed in billing.py:
++  - treats `discount_percent` as a percentage (divides by 100), not a fraction
++  - validates `0 <= discount_percent <= 100`, else ValueError
++
++Tests in tests/test_billing.py cover: no discount, partial discount, full
++discount (100), and ValueError for >100 and <0. Run: `python -m pytest -q tests`
++(see README_TESTS.md). All 5 pass.
+diff --git a/billing.py b/billing.py
+index f633b0b..7982f7b 100644
+--- a/billing.py
++++ b/billing.py
+@@ -1,3 +1,7 @@
+ def total(prices, discount_percent=0):
++    if not 0 <= discount_percent <= 100:
++        raise ValueError(
++            "discount_percent must be between 0 and 100, got {!r}".format(discount_percent)
++        )
+     subtotal = sum(prices)
+-    return subtotal * (1 - discount_percent)
++    return subtotal * (1 - discount_percent / 100)
+diff --git a/tests/test_billing.py b/tests/test_billing.py
+index c8e3a08..a897eab 100644
+--- a/tests/test_billing.py
++++ b/tests/test_billing.py
+@@ -1,3 +1,14 @@
++import pytest
+ from billing import total
+ def test_no_discount():
+     assert total([10,20])==30
++def test_partial_discount():
++    assert total([100],10)==90
++def test_full_discount():
++    assert total([10,20],100)==0
++def test_discount_above_100_rejected():
++    with pytest.raises(ValueError):
++        total([10],101)
++def test_negative_discount_rejected():
++    with pytest.raises(ValueError):
++        total([10],-1)

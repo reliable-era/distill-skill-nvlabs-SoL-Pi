@@ -1,0 +1,366 @@
+{
+  "eval/pruned/campaign/dev/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r42": {
+    "run": "pruned/campaign/dev/karpathy_latest/runs/stress/d5_small_control/karpathy+sol-pi/r42",
+    "requests": 14,
+    "input_by_request": [
+      15686,
+      16236,
+      17006,
+      17145,
+      18400,
+      18839,
+      19139,
+      19284,
+      19405,
+      19789,
+      19920,
+      21329,
+      21528,
+      21675
+    ],
+    "tool_counts": {
+      "Bash": 3,
+      "Skill": 4,
+      "Read": 8,
+      "Edit": 3
+    },
+    "reference_calls": [],
+    "skill_file_calls": [
+      {
+        "type": "tool_use",
+        "id": "call_fafe18da9a9d4043af589d71",
+        "name": "Read",
+        "input": {
+          "file_path": "/work/.claude/skills/efficient-coding/SKILL.md"
+        }
+      }
+    ],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [
+      1,
+      2,
+      3
+    ],
+    "first_successful_efficient_coding_request_index": null,
+    "tool_validation_errors": 8,
+    "skill_validation_errors": 3,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 50387,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 2614,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 2786,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  },
+  "eval/pruned/campaign/dev/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r42": {
+    "run": "pruned/campaign/dev/karpathy_latest/runs/stress/d1_large_log/karpathy+sol-pi/r42",
+    "requests": 12,
+    "input_by_request": [
+      15688,
+      16458,
+      17207,
+      17844,
+      18529,
+      19189,
+      21410,
+      21606,
+      21942,
+      22594,
+      23703,
+      23876
+    ],
+    "tool_counts": {
+      "Bash": 6,
+      "Skill": 2,
+      "Read": 6,
+      "Edit": 2
+    },
+    "reference_calls": [],
+    "skill_file_calls": [],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [
+      2,
+      3
+    ],
+    "first_successful_efficient_coding_request_index": 2,
+    "tool_validation_errors": 3,
+    "skill_validation_errors": 0,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 35051,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 2488,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 3763,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  },
+  "eval/pruned/campaign/dev/baseline/runs/stress/d5_small_control/baseline/r42": {
+    "run": "pruned/campaign/dev/baseline/runs/stress/d5_small_control/baseline/r42",
+    "requests": 10,
+    "input_by_request": [
+      15642,
+      15877,
+      16302,
+      16689,
+      16928,
+      17081,
+      18019,
+      18238,
+      18369,
+      18678
+    ],
+    "tool_counts": {
+      "Bash": 4,
+      "Read": 8,
+      "Edit": 1,
+      "Write": 1
+    },
+    "reference_calls": [],
+    "skill_file_calls": [],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [],
+    "first_successful_efficient_coding_request_index": null,
+    "tool_validation_errors": 5,
+    "skill_validation_errors": 0,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 0,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 1434,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 336,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  },
+  "eval/pruned/campaign/dev/baseline/runs/stress/d1_large_log/baseline/r42": {
+    "run": "pruned/campaign/dev/baseline/runs/stress/d1_large_log/baseline/r42",
+    "requests": 11,
+    "input_by_request": [
+      15644,
+      15932,
+      16664,
+      16968,
+      20130,
+      20513,
+      20709,
+      21185,
+      21648,
+      22154,
+      22321
+    ],
+    "tool_counts": {
+      "Bash": 8,
+      "Read": 7,
+      "Edit": 1
+    },
+    "reference_calls": [],
+    "skill_file_calls": [],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [],
+    "first_successful_efficient_coding_request_index": null,
+    "tool_validation_errors": 4,
+    "skill_validation_errors": 0,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 0,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 2103,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 6083,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  },
+  "eval/pruned/campaign/dev/karpathy/runs/stress/d5_small_control/karpathy/r42": {
+    "run": "pruned/campaign/dev/karpathy/runs/stress/d5_small_control/karpathy/r42",
+    "requests": 8,
+    "input_by_request": [
+      15690,
+      16113,
+      17032,
+      17138,
+      18362,
+      18547,
+      18784,
+      19088
+    ],
+    "tool_counts": {
+      "Bash": 4,
+      "Skill": 1,
+      "Read": 3,
+      "Edit": 3
+    },
+    "reference_calls": [],
+    "skill_file_calls": [],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [
+      1
+    ],
+    "first_successful_efficient_coding_request_index": null,
+    "tool_validation_errors": 2,
+    "skill_validation_errors": 0,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 16113,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 1866,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 573,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  },
+  "eval/pruned/campaign/dev/karpathy/runs/stress/d1_large_log/karpathy/r42": {
+    "run": "pruned/campaign/dev/karpathy/runs/stress/d1_large_log/karpathy/r42",
+    "requests": 8,
+    "input_by_request": [
+      15692,
+      16501,
+      17673,
+      19729,
+      20848,
+      21541,
+      23243,
+      23519
+    ],
+    "tool_counts": {
+      "Bash": 6,
+      "Read": 6,
+      "Skill": 1,
+      "Edit": 2
+    },
+    "reference_calls": [],
+    "skill_file_calls": [],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [
+      1
+    ],
+    "first_successful_efficient_coding_request_index": null,
+    "tool_validation_errors": 3,
+    "skill_validation_errors": 0,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 16501,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 2537,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 3717,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  },
+  "eval/pruned/campaign/dev/latest/runs/stress/d5_small_control/sol-pi/r42": {
+    "run": "pruned/campaign/dev/latest/runs/stress/d5_small_control/sol-pi/r42",
+    "requests": 8,
+    "input_by_request": [
+      15679,
+      15979,
+      16821,
+      17062,
+      17388,
+      17585,
+      18533,
+      18908
+    ],
+    "tool_counts": {
+      "Bash": 3,
+      "Skill": 1,
+      "Read": 6,
+      "Edit": 1
+    },
+    "reference_calls": [],
+    "skill_file_calls": [],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [
+      1
+    ],
+    "first_successful_efficient_coding_request_index": 1,
+    "tool_validation_errors": 3,
+    "skill_validation_errors": 0,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 15979,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 1525,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 330,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  },
+  "eval/pruned/campaign/dev/latest/runs/stress/d3_stale_resume/sol-pi/r42": {
+    "run": "pruned/campaign/dev/latest/runs/stress/d3_stale_resume/sol-pi/r42",
+    "requests": 12,
+    "input_by_request": [
+      15676,
+      16218,
+      16865,
+      17630,
+      18167,
+      18659,
+      19787,
+      19952,
+      21680,
+      22172,
+      22322,
+      22617
+    ],
+    "tool_counts": {
+      "Bash": 4,
+      "Skill": 1,
+      "Read": 12,
+      "Edit": 2,
+      "Write": 1
+    },
+    "reference_calls": [],
+    "skill_file_calls": [],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [
+      1
+    ],
+    "first_successful_efficient_coding_request_index": 1,
+    "tool_validation_errors": 8,
+    "skill_validation_errors": 0,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 16218,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 2809,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 628,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  },
+  "eval/pruned/campaign/dev/latest/runs/stress/d1_large_log/sol-pi/r42": {
+    "run": "pruned/campaign/dev/latest/runs/stress/d1_large_log/sol-pi/r42",
+    "requests": 12,
+    "input_by_request": [
+      15680,
+      16211,
+      16853,
+      17501,
+      17951,
+      18212,
+      18526,
+      19195,
+      20620,
+      21352,
+      21684,
+      21838
+    ],
+    "tool_counts": {
+      "Bash": 5,
+      "Skill": 1,
+      "Read": 8,
+      "Edit": 2
+    },
+    "reference_calls": [],
+    "skill_file_calls": [],
+    "helper_calls": [],
+    "skill_request_indices_zero_based": [
+      1
+    ],
+    "first_successful_efficient_coding_request_index": 1,
+    "tool_validation_errors": 5,
+    "skill_validation_errors": 0,
+    "api_error_results": 0,
+    "skill_request_input_tokens": 16211,
+    "separate_edit_then_bash_requests": 1,
+    "assistant_text_chars": 2517,
+    "large_tool_result_count_over_10KiB_serialized": 0,
+    "max_tool_result_serialized_bytes": 2470,
+    "compact_events": 0,
+    "fusion_claim_texts": []
+  }
+}

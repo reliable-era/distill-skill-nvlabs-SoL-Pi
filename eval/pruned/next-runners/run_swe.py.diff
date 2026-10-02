@@ -1,0 +1,17 @@
+--- /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/run_swe.py
++++ /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/next-runners/run_swe.py
+@@ -73,6 +73,14 @@
+                     "-v", f"{a.claude_bin}:/usr/local/bin/claude:ro", *envargs, img,
+                     "sleep", "infinity"], check=True, capture_output=True)
+     try:
++        # Evaluation images may contain setup commits; restore task source before Claude.
++        sh(["docker", "exec", name, "git", "-C", "/testbed", "reset", "--hard", task["base_commit"]], check=True)
++        sh(["docker", "exec", name, "git", "-C", "/testbed", "clean", "-fd"], check=True)
++        initial_head = sh(["docker", "exec", name, "git", "-C", "/testbed", "rev-parse", "HEAD"], check=True).stdout.strip()
++        initial_status = sh(["docker", "exec", name, "git", "-C", "/testbed", "status", "--porcelain"], check=True).stdout
++        if initial_head != task["base_commit"] or initial_status.strip():
++            raise RuntimeError(f"Non-pristine task checkout: {initial_head}, {initial_status!r}")
++        (out / "initial-checkout.json").write_text(json.dumps({"base_commit": task["base_commit"], "head": initial_head, "status_porcelain": initial_status}, indent=2))
+         sh(["docker", "exec", name, "mkdir", "-p", "/tmp/home", "/testbed/.claude/skills"])
+         for s in ARMS[a.arm]:
+             sh(["docker", "cp", str(a.skills_root / s), f"{name}:/testbed/.claude/skills/{s}"], check=True)

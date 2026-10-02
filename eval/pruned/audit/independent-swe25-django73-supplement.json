@@ -1,0 +1,38 @@
+{
+  "errors": [],
+  "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/django__django-13195/baseline/r73",
+  "resolved": true,
+  "official_tests": {
+    "FAIL_TO_PASS": {
+      "success": 5,
+      "failure": 0
+    },
+    "PASS_TO_PASS": {
+      "success": 382,
+      "failure": 0
+    },
+    "FAIL_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    },
+    "PASS_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    }
+  },
+  "report_sha256": "c2fc583e56e8f9c45fe9470ab655058ab1d746910596d6f8c820552d37f2aef3",
+  "prediction_sha256": "734b2f1e69abd8bd689834fc6138123e80d956b6a6eac15c5a9baf302534c90b",
+  "usage_complete": false,
+  "terminal_count": 0,
+  "deduplicated_message_ids": 48,
+  "recorded_token_lower_bound": 2418791,
+  "all_message_output_fields_zero": true,
+  "exposure": "Successful stable/4.1.x source and response/messages/session test retrieval, plus API histories identifying task-relevant repair commit 240cbb63bf99 (#31790). No direct target commit diff or local git clone/show retrieval observed; upstream repaired source/tests exposure is established. WebFetch500, API rate limits and missing gh are unsuccessful attempts.",
+  "network_calls": 16,
+  "web_calls": 2,
+  "local_history_commands": [],
+  "temporary_or_final_test_writes": [],
+  "final_test_files": [],
+  "agent_calls": 0,
+  "timeout_classification": "Model timeout retains officially successful patch and incomplete lower-bound traffic; not grader infrastructure error."
+}

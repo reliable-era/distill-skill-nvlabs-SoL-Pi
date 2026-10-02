@@ -1,0 +1,23 @@
+diff --git a/lookup.py b/lookup.py
+index 16dfae0..7182bac 100644
+--- a/lookup.py
++++ b/lookup.py
+@@ -1,2 +1,4 @@
++from normalization import key
++
+ def get(index, name):
+-    return index.get(name.lower())
++    return index.get(key(name))
+diff --git a/tests/test_lookup.py b/tests/test_lookup.py
+index b17188e..1064775 100644
+--- a/tests/test_lookup.py
++++ b/tests/test_lookup.py
+@@ -2,3 +2,8 @@ from index import build
+ from lookup import get
+ def test_simple():
+     assert get(build([("ALPHA",7)]),"alpha")==7
++def test_whitespace_and_case():
++    idx = build([("  Beta-Gamma ",42)])
++    assert get(idx,"beta-gamma")==42
++    assert get(idx,"  BETA-GAMMA  ")==42
++    assert get(idx,"Beta-Gamma\t")==42

@@ -1,0 +1,16 @@
+{
+  "findings": [
+    {
+      "arm": "latest",
+      "case": "astropy__astropy-13033",
+      "url": "https://github.com/astropy/astropy/pull/13033.diff",
+      "call_id": "call_d5e6b876d5f74b1fb41a1466",
+      "returned_characters": 2475,
+      "exact_full_gold_patch_substring": false,
+      "exact_full_test_patch_substring": false,
+      "model_patch_exact_gold": false,
+      "gold_patch_sha256": "7de34e6ed106dd91f81473f3646ed1340692a28c437324bf78adaf093d2c0c8d"
+    }
+  ],
+  "interpretation": "Latest fetched the exact benchmark-linked upstream PR13033 diff. Exact gold identity checks are explicit full substrings; scores preserved, model exposure makes independent closed-source validation claims inappropriate. Gold content not exposed."
+}

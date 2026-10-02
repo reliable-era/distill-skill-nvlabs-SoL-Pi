@@ -1,0 +1,23 @@
+diff --git a/query.py b/query.py
+index b71a9d0..dc845eb 100644
+--- a/query.py
++++ b/query.py
+@@ -1,2 +1,4 @@
++from canonical import key
++
+ def get(catalog, name):
+-    return catalog.get(name.lower())
++    return catalog.get(key(name))
+diff --git a/tests/test_query.py b/tests/test_query.py
+index 4378fe8..a21dd74 100644
+--- a/tests/test_query.py
++++ b/tests/test_query.py
+@@ -2,3 +2,8 @@ from catalog import build
+ from query import get
+ def test_simple():
+     assert get(build([("ALPHA",7)]),"alpha")==7
++
++def test_whitespace_and_unicode_match_construction():
++    cat = build([(" ALPHA ",7), ("ÜBER",1)])
++    assert get(cat, "alpha  ") == 7        # extra whitespace on lookup
++    assert get(cat, "über ") == 1          # Unicode case-insensitive + whitespace

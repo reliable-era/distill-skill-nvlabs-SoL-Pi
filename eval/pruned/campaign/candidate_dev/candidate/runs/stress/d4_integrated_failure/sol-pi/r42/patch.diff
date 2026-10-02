@@ -1,0 +1,46 @@
+diff --git a/export.py b/export.py
+index da53cdf..bc2313e 100644
+--- a/export.py
++++ b/export.py
+@@ -1,4 +1,4 @@
+ from names import display
+ def row(first,last):
+     text=display(first,last)
+-    return "name=" + text.split(" ")[0]
++    return "name=" + text
+diff --git a/names.py b/names.py
+index 6d53a09..1c31076 100644
+--- a/names.py
++++ b/names.py
+@@ -1,2 +1,2 @@
+ def display(first,last):
+-    return first + " " + last
++    return ' '.join((first + ' ' + last).split())
+diff --git a/tests/test_export.py b/tests/test_export.py
+index 55f3167..e28bb88 100644
+--- a/tests/test_export.py
++++ b/tests/test_export.py
+@@ -1,3 +1,8 @@
+ from export import row
+ def test_export():
+     assert row("Ada","Lovelace")=="name=Ada Lovelace"
++def test_export_single_component():
++    assert row("Ada","")=="name=Ada"
++    assert row("","Lovelace")=="name=Lovelace"
++def test_export_empty():
++    assert row("","")=="name="
+diff --git a/tests/test_names.py b/tests/test_names.py
+index 71fc37a..9b0fdde 100644
+--- a/tests/test_names.py
++++ b/tests/test_names.py
+@@ -1,3 +1,10 @@
+ from names import display
+ def test_trim():
+     assert display("  Ada "," Lovelace ")=="Ada Lovelace"
++def test_single_component():
++    assert display("Ada","")=="Ada"
++    assert display("","Lovelace")=="Lovelace"
++def test_empty_name():
++    assert display("","")==""
++def test_internal_whitespace():
++    assert display("Ada  Bee"," Lovelace ")=="Ada Bee Lovelace"

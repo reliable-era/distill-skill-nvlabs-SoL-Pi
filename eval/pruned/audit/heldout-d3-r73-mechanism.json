@@ -1,0 +1,76 @@
+{
+  "scope": "Completed matched case/round; descriptive mechanisms only, not causal component ablation. Serialized bytes are not model tokens.",
+  "rows": [
+    {
+      "configuration": "baseline",
+      "requests": 8,
+      "tool_counts": {
+        "Bash": 3,
+        "Read": 10,
+        "Edit": 1,
+        "Write": 1
+      },
+      "tool_validation_errors": 6,
+      "skill_validation_errors": 0,
+      "helper_calls": [],
+      "reference_calls": [],
+      "compact_events": 0,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 592
+    },
+    {
+      "configuration": "latest",
+      "requests": 20,
+      "tool_counts": {
+        "Bash": 13,
+        "Read": 12,
+        "Skill": 1,
+        "Edit": 1,
+        "Write": 2
+      },
+      "tool_validation_errors": 11,
+      "skill_validation_errors": 0,
+      "helper_calls": [],
+      "reference_calls": [],
+      "compact_events": 0,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 733
+    },
+    {
+      "configuration": "karpathy",
+      "requests": 14,
+      "tool_counts": {
+        "Bash": 8,
+        "Skill": 1,
+        "Read": 9,
+        "Edit": 2,
+        "Write": 3
+      },
+      "tool_validation_errors": 8,
+      "skill_validation_errors": 0,
+      "helper_calls": [],
+      "reference_calls": [],
+      "compact_events": 0,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 2072
+    },
+    {
+      "configuration": "karpathy_latest",
+      "requests": 12,
+      "tool_counts": {
+        "Bash": 4,
+        "Skill": 3,
+        "Read": 9,
+        "Edit": 2,
+        "Write": 1
+      },
+      "tool_validation_errors": 6,
+      "skill_validation_errors": 1,
+      "helper_calls": [],
+      "reference_calls": [],
+      "compact_events": 0,
+      "large_tool_result_count_over_10KiB_serialized": 0,
+      "max_tool_result_serialized_bytes": 1518
+    }
+  ]
+}

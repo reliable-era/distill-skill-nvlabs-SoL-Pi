@@ -1,0 +1,23 @@
+diff --git a/pipeline.py b/pipeline.py
+index a277ced..1abfff5 100644
+--- a/pipeline.py
++++ b/pipeline.py
+@@ -1,2 +1,2 @@
+ def batch_count(items, size):
+-    return len(items) // size
++    return (len(items) + size - 1) // size
+diff --git a/tests/test_pipeline.py b/tests/test_pipeline.py
+index 643f4d7..663dd20 100644
+--- a/tests/test_pipeline.py
++++ b/tests/test_pipeline.py
+@@ -1,3 +1,10 @@
+ from pipeline import batch_count
+ def test_full():
+     assert batch_count(list(range(8)),4)==2
++def test_partial_tail_kept():
++    # regression: 13 items of size 5 must produce 3 batches, not 2
++    assert batch_count(list(range(13)),5)==3
++def test_empty():
++    assert batch_count([],5)==0
++def test_single():
++    assert batch_count([1],5)==1

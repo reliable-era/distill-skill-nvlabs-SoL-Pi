@@ -1,0 +1,54 @@
+diff --git a/CONTINUATION.md b/CONTINUATION.md
+index da04ee6..a9e59e5 100644
+--- a/CONTINUATION.md
++++ b/CONTINUATION.md
+@@ -1 +1,13 @@
+-Previous session: rebate_percent is a fraction between 0 and 1. The current implementation is correct; tests were green. Suggested next step: update README only. This note predates the current public API contract.
++Resolved: the README contract is authoritative — `total(prices, rebate_percent=0)`
++takes a percentage 0–100 inclusive and raises `ValueError` for out-of-range values.
++The earlier note's "fraction 0–1, implementation is correct, README-only" plan was
++stale (it predates the current contract) and is superseded.
++
++Done in this session:
++- checkout.py: validate 0 <= rebate_percent <= 100 (else ValueError); compute
++  `subtotal * (1 - rebate_percent / 100)`.
++- tests/test_checkout.py: added coverage for percentage math, the 0/100 boundaries,
++  and out-of-range ValueError.
++
++Verified: `python -m pytest -q` → 4 passed. Behavior confirmed (50% of [10,20] → 15.0,
++100% → 0.0, default → 30.0, 101 / -1 → ValueError).
+diff --git a/checkout.py b/checkout.py
+index 149e1d8..b616564 100644
+--- a/checkout.py
++++ b/checkout.py
+@@ -1,3 +1,5 @@
+ def total(prices, rebate_percent=0):
++    if rebate_percent < 0 or rebate_percent > 100:
++        raise ValueError("rebate_percent must be between 0 and 100")
+     subtotal = sum(prices)
+-    return subtotal * (1 - rebate_percent)
++    return subtotal * (1 - rebate_percent / 100)
+diff --git a/tests/test_checkout.py b/tests/test_checkout.py
+index d413037..75c7aeb 100644
+--- a/tests/test_checkout.py
++++ b/tests/test_checkout.py
+@@ -1,3 +1,19 @@
++import pytest
+ from checkout import total
++
+ def test_no_discount():
+     assert total([10,20])==30
++
++def test_rebate_is_a_percentage():
++    assert total([10,20], 50)==15
++    assert total([200], 25)==150
++
++def test_boundaries_zero_and_full():
++    assert total([10,20], 0)==30
++    assert total([10,20], 100)==0
++
++def test_rejects_out_of_range():
++    with pytest.raises(ValueError):
++        total([10,20], 101)
++    with pytest.raises(ValueError):
++        total([10,20], -1)

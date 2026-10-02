@@ -1,0 +1,48 @@
+diff --git a/astropy/timeseries/core.py b/astropy/timeseries/core.py
+index c279f35f8..2ff81871c 100644
+--- a/astropy/timeseries/core.py
++++ b/astropy/timeseries/core.py
+@@ -76,9 +76,29 @@ class BaseTimeSeries(QTable):
+ 
+             elif self.colnames[:len(required_columns)] != required_columns:
+ 
+-                raise ValueError("{} object is invalid - expected '{}' "
+-                                 "as the first column{} but found '{}'"
+-                                 .format(self.__class__.__name__, required_columns[0], plural, self.colnames[0]))
++                if self.colnames[0] == required_columns[0]:
++                    # The first column is already the required time column,
++                    # so a message about the first column would be
++                    # misleading. Report the required column(s) that are the
++                    # actual problem instead.
++                    missing = [col for col in required_columns
++                               if col not in self.colnames]
++                    if missing:
++                        missing_str = " and ".join(f"'{col}'" for col in missing)
++                        missing_plural = 's' if len(missing) > 1 else ''
++                        raise ValueError("{} object is invalid - required "
++                                         "column{} {} missing"
++                                         .format(self.__class__.__name__,
++                                                 missing_plural, missing_str))
++                    raise ValueError("{} object is invalid - required columns "
++                                     "{} must be the first columns of the time "
++                                     "series but found {}"
++                                     .format(self.__class__.__name__, required_columns,
++                                             self.colnames[:len(required_columns)]))
++                else:
++                    raise ValueError("{} object is invalid - expected '{}' "
++                                     "as the first column{} but found '{}'"
++                                     .format(self.__class__.__name__, required_columns[0], plural, self.colnames[0]))
+ 
+             if (self._required_columns_relax
+                     and self._required_columns == self.colnames[:len(self._required_columns)]):
+diff --git a/docs/changes/timeseries/13040.bugfix.rst b/docs/changes/timeseries/13040.bugfix.rst
+new file mode 100644
+index 000000000..221ceaeb1
+--- /dev/null
++++ b/docs/changes/timeseries/13040.bugfix.rst
+@@ -0,0 +1,5 @@
++Fixed a misleading error message raised by ``TimeSeries`` and
++``BinnedTimeSeries`` when the check of the required columns failed because a
++required column (other than the first, time column) was missing or out of
++place. The message now reports the actual missing required column(s) instead
++of repeating the (correct) first column.

@@ -1,0 +1,18 @@
+diff --git a/labels.py b/labels.py
+index 6d53a09..1d1546c 100644
+--- a/labels.py
++++ b/labels.py
+@@ -1,2 +1,2 @@
+ def display(first,last):
+-    return first + " " + last
++    return " ".join((first + " " + last).split())
+diff --git a/render.py b/render.py
+index d03a2e2..583412e 100644
+--- a/render.py
++++ b/render.py
+@@ -1,4 +1,3 @@
+ from labels import display
+ def row(first,last):
+-    text=display(first,last)
+-    return "name=" + text.split(" ")[0]
++    return "name=" + display(first,last)

@@ -1,0 +1,25 @@
+diff --git a/paging.py b/paging.py
+index 700ab30..763b029 100644
+--- a/paging.py
++++ b/paging.py
+@@ -1,2 +1,4 @@
+ def pages(count,size):
+-    return count // size
++    if count <= 0:
++        return 0
++    return (count + size - 1) // size
+diff --git a/tests/test_paging.py b/tests/test_paging.py
+index 41bda7c..af77eea 100644
+--- a/tests/test_paging.py
++++ b/tests/test_paging.py
+@@ -1,3 +1,10 @@
+ from paging import pages
+ def test_full():
+     assert pages(6,3)==2
++
++def test_partial_final_page():
++    assert pages(7,3)==3
++    assert pages(1,5)==1
++
++def test_zero_count():
++    assert pages(0,3)==0

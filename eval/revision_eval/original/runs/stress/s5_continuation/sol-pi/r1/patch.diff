@@ -1,0 +1,109 @@
+diff --git a/CONTINUATION.md b/CONTINUATION.md
+index 7d59ee0..0cca9b7 100644
+--- a/CONTINUATION.md
++++ b/CONTINUATION.md
+@@ -4,9 +4,9 @@ Goal: extend `tasks_cli/cli.py` with three options.
+ 
+ Requirements:
+ 1. `--json` prints `{"items": [...]}`. **DONE** — implemented and tested in tests/test_cli.py. Do not change this output schema.
+-2. `--limit N` prints only the first N items (after sorting, if sorting is requested). N must be a positive integer; reject 0 or negatives with an argparse error.
+-3. `--sort {name,priority}` sorts items: `name` ascending alphabetically; `priority` ascending, ties broken by name ascending.
++2. `--limit N` prints only the first N items (after sorting, if sorting is requested). N must be a positive integer; reject 0 or negatives with an argparse error. **DONE** — `type=_positive_int` in cli.py; 0/negative/non-integer exit with argparse error (code 2).
++3. `--sort {name,priority}` sorts items: `name` ascending alphabetically; `priority` ascending, ties broken by name ascending. **DONE** — key `(priority, name)` for priority, `name` otherwise; sorting runs before limiting.
+ 
+ Constraints: stay with a single flat argparse parser (no subcommands); options combine with `--json`.
+ 
+-Next action: implement 2 and 3, add tests for them, run the suite.
++Status: task complete (2026-10-01). All requirements implemented in `tasks_cli/cli.py`; `python3 -m pytest tests/` → 10 passed. `--json` schema unchanged.
+diff --git a/tasks_cli/cli.py b/tasks_cli/cli.py
+index 844f9ff..a0bf49c 100644
+--- a/tasks_cli/cli.py
++++ b/tasks_cli/cli.py
+@@ -9,11 +9,29 @@ ITEMS = [
+ ]
+ 
+ 
++def _positive_int(value):
++    try:
++        n = int(value)
++    except ValueError:
++        raise argparse.ArgumentTypeError(f"invalid int value: {value!r}")
++    if n <= 0:
++        raise argparse.ArgumentTypeError(f"must be a positive integer, got {n}")
++    return n
++
++
+ def main(argv=None):
+     p = argparse.ArgumentParser(prog="tasks")
+     p.add_argument("--json", action="store_true", help="print as JSON")
++    p.add_argument("--limit", type=_positive_int, help="print only the first N items")
++    p.add_argument("--sort", choices=("name", "priority"), help="sort items by name or priority")
+     args = p.parse_args(argv)
+     items = list(ITEMS)
++    if args.sort == "name":
++        items.sort(key=lambda it: it["name"])
++    elif args.sort == "priority":
++        items.sort(key=lambda it: (it["priority"], it["name"]))
++    if args.limit is not None:
++        items = items[: args.limit]
+     if args.json:
+         print(json.dumps({"items": items}))
+     else:
+diff --git a/tests/test_cli.py b/tests/test_cli.py
+index 6090d83..3eaa818 100644
+--- a/tests/test_cli.py
++++ b/tests/test_cli.py
+@@ -1,4 +1,6 @@
+ import json
++import pytest
++
+ from tasks_cli.cli import main
+ 
+ 
+@@ -6,3 +8,46 @@ def test_json(capsys):
+     main(["--json"])
+     out = json.loads(capsys.readouterr().out)
+     assert list(out) == ["items"] and len(out["items"]) == 4
++
++
++def _names(capsys):
++    return [line.split(" ", 1)[1] for line in capsys.readouterr().out.splitlines()]
++
++
++def test_limit_keeps_first_n_in_default_order(capsys):
++    main(["--limit", "2"])
++    assert _names(capsys) == ["write report", "backup db"]
++
++
++def test_limit_larger_than_item_count(capsys):
++    main(["--limit", "10"])
++    assert len(_names(capsys)) == 4
++
++
++@pytest.mark.parametrize("value", ["0", "-3", "abc"])
++def test_limit_rejects_non_positive_or_invalid(capsys, value):
++    with pytest.raises(SystemExit) as exc:
++        main(["--limit", value])
++    assert exc.value.code == 2
++
++
++def test_sort_name_alphabetical(capsys):
++    main(["--sort", "name"])
++    assert _names(capsys) == ["archive logs", "backup db", "call vendor", "write report"]
++
++
++def test_sort_priority_ascending_ties_by_name(capsys):
++    main(["--sort", "priority"])
++    assert _names(capsys) == ["backup db", "archive logs", "write report", "call vendor"]
++
++
++def test_sort_applied_before_limit(capsys):
++    main(["--sort", "priority", "--limit", "3"])
++    assert _names(capsys) == ["backup db", "archive logs", "write report"]
++
++
++def test_json_with_sort_and_limit(capsys):
++    main(["--json", "--sort", "name", "--limit", "2"])
++    out = json.loads(capsys.readouterr().out)
++    assert list(out) == ["items"]
++    assert [it["name"] for it in out["items"]] == ["archive logs", "backup db"]

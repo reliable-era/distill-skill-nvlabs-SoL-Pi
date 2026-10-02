@@ -1,0 +1,390 @@
+{
+  "warning": "Sequential cross-stage development batches, not interleaved; stochastic model seeds uncontrolled; adoption screens provisional until all10cells complete. Development outcomes are tuning evidence, not validation.",
+  "comparisons": {
+    "baseline": {
+      "matched": 10,
+      "candidate": {
+        "n": 10,
+        "solved": 8,
+        "tokens_per_solve": 291673.75,
+        "total_tokens": 2333390,
+        "timeouts": 0,
+        "grade_timeouts": 0,
+        "false_completion": 2,
+        "tokens_p50": 211901,
+        "tokens_p90": 257113,
+        "tokens_max": 561171,
+        "rounds": {
+          "42": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 331849.75
+          },
+          "73": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 251497.75
+          }
+        },
+        "task_solve_frequency": {
+          "d1_large_log": 1.0,
+          "d2_interfaces": 0.0,
+          "d3_stale_resume": 1.0,
+          "d4_integrated_failure": 1.0,
+          "d5_small_control": 1.0
+        }
+      },
+      "comparator": {
+        "n": 10,
+        "solved": 8,
+        "tokens_per_solve": 259730.5,
+        "total_tokens": 2077844,
+        "timeouts": 0,
+        "grade_timeouts": 0,
+        "false_completion": 2,
+        "tokens_p50": 211198,
+        "tokens_p90": 243170,
+        "tokens_max": 276685,
+        "rounds": {
+          "42": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 268869.5
+          },
+          "73": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 250591.5
+          }
+        },
+        "task_solve_frequency": {
+          "d1_large_log": 1.0,
+          "d2_interfaces": 0.0,
+          "d3_stale_resume": 1.0,
+          "d4_integrated_failure": 1.0,
+          "d5_small_control": 1.0
+        }
+      },
+      "pair": {
+        "planned_stage_complete": true,
+        "task_cluster_count": 5,
+        "cluster_inference_eligible": true,
+        "comparison_inference_eligible": true,
+        "inference_status": "complete_exploratory",
+        "ci_status": "complete_exploratory",
+        "newly_failing_cells": [],
+        "consistent_round_cost_direction": false,
+        "round_cost_direction": {
+          "42": false,
+          "73": false
+        },
+        "strict_preregistered_adoption_screen": false,
+        "grade_infrastructure_review_required": false,
+        "quality_screen": true,
+        "observed_dominance": false,
+        "supported_efficiency": false,
+        "tokens_per_solve_delta": 31943.25,
+        "task_cluster_ci95": [
+          -36789.5,
+          122567.875
+        ],
+        "valid_bootstrap_fraction": 0.9995,
+        "mean_tokens_delta_ci95": [
+          -14715.8,
+          98422.3
+        ]
+      },
+      "complete": true
+    },
+    "karpathy": {
+      "matched": 10,
+      "candidate": {
+        "n": 10,
+        "solved": 8,
+        "tokens_per_solve": 291673.75,
+        "total_tokens": 2333390,
+        "timeouts": 0,
+        "grade_timeouts": 0,
+        "false_completion": 2,
+        "tokens_p50": 211901,
+        "tokens_p90": 257113,
+        "tokens_max": 561171,
+        "rounds": {
+          "42": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 331849.75
+          },
+          "73": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 251497.75
+          }
+        },
+        "task_solve_frequency": {
+          "d1_large_log": 1.0,
+          "d2_interfaces": 0.0,
+          "d3_stale_resume": 1.0,
+          "d4_integrated_failure": 1.0,
+          "d5_small_control": 1.0
+        }
+      },
+      "comparator": {
+        "n": 10,
+        "solved": 7,
+        "tokens_per_solve": 313901.4285714286,
+        "total_tokens": 2197310,
+        "timeouts": 0,
+        "grade_timeouts": 0,
+        "false_completion": 3,
+        "tokens_p50": 211331,
+        "tokens_p90": 271830,
+        "tokens_max": 339531,
+        "rounds": {
+          "42": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 281474.25
+          },
+          "73": {
+            "solved": 3,
+            "n": 5,
+            "tokens_per_solve": 357137.6666666667
+          }
+        },
+        "task_solve_frequency": {
+          "d1_large_log": 1.0,
+          "d2_interfaces": 0.0,
+          "d3_stale_resume": 1.0,
+          "d4_integrated_failure": 0.5,
+          "d5_small_control": 1.0
+        }
+      },
+      "pair": {
+        "planned_stage_complete": true,
+        "task_cluster_count": 5,
+        "cluster_inference_eligible": true,
+        "comparison_inference_eligible": true,
+        "inference_status": "complete_exploratory",
+        "ci_status": "complete_exploratory",
+        "newly_failing_cells": [],
+        "consistent_round_cost_direction": false,
+        "round_cost_direction": {
+          "42": false,
+          "73": true
+        },
+        "strict_preregistered_adoption_screen": false,
+        "grade_infrastructure_review_required": false,
+        "quality_screen": true,
+        "observed_dominance": true,
+        "supported_efficiency": false,
+        "tokens_per_solve_delta": -22227.67857142858,
+        "task_cluster_ci95": [
+          -135935.41666666663,
+          5202.688888888864
+        ],
+        "valid_bootstrap_fraction": 0.9995,
+        "mean_tokens_delta_ci95": [
+          -29985.2,
+          79678.6
+        ]
+      },
+      "complete": true
+    },
+    "karpathy_latest": {
+      "matched": 10,
+      "candidate": {
+        "n": 10,
+        "solved": 8,
+        "tokens_per_solve": 291673.75,
+        "total_tokens": 2333390,
+        "timeouts": 0,
+        "grade_timeouts": 0,
+        "false_completion": 2,
+        "tokens_p50": 211901,
+        "tokens_p90": 257113,
+        "tokens_max": 561171,
+        "rounds": {
+          "42": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 331849.75
+          },
+          "73": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 251497.75
+          }
+        },
+        "task_solve_frequency": {
+          "d1_large_log": 1.0,
+          "d2_interfaces": 0.0,
+          "d3_stale_resume": 1.0,
+          "d4_integrated_failure": 1.0,
+          "d5_small_control": 1.0
+        }
+      },
+      "comparator": {
+        "n": 10,
+        "solved": 8,
+        "tokens_per_solve": 315987.25,
+        "total_tokens": 2527898,
+        "timeouts": 0,
+        "grade_timeouts": 0,
+        "false_completion": 2,
+        "tokens_p50": 253564,
+        "tokens_p90": 293510,
+        "tokens_max": 328544,
+        "rounds": {
+          "42": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 309594.0
+          },
+          "73": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 322380.5
+          }
+        },
+        "task_solve_frequency": {
+          "d1_large_log": 1.0,
+          "d2_interfaces": 0.0,
+          "d3_stale_resume": 1.0,
+          "d4_integrated_failure": 1.0,
+          "d5_small_control": 1.0
+        }
+      },
+      "pair": {
+        "planned_stage_complete": true,
+        "task_cluster_count": 5,
+        "cluster_inference_eligible": true,
+        "comparison_inference_eligible": true,
+        "inference_status": "complete_exploratory",
+        "ci_status": "complete_exploratory",
+        "newly_failing_cells": [],
+        "consistent_round_cost_direction": false,
+        "round_cost_direction": {
+          "42": false,
+          "73": true
+        },
+        "strict_preregistered_adoption_screen": false,
+        "grade_infrastructure_review_required": false,
+        "quality_screen": true,
+        "observed_dominance": true,
+        "supported_efficiency": false,
+        "tokens_per_solve_delta": -24313.5,
+        "task_cluster_ci95": [
+          -193802.5,
+          63582.625
+        ],
+        "valid_bootstrap_fraction": 0.9995,
+        "mean_tokens_delta_ci95": [
+          -82632.5,
+          50866.1
+        ]
+      },
+      "complete": true
+    },
+    "latest": {
+      "matched": 10,
+      "candidate": {
+        "n": 10,
+        "solved": 8,
+        "tokens_per_solve": 291673.75,
+        "total_tokens": 2333390,
+        "timeouts": 0,
+        "grade_timeouts": 0,
+        "false_completion": 2,
+        "tokens_p50": 211901,
+        "tokens_p90": 257113,
+        "tokens_max": 561171,
+        "rounds": {
+          "42": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 331849.75
+          },
+          "73": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 251497.75
+          }
+        },
+        "task_solve_frequency": {
+          "d1_large_log": 1.0,
+          "d2_interfaces": 0.0,
+          "d3_stale_resume": 1.0,
+          "d4_integrated_failure": 1.0,
+          "d5_small_control": 1.0
+        }
+      },
+      "comparator": {
+        "n": 10,
+        "solved": 9,
+        "tokens_per_solve": 242163.22222222222,
+        "total_tokens": 2179469,
+        "timeouts": 0,
+        "grade_timeouts": 0,
+        "false_completion": 1,
+        "tokens_p50": 223418,
+        "tokens_p90": 262356,
+        "tokens_max": 324116,
+        "rounds": {
+          "42": {
+            "solved": 5,
+            "n": 5,
+            "tokens_per_solve": 220425.0
+          },
+          "73": {
+            "solved": 4,
+            "n": 5,
+            "tokens_per_solve": 269336.0
+          }
+        },
+        "task_solve_frequency": {
+          "d1_large_log": 1.0,
+          "d2_interfaces": 0.5,
+          "d3_stale_resume": 1.0,
+          "d4_integrated_failure": 1.0,
+          "d5_small_control": 1.0
+        }
+      },
+      "pair": {
+        "planned_stage_complete": true,
+        "task_cluster_count": 5,
+        "cluster_inference_eligible": true,
+        "comparison_inference_eligible": true,
+        "inference_status": "complete_exploratory",
+        "ci_status": "complete_exploratory",
+        "newly_failing_cells": [
+          {
+            "case": "d2_interfaces",
+            "seed": 42
+          }
+        ],
+        "consistent_round_cost_direction": false,
+        "round_cost_direction": {
+          "42": false,
+          "73": true
+        },
+        "strict_preregistered_adoption_screen": false,
+        "grade_infrastructure_review_required": false,
+        "quality_screen": false,
+        "observed_dominance": false,
+        "supported_efficiency": false,
+        "tokens_per_solve_delta": 49510.52777777778,
+        "task_cluster_ci95": [
+          -17442.899999999994,
+          259775.10714285716
+        ],
+        "valid_bootstrap_fraction": 0.9995,
+        "mean_tokens_delta_ci95": [
+          -34825.6,
+          93424.1
+        ]
+      },
+      "complete": true
+    }
+  }
+}

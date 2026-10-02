@@ -1,0 +1,12 @@
+diff --git a/textkit/slug.py b/textkit/slug.py
+index 9893757..c8028da 100644
+--- a/textkit/slug.py
++++ b/textkit/slug.py
+@@ -4,5 +4,5 @@ import re
+ def slugify(text):
+     """Lowercase, replace runs of non-alphanumerics with a single '-', strip leading/trailing '-'."""
+     text = text.lower()
+-    text = re.sub(r"[^a-z0-9]", "-", text)
+-    return text
++    text = re.sub(r"[^a-z0-9]+", "-", text)
++    return text.strip("-")

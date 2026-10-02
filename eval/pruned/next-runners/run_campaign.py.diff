@@ -1,0 +1,41 @@
+--- /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/run_campaign.py
++++ /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/next-runners/run_campaign.py
+@@ -10,7 +10,7 @@
+ def digest(p):
+     return hashlib.sha256(p.read_bytes()).hexdigest()
+ 
+-def grade(run, work, timeout):
++def grade(run, work, timeout, dataset_name="princeton-nlp/SWE-bench_Verified"):
+     if (run / 'graded.json').exists():
+         return
+     if importlib.metadata.version('swebench') != '4.1.0':
+@@ -23,7 +23,7 @@
+     pred.write_text(json.dumps({'instance_id': iid, 'model_name_or_path': tag,
+                                'model_patch': (run / 'patch.diff').read_text()}) + '\n')
+     cmd = [sys.executable, '-m', 'swebench.harness.run_evaluation',
+-           '--dataset_name', 'princeton-nlp/SWE-bench_Verified', '--predictions_path', str(pred),
++           '--dataset_name', str(dataset_name), '--predictions_path', str(pred),
+            '--run_id', 'grade', '--instance_ids', iid, '--max_workers', '1',
+            '--namespace', 'swebench', '--cache_level', 'instance', '--timeout', str(timeout)]
+     started = time.time()
+@@ -34,7 +34,10 @@
+             rc = None
+     rep = work / 'logs/run_evaluation/grade' / tag / iid / 'report.json'
+     audit = {'harness_version': '4.1.0', 'exit_code': rc, 'wall_s': time.time()-started,
+-             'prediction_sha256': digest(pred), 'report_path': str(rep)}
++             'prediction_sha256': digest(pred), 'report_path': str(rep), 'dataset_name': str(dataset_name)}
++    dataset_path = Path(dataset_name)
++    if dataset_path.is_file():
++        audit['dataset_sha256'] = digest(dataset_path)
+     if rep.exists():
+         audit.update(resolved=json.loads(rep.read_text())[iid]['resolved'], grade_status='official_report')
+     elif not (run / 'patch.diff').read_text().strip():
+@@ -90,7 +93,7 @@
+             print('START', stage['name'], seed, case, label, flush=True)
+             rc = subprocess.run(cmd).returncode
+             run = runs / ('stress' if stage['kind']=='stress' else 'swebench') / case / arm['runner_arm'] / f'r{seed}'
+-            if rc == 0 and stage['kind']=='swe': grade(run, root/'grading'/stage['name']/label/f'{case}-{seed}', plan.get('grade_timeout',1800))
++            if rc == 0 and stage['kind']=='swe': grade(run, root/'grading'/stage['name']/label/f'{case}-{seed}', plan.get('grade_timeout',1800), plan.get('grade_dataset', 'princeton-nlp/SWE-bench_Verified'))
+             record = {'stage':stage['name'], 'seed':seed, 'case':case, 'arm':label,
+                       'runner_exit':rc, 'run':str(run), 'completed_at':time.time()}
+             with (root/'progress.jsonl').open('a') as f: f.write(json.dumps(record)+'\n')

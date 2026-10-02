@@ -1,0 +1,20 @@
+Provider-reported tokens include all matched failed attempts. Round labels randomize scheduling, not model sampling RNG.
+Fallback usage without a terminal summary is a recorded lower bound; affected costs carry ≥ and cannot establish savings.
+Partial stages show complete matched cells only; pending is not a measured zero. Development results are not validation.
+
+| Stage | Configuration | Version | Status | Verified / matched | Total tokens | Tokens / solve |
+|---|---|---|---|---:|---:|---:|
+| dev | No skill | baseline | complete | 8/10 | 2,077,844 | 259,730.50 |
+| dev | SoL-Pi | latest frozen | complete | 9/10 | 2,179,469 | 242,163.22 |
+| dev | Karpathy | frozen Karpathy | complete | 7/10 | 2,197,310 | 313,901.43 |
+| dev | Karpathy + SoL-Pi | latest frozen SoL-Pi | complete | 8/10 | 2,527,898 | 315,987.25 |
+| original_calibration | SoL-Pi | original frozen | complete | 5/5 | 1,105,832 | 221,166.40 |
+| candidate_dev | SoL-Pi candidate | rejected development candidate | complete | 8/10 | 2,333,390 | 291,673.75 |
+| heldout | No skill | baseline | complete | 13/15 | 2,841,791 | 218,599.31 |
+| heldout | SoL-Pi | latest frozen | complete | 14/15 | 3,637,743 | 259,838.79 |
+| heldout | Karpathy | frozen Karpathy | complete | 12/15 | 3,426,520 | 285,543.33 |
+| heldout | Karpathy + SoL-Pi | latest frozen SoL-Pi | complete | 14/15 | 3,807,433 | 271,959.50 |
+| real_swe | No skill | baseline | complete; incomplete usage | 6/8 | ≥ 8,517,203 | ≥ 1,419,533.83 |
+| real_swe | SoL-Pi | latest frozen | complete; incomplete usage | 7/8 | ≥ 11,399,553 | ≥ 1,628,507.57 |
+| real_swe | Karpathy | frozen Karpathy | complete; incomplete usage | 8/8 | ≥ 10,542,511 | ≥ 1,317,813.88 |
+| real_swe | Karpathy + SoL-Pi | latest frozen SoL-Pi | complete; incomplete usage | 4/8 | ≥ 9,584,170 | ≥ 2,396,042.50 |

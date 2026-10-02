@@ -1,0 +1,30 @@
+diff --git a/checkout.py b/checkout.py
+index 149e1d8..f63b9c1 100644
+--- a/checkout.py
++++ b/checkout.py
+@@ -1,3 +1,5 @@
+ def total(prices, rebate_percent=0):
++    if not 0 <= rebate_percent <= 100:
++        raise ValueError("rebate_percent must be between 0 and 100")
+     subtotal = sum(prices)
+-    return subtotal * (1 - rebate_percent)
++    return subtotal * (1 - rebate_percent / 100)
+diff --git a/tests/test_checkout.py b/tests/test_checkout.py
+index d413037..37d900a 100644
+--- a/tests/test_checkout.py
++++ b/tests/test_checkout.py
+@@ -1,3 +1,14 @@
++import pytest
+ from checkout import total
+ def test_no_discount():
+     assert total([10,20])==30
++def test_rebate_percent_applied():
++    assert total([100,50],rebate_percent=10)==135
++def test_full_rebate():
++    assert total([10,20],rebate_percent=100)==0
++def test_rebate_percent_below_zero_rejected():
++    with pytest.raises(ValueError):
++        total([10,20],rebate_percent=-1)
++def test_rebate_percent_above_100_rejected():
++    with pytest.raises(ValueError):
++        total([10,20],rebate_percent=101)

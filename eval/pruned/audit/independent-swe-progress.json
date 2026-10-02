@@ -1,0 +1,281 @@
+{
+  "plan": "eval/pruned/plan.v4-real-swe.json",
+  "checked_graded_cells": 3,
+  "expected_cells": 32,
+  "errors": [],
+  "arms_unmatched_partial": {
+    "baseline": {
+      "n": 1,
+      "usage_complete": false,
+      "incomplete_usage_runs": 1,
+      "solved": 0,
+      "tokens_per_solve": null,
+      "total_tokens": 450788,
+      "timeouts": 1,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 450788,
+      "tokens_p90": 450788,
+      "tokens_max": 450788,
+      "rounds": {
+        "42": {
+          "solved": 0,
+          "n": 1,
+          "tokens_per_solve": null
+        }
+      },
+      "task_solve_frequency": {
+        "pylint-dev__pylint-4551": 0.0
+      }
+    },
+    "latest": {
+      "n": 1,
+      "usage_complete": false,
+      "incomplete_usage_runs": 1,
+      "solved": 0,
+      "tokens_per_solve": null,
+      "total_tokens": 762427,
+      "timeouts": 1,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 762427,
+      "tokens_p90": 762427,
+      "tokens_max": 762427,
+      "rounds": {
+        "42": {
+          "solved": 0,
+          "n": 1,
+          "tokens_per_solve": null
+        }
+      },
+      "task_solve_frequency": {
+        "pylint-dev__pylint-4551": 0.0
+      }
+    },
+    "karpathy": {
+      "n": 1,
+      "usage_complete": false,
+      "incomplete_usage_runs": 1,
+      "solved": 1,
+      "tokens_per_solve": 1936679.0,
+      "total_tokens": 1936679,
+      "timeouts": 1,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 1936679,
+      "tokens_p90": 1936679,
+      "tokens_max": 1936679,
+      "rounds": {
+        "42": {
+          "solved": 1,
+          "n": 1,
+          "tokens_per_solve": 1936679.0
+        }
+      },
+      "task_solve_frequency": {
+        "pylint-dev__pylint-4551": 1.0
+      }
+    },
+    "karpathy_latest": {
+      "n": 0,
+      "usage_complete": true,
+      "incomplete_usage_runs": 0,
+      "solved": 0,
+      "tokens_per_solve": null,
+      "total_tokens": 0,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": null,
+      "tokens_p90": null,
+      "tokens_max": null,
+      "rounds": {},
+      "task_solve_frequency": {}
+    }
+  },
+  "cells": [
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "baseline",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/baseline/runs/swebench/pylint-dev__pylint-4551/baseline/r42",
+      "resolved": false,
+      "grade_status": "empty_patch",
+      "timed_out": true,
+      "grade_exit_code": 0,
+      "initial_checkout_verified": true,
+      "prediction_sha256": "9058ea99a417082d02183751a98921cd81e0470c70ded4fac73b22ed54f46ea6",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dataset_sha256": "86067c8114f6248a748f2b0c4cb567f86143eaa1ee3db4c8b8b465dc6494fa70",
+      "external_reference_attempts": [
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "pylint pyreverse use python type hints UML generation get_annotations get_attrs PR",
+          "is_error": false,
+          "result_prefix": "Web search results for query: \"pylint pyreverse use python type hints UML generation get_annotations get_attrs PR\"\n\nI'll perform a web search for that query about pylint pyreverse,"
+        },
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "pyreverse display type annotations pyreverse issue 1904 pull request",
+          "is_error": false,
+          "result_prefix": ""
+        }
+      ],
+      "test_files_modified": [],
+      "patch_files": [],
+      "agent_calls": 0,
+      "terminal_count": 0,
+      "total_tokens": 450788,
+      "input_tokens": 450788,
+      "output_tokens": 0,
+      "requests": 16,
+      "end": "killed",
+      "usage_source": "message_fallback",
+      "usage_complete": false,
+      "token_measurement": "recorded_lower_bound"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "latest",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/latest/runs/swebench/pylint-dev__pylint-4551/sol-pi/r42",
+      "resolved": false,
+      "grade_status": "empty_patch",
+      "timed_out": true,
+      "grade_exit_code": 0,
+      "initial_checkout_verified": true,
+      "prediction_sha256": "9058ea99a417082d02183751a98921cd81e0470c70ded4fac73b22ed54f46ea6",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dataset_sha256": "86067c8114f6248a748f2b0c4cb567f86143eaa1ee3db4c8b8b465dc6494fa70",
+      "external_reference_attempts": [
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "pylint pyreverse \"use python type hints\" UML issue 1031 fix pull request annotations",
+          "is_error": false,
+          "result_prefix": "Web search results for query: \"pylint pyreverse \"use python type hints\" UML issue 1031 fix pull request annotations\"\n\nI'll perform a web search for that query about pylint pyrevers"
+        },
+        {
+          "tool": "WebFetch",
+          "url": "https://github.com/PyCQA/pylint/issues/1031",
+          "query": null,
+          "is_error": true,
+          "result_prefix": "API Error: 500 Internal server error. This is a server-side issue, usually temporary \u2014 try again in a moment. If it persists, check your inference gateway (127.0.0.1:8000)."
+        },
+        {
+          "tool": "WebFetch",
+          "url": "https://github.com/PyCQA/pylint/issues/1031",
+          "query": null,
+          "is_error": true,
+          "result_prefix": "API Error: 500 Internal server error. This is a server-side issue, usually temporary \u2014 try again in a moment. If it persists, check your inference gateway (127.0.0.1:8000)."
+        },
+        {
+          "tool": "WebFetch",
+          "url": "https://api.github.com/search/issues?q=repo:PyCQA/pylint+pyreverse+type+hints+annotations+in:title",
+          "query": null,
+          "is_error": false,
+          "result_prefix": "The server returned HTTP 422 Unprocessable Entity.\n\nThe response body was not retrieved. If this URL requires authentication, use an authenticated tool (e.g. `gh` for GitHub, or an"
+        },
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "PyCQA pylint pull request pyreverse display type annotations attributes dot",
+          "is_error": false,
+          "result_prefix": "Web search results for query: \"PyCQA pylint pull request pyreverse display type annotations attributes dot\"\n\nI'll search for that query about PyCQA pylint pull requests related to "
+        }
+      ],
+      "test_files_modified": [],
+      "patch_files": [],
+      "agent_calls": 0,
+      "terminal_count": 0,
+      "total_tokens": 762427,
+      "input_tokens": 762427,
+      "output_tokens": 0,
+      "requests": 27,
+      "end": "killed",
+      "usage_source": "message_fallback",
+      "usage_complete": false,
+      "token_measurement": "recorded_lower_bound"
+    },
+    {
+      "stage": "real_swe",
+      "case": "pylint-dev__pylint-4551",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/campaign/real_swe/karpathy/runs/swebench/pylint-dev__pylint-4551/karpathy/r42",
+      "resolved": true,
+      "grade_status": "official_report",
+      "timed_out": true,
+      "grade_exit_code": 0,
+      "initial_checkout_verified": true,
+      "prediction_sha256": "f1866158f7ba96ee42661a9fd4774c8304f3260e334e5a6b5a62c66018be8f4d",
+      "patch_sha256": "27b1c677bc35b512fdaaf7ef1415d2efd0f95326b32189fcd9f63e06a5600889",
+      "dataset_sha256": "86067c8114f6248a748f2b0c4cb567f86143eaa1ee3db4c8b8b465dc6494fa70",
+      "external_reference_attempts": [
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "pylint pyreverse use python type hints annotations PEP 484 UML attribute types fix",
+          "is_error": false,
+          "result_prefix": "Web search results for query: \"pylint pyreverse use python type hints annotations PEP 484 UML attribute types fix\"\n\nI'll search for information about using Python type hints with p"
+        },
+        {
+          "tool": "WebFetch",
+          "url": "https://raw.githubusercontent.com/pylint-dev/pylint/2.9.0/pylint/pyreverse/inspector.py",
+          "query": null,
+          "is_error": false,
+          "result_prefix": "The server returned HTTP 404 Not Found.\n\nThe response body was not retrieved. If this URL requires authentication, use an authenticated tool (e.g. `gh` for GitHub, or an MCP-provid"
+        },
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "pylint pyreverse get_attrs annotations \"type\" pull request instance_attrs_type",
+          "is_error": false,
+          "result_prefix": "Web search results for query: \"pylint pyreverse get_attrs annotations \"type\" pull request instance_attrs_type\"\n\nI'll perform a web search for that query about pylint's pyreverse an"
+        },
+        {
+          "tool": "WebFetch",
+          "url": null,
+          "query": null,
+          "is_error": true,
+          "result_prefix": "<tool_use_error>InputValidationError: WebFetch was called with input that could not be parsed as JSON.\nYou sent (first 200 of 260 bytes): {\"prompt\": \"Show the complete source code "
+        },
+        {
+          "tool": "WebFetch",
+          "url": "https://raw.githubusercontent.com/pylint-dev/pylint/main/pylint/pyreverse/inspector.py",
+          "query": null,
+          "is_error": true,
+          "result_prefix": "API Error: 500 Internal server error. This is a server-side issue, usually temporary \u2014 try again in a moment. If it persists, check your inference gateway (127.0.0.1:8000)."
+        },
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "pylint github pull request pyreverse \"type annotations\" UML diagram 2021",
+          "is_error": false,
+          "result_prefix": "Web search results for query: \"pylint github pull request pyreverse \"type annotations\" UML diagram 2021\"\n\nI'll search for that query about pylint, pyreverse, type annotations, and "
+        }
+      ],
+      "test_files_modified": [],
+      "patch_files": [
+        "pylint/pyreverse/diagrams.py",
+        "pylint/pyreverse/inspector.py",
+        "pylint/pyreverse/utils.py"
+      ],
+      "agent_calls": 0,
+      "terminal_count": 0,
+      "total_tokens": 1936679,
+      "input_tokens": 1936679,
+      "output_tokens": 0,
+      "requests": 46,
+      "end": "killed",
+      "usage_source": "message_fallback",
+      "usage_complete": false,
+      "token_measurement": "recorded_lower_bound"
+    }
+  ],
+  "cost_warning": "Fallback usage is recorded lower bound; missing terminal output is never fabricated. Partial summaries do not imply comparative efficiency."
+}

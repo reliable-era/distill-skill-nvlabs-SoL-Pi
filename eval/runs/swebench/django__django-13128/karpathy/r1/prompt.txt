@@ -1,0 +1,20 @@
+<issue>
+make temporal subtraction work without ExpressionWrapper
+Description
+	
+class Experiment(models.Model):
+	start = models.DateTimeField()
+	end = models.DateTimeField()
+Experiment.objects.annotate(
+	delta=F('end') - F('start') + Value(datetime.timedelta(), output_field=DurationField())
+)
+This gives:
+django.core.exceptions.FieldError: Expression contains mixed types: DateTimeField, DurationField. You must set output_field.
+
+</issue>
+
+The repository at /testbed is checked out at the commit where this issue exists.
+Resolve the issue by editing the non-test source files in /testbed. The Python environment is already set up.
+Do not modify existing tests. When you are done, stop.
+
+Before you start, load every skill installed in this project's .claude/skills directory (if any) with the Skill tool, and follow it.

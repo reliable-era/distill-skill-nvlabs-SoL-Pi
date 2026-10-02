@@ -1,0 +1,11 @@
+diff --git a/ledger/parse.py b/ledger/parse.py
+index 8e3035f..3301913 100644
+--- a/ledger/parse.py
++++ b/ledger/parse.py
+@@ -8,5 +8,6 @@ def parse_date(s):
+ 
+ def parse_amount(s):
+     """Parse an amount like '1,234.50' or '-12.00' into integer cents."""
++    s = s.replace(",", "")
+     whole, _, frac = s.partition(".")
+     return int(whole) * 100 + (int(frac or 0) if not whole.startswith("-") else -int(frac or 0))

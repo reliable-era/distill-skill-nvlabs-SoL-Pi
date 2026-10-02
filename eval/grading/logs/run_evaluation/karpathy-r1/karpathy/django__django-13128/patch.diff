@@ -1,0 +1,25 @@
+diff --git a/django/db/models/expressions.py b/django/db/models/expressions.py
+index d913658291..c95483643b 100644
+--- a/django/db/models/expressions.py
++++ b/django/db/models/expressions.py
+@@ -442,6 +442,20 @@ class CombinedExpression(SQLiteNumericMixin, Expression):
+     def set_source_expressions(self, exprs):
+         self.lhs, self.rhs = exprs
+ 
++    def _resolve_output_field(self):
++        # The result of subtracting two temporal fields (e.g. subtracting two
++        # DateTimeFields) is a duration, not a temporal field.
++        if self.connector == self.SUB:
++            lhs_field = self.lhs._output_field_or_none
++            rhs_field = self.rhs._output_field_or_none
++            if (
++                lhs_field is not None and rhs_field is not None and
++                lhs_field.get_internal_type() in {'DateField', 'DateTimeField', 'TimeField'} and
++                lhs_field.get_internal_type() == rhs_field.get_internal_type()
++            ):
++                return fields.DurationField()
++        return super()._resolve_output_field()
++
+     def as_sql(self, compiler, connection):
+         try:
+             lhs_type = self.lhs.output_field.get_internal_type()

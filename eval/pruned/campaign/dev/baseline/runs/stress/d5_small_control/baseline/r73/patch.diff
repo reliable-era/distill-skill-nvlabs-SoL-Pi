@@ -1,0 +1,39 @@
+diff --git a/paging.py b/paging.py
+index 700ab30..ed9a4bf 100644
+--- a/paging.py
++++ b/paging.py
+@@ -1,2 +1,2 @@
+ def pages(count,size):
+-    return count // size
++    return (count + size - 1) // size
+diff --git a/tests/test_paging.py b/tests/test_paging.py
+index 41bda7c..597aab1 100644
+--- a/tests/test_paging.py
++++ b/tests/test_paging.py
+@@ -1,3 +1,26 @@
++import pytest
+ from paging import pages
++
+ def test_full():
+     assert pages(6,3)==2
++
++def test_partial_last_page():
++    assert pages(7,3)==3
++
++def test_zero_count():
++    assert pages(0,3)==0
++
++def test_single_page():
++    assert pages(3,3)==1
++    assert pages(1,5)==1
++
++def test_exact_multiples():
++    assert pages(10,5)==2
++    assert pages(12,4)==3
++
++def test_single_item():
++    assert pages(1,1)==1
++
++def test_zero_size_raises():
++    with pytest.raises(ZeroDivisionError):
++        pages(5,0)

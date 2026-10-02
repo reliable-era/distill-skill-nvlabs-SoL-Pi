@@ -1,0 +1,166 @@
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index 880a2cc17b..53745f1ee9 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -2115,44 +2115,53 @@ class InlineModelAdmin(BaseModelAdmin):
+         if self.opts.auto_created:
+             # We're checking the rights to an auto-created intermediate model,
+             # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
++            # to have the change permission for the related model in order to
+             # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            return self._has_change_permission_on_related_model(request)
+         return super().has_add_permission(request)
+ 
+     def has_change_permission(self, request, obj=None):
+         if self.opts.auto_created:
+             # We're checking the rights to an auto-created intermediate model,
+             # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
++            # to have the change permission for the related model in order to
+             # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            return self._has_change_permission_on_related_model(request)
+         return super().has_change_permission(request)
+ 
+     def has_delete_permission(self, request, obj=None):
+         if self.opts.auto_created:
+             # We're checking the rights to an auto-created intermediate model,
+             # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
++            # to have the change permission for the related model in order to
+             # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            return self._has_change_permission_on_related_model(request)
+         return super().has_delete_permission(request, obj)
+ 
+     def has_view_permission(self, request, obj=None):
+         if self.opts.auto_created:
+-            opts = self.opts
+-            # The model was auto-created as intermediary for a many-to-many
+-            # Many-relationship; find the target model.
+-            for field in opts.fields:
+-                if field.remote_field and field.remote_field.model != self.parent_model:
+-                    opts = field.remote_field.model._meta
+-                    break
++            opts = self._get_related_model_opts()
+             return (
+                 request.user.has_perm('%s.%s' % (opts.app_label, get_permission_codename('view', opts))) or
+                 request.user.has_perm('%s.%s' % (opts.app_label, get_permission_codename('change', opts)))
+             )
+         return super().has_view_permission(request)
+ 
++    def _has_change_permission_on_related_model(self, request):
++        opts = self._get_related_model_opts()
++        return request.user.has_perm(
++            '%s.%s' % (opts.app_label, get_permission_codename('change', opts)))
++
++    def _get_related_model_opts(self):
++        # The model was auto-created as intermediary for a many-to-many
++        # relationship; find the target model.
++        opts = self.opts
++        for field in opts.fields:
++            if field.remote_field and field.remote_field.model != self.parent_model:
++                opts = field.remote_field.model._meta
++                break
++        return opts
++
+ 
+ class StackedInline(InlineModelAdmin):
+     template = 'admin/edit_inline/stacked.html'
+diff --git a/tests/admin_inlines/temp_repro.py b/tests/admin_inlines/temp_repro.py
+new file mode 100644
+index 0000000000..c7ad252974
+--- /dev/null
++++ b/tests/admin_inlines/temp_repro.py
+@@ -0,0 +1,89 @@
++import re
++from django.contrib.auth.models import Permission, User
++from django.contrib.contenttypes.models import ContentType
++from django.test import TestCase, override_settings
++from django.urls import reverse
++
++from .models import Author, Book
++
++
++def _form_data(html):
++    """Extract all field name->value pairs from the admin change form HTML."""
++    data = {}
++    for m in re.finditer(r'<(?:input|textarea)[^>]*name="([^"]+)"[^>]*>', html):
++        tag, name = m.group(0), m.group(1)
++        vm = re.search(r'value="([^"]*)"', tag)
++        data[name] = vm.group(1) if vm else ''
++    for m in re.finditer(r'<select[^>]*name="([^"]+)"[^>]*>(.*?)</select>', html, re.S):
++        name, body = m.group(1), m.group(2)
++        sel = re.search(r'<option value="([^"]*)"[^>]*selected', body)
++        if sel:
++            data[name] = sel.group(1)
++    return data
++
++
++@override_settings(ROOT_URLCONF='admin_inlines.urls')
++class TestM2MPostDebug(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        cls.author_ct = ContentType.objects.get_for_model(Author)
++        cls.book_ct = ContentType.objects.get_for_model(Book)
++        author = Author.objects.create(pk=1, name='The Author')
++        book = author.books.create(name='The inline Book')
++        cls.author = author
++        cls.book = book
++        cls.author_change_url = reverse('admin:admin_inlines_author_change', args=(author.id,))
++
++    def _mk_user(self, book_perms):
++        user = User(username='u', is_staff=True, is_active=True)
++        user.set_password('secret')
++        user.save()
++        for c in ('add_author', 'change_author'):
++            user.user_permissions.add(
++                Permission.objects.get(codename=c, content_type=self.author_ct))
++        for c in book_perms:
++            user.user_permissions.add(
++                Permission.objects.get(codename=c, content_type=self.book_ct))
++        return user
++
++    def _get_form(self):
++        response = self.client.get(self.author_change_url)
++        return response, _form_data(response.content.decode())
++
++    def test_change_book_can_delete(self):
++        self.client.force_login(self._mk_user(['change_book']))
++        _, data = self._get_form()
++        data['Author_books-0-DELETE'] = 'on'
++        response = self.client.post(self.author_change_url, data)
++        print('\n=== change_book delete: status=%s m2m_gone=%s ===' % (
++            response.status_code,
++            not Author.books.through.objects.filter(
++                author=self.author, book=self.book).exists()))
++        self.assertEqual(response.status_code, 302)
++        self.assertFalse(Author.books.through.objects.filter(
++            author=self.author, book=self.book).exists())
++
++    def test_view_book_cannot_delete(self):
++        self.client.force_login(self._mk_user(['view_book']))
++        _, data = self._get_form()
++        data['Author_books-0-DELETE'] = 'on'
++        response = self.client.post(self.author_change_url, data)
++        m2m = Author.books.through.objects.filter(
++            author=self.author, book=self.book).exists()
++        print('\n=== view_book delete: status=%s m2m_still_set=%s ===' % (
++            response.status_code, m2m))
++        self.assertTrue(m2m, 'view-only user must not delete the M2M relationship')
++
++    def test_view_book_cannot_add(self):
++        self.client.force_login(self._mk_user(['view_book']))
++        new_book = Book.objects.create(name='Sneaky new book')
++        _, data = self._get_form()
++        # add a brand new form row linking the new book
++        total = data['Author_books-TOTAL_FORMS']
++        data['Author_books-TOTAL_FORMS'] = str(int(total) + 1)
++        data['Author_books-%d-book' % int(total)] = str(new_book.pk)
++        response = self.client.post(self.author_change_url, data)
++        added = Author.books.through.objects.filter(
++            author=self.author, book=new_book).exists()
++        print('\n=== view_book add: status=%s added=%s ===' % (response.status_code, added))
++        self.assertFalse(added, 'view-only user must not add an M2M relationship')

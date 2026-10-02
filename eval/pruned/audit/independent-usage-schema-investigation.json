@@ -1,0 +1,150 @@
+{
+  "claude_sha256": "fe503f65c6289d59c23e5b21ae44f03583f997dd33a2cbfc75ab4f96fb8fc73f",
+  "embedded_modelUsage_schema_byte_offset": 198450726,
+  "embedded_modelUsage_schema": "Per-model totals for every model call made through the query pipeline during this query() call \\u2014 main loop, Task subagents, sidechains, and internal calls such as compaction and Workflow agents. Cumulative across turns in streaming-input sessions: each result carries the running total so far, so read the latest result rather than summing across results. Internal helper calls outside the query pipeline (e.g. the permission classifier, token-count probes) are excluded; crash/startup-error results may carry zeroed usage, a resumed or forked session continues from the totals its transcript saved, when it has them (so the first result already carries the earlier turns), and a mid-session /clear resets the running total. The correct field for token/cost accounting; treat it as an estimate, not a billing statement.",
+  "embedded_usage_schema_byte_offset": 198400560,
+  "embedded_usage_schema": "MAIN AGENT LOOP ONLY \\u2014 excludes Task subagent, sidechain, and auxiliary model calls, and is per-turn in streaming-input sessions. Prefer modelUsage for token/cost accounting.",
+  "examples": [
+    {
+      "run": "eval/pruned/campaign/real_swe/latest/runs/swebench/django__django-13195/sol-pi/r42",
+      "terminal_main_loop_usage": {
+        "input_tokens": 2722827,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 41538,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "terminal_per_model_usage": {
+        "Qwen3.8-27B-FP8": {
+          "inputTokens": 2722923,
+          "outputTokens": 41637,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 14.655539999999998,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "qwen3.8-27b-fp8",
+          "provider": "firstParty",
+          "costBasis": "unknown"
+        }
+      },
+      "main_loop_total": 2764365,
+      "query_pipeline_total": 2764560,
+      "difference": 195,
+      "Agent_calls": 0,
+      "system_compact_boundary_events": 0
+    },
+    {
+      "run": "eval/pruned/campaign/real_swe/karpathy/runs/swebench/django__django-13195/karpathy/r42",
+      "terminal_main_loop_usage": {
+        "input_tokens": 2018936,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 36608,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "terminal_per_model_usage": {
+        "Qwen3.8-27B-FP8": {
+          "inputTokens": 2019027,
+          "outputTokens": 36689,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 11.012360000000001,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "qwen3.8-27b-fp8",
+          "provider": "firstParty",
+          "costBasis": "unknown"
+        }
+      },
+      "main_loop_total": 2055544,
+      "query_pipeline_total": 2055716,
+      "difference": 172,
+      "Agent_calls": 0,
+      "system_compact_boundary_events": 0
+    },
+    {
+      "run": "eval/pruned/campaign/real_swe/karpathy_latest/runs/swebench/astropy__astropy-13033/karpathy+sol-pi/r42",
+      "terminal_main_loop_usage": {
+        "input_tokens": 807003,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 18227,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "terminal_per_model_usage": {
+        "Qwen3.8-27B-FP8": {
+          "inputTokens": 807095,
+          "outputTokens": 18805,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 4.5056,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "qwen3.8-27b-fp8",
+          "provider": "firstParty",
+          "costBasis": "unknown"
+        }
+      },
+      "main_loop_total": 825230,
+      "query_pipeline_total": 825900,
+      "difference": 670,
+      "Agent_calls": 0,
+      "system_compact_boundary_events": 0
+    }
+  ],
+  "interpretation": "Pinned CLI schema explicitly says terminal usage is main loop only and modelUsage is cumulative query-pipeline totals including sidechains/internal compaction/workflow calls. Latest terminal modelUsage is correct query-pipeline token accounting estimate, not additive to usage. No Agent calls or compact boundary events in these traces; exact auxiliary call type not identified. Helpers outside query pipeline remain excluded by CLI design. Timeout no-terminal fallback stays incomplete.",
+  "proposed_reconciliation": "Use sum of latest result.modelUsage per-model inputTokens/outputTokens/cacheReadInputTokens/cacheCreationInputTokens, preserve main-loop usage and delta separately. Never add usage to modelUsage or sum repeated terminal cumulative modelUsage. Retain fallback flags where terminal absent.",
+  "reconciliation_status": "Collector now uses latest modelUsage alone as documented; all115 diagnostic totals unchanged; all completed SWE terminal costs reconcile to modelUsage. Timeout fallback remains incomplete. No frozen source changes."
+}

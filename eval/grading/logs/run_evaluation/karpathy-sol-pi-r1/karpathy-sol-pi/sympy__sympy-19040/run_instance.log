@@ -1,0 +1,1720 @@
+2026-10-01 15:11:43,018 - INFO - Creating container for sympy__sympy-19040...
+2026-10-01 15:11:43,036 - INFO - Container for sympy__sympy-19040 created: 10cc229b3182cf96998df527e64ed28bf9228831d57a2bf774fd030776751b3e
+2026-10-01 15:11:43,373 - INFO - Container for sympy__sympy-19040 started: 10cc229b3182cf96998df527e64ed28bf9228831d57a2bf774fd030776751b3e
+2026-10-01 15:11:43,374 - INFO - Intermediate patch for sympy__sympy-19040 written to logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/patch.diff, now applying to container...
+2026-10-01 15:11:43,537 - INFO - >>>>> Applied Patch:
+Checking patch sympy/polys/factortools.py...
+Applied patch sympy/polys/factortools.py cleanly.
+
+2026-10-01 15:11:43,914 - INFO - Git diff before:
+diff --git a/sympy/polys/factortools.py b/sympy/polys/factortools.py
+index c6a5f9f063..b24eb5661d 100644
+--- a/sympy/polys/factortools.py
++++ b/sympy/polys/factortools.py
+@@ -1146,6 +1146,11 @@ def dmp_ext_factor(f, u, K):
+     if all(d <= 0 for d in dmp_degree_list(f, u)):
+         return lc, []
+ 
++    # Split off the content in the leading variable: it is independent of
++    # that variable and would otherwise be dropped by the square-free part
++    # computation below, so it is factored separately and recombined.
++    G, f = dmp_primitive(f, u, K)
++
+     f, F = dmp_sqf_part(f, u, K), f
+     s, g, r = dmp_sqf_norm(f, u, K)
+ 
+@@ -1162,7 +1167,15 @@ def dmp_ext_factor(f, u, K):
+             h = dmp_compose(h, H, u, K)
+             factors[i] = h
+ 
+-    return lc, dmp_trial_division(F, factors, u, K)
++    factors = dmp_trial_division(F, factors, u, K)
++
++    if any(d > 0 for d in dmp_degree_list(G, u - 1)):
++        lc, gfactors = lc*dmp_ext_factor(G, u - 1, K)[0], dmp_ext_factor(G, u - 1, K)[1]
++
++        for g, k in gfactors:
++            factors.insert(0, ([g], k))
++
++    return lc, _sort_factors(factors)
+ 
+ 
+ def dup_gf_factor(f, K):
+2026-10-01 15:11:43,914 - INFO - Eval script for sympy__sympy-19040 written to logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/eval.sh; copying to container...
+2026-10-01 15:41:44,072 - INFO - Test runtime: 1_800.07 seconds
+2026-10-01 15:41:44,072 - INFO - Test output for sympy__sympy-19040 written to logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/test_output.txt
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: <exception str() failed>
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,106 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,107 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,108 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,109 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,110 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,111 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,112 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,113 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,135 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: <exception str() failed>
+
+2026-10-01 15:41:44,135 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,135 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,135 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,135 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,135 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,135 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,136 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,137 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Traceback (most recent call last):
+  File "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/.venv/lib/python3.11/site-packages/swebench/harness/run_evaluation.py", line 216, in run_instance
+    raise EvaluationError(
+swebench.harness.utils.EvaluationError: sympy__sympy-19040: Test timed out after 1800 seconds.
+Check (logs/run_evaluation/karpathy-sol-pi-r1/karpathy-sol-pi/sympy__sympy-19040/run_instance.log) for more information.
+
+2026-10-01 15:41:44,138 - INFO - Attempting to stop container sweb.eval.sympy__sympy-19040.karpathy-sol-pi-r1...
+2026-10-01 15:41:59,353 - INFO - Attempting to remove container sweb.eval.sympy__sympy-19040.karpathy-sol-pi-r1...
+2026-10-01 15:41:59,386 - INFO - Container sweb.eval.sympy__sympy-19040.karpathy-sol-pi-r1 removed.

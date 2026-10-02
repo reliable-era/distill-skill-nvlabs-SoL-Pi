@@ -1,0 +1,24 @@
+diff --git a/query.py b/query.py
+index b71a9d0..dc845eb 100644
+--- a/query.py
++++ b/query.py
+@@ -1,2 +1,4 @@
++from canonical import key
++
+ def get(catalog, name):
+-    return catalog.get(name.lower())
++    return catalog.get(key(name))
+diff --git a/tests/test_query.py b/tests/test_query.py
+index 4378fe8..18c22bc 100644
+--- a/tests/test_query.py
++++ b/tests/test_query.py
+@@ -2,3 +2,9 @@ from catalog import build
+ from query import get
+ def test_simple():
+     assert get(build([("ALPHA",7)]),"alpha")==7
++
++def test_whitespace():
++    assert get(build([("  BETA  ",5)])," beta ")==5
++
++def test_unicode_case():
++    assert get(build([("ÉTÉ",3)]),"été")==3

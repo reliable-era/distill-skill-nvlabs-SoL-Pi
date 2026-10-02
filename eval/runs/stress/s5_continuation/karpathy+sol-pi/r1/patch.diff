@@ -1,0 +1,109 @@
+diff --git a/CONTINUATION.md b/CONTINUATION.md
+index 7d59ee0..b5aeb4c 100644
+--- a/CONTINUATION.md
++++ b/CONTINUATION.md
+@@ -4,9 +4,9 @@ Goal: extend `tasks_cli/cli.py` with three options.
+ 
+ Requirements:
+ 1. `--json` prints `{"items": [...]}`. **DONE** — implemented and tested in tests/test_cli.py. Do not change this output schema.
+-2. `--limit N` prints only the first N items (after sorting, if sorting is requested). N must be a positive integer; reject 0 or negatives with an argparse error.
+-3. `--sort {name,priority}` sorts items: `name` ascending alphabetically; `priority` ascending, ties broken by name ascending.
++2. `--limit N` prints only the first N items (after sorting, if sorting is requested). N must be a positive integer; reject 0 or negatives with an argparse error. **DONE**
++3. `--sort {name,priority}` sorts items: `name` ascending alphabetically; `priority` ascending, ties broken by name ascending. **DONE**
+ 
+ Constraints: stay with a single flat argparse parser (no subcommands); options combine with `--json`.
+ 
+-Next action: implement 2 and 3, add tests for them, run the suite.
++Status: complete. All 10 tests in tests/test_cli.py pass.
+diff --git a/tasks_cli/cli.py b/tasks_cli/cli.py
+index 844f9ff..b1b4c2e 100644
+--- a/tasks_cli/cli.py
++++ b/tasks_cli/cli.py
+@@ -9,11 +9,29 @@ ITEMS = [
+ ]
+ 
+ 
++def _positive_int(value):
++    try:
++        n = int(value)
++    except ValueError:
++        raise argparse.ArgumentTypeError(f"invalid integer value: {value!r}") from None
++    if n <= 0:
++        raise argparse.ArgumentTypeError("must be a positive integer")
++    return n
++
++
+ def main(argv=None):
+     p = argparse.ArgumentParser(prog="tasks")
+     p.add_argument("--json", action="store_true", help="print as JSON")
++    p.add_argument("--limit", type=_positive_int, help="print only the first N items")
++    p.add_argument("--sort", choices=("name", "priority"), help="sort items by field")
+     args = p.parse_args(argv)
+     items = list(ITEMS)
++    if args.sort == "name":
++        items.sort(key=lambda it: it["name"])
++    elif args.sort == "priority":
++        items.sort(key=lambda it: (it["priority"], it["name"]))
++    if args.limit is not None:
++        items = items[: args.limit]
+     if args.json:
+         print(json.dumps({"items": items}))
+     else:
+diff --git a/tests/test_cli.py b/tests/test_cli.py
+index 6090d83..bc33170 100644
+--- a/tests/test_cli.py
++++ b/tests/test_cli.py
+@@ -1,4 +1,7 @@
+ import json
++
++import pytest
++
+ from tasks_cli.cli import main
+ 
+ 
+@@ -6,3 +9,45 @@ def test_json(capsys):
+     main(["--json"])
+     out = json.loads(capsys.readouterr().out)
+     assert list(out) == ["items"] and len(out["items"]) == 4
++
++
++def test_limit(capsys):
++    main(["--limit", "2"])
++    assert capsys.readouterr().out == "2 write report\n1 backup db\n"
++
++
++def test_sort_name(capsys):
++    main(["--sort", "name"])
++    names = [line.split(maxsplit=1)[1] for line in capsys.readouterr().out.splitlines()]
++    assert names == ["archive logs", "backup db", "call vendor", "write report"]
++
++
++def test_sort_priority(capsys):
++    main(["--sort", "priority"])
++    names = [line.split(maxsplit=1)[1] for line in capsys.readouterr().out.splitlines()]
++    assert names == ["backup db", "archive logs", "write report", "call vendor"]
++
++
++def test_limit_after_sort(capsys):
++    main(["--limit", "2", "--sort", "name"])
++    names = [line.split(maxsplit=1)[1] for line in capsys.readouterr().out.splitlines()]
++    assert names == ["archive logs", "backup db"]
++
++
++def test_limit_json(capsys):
++    main(["--json", "--limit", "1"])
++    out = json.loads(capsys.readouterr().out)
++    assert len(out["items"]) == 1 and out["items"][0]["name"] == "write report"
++
++
++def test_sort_limit_json(capsys):
++    main(["--json", "--sort", "priority", "--limit", "2"])
++    out = json.loads(capsys.readouterr().out)
++    assert [it["name"] for it in out["items"]] == ["backup db", "archive logs"]
++
++
++@pytest.mark.parametrize("value", ["0", "-1", "abc"])
++def test_invalid_limit_rejected(value):
++    with pytest.raises(SystemExit) as exc:
++        main(["--limit", value])
++    assert exc.value.code == 2

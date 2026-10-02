@@ -1,0 +1,25 @@
+diff --git a/lookup.py b/lookup.py
+index 16dfae0..a8051bc 100644
+--- a/lookup.py
++++ b/lookup.py
+@@ -1,2 +1,3 @@
++from normalization import key
+ def get(index, name):
+-    return index.get(name.lower())
++    return index.get(key(name))
+diff --git a/tests/test_lookup.py b/tests/test_lookup.py
+index b17188e..ffb9680 100644
+--- a/tests/test_lookup.py
++++ b/tests/test_lookup.py
+@@ -2,3 +2,11 @@ from index import build
+ from lookup import get
+ def test_simple():
+     assert get(build([("ALPHA",7)]),"alpha")==7
++def test_whitespace_and_case_match_canonical_key():
++    # Producer stores the stripped, lowercased key; the consumer must
++    # normalize identically (strip + case-fold) to hit it.
++    idx = build([("  ALPHA  ",7),("Über",1)])
++    assert get(idx,"  ALPHA  ")==7
++    assert get(idx,"alpha")==7
++    assert get(idx," über ")==1
++    assert get(idx,"NOPE") is None

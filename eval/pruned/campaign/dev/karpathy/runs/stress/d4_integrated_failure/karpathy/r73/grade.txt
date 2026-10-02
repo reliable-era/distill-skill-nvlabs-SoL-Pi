@@ -1,0 +1,50 @@
+.FFF.                                                                    [100%]
+=================================== FAILURES ===================================
+_____________________________ test_name[Ada--Ada] ______________________________
+
+first = 'Ada', last = '', want = 'Ada'
+
+    @pytest.mark.parametrize("first,last,want",[(" Ada "," Lovelace ","Ada Lovelace"),("Ada","","Ada"),("","Lovelace","Lovelace"),(" "," ",""),("Mary Jane","Watson","Mary Jane Watson")])
+    def test_name(first,last,want):
+>       assert display(first,last)==want
+E       AssertionError: assert 'Ada ' == 'Ada'
+E         
+E         - Ada
+E         + Ada 
+E         ?    +
+
+test_hidden.py:6: AssertionError
+________________________ test_name[-Lovelace-Lovelace] _________________________
+
+first = '', last = 'Lovelace', want = 'Lovelace'
+
+    @pytest.mark.parametrize("first,last,want",[(" Ada "," Lovelace ","Ada Lovelace"),("Ada","","Ada"),("","Lovelace","Lovelace"),(" "," ",""),("Mary Jane","Watson","Mary Jane Watson")])
+    def test_name(first,last,want):
+>       assert display(first,last)==want
+E       AssertionError: assert ' Lovelace' == 'Lovelace'
+E         
+E         - Lovelace
+E         +  Lovelace
+E         ? +
+
+test_hidden.py:6: AssertionError
+_______________________________ test_name[ - -] ________________________________
+
+first = ' ', last = ' ', want = ''
+
+    @pytest.mark.parametrize("first,last,want",[(" Ada "," Lovelace ","Ada Lovelace"),("Ada","","Ada"),("","Lovelace","Lovelace"),(" "," ",""),("Mary Jane","Watson","Mary Jane Watson")])
+    def test_name(first,last,want):
+>       assert display(first,last)==want
+E       AssertionError: assert ' ' == ''
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - ''
+E         + ' '
+E         ?  +
+
+test_hidden.py:6: AssertionError
+=========================== short test summary info ============================
+FAILED test_hidden.py::test_name[Ada--Ada] - AssertionError: assert 'Ada ' ==...
+FAILED test_hidden.py::test_name[-Lovelace-Lovelace] - AssertionError: assert...
+FAILED test_hidden.py::test_name[ - -] - AssertionError: assert ' ' == ''
+3 failed, 2 passed in 0.02s

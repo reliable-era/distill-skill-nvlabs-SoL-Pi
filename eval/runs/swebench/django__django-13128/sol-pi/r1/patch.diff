@@ -1,0 +1,27 @@
+diff --git a/django/db/models/expressions.py b/django/db/models/expressions.py
+index d913658291..33037740cc 100644
+--- a/django/db/models/expressions.py
++++ b/django/db/models/expressions.py
+@@ -473,6 +473,22 @@ class CombinedExpression(SQLiteNumericMixin, Expression):
+         sql = connection.ops.combine_expression(self.connector, expressions)
+         return expression_wrapper % sql, expression_params
+ 
++    def _resolve_output_field(self):
++        if self.connector == self.SUB:
++            lhs_field = self.lhs._output_field_or_none
++            rhs_field = self.rhs._output_field_or_none
++            if (
++                lhs_field is not None
++                and rhs_field is not None
++                and lhs_field.get_internal_type() in {'DateField', 'DateTimeField', 'TimeField'}
++                and lhs_field.get_internal_type() == rhs_field.get_internal_type()
++            ):
++                # A subtraction of two temporals of the same type is
++                # compiled as a temporal subtraction, which yields a
++                # duration (see as_sql()).
++                return fields.DurationField()
++        return super()._resolve_output_field()
++
+     def resolve_expression(self, query=None, allow_joins=True, reuse=None, summarize=False, for_save=False):
+         c = self.copy()
+         c.is_summary = summarize

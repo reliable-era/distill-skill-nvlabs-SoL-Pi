@@ -1,0 +1,181 @@
+{
+  "scope": "Development-only systematic leave-one-task-out sensitivity, all40 graded cells; primary results retain every task. Does not license case exclusion, tuning against heldout, or equivalence claims.",
+  "all_tasks": {
+    "baseline": {
+      "solved": 8,
+      "runs": 10,
+      "total_tokens": 2077844,
+      "tokens_per_solve": 259730.5
+    },
+    "latest": {
+      "solved": 9,
+      "runs": 10,
+      "total_tokens": 2179469,
+      "tokens_per_solve": 242163.22222222222
+    },
+    "karpathy": {
+      "solved": 7,
+      "runs": 10,
+      "total_tokens": 2197310,
+      "tokens_per_solve": 313901.4285714286
+    },
+    "karpathy_latest": {
+      "solved": 8,
+      "runs": 10,
+      "total_tokens": 2527898,
+      "tokens_per_solve": 315987.25
+    }
+  },
+  "omissions": [
+    {
+      "omitted": "d1_large_log",
+      "arms": {
+        "baseline": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 1655504,
+          "tokens_per_solve": 275917.3333333333
+        },
+        "latest": {
+          "solved": 7,
+          "runs": 8,
+          "total_tokens": 1766994,
+          "tokens_per_solve": 252427.7142857143
+        },
+        "karpathy": {
+          "solved": 5,
+          "runs": 8,
+          "total_tokens": 1822693,
+          "tokens_per_solve": 364538.6
+        },
+        "karpathy_latest": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 2077673,
+          "tokens_per_solve": 346278.8333333333
+        }
+      },
+      "latest_vs_baseline_cost_per_solve_relative_delta": -0.08513281410719287
+    },
+    {
+      "omitted": "d2_interfaces",
+      "arms": {
+        "baseline": {
+          "solved": 8,
+          "runs": 8,
+          "total_tokens": 1650270,
+          "tokens_per_solve": 206283.75
+        },
+        "latest": {
+          "solved": 8,
+          "runs": 8,
+          "total_tokens": 1693695,
+          "tokens_per_solve": 211711.875
+        },
+        "karpathy": {
+          "solved": 7,
+          "runs": 8,
+          "total_tokens": 1782916,
+          "tokens_per_solve": 254702.2857142857
+        },
+        "karpathy_latest": {
+          "solved": 8,
+          "runs": 8,
+          "total_tokens": 1941657,
+          "tokens_per_solve": 242707.125
+        }
+      },
+      "latest_vs_baseline_cost_per_solve_relative_delta": 0.02631387591121448
+    },
+    {
+      "omitted": "d3_stale_resume",
+      "arms": {
+        "baseline": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 1576271,
+          "tokens_per_solve": 262711.8333333333
+        },
+        "latest": {
+          "solved": 7,
+          "runs": 8,
+          "total_tokens": 1618590,
+          "tokens_per_solve": 231227.14285714287
+        },
+        "karpathy": {
+          "solved": 5,
+          "runs": 8,
+          "total_tokens": 1612954,
+          "tokens_per_solve": 322590.8
+        },
+        "karpathy_latest": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 2050601,
+          "tokens_per_solve": 341766.8333333333
+        }
+      },
+      "latest_vs_baseline_cost_per_solve_relative_delta": -0.11984496502006492
+    },
+    {
+      "omitted": "d4_integrated_failure",
+      "arms": {
+        "baseline": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 1643267,
+          "tokens_per_solve": 273877.8333333333
+        },
+        "latest": {
+          "solved": 7,
+          "runs": 8,
+          "total_tokens": 1737064,
+          "tokens_per_solve": 248152.0
+        },
+        "karpathy": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 1693946,
+          "tokens_per_solve": 282324.3333333333
+        },
+        "karpathy_latest": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 1980824,
+          "tokens_per_solve": 330137.3333333333
+        }
+      },
+      "latest_vs_baseline_cost_per_solve_relative_delta": -0.09393178345332798
+    },
+    {
+      "omitted": "d5_small_control",
+      "arms": {
+        "baseline": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 1786064,
+          "tokens_per_solve": 297677.3333333333
+        },
+        "latest": {
+          "solved": 7,
+          "runs": 8,
+          "total_tokens": 1901533,
+          "tokens_per_solve": 271647.5714285714
+        },
+        "karpathy": {
+          "solved": 5,
+          "runs": 8,
+          "total_tokens": 1876731,
+          "tokens_per_solve": 375346.2
+        },
+        "karpathy_latest": {
+          "solved": 6,
+          "runs": 8,
+          "total_tokens": 2060837,
+          "tokens_per_solve": 343472.8333333333
+        }
+      },
+      "latest_vs_baseline_cost_per_solve_relative_delta": -0.0874428751873233
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+diff --git a/pylint/pyreverse/inspector.py b/pylint/pyreverse/inspector.py
+index 8fa12202..b3d74433 100644
+--- a/pylint/pyreverse/inspector.py
++++ b/pylint/pyreverse/inspector.py
+@@ -223,18 +223,66 @@ class Linker(IdGeneratorMixIn, utils.LocalsVisitor):
+         except astroid.InferenceError:
+             pass
+ 
+-    @staticmethod
+-    def handle_assignattr_type(node, parent):
++    def handle_assignattr_type(self, node, parent):
+         """handle an astroid.assignattr node
+ 
+         handle instance_attrs_type
+         """
+         try:
+             values = set(node.infer())
+-            current = set(parent.instance_attrs_type[node.attrname])
+-            parent.instance_attrs_type[node.attrname] = list(current | values)
+         except astroid.InferenceError:
+-            pass
++            return
++        annotation = self._get_type_annotation(node)
++        if annotation is not None:
++            # an explicit annotation is the authoritative type for the value
++            values = {annotation}
++        current = set(parent.instance_attrs_type[node.attrname])
++        parent.instance_attrs_type[node.attrname] = list(current | values)
++
++    def _get_type_annotation(self, node):
++        """return the inferred type annotation of the value assigned to the
++        given :class:`astroid.AssignAttr` node, when that value is an annotated
++        argument of the enclosing function.
++
++        Return None otherwise.
++        """
++        statement = node.parent
++        if not isinstance(statement, astroid.Assign):
++            return None
++        value = statement.value
++        if not isinstance(value, astroid.Name):
++            return None
++        frame = statement.frame()
++        if not isinstance(frame, astroid.FunctionDef):
++            return None
++        annotation = self._get_annotation_for_argument(frame, value.name)
++        if annotation is None:
++            return None
++        try:
++            inferred = [i for i in annotation.infer() if i is not astroid.Uninferable]
++        except astroid.InferenceError:
++            return None
++        if not inferred:
++            return None
++        return inferred[0]
++
++    @staticmethod
++    def _get_annotation_for_argument(function, arg_name):
++        """return the annotation node of the named argument of the given
++        function, or None if the argument has no annotation.
++        """
++        args = function.args
++        for arg_names, annotations in (
++            (args.posonlyargs, args.posonlyargs_annotations),
++            (args.args, args.annotations),
++            (args.kwonlyargs, args.kwonlyargs_annotations),
++        ):
++            for position, arg in enumerate(arg_names):
++                if arg.name == arg_name:
++                    if position < len(annotations):
++                        return annotations[position]
++                    return None
++        return None
+ 
+     def visit_import(self, node):
+         """visit an astroid.Import node

@@ -1,0 +1,159 @@
+Reviewed skill diagnosis — 2026-10-02
+
+Evidence scope
+The original matrix is complete: 96/96 SWE-bench runs graded and 60/60 stress
+runs graded by their hidden tests. All 156 trace request counts and summed
+input usage reconcile with the aggregation code. SWE-bench has 12 tasks x 2
+rounds; stress has 5 cases x 3 rounds. The original ZIP was verified byte for
+byte against all 12 files in eval/skills/efficient-coding before editing.
+Upstream inspected locally: SoL-Pi commit e1a586af0ad8956f42ae5b26bba20e48fbf30e00.
+No upstream extension was installed or benchmarked.
+
+Updated findings
+All original SWE-bench arms solve 19/24 runs. Sol-pi uses 6.5% more tokens per
+verified solve than baseline, and combined uses 3.8% more than karpathy.
+These replace the preliminary 9% and 7% estimates. Sol-pi-minus-baseline
+is +123,642 tokens/run (approximately +127,720 input and -4,078 output).
+Combined-minus-karpathy is +69,328 tokens/run (+71,470 input and -2,142 output).
+Mean requests: sol-pi 44.42, baseline 43.79, karpathy 41.38, combined 42.29.
+Aggregate input/request: sol-pi 44,965, baseline 42,691.
+
+Strongest established finding: implementation mismatch
+Upstream ObservationPack replaces large historical observations in the messages
+sent to the provider; our evidence archive does not change provider history.
+Upstream Online Context Compact invokes native context.compact; our continuation
+notes do not remove history. Upstream Action Fusion extends edit/write schemas
+with then_run; our skill registers no such tools. The upstream reducer intercepts
+tool results, invokes a configured reducer, and returns a checked receipt; our
+helper is manual and has no tool-result interception.
+Sources: SoL-Pi/src/sol-pi/extensions/{observation-pack,action-fusion,
+online-context-compact,evidence-preserving-reducer}/ and
+skills/efficient-coding/references/execution.md.
+These interface facts are directly verified. They establish that this benchmark
+evaluates a prompt adaptation, not the original runtime mechanisms. They do not
+prove that adding those mechanisms to this setup will reproduce upstream savings.
+
+Trace-confirmed observations
+No explicit efficient-coding reference reads, helper calls, or compaction events
+were found in the 72 SWE-bench skill-bearing runs. One sol-pi run read SKILL.md
+directly instead of calling Skill. Extra reference loading is therefore not a
+supported explanation for SWE-bench overhead.
+Sol-pi has 53 consecutive assistant-request pairs with Edit/Write followed by
+Bash; baseline has 38. Some commands are not validation, so this is not a count
+of missed fusion opportunities. The small-fix sol-pi/r1 trace specifically claims
+fusion while using separate Edit and Bash requests.
+Tool validation errors: sol-pi 87, baseline 48, karpathy 32, combined 58.
+Skill validation errors: sol-pi 5, combined 11. API error results occur in all arms.
+Those counts describe association, not a demonstrated effect of the skill.
+Only 14 serialized sol-pi tool results exceed 10 KiB. This is an approximate
+indicator of large-output opportunities, not exact upstream eligibility.
+The fixed benchmark prompt forces skill loading; organic activation was not tested.
+
+Outliers and uncertainty
+The largest sol-pi cost increase is django__django-11149/r2: +2,342,865 tokens,
+60 requests versus baseline's 42, and 24 tool validation errors versus 1.
+Both resolve. This cell is 79% of the final net token increase. Removing the
+whole task leaves a positive difference of +40,139 tokens/run, versus +123,642
+with all tasks. Thus the average is strongly influenced by outliers, but the
+positive point estimate is not solely the result of that single task.
+14/24 sol-pi cells are more expensive and 10/24 cheaper. Combined is more
+expensive in 11/24 cells and cheaper in 13/24; its mean does not describe a
+consistent per-run regression.
+
+The refreshed analyzer resamples whole tasks while retaining all rounds and
+paired arms, with 5,000 bootstrap samples and seed 42. SWE-bench 95% intervals:
+- Sol-pi minus baseline, tokens/run: [-139,595, +393,584].
+- Combined minus karpathy, tokens/run: [-184,228, +327,651].
+- Sol-pi minus baseline, tokens/verified solve: [-199,461, +470,453].
+- Combined minus karpathy, tokens/verified solve: [-305,177, +370,937].
+No SWE-bench savings or regression is statistically established by these intervals.
+Per-task resolution differences average to zero even for the task whose rounds
+trade wins/losses, so this clustered empirical resolution interval degenerates
+to [0,0]. That is a sampling limitation, not evidence of exact equivalence.
+Stress sol-pi-minus-baseline has a positive task-cluster interval [1,102, 27,563]
+tokens/run, whereas the old cell-wise interval crosses zero. Only five clusters
+are available, so do not overstate this sensitivity result. Both methods and
+limitations are retained in skill-diagnosis.json.
+
+Supported correction versus hypotheses
+The skill's main entrypoint contained irrelevant delegation and measurement
+instructions for ordinary single-agent tasks. Removing them reduces injected
+instruction size; it is a defensible low-risk correction. The mechanism mismatch
+is documented, rather than hidden behind claims of prompt-only compaction/fusion.
+Whether shorter instructions reduce retries or total task tokens remains a
+hypothesis requiring new observations. A prompt cannot repair missing runtime
+hooks, and this revision does not claim to do so.
+
+Applied changes
+Canonical revised source: skills/efficient-coding/.
+Discoverable project link: .claude/skills/efficient-coding.
+Updated distributable: .claude/skills/efficient-coding.zip.
+Original distributable: eval/diagnostics/original-efficient-coding.zip.
+SKILL.md: 6,573 -> 2,584 bytes, a 60.7% reduction by bytes (not tokenizer counts).
+Preserved focused reads, source-checked evidence, actual exit statuses, useful
+continuation, and verification. Removed mandatory completion-contract narration,
+routine telemetry reporting, delegation planning, and subtask bookkeeping from
+the main path. Supporting references remain conditional. Clarified actual fusion
+and native-compaction prerequisites in execution.md and worked-examples.md.
+Added concise recovery from rejected tool arguments, without claiming this fixes
+the backend/parser reliability issue. UI metadata now describes focused reads.
+Original eval/skills files and original run evidence remain unchanged.
+
+Validation
+Skill-creator validator passes. Every local reference link resolves. ZIP CRC and
+contents match revised source. Original frozen copy matches the saved original
+archive. eval/check_skill_revision.py runs fresh, sequential containers against
+baseline, original, and an immutable revision snapshot; its manifest and output
+are in eval/revision_eval/. The new stress grading path uses pytest's exit code
+rather than searching truncated output for passing words. Original graded evidence
+was retained. Review the pilot summary for behavior and observed cost, not a
+claim of statistically established or held-out savings.
+
+Completed revision smoke check
+All 15 runs pass hidden tests, with original, revised, and baseline each solving
+5/5 cases. This one-round in-sample check observed:
+- Original: 1,212,816 total tokens, 242,563 tokens/solve, 12.2 requests/case.
+- Revised: 1,063,006 total tokens, 212,601 tokens/solve, 9.2 requests/case.
+- Baseline: 879,073 total tokens, 175,815 tokens/solve, 9.0 requests/case.
+Revision uses 12.4% fewer tokens than original, but 20.9% more than baseline.
+It does not meet the project's baseline-saving goal in this smoke check.
+All 15 usage/request totals and source hashes were verified. Result source:
+eval/revision_eval/summary.json, manifest.json, and trace-review.json.
+
+Counterexample: the revised fabricated-quote case uses 387,407 tokens versus
+249,422 original and 197,318 baseline. Its first request reads the full log
+before successfully loading the skill, so input jumps from 15,679 to 42,193
+on the next request. Skill loading succeeds in request 5 of 9; 190,054 input
+tokens have already been spent through that call, out of 381,297 input tokens.
+The 48,054-byte serialized result then remains in subsequent request history.
+Thus even a shorter skill cannot retroactively eliminate that replay. The
+malformed calls also begin before the skill body is loaded, countering a simple
+story that the body itself causes every tool failure. Metadata effects and
+run variance remain possible; the trace is not a causal ablation.
+
+Assessment after correction
+The shipped instruction-level revision removes demonstrable loading bulk and
+unnecessary administrative requirements, and passes the behavioral smoke cases.
+It remains an unproven efficiency candidate. Reproducing upstream runtime gains
+requires an independently evaluated harness integration; no such integration
+was installed in this task. Do not describe the revision as a validated
+baseline-beating optimization or use this five-case pilot to claim noninferiority.
+
+Expanded six-condition smoke comparison
+The user requested one table with the missing Karpathy measurements filled.
+Added 15 real, sequential runs: Karpathy only, Karpathy + original, and
+Karpathy + latest, five existing cases x one round each. These are follow-up
+measurements after the initial three conditions; this staging is in the manifest.
+All six conditions solve 5/5 and every run has grade exit code zero. All 30
+input totals and request counts reconcile, with identical task prompts within
+each case, Claude Code 2.1.286 and Qwen3.8-27B-FP8 throughout.
+baseline: 175,814.6 tokens/solve, 9.0 requests/case.
+original: 242,563.2 tokens/solve, 12.2 requests/case.
+revised: 212,601.2 tokens/solve, 9.2 requests/case.
+karpathy: 251,784.2 tokens/solve, 11.6 requests/case.
+karpathy_original: 279,888.6 tokens/solve, 11.8 requests/case.
+karpathy_revised: 233,269.2 tokens/solve, 11.0 requests/case.
+Latest combined costs -7.4% versus Karpathy alone and -16.7% versus the original combined bundle.
+Baseline is still cheapest. One in-sample round does not establish significance
+or noninferiority. The combined table is in revision_eval/comparison.csv and
+comparison.txt, and in the revision section of report.md.

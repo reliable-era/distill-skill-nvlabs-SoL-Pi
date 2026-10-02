@@ -1,0 +1,30 @@
+diff --git a/crm/export.py b/crm/export.py
+index 4ca4b65..8f3f279 100644
+--- a/crm/export.py
++++ b/crm/export.py
+@@ -1,9 +1,13 @@
++import csv
++import io
+ from crm.names import format_name
+ 
+ 
+ def export_csv(contacts):
+     """Export contacts as CSV text with header 'name,email'."""
+-    rows = ["name,email"]
++    buf = io.StringIO()
++    writer = csv.writer(buf, lineterminator="\n")
++    writer.writerow(["name", "email"])
+     for c in contacts:
+-        rows.append(f"{format_name(c['first'], c['last'])},{c['email']}")
+-    return "\n".join(rows) + "\n"
++        writer.writerow([format_name(c['first'], c['last']), c['email']])
++    return buf.getvalue()
+diff --git a/crm/names.py b/crm/names.py
+index 329cc98..619c125 100644
+--- a/crm/names.py
++++ b/crm/names.py
+@@ -1,3 +1,3 @@
+ def format_name(first, last):
+     """Display name for a contact."""
+-    return f"{first} {last}"
++    return f"{last}, {first}"

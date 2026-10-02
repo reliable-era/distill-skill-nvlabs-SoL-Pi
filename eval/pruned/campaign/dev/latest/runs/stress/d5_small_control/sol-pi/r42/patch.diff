@@ -1,0 +1,8 @@
+diff --git a/paging.py b/paging.py
+index 700ab30..ed9a4bf 100644
+--- a/paging.py
++++ b/paging.py
+@@ -1,2 +1,2 @@
+ def pages(count,size):
+-    return count // size
++    return (count + size - 1) // size

@@ -1,0 +1,36 @@
+{
+  "errors": [],
+  "resolved": true,
+  "official_tests": {
+    "FAIL_TO_PASS": {
+      "success": 10,
+      "failure": 0
+    },
+    "PASS_TO_PASS": {
+      "success": 0,
+      "failure": 0
+    },
+    "FAIL_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    },
+    "PASS_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    }
+  },
+  "report_sha256": "7313f8e114e281867d03d00ad237718bc96142fd53a4c86afab9558c650d8d9f",
+  "usage_complete": true,
+  "pipeline_tokens": 2723101,
+  "main_loop_tokens": 2723101,
+  "auxiliary_tokens": 0,
+  "actor_end": "error_max_turns",
+  "actor_num_turns": 61,
+  "actor_classification": "Turn limit exit with valid terminal usage and graded patch; not grader infrastructure error.",
+  "exposure": "Successful Bash download of upstream v2.9.0 source and three pyreverse test files, followed by local diff against task checkout returning repair-relevant source/test changes. Failed WebFetch distinguished. No git clone or targeted git-show of commit observed.",
+  "network_calls": 10,
+  "web_calls": 1,
+  "temporary_fixture": "/tmp/test_new_pr.py reproduces downloaded upstream tests; no final tracked test changes.",
+  "final_test_files": [],
+  "agent_calls": 0
+}

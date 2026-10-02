@@ -1,0 +1,10 @@
+diff --git a/query.py b/query.py
+index b71a9d0..dc845eb 100644
+--- a/query.py
++++ b/query.py
+@@ -1,2 +1,4 @@
++from canonical import key
++
+ def get(catalog, name):
+-    return catalog.get(name.lower())
++    return catalog.get(key(name))

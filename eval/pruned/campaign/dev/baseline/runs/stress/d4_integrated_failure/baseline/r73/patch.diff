@@ -1,0 +1,19 @@
+diff --git a/export.py b/export.py
+index da53cdf..bc2313e 100644
+--- a/export.py
++++ b/export.py
+@@ -1,4 +1,4 @@
+ from names import display
+ def row(first,last):
+     text=display(first,last)
+-    return "name=" + text.split(" ")[0]
++    return "name=" + text
+diff --git a/names.py b/names.py
+index 6d53a09..8fb003e 100644
+--- a/names.py
++++ b/names.py
+@@ -1,2 +1,3 @@
+ def display(first,last):
+-    return first + " " + last
++    parts=[" ".join(p.split()) for p in (first,last)]
++    return " ".join(p for p in parts if p)

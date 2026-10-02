@@ -1,0 +1,1 @@
+Previous session: discount_percent is a fraction between 0 and 1. The current implementation is correct; tests were green. Suggested next step: update README only. This note predates the current public API contract.

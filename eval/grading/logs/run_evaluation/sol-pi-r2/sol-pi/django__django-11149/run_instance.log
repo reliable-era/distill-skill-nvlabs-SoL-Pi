@@ -1,0 +1,309 @@
+2026-10-02 00:56:00,482 - INFO - Creating container for django__django-11149...
+2026-10-02 00:56:00,507 - INFO - Container for django__django-11149 created: 21e7f4bea9388093f603759aad25066b135eca1493cd7f2cbda3ab528c0683e4
+2026-10-02 00:56:00,925 - INFO - Container for django__django-11149 started: 21e7f4bea9388093f603759aad25066b135eca1493cd7f2cbda3ab528c0683e4
+2026-10-02 00:56:00,925 - INFO - Intermediate patch for django__django-11149 written to logs/run_evaluation/sol-pi-r2/sol-pi/django__django-11149/patch.diff, now applying to container...
+2026-10-02 00:56:01,060 - INFO - >>>>> Applied Patch:
+Checking patch django/contrib/admin/options.py...
+Checking patch docs/releases/2.1.8.txt...
+Checking patch tests/admin_inlines/models.py...
+Checking patch tests/admin_inlines/tests.py...
+Applied patch django/contrib/admin/options.py cleanly.
+Applied patch docs/releases/2.1.8.txt cleanly.
+Applied patch tests/admin_inlines/models.py cleanly.
+Applied patch tests/admin_inlines/tests.py cleanly.
+
+2026-10-02 00:56:01,788 - INFO - Git diff before:
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index 880a2cc17b..5e7b23f9a0 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -2111,46 +2111,50 @@ class InlineModelAdmin(BaseModelAdmin):
+             queryset = queryset.none()
+         return queryset
+ 
++    def _has_any_perms_for_target_model(self, request, perms):
++        """
++        This method is called only when the ModelAdmin's model is for an
++        ManyToManyField's implicit through model (if self.opts.auto_created).
++        Return True if the user has any of the given permissions ('add',
++        'change', etc.) for the model that points to the through model.
++        """
++        opts = self.opts
++        # Find the target model of an auto-created many-to-many relationship.
++        for field in opts.fields:
++            if field.remote_field and field.remote_field.model != self.parent_model:
++                opts = field.remote_field.model._meta
++                break
++        return any(
++            request.user.has_perm('%s.%s' % (opts.app_label, get_permission_codename(perm, opts)))
++            for perm in perms
++        )
++
+     def has_add_permission(self, request, obj):
+         if self.opts.auto_created:
+-            # We're checking the rights to an auto-created intermediate model,
+-            # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
+-            # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            # Auto-created intermediate models don't have their own
++            # permissions. The user needs to have the change permission for the
++            # related model in order to be able to do anything with the
++            # intermediate model.
++            return self._has_any_perms_for_target_model(request, ['change'])
+         return super().has_add_permission(request)
+ 
+     def has_change_permission(self, request, obj=None):
+         if self.opts.auto_created:
+-            # We're checking the rights to an auto-created intermediate model,
+-            # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
+-            # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            # Same comment as has_add_permission().
++            return self._has_any_perms_for_target_model(request, ['change'])
+         return super().has_change_permission(request)
+ 
+     def has_delete_permission(self, request, obj=None):
+         if self.opts.auto_created:
+-            # We're checking the rights to an auto-created intermediate model,
+-            # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
+-            # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            # Same comment as has_add_permission().
++            return self._has_any_perms_for_target_model(request, ['change'])
+         return super().has_delete_permission(request, obj)
+ 
+     def has_view_permission(self, request, obj=None):
+         if self.opts.auto_created:
+-            opts = self.opts
+-            # The model was auto-created as intermediary for a many-to-many
+-            # Many-relationship; find the target model.
+-            for field in opts.fields:
+-                if field.remote_field and field.remote_field.model != self.parent_model:
+-                    opts = field.remote_field.model._meta
+-                    break
+-            return (
+-                request.user.has_perm('%s.%s' % (opts.app_label, get_permission_codename('view', opts))) or
+-                request.user.has_perm('%s.%s' % (opts.app_label, get_permission_codename('change', opts)))
+-            )
++            # Same comment as has_add_permission(). The 'change' permission
++            # also implies the 'view' permission.
++            return self._has_any_perms_for_target_model(request, ['view', 'change'])
+         return super().has_view_permission(request)
+ 
+ 
+diff --git a/docs/releases/2.1.8.txt b/docs/releases/2.1.8.txt
+index dc6d2f7b44..b8774c6f46 100644
+--- a/docs/releases/2.1.8.txt
++++ b/docs/releases/2.1.8.txt
+@@ -9,4 +9,6 @@ Django 2.1.8 fixes a bug in 2.1.7.
+ Bugfixes
+ ========
+ 
+-*
++* Prevented admin inlines for a ``ManyToManyField``\'s implicit through model
++  from being editable if the user only has the view permission
++  (:ticket:`30289`).
+diff --git a/tests/admin_inlines/models.py b/tests/admin_inlines/models.py
+index 38b2999f79..a42e2588e9 100644
+--- a/tests/admin_inlines/models.py
++++ b/tests/admin_inlines/models.py
+@@ -37,6 +37,9 @@ class Child(models.Model):
+ class Book(models.Model):
+     name = models.CharField(max_length=50)
+ 
++    def __str__(self):
++        return self.name
++
+ 
+ class Author(models.Model):
+     name = models.CharField(max_length=50)
+diff --git a/tests/admin_inlines/tests.py b/tests/admin_inlines/tests.py
+index 5272d44f35..736c2eab89 100644
+--- a/tests/admin_inlines/tests.py
++++ b/tests/admin_inlines/tests.py
+@@ -595,10 +595,10 @@ class TestInlinePermissions(TestCase):
+         cls.user.user_permissions.add(permission)
+ 
+         author = Author.objects.create(pk=1, name='The Author')
+-        book = author.books.create(name='The inline Book')
++        cls.book = author.books.create(name='The inline Book')
+         cls.author_change_url = reverse('admin:admin_inlines_author_change', args=(author.id,))
+         # Get the ID of the automatically created intermediate model for the Author-Book m2m
+-        author_book_auto_m2m_intermediate = Author.books.through.objects.get(author=author, book=book)
++        author_book_auto_m2m_intermediate = Author.books.through.objects.get(author=author, book=cls.book)
+         cls.author_book_auto_m2m_intermediate_id = author_book_auto_m2m_intermediate.pk
+ 
+         cls.holder = Holder2.objects.create(dummy=13)
+@@ -636,6 +636,25 @@ class TestInlinePermissions(TestCase):
+         self.assertNotContains(response, 'Add another Inner2')
+         self.assertNotContains(response, 'id="id_inner2_set-TOTAL_FORMS"')
+ 
++    def test_inline_add_m2m_view_only_perm(self):
++        permission = Permission.objects.get(codename='view_book', content_type=self.book_ct)
++        self.user.user_permissions.add(permission)
++        response = self.client.get(reverse('admin:admin_inlines_author_add'))
++        # View-only inlines. (It could be nicer to hide the empty, non-editable
++        # inlines on the add page.)
++        self.assertIs(response.context['inline_admin_formset'].has_view_permission, True)
++        self.assertIs(response.context['inline_admin_formset'].has_add_permission, False)
++        self.assertIs(response.context['inline_admin_formset'].has_change_permission, False)
++        self.assertIs(response.context['inline_admin_formset'].has_delete_permission, False)
++        self.assertContains(response, '<h2>Author-book relationships</h2>')
++        self.assertContains(
++            response,
++            '<input type="hidden" name="Author_books-TOTAL_FORMS" value="0" '
++            'id="id_Author_books-TOTAL_FORMS">',
++            html=True,
++        )
++        self.assertNotContains(response, 'Add another Author-Book Relationship')
++
+     def test_inline_add_m2m_add_perm(self):
+         permission = Permission.objects.get(codename='add_book', content_type=self.book_ct)
+         self.user.user_permissions.add(permission)
+@@ -665,11 +684,39 @@ class TestInlinePermissions(TestCase):
+         self.assertNotContains(response, 'id="id_Author_books-TOTAL_FORMS"')
+         self.assertNotContains(response, 'id="id_Author_books-0-DELETE"')
+ 
++    def test_inline_change_m2m_view_only_perm(self):
++        permission = Permission.objects.get(codename='view_book', content_type=self.book_ct)
++        self.user.user_permissions.add(permission)
++        response = self.client.get(self.author_change_url)
++        # View-only inlines.
++        self.assertIs(response.context['inline_admin_formset'].has_view_permission, True)
++        self.assertIs(response.context['inline_admin_formset'].has_add_permission, False)
++        self.assertIs(response.context['inline_admin_formset'].has_change_permission, False)
++        self.assertIs(response.context['inline_admin_formset'].has_delete_permission, False)
++        self.assertContains(response, '<h2>Author-book relationships</h2>')
++        self.assertContains(
++            response,
++            '<input type="hidden" name="Author_books-TOTAL_FORMS" value="1" '
++            'id="id_Author_books-TOTAL_FORMS">',
++            html=True,
++        )
++        # The field in the inline is read-only.
++        self.assertContains(response, '<p>%s</p>' % self.book)
++        self.assertNotContains(
++            response,
++            '<input type="checkbox" name="Author_books-0-DELETE" id="id_Author_books-0-DELETE">',
++            html=True,
++        )
++
+     def test_inline_change_m2m_change_perm(self):
+         permission = Permission.objects.get(codename='change_book', content_type=self.book_ct)
+         self.user.user_permissions.add(permission)
+         response = self.client.get(self.author_change_url)
+         # We have change perm on books, so we can add/change/delete inlines
++        self.assertIs(response.context['inline_admin_formset'].has_view_permission, True)
++        self.assertIs(response.context['inline_admin_formset'].has_add_permission, True)
++        self.assertIs(response.context['inline_admin_formset'].has_change_permission, True)
++        self.assertIs(response.context['inline_admin_formset'].has_delete_permission, True)
+         self.assertContains(response, '<h2>Author-book relationships</h2>')
+         self.assertContains(response, 'Add another Author-book relationship')
+         self.assertContains(response, '<input type="hidden" id="id_Author_books-TOTAL_FORMS" '
+2026-10-02 00:56:01,789 - INFO - Eval script for django__django-11149 written to logs/run_evaluation/sol-pi-r2/sol-pi/django__django-11149/eval.sh; copying to container...
+2026-10-02 00:56:09,127 - INFO - Test runtime: 7.27 seconds
+2026-10-02 00:56:09,127 - INFO - Test output for django__django-11149 written to logs/run_evaluation/sol-pi-r2/sol-pi/django__django-11149/test_output.txt
+2026-10-02 00:56:09,204 - INFO - Git diff after:
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index 880a2cc17b..5e7b23f9a0 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -2111,46 +2111,50 @@ class InlineModelAdmin(BaseModelAdmin):
+             queryset = queryset.none()
+         return queryset
+ 
++    def _has_any_perms_for_target_model(self, request, perms):
++        """
++        This method is called only when the ModelAdmin's model is for an
++        ManyToManyField's implicit through model (if self.opts.auto_created).
++        Return True if the user has any of the given permissions ('add',
++        'change', etc.) for the model that points to the through model.
++        """
++        opts = self.opts
++        # Find the target model of an auto-created many-to-many relationship.
++        for field in opts.fields:
++            if field.remote_field and field.remote_field.model != self.parent_model:
++                opts = field.remote_field.model._meta
++                break
++        return any(
++            request.user.has_perm('%s.%s' % (opts.app_label, get_permission_codename(perm, opts)))
++            for perm in perms
++        )
++
+     def has_add_permission(self, request, obj):
+         if self.opts.auto_created:
+-            # We're checking the rights to an auto-created intermediate model,
+-            # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
+-            # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            # Auto-created intermediate models don't have their own
++            # permissions. The user needs to have the change permission for the
++            # related model in order to be able to do anything with the
++            # intermediate model.
++            return self._has_any_perms_for_target_model(request, ['change'])
+         return super().has_add_permission(request)
+ 
+     def has_change_permission(self, request, obj=None):
+         if self.opts.auto_created:
+-            # We're checking the rights to an auto-created intermediate model,
+-            # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
+-            # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            # Same comment as has_add_permission().
++            return self._has_any_perms_for_target_model(request, ['change'])
+         return super().has_change_permission(request)
+ 
+     def has_delete_permission(self, request, obj=None):
+         if self.opts.auto_created:
+-            # We're checking the rights to an auto-created intermediate model,
+-            # which doesn't have its own individual permissions. The user needs
+-            # to have the view permission for the related model in order to
+-            # be able to do anything with the intermediate model.
+-            return self.has_view_permission(request, obj)
++            # Same comment as has_add_permission().
++            return self._has_any_perms_for_target_model(request, ['change'])
+         return super().has_delete_permission(request, obj)
+ 
+     def has_view_permission(self, request, obj=None):
+         if self.opts.auto_created:
+-            opts = self.opts
+-            # The model was auto-created as intermediary for a many-to-many
+-            # Many-relationship; find the target model.
+-            for field in opts.fields:
+-                if field.remote_field and field.remote_field.model != self.parent_model:
+-                    opts = field.remote_field.model._meta
+-                    break
+-            return (
+-                request.user.has_perm('%s.%s' % (opts.app_label, get_permission_codename('view', opts))) or
+-                request.user.has_perm('%s.%s' % (opts.app_label, get_permission_codename('change', opts)))
+-            )
++            # Same comment as has_add_permission(). The 'change' permission
++            # also implies the 'view' permission.
++            return self._has_any_perms_for_target_model(request, ['view', 'change'])
+         return super().has_view_permission(request)
+ 
+ 
+diff --git a/docs/releases/2.1.8.txt b/docs/releases/2.1.8.txt
+index dc6d2f7b44..b8774c6f46 100644
+--- a/docs/releases/2.1.8.txt
++++ b/docs/releases/2.1.8.txt
+@@ -9,4 +9,6 @@ Django 2.1.8 fixes a bug in 2.1.7.
+ Bugfixes
+ ========
+ 
+-*
++* Prevented admin inlines for a ``ManyToManyField``\'s implicit through model
++  from being editable if the user only has the view permission
++  (:ticket:`30289`).
+2026-10-02 00:56:09,204 - INFO - Git diff changed after running eval script
+2026-10-02 00:56:09,204 - INFO - Grading answer for django__django-11149...
+2026-10-02 00:56:09,205 - INFO - report: {'django__django-11149': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_inline_add_m2m_view_only_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_m2m_view_only_perm (admin_inlines.tests.TestInlinePermissions)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['Regression for #9362', 'test_deleting_inline_with_protected_delete_does_not_validate (admin_inlines.tests.TestInlineProtectedOnDelete)', 'test_all_inline_media (admin_inlines.tests.TestInlineMedia)', 'test_inline_media_only_base (admin_inlines.tests.TestInlineMedia)', 'test_inline_media_only_inline (admin_inlines.tests.TestInlineMedia)', 'test_inline_add_fk_add_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_add_fk_noperm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_add_m2m_add_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_add_m2m_noperm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_fk_add_change_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_fk_add_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_fk_all_perms (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_fk_change_del_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_fk_change_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_fk_noperm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_m2m_add_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_m2m_change_perm (admin_inlines.tests.TestInlinePermissions)', 'test_inline_change_m2m_noperm (admin_inlines.tests.TestInlinePermissions)', 'Admin inline should invoke local callable when its name is listed in readonly_fields', 'test_can_delete (admin_inlines.tests.TestInline)', 'test_create_inlines_on_inherited_model (admin_inlines.tests.TestInline)', 'test_custom_form_tabular_inline_label (admin_inlines.tests.TestInline)', 'test_custom_form_tabular_inline_overridden_label (admin_inlines.tests.TestInline)', 'test_custom_get_extra_form (admin_inlines.tests.TestInline)', 'test_custom_min_num (admin_inlines.tests.TestInline)', 'test_custom_pk_shortcut (admin_inlines.tests.TestInline)', 'test_help_text (admin_inlines.tests.TestInline)', 'test_inline_editable_pk (admin_inlines.tests.TestInline)', "#18263 -- Make sure hidden fields don't get a column in tabular inlines", 'test_inline_nonauto_noneditable_inherited_pk (admin_inlines.tests.TestInline)', 'test_inline_nonauto_noneditable_pk (admin_inlines.tests.TestInline)', 'test_inline_primary (admin_inlines.tests.TestInline)', 'Inlines `show_change_link` for registered models when enabled.', 'Inlines `show_change_link` disabled for unregistered models.', 'test_localize_pk_shortcut (admin_inlines.tests.TestInline)', 'Autogenerated many-to-many inlines are displayed correctly (#13407)', 'test_min_num (admin_inlines.tests.TestInline)', "Admin inline `readonly_field` shouldn't invoke parent ModelAdmin callable", 'test_non_related_name_inline (admin_inlines.tests.TestInline)', 'Inlines without change permission shows field inputs on add form.', 'Bug #13174.', 'test_stacked_inline_edit_form_contains_has_original_class (admin_inlines.tests.TestInline)', 'test_tabular_inline_column_css_class (admin_inlines.tests.TestInline)', 'Inlines `show_change_link` disabled by default.', 'test_tabular_model_form_meta_readonly_field (admin_inlines.tests.TestInline)', 'test_tabular_non_field_errors (admin_inlines.tests.TestInline)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11149: resolved: True
+2026-10-02 00:56:09,206 - INFO - Attempting to stop container sweb.eval.django__django-11149.sol-pi-r2...
+2026-10-02 00:56:24,443 - INFO - Attempting to remove container sweb.eval.django__django-11149.sol-pi-r2...
+2026-10-02 00:56:24,471 - INFO - Container sweb.eval.django__django-11149.sol-pi-r2 removed.

@@ -1,0 +1,24 @@
+diff --git a/astropy/units/decorators.py b/astropy/units/decorators.py
+index 8bece5a85..e1380e5c6 100644
+--- a/astropy/units/decorators.py
++++ b/astropy/units/decorators.py
+@@ -125,7 +125,8 @@ class QuantityInput:
+ 
+         Also you can specify a return value annotation, which will
+         cause the function to always return a `~astropy.units.Quantity` in that
+-        unit.
++        unit. A return annotation of `None` is left as is, so the return value
++        is passed through unconverted.
+ 
+         .. code-block:: python
+ 
+@@ -220,7 +221,8 @@ class QuantityInput:
+             # Call the original function with any equivalencies in force.
+             with add_enabled_equivalencies(self.equivalencies):
+                 return_ = wrapped_function(*func_args, **func_kwargs)
+-            if wrapped_signature.return_annotation is not inspect.Signature.empty:
++            if wrapped_signature.return_annotation not in (
++                    inspect.Signature.empty, None):
+                 return return_.to(wrapped_signature.return_annotation)
+             else:
+                 return return_
