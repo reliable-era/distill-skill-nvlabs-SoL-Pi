@@ -1,0 +1,130 @@
+{
+  "selection_seed": 20261003,
+  "rule": "Sorted known pre-pulled prior eligible pool minus all prior exposures; restrict to dataset difficulty <15 min fix, random.choice sequentially without previously selected repository. No model outcomes used. Smallest means human-estimated fix difficulty, not repository size or measured model runtime.",
+  "eligible_ids": [
+    "astropy__astropy-14096",
+    "django__django-10554",
+    "django__django-11964",
+    "django__django-12050",
+    "django__django-12276",
+    "django__django-13212",
+    "django__django-13807",
+    "django__django-13964",
+    "django__django-14238",
+    "django__django-14500",
+    "django__django-14608",
+    "django__django-14672",
+    "django__django-14999",
+    "django__django-15022",
+    "django__django-15569",
+    "django__django-15695",
+    "django__django-15973",
+    "django__django-16819",
+    "django__django-16899",
+    "django__django-17029",
+    "matplotlib__matplotlib-23299",
+    "matplotlib__matplotlib-23314",
+    "matplotlib__matplotlib-26208",
+    "psf__requests-6028",
+    "sphinx-doc__sphinx-7910",
+    "sphinx-doc__sphinx-8269",
+    "sphinx-doc__sphinx-8475",
+    "sphinx-doc__sphinx-8638",
+    "sympy__sympy-12419",
+    "sympy__sympy-12481",
+    "sympy__sympy-13647",
+    "sympy__sympy-20590",
+    "sympy__sympy-22914"
+  ],
+  "smallest_pool": [
+    "django__django-11964",
+    "django__django-12276",
+    "django__django-13807",
+    "django__django-14608",
+    "django__django-14999",
+    "django__django-15569",
+    "django__django-16899",
+    "django__django-17029",
+    "matplotlib__matplotlib-26208",
+    "sphinx-doc__sphinx-7910",
+    "sphinx-doc__sphinx-8269",
+    "sphinx-doc__sphinx-8475",
+    "sympy__sympy-12481"
+  ],
+  "excluded_ids": [
+    "astropy__astropy-13033",
+    "astropy__astropy-7336",
+    "django__django-11149",
+    "django__django-11292",
+    "django__django-13128",
+    "django__django-13195",
+    "django__django-14155",
+    "django__django-14752",
+    "django__django-15380",
+    "pylint-dev__pylint-4551",
+    "pytest-dev__pytest-8399",
+    "sphinx-doc__sphinx-7440",
+    "sphinx-doc__sphinx-8265",
+    "sympy__sympy-16886",
+    "sympy__sympy-19040",
+    "sympy__sympy-19637"
+  ],
+  "draws": [
+    {
+      "pool": [
+        "django__django-11964",
+        "django__django-12276",
+        "django__django-13807",
+        "django__django-14608",
+        "django__django-14999",
+        "django__django-15569",
+        "django__django-16899",
+        "django__django-17029",
+        "matplotlib__matplotlib-26208",
+        "sphinx-doc__sphinx-7910",
+        "sphinx-doc__sphinx-8269",
+        "sphinx-doc__sphinx-8475",
+        "sympy__sympy-12481"
+      ],
+      "selected": "django__django-11964"
+    },
+    {
+      "pool": [
+        "matplotlib__matplotlib-26208",
+        "sphinx-doc__sphinx-7910",
+        "sphinx-doc__sphinx-8269",
+        "sphinx-doc__sphinx-8475",
+        "sympy__sympy-12481"
+      ],
+      "selected": "sympy__sympy-12481"
+    }
+  ],
+  "tasks": [
+    {
+      "instance_id": "django__django-11964",
+      "repo": "django/django",
+      "difficulty": "<15 min fix",
+      "base_commit": "fc2b1cc926e34041953738e58fa6ad3053059b22",
+      "image": "swebench/sweb.eval.x86_64.django_1776_django-11964:latest",
+      "image_id": "sha256:bb840e5a07f0552c1fb8d68e4a0b378be827dd23bbcb215b5e05b52f7909e3e8",
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.django_1776_django-11964@sha256:098474801410af7303f0814d0d8557791ca2f55e455e5db766c3b3d0a9826df2"
+      ],
+      "metadata_sha256": "9f7456e8bc44f7e989d6a417598bc3e8bfa40fa52c05f8df99124390ca61a8df"
+    },
+    {
+      "instance_id": "sympy__sympy-12481",
+      "repo": "sympy/sympy",
+      "difficulty": "<15 min fix",
+      "base_commit": "c807dfe7569692cad24f02a08477b70c1679a4dd",
+      "image": "swebench/sweb.eval.x86_64.sympy_1776_sympy-12481:latest",
+      "image_id": "sha256:3c2fe1119ad7afe3c200a6fd6389fdbacefa413d8f124a5fe2a59b18a3623ade",
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.sympy_1776_sympy-12481@sha256:bb526b7d1c4a160d96d3ab925a6b382194a19bf77a72df71e220ce19fe924e7f"
+      ],
+      "metadata_sha256": "628050a58596e70059e56447518a6b565211deb7a33922c3f566d75c0b58a626"
+    }
+  ],
+  "infrastructure_exclusions": [],
+  "dataset_sha256": "7303cc5795e3707162f9b0ffcc5694f3fd67e20bd9d514cfdce63146fdebc196"
+}

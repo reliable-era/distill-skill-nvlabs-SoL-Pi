@@ -1,0 +1,49 @@
+{
+  "status": "prelaunch_pass",
+  "selection_sha256": "664fd981998d367a1c77692506a438172f4ee2d854e225c90d63459576f2988e",
+  "plan_sha256": "32f03728c7ca0807df2e8e9069e8ace216318ce5b3953d302eac65baa810c96e",
+  "selected_dataset_sha256": "e8a79a904e7b390b4fe979a6a624f9de2df80f6184677cf4349de141636d081a",
+  "checks": {
+    "authoritative_prepulled49_minus_all16_exposures_exact33": true,
+    "metadata_easy_filter_exact13": true,
+    "random_seed20261003_both_draws_replay": true,
+    "distinct_repositories": true,
+    "old143pins_unchanged": true,
+    "allfourarms_same_fullfrozen_sources": true,
+    "limits_cli_same": true,
+    "all148pins_match": true
+  },
+  "errors": [],
+  "limits": "Random within pre-pulled easy human-difficulty stratum, with repository-conditioned second draw. Not uniform across Verified or measured model runtime. Schedule seeds do not control model sampling. Two task clusters provide limited uncertainty/generalization.",
+  "remaining_prelaunch": "Root launch acknowledgment only.",
+  "final_requirements": [
+    "All16 unique official grades, no retries/exclusions",
+    "Initial exact clean base, image identity and full activated skills/CLI",
+    "Official local dataset/prediction/report/test-output hashes",
+    "Latest terminal modelUsage and lower-bound timeout flags",
+    "All tools incl Bash/Python and local history/read after downloads, source/test/repair exposure",
+    "Temporary vs tracked/official tests",
+    "Current full pins/backend/terminal queue/model lock",
+    "Matched quality/cost/round stability, completeness+usage guarded inference; separate old147"
+  ],
+  "gold_preflight_checks": [
+    {
+      "case": "django__django-11964",
+      "resolved": true,
+      "patch_applied": true,
+      "pristine_clean": true,
+      "environment_preserved": true,
+      "dataset_pinned": true,
+      "report_sha256": "b3275f6d867d8d92be8333acafe8728514e96377149fecb542ba686c5450617e"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "resolved": true,
+      "patch_applied": true,
+      "pristine_clean": true,
+      "environment_preserved": true,
+      "dataset_pinned": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    }
+  ]
+}
