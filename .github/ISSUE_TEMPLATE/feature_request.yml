@@ -1,0 +1,31 @@
+name: Feature or contribution proposal
+description: Suggest a focused skill, helper, documentation, or packaging improvement.
+title: '[Proposal] '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe a concrete coding workflow or installation need.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What would you change?
+      description: State the expected user behavior and scope.
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Suggested approach and alternatives
+    validations:
+      required: false
+  - type: textarea
+    id: validation
+    attributes:
+      label: How would you validate it?
+      description: Include acceptance checks. Performance claims need measured comparisons rather than installation checks alone.
+    validations:
+      required: false

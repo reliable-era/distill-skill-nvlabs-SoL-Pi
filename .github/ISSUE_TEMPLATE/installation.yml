@@ -1,0 +1,41 @@
+name: Installation or upgrade problem
+description: Report marketplace, plugin loading, Docker, or update failures.
+title: '[Install] '
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Versions
+      placeholder: Repository commit or plugin version; Claude Code version
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: OS; Docker version if applicable
+    validations:
+      required: true
+  - type: dropdown
+    id: method
+    attributes:
+      label: Installation method
+      options:
+        - Claude Code marketplace plugin
+        - Manual project copy
+        - Docker validation
+        - GitHub Actions
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Command and failure
+      description: Provide the exact command, error output, and expected result. Remove credentials and private paths.
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Checks already attempted
+      description: Include plugin validation or workflow links, if available.

@@ -177,4 +177,4 @@ docker run --rm --network none sol-pi-validation
 
 The container runs as a fresh non-root user with Claude Code 2.1.286. It validates both manifests, registers the local marketplace, installs the plugin, checks every installed skill resource against the source bytes, and checks helper entrypoints. It needs no model credentials or inference server. These installation checks do not measure coding performance; behavioral upgrades still require separate development and held-out evaluation.
 
-Use the repository's bug-report or upgrade-validation issue template to provide reproduction steps and evidence.
+Use the repository's [issue chooser](https://github.com/reliable-era/distill-skill-nvlabs-SoL-Pi/issues/new/choose) for bug reports, installation problems, feature/contribution proposals, or upgrade/performance validation. The forms ask for focused reproduction steps and evidence, following the structure of the [cuTile Rust](https://github.com/NVlabs/cutile-rs/tree/main/.github/ISSUE_TEMPLATE) and [Pi](https://github.com/earendil-works/pi/tree/main/.github/ISSUE_TEMPLATE) examples.

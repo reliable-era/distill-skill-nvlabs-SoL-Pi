@@ -3,24 +3,28 @@ description: Propose a skill upgrade or report a measured regression.
 title: '[Validation] '
 body:
   - type: textarea
+    id: proposal
     attributes:
       label: Proposed change and rationale
       description: State the affected instructions or packaging and intended benefit.
     validations:
       required: true
   - type: textarea
+    id: setup
     attributes:
       label: Versions and comparison setup
       description: Record candidate and reference commits, model, agent version, limits, skill activation, tasks, and repeated rounds.
     validations:
       required: true
   - type: textarea
+    id: results
     attributes:
       label: Validation results
       description: Link the Docker validation run. For behavioral changes, separately report verified solves, failure-inclusive tokens, timeouts, incomplete usage, and upstream retrieval. Installation checks alone do not prove performance.
     validations:
       required: true
   - type: textarea
+    id: separation
     attributes:
       label: Development and held-out separation
       description: Explain how tasks were selected and whether validation outcomes influenced the candidate.

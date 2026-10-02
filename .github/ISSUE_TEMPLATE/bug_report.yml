@@ -2,24 +2,31 @@ name: Bug report
 description: Report installation, skill, or helper failures.
 title: '[Bug] '
 body:
+  - type: markdown
+    attributes:
+      value: "Provide a minimal reproduction and redact credentials. If possible, compare the same task with the plugin disabled to distinguish a skill issue from an agent or backend issue."
   - type: textarea
+    id: environment
     attributes:
       label: Environment and version
       description: Include repository commit, OS, Claude Code version, model backend, and installation method. Exclude credentials.
     validations:
       required: true
   - type: textarea
+    id: reproduction
     attributes:
       label: Steps to reproduce
       description: Include the command or prompt and a minimal example.
     validations:
       required: true
   - type: textarea
+    id: behavior
     attributes:
       label: Expected and observed behavior
     validations:
       required: true
   - type: textarea
+    id: output
     attributes:
       label: Relevant output
       description: Redact secrets and private project content before attaching logs.
