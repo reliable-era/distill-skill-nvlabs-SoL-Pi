@@ -84,75 +84,37 @@ The clone also contains a project-local `.claude/skills/efficient-coding` symlin
 
 ## Performance across benchmarks
 
-**LLM backend: Qwen3.8-27B-FP8**, served locally through **SGLang** with DFlash speculative decoding. **Claude Code is the agent client, not the model.** These results apply to this tested backend; they do not establish performance on Claude, GPT, or other models.
+**Model:** Qwen3.8-27B-FP8 on SGLang. **Agent:** Claude Code 2.1.286.
 
-**Baseline means no skill installed.** “Latest” means the shipped 2,584-byte entrypoint; “original” means the earlier 6,573-byte entrypoint. Karpathy is frozen separately. “Both skills” means loading two separate, unchanged skills together: Karpathy guidelines and our SoL-Pi-inspired skill. It does not mean our method modifies or enhances Karpathy. The historical table uses the original version of our skill.
+“Ours” is the latest shipped SoL-Pi-inspired skill. “Both skills” loads Karpathy and ours together. Baseline uses no skill.
 
-Tokens per verified solve = token traffic across **all attempts, including failures**, divided by verified solves. Lower is better when quality is comparable. These are token estimates, not dollar or energy measurements.
+### Correctness
 
-### Latest frozen bundle: pruned campaign
+Verified solves / attempts. Higher is better.
 
-The final campaign contains **147 attempts**, including development, original calibration, candidate testing, held-out diagnostics, and repository repairs. All attempts completed grading and passed an independent provenance audit.
-
-**Correctness — verified solves / attempts (higher is better)**
-
-| Benchmark | No skill | Latest SoL-Pi (ours) | Karpathy | Both skills (Karpathy & ours) |
+| Benchmark | No skill | SoL-Pi (ours) | Karpathy | Both skills |
 |---|---:|---:|---:|---:|
-| Development | 8/10 | 9/10 | 7/10 | 8/10 |
-| Held-out diagnostics | 13/15 | 14/15 | 12/15 | 14/15 |
-| Repository repairs | 6/8 | 7/8 | 8/8 | 4/8 |
+| Development | 8/10 | **9/10** | 7/10 | 8/10 |
+| Held-out diagnostics | 13/15 | **14/15** | 12/15 | **14/15** |
+| Repository repairs | 6/8 | 7/8 | **8/8** | 4/8 |
 
-**Efficiency — tokens per verified solve (lower is better)**
+### Efficiency
 
-| Benchmark | No skill | Latest SoL-Pi (ours) | Karpathy | Both skills (Karpathy & ours) |
+Tokens per verified solve, including failed attempts. Lower is better.
+
+| Benchmark | No skill | SoL-Pi (ours) | Karpathy | Both skills |
 |---|---:|---:|---:|---:|
-| Development | 260k | 242k | 314k | 316k |
-| Held-out diagnostics | 219k | 260k | 286k | 272k |
+| Development | 260k | **242k** | 314k | 316k |
+| Held-out diagnostics | **219k** | 260k | 286k | 272k |
 | Repository repairs | ≥1.42M | ≥1.63M | ≥1.32M | ≥2.40M |
 
-`k` = thousand tokens; `M` = million tokens. Values are rounded. `≥` means incomplete accounting: repository costs cannot support an efficiency ranking.
+`k` = thousand; `M` = million. Repository costs are incomplete lower bounds (`≥`) and cannot support a cost ranking.
 
-Development used five cases over two rounds; held-out diagnostics used five cases over three rounds. Repository repairs used four SWE-bench Verified issues over two rounds.
+**What we learned:** ours solved one more held-out attempt than baseline, but cost **18.87% more per solve**. Karpathy had the highest repository score. Loading both skills did not improve on ours. A stable efficiency win is **not established**.
 
-The diagnostic cases cover large logs, producer/consumer interfaces, stale continuations, integration failures, and small fixes. The repository subset covers Pylint, Django, Astropy, and SymPy. It is a deliberately small diagnostic subset with limited generalization; two synthetic families share a mathematical defect.
+**Scope:** five diagnostic cases, repeated twice in development and three times on held-out variants; four SWE-bench Verified issues, repeated twice. Public upstream repair retrieval limits repository attribution. Results apply to this small subset and backend; round labels are scheduling seeds, not controlled model sampling seeds.
 
-- **Latest versus baseline:** one extra held-out solve, but **18.87% more tokens per solve**. Latest used more tokens in every diagnostic family and cost more per solve in every held-out round.
-- **Latest versus Karpathy/combined:** lower diagnostic cost point estimates, with advantages reversing in one round and uncertainty intervals including zero.
-- **Repository correctness:** Karpathy solved 8/8; latest 7/8; baseline 6/8; combined 4/8. Model timeouts were respectively 1, 2, 2, and 3. A passing patch can still come from a timed-out attempt.
-- **Repository costs:** eight runs lack complete terminal usage summaries. Every arm's aggregate is a lower bound (`≥`), so these values cannot establish an economy ranking.
-- **Candidate improvement:** tested only on development, solved 8/10 versus latest 9/10 and cost 20.45% more per solve. It was rejected before held-out feedback and is not the shipped skill.
-
-The original-only calibration scored 5/5 at 221,166 tokens per solve. It was a separate single round and is not a repeated comparison with all four arms.
-
-### Original bundle: earlier benchmark matrix
-
-This historical matrix used the **original SoL-Pi bundle**, not the current shipped revision. It is kept separate from the latest campaign.
-
-**Correctness — verified solves / attempts**
-
-| Benchmark | No skill | Original SoL-Pi (ours) | Karpathy | Both skills (Karpathy & original ours) |
-|---|---:|---:|---:|---:|
-| Stress suite | 15/15 | 15/15 | 15/15 | 15/15 |
-| Repository repairs | 19/24 | 19/24 | 19/24 | 19/24 |
-
-**Efficiency — tokens per verified solve**
-
-| Benchmark | No skill | Original SoL-Pi (ours) | Karpathy | Both skills (Karpathy & original ours) |
-|---|---:|---:|---:|---:|
-| Stress suite | 194k | 209k | 226k | 244k |
-| Repository repairs | 2.40M | 2.55M | 2.30M | 2.39M |
-
-The stress suite used five cases over three rounds. Repository repairs used twelve SWE-bench Verified issues over two rounds.
-
-The original bundle increased SWE-bench tokens per solve by 6.5% versus baseline with equal observed resolution. The subsequent simplification shortened the entrypoint by 60.7%. A separate one-round, in-sample smoke comparison is documented in the report; it does not establish held-out savings.
-
-### Backend and interpretation
-
-All reported campaigns used **Qwen3.8-27B-FP8**, served locally through SGLang's Anthropic-compatible endpoint with DFlash speculative decoding. The agent was **Claude Code**, not a Claude model: version 2.1.285 for the original matrix and pinned 2.1.286 for the latest campaign. Latest repository attempts used medium effort, a 60-turn limit, and a 1,800-second model limit.
-
-Runs used fresh containers and HOME directories with identical skill-loading hints. Inference was sequential on a single-request server. Scheduling labels 42/73/101 vary order; they are **not controlled model sampling seeds**.
-
-Public network access was allowed. Some repository attempts retrieved upstream repaired source, tests, or task-relevant repair diffs. Official grades therefore do not establish unaided repair superiority. Small task counts, correlated fixtures, uncontrolled sampling, and incomplete repository usage also limit claims of stability and savings. No held-out outcome-driven skill revision was promoted.
+All **147 campaign attempts** were graded and independently audited. The development candidate was rejected; the shipped skill remains unchanged. See the [full report](report.md) for original-version comparisons, per-round variability, uncertainty, and retrieval audits.
 
 ## Explore the evidence
 
