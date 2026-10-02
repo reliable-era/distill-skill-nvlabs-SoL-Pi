@@ -73,13 +73,25 @@ Tokens per verified solve = token traffic across **all attempts, including failu
 
 The final campaign contains **147 attempts**, including development, original calibration, candidate testing, held-out diagnostics, and repository repairs. All attempts completed grading and passed an independent provenance audit.
 
-Each table cell shows **verified solves / attempts · tokens per solve**.
+**Correctness — verified solves / attempts (higher is better)**
 
-| Benchmark / stage | Baseline: no skill | Latest SoL-Pi | Karpathy only | Karpathy + latest SoL-Pi |
+| Benchmark | No skill | Latest SoL-Pi | Karpathy | Karpathy + latest |
 |---|---:|---:|---:|---:|
-| Development: 5 cases × 2 rounds | 8/10 · 259,731 | 9/10 · 242,163 | 7/10 · 313,901 | 8/10 · 315,987 |
-| Held-out diagnostics: 5 cases × 3 rounds | 13/15 · 218,599 | 14/15 · 259,839 | 12/15 · 285,543 | 14/15 · 271,960 |
-| SWE-bench Verified: 4 issues × 2 rounds | 6/8 · ≥1,419,534 | 7/8 · ≥1,628,508 | 8/8 · ≥1,317,814 | 4/8 · ≥2,396,043 |
+| Development | 8/10 | 9/10 | 7/10 | 8/10 |
+| Held-out diagnostics | 13/15 | 14/15 | 12/15 | 14/15 |
+| Repository repairs | 6/8 | 7/8 | 8/8 | 4/8 |
+
+**Efficiency — tokens per verified solve (lower is better)**
+
+| Benchmark | No skill | Latest SoL-Pi | Karpathy | Karpathy + latest |
+|---|---:|---:|---:|---:|
+| Development | 260k | 242k | 314k | 316k |
+| Held-out diagnostics | 219k | 260k | 286k | 272k |
+| Repository repairs | ≥1.42M | ≥1.63M | ≥1.32M | ≥2.40M |
+
+`k` = thousand tokens; `M` = million tokens. Values are rounded. `≥` means incomplete accounting: repository costs cannot support an efficiency ranking.
+
+Development used five cases over two rounds; held-out diagnostics used five cases over three rounds. Repository repairs used four SWE-bench Verified issues over two rounds.
 
 The diagnostic cases cover large logs, producer/consumer interfaces, stale continuations, integration failures, and small fixes. The repository subset covers Pylint, Django, Astropy, and SymPy. It is a deliberately small diagnostic subset with limited generalization; two synthetic families share a mathematical defect.
 
@@ -95,10 +107,21 @@ The original-only calibration scored 5/5 at 221,166 tokens per solve. It was a s
 
 This historical matrix used the **original SoL-Pi bundle**, not the current shipped revision. It is kept separate from the latest campaign.
 
-| Benchmark | Baseline: no skill | Original SoL-Pi | Karpathy only | Karpathy + original SoL-Pi |
+**Correctness — verified solves / attempts**
+
+| Benchmark | No skill | Original SoL-Pi | Karpathy | Karpathy + original |
 |---|---:|---:|---:|---:|
-| Stress suite: 5 cases × 3 rounds | 15/15 · 193,992 | 15/15 · 208,861 | 15/15 · 225,788 | 15/15 · 243,785 |
-| SWE-bench Verified: 12 issues × 2 rounds | 19/24 · 2,397,297 | 19/24 · 2,553,476 | 19/24 · 2,299,941 | 19/24 · 2,387,513 |
+| Stress suite | 15/15 | 15/15 | 15/15 | 15/15 |
+| Repository repairs | 19/24 | 19/24 | 19/24 | 19/24 |
+
+**Efficiency — tokens per verified solve**
+
+| Benchmark | No skill | Original SoL-Pi | Karpathy | Karpathy + original |
+|---|---:|---:|---:|---:|
+| Stress suite | 194k | 209k | 226k | 244k |
+| Repository repairs | 2.40M | 2.55M | 2.30M | 2.39M |
+
+The stress suite used five cases over three rounds. Repository repairs used twelve SWE-bench Verified issues over two rounds.
 
 The original bundle increased SWE-bench tokens per solve by 6.5% versus baseline with equal observed resolution. The subsequent simplification shortened the entrypoint by 60.7%. A separate one-round, in-sample smoke comparison is documented in the report; it does not establish held-out savings.
 
