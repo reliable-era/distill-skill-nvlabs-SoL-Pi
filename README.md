@@ -84,6 +84,8 @@ The clone also contains a project-local `.claude/skills/efficient-coding` symlin
 
 ## Performance across benchmarks
 
+**LLM backend: Qwen3.8-27B-FP8**, served locally through **SGLang** with DFlash speculative decoding. **Claude Code is the agent client, not the model.** These results apply to this tested backend; they do not establish performance on Claude, GPT, or other models.
+
 **Baseline means no skill installed.** “Latest” means the shipped 2,584-byte entrypoint; “original” means the earlier 6,573-byte entrypoint. Karpathy is frozen separately. “Both skills” means loading two separate, unchanged skills together: Karpathy guidelines and our SoL-Pi-inspired skill. It does not mean our method modifies or enhances Karpathy. The historical table uses the original version of our skill.
 
 Tokens per verified solve = token traffic across **all attempts, including failures**, divided by verified solves. Lower is better when quality is comparable. These are token estimates, not dollar or energy measurements.
