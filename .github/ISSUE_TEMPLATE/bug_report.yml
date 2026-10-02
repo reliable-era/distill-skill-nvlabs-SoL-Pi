@@ -1,0 +1,25 @@
+name: Bug report
+description: Report installation, skill, or helper failures.
+title: '[Bug] '
+body:
+  - type: textarea
+    attributes:
+      label: Environment and version
+      description: Include repository commit, OS, Claude Code version, model backend, and installation method. Exclude credentials.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Include the command or prompt and a minimal example.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Relevant output
+      description: Redact secrets and private project content before attaching logs.

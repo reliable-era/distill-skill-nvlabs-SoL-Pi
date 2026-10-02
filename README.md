@@ -94,7 +94,7 @@ The final campaign contains **147 attempts**, including development, original ca
 
 **Correctness — verified solves / attempts (higher is better)**
 
-| Benchmark | No skill | Latest SoL-Pi | Karpathy | Karpathy + latest |
+| Benchmark | No skill | Latest SoL-Pi (ours) | Karpathy | Karpathy + latest (ours) |
 |---|---:|---:|---:|---:|
 | Development | 8/10 | 9/10 | 7/10 | 8/10 |
 | Held-out diagnostics | 13/15 | 14/15 | 12/15 | 14/15 |
@@ -102,7 +102,7 @@ The final campaign contains **147 attempts**, including development, original ca
 
 **Efficiency — tokens per verified solve (lower is better)**
 
-| Benchmark | No skill | Latest SoL-Pi | Karpathy | Karpathy + latest |
+| Benchmark | No skill | Latest SoL-Pi (ours) | Karpathy | Karpathy + latest (ours) |
 |---|---:|---:|---:|---:|
 | Development | 260k | 242k | 314k | 316k |
 | Held-out diagnostics | 219k | 260k | 286k | 272k |
@@ -128,14 +128,14 @@ This historical matrix used the **original SoL-Pi bundle**, not the current ship
 
 **Correctness — verified solves / attempts**
 
-| Benchmark | No skill | Original SoL-Pi | Karpathy | Karpathy + original |
+| Benchmark | No skill | Original SoL-Pi (ours) | Karpathy | Karpathy + original (ours) |
 |---|---:|---:|---:|---:|
 | Stress suite | 15/15 | 15/15 | 15/15 | 15/15 |
 | Repository repairs | 19/24 | 19/24 | 19/24 | 19/24 |
 
 **Efficiency — tokens per verified solve**
 
-| Benchmark | No skill | Original SoL-Pi | Karpathy | Karpathy + original |
+| Benchmark | No skill | Original SoL-Pi (ours) | Karpathy | Karpathy + original (ours) |
 |---|---:|---:|---:|---:|
 | Stress suite | 194k | 209k | 226k | 244k |
 | Repository repairs | 2.40M | 2.55M | 2.30M | 2.39M |
@@ -165,3 +165,16 @@ Public network access was allowed. Some repository attempts retrieved upstream r
 | [Candidate decision](eval/pruned/candidate-decision.json) | Development gate and rejection evidence |
 
 `eval/` includes benchmark runners, frozen inputs, results, and traces. The virtual environment and downloaded Claude Code binary are excluded; manifests preserve the expected binary hashes. Historical records contain paths from the original execution workspace. Reproducing the campaign requires its Docker/SWE-bench dependencies and compatible local model server; installing the skill itself only requires copying its directory.
+
+## Validate an upgrade
+
+GitHub Actions builds and runs our [Docker validation container](validation/Dockerfile) on pushes and pull requests. Run the same checks locally:
+
+```bash
+docker build -f validation/Dockerfile -t sol-pi-validation .
+docker run --rm --network none sol-pi-validation
+```
+
+The container runs as a fresh non-root user with Claude Code 2.1.286. It validates both manifests, registers the local marketplace, installs the plugin, checks every installed skill resource against the source bytes, and checks helper entrypoints. It needs no model credentials or inference server. These installation checks do not measure coding performance; behavioral upgrades still require separate development and held-out evaluation.
+
+Use the repository's bug-report or upgrade-validation issue template to provide reproduction steps and evidence.
