@@ -19,7 +19,26 @@ Supporting references and offline evidence/accounting scripts are included for t
 
 The upstream SoL-Pi runtime includes capabilities that this instruction bundle cannot provide: replacing provider context, registering fused tools, and native compaction. Writing a summary alone does not remove earlier API messages. This project evaluates the portable skill, not a reproduction of the upstream runtime's savings.
 
-## Install and use
+## Install
+
+### Option A: Claude Code plugin
+
+Inside Claude Code, add the marketplace and install the plugin:
+
+```text
+/plugin marketplace add reliable-era/distill-skill-nvlabs-SoL-Pi
+/plugin install distill-sol-pi@sol-pi-skills
+```
+
+Then invoke the skill with your task:
+
+```text
+/distill-sol-pi:efficient-coding Fix the failing parser test and verify the change.
+```
+
+This follows the plugin installation approach used by [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills). Plugin metadata lives in [.claude-plugin/](.claude-plugin/); packaging does not change the benchmarked skill instructions.
+
+### Option B: manual project installation
 
 Clone the repository:
 
@@ -27,8 +46,6 @@ Clone the repository:
 gh repo clone reliable-era/distill-skill-nvlabs-SoL-Pi
 cd distill-skill-nvlabs-SoL-Pi
 ```
-
-### Claude Code: install in a target project
 
 Run from this cloned repository, replacing the target path with your project:
 
@@ -40,7 +57,9 @@ cp -R skills/efficient-coding "$TARGET_PROJECT/.claude/skills/"
 
 The complete directory is needed because `SKILL.md` links to references and scripts. If an older `efficient-coding` directory exists, back it up before replacing it.
 
-Open Claude Code in the target project and explicitly ask it to load the skill:
+## Use
+
+After manual installation, open Claude Code in the target project and explicitly ask it to load the skill:
 
 ```text
 Load .claude/skills/efficient-coding/SKILL.md and use its guidance.
