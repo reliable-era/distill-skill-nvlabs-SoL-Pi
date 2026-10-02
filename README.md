@@ -84,7 +84,7 @@ The clone also contains a project-local `.claude/skills/efficient-coding` symlin
 
 ## Performance across benchmarks
 
-**Baseline means no skill installed.** “Latest” means the shipped 2,584-byte entrypoint; “original” means the earlier 6,573-byte entrypoint. Karpathy is frozen separately. The combined arm contains Karpathy and the explicitly named SoL-Pi version.
+**Baseline means no skill installed.** “Latest” means the shipped 2,584-byte entrypoint; “original” means the earlier 6,573-byte entrypoint. Karpathy is frozen separately. “Both skills” means loading two separate, unchanged skills together: Karpathy guidelines and our SoL-Pi-inspired skill. It does not mean our method modifies or enhances Karpathy. The historical table uses the original version of our skill.
 
 Tokens per verified solve = token traffic across **all attempts, including failures**, divided by verified solves. Lower is better when quality is comparable. These are token estimates, not dollar or energy measurements.
 
@@ -94,7 +94,7 @@ The final campaign contains **147 attempts**, including development, original ca
 
 **Correctness — verified solves / attempts (higher is better)**
 
-| Benchmark | No skill | Latest SoL-Pi (ours) | Karpathy | Karpathy + latest (ours) |
+| Benchmark | No skill | Latest SoL-Pi (ours) | Karpathy | Both skills (Karpathy & ours) |
 |---|---:|---:|---:|---:|
 | Development | 8/10 | 9/10 | 7/10 | 8/10 |
 | Held-out diagnostics | 13/15 | 14/15 | 12/15 | 14/15 |
@@ -102,7 +102,7 @@ The final campaign contains **147 attempts**, including development, original ca
 
 **Efficiency — tokens per verified solve (lower is better)**
 
-| Benchmark | No skill | Latest SoL-Pi (ours) | Karpathy | Karpathy + latest (ours) |
+| Benchmark | No skill | Latest SoL-Pi (ours) | Karpathy | Both skills (Karpathy & ours) |
 |---|---:|---:|---:|---:|
 | Development | 260k | 242k | 314k | 316k |
 | Held-out diagnostics | 219k | 260k | 286k | 272k |
@@ -128,14 +128,14 @@ This historical matrix used the **original SoL-Pi bundle**, not the current ship
 
 **Correctness — verified solves / attempts**
 
-| Benchmark | No skill | Original SoL-Pi (ours) | Karpathy | Karpathy + original (ours) |
+| Benchmark | No skill | Original SoL-Pi (ours) | Karpathy | Both skills (Karpathy & original ours) |
 |---|---:|---:|---:|---:|
 | Stress suite | 15/15 | 15/15 | 15/15 | 15/15 |
 | Repository repairs | 19/24 | 19/24 | 19/24 | 19/24 |
 
 **Efficiency — tokens per verified solve**
 
-| Benchmark | No skill | Original SoL-Pi (ours) | Karpathy | Karpathy + original (ours) |
+| Benchmark | No skill | Original SoL-Pi (ours) | Karpathy | Both skills (Karpathy & original ours) |
 |---|---:|---:|---:|---:|
 | Stress suite | 194k | 209k | 226k | 244k |
 | Repository repairs | 2.40M | 2.55M | 2.30M | 2.39M |
