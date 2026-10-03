@@ -19,7 +19,7 @@ docker volume create sol-pi-auth-codex
 docker run --init --rm -it --mount type=volume,src=sol-pi-auth-codex,dst=/home/evaluator sol-pi-eval-all:2026-10-03 codex login --device-auth
 ```
 
-Replace `codex` in the volume name and the final command using this table. Logins need network access; they do not request model inference.
+Replace `codex` in the volume name and the final command using this table. Logins need network access and human interaction. The offline validation did not run these login commands.
 
 | Agent | Login inside its container | Credential for isolated evaluation |
 |---|---|---|
