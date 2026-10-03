@@ -14,14 +14,10 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 
 | Benchmark | Configuration | Solves ↑ | Tokens / solve ↓ | Timeouts ↓ |
 |---|---|---:|---:|---:|
-| Development | No skill (baseline) | 8/10 | 260k | 0 |
-| Development | SoL-Pi (ours) | 9/10 | 242k | 0 |
-| Development | Karpathy | 7/10 | 314k | 0 |
-| Development | Both skills | 8/10 | 316k | 0 |
-| Held-out diagnostics | No skill (baseline) | 13/15 | 219k | 0 |
-| Held-out diagnostics | SoL-Pi (ours) | 14/15 | 260k | 0 |
-| Held-out diagnostics | Karpathy | 12/15 | 286k | 0 |
-| Held-out diagnostics | Both skills | 14/15 | 272k | 0 |
+| Our synthetic diagnostics | No skill (baseline) | 21/25 | 234k | 0 |
+| Our synthetic diagnostics | SoL-Pi (ours) | 23/25 | 253k | 0 |
+| Our synthetic diagnostics | Karpathy | 19/25 | 296k | 0 |
+| Our synthetic diagnostics | Both skills | 22/25 | 288k | 0 |
 | SWE-bench Verified | No skill (baseline) | 9/12 | ≥1.62M | 3 |
 | SWE-bench Verified | SoL-Pi (ours) | 11/12 | ≥1.42M | 2 |
 | SWE-bench Verified | Karpathy | 11/12 | ≥1.45M | 2 |
@@ -29,9 +25,9 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 
 **Ours** is the latest shipped revision. **Both skills** loads Karpathy and ours separately. Tokens include failed attempts; `k` = thousand, `M` = million, `≥` = incomplete lower bound. Unmeasured or unverified items are marked **TBD**.
 
-Ours ties Karpathy at 11/12 SWE-bench Verified solves; baseline is cheaper on held-out diagnostics. **A stable general efficiency win is not established.** Public repair retrieval limits repository attribution; incomplete costs do not support exact savings claims.
+Ours ties Karpathy at 11/12 SWE-bench Verified solves; baseline is cheaper on our synthetic diagnostics. **A stable general efficiency win is not established.** Public repair retrieval limits repository attribution; incomplete costs do not support exact savings claims.
 
-**Benchmark sources:** Development and held-out diagnostics are our custom synthetic fixtures. [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) combines six distinct issues, each repeated twice: the original four-issue sample plus two new randomly selected easy issues. Totals sum all attempts across both samples; their selection rules differ, so this is a descriptive six-issue aggregate. Five diagnostic cases ×2 development / ×3 held-out rounds. Scheduling seeds do not control model sampling. [Full results and limitations](report.md) · [Random subset details](eval/random-followup/results/summary.md).
+**Benchmark sources:** Our synthetic diagnostics combine custom development and held-out fixtures. This aggregate includes development data and is not a pure held-out score. [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) combines six distinct issues, each repeated twice: the original four-issue sample plus two new randomly selected easy issues. Totals sum all attempts across both samples; their selection rules differ, so this is a descriptive six-issue aggregate. Five diagnostic cases ×2 development / ×3 held-out rounds. Scheduling seeds do not control model sampling. [Full results and limitations](report.md) · [Random subset details](eval/random-followup/results/summary.md).
 
 <details>
 <summary>Original-version results</summary>

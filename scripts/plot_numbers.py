@@ -20,12 +20,21 @@ for arm in ['baseline','latest','karpathy','karpathy_latest']:
     combined['arms'][arm] = {'n': a['n'] + b['n'], 'solved': solved,
         'tokens_per_solve': total / solved, 'usage_complete': a['usage_complete'] and b['usage_complete'],
         'timeouts': a['timeouts'] + b['timeouts']}
-stages = [('Development',pruned['stages']['dev']),('Held-out diagnostics',pruned['stages']['heldout']),('SWE-bench Verified\n6-issue subset',combined)]
+synthetic = {'complete': True, 'arms': {}}
+for arm in ['baseline','latest','karpathy','karpathy_latest']:
+    a = pruned['stages']['dev']['arms'][arm]
+    b = pruned['stages']['heldout']['arms'][arm]
+    solved = a['solved'] + b['solved']
+    total = a['total_tokens'] + b['total_tokens']
+    synthetic['arms'][arm] = {'n': a['n'] + b['n'], 'solved': solved,
+        'tokens_per_solve': total / solved, 'usage_complete': a['usage_complete'] and b['usage_complete'],
+        'timeouts': a['timeouts'] + b['timeouts']}
+stages = [('Our synthetic diagnostics\ndevelopment + held-out',synthetic),('SWE-bench Verified\n6-issue subset',combined)]
 arms = ['baseline','latest','karpathy','karpathy_latest']
 labels = ['No skill','SoL-Pi (ours)','Karpathy','Both skills']
 colors = ['#64748b','#0284c7','#d97706','#8b5cf6']
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'axes.spines.top':False,'axes.spines.right':False,'svg.fonttype':'none'})
-fig, axes = plt.subplots(3,3,figsize=(13,10))
+fig, axes = plt.subplots(3,2,figsize=(11,10))
 for col,(title,stage) in enumerate(stages):
     assert stage['complete']
     ms=[stage['arms'][a] for a in arms]
