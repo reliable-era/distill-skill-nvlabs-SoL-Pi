@@ -11,12 +11,21 @@ ROOT = Path(__file__).resolve().parents[1]
 pruned = json.loads((ROOT/'eval/pruned/audit/current.json').read_text())
 follow = json.loads((ROOT/'eval/random-followup/results/collection.json').read_text())
 assert not pruned['source_errors'] and not follow['source_errors']
-stages = [('Development',pruned['stages']['dev']),('Held-out diagnostics',pruned['stages']['heldout']),('SWE-bench Verified\n4-issue sample',pruned['stages']['real_swe']),('SWE-bench Verified\n2-issue easy sample',follow['stages']['real_swe'])]
+combined = {'complete': True, 'arms': {}}
+for arm in ['baseline','latest','karpathy','karpathy_latest']:
+    a = pruned['stages']['real_swe']['arms'][arm]
+    b = follow['stages']['real_swe']['arms'][arm]
+    solved = a['solved'] + b['solved']
+    total = a['total_tokens'] + b['total_tokens']
+    combined['arms'][arm] = {'n': a['n'] + b['n'], 'solved': solved,
+        'tokens_per_solve': total / solved, 'usage_complete': a['usage_complete'] and b['usage_complete'],
+        'timeouts': a['timeouts'] + b['timeouts']}
+stages = [('Development',pruned['stages']['dev']),('Held-out diagnostics',pruned['stages']['heldout']),('SWE-bench Verified\n6-issue subset',combined)]
 arms = ['baseline','latest','karpathy','karpathy_latest']
 labels = ['No skill','SoL-Pi (ours)','Karpathy','Both skills']
 colors = ['#64748b','#0284c7','#d97706','#8b5cf6']
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'axes.spines.top':False,'axes.spines.right':False,'svg.fonttype':'none'})
-fig, axes = plt.subplots(3,4,figsize=(16,10))
+fig, axes = plt.subplots(3,3,figsize=(13,10))
 for col,(title,stage) in enumerate(stages):
     assert stage['complete']
     ms=[stage['arms'][a] for a in arms]
@@ -31,7 +40,7 @@ for col,(title,stage) in enumerate(stages):
         if not m['usage_complete']:b.set_hatch('///');b.set_edgecolor('#334155')
         label=('≥' if not m['usage_complete'] else '')+(f'{v:.2f}M' if v>=1 else f'{v*1000:.0f}k')
         ax.text(b.get_x()+b.get_width()/2,v+max(vals)*.035,label,ha='center',fontsize=10)
-    ax=axes[2,col];vals=[m['timeouts'] for m in ms];bars=ax.bar(np.arange(4),vals,color=colors,width=.65);ax.set_ylim(0,3.7);ax.set_yticks([0,1,2,3])
+    ax=axes[2,col];vals=[m['timeouts'] for m in ms];bars=ax.bar(np.arange(4),vals,color=colors,width=.65);ax.set_ylim(0,4.7);ax.set_yticks([0,1,2,3,4])
     for b,v in zip(bars,vals):ax.text(b.get_x()+b.get_width()/2,v+.12,str(v),ha='center')
     ax.set_xticks(range(4),['No skill','Ours','Karpathy','Both'],rotation=25,ha='right')
 axes[0,0].set_ylabel('Verified solve rate ↑')
