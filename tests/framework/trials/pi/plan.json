@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    "heldout/d2_interfaces",
+    "heldout/d5_small_control"
+  ],
+  "arms": [
+    "none",
+    "karpathy",
+    "ours",
+    "both"
+  ],
+  "provider": "anthropic",
+  "model": "claude-opus-4-8",
+  "maximum_attempts": 8,
+  "attempt_timeout_seconds": 120,
+  "status": "blocked_quota_all_attempts",
+  "note": "Initial readiness check passed locally. Real requests rejected by provider quota; no quality score. No provider retries."
+}

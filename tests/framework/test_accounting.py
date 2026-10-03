@@ -11,6 +11,8 @@ class AccountingTests(unittest.TestCase):
         s=summarize([dict(solved=True,cost_usd=None)])
         self.assertIsNone(s['dollars_per_solve'])
         self.assertFalse(s['tokens_complete'])
+        self.assertIsNone(s['observed_tokens'])
+        self.assertIsNone(s['tokens_per_solve'])
     def test_caches_exclusive_price(self):
         r=dict(input_tokens=10, output_tokens=20,cache_read_tokens=30,cache_write_tokens=40,usage_complete=True,token_semantics='exclusive')
         p=dict(input_tokens=1,output_tokens=2,cache_read_tokens=3,cache_write_tokens=4)

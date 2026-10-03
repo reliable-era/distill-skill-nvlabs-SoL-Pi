@@ -1,0 +1,5 @@
+FROM sol-pi-eval-all:2026-10-03
+USER root
+RUN python3 -m pip install --no-cache-dir pytest==9.1.1
+USER evaluator
+WORKDIR /workspace

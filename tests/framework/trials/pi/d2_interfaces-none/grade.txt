@@ -1,0 +1,46 @@
+FF.F.                                                                    [100%]
+=================================== FAILURES ===================================
+_______________________ test_consistent[Ma\xdfe- MASSE ] _______________________
+
+stored = 'Maße', query = ' MASSE '
+
+    @pytest.mark.parametrize("stored,query",[("Maße"," MASSE "),("  MiXeD "," mixed "),("Σ","σ"),("ÉCOLE"," école ")])
+    def test_consistent(stored,query):
+        value=object()
+>       assert get(build([(stored,value)]),query) is value
+E       AssertionError: assert None is <object object at 0x72861840e140>
+E        +  where None = get({'maße': <object object at 0x72861840e140>}, ' MASSE ')
+E        +    where {'maße': <object object at 0x72861840e140>} = build([('Maße', <object object at 0x72861840e140>)])
+
+/grader/test_hidden.py:7: AssertionError
+______________________ test_consistent[  MiXeD - mixed ] _______________________
+
+stored = '  MiXeD ', query = ' mixed '
+
+    @pytest.mark.parametrize("stored,query",[("Maße"," MASSE "),("  MiXeD "," mixed "),("Σ","σ"),("ÉCOLE"," école ")])
+    def test_consistent(stored,query):
+        value=object()
+>       assert get(build([(stored,value)]),query) is value
+E       AssertionError: assert None is <object object at 0x72861840e870>
+E        +  where None = get({'mixed': <object object at 0x72861840e870>}, ' mixed ')
+E        +    where {'mixed': <object object at 0x72861840e870>} = build([('  MiXeD ', <object object at 0x72861840e870>)])
+
+/grader/test_hidden.py:7: AssertionError
+_____________________ test_consistent[\xc9COLE- \xe9cole ] _____________________
+
+stored = 'ÉCOLE', query = ' école '
+
+    @pytest.mark.parametrize("stored,query",[("Maße"," MASSE "),("  MiXeD "," mixed "),("Σ","σ"),("ÉCOLE"," école ")])
+    def test_consistent(stored,query):
+        value=object()
+>       assert get(build([(stored,value)]),query) is value
+E       AssertionError: assert None is <object object at 0x72861840e970>
+E        +  where None = get({'école': <object object at 0x72861840e970>}, ' école ')
+E        +    where {'école': <object object at 0x72861840e970>} = build([('ÉCOLE', <object object at 0x72861840e970>)])
+
+/grader/test_hidden.py:7: AssertionError
+=========================== short test summary info ============================
+FAILED ../grader/test_hidden.py::test_consistent[Ma\xdfe- MASSE ] - Assertion...
+FAILED ../grader/test_hidden.py::test_consistent[  MiXeD - mixed ] - Assertio...
+FAILED ../grader/test_hidden.py::test_consistent[\xc9COLE- \xe9cole ] - Asser...
+3 failed, 2 passed in 0.02s

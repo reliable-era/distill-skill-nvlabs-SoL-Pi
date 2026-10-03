@@ -227,3 +227,7 @@ tests/eval/pruned/model.lock
 tests/framework/runs/
 tests/framework/cache/
 tests/framework/*.env
+
+# Preserve audited model/grade transcripts from native harness trials
+!tests/framework/trials/**/agent.log
+!tests/framework/trials/**/grader.log

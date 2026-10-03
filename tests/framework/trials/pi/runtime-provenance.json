@@ -1,0 +1,17 @@
+{
+  "image": "sol-pi-eval-trial:2026-10-04",
+  "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70",
+  "pi_version": "1.0.0",
+  "cursor_version": "2026.10.01-e373342",
+  "agy_version": "TBD (binary hash pinned)",
+  "agy_binary_sha256": "a759ce7c7a235d9b6c281a25ead97cbbf2e92314a3ffd224e2f9144f3fae7a86",
+  "agy_official_headless_source": "https://www.antigravity.google/docs/cli/headless/",
+  "agy_official_auth_source": "https://www.antigravity.google/docs/cli/install/",
+  "credential_locations": [
+    "~/.pi/agent/auth.json",
+    "~/.config/cursor/auth.json",
+    "~/.gemini/antigravity-cli/antigravity-oauth-token"
+  ],
+  "credential_policy": "Credential-only read-only mounts copied to disposable HOME; host preferences/skills/session state excluded. Credentials not saved in evidence.",
+  "grading": "Hidden tests separate network-disabled Docker container; not accessible to actor."
+}

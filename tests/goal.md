@@ -1,11 +1,19 @@
-# Current evaluation framework work
+# Current evaluation status
 
-Build and offline validation completed under `tests/framework/`; human authentication
-is the next dependency for model-backed adapter checks. Nine CLI installations and
-the shared Docker runtime are tested. Six benchmark sources are cataloged; four
-pinned inventories produced the frozen eight-task pilot. Official task environments
-and grader bridges remain TBD and must be completed before publication scoring.
-No new skill-performance result is claimed. Historical evidence follows.
+The requested parallel native-harness pilot is complete: 40 model attempts across
+Pi, Codex, Copilot, Antigravity agy, and Cursor Auto, comparing no skill, Karpathy,
+ours, and both on two reused synthetic fixtures. Independent regrading found
+39/40 passes. See `framework/trials/README.md` for separate quality, reported-token,
+and latency tables, actual backends, and limitations. Ours did not beat no skill
+on reported token efficiency in the three harnesses with usable token totals.
+Billing, Cursor backend, and Copilot/Cursor comparable tokens remain TBD.
+
+The broader goal remains an economical, stable skill with verified resolution
+quality. Demonstrating that requires fresh public benchmark grader integration,
+controlled model/effort comparisons and repeated trials. No superiority is claimed
+and the shipped skill is unchanged. The earlier campaign specification follows
+as historical context; its shared Qwen server constraints do not describe this
+native-harness pilot.
 
 # Goal
 

@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    "heldout/d2_interfaces",
+    "heldout/d5_small_control"
+  ],
+  "arms": {
+    "none": [],
+    "karpathy": [
+      "karpathy"
+    ],
+    "ours": [
+      "ours"
+    ],
+    "both": [
+      "karpathy",
+      "ours"
+    ]
+  },
+  "image": "sol-pi-eval-trial:2026-10-04",
+  "provider": "cursor",
+  "model": "gpt-5.3-codex-low",
+  "rounds": 1,
+  "attempt_timeout_seconds": 120,
+  "maximum_attempts": 8,
+  "selection_note": "Preselected two synthetic diagnostic fixtures; no selection by observed outcome.",
+  "stop_rule": "Stop first authentication/quota error; preserve attempted error, remaining arms TBD.",
+  "comparison": "Native provider system comparison; different model backends are not a causal harness comparison.",
+  "skill_sha256": {
+    "karpathy": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+    "ours": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef"
+  }
+}

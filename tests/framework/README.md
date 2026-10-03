@@ -2,7 +2,7 @@
 
 Compare task quality, failure-inclusive tokens, dollars, time, and repeat stability across agents and skill configurations. All inference is containerized. Credentials are provided after the build; they never enter an image or Git.
 
-**Built:** nine agent CLIs, immutable sampling and run plans, isolated runner/grader, conservative telemetry, timeout recovery, reports, and offline Docker smoke checks. **TBD:** authenticated transcripts, provider/model routing verification, published-benchmark environment/grader integration, and new performance results. A CLI installation check is not an evaluation result.
+**Built:** nine agent CLIs, immutable sampling and run plans, isolated runner/grader, conservative telemetry, timeout recovery, reports, and offline Docker smoke checks. [A native four-configuration pilot](trials/README.md) has completed for Pi, Codex, Copilot, Cursor Auto and native Antigravity `agy`: 40 actual attempts, independently regraded. **TBD:** authenticated checks for remaining agents, common-backend routing, dollar billing and published-benchmark environment/grader integration. A CLI installation check is not an evaluation result.
 
 ## Agents and login
 
@@ -10,7 +10,7 @@ The shared `sol-pi-eval-all:2026-10-03` image contains Codex, GitHub Copilot CLI
 
 [Human login commands and credential mounts](runtime/README.md) · [Pinned versions and commands](agents.json) · [Offline installation evidence](runtime/installation-check.json).
 
-**Antigravity is a separate harness, not another name for Gemini CLI.** Its native container adapter is TBD. Pi with an Antigravity provider would count as Pi.
+**Antigravity is a separate harness, not another name for Gemini CLI.** Its native headless trial adapter is now tested using a host binary mounted read-only; packaging it into the shared image and generic registry remains TBD. Pi with an Antigravity provider would count as Pi.
 
 ## Benchmarks
 
@@ -108,4 +108,4 @@ Recovery removes the named containers and records unknown cost/quality for inter
 - Prices are explicit USD per million tokens with uncached input, output, cache read, and cache write separately. No price is inferred. Subscription costs, missing usage, auxiliary models without their own prices, and external tool charges remain TBD. See [telemetry contracts](USAGE.md).
 - Real campaigns require frozen maximum attempts and cumulative run time. Known-dollar caps are checked between attempts; they cannot guarantee a hard spend cap when usage/prices are unknown or one attempt exceeds the remaining allowance. `require_priced_usage` stops after an unpriced attempt. Provider-side spend limits are needed for a strict dollar cap.
 
-No new model performance has been measured by this framework yet. A stable efficiency claim requires held-out quality, complete comparable cost telemetry, and repeated matched runs; the eight-task pilot cannot establish one by itself.
+The two-fixture native pilot is measured; published benchmark performance remains TBD. A stable efficiency claim requires held-out quality, complete comparable cost telemetry, and repeated matched runs; the eight-task pilot cannot establish one by itself.

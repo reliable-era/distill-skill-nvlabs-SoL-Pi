@@ -1,0 +1,41 @@
+9b827f6e11cc00cbc6b817fd5a5b15e36f2efd0d4c6028b2c26ae0beb40d611c
+.F.FF                                                                    [100%]
+=================================== FAILURES ===================================
+_____________________________ test_page_count[1-5] _____________________________
+
+count = 1, size = 5
+
+    @pytest.mark.parametrize("count,size",[(0,5),(1,5),(5,5),(6,5),(100,7)])
+    def test_page_count(count,size):
+>       assert page_count(count,size)==(count+size-1)//size
+E       assert 0 == (((1 + 5) - 1) // 5)
+E        +  where 0 = page_count(1, 5)
+
+/grade/test_hidden.py:5: AssertionError
+_____________________________ test_page_count[6-5] _____________________________
+
+count = 6, size = 5
+
+    @pytest.mark.parametrize("count,size",[(0,5),(1,5),(5,5),(6,5),(100,7)])
+    def test_page_count(count,size):
+>       assert page_count(count,size)==(count+size-1)//size
+E       assert 1 == (((6 + 5) - 1) // 5)
+E        +  where 1 = page_count(6, 5)
+
+/grade/test_hidden.py:5: AssertionError
+____________________________ test_page_count[100-7] ____________________________
+
+count = 100, size = 7
+
+    @pytest.mark.parametrize("count,size",[(0,5),(1,5),(5,5),(6,5),(100,7)])
+    def test_page_count(count,size):
+>       assert page_count(count,size)==(count+size-1)//size
+E       assert 14 == (((100 + 7) - 1) // 7)
+E        +  where 14 = page_count(100, 7)
+
+/grade/test_hidden.py:5: AssertionError
+=========================== short test summary info ============================
+FAILED ../grade/test_hidden.py::test_page_count[1-5] - assert 0 == (((1 + 5) ...
+FAILED ../grade/test_hidden.py::test_page_count[6-5] - assert 1 == (((6 + 5) ...
+FAILED ../grade/test_hidden.py::test_page_count[100-7] - assert 14 == (((100 ...
+3 failed, 2 passed in 0.02s

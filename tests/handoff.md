@@ -1,14 +1,19 @@
-# Current handoff: multi-agent economic evaluation framework
+# Current handoff: native harness pilot complete
 
-Updated 2026-10-03. Implementation is under `tests/framework/`.
-Nine CLIs are built/probed in one shared Docker image `sol-pi-eval-all:2026-10-03`;
-no authenticated inference has been launched. Human login instructions are in
-`tests/framework/runtime/README.md` and `python3 tests/framework/auth.py list`.
-The frozen eight-task metadata pilot covers Verified, Multilingual, Terminal-Bench2,
-and Aider polyglot; source revisions and hashes are committed. Public benchmark
-runtime/grader integration remains TBD, as do authenticated telemetry/routing checks.
-Offline runner/grader smoke, timeout cleanup and synthetic credential isolation pass.
-The historical benchmark results and canonical shipped skill are unchanged.
+Updated 2026-10-04. Parallel subagents completed 40 authenticated Docker attempts:
+Pi, Codex, Copilot, native Antigravity `agy`, and Cursor Auto; four skill arms and
+two previously exposed synthetic tasks per harness. Independent Docker regrading
+confirmed 39 passes and one Copilot Karpathy failure. Three Copilot runs hit the
+120-second cutoff; two nevertheless left passing patches.
+
+Results, backend identities, frozen skill hashes, raw transcripts, availability
+failures, and independent audit: `framework/trials/README.md`. Ours uses more
+reported tokens than no skill in Pi (+60.5%), Codex (+4.6%), and agy (+8.4%).
+Copilot/Cursor full-session tokens and all billing remain TBD. Copilot Both used
+mixed models. This one-round reused-fixture pilot does not establish a stable win.
+Canonical skill and historical published numbers are unchanged. Public benchmark
+environments/grader integration and a controlled repeated comparison remain TBD.
+Unknown token usage now remains unknown rather than being summarized as zero.
 
 The following is historical context, not the current execution state.
 

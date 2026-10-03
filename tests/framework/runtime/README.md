@@ -1,6 +1,6 @@
 # Agent containers and login
 
-The source Node image contains Codex, GitHub Copilot CLI, Pi, OpenCode, Gemini CLI, OpenClaw, Cursor Agent CLI, and the Claude Code reference. Hermes is built in a Python source image, then both are combined into `sol-pi-eval-all:2026-10-03` for one shared evaluation toolchain. Installation and CLI help were checked without credentials or model requests; authenticated execution and accounting validation are **TBD**.
+The source Node image contains Codex, GitHub Copilot CLI, Pi, OpenCode, Gemini CLI, OpenClaw, Cursor Agent CLI, and the Claude Code reference. Hermes is built in a Python source image, then both are combined into `sol-pi-eval-all:2026-10-03` for one shared evaluation toolchain. Installation and CLI help were checked without credentials or model requests; authenticated synthetic pilots are complete for Pi, Codex, Copilot, Cursor Auto and native `agy` via a mounted binary. [Results and accounting limits](../trials/README.md); other agents remain TBD.
 
 ```sh
 docker build -t sol-pi-eval-agents:2026-10-03 tests/framework/runtime
@@ -33,7 +33,7 @@ Replace `codex` in the volume name and the final command using this table. Login
 | Hermes Agent | `hermes setup` | Provider API-key env-file or `.hermes/auth.json`; actual provider configuration TBD until login |
 | Claude Code reference | `claude auth login` | `.claude/.credentials.json`, or `ANTHROPIC_API_KEY` |
 
-Google Antigravity is a distinct product/harness. Gemini CLI is not Antigravity; a native Antigravity adapter and its container workflow are **TBD**. A Pi model provider named Antigravity would still be a Pi harness run.
+Google Antigravity is a distinct product/harness. Gemini CLI is not Antigravity; a native `agy` headless pilot now works in Docker via a read-only host-binary mount. [Trial evidence](../trials/agy/); packaged-image/generic registry installation remains TBD. A Pi model provider named Antigravity would still be a Pi harness run.
 
 For evaluation, mount the dedicated auth volume read-only at `/auth` instead of mounting it at HOME. The entrypoint copies only the allowlisted credential files into the container's disposable home. It does not import skills, memories, histories, hooks, or ordinary user preferences. Copilot's combined configuration file and Hermes' mixed `.env` file are deliberately excluded. Credentials refresh in the disposable home and are discarded after the run; refresh the login volume interactively if required.
 

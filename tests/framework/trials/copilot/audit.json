@@ -1,0 +1,94 @@
+{
+  "scope": "artifact consistency; routing model differences prevent causal skill attribution",
+  "errors": [],
+  "attempts": [
+    {
+      "task": "d2_interfaces",
+      "config": "karpathy",
+      "status": "timeout",
+      "solved": false,
+      "observed_models": [
+        "gpt-6-luna"
+      ],
+      "agent_log_sha256": "10820866dcfd55563cc5b1907a55b2ea84a077ecf3dcb7de9ff46dd3c72dd9f1",
+      "grader_log_sha256": "9d26c66d3a14b6863a36956e597ad015c2027cef616c591a694f7a4d909f5492"
+    },
+    {
+      "task": "d5_small_control",
+      "config": "ours",
+      "status": "timeout",
+      "solved": true,
+      "observed_models": [
+        "gpt-6-luna"
+      ],
+      "agent_log_sha256": "bc0353cd1a3670c3d143bd63fc7e72c8ddb948dc81ad68c5277f02b275f1ea58",
+      "grader_log_sha256": "c55f714256864e4620fc434d49a68e6378b62600bb7fd626582ac882e31861bd"
+    },
+    {
+      "task": "d5_small_control",
+      "config": "none",
+      "status": "timeout",
+      "solved": true,
+      "observed_models": [
+        "gpt-6-luna"
+      ],
+      "agent_log_sha256": "9dd8b38bae7a6ee23d26f0aa215e2d406b6ad1607d18c75bc239bf617757118d",
+      "grader_log_sha256": "c5eb7356c89880407b24d38a3b92bc4b89887a486ed88c787706292a1da6202e"
+    },
+    {
+      "task": "d5_small_control",
+      "config": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "observed_models": [
+        "gpt-6-luna"
+      ],
+      "agent_log_sha256": "51c8e80aaafb1abee756b06569225d27ceb01cdcb09985b1d08701d2dd565d4d",
+      "grader_log_sha256": "ec7f832e484c364fc74654528021f2eb0ec8b1752598ba42fc5e51e5d3762f8e"
+    },
+    {
+      "task": "d2_interfaces",
+      "config": "both",
+      "status": "completed",
+      "solved": true,
+      "observed_models": [
+        "gpt-6-luna"
+      ],
+      "agent_log_sha256": "f3d9d506c9a3bad3609cb404f2ed3949e73189483995d5410eb9b5b846d0fdb1",
+      "grader_log_sha256": "f8dba2479663f2c959a983fb1fa1bee2f8ec29b98fc0518f91f08adc2c545874"
+    },
+    {
+      "task": "d5_small_control",
+      "config": "both",
+      "status": "completed",
+      "solved": true,
+      "observed_models": [
+        "mai-code-1.1-flash"
+      ],
+      "agent_log_sha256": "9ed01f5828444cea13fe28d21786124d9efdbcb89d1a800909af74b38df0943e",
+      "grader_log_sha256": "82df8b26be00ca0645b338779b9b900b2a3a1930d6b33e8189a8705889883ebd"
+    },
+    {
+      "task": "d2_interfaces",
+      "config": "none",
+      "status": "completed",
+      "solved": true,
+      "observed_models": [
+        "gpt-6-luna"
+      ],
+      "agent_log_sha256": "7abc931305e53cc5a45b86459076f69c1fba9e0bc6f60236abb8c3ca34fe29e1",
+      "grader_log_sha256": "0d2da6ce182d449c7495cc97f59a23cccb2bd5d48920cdafc8b7dcd2bc0190c8"
+    },
+    {
+      "task": "d2_interfaces",
+      "config": "ours",
+      "status": "completed",
+      "solved": true,
+      "observed_models": [
+        "gpt-6-luna"
+      ],
+      "agent_log_sha256": "84470f82f185aad4304525ea98eec55d29630c7da0c8bba03dd59c5e59f745cd",
+      "grader_log_sha256": "c9cc29672856c70c4afeebf4934bb35a616119ac435b9b493d70cf78671f0da1"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "mode": "native",
+  "backend_id": "OpenAI ChatGPT OAuth subscription; configured gpt-6.1-sol",
+  "configurations": [
+    {
+      "id": "none",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-trial:2026-10-04",
+      "credential_volume": "solpi-codex-trial-auth-20261004"
+    },
+    {
+      "id": "karpathy",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-trial:2026-10-04",
+      "credential_volume": "solpi-codex-trial-auth-20261004",
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/frozen/latest/karpathy-guidelines/SKILL.md"
+    },
+    {
+      "id": "ours",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-trial:2026-10-04",
+      "credential_volume": "solpi-codex-trial-auth-20261004",
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/SKILL.md"
+    },
+    {
+      "id": "both",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-trial:2026-10-04",
+      "credential_volume": "solpi-codex-trial-auth-20261004",
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/SKILL.md"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "d2_interfaces",
+      "benchmark": "our-synthetic-diagnostics",
+      "workspace": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/diagnostics/heldout/d2_interfaces/repo",
+      "prompt": "Lookup should use the same canonical name semantics as catalog construction, including Unicode case-insensitive matching and whitespace. Investigate the producer and consumer and make their behavior consistent without changing stored values.\n",
+      "grader_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/diagnostics/heldout/d2_interfaces/hidden",
+      "grader_image": "sol-pi-trial-grader:2026-10-04",
+      "grader_argv": [
+        "python3",
+        "-c",
+        "import sys,pytest; sys.path.insert(0,'/workspace'); raise SystemExit(pytest.main(['-q','/grade/test_hidden.py','-p','no:cacheprovider']))"
+      ]
+    },
+    {
+      "id": "d5_small_control",
+      "benchmark": "our-synthetic-diagnostics",
+      "workspace": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/diagnostics/heldout/d5_small_control/repo",
+      "prompt": "Fix page_count(count,size): for nonnegative counts and positive sizes return the number of page_count needed, including a partial final page. Keep zero count at zero. Verify the fix.\n",
+      "grader_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/diagnostics/heldout/d5_small_control/hidden",
+      "grader_image": "sol-pi-trial-grader:2026-10-04",
+      "grader_argv": [
+        "python3",
+        "-c",
+        "import sys,pytest; sys.path.insert(0,'/workspace'); raise SystemExit(pytest.main(['-q','/grade/test_hidden.py','-p','no:cacheprovider']))"
+      ]
+    }
+  ],
+  "rounds": [
+    1
+  ],
+  "schedule_seed": 20261004,
+  "timeout_seconds": 120,
+  "grade_timeout_seconds": 30,
+  "budget": {
+    "max_attempts": 8,
+    "max_wall_seconds": 1300
+  },
+  "agent_network": "bridge",
+  "cpus": 2,
+  "memory": "4g"
+}

@@ -1,0 +1,9 @@
+from catalog import build
+from query import get
+def test_simple():
+    assert get(build([("ALPHA",7)]),"alpha")==7
+def test_whitespace():
+    assert get(build([("  Alpha  ",7)]),"alpha")==7
+    assert get(build([("Alpha",7)]),"  alpha  ")==7
+def test_unicode_casefold():
+    assert get(build([("STRASSE",7)]),"straße")==7

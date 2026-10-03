@@ -1,0 +1,1391 @@
+{
+  "timestamp_utc": "2026-10-03T19:55:36.406393+00:00",
+  "scope": "Independent artifact checks and all 40 returned workspaces regraded in network-disabled read-only Docker; no model requests.",
+  "errors": [],
+  "warnings": [
+    "Two previously exposed synthetic tasks and one round cannot establish robust superiority.",
+    "Harnesses differ in model backend, reasoning settings, resource limits, and skill delivery; this is native system comparison, not causal harness attribution.",
+    "No duplicate successful records or available session identifiers found; server-side billing/retry replay cannot be independently proved from CLI artifacts.",
+    "Copilot/Cursor token totals remain TBD; incomplete local summaries reporting zero tokens must not be presented as measured zero.",
+    "All actual monetary billing remains TBD."
+  ],
+  "ledger": {
+    "native_evaluation_attempts": 40,
+    "native_quality_pass": 39,
+    "native_quality_fail": 1,
+    "native_timeouts": 3,
+    "excluded_attempted": 19,
+    "excluded_not_attempted": 1,
+    "all_recorded_attempted": 59,
+    "pi_excluded_attempted": 8,
+    "cursor_excluded_attempted": 7,
+    "copilot-wrongmodel_excluded_attempted": 4
+  },
+  "records": [
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/codex/results/00000-8aeb38963b79",
+      "transcript_sha256": "4a46fd1352cd17468edcfc8b753aef3555aecd58b848e2fdf9f974b88283050e",
+      "grader_log_sha256": "d66acfda22e866e31d8b8ce522987e1e8fd42d3424e5466613e2ce7a105374e4",
+      "elapsed_seconds": 45.75498358719051,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/codex/results/00001-9d3ab7097821",
+      "transcript_sha256": "2ad99cafd2dec05dca6b57fd4879ff80d146cb1e22e4c59dbb158327664d63d2",
+      "grader_log_sha256": "3a8ff9fa64d10e86ecb1a1e697e96e316e279b8ce793dd55ea7b525fcb544396",
+      "elapsed_seconds": 28.506999131292105,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/codex/results/00002-594deaa37582",
+      "transcript_sha256": "2731a564feaec96295ab96b0261d0ba1074e04889c168926ee0eb9d616ce32f8",
+      "grader_log_sha256": "016e50010fbbadccaaf5a9d437e290d5988ae1728feb387a63e2d7b539c3ebbf",
+      "elapsed_seconds": 34.62755563296378,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/codex/results/00003-b14f4e4b4157",
+      "transcript_sha256": "87165f60cfa39b670ccc72e0da32c5983429ba7121897a94bf420bbca59a0870",
+      "grader_log_sha256": "e7480b992645e4702196065612c28a1292797002fabd9221faaae40479656d69",
+      "elapsed_seconds": 43.38997234031558,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/codex/results/00004-71068e60cff2",
+      "transcript_sha256": "855cfa8bc816f594631c968e23bb8d0d8f170df75ea10f014750df1a01370b9c",
+      "grader_log_sha256": "0f283d9702c47cd56fe67edd7aec45a67ba822fe13f6ce8b5aada383b80db4f3",
+      "elapsed_seconds": 45.30476796254516,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/codex/results/00005-7db74d569a13",
+      "transcript_sha256": "48b1265443650ff28002cbbd423f6f54bee7eaac21493ccb1d628db90ec67b8b",
+      "grader_log_sha256": "cb02b5cfae57b177ec4f1ebe6b47b8ae50a673ee0071c15e7b60e9167f1fe80b",
+      "elapsed_seconds": 34.48875308781862,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/codex/results/00006-5bc784c9ae65",
+      "transcript_sha256": "45be0a39b45e516b80003dc5b4f32519bb0bcb118969b9c9fb0e05a80cb37389",
+      "grader_log_sha256": "7a990353d9da7831e18445bd75b77874657b79fd06969d387a530bdbfa0d96a9",
+      "elapsed_seconds": 43.04708218574524,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/codex/results/00007-25aca002ac3a",
+      "transcript_sha256": "aec02035da767eb815491357c02f91d4d441955f1455840f711a026dfc65c418",
+      "grader_log_sha256": "964ed50bc84b8846be2c37bed818cf80368ba9914fef5b608f181900c784b29b",
+      "elapsed_seconds": 46.38856238313019,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "status": "timeout",
+      "solved": false,
+      "grade_exit": 1,
+      "directory": "tests/framework/trials/copilot/results-auto/00000-8aeb38963b79",
+      "transcript_sha256": "10820866dcfd55563cc5b1907a55b2ea84a077ecf3dcb7de9ff46dd3c72dd9f1",
+      "grader_log_sha256": "9d26c66d3a14b6863a36956e597ad015c2027cef616c591a694f7a4d909f5492",
+      "elapsed_seconds": 120.35024227201939,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "status": "timeout",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/copilot/results-auto/00001-9d3ab7097821",
+      "transcript_sha256": "bc0353cd1a3670c3d143bd63fc7e72c8ddb948dc81ad68c5277f02b275f1ea58",
+      "grader_log_sha256": "c55f714256864e4620fc434d49a68e6378b62600bb7fd626582ac882e31861bd",
+      "elapsed_seconds": 120.34073431044817,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "none",
+      "status": "timeout",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/copilot/results-auto/00002-594deaa37582",
+      "transcript_sha256": "9dd8b38bae7a6ee23d26f0aa215e2d406b6ad1607d18c75bc239bf617757118d",
+      "grader_log_sha256": "c5eb7356c89880407b24d38a3b92bc4b89887a486ed88c787706292a1da6202e",
+      "elapsed_seconds": 120.41227254457772,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/copilot/results-auto/00003-b14f4e4b4157",
+      "transcript_sha256": "51c8e80aaafb1abee756b06569225d27ceb01cdcb09985b1d08701d2dd565d4d",
+      "grader_log_sha256": "ec7f832e484c364fc74654528021f2eb0ec8b1752598ba42fc5e51e5d3762f8e",
+      "elapsed_seconds": 67.24111493676901,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/copilot/results-auto/00004-71068e60cff2",
+      "transcript_sha256": "f3d9d506c9a3bad3609cb404f2ed3949e73189483995d5410eb9b5b846d0fdb1",
+      "grader_log_sha256": "f8dba2479663f2c959a983fb1fa1bee2f8ec29b98fc0518f91f08adc2c545874",
+      "elapsed_seconds": 65.51778306998312,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/copilot/results-auto/00005-7db74d569a13",
+      "transcript_sha256": "9ed01f5828444cea13fe28d21786124d9efdbcb89d1a800909af74b38df0943e",
+      "grader_log_sha256": "82df8b26be00ca0645b338779b9b900b2a3a1930d6b33e8189a8705889883ebd",
+      "elapsed_seconds": 75.95087830722332,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/copilot/results-auto/00006-5bc784c9ae65",
+      "transcript_sha256": "7abc931305e53cc5a45b86459076f69c1fba9e0bc6f60236abb8c3ca34fe29e1",
+      "grader_log_sha256": "0d2da6ce182d449c7495cc97f59a23cccb2bd5d48920cdafc8b7dcd2bc0190c8",
+      "elapsed_seconds": 40.90466526709497,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/copilot/results-auto/00007-25aca002ac3a",
+      "transcript_sha256": "84470f82f185aad4304525ea98eec55d29630c7da0c8bba03dd59c5e59f745cd",
+      "grader_log_sha256": "c9cc29672856c70c4afeebf4934bb35a616119ac435b9b493d70cf78671f0da1",
+      "elapsed_seconds": 31.313094172626734,
+      "skill_delivery": "inline entrypoint text plus mounted support resources"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/pi_openai/d2_interfaces-none",
+      "transcript_sha256": "6a85ef7ec9ed56a7910988171ada86b7392258dce98b905ed5507b8341810670",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 45.48892521858215,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/pi_openai/d2_interfaces-karpathy",
+      "transcript_sha256": "603378180520caeda7fd8b7a13298c0906417ddec86323520ac778dd62a9a046",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 54.20953941345215,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/pi_openai/d2_interfaces-ours",
+      "transcript_sha256": "f7d9dea87ad21994b837b1418e4318d4ce424a9c3d50c119097a6d457023a45b",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 52.06405234336853,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/pi_openai/d2_interfaces-both",
+      "transcript_sha256": "29d38bfdb631f9688a33c56d37ddc924f588ae97eaab12795a035c2447da2286",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 58.76282787322998,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/pi_openai/d5_small_control-none",
+      "transcript_sha256": "abf8a839959299b2b913e27e250b4758dcf7b5aac7b250ab5dbe0c8aef9c5f75",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 36.94720149040222,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/pi_openai/d5_small_control-karpathy",
+      "transcript_sha256": "589fd00f4ccf014095fc6dc06bf10c41eaa1c4e825221d9cead44923005a1c47",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 46.726438999176025,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/pi_openai/d5_small_control-ours",
+      "transcript_sha256": "5caf4b949a948cc8999db9846441b72c6a7b607baf00022b6c694174e7c0f124",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 38.295135736465454,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/pi_openai/d5_small_control-both",
+      "transcript_sha256": "6b813ed68d8db4a3a3ad40f18a945f8525f8e235eb7cd7c3066d935db423ae80",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 45.987539291381836,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/agy/d2_interfaces-none",
+      "transcript_sha256": "1a0391aeed2fc14cd43ec0db9bae69e25755ae088159a89d3040fe72652c1ec3",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 52.47425889968872,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/agy/d2_interfaces-karpathy",
+      "transcript_sha256": "305b7c695e455b28f639ef2be8a8fbe0efcd629abdfc09b36b731bdc73f8a9f2",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 88.46570014953613,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/agy/d2_interfaces-ours",
+      "transcript_sha256": "f07b4778ecd198398db2f4b6ee7d3c12b97f7f92dc798d5150d516a6172f89e3",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 52.330507040023804,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/agy/d2_interfaces-both",
+      "transcript_sha256": "0afd2b3363a3b4608a7e200b8908acf17f4ab01be8e4dd337606b8b9f3cdbd56",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 53.531644344329834,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/agy/d5_small_control-none",
+      "transcript_sha256": "0b4a419cecabe7d8c4c04fc931b1b656f278ff1bba332bc7d34da5f698efcf18",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 30.636571884155273,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/agy/d5_small_control-karpathy",
+      "transcript_sha256": "f8a00711b158794da7ba4159752744ed0c28f4cfafe20df76b31e404d7c3521b",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 39.764785051345825,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/agy/d5_small_control-ours",
+      "transcript_sha256": "6e55ecad88afb9fead1900c1c60e3ec9973fdc5e63cb76ef1ff51acccb837e03",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 52.30616331100464,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/agy/d5_small_control-both",
+      "transcript_sha256": "cda1e3ce77dcfbe6946287ee53ee21a70613aad30a22b0c70dc3a0173cd38dae",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 29.641735792160034,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/cursor_auto/d2_interfaces-none",
+      "transcript_sha256": "1a6dbbe8f3e97d3220bd4bc827348efa504567d77b8dbf2e5c504d7bbc02615b",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 56.49715828895569,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/cursor_auto/d2_interfaces-karpathy",
+      "transcript_sha256": "c36597dc0b4df618d4976a7025cfd655611aae0325d69c6fa8c83dfb94c668c1",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 57.45606279373169,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/cursor_auto/d2_interfaces-ours",
+      "transcript_sha256": "f999738cb846feee5c9620830bbc5a28cfde5568343b7cbd4fa4990ba21c3705",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 53.84460139274597,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/cursor_auto/d2_interfaces-both",
+      "transcript_sha256": "67ebfc35c32ff86675cc28c73989795e75a732b5394a8acf00e17ca88e8bb974",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 63.49761176109314,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "none",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/cursor_auto/d5_small_control-none",
+      "transcript_sha256": "61d8100238d3db38e195371e4305c14b69f3a9e26a251b9604bf970ddc4bedc8",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 27.266083240509033,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/cursor_auto/d5_small_control-karpathy",
+      "transcript_sha256": "fba6c3938473e5a9bd26d46b10216e58c12c5b2e5fc26b2fab03d04325a5cc05",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 36.074283599853516,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/cursor_auto/d5_small_control-ours",
+      "transcript_sha256": "7ce845d297274c971c6b381c573c1451fa3f6ec50a035e3a8983a3295842d790",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 26.01650357246399,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "both",
+      "status": "completed",
+      "solved": true,
+      "grade_exit": 0,
+      "directory": "tests/framework/trials/cursor_auto/d5_small_control-both",
+      "transcript_sha256": "8733907419294f2ffa4daf5c6a7486bb71d00d27887e799a89000ed944722703",
+      "grader_log_sha256": "9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "elapsed_seconds": 26.0829918384552,
+      "skill_delivery": "explicit file-reading instruction; entrypoints and supports mounted"
+    }
+  ],
+  "independent_regrades": [
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "expected_exit": 1,
+      "regraded_exit": 1,
+      "original_exit": 1,
+      "stdout_summary": "ertion...\nFAILED ../grader/test_hidden.py::test_consistent[  MiXeD - mixed ] - Assertio...\nFAILED ../grader/test_hidden.py::test_consistent[\\xc9COLE- \\xe9cole ] - Asser...\n3 failed, 2 passed in 0.02s\n"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.02s\n"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "none",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "both",
+      "expected_exit": 0,
+      "regraded_exit": 0,
+      "original_exit": 0,
+      "stdout_summary": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    }
+  ],
+  "terminal_usage": [
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "reported_total_tokens": 83475,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "reported_total_tokens": 60691,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "none",
+      "reported_total_tokens": 58874,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "reported_total_tokens": 96076,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "reported_total_tokens": 87105,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "codex",
+      "task": "d5_small_control",
+      "arm": "both",
+      "reported_total_tokens": 79210,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "reported_total_tokens": 74748,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "codex",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "reported_total_tokens": 79049,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "none",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "copilot",
+      "task": "d5_small_control",
+      "arm": "both",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "copilot",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "reported_total_tokens": 9037,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "reported_total_tokens": 19867,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "reported_total_tokens": 15358,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "reported_total_tokens": 22527,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "none",
+      "reported_total_tokens": 9112,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "reported_total_tokens": 17103,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "reported_total_tokens": 13770,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "pi_openai",
+      "task": "d5_small_control",
+      "arm": "both",
+      "reported_total_tokens": 21671,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "reported_total_tokens": 158031,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "reported_total_tokens": 156348,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "reported_total_tokens": 197375,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "agy",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "reported_total_tokens": 182207,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "none",
+      "reported_total_tokens": 138499,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "reported_total_tokens": 184462,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "reported_total_tokens": 123935,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "agy",
+      "task": "d5_small_control",
+      "arm": "both",
+      "reported_total_tokens": 133089,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "none",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "ours",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d2_interfaces",
+      "arm": "both",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "none",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    },
+    {
+      "harness": "cursor_auto",
+      "task": "d5_small_control",
+      "arm": "both",
+      "reported_total_tokens": null,
+      "billing_usd": "TBD"
+    }
+  ],
+  "excluded_records": [
+    {
+      "harness": "pi",
+      "task": "heldout/d2_interfaces",
+      "arm": "none",
+      "status": "blocked_provider_quota",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "pi",
+      "task": "heldout/d2_interfaces",
+      "arm": "karpathy",
+      "status": "blocked_provider_quota",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "pi",
+      "task": "heldout/d2_interfaces",
+      "arm": "ours",
+      "status": "blocked_provider_quota",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "pi",
+      "task": "heldout/d2_interfaces",
+      "arm": "both",
+      "status": "blocked_provider_quota",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "pi",
+      "task": "heldout/d5_small_control",
+      "arm": "none",
+      "status": "blocked_provider_quota",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "pi",
+      "task": "heldout/d5_small_control",
+      "arm": "karpathy",
+      "status": "blocked_provider_quota",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "pi",
+      "task": "heldout/d5_small_control",
+      "arm": "ours",
+      "status": "blocked_provider_quota",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "pi",
+      "task": "heldout/d5_small_control",
+      "arm": "both",
+      "status": "blocked_provider_quota",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "cursor",
+      "task": "heldout/d2_interfaces",
+      "arm": "none",
+      "status": "blocked_provider_plan_restriction",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "cursor",
+      "task": "heldout/d2_interfaces",
+      "arm": "karpathy",
+      "status": "blocked_provider_plan_restriction",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "cursor",
+      "task": "heldout/d2_interfaces",
+      "arm": "ours",
+      "status": "blocked_provider_plan_restriction",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "cursor",
+      "task": "heldout/d2_interfaces",
+      "arm": "both",
+      "status": "blocked_provider_plan_restriction",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "cursor",
+      "task": "heldout/d5_small_control",
+      "arm": "none",
+      "status": "blocked_provider_plan_restriction",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "cursor",
+      "task": "heldout/d5_small_control",
+      "arm": "karpathy",
+      "status": "blocked_provider_plan_restriction",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "cursor",
+      "task": "heldout/d5_small_control",
+      "arm": "ours",
+      "status": "blocked_provider_plan_restriction",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "cursor",
+      "task": "heldout/d5_small_control",
+      "arm": "both",
+      "status": "not_attempted_after_provider_plan_restriction",
+      "attempted": false,
+      "solved": null,
+      "quality_scope": "excluded availability; not a zero quality score"
+    },
+    {
+      "harness": "copilot-wrongmodel",
+      "task": "d2_interfaces",
+      "arm": "karpathy",
+      "status": "failed",
+      "attempted": true,
+      "solved": false,
+      "quality_scope": "excluded wrong-model availability or interrupted diagnostic"
+    },
+    {
+      "harness": "copilot-wrongmodel",
+      "task": "d5_small_control",
+      "arm": "ours",
+      "status": "failed",
+      "attempted": true,
+      "solved": false,
+      "quality_scope": "excluded wrong-model availability or interrupted diagnostic"
+    },
+    {
+      "harness": "copilot-wrongmodel",
+      "task": "d5_small_control",
+      "arm": "karpathy",
+      "status": "interrupted",
+      "attempted": true,
+      "solved": null,
+      "quality_scope": "excluded wrong-model availability or interrupted diagnostic"
+    },
+    {
+      "harness": "copilot-wrongmodel",
+      "task": "d5_small_control",
+      "arm": "none",
+      "status": "failed",
+      "attempted": true,
+      "solved": false,
+      "quality_scope": "excluded wrong-model availability or interrupted diagnostic"
+    }
+  ],
+  "fixture_manifest_verified": true,
+  "skill_component_sha256": {
+    "ours": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+    "karpathy": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+  },
+  "summary_check": {
+    "status": "passed",
+    "collection_attempts_checked": 40,
+    "summary_groups_checked": 20,
+    "csv_groups_checked": 20,
+    "availability_attempts_reconciled": 19,
+    "availability_skips_reconciled": 1,
+    "native_failure_inclusive_wall_verified": true,
+    "cache_not_doublecounted": true,
+    "unknown_usage_and_billing_rendered_TBD": true,
+    "mixed_models_and_delivery_limitations_present": true,
+    "collection_sha256": "20e953b88846d3ec69a107aa3c33fe25b5ca2f80348a8d840105e26b32ba6972",
+    "README_sha256": "446cea1fb8d3d3dc0b1998c90143a9681090c911320cc334f0ee8f1be22f8a58"
+  }
+}

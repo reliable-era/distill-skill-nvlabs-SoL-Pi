@@ -1,0 +1,56 @@
+{
+  "pi": {
+    "attempted": 8,
+    "skipped": 0,
+    "quality_evaluable": false,
+    "source": "pi/results.json",
+    "tokens": null,
+    "actual_billing_usd": null
+  },
+  "cursor": {
+    "attempted": 7,
+    "skipped": 1,
+    "quality_evaluable": false,
+    "source": "cursor/results.json",
+    "tokens": null,
+    "actual_billing_usd": null
+  },
+  "copilot": {
+    "available": false,
+    "category": "model-unavailable",
+    "attempts": [
+      {
+        "path": "tests/framework/trials/copilot/results/00000-8aeb38963b79/result.json",
+        "status": "failed",
+        "reason": "configured model gpt-5.4 unavailable before inference",
+        "quality_evaluable": false,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "path": "tests/framework/trials/copilot/results/00001-9d3ab7097821/result.json",
+        "status": "failed",
+        "reason": "configured model gpt-5.4 unavailable before inference",
+        "quality_evaluable": false,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "path": "tests/framework/trials/copilot/results/00003-b14f4e4b4157/result.json",
+        "status": "interrupted",
+        "reason": "stopped after unavailable-model diagnosis",
+        "quality_evaluable": false,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "path": "tests/framework/trials/copilot/results/00002-594deaa37582/result.json",
+        "status": "failed",
+        "reason": "configured model gpt-5.4 unavailable before inference",
+        "quality_evaluable": false,
+        "tokens": null,
+        "cost_usd": null
+      }
+    ]
+  }
+}

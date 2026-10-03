@@ -1,0 +1,202 @@
+{
+  "mode": "native",
+  "backend_id": "OpenAI ChatGPT OAuth subscription; configured gpt-6.1-sol",
+  "configurations": [
+    {
+      "id": "none",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-trial:2026-10-04",
+      "credential_volume": "solpi-codex-trial-auth-20261004",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill_text": "",
+      "skill_sha256": null,
+      "skill_dir": null,
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70"
+    },
+    {
+      "id": "karpathy",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-trial:2026-10-04",
+      "credential_volume": "solpi-codex-trial-auth-20261004",
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/frozen/latest/karpathy-guidelines/SKILL.md",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill_text": "---\nname: karpathy-guidelines\ndescription: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.\nlicense: MIT\n---\n\n# Karpathy Guidelines\n\nBehavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.\n\n**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.\n\n## 1. Think Before Coding\n\n**Don't assume. Don't hide confusion. Surface tradeoffs.**\n\nBefore implementing:\n- State your assumptions explicitly. If uncertain, ask.\n- If multiple interpretations exist, present them - don't pick silently.\n- If a simpler approach exists, say so. Push back when warranted.\n- If something is unclear, stop. Name what's confusing. Ask.\n\n## 2. Simplicity First\n\n**Minimum code that solves the problem. Nothing speculative.**\n\n- No features beyond what was asked.\n- No abstractions for single-use code.\n- No \"flexibility\" or \"configurability\" that wasn't requested.\n- No error handling for impossible scenarios.\n- If you write 200 lines and it could be 50, rewrite it.\n\nAsk yourself: \"Would a senior engineer say this is overcomplicated?\" If yes, simplify.\n\n## 3. Surgical Changes\n\n**Touch only what you must. Clean up only your own mess.**\n\nWhen editing existing code:\n- Don't \"improve\" adjacent code, comments, or formatting.\n- Don't refactor things that aren't broken.\n- Match existing style, even if you'd do it differently.\n- If you notice unrelated dead code, mention it - don't delete it.\n\nWhen your changes create orphans:\n- Remove imports/variables/functions that YOUR changes made unused.\n- Don't remove pre-existing dead code unless asked.\n\nThe test: Every changed line should trace directly to the user's request.\n\n## 4. Goal-Driven Execution\n\n**Define success criteria. Loop until verified.**\n\nTransform tasks into verifiable goals:\n- \"Add validation\" \u2192 \"Write tests for invalid inputs, then make them pass\"\n- \"Fix the bug\" \u2192 \"Write a test that reproduces it, then make it pass\"\n- \"Refactor X\" \u2192 \"Ensure tests pass before and after\"\n\nFor multi-step tasks, state a brief plan:\n```\n1. [Step] \u2192 verify: [check]\n2. [Step] \u2192 verify: [check]\n3. [Step] \u2192 verify: [check]\n```\n\nStrong success criteria let you loop independently. Weak criteria (\"make it work\") require constant clarification.\n",
+      "skill_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+      "skill_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/frozen/latest/karpathy-guidelines",
+      "skill_tree_sha256": "7b1df8bd4c5c4bfa7cede2aa1f48df7020b050a7d958ace5ab8f4bc7338c0c10",
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70"
+    },
+    {
+      "id": "ours",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-trial:2026-10-04",
+      "credential_volume": "solpi-codex-trial-auth-20261004",
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/SKILL.md",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill_text": "---\nname: efficient-coding\ndescription: Reduce repeated reads and avoidable tool turns in coding tasks, especially when debugging long logs or resuming work. Use focused context and verify the requested behavior.\n---\n\n# Efficient Coding\n\nSpend fewer requests on repeated work while completing and verifying the task.\nFor a small fix, keep the acceptance check in working memory and edit directly.\n\n- Search for the affected symbol or diagnostic, then read its relevant source,\n  callers, or tests. Expand when needed; reuse what you have already learned.\n- Batch independent reads. Combine a mutation with a predetermined check only\n  when the available tool can execute them sequentially after mutation succeeds.\n  With separate Edit and Bash calls, run them in order; that still uses two calls.\n- Keep long command output in its existing artifact or a local log. Search for\n  the decisive error and inspect nearby lines, including the middle of the log.\n  Capture the command's actual exit status before shortening output; a successful\n  `tail` or `grep` does not prove the original command passed.\n- Check a quoted diagnostic against its original source before relying on it.\n  A matching quote can still omit another failure. Read more evidence when needed.\n- If a tool rejects its arguments, correct or simplify the next call instead of\n  repeating the malformed payload. Reassess repeated failed attempts from evidence.\n- On resumption, read the existing continuation note and check current files and\n  verification state. Reuse completed work; rerun checks affected by new edits.\n- Run the checks required by the change and project. Continue repairs when they\n  fail. Report the changed behavior, observed validation, and remaining blockers.\n\nUse supporting resources only for a current need:\n\n- Repeated long-log handling: [execution.md](references/execution.md), including\n  the offline `scripts/evidence.py` archive, recall, and receipt checker.\n- Authorized worker handoffs: [coordination.md](references/coordination.md).\n- Requested efficiency evaluation: [measurement.md](references/measurement.md).\n- Workflow examples: [worked-examples.md](references/worked-examples.md).\n- SoL-Pi provenance and implementation: [sol-pi-evidence.md](references/sol-pi-evidence.md).\n\nThis skill guides tool use. It cannot replace past API messages, register fused\ntools, or trigger native compaction. Summaries do not remove existing context;\nthose savings require runtime support. Do not add task cards, cost reports, or\nextra agents merely to demonstrate that this skill was followed.\n",
+      "skill_sha256": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+      "skill_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding",
+      "skill_tree_sha256": "3e7b0f2152c6c004994e96465b7087eba12547564bd75fd7be08255dc816a6eb",
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70"
+    },
+    {
+      "id": "both",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-trial:2026-10-04",
+      "credential_volume": "solpi-codex-trial-auth-20261004",
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/SKILL.md",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill_text": "---\nname: karpathy-guidelines\ndescription: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.\nlicense: MIT\n---\n\n# Karpathy Guidelines\n\nBehavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.\n\n**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.\n\n## 1. Think Before Coding\n\n**Don't assume. Don't hide confusion. Surface tradeoffs.**\n\nBefore implementing:\n- State your assumptions explicitly. If uncertain, ask.\n- If multiple interpretations exist, present them - don't pick silently.\n- If a simpler approach exists, say so. Push back when warranted.\n- If something is unclear, stop. Name what's confusing. Ask.\n\n## 2. Simplicity First\n\n**Minimum code that solves the problem. Nothing speculative.**\n\n- No features beyond what was asked.\n- No abstractions for single-use code.\n- No \"flexibility\" or \"configurability\" that wasn't requested.\n- No error handling for impossible scenarios.\n- If you write 200 lines and it could be 50, rewrite it.\n\nAsk yourself: \"Would a senior engineer say this is overcomplicated?\" If yes, simplify.\n\n## 3. Surgical Changes\n\n**Touch only what you must. Clean up only your own mess.**\n\nWhen editing existing code:\n- Don't \"improve\" adjacent code, comments, or formatting.\n- Don't refactor things that aren't broken.\n- Match existing style, even if you'd do it differently.\n- If you notice unrelated dead code, mention it - don't delete it.\n\nWhen your changes create orphans:\n- Remove imports/variables/functions that YOUR changes made unused.\n- Don't remove pre-existing dead code unless asked.\n\nThe test: Every changed line should trace directly to the user's request.\n\n## 4. Goal-Driven Execution\n\n**Define success criteria. Loop until verified.**\n\nTransform tasks into verifiable goals:\n- \"Add validation\" \u2192 \"Write tests for invalid inputs, then make them pass\"\n- \"Fix the bug\" \u2192 \"Write a test that reproduces it, then make it pass\"\n- \"Refactor X\" \u2192 \"Ensure tests pass before and after\"\n\nFor multi-step tasks, state a brief plan:\n```\n1. [Step] \u2192 verify: [check]\n2. [Step] \u2192 verify: [check]\n3. [Step] \u2192 verify: [check]\n```\n\nStrong success criteria let you loop independently. Weak criteria (\"make it work\") require constant clarification.\n\n\n---\nname: efficient-coding\ndescription: Reduce repeated reads and avoidable tool turns in coding tasks, especially when debugging long logs or resuming work. Use focused context and verify the requested behavior.\n---\n\n# Efficient Coding\n\nSpend fewer requests on repeated work while completing and verifying the task.\nFor a small fix, keep the acceptance check in working memory and edit directly.\n\n- Search for the affected symbol or diagnostic, then read its relevant source,\n  callers, or tests. Expand when needed; reuse what you have already learned.\n- Batch independent reads. Combine a mutation with a predetermined check only\n  when the available tool can execute them sequentially after mutation succeeds.\n  With separate Edit and Bash calls, run them in order; that still uses two calls.\n- Keep long command output in its existing artifact or a local log. Search for\n  the decisive error and inspect nearby lines, including the middle of the log.\n  Capture the command's actual exit status before shortening output; a successful\n  `tail` or `grep` does not prove the original command passed.\n- Check a quoted diagnostic against its original source before relying on it.\n  A matching quote can still omit another failure. Read more evidence when needed.\n- If a tool rejects its arguments, correct or simplify the next call instead of\n  repeating the malformed payload. Reassess repeated failed attempts from evidence.\n- On resumption, read the existing continuation note and check current files and\n  verification state. Reuse completed work; rerun checks affected by new edits.\n- Run the checks required by the change and project. Continue repairs when they\n  fail. Report the changed behavior, observed validation, and remaining blockers.\n\nUse supporting resources only for a current need:\n\n- Repeated long-log handling: [execution.md](references/execution.md), including\n  the offline `scripts/evidence.py` archive, recall, and receipt checker.\n- Authorized worker handoffs: [coordination.md](references/coordination.md).\n- Requested efficiency evaluation: [measurement.md](references/measurement.md).\n- Workflow examples: [worked-examples.md](references/worked-examples.md).\n- SoL-Pi provenance and implementation: [sol-pi-evidence.md](references/sol-pi-evidence.md).\n\nThis skill guides tool use. It cannot replace past API messages, register fused\ntools, or trigger native compaction. Summaries do not remove existing context;\nthose savings require runtime support. Do not add task cards, cost reports, or\nextra agents merely to demonstrate that this skill was followed.\n",
+      "skill_sha256": "5a3081f5ef244c0f3361993a1e4c07cd43e539cf81240acf87fcc4300b85d84b",
+      "skill_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both",
+      "skill_tree_sha256": "02f935fbe196756e589e99b2704497a6ca3c2a73abae63e73db7527682b60da9",
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "d2_interfaces",
+      "benchmark": "our-synthetic-diagnostics",
+      "workspace": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/diagnostics/heldout/d2_interfaces/repo",
+      "prompt": "Lookup should use the same canonical name semantics as catalog construction, including Unicode case-insensitive matching and whitespace. Investigate the producer and consumer and make their behavior consistent without changing stored values.\n",
+      "grader_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/diagnostics/heldout/d2_interfaces/hidden",
+      "grader_image": "sol-pi-trial-grader:2026-10-04",
+      "grader_argv": [
+        "python3",
+        "-c",
+        "import sys,pytest; sys.path.insert(0,'/workspace'); raise SystemExit(pytest.main(['-q','/grade/test_hidden.py','-p','no:cacheprovider']))"
+      ],
+      "workspace_sha256": "d39e7fc4b8dc95ed4a3bf296be2557c3f84476bfb53bbae9f9cf5d110bfff61e",
+      "grader_sha256": "30f2e95682233a49d34faeab0e62bae9d7047ca6639579c363b4d04f4fe96f41",
+      "grader_image_id": "sha256:1514aff05c6792d6c066fe1441ba70a320d85aad2ad87225a3d7e38038c2ba0f"
+    },
+    {
+      "id": "d5_small_control",
+      "benchmark": "our-synthetic-diagnostics",
+      "workspace": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/diagnostics/heldout/d5_small_control/repo",
+      "prompt": "Fix page_count(count,size): for nonnegative counts and positive sizes return the number of page_count needed, including a partial final page. Keep zero count at zero. Verify the fix.\n",
+      "grader_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/diagnostics/heldout/d5_small_control/hidden",
+      "grader_image": "sol-pi-trial-grader:2026-10-04",
+      "grader_argv": [
+        "python3",
+        "-c",
+        "import sys,pytest; sys.path.insert(0,'/workspace'); raise SystemExit(pytest.main(['-q','/grade/test_hidden.py','-p','no:cacheprovider']))"
+      ],
+      "workspace_sha256": "6ce0eec1fcb6dfba4d5fdc2868bfbe00683d968472a1c8bfcfd1c01ae4f78ba4",
+      "grader_sha256": "30f16f23ebd356f4ef498aa6c1c1aeacac05cdcfa5734b6799ef2498f69e102b",
+      "grader_image_id": "sha256:1514aff05c6792d6c066fe1441ba70a320d85aad2ad87225a3d7e38038c2ba0f"
+    }
+  ],
+  "rounds": [
+    1
+  ],
+  "schedule_seed": 20261004,
+  "timeout_seconds": 120,
+  "grade_timeout_seconds": 30,
+  "budget": {
+    "max_attempts": 8,
+    "max_wall_seconds": 1300
+  },
+  "agent_network": "bridge",
+  "cpus": 2,
+  "memory": "4g",
+  "schema_version": 1,
+  "jobs": [
+    {
+      "task": "d2_interfaces",
+      "config": "karpathy",
+      "round": 1
+    },
+    {
+      "task": "d5_small_control",
+      "config": "ours",
+      "round": 1
+    },
+    {
+      "task": "d5_small_control",
+      "config": "none",
+      "round": 1
+    },
+    {
+      "task": "d5_small_control",
+      "config": "karpathy",
+      "round": 1
+    },
+    {
+      "task": "d2_interfaces",
+      "config": "both",
+      "round": 1
+    },
+    {
+      "task": "d5_small_control",
+      "config": "both",
+      "round": 1
+    },
+    {
+      "task": "d2_interfaces",
+      "config": "none",
+      "round": 1
+    },
+    {
+      "task": "d2_interfaces",
+      "config": "ours",
+      "round": 1
+    }
+  ],
+  "retries": 0,
+  "seed_semantics": "selection/scheduling only; model random seeds are not controlled",
+  "registry_sha256": "0db1eb13bc988279a056d158bc7d1056206c3648611fce08e3e12463afeb8e3f",
+  "plan_sha256": "b0ef264f7a8f38062a2dbd651a21a76fd4320aa9dad9f8472fd61ca8ac167465"
+}

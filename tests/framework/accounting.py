@@ -20,7 +20,8 @@ def summarize(records):
     records = list(records)
     solved = sum(r.get('solved') is True for r in records)
     graded = sum(isinstance(r.get('solved'), bool) for r in records)
-    tokens = sum(sum(r.get(k) or 0 for k in TOKEN_FIELDS) for r in records)
+    has_tokens = any(r.get(k) is not None for r in records for k in TOKEN_FIELDS)
+    tokens = sum(sum(r.get(k) or 0 for k in TOKEN_FIELDS) for r in records) if has_tokens else None
     complete = all(r.get('usage_complete') and r.get('token_semantics') == 'exclusive'
                    and all(r.get(k) is not None for k in TOKEN_FIELDS) for r in records)
     known_costs = [r['cost_usd'] for r in records if r.get('cost_usd') is not None]
@@ -39,7 +40,7 @@ def summarize(records):
                 ungraded=len(records)-graded,
                 observed_tokens=tokens if records else None,
                 tokens_complete=complete and bool(records),
-                tokens_per_solve=tokens / solved if solved else None,
+                tokens_per_solve=tokens / solved if tokens is not None and solved else None,
                 cost_usd=dollars, cost_complete=cost_complete,
                 dollars_per_solve=dollars / solved if dollars is not None and solved else None,
                 wall_seconds=sum(times) if times else None,

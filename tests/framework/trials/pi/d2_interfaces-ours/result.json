@@ -1,0 +1,43 @@
+{
+  "task": "heldout/d2_interfaces",
+  "arm": "ours",
+  "harness": "pi",
+  "harness_version": "1.0.0",
+  "provider": "anthropic",
+  "model": "claude-opus-4-8",
+  "elapsed_seconds": 1.4689087867736816,
+  "exit_code": 0,
+  "timeout": false,
+  "grade_exit_code": 1,
+  "solved": null,
+  "usage_messages": [
+    {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "totalTokens": 0,
+      "cost": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0
+      }
+    }
+  ],
+  "errors": [
+    "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"You're out of extra usage. Add more at claude.ai/settings/usage and keep going.\"},\"request_id\":\"req_011CffsAB1MGPpDi6M3HFcge\"}"
+  ],
+  "credential_source": "credential-only read-only Pi OAuth mount copied into disposable container HOME",
+  "skill_sha256": {
+    "ours": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef"
+  },
+  "prompt_sha256": "6dbcc10fed8c3a9a860d5b8453d310a200e41784e1ae128fdeb9d8dca22e515f",
+  "billing_cost_usd": "TBD",
+  "billing_note": "Pi estimated provider cost is not verified subscription billing.",
+  "execution_status": "blocked_provider_quota",
+  "quality": "TBD: no model execution",
+  "grade_interpretation": "Unmodified workspace regression check only; not a skill quality score.",
+  "grade_environment": "sol-pi-eval-trial:2026-10-04"
+}
