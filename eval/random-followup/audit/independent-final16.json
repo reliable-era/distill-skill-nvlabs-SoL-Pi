@@ -1,0 +1,597 @@
+{
+  "checked_cells": 16,
+  "expected_cells": 16,
+  "errors": [],
+  "all148pins_verified": true,
+  "backend_process": {
+    "same_container": true,
+    "same_start": true,
+    "same_image": true,
+    "same_args": true,
+    "queue_absent": true,
+    "model_lock_free": true
+  },
+  "official_grade_counts": {
+    "empty_patch": 1,
+    "official_report": 15
+  },
+  "grades": [
+    {
+      "case": "django__django-11964",
+      "arm": "baseline",
+      "seed": 42,
+      "resolved": false,
+      "status": "empty_patch",
+      "prediction_sha256": "b78f3ad02cea7834ea9cea1373109ac3579d872f1c66ba901f3b1c72bf2cbcd4"
+    },
+    {
+      "case": "django__django-11964",
+      "arm": "latest",
+      "seed": 42,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "76f7a67afcd42b23e8b9d8a5a6bbd48d776294c848d5d0b6539103f6f41f0dd1",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 15,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "b3275f6d867d8d92be8333acafe8728514e96377149fecb542ba686c5450617e"
+    },
+    {
+      "case": "django__django-11964",
+      "arm": "karpathy",
+      "seed": 42,
+      "resolved": false,
+      "status": "official_report",
+      "prediction_sha256": "a6b38c3e91aae797deb72befc3b70f40590eb550648d0652b6b32b90e5d23ba5",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 2
+        },
+        "PASS_TO_PASS": {
+          "success": 15,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "724b61d5839c53685f8bc96709fd2cf604ed66fdebbe5f114e2114f54d19717b"
+    },
+    {
+      "case": "django__django-11964",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "5250e722ece83254eee6eda24be940182ab30c7e75050e6f8d49d61367ab418d",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 15,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "b3275f6d867d8d92be8333acafe8728514e96377149fecb542ba686c5450617e"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "arm": "baseline",
+      "seed": 42,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "a0c7701e228cbd0f2690ed2c7e11b48094f9e4ab1ebfad90069ba5d04757a192",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 7,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "arm": "latest",
+      "seed": 42,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "2ddcedc57acfd7b8d31350391a69c39299eff0b7586d6a9ffbac776e95d4e494",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 7,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "arm": "karpathy",
+      "seed": 42,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "a0c7701e228cbd0f2690ed2c7e11b48094f9e4ab1ebfad90069ba5d04757a192",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 7,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "arm": "karpathy_latest",
+      "seed": 42,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "a0c7701e228cbd0f2690ed2c7e11b48094f9e4ab1ebfad90069ba5d04757a192",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 7,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    },
+    {
+      "case": "django__django-11964",
+      "arm": "baseline",
+      "seed": 73,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "76f7a67afcd42b23e8b9d8a5a6bbd48d776294c848d5d0b6539103f6f41f0dd1",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 15,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "b3275f6d867d8d92be8333acafe8728514e96377149fecb542ba686c5450617e"
+    },
+    {
+      "case": "django__django-11964",
+      "arm": "latest",
+      "seed": 73,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "76f7a67afcd42b23e8b9d8a5a6bbd48d776294c848d5d0b6539103f6f41f0dd1",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 15,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "b3275f6d867d8d92be8333acafe8728514e96377149fecb542ba686c5450617e"
+    },
+    {
+      "case": "django__django-11964",
+      "arm": "karpathy",
+      "seed": 73,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "5250e722ece83254eee6eda24be940182ab30c7e75050e6f8d49d61367ab418d",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 15,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "b3275f6d867d8d92be8333acafe8728514e96377149fecb542ba686c5450617e"
+    },
+    {
+      "case": "django__django-11964",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "76f7a67afcd42b23e8b9d8a5a6bbd48d776294c848d5d0b6539103f6f41f0dd1",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 15,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "b3275f6d867d8d92be8333acafe8728514e96377149fecb542ba686c5450617e"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "arm": "baseline",
+      "seed": 73,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "e6dd80d068faf2b65f2f210dbdfa7562045519423c3a7e92560c9dd8f830c1be",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 7,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "arm": "latest",
+      "seed": 73,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "0f16a758eb1d990d83fb7ee0de9f78ecab562630c5f2287042816e7ec4af7e57",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 7,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "arm": "karpathy",
+      "seed": 73,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "a0c7701e228cbd0f2690ed2c7e11b48094f9e4ab1ebfad90069ba5d04757a192",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 7,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    },
+    {
+      "case": "sympy__sympy-12481",
+      "arm": "karpathy_latest",
+      "seed": 73,
+      "resolved": true,
+      "status": "official_report",
+      "prediction_sha256": "a0c7701e228cbd0f2690ed2c7e11b48094f9e4ab1ebfad90069ba5d04757a192",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 7,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "patch_successfully_applied": true,
+      "report_sha256": "750ebb6f71bd4e1e8b0d2fc5e1f7c8ce2982b565fba62e1e0747fa043c5d0bd9"
+    }
+  ],
+  "arms": {
+    "baseline": {
+      "n": 4,
+      "usage_complete": false,
+      "incomplete_usage_runs": 1,
+      "solved": 3,
+      "tokens_per_solve": 2009396.6666666667,
+      "total_tokens": 6028190,
+      "timeouts": 1,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 1120381,
+      "tokens_p90": 2101251,
+      "tokens_max": 2101251,
+      "rounds": {
+        "42": {
+          "solved": 1,
+          "n": 2,
+          "tokens_per_solve": 2806558.0
+        },
+        "73": {
+          "solved": 2,
+          "n": 2,
+          "tokens_per_solve": 1610816.0
+        }
+      },
+      "task_solve_frequency": {
+        "django__django-11964": 0.5,
+        "sympy__sympy-12481": 1.0
+      }
+    },
+    "latest": {
+      "n": 4,
+      "usage_complete": true,
+      "incomplete_usage_runs": 0,
+      "solved": 4,
+      "tokens_per_solve": 1063019.25,
+      "total_tokens": 4252077,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 1145819,
+      "tokens_p90": 1188978,
+      "tokens_max": 1188978,
+      "rounds": {
+        "42": {
+          "solved": 2,
+          "n": 2,
+          "tokens_per_solve": 1166918.0
+        },
+        "73": {
+          "solved": 2,
+          "n": 2,
+          "tokens_per_solve": 959120.5
+        }
+      },
+      "task_solve_frequency": {
+        "django__django-11964": 1.0,
+        "sympy__sympy-12481": 1.0
+      }
+    },
+    "karpathy": {
+      "n": 4,
+      "usage_complete": false,
+      "incomplete_usage_runs": 1,
+      "solved": 3,
+      "tokens_per_solve": 1795306.0,
+      "total_tokens": 5385918,
+      "timeouts": 1,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 1133892,
+      "tokens_p90": 2341069,
+      "tokens_max": 2341069,
+      "rounds": {
+        "42": {
+          "solved": 1,
+          "n": 2,
+          "tokens_per_solve": 3024020.0
+        },
+        "73": {
+          "solved": 2,
+          "n": 2,
+          "tokens_per_solve": 1180949.0
+        }
+      },
+      "task_solve_frequency": {
+        "django__django-11964": 0.5,
+        "sympy__sympy-12481": 1.0
+      }
+    },
+    "karpathy_latest": {
+      "n": 4,
+      "usage_complete": true,
+      "incomplete_usage_runs": 0,
+      "solved": 4,
+      "tokens_per_solve": 1476167.0,
+      "total_tokens": 5904668,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 1381085,
+      "tokens_p90": 1759357,
+      "tokens_max": 1759357,
+      "rounds": {
+        "42": {
+          "solved": 2,
+          "n": 2,
+          "tokens_per_solve": 1463493.5
+        },
+        "73": {
+          "solved": 2,
+          "n": 2,
+          "tokens_per_solve": 1488840.5
+        }
+      },
+      "task_solve_frequency": {
+        "django__django-11964": 1.0,
+        "sympy__sympy-12481": 1.0
+      }
+    }
+  },
+  "incomplete_usage": [
+    {
+      "case": "django__django-11964",
+      "arm": "baseline",
+      "seed": 42,
+      "lower_bound": 1015346
+    },
+    {
+      "case": "django__django-11964",
+      "arm": "karpathy",
+      "seed": 42,
+      "lower_bound": 2341069
+    }
+  ],
+  "retrieval_review": "Successful target Django commit dbcd7b064e source diff retrieval in latest42, baseline73 and combo73; successful exact Sympy target PR12481 source patch retrieval in combo42. Other Sympy arms retrieve current upstream source/tests in baseline42,K73,combo73. Full all-tool manifest includes local downloaded-file Read/grep/diff following Bash retrieval. WebSearch responses are not treated as evidence of fetched source; failed500/validation attempts distinguished. No git clone/subsequent fetched local history observed.",
+  "test_review": "No final tracked test modifications in16 patches. LatestDjango42 and comboDjango73 create temporary /tmp issue-reproduction scripts; no changes to official tests. Zero Agent/Task calls.",
+  "limitations": [
+    "Two pre-pulled easy distinct-repository tasks selected randomly before outcomes, not population-random Verified sampling.",
+    "Two timeout records lack complete output/auxiliary traffic; retain lower bounds and suppress supported claims involving them.",
+    "Returned source/tests/target repair patches prevent unaided-repair superiority attribution.",
+    "Observed point advantage on2tasks/2rounds is not stable broad benchmark proof; preserve old147 separately."
+  ],
+  "evidence": [
+    "independent-prelaunch.json",
+    "independent16.json",
+    "independent16-trace-manifest.json"
+  ]
+}

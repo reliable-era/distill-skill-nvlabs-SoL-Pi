@@ -1,0 +1,58 @@
+2026-10-03 07:12:49,420 - INFO - Creating container for django__django-11964...
+2026-10-03 07:12:49,449 - INFO - Container for django__django-11964 created: 33573572c885dde4d6d7ccc9b16a35141bd25b07a38828c36e793af3916d73a0
+2026-10-03 07:12:49,641 - INFO - Container for django__django-11964 started: 33573572c885dde4d6d7ccc9b16a35141bd25b07a38828c36e793af3916d73a0
+2026-10-03 07:12:49,641 - INFO - Intermediate patch for django__django-11964 written to logs/run_evaluation/grade/pruned/django__django-11964/patch.diff, now applying to container...
+2026-10-03 07:12:49,785 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/enums.py...
+warning: django/db/models/enums.py has type 100755, expected 100644
+Applied patch django/db/models/enums.py cleanly.
+
+2026-10-03 07:12:50,478 - INFO - Git diff before:
+diff --git a/django/db/models/enums.py b/django/db/models/enums.py
+index bbe362a6ab..ae20ef6d93 100755
+--- a/django/db/models/enums.py
++++ b/django/db/models/enums.py
+@@ -60,7 +60,13 @@ class ChoicesMeta(enum.EnumMeta):
+ 
+ class Choices(enum.Enum, metaclass=ChoicesMeta):
+     """Class for creating enumerated choices."""
+-    pass
++
++    def __str__(self):
++        """
++        Use value when cast to str, so that Choices set as model instance
++        attributes are rendered as expected in templates and similar contexts.
++        """
++        return str(self.value)
+ 
+ 
+ class IntegerChoices(int, Choices):
+2026-10-03 07:12:50,479 - INFO - Eval script for django__django-11964 written to logs/run_evaluation/grade/pruned/django__django-11964/eval.sh; copying to container...
+2026-10-03 07:12:56,204 - INFO - Test runtime: 5.64 seconds
+2026-10-03 07:12:56,210 - INFO - Test output for django__django-11964 written to logs/run_evaluation/grade/pruned/django__django-11964/test_output.txt
+2026-10-03 07:12:56,294 - INFO - Git diff after:
+diff --git a/django/db/models/enums.py b/django/db/models/enums.py
+index bbe362a6ab..ae20ef6d93 100755
+--- a/django/db/models/enums.py
++++ b/django/db/models/enums.py
+@@ -60,7 +60,13 @@ class ChoicesMeta(enum.EnumMeta):
+ 
+ class Choices(enum.Enum, metaclass=ChoicesMeta):
+     """Class for creating enumerated choices."""
+-    pass
++
++    def __str__(self):
++        """
++        Use value when cast to str, so that Choices set as model instance
++        attributes are rendered as expected in templates and similar contexts.
++        """
++        return str(self.value)
+ 
+ 
+ class IntegerChoices(int, Choices):
+2026-10-03 07:12:56,294 - INFO - Grading answer for django__django-11964...
+2026-10-03 07:12:56,304 - INFO - report: {'django__django-11964': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_str (model_enums.tests.ChoicesTests)', 'test_textchoices (model_enums.tests.ChoicesTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_integerchoices (model_enums.tests.ChoicesTests)', 'test_integerchoices_auto_label (model_enums.tests.ChoicesTests)', 'test_integerchoices_containment (model_enums.tests.ChoicesTests)', 'test_integerchoices_empty_label (model_enums.tests.ChoicesTests)', 'test_integerchoices_functional_api (model_enums.tests.ChoicesTests)', 'test_invalid_definition (model_enums.tests.ChoicesTests)', 'test_textchoices_auto_label (model_enums.tests.ChoicesTests)', 'test_textchoices_blank_value (model_enums.tests.ChoicesTests)', 'test_textchoices_containment (model_enums.tests.ChoicesTests)', 'test_textchoices_empty_label (model_enums.tests.ChoicesTests)', 'test_textchoices_functional_api (model_enums.tests.ChoicesTests)', 'test_bool_unsupported (model_enums.tests.CustomChoicesTests)', 'test_labels_valid (model_enums.tests.CustomChoicesTests)', 'test_timezone_unsupported (model_enums.tests.CustomChoicesTests)', 'test_uuid_unsupported (model_enums.tests.CustomChoicesTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11964: resolved: True
+2026-10-03 07:12:56,305 - INFO - Attempting to stop container sweb.eval.django__django-11964.grade...
+2026-10-03 07:13:11,572 - INFO - Attempting to remove container sweb.eval.django__django-11964.grade...
+2026-10-03 07:13:11,624 - INFO - Container sweb.eval.django__django-11964.grade removed.

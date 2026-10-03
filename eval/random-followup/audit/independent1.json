@@ -1,0 +1,141 @@
+{
+  "plan": "eval/random-followup/plan.v1.json",
+  "checked_graded_cells": 1,
+  "expected_cells": 16,
+  "errors": [],
+  "arms_unmatched_partial": {
+    "baseline": {
+      "n": 0,
+      "usage_complete": true,
+      "incomplete_usage_runs": 0,
+      "solved": 0,
+      "tokens_per_solve": null,
+      "total_tokens": 0,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": null,
+      "tokens_p90": null,
+      "tokens_max": null,
+      "rounds": {},
+      "task_solve_frequency": {}
+    },
+    "latest": {
+      "n": 0,
+      "usage_complete": true,
+      "incomplete_usage_runs": 0,
+      "solved": 0,
+      "tokens_per_solve": null,
+      "total_tokens": 0,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": null,
+      "tokens_p90": null,
+      "tokens_max": null,
+      "rounds": {},
+      "task_solve_frequency": {}
+    },
+    "karpathy": {
+      "n": 1,
+      "usage_complete": false,
+      "incomplete_usage_runs": 1,
+      "solved": 0,
+      "tokens_per_solve": null,
+      "total_tokens": 2341069,
+      "timeouts": 1,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": 2341069,
+      "tokens_p90": 2341069,
+      "tokens_max": 2341069,
+      "rounds": {
+        "42": {
+          "solved": 0,
+          "n": 1,
+          "tokens_per_solve": null
+        }
+      },
+      "task_solve_frequency": {
+        "django__django-11964": 0.0
+      }
+    },
+    "karpathy_latest": {
+      "n": 0,
+      "usage_complete": true,
+      "incomplete_usage_runs": 0,
+      "solved": 0,
+      "tokens_per_solve": null,
+      "total_tokens": 0,
+      "timeouts": 0,
+      "grade_timeouts": 0,
+      "false_completion": 0,
+      "tokens_p50": null,
+      "tokens_p90": null,
+      "tokens_max": null,
+      "rounds": {},
+      "task_solve_frequency": {}
+    }
+  },
+  "cells": [
+    {
+      "stage": "real_swe",
+      "case": "django__django-11964",
+      "arm": "karpathy",
+      "seed": 42,
+      "run": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/random-followup/campaign/real_swe/karpathy/runs/swebench/django__django-11964/karpathy/r42",
+      "resolved": false,
+      "grade_status": "official_report",
+      "timed_out": true,
+      "grade_exit_code": 0,
+      "initial_checkout_verified": true,
+      "prediction_sha256": "a6b38c3e91aae797deb72befc3b70f40590eb550648d0652b6b32b90e5d23ba5",
+      "patch_sha256": "bbbcd6d11c9c0e0a44c242cff8ae1dd57e53a66abe45f623becccb662e14ec74",
+      "dataset_sha256": "e8a79a904e7b390b4fe979a6a624f9de2df80f6184677cf4349de141636d081a",
+      "external_reference_attempts": [
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "Django TextChoices IntegerChoices field value differing type enum fix ticket",
+          "is_error": false,
+          "result_prefix": "Web search results for query: \"Django TextChoices IntegerChoices field value differing type enum fix ticket\"\n\nI'll search for information about Django TextChoices/IntegerChoices fi"
+        },
+        {
+          "tool": "WebSearch",
+          "url": null,
+          "query": "Django enum field value type consistency \"get_prep_value\" OR \"pre_save\" TextChoices created instance",
+          "is_error": false,
+          "result_prefix": "Web search results for query: \"Django enum field value type consistency \"get_prep_value\" OR \"pre_save\" TextChoices created instance\"\n\nI'll search for information about Django enum "
+        },
+        {
+          "tool": "WebFetch",
+          "url": "https://raw.githubusercontent.com/django/django/stable/3.1.x/django/db/models/fields/__init__.py",
+          "query": null,
+          "is_error": true,
+          "result_prefix": "API Error: 500 Internal server error. This is a server-side issue, usually temporary \u2014 try again in a moment. If it persists, check your inference gateway (127.0.0.1:8000)."
+        }
+      ],
+      "trace_test_write_attempts": [],
+      "network_tool_attempts": [],
+      "test_files_modified": [],
+      "patch_files": [
+        "django/db/models/query_utils.py"
+      ],
+      "agent_calls": 0,
+      "terminal_count": 0,
+      "total_tokens": 2341069,
+      "input_tokens": 2341069,
+      "output_tokens": 0,
+      "requests": 50,
+      "end": "killed",
+      "usage_source": "message_fallback",
+      "usage_complete": false,
+      "model_usage_total_tokens": null,
+      "main_loop_total_tokens": null,
+      "auxiliary_pipeline_tokens": null,
+      "usage_reconciliation_required": false,
+      "token_measurement": "recorded_lower_bound"
+    }
+  ],
+  "cost_warning": "Fallback usage is recorded lower bound; missing terminal output is never fabricated. Partial summaries do not imply comparative efficiency."
+}

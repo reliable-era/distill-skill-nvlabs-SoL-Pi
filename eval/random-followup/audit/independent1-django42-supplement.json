@@ -1,0 +1,41 @@
+{
+  "errors": [],
+  "resolved": false,
+  "official_tests": {
+    "FAIL_TO_PASS": {
+      "success": 0,
+      "failure": 2
+    },
+    "PASS_TO_PASS": {
+      "success": 15,
+      "failure": 0
+    },
+    "FAIL_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    },
+    "PASS_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    }
+  },
+  "hashes": {
+    "report.json": "724b61d5839c53685f8bc96709fd2cf604ed66fdebbe5f114e2114f54d19717b",
+    "test_output.txt": "9bb4604a790dcaf5ebee9232cda945636ff1ec4bc25af302d632fc8c5690b8f8"
+  },
+  "prediction_sha256": "a6b38c3e91aae797deb72befc3b70f40590eb550648d0652b6b32b90e5d23ba5",
+  "functional_failure": "test_str and test_textchoices fail; enum string remains qualified enum name instead of member value. Grade completed successfully; no infrastructure failure.",
+  "usage": {
+    "total_tokens": 2341069,
+    "input_tokens": 2341069,
+    "output_tokens": 0,
+    "requests": 50,
+    "usage_complete": false,
+    "terminal_count": 0,
+    "timed_out": true
+  },
+  "retrieval": "Two WebSearch attempts and failed500 WebFetch; no Bash/Python network retrieval, clone or retrieved local repair history observed. Initial git log is base history only. No successful returned external repair source/diff established.",
+  "test_write_attempts": [],
+  "final_test_files": [],
+  "agent_calls": 0
+}

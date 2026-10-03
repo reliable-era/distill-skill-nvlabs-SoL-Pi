@@ -116,6 +116,18 @@ Tokens per verified solve, including failed attempts. Lower is better.
 
 All **147 campaign attempts** were graded and independently audited. The development candidate was rejected; the shipped skill remains unchanged. See the [full report](report.md) for original-version comparisons, per-round variability, uncertainty, and retrieval audits.
 
+### New random small subset
+
+Two previously untested easy issues (Django #11964 and SymPy #12481), randomly selected before outcomes; two rounds per configuration.
+
+| Metric | No skill | SoL-Pi (ours) | Karpathy | Both skills |
+|---|---:|---:|---:|---:|
+| Verified solves | 3/4 | **4/4** | 3/4 | **4/4** |
+| Tokens per solve | ≥2.01M | **1.06M** | ≥1.80M | 1.48M |
+| Model timeouts | 1 | **0** | 1 | **0** |
+
+Ours performed best on this small subset. Baseline/Karpathy costs are incomplete lower bounds; upstream repair retrieval limits attribution. This does not overturn the earlier held-out findings or establish a broad win. [Per-task results and evidence](eval/random-followup/results/summary.md).
+
 ## Explore the evidence
 
 | Resource | Contents |

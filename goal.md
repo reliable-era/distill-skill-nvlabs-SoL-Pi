@@ -139,3 +139,7 @@ win is an experimental outcome to test, never a reason to exclude unfavorable ta
 Completed: all147 pruned attempts and independent final audit, with no provenance or grading infrastructure errors. Final results and limitations are in `report.md`; the requirement-by-requirement evidence is in `eval/pruned/audit/completion-requirements.md`.
 
 The desired stable majority win was not established. Latest held-out diagnostics:14/15 versus baseline13/15, at18.87% higher tokens per solve. Repository scores: baseline6/8, latest7/8, Karpathy8/8, combined4/8. Eight incomplete repository usage records prevent supported savings claims; upstream repair retrieval limits unaided attribution. The development candidate was rejected and canonical latest retained. No further outcome-selected benchmark search was applied.
+
+## Completed random-small follow-up (2026-10-03)
+
+All16 frozen attempts completed and independent-final16.json passed with errors[]. Ours4/4 at1,063,019tokens/solve; both4/4 at1,476,167; baseline3/4 at≥2,009,397; Karpathy3/4 at≥1,795,306. Ours/both0timeouts; baseline/K1each with incomplete costs. Public repair/source/test retrieval qualifies attribution. Two conditionally sampled easy tasks limit generalization; previous147 results remain separate. Compact README table and detailed report/evidence published. Skill/backends unchanged, queue terminal/model lockfree.

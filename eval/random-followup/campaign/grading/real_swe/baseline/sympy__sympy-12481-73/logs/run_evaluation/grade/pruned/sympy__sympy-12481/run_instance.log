@@ -1,0 +1,134 @@
+2026-10-03 09:08:09,874 - INFO - Creating container for sympy__sympy-12481...
+2026-10-03 09:08:09,919 - INFO - Container for sympy__sympy-12481 created: 12d481592463ea9729cf5b971c9c42f7c9f824c6e0b70bcffdab3c9e62118715
+2026-10-03 09:08:10,119 - INFO - Container for sympy__sympy-12481 started: 12d481592463ea9729cf5b971c9c42f7c9f824c6e0b70bcffdab3c9e62118715
+2026-10-03 09:08:10,120 - INFO - Intermediate patch for sympy__sympy-12481 written to logs/run_evaluation/grade/pruned/sympy__sympy-12481/patch.diff, now applying to container...
+2026-10-03 09:08:10,267 - INFO - >>>>> Applied Patch:
+Checking patch sympy/combinatorics/permutations.py...
+warning: sympy/combinatorics/permutations.py has type 100755, expected 100644
+Applied patch sympy/combinatorics/permutations.py cleanly.
+
+2026-10-03 09:08:10,532 - INFO - Git diff before:
+diff --git a/sympy/combinatorics/permutations.py b/sympy/combinatorics/permutations.py
+index 136ed5a47..5a5321364 100755
+--- a/sympy/combinatorics/permutations.py
++++ b/sympy/combinatorics/permutations.py
+@@ -801,8 +801,11 @@ class Permutation(Basic):
+     def __new__(cls, *args, **kwargs):
+         """
+         Constructor for the Permutation object from a list or a
+-        list of lists in which all elements of the permutation may
+-        appear only once.
++        list of lists; in the array form all elements of the
++        permutation may appear only once, while in the cyclic form
++        the cycles need not be disjoint -- non-disjoint cycles are
++        applied in left-to-right order and the resulting permutation
++        is returned.
+ 
+         Examples
+         ========
+@@ -843,6 +846,13 @@ def __new__(cls, *args, **kwargs):
+         Permutation([0, 4, 3, 5, 1, 2], size=10)
+         >>> _.array_form
+         [0, 4, 3, 5, 1, 2, 6, 7, 8, 9]
++
++        Cycles that are not disjoint are applied in left-to-right order:
++
++        >>> Permutation([[0, 1], [0, 1]])
++        Permutation([0, 1])
++        >>> Permutation([[0, 1], [1, 2]])
++        Permutation([2, 0, 1])
+         """
+         size = kwargs.pop('size', None)
+         if size is not None:
+@@ -895,18 +905,13 @@ def __new__(cls, *args, **kwargs):
+         # counting starts from 1.
+ 
+         temp = flatten(args)
+-        if has_dups(temp):
+-            if is_cycle:
+-                raise ValueError('there were repeated elements; to resolve '
+-                'cycles use Cycle%s.' % ''.join([str(tuple(c)) for c in args]))
+-            else:
++        if not is_cycle:
++            if has_dups(temp):
+                 raise ValueError('there were repeated elements.')
+-        temp = set(temp)
+-
+-        if not is_cycle and \
+-                any(i not in temp for i in range(len(temp))):
+-            raise ValueError("Integers 0 through %s must be present." %
+-                             max(temp))
++            temp = set(temp)
++            if any(i not in temp for i in range(len(temp))):
++                raise ValueError("Integers 0 through %s must be present." %
++                                 max(temp))
+ 
+         if is_cycle:
+             # it's not necessarily canonical so we won't store
+2026-10-03 09:08:10,532 - INFO - Eval script for sympy__sympy-12481 written to logs/run_evaluation/grade/pruned/sympy__sympy-12481/eval.sh; copying to container...
+2026-10-03 09:08:13,251 - INFO - Test runtime: 2.63 seconds
+2026-10-03 09:08:13,252 - INFO - Test output for sympy__sympy-12481 written to logs/run_evaluation/grade/pruned/sympy__sympy-12481/test_output.txt
+2026-10-03 09:08:13,328 - INFO - Git diff after:
+diff --git a/sympy/combinatorics/permutations.py b/sympy/combinatorics/permutations.py
+index 136ed5a47..5a5321364 100755
+--- a/sympy/combinatorics/permutations.py
++++ b/sympy/combinatorics/permutations.py
+@@ -801,8 +801,11 @@ class Permutation(Basic):
+     def __new__(cls, *args, **kwargs):
+         """
+         Constructor for the Permutation object from a list or a
+-        list of lists in which all elements of the permutation may
+-        appear only once.
++        list of lists; in the array form all elements of the
++        permutation may appear only once, while in the cyclic form
++        the cycles need not be disjoint -- non-disjoint cycles are
++        applied in left-to-right order and the resulting permutation
++        is returned.
+ 
+         Examples
+         ========
+@@ -843,6 +846,13 @@ def __new__(cls, *args, **kwargs):
+         Permutation([0, 4, 3, 5, 1, 2], size=10)
+         >>> _.array_form
+         [0, 4, 3, 5, 1, 2, 6, 7, 8, 9]
++
++        Cycles that are not disjoint are applied in left-to-right order:
++
++        >>> Permutation([[0, 1], [0, 1]])
++        Permutation([0, 1])
++        >>> Permutation([[0, 1], [1, 2]])
++        Permutation([2, 0, 1])
+         """
+         size = kwargs.pop('size', None)
+         if size is not None:
+@@ -895,18 +905,13 @@ def __new__(cls, *args, **kwargs):
+         # counting starts from 1.
+ 
+         temp = flatten(args)
+-        if has_dups(temp):
+-            if is_cycle:
+-                raise ValueError('there were repeated elements; to resolve '
+-                'cycles use Cycle%s.' % ''.join([str(tuple(c)) for c in args]))
+-            else:
++        if not is_cycle:
++            if has_dups(temp):
+                 raise ValueError('there were repeated elements.')
+-        temp = set(temp)
+-
+-        if not is_cycle and \
+-                any(i not in temp for i in range(len(temp))):
+-            raise ValueError("Integers 0 through %s must be present." %
+-                             max(temp))
++            temp = set(temp)
++            if any(i not in temp for i in range(len(temp))):
++                raise ValueError("Integers 0 through %s must be present." %
++                                 max(temp))
+ 
+         if is_cycle:
+             # it's not necessarily canonical so we won't store
+2026-10-03 09:08:13,328 - INFO - Grading answer for sympy__sympy-12481...
+2026-10-03 09:08:13,329 - INFO - report: {'sympy__sympy-12481': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_args'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_Permutation', 'test_josephus', 'test_ranking', 'test_mul', 'test_Cycle', 'test_from_sequence', 'test_printing_cyclic'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-12481: resolved: True
+2026-10-03 09:08:13,329 - INFO - Attempting to stop container sweb.eval.sympy__sympy-12481.grade...
+2026-10-03 09:08:28,525 - INFO - Attempting to remove container sweb.eval.sympy__sympy-12481.grade...
+2026-10-03 09:08:28,548 - INFO - Container sweb.eval.sympy__sympy-12481.grade removed.

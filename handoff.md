@@ -327,3 +327,7 @@ Independent31 audit complete errors[]: KSympy73 official1F2P/40P2Ppass267,395com
 Pruned EXECUTION COMPLETE147/147: lastcomboSympy73 normal0 PASS997.1s627patch574,643complete24requests. Allstagescomplete source_errors[]. Unifiedreporttable32matches finalbase6/8latest7/8K8/8combo4/8. Repositoryusagealllowerbounds2/2/1/3incomplete. QueuePID1340531absentafterlastDONE. Independentfinal147auditdelegated; rootreportconsolidation/checklistcompletion/deliverablesreviewpending. GoalACTIVE do notcompleteyet.
 
 FINAL: all147 attempts completed and independent-final147-audit.json passed with errors[]. Full protocol/provenance/accounting/trace audit complete; queue terminal and model lock free. Report consolidated; checkpoint history archived separately; completion requirements reconciled and goal.md finalized. Stable economical majority win NOT established. Development candidate rejected, canonical latest unchanged. No execution or audit work remains.
+
+## Completed random-small follow-up (2026-10-03)
+
+All16 frozen attempts completed and independent-final16.json passed with errors[]. Ours4/4 at1,063,019tokens/solve; both4/4 at1,476,167; baseline3/4 at≥2,009,397; Karpathy3/4 at≥1,795,306. Ours/both0timeouts; baseline/K1each with incomplete costs. Public repair/source/test retrieval qualifies attribution. Two conditionally sampled easy tasks limit generalization; previous147 results remain separate. Compact README table and detailed report/evidence published. Skill/backends unchanged, queue terminal/model lockfree.
