@@ -8,6 +8,10 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 
 **LLM:** Qwen3.8-27B-FP8 · **Runtime:** SGLang + DFlash · **Agent:** Claude Code 2.1.286.
 
+![Benchmark comparison: solve rates, failure-inclusive tokens per solve, and model timeouts](assets/benchmark-numbers.svg)
+
+[PNG download](assets/benchmark-numbers.png) · [Reproduce the plot](scripts/plot_numbers.py). Hatched cost bars are incomplete lower bounds; token-axis scales differ by benchmark.
+
 | Benchmark | Configuration | Solves ↑ | Tokens / solve ↓ | Timeouts ↓ |
 |---|---|---:|---:|---:|
 | Development | No skill (baseline) | 8/10 | 260k | 0 |
