@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build validation container
-        run: docker build -f validation/Dockerfile -t sol-pi-validation .
+        run: docker build -f tests/validation/Dockerfile -t sol-pi-validation .
       - name: Validate installation and shipped resources
         run: docker run --rm --network none sol-pi-validation

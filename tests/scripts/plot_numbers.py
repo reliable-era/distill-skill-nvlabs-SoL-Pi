@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
-pruned = json.loads((ROOT/'eval/pruned/audit/current.json').read_text())
-follow = json.loads((ROOT/'eval/random-followup/results/collection.json').read_text())
+ROOT = Path(__file__).resolve().parents[2]
+pruned = json.loads((ROOT/'tests/eval/pruned/audit/current.json').read_text())
+follow = json.loads((ROOT/'tests/eval/random-followup/results/collection.json').read_text())
 assert not pruned['source_errors'] and not follow['source_errors']
 combined = {'complete': True, 'arms': {}}
 for arm in ['baseline','latest','karpathy','karpathy_latest']:

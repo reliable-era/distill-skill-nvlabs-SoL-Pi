@@ -218,7 +218,7 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Local benchmark runtime and scratch state
-eval/pruned/bin/
-eval/pruned/model.lock
+tests/eval/pruned/bin/
+tests/eval/pruned/model.lock
 # Preserve experiment logs as audit evidence
-!eval/**/*.log
+!tests/eval/**/*.log

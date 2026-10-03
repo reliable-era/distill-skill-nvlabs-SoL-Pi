@@ -10,7 +10,7 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 
 ![Benchmark comparison: solve rates, failure-inclusive tokens per solve, and model timeouts](assets/benchmark-numbers.svg)
 
-[PNG download](assets/benchmark-numbers.png) · [Reproduce the plot](scripts/plot_numbers.py). Hatched cost bars are incomplete lower bounds; token-axis scales differ by benchmark.
+[PNG download](assets/benchmark-numbers.png) · [Reproduce the plot](tests/scripts/plot_numbers.py). Hatched cost bars are incomplete lower bounds; token-axis scales differ by benchmark.
 
 | Benchmark | Configuration | Solves ↑ | Tokens / solve ↓ | Timeouts ↓ |
 |---|---|---:|---:|---:|
@@ -27,7 +27,7 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 
 Ours ties Karpathy at 11/12 SWE-bench Verified solves; baseline is cheaper on our synthetic diagnostics. **A stable general efficiency win is not established.** Public repair retrieval limits repository attribution; incomplete costs do not support exact savings claims.
 
-**Benchmark sources:** Our synthetic diagnostics combine custom development and held-out fixtures. This aggregate includes development data and is not a pure held-out score. [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) combines six distinct issues, each repeated twice: the original four-issue sample plus two new randomly selected easy issues. Totals sum all attempts across both samples; their selection rules differ, so this is a descriptive six-issue aggregate. Five diagnostic cases ×2 development / ×3 held-out rounds. Scheduling seeds do not control model sampling. [Full results and limitations](report.md) · [Random subset details](eval/random-followup/results/summary.md).
+**Benchmark sources:** Our synthetic diagnostics combine custom development and held-out fixtures. This aggregate includes development data and is not a pure held-out score. [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) combines six distinct issues, each repeated twice: the original four-issue sample plus two new randomly selected easy issues. Totals sum all attempts across both samples; their selection rules differ, so this is a descriptive six-issue aggregate. Five diagnostic cases ×2 development / ×3 held-out rounds. Scheduling seeds do not control model sampling. [Full results and limitations](tests/report.md) · [Random subset details](tests/eval/random-followup/results/summary.md).
 
 <details>
 <summary>Original-version results</summary>
@@ -70,7 +70,7 @@ against the source, fix it, and run the affected tests.
 
 ### Claude Code marketplace
 
-Use the commands above. The repository supplies the [marketplace and plugin manifests](.claude-plugin/). Installation is tested in Docker and GitHub Actions.
+Use the commands above. The repository supplies the [marketplace and plugin manifests](.claude-plugin). Installation is tested in Docker and GitHub Actions.
 
 ### Skills CLI — Claude Code, Codex, Cursor
 
@@ -112,7 +112,7 @@ This is instruction-level guidance. It does not implement upstream Pi's native c
 ## Validate an upgrade
 
 ```bash
-docker build -f validation/Dockerfile -t sol-pi-validation .
+docker build -f tests/validation/Dockerfile -t sol-pi-validation .
 docker run --rm --network none sol-pi-validation
 ```
 
@@ -120,6 +120,6 @@ The [GitHub workflow](.github/workflows/validate.yml) checks manifests, installs
 
 ## Evidence and contributions
 
-[Full report](report.md) · [147-attempt audit](eval/pruned/audit/independent-final147-audit.json) · [16-attempt follow-up audit](eval/random-followup/audit/independent-final16.json) · [Comparison CSV](eval/pruned/results/comparison.csv) · [Issue templates](https://github.com/reliable-era/distill-skill-nvlabs-SoL-Pi/issues/new/choose).
+[Full report](tests/report.md) · [147-attempt audit](tests/eval/pruned/audit/independent-final147-audit.json) · [16-attempt follow-up audit](tests/eval/random-followup/audit/independent-final16.json) · [Comparison CSV](tests/eval/pruned/results/comparison.csv) · [Issue templates](https://github.com/reliable-era/distill-skill-nvlabs-SoL-Pi/issues/new/choose).
 
-Benchmark code, frozen inputs, grades, and traces live in `eval/`. Runtime dependencies and the downloaded Claude Code binary are excluded; manifests retain their hashes. Historical paths identify the original execution workspace.
+Benchmark code, frozen inputs, grades, and traces live in `tests/eval/`. Runtime dependencies and the downloaded Claude Code binary are excluded; manifests retain their hashes. Historical paths identify the original execution workspace.

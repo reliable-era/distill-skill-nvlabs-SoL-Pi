@@ -130,7 +130,7 @@ Only one backend and a small issue subset were tested. SWE-bench runs can fetch 
 
 ## Revision after evaluation
 
-The revised source is [skills/efficient-coding/SKILL.md](skills/efficient-coding/SKILL.md), with an updated distributable in `.claude/skills/efficient-coding.zip`. Its entrypoint is 60.7% shorter by bytes, removes ordinary-task bookkeeping and telemetry instructions, preserves evidence and verification, and clarifies runtime prerequisites. A separate in-sample, one-round behavioral check compares baseline, the original, and the revision in `eval/revision_eval/`. Those observations are not mixed into this original matrix and do not establish held-out savings.
+The revised source is [skills/efficient-coding/SKILL.md](../skills/efficient-coding/SKILL.md), with an updated distributable in `.claude/skills/efficient-coding.zip`. Its entrypoint is 60.7% shorter by bytes, removes ordinary-task bookkeeping and telemetry instructions, preserves evidence and verification, and clarifies runtime prerequisites. A separate in-sample, one-round behavioral check compares baseline, the original, and the revision in `eval/revision_eval/`. Those observations are not mixed into this original matrix and do not establish held-out savings.
 
 ### Revision smoke observations
 
