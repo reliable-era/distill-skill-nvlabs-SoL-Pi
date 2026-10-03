@@ -22,20 +22,20 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 | Held-out diagnostics | SoL-Pi (ours) | 14/15 | 260k | 0 |
 | Held-out diagnostics | Karpathy | 12/15 | 286k | 0 |
 | Held-out diagnostics | Both skills | 14/15 | 272k | 0 |
-| Repository subset | No skill (baseline) | 6/8 | ≥1.42M | 2 |
-| Repository subset | SoL-Pi (ours) | 7/8 | ≥1.63M | 2 |
-| Repository subset | Karpathy | 8/8 | ≥1.32M | 1 |
-| Repository subset | Both skills | 4/8 | ≥2.40M | 3 |
-| Random easy subset | No skill (baseline) | 3/4 | ≥2.01M | 1 |
-| Random easy subset | SoL-Pi (ours) | 4/4 | 1.06M | 0 |
-| Random easy subset | Karpathy | 3/4 | ≥1.80M | 1 |
-| Random easy subset | Both skills | 4/4 | 1.48M | 0 |
+| SWE-bench Verified · 4-issue sample | No skill (baseline) | 6/8 | ≥1.42M | 2 |
+| SWE-bench Verified · 4-issue sample | SoL-Pi (ours) | 7/8 | ≥1.63M | 2 |
+| SWE-bench Verified · 4-issue sample | Karpathy | 8/8 | ≥1.32M | 1 |
+| SWE-bench Verified · 4-issue sample | Both skills | 4/8 | ≥2.40M | 3 |
+| SWE-bench Verified · 2-issue easy sample | No skill (baseline) | 3/4 | ≥2.01M | 1 |
+| SWE-bench Verified · 2-issue easy sample | SoL-Pi (ours) | 4/4 | 1.06M | 0 |
+| SWE-bench Verified · 2-issue easy sample | Karpathy | 3/4 | ≥1.80M | 1 |
+| SWE-bench Verified · 2-issue easy sample | Both skills | 4/4 | 1.48M | 0 |
 
 **Ours** is the latest shipped revision. **Both skills** loads Karpathy and ours separately. Tokens include failed attempts; `k` = thousand, `M` = million, `≥` = incomplete lower bound. Unmeasured or unverified items are marked **TBD**.
 
 Ours leads on the new random easy subset, but baseline is cheaper on held-out diagnostics. **A stable general efficiency win is not established.** Public repair retrieval limits repository attribution; incomplete costs do not support exact savings claims.
 
-Five diagnostic cases ×2 development / ×3 held-out rounds; four repository issues ×2 rounds; two new randomly selected easy issues ×2 rounds. The campaigns stay separate. Scheduling seeds do not control model sampling. [Full results and limitations](report.md) · [Random subset details](eval/random-followup/results/summary.md).
+**Benchmark sources:** Development and held-out diagnostics are our custom synthetic fixtures. The two repository samples both come from [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified), not separate benchmarks. Five diagnostic cases ×2 development / ×3 held-out rounds; four Verified issues ×2 rounds; two additional randomly selected easy Verified issues ×2 rounds. The sample results stay separate because their selection rules differ. Scheduling seeds do not control model sampling. [Full results and limitations](report.md) · [Random subset details](eval/random-followup/results/summary.md).
 
 <details>
 <summary>Original-version results</summary>

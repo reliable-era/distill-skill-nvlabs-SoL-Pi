@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 pruned = json.loads((ROOT/'eval/pruned/audit/current.json').read_text())
 follow = json.loads((ROOT/'eval/random-followup/results/collection.json').read_text())
 assert not pruned['source_errors'] and not follow['source_errors']
-stages = [('Development',pruned['stages']['dev']),('Held-out diagnostics',pruned['stages']['heldout']),('Repository subset',pruned['stages']['real_swe']),('Random easy subset',follow['stages']['real_swe'])]
+stages = [('Development',pruned['stages']['dev']),('Held-out diagnostics',pruned['stages']['heldout']),('SWE-bench Verified\n4-issue sample',pruned['stages']['real_swe']),('SWE-bench Verified\n2-issue easy sample',follow['stages']['real_swe'])]
 arms = ['baseline','latest','karpathy','karpathy_latest']
 labels = ['No skill','SoL-Pi (ours)','Karpathy','Both skills']
 colors = ['#64748b','#0284c7','#d97706','#8b5cf6']
