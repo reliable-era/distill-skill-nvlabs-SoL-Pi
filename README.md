@@ -12,7 +12,7 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 
 [PNG download](assets/benchmark-numbers.png) · [Reproduce the plot](tests/scripts/plot_numbers.py). Hatched cost bars are incomplete lower bounds; token-axis scales differ by benchmark.
 
-| Benchmark | Configuration | Solves ↑ | Tokens / solve ↓ | Timeouts ↓ |
+| Benchmark | Configuration | Solved attempts ↑ | Tokens / solve ↓ | Timeouts ↓ |
 |---|---|---:|---:|---:|
 | Our synthetic diagnostics | No skill (baseline) | 21/25 | 234k | 0 |
 | Our synthetic diagnostics | SoL-Pi (ours) | 23/25 | 253k | 0 |
@@ -22,6 +22,8 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 | SWE-bench Verified | SoL-Pi (ours) | 11/12 | ≥1.42M | 2 |
 | SWE-bench Verified | Karpathy | 11/12 | ≥1.45M | 2 |
 | SWE-bench Verified | Both skills | 8/12 | ≥1.94M | 3 |
+
+**Sample sizes:** SWE-bench Verified has **6 unique issues × 2 rounds = 12 attempts per configuration**. Our synthetic diagnostics have **10 fixtures**: 5 development × 2 rounds + 5 held-out × 3 rounds = **25 attempts per configuration**. Fractions in the table and plot count solved attempts, not unique tasks.
 
 **Ours** is the latest shipped revision. **Both skills** loads Karpathy and ours separately. Tokens include failed attempts; `k` = thousand, `M` = million, `≥` = incomplete lower bound. Unmeasured or unverified items are marked **TBD**.
 
@@ -34,7 +36,7 @@ Ours ties Karpathy at 11/12 SWE-bench Verified solves; baseline is cheaper on ou
 
 The original entrypoint was 6,573 bytes; ours is the 2,584-byte revision. These earlier measurements use different tasks and Claude Code 2.1.285 and are not pooled above.
 
-| Benchmark | Configuration | Solves ↑ | Tokens / solve ↓ |
+| Benchmark | Configuration | Solved attempts ↑ | Tokens / solve ↓ |
 |---|---|---:|---:|
 | Stress suite | No skill | 15/15 | 194k |
 | Stress suite | Original SoL-Pi (ours) | 15/15 | 209k |

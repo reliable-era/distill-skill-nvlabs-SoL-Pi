@@ -29,7 +29,7 @@ for arm in ['baseline','latest','karpathy','karpathy_latest']:
     synthetic['arms'][arm] = {'n': a['n'] + b['n'], 'solved': solved,
         'tokens_per_solve': total / solved, 'usage_complete': a['usage_complete'] and b['usage_complete'],
         'timeouts': a['timeouts'] + b['timeouts']}
-stages = [('Our synthetic diagnostics\ndevelopment + held-out',synthetic),('SWE-bench Verified\n6-issue subset',combined)]
+stages = [('Our synthetic diagnostics\n10 fixtures · 25 attempts per configuration',synthetic),('SWE-bench Verified\n6 issues · 12 attempts per configuration',combined)]
 arms = ['baseline','latest','karpathy','karpathy_latest']
 labels = ['No skill','SoL-Pi (ours)','Karpathy','Both skills']
 colors = ['#64748b','#0284c7','#d97706','#8b5cf6']
