@@ -1,0 +1,11 @@
+# Build the two pinned source images first (see README), then combine their tools.
+# One shared filesystem/toolchain removes the Hermes-versus-Node image confound.
+FROM sol-pi-eval-agents:2026-10-03 AS node_agents
+FROM sol-pi-eval-hermes:2026-10-03
+USER root
+COPY --from=node_agents /usr/local/bin/ /usr/local/bin/
+COPY --from=node_agents /usr/local/lib/node_modules/ /usr/local/lib/node_modules/
+COPY --from=node_agents /opt/cursor/ /opt/cursor/
+ENV PATH=/opt/cursor/bin:/usr/local/bin:/usr/bin:/bin CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 COPILOT_AUTO_UPDATE=false
+USER evaluator
+WORKDIR /workspace

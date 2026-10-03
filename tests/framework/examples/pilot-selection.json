@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "selection_method": "sha256-ranked strata round-robin; no outcomes",
+  "seed": 42,
+  "requested_size": 8,
+  "selected_size": 8,
+  "eligible_unique_tasks": 1096,
+  "strata": [
+    "benchmark"
+  ],
+  "balance_within": [
+    "language",
+    "repo"
+  ],
+  "stratum_count": 4,
+  "all_strata_covered": true,
+  "exclusions": [
+    "astropy__astropy-13033",
+    "astropy__astropy-7336",
+    "django__django-11149",
+    "django__django-11292",
+    "django__django-11964",
+    "django__django-13128",
+    "django__django-13195",
+    "django__django-14155",
+    "django__django-14752",
+    "django__django-15380",
+    "pylint-dev__pylint-4551",
+    "pytest-dev__pytest-8399",
+    "sphinx-doc__sphinx-7440",
+    "sphinx-doc__sphinx-8265",
+    "sympy__sympy-12481",
+    "sympy__sympy-16886",
+    "sympy__sympy-19040",
+    "sympy__sympy-19637"
+  ],
+  "candidate_metadata_sha256": "34406a69014ec3b1fba569e591907c34c47e9c97dffef54b2fe08c27f43c22bd",
+  "selected_tasks": [
+    {
+      "benchmark": "swe-bench-multilingual",
+      "canonical_id": "apache__lucene-12196",
+      "difficulty": "unknown",
+      "id": "apache__lucene-12196",
+      "language": "unknown",
+      "repo": "apache/lucene"
+    },
+    {
+      "benchmark": "terminal-bench-2",
+      "canonical_id": "terminal-bench-2:code-from-image",
+      "id": "code-from-image",
+      "language": "mixed",
+      "repo": "harbor-framework/terminal-bench-2"
+    },
+    {
+      "benchmark": "swe-bench-verified",
+      "canonical_id": "pydata__xarray-4966",
+      "difficulty": "15 min - 1 hour",
+      "id": "pydata__xarray-4966",
+      "language": "python",
+      "repo": "pydata/xarray"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:javascript/exercises/practice/bowling",
+      "id": "javascript/exercises/practice/bowling",
+      "language": "javascript",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "swe-bench-multilingual",
+      "canonical_id": "phpoffice__phpspreadsheet-4114",
+      "difficulty": "unknown",
+      "id": "phpoffice__phpspreadsheet-4114",
+      "language": "unknown",
+      "repo": "phpoffice/phpspreadsheet"
+    },
+    {
+      "benchmark": "terminal-bench-2",
+      "canonical_id": "terminal-bench-2:sanitize-git-repo",
+      "id": "sanitize-git-repo",
+      "language": "mixed",
+      "repo": "harbor-framework/terminal-bench-2"
+    },
+    {
+      "benchmark": "swe-bench-verified",
+      "canonical_id": "pallets__flask-5014",
+      "difficulty": "<15 min fix",
+      "id": "pallets__flask-5014",
+      "language": "python",
+      "repo": "pallets/flask"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:go/exercises/practice/food-chain",
+      "id": "go/exercises/practice/food-chain",
+      "language": "go",
+      "repo": "Aider-AI/polyglot-benchmark"
+    }
+  ],
+  "selection_sha256": "b8f98a207df09264a05ed9cef475705f6a44df8d42286c0afd342a3edcae1189",
+  "provenance": {
+    "source": "https://github.com/reliable-era/distill-skill-nvlabs-SoL-Pi",
+    "revision": "pinned-in-pilot-sources.json",
+    "source_file_sha256": "f96ac07dce86d653e1d2c60c6c5f7ff261f8b78fc916653edf35ea35b1dfebe2"
+  }
+}

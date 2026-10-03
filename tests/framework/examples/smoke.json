@@ -1,0 +1,13 @@
+{
+  "mode": "native",
+  "image": "sol-pi-eval-all:2026-10-03",
+  "schedule_seed": 42,
+  "rounds": [42, 73],
+  "timeout_seconds": 30,
+  "agent_network": "none",
+  "configurations": [
+    {"id": "mock-baseline", "agent": "mock"},
+    {"id": "mock-ours", "agent": "mock", "skill": "../../../skills/efficient-coding/SKILL.md"}
+  ],
+  "tasks": [{"id": "smoke-add", "benchmark": "framework-smoke-only", "workspace": "workspace", "prompt": "Fix the add function.", "grader_dir": "grader", "grader_argv": ["python3", "/grade/check.py"]}]
+}

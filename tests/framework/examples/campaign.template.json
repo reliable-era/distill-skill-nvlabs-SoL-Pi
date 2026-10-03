@@ -1,0 +1,20 @@
+{
+  "mode": "same-model",
+  "backend_id": "TBD: verified provider endpoint and model revision",
+  "image": "sol-pi-eval-all:2026-10-03",
+  "schedule_seed": 42,
+  "rounds": [42, 73],
+  "timeout_seconds": 600,
+  "grade_timeout_seconds": 120,
+  "agent_network": "bridge",
+  "cpus": 2,
+  "memory": "4g",
+  "budget": {"max_attempts": 4, "max_wall_seconds": 2400, "max_known_cost_usd": null, "require_priced_usage": true},
+  "prices": {},
+  "price_sources": {},
+  "configurations": [
+    {"id": "codex-baseline", "agent": "codex", "model": "TBD", "credential_volume": "sol-pi-auth-codex"},
+    {"id": "codex-ours", "agent": "codex", "model": "TBD", "credential_volume": "sol-pi-auth-codex", "skill": "TBD: absolute path to skills/efficient-coding/SKILL.md"}
+  ],
+  "tasks": [{"id": "TBD", "benchmark": "TBD", "workspace": "TBD", "prompt": "TBD", "grader_dir": "TBD", "grader_image": "TBD", "grader_argv": ["python3", "/grade/check.py"]}]
+}

@@ -16,3 +16,33 @@ jobs:
         run: docker build -f tests/validation/Dockerfile -t sol-pi-validation .
       - name: Validate installation and shipped resources
         run: docker run --rm --network none sol-pi-validation
+      - name: Test economic accounting and sampling
+        run: |
+          python3 -m unittest discover -s tests/framework -p 'test_*.py'
+          python3 -m unittest discover -s tests/framework/benchmarks -p 'test_*.py'
+      - name: Verify isolated evaluation runner without model calls
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          source = Path('tests/framework/examples/smoke.json').resolve()
+          spec = json.loads(source.read_text())
+          spec['image'] = 'sol-pi-validation:latest'
+          for task in spec['tasks']:
+              for field in ('workspace', 'grader_dir'):
+                  task[field] = str(source.parent / task[field])
+          for config in spec['configurations']:
+              if config.get('skill'):
+                  config['skill'] = str((source.parent / config['skill']).resolve())
+          Path(os.environ['RUNNER_TEMP'], 'smoke.json').write_text(json.dumps(spec))
+          PY
+          python3 tests/framework/run.py freeze "$RUNNER_TEMP/smoke.json" --output "$RUNNER_TEMP/plan.json"
+          python3 tests/framework/run.py run "$RUNNER_TEMP/plan.json" --output "$RUNNER_TEMP/results"
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          summary = json.loads(Path(os.environ['RUNNER_TEMP'], 'results/summary.json').read_text())
+          assert len(summary) == 2
+          assert all(s['solved'] == s['attempts'] == 2 for s in summary.values())
+          assert all(s['cost_usd'] is None for s in summary.values())
+          PY

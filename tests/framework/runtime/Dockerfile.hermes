@@ -1,0 +1,10 @@
+FROM python:3.14-slim-bookworm
+RUN apt-get update && apt-get install -y --no-install-recommends git curl ca-certificates ripgrep build-essential && rm -rf /var/lib/apt/lists/*
+ARG HERMES_COMMIT=bd0affe5e5f723579df8902852f5d0c47795f355
+RUN curl -fL --retry 3 https://github.com/NousResearch/hermes-agent/archive/${HERMES_COMMIT}.tar.gz -o /tmp/hermes.tar.gz && mkdir /opt/hermes && tar -xzf /tmp/hermes.tar.gz -C /opt/hermes --strip-components=1 && rm /tmp/hermes.tar.gz && pip install --no-cache-dir -e /opt/hermes
+RUN useradd --create-home --uid 1000 evaluator
+COPY entrypoint.py /opt/eval-entrypoint.py
+ENV HOME=/home/evaluator TERMINAL_ENV=local
+USER evaluator
+WORKDIR /workspace
+ENTRYPOINT ["python3", "/opt/eval-entrypoint.py"]

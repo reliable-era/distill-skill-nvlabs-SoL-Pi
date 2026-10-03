@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "agents": [
+    {
+      "id": "codex",
+      "name": "Codex",
+      "executable": "codex",
+      "version_command": [
+        "codex",
+        "--version"
+      ],
+      "version": "0.160.0",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "login_command": [
+        "codex",
+        "login",
+        "--device-auth"
+      ],
+      "credential_paths": [
+        ".codex/auth.json"
+      ],
+      "source": "https://developers.openai.com/codex/cli/reference",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation"
+    },
+    {
+      "id": "copilot",
+      "name": "GitHub Copilot CLI",
+      "executable": "copilot",
+      "version_command": [
+        "copilot",
+        "--version"
+      ],
+      "version": "1.0.91",
+      "command_template": [
+        "copilot",
+        "-p",
+        "{prompt}",
+        "--output-format",
+        "json",
+        "--allow-all",
+        "--model",
+        "{model}"
+      ],
+      "login_command": [
+        "copilot",
+        "login"
+      ],
+      "credential_paths": [],
+      "source": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-programmatic-reference",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation",
+      "credential_env": [
+        "COPILOT_GITHUB_TOKEN"
+      ],
+      "auth_note": "CLI OAuth login supported; isolated runtime uses COPILOT_GITHUB_TOKEN because config.json mixes credentials with preferences."
+    },
+    {
+      "id": "pi",
+      "name": "Pi coding agent",
+      "executable": "pi",
+      "version_command": [
+        "pi",
+        "--version"
+      ],
+      "version": "1.0.0",
+      "command_template": [
+        "pi",
+        "--mode",
+        "json",
+        "--print",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "login_command": [
+        "pi"
+      ],
+      "credential_paths": [
+        ".pi/agent/auth.json"
+      ],
+      "source": "https://github.com/earendil-works/pi",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation",
+      "auth_note": "Start pi and enter /login; API key environment variables also supported."
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "executable": "opencode",
+      "version_command": [
+        "opencode",
+        "--version"
+      ],
+      "version": "2.0.22",
+      "command_template": [
+        "opencode",
+        "run",
+        "--format",
+        "json",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "login_command": [
+        "opencode",
+        "auth",
+        "login"
+      ],
+      "credential_paths": [
+        ".local/share/opencode/auth.json"
+      ],
+      "source": "https://opencode.ai/v2/docs/cli/commands/",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini CLI",
+      "executable": "gemini",
+      "version_command": [
+        "gemini",
+        "--version"
+      ],
+      "version": "0.62.0",
+      "command_template": [
+        "gemini",
+        "-p",
+        "{prompt}",
+        "--output-format",
+        "stream-json",
+        "--approval-mode",
+        "yolo",
+        "--model",
+        "{model}"
+      ],
+      "login_command": [
+        "gemini"
+      ],
+      "credential_paths": [
+        ".gemini/oauth_creds.json",
+        ".gemini/google_accounts.json"
+      ],
+      "source": "https://geminicli.com/docs/get-started/authentication/",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation"
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "executable": "openclaw",
+      "version_command": [
+        "openclaw",
+        "--version"
+      ],
+      "version": "2026.9.8",
+      "command_template": [
+        "openclaw",
+        "agent",
+        "exec",
+        "{prompt}",
+        "--model",
+        "{model}",
+        "--json",
+        "--auth-env-only"
+      ],
+      "login_command": [
+        "openclaw",
+        "onboard"
+      ],
+      "credential_paths": [],
+      "source": "https://docs.openclaw.ai/cli/agent",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation",
+      "credential_env": [
+        "OPENAI_API_KEY",
+        "ANTHROPIC_API_KEY",
+        "GEMINI_API_KEY"
+      ],
+      "auth_note": "agent exec is an isolated headless path in pinned version; environment provider keys only, no gateway or messaging."
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor Agent CLI",
+      "executable": "cursor-agent",
+      "version_command": [
+        "cursor-agent",
+        "--version"
+      ],
+      "version": "2026.10.01-e373342",
+      "command_template": [
+        "cursor-agent",
+        "-p",
+        "{prompt}",
+        "--force",
+        "--output-format",
+        "stream-json",
+        "--model",
+        "{model}"
+      ],
+      "login_command": [
+        "cursor-agent",
+        "login"
+      ],
+      "credential_paths": [],
+      "source": "https://cursor.com/docs/cli",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation",
+      "credential_env": [
+        "CURSOR_API_KEY"
+      ],
+      "auth_note": "Use CURSOR_API_KEY from dedicated env-file for isolated runs. OAuth keychain import TBD."
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes Agent",
+      "executable": "hermes",
+      "version_command": [
+        "hermes",
+        "--version"
+      ],
+      "version": "bd0affe5e5f723579df8902852f5d0c47795f355",
+      "command_template": [
+        "hermes",
+        "chat",
+        "-q",
+        "{prompt}",
+        "--model",
+        "{model}",
+        "--oneshot",
+        "--format",
+        "stream-json"
+      ],
+      "login_command": [
+        "hermes",
+        "setup"
+      ],
+      "credential_paths": [
+        ".hermes/auth.json"
+      ],
+      "source": "https://github.com/NousResearch/hermes-agent",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation",
+      "credential_env": [
+        "OPENAI_API_KEY",
+        "ANTHROPIC_API_KEY",
+        "OPENROUTER_API_KEY"
+      ],
+      "auth_note": "Use provider API-key env-file for isolated runs. Mixed .env/config is not imported. OAuth provider config compatibility TBD."
+    },
+    {
+      "id": "claude",
+      "name": "Claude Code reference",
+      "executable": "claude",
+      "version_command": [
+        "claude",
+        "--version"
+      ],
+      "version": "2.1.286",
+      "command_template": [
+        "claude",
+        "-p",
+        "{prompt}",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--dangerously-skip-permissions",
+        "--model",
+        "{model}"
+      ],
+      "login_command": [
+        "claude",
+        "auth",
+        "login"
+      ],
+      "credential_paths": [
+        ".claude/.credentials.json"
+      ],
+      "source": "https://code.claude.com/docs/en/cli-reference",
+      "status": "cli_probed; authenticated execution TBD",
+      "image": "sol-pi-eval-all:2026-10-03",
+      "usage_status": "TBD until authenticated transcript validation"
+    }
+  ],
+  "notes": [
+    "Harness is distinct from model backend. Explicit model/provider identifiers are required for same-model comparisons.",
+    "Gemini CLI is distinct from Google Antigravity. Antigravity GUI/native harness remains TBD; Pi provider availability is not a separate agent.",
+    "Commands are probed without inference; authenticated execution/usage remain TBD."
+  ]
+}

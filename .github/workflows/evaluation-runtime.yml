@@ -1,0 +1,33 @@
+name: Validate multi-agent evaluation runtime
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make room on the disposable hosted runner
+        run: sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+      - name: Build pinned source images and shared runtime
+        run: |
+          docker build -t sol-pi-eval-agents:2026-10-03 tests/framework/runtime
+          docker build -f tests/framework/runtime/Dockerfile.hermes -t sol-pi-eval-hermes:2026-10-03 tests/framework/runtime
+          docker build --network none -f tests/framework/runtime/Dockerfile.all -t sol-pi-eval-all:2026-10-03 tests/framework/runtime
+      - name: Probe every agent without network or credentials
+        run: python3 tests/framework/runtime/probe.py
+      - name: Test accounting and deterministic selection
+        run: |
+          python3 -m unittest discover -s tests/framework -p 'test_*.py'
+          python3 -m unittest discover -s tests/framework/benchmarks -p 'test_*.py'
+      - name: Verify isolated grading, timeout cleanup, and credential boundaries
+        run: python3 tests/framework/verify.py --output tests/framework/runtime/runner-check.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: offline-runtime-evidence
+          path: |
+            tests/framework/runtime/installation-check.json
+            tests/framework/runtime/runner-check.json

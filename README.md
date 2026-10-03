@@ -51,6 +51,10 @@ The later development candidate was rejected and is not shipped. Original calibr
 
 </details>
 
+## Evaluation framework
+
+[Docker framework](tests/framework/README.md): nine agent CLIs, six benchmark sources, a frozen eight-task pilot, cost accounting, and isolated grading. CLI installation is tested; authenticated comparisons and public benchmark grader integration are **TBD**. [Human login steps](tests/framework/runtime/README.md).
+
 ## Quick start
 
 Inside Claude Code:

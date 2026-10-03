@@ -1,3 +1,12 @@
+# Current evaluation framework work
+
+Build and offline validation completed under `tests/framework/`; human authentication
+is the next dependency for model-backed adapter checks. Nine CLI installations and
+the shared Docker runtime are tested. Six benchmark sources are cataloged; four
+pinned inventories produced the frozen eight-task pilot. Official task environments
+and grader bridges remain TBD and must be completed before publication scoring.
+No new skill-performance result is claimed. Historical evidence follows.
+
 # Goal
 
 Measure whether the **nvlab-sol-pi-skills** bundle (`.claude/skills/efficient-coding`) lowers the

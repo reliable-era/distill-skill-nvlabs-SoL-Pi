@@ -1,3 +1,17 @@
+# Current handoff: multi-agent economic evaluation framework
+
+Updated 2026-10-03. Implementation is under `tests/framework/`.
+Nine CLIs are built/probed in one shared Docker image `sol-pi-eval-all:2026-10-03`;
+no authenticated inference has been launched. Human login instructions are in
+`tests/framework/runtime/README.md` and `python3 tests/framework/auth.py list`.
+The frozen eight-task metadata pilot covers Verified, Multilingual, Terminal-Bench2,
+and Aider polyglot; source revisions and hashes are committed. Public benchmark
+runtime/grader integration remains TBD, as do authenticated telemetry/routing checks.
+Offline runner/grader smoke, timeout cleanup and synthetic credential isolation pass.
+The historical benchmark results and canonical shipped skill are unchanged.
+
+The following is historical context, not the current execution state.
+
 # Handoff: evaluation complete; instruction-level revision applied
 
 Updated 2026-10-02. The original matrix is complete: 60 stress runs and 96
