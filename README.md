@@ -27,7 +27,7 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 | Random easy subset | Karpathy | 3/4 | ≥1.80M | 1 |
 | Random easy subset | Both skills | 4/4 | 1.48M | 0 |
 
-**Ours** is the latest shipped revision. **Both skills** loads Karpathy and ours separately. Tokens include failed attempts; `k` = thousand, `M` = million, `≥` = incomplete lower bound.
+**Ours** is the latest shipped revision. **Both skills** loads Karpathy and ours separately. Tokens include failed attempts; `k` = thousand, `M` = million, `≥` = incomplete lower bound. Unmeasured or unverified items are marked **TBD**.
 
 Ours leads on the new random easy subset, but baseline is cheaper on held-out diagnostics. **A stable general efficiency win is not established.** Public repair retrieval limits repository attribution; incomplete costs do not support exact savings claims.
 
@@ -78,6 +78,8 @@ Use the commands above. The repository supplies the [marketplace and plugin mani
 
 ### Skills CLI — Claude Code, Codex, Cursor
 
+**Repository-specific installation validation: TBD.** The commands below follow the Skills CLI documentation; these client installation paths have not been tested here.
+
 Using the [open Skills CLI](https://github.com/vercel-labs/skills), choose your client:
 
 ```bash
@@ -91,7 +93,7 @@ npx skills add reliable-era/distill-skill-nvlabs-SoL-Pi --skill efficient-coding
 npx skills add reliable-era/distill-skill-nvlabs-SoL-Pi --skill efficient-coding --agent cursor
 ```
 
-These install from this GitHub repository. They are not claims of official marketplace listing or measured performance on those clients. Add `--global` for a user-wide installation. In Codex, invoke with `$efficient-coding`.
+These commands target this GitHub repository. Official marketplace listing: **TBD**. Performance on Codex/Cursor and other LLM backends: **TBD**. Add `--global` for a user-wide installation. In Codex, invoke with `$efficient-coding`.
 
 ### Manual project installation
 
