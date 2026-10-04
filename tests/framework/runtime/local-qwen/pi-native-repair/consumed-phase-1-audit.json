@@ -1,0 +1,44 @@
+{
+  "plan_sha256": "ded638116243c78db670c73de11de6a73815360be5cdba69ad183770438cd4a6",
+  "actual_proofs": {
+    "topology": null,
+    "proxy": null,
+    "actors": [],
+    "cleanup": {
+      "server_workers": null,
+      "socket_absent": null,
+      "containers": [],
+      "networks": []
+    }
+  },
+  "actors": [],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "scheduler busy or ambiguous"
+    }
+  ],
+  "containers_remaining": [],
+  "networks_remaining": [],
+  "native_starts": 0,
+  "provider_POST": 0,
+  "usage_complete": null,
+  "scope": "Idle guard refusal before any runtime resources/native starts/providerPOST; no retry. Pi readiness untested.",
+  "private_final_sha256": "4336e379bb9ae1050f28b0fee778794c79343ff1f9ad9fdcace4ff69c2d5e7f1",
+  "execution_handle": 52106,
+  "execution_exit": 1,
+  "availability": "scheduler_busy_or_ambiguous_unresolved",
+  "load_response_retained": false,
+  "root_cause": "TBD: fetch_idle parsed load then generic guardraised; no raw load persisted; busy cannot be distinguished from malformed shape",
+  "actual_cost_certificate": null,
+  "private_evidence_files": {
+    "final-evidence.json": {
+      "sha256": "4336e379bb9ae1050f28b0fee778794c79343ff1f9ad9fdcace4ff69c2d5e7f1",
+      "bytes": 552
+    },
+    "launch.json": {
+      "sha256": "894817a16a48ab8ddecaa1227b48253ce3880f2f852b313c0a3ccd164bcaaa49",
+      "bytes": 76
+    }
+  }
+}

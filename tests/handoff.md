@@ -1,33 +1,30 @@
-## Latest checkpoint — matched development preparation
+## Latest checkpoint — matched model screen authorized
 
-Goal active: economical wins over No skill, Karpathy and candidate-matched Both
-in at least three of five primary harnesses across three fresh benchmark families.
-No canonical promotion or majority win. Published checkpoint 42f00df passed CI.
+Goal active; shipped skill unchanged, no majority win. Published decc752 adds
+an independent cost collector that includes failures and refuses complete savings
+comparisons when an attempt or usage is missing. GitHub validation of d321f10
+passed (37185941513).
 
-Local Qwen native readiness phase two completed Codex's tiny repair with four
-complete Responses requests and independent grading. Gross reported usage is
-27,444 tokens (26,834 input plus 610 output); cache-read and reasoning counts are
-subsets and must not be added again. This is transport readiness, not a skill
-benchmark. Pi started but failed before any provider POST. Its availability and
-cost remain TBD. Owned workers, socket, containers and network cleanup passed.
-The earlier interrupted Codex phase and incomplete usage remain preserved.
+Pi-only local-Qwen readiness passed: one native start, four completed Chat
+requests, independent behavior/read checks and native/provider reconciliation
+at 8,462 gross tokens. Cache components and dollars remain TBD. All owned
+workers/socket/Docker resources were verified absent. Its prior zero-start
+busy-or-ambiguous guard failure is preserved; that response was not retained.
+Later metadata and fresh under-lock load records separately showed idleness.
 
-Parallel work is preparing a twelve-run Codex screen of the independent-reads
-candidate: three reused development tasks, four matched arms, one scheduled
-round. This screen cannot establish fresh confirmation or a majority win.
-Pi proxy diagnosis is mock-only until reviewed; no new real Pi model run is
-currently authorized. Shared inference uses both existing locks and idle checks.
+The Codex independent-reads development screen is now authorized: twelve fixed
+cells (three reused families, four arms), 180 seconds/16 POST per actor, no
+retries, both existing locks and idle checks. Six original baseline/gold grading
+controls passed after correcting Docker UID/HOME. The first permission-failure
+phase is retained as ungraded infrastructure: seven total verifiers and two
+oracle setups, including failures. No fresh confirmation or skill win is claimed.
+A matched Pi screen is being prepared using the same grader certificate.
 
-SWE controls remain six validated, eleven actual attempts. Four HTTPbin fixture
-starts are retained: three prior phases made zero HTTP requests; the waiting-probe
-phase passed twelve contract sends with TLS verification and exact two-member
-internal network proof. All owned Docker objects were verified absent. Official
-Requests negative/gold controls still require a separate reviewed plan.
-
-Pi's bounded mock diagnosis observed one CONNECT to provider.example:8000,
-rejected with HTTP 403, zero POSTs. A proxy CONNECT repair is being prepared;
-no additional real Pi inference is authorized. This is a transport diagnosis,
-not evidence about skill quality. Mock Docker cleanup passed.
+Requests fixture parity passed twelve checks. The first subsequent negative
+control has one P2P TLS trust failure and remains ungraded; gold did not start.
+Twelve cumulative control attempts are retained. Direct Session.send bypasses
+CA environment merging; source verification and trusted CA setup remain in
+progress. Original tests and comparison selection are unchanged.
 
 Earlier checkpoints below are historical.
 

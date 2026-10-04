@@ -1,0 +1,53 @@
+{
+  "status": "prepared_actualSDKmock_notexecuted_root_review_required",
+  "scope": "prospective PiCONNECT transportrepair; not inference/benchmark",
+  "exact_authority": "provider.example:8000",
+  "upstream": "fixed private AF_UNIX /broker/broker.sock, no hostTCP/foreign/numeric destination",
+  "caps": {
+    "tunnel_seconds": 45,
+    "client_bytes": 262144,
+    "upstream_bytes": 2097152,
+    "future_mock_CONNECT": 1,
+    "future_mock_POST": 1,
+    "future_native_model_calls": 0
+  },
+  "broker_guards": "existingPOST path/model/requestbody/4peractor/8total/time guards unchanged; tunnel never bypassesbroker",
+  "native_configuration": "prospective Pi NODE_OPTIONS=--use-env-proxy or exactNodeCLI flag only after reviewedSDKmock; consumedphase2unchanged",
+  "source_hashes": {
+    "tunnel_proxy.py": "79cef0f8d0f30545d149e9ed127a10f4d585342e6dc5f95b1322a59d6724219e",
+    "test_tunnel.py": "988eee31520a4a1728c4193efd9e90685c65c2baf1abc66de36b96e9e8928dd1",
+    "probe.mjs": "2092c766ee0573e7421e4306a43fb0c267508e6955ab7bfc48edcdbd59c88dff",
+    "mock_sdk.py": "6025c6637cb342ff7e7676633919d75a18b75bf77b3e0bb8ad90e258b9651129",
+    "run_sdk_mock.py": "0f481830a36c1dc64b48452ddfea7769f498deb53b8183b31d7844e78f6685f5",
+    "../native-readiness/stream_proxy.py": "22a12af67bea5943c2cb2abe4450507956f55ba5c4496a4b38b3d9cb89b43481",
+    "../native-readiness/server.py": "59a2d9da646a721768fe186b89a28811945b3cfaaf2640a17cebff5be7f13e32",
+    "test_sdk_runner.py": "744dd37fcccda375f972a1959b36aed4898a07c70751fd1916dfa2ea50fef8b6"
+  },
+  "dependencies": {
+    "stream_proxy.py": "22a12af67bea5943c2cb2abe4450507956f55ba5c4496a4b38b3d9cb89b43481",
+    "server.py": "59a2d9da646a721768fe186b89a28811945b3cfaaf2640a17cebff5be7f13e32"
+  },
+  "previous_mock_receipt_sha256": "91e61c02bc43a2b191d3d0ef9d19d759ac82fd499f3df0c77d57fa6c432ab37a",
+  "execution_gate": "Concreteonce-onlyactualNodeSDK+tunnelmockprepared forrootreview; no realmodel/provider/auth calls. ExactNodeSDKruntimehashes checked beforeNode launch.",
+  "maximum_mock_POST": 1,
+  "maximum_container_starts": 1,
+  "maximum_CONNECT_attempts": 1,
+  "mock_caps": {
+    "deadline_seconds": 15,
+    "cleanup_seconds": 8,
+    "NodeSDK_seconds": 8,
+    "tunnel_seconds": 6,
+    "bytes_each_direction": 4096,
+    "network": "none",
+    "CPU": 1,
+    "memory": "512m",
+    "pids": 32
+  },
+  "entrypoint": "run_sdk_mock.py --execute-mock-only --plan-sha256 EXACT; exclusivemarker/image/sourceguards/prestartinspect/durableerrors/verifiedcleanup",
+  "image_file_sha256": {
+    "/opt/cursor/bin/node": "e0e46d3a1c0667117303412647cafcbcefb1be7612493015ec8fd6b7440162a4",
+    "/usr/local/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/chunks/chunk-H3QXYIF7.js": "e703aeabc15090409eab28c53bdcae29137400de8581c2da23d1ec2953779a50"
+  },
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "offline_tests": "4pass: exactUnixCONNECTnestedPOST, foreign/numericdeny, deadline+bytecaps/worker0, actualSDKmockreceiptclassifier rejectsincomplete/overcap"
+}

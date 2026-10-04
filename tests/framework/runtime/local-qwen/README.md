@@ -34,3 +34,12 @@ is included in output. Billing remains TBD. Pi returned a connection error with
 zero provider POSTs, so full two-harness readiness did not pass. Owned broker
 workers and all Docker/socket resources were verified absent. These observations
 measure runtime readiness only; they do not demonstrate skill savings.
+
+
+The separately frozen Pi-only repair stage passed the tiny fixture: one native
+start, four complete Chat streams, observed read and independent behavior pass.
+Native and provider usage reconcile at 8,462 gross tokens; cache billing and
+actual dollars remain TBD. [Pi certificate](pi-native-repair/pi-readiness-certificate.json)
+records scope and cleanup. The preceding zero-start busy-or-ambiguous guard
+attempt is preserved with its missing load-response limitation. These are runtime
+checks, not comparative skill benchmark results.

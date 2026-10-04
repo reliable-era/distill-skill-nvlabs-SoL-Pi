@@ -1,0 +1,33 @@
+{
+  "plan_sha256": "15592ddf4fe62971d76f59a65ef151308d5e1bee5438f08f949b741c59d1bdd1",
+  "mock_starts": 1,
+  "result": {
+    "POST": 1,
+    "CONNECT": 1,
+    "CONNECT_attempts": 1,
+    "tunnel_counters": {
+      "CONNECT": 1,
+      "denied": 0,
+      "completed": 1,
+      "errors": 0
+    },
+    "sdk_exit": 0,
+    "sdk_status": 400,
+    "expectedMock400": true,
+    "workers": {
+      "proxy": 0,
+      "broker": 0
+    },
+    "socket_absent": true,
+    "errors": [],
+    "models": 0,
+    "real_provider_calls": 0
+  },
+  "container_exit": 0,
+  "diagnosis_category": "SDK_CONNECT_Unix_mock_HTTP400",
+  "forwarded_POST_route_proved": true,
+  "cleanup_absence_verified": true,
+  "errors": [],
+  "models": 0,
+  "real_provider_calls": 0
+}

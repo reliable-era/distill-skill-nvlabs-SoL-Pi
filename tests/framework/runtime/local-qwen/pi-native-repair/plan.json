@@ -1,0 +1,192 @@
+{
+  "status": "prepared_new_idle_logged_stage_root_review_required",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "harnesses": [
+    "pi1.0.0"
+  ],
+  "model": "Qwen3.8-27B-FP8",
+  "maximum_native_starts": 1,
+  "seconds_per_actor": 90,
+  "retries": 0,
+  "maximum_provider_POST_per_actor": 4,
+  "maximum_provider_POST_total": 4,
+  "minimum_expected_turns": 2,
+  "scope": "Read+edit tool call followed by final reply; cap2 may truncate legitimate separately-issued read/edit sequences, record truncation availability not quality; not coding benchmark",
+  "native_starts": 0,
+  "provider_POST": 0,
+  "private_artifacts": "fresh0700 outsideGit; actorwork/home only, grader/wrapper/expected outputs not actor-mounted; rawJSONL private; finalwork capture before verifiedcleanup",
+  "environment": {
+    "HOME": "/tmp/home",
+    "CODEX_HOME": "/tmp/home/.codex",
+    "MOCK_KEY": "dummy-not-a-real-secret",
+    "HTTP_PROXY": "http://proxy:8080",
+    "HTTPS_PROXY": "http://proxy:8080",
+    "NO_PROXY": ""
+  },
+  "integration_gate": "Bound official GET audit PASS and source pins; native stillrequires separate root executionauthorization and scheduleridle at launch; no models executed",
+  "pi_supported_configuration_proof": {
+    "models.md": {
+      "sha256": "6e9fd0aa0190ae86e53717c159cb2387a7d666dc0e79594e8e954131a981472d",
+      "source": "pinned Pi image package docs, copied during authorized official controls"
+    },
+    "cli.md": {
+      "sha256": "f634d79780f8f5b650f5462da38ad7466aace3ef3fbe0dd0731cda2b6f6e897d",
+      "source": "pinned Pi image package docs, copied during authorized official controls"
+    },
+    "settings.md": {
+      "sha256": "dae0b70c2f852ff57b4a34947d5059f7bac18038ca7e1fae4c4ba97bcbd574c3",
+      "source": "pinned Pi image package docs, copied during authorized official controls"
+    }
+  },
+  "codex_web_search": "disabled configured; strict-config unsupported for features subcommand, execution startup acceptance not yet verified; any unsupported setting stops",
+  "codex_subagents_compaction_disable": "multi_agent/multi_agent_v2 false supported observed feature keys; no supported whole-compaction disable proven. Any observed compaction/subagent event invalidates accounting. Request cap hardguard, no whole-harness-ban claim",
+  "usage_complete": "Conservativecopiedrootnormalizer bindsuniqueactualterminal usage EOF, missing/duplicate/zeroerrornull; cache_components_completeFalse, dollarsTBD",
+  "source_hashes": {
+    "stream_proxy.py": "22a12af67bea5943c2cb2abe4450507956f55ba5c4496a4b38b3d9cb89b43481",
+    "server.py": "59a2d9da646a721768fe186b89a28811945b3cfaaf2640a17cebff5be7f13e32",
+    "test_live_stream.py": "e3cfa850747b29c9e483ed36b22090f391c32a950e696710bd1688afe69c0c06",
+    "test_session.py": "97ffc22c856457eae2861060cf7ded8e0355ea10613db3fb616e47cf73f701fa",
+    "test_usage_normalization.py": "92861e2f12a4e41a2fec548f222d04181de53a16f1b83f8937c0faef3b2bd7c2",
+    "tunnel_proxy.py": "c910ddee4a104d425beb1a160e83ccddfc74aef661a297ac8b5f304bc2aa3e4f",
+    "session.py": "bf66b9e367e662eecd62ef1392556140c711de562b71f30eb882b56d1f354acf",
+    "usage_normalization.py": "bd6cc9ebd88848c893ca3f02c8a44be1acbdfd92ecd4edd6a721b13bba730688",
+    "test_pi_stage.py": "1a21d0c4df49ad63db531ef88935608ee03335fd206862ce42dcbde9ead4ed45",
+    "wrapper.py": "c9ce4cea1fbabf8872a6d51d6ba66e456c4e4ff76ca213d727cd23855349667b",
+    "test_certificate.py": "f6d3030e3d412e350b98cb7f75e8d8ac9d7fa2c868cd60aaec1a69daa937f804",
+    "run_native.py": "d793e7b53c681554f25fc7c37a14b1e03c893fb50d285b94311adb7b375beaea",
+    "test_wrapper.py": "8ea522abfda6353d561d5bf3720d3ab28f23e1a67461ae6d841ffb72967c68e8"
+  },
+  "grading": "networknone Docker CPU1 memory512m PIDs32 read-only noauth,10s execution; private stdout/stderr each64KiB childRLIMIT_FSIZE with hashes/exits/timeouts; bounded3+3cleanup verifiedabsence",
+  "offline_metadata_probes": {
+    "count": 2,
+    "models": 0,
+    "first": "features list succeeded; observed disable keys",
+    "second": "strict-config features unsupported exit1, cleaned, retained evidence"
+  },
+  "streaming_transport": "session.py fixed loopback endpoints+private streamed bytes/usage; separately prepared stream_proxy.py preserves Content-Type, flushes chunks, absolute25s/2MiB bounds; metadata proxy NOT streamingcompatible",
+  "session_caps": {
+    "starts": 1,
+    "actor_seconds": 90,
+    "POST_total": 4,
+    "POST_per_actor": 4,
+    "request_bytes": 262144,
+    "response_bytes": 2097152,
+    "upstream_seconds": 40,
+    "proxy_seconds": 45,
+    "get_load_bytes": 65536
+  },
+  "actual_execution": 0,
+  "shared_inference_locks": [
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206852991
+    },
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206919231
+    }
+  ],
+  "routing_certificate": {
+    "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/runtime/local-qwen/unix-routing-audit.json",
+    "sha256": "1176e6e45b27cd8d13b7cf1418ba83cecbc287e3296f88d2f9854516c356f451",
+    "route_plan_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/runtime/local-qwen/plan.json",
+    "route_plan_sha256": "f7b0801c58bd6156400958bc49781703a4d1e03bfef5d878093cbd49d5b53b4c",
+    "route_source_hashes": {
+      "route.py": "a2cd7bd4fdedf0e769af4065f47e4b62969f86bae25feef014f1c7d12d1a327d",
+      "broker.py": "3c4e7c81dabf241b3b6dca203eac5dd3ced62d4a6a737a55dcd19e96c4ac11f7",
+      "test_broker.py": "e41c3f9eb28518967162903e6ced615fb85643ca732130dbb38b58cb9d2aa737",
+      "metadata_proxy.py": "a21a11f968bfdf39fb40fefc5bb9d230ff312c07d831038ab6e716e2be96098e"
+    }
+  },
+  "hosthop_mode": "reviewed_unix_proxy_only",
+  "entrypoint": "run_native.py --execute-native-readiness --plan-sha256 EXACT; requires root execution-authorization.json, bound passed routing certificate, exact locks/idleness before any starts; fresh exclusive private marker",
+  "resource_limits": {
+    "actors": {
+      "cpus": 1,
+      "memory": "512m",
+      "pids": 64,
+      "tmpfs": "64m"
+    },
+    "proxy": {
+      "cpus": 1,
+      "memory": "512m",
+      "pids": 32
+    },
+    "broker_workers": 2,
+    "broker_concurrent_POST": 1,
+    "grader": {
+      "cpus": 1,
+      "memory": "512m",
+      "pids": 32,
+      "network": "none",
+      "seconds": 10
+    },
+    "cleanup_seconds": {
+      "container_rm": 5,
+      "inspect": 3,
+      "server_shutdown": 2,
+      "worker_drain": 3
+    }
+  },
+  "readiness_grade": "transportreadiness canreport independentbehaviorpass/readTBD; conservative parser recognizes observednative event forms only, not universalreadcoverage; no newcomparison",
+  "tests": "27offline controls including exactbusyload raw+statusmetadata persisted before assertion",
+  "actor_clock": "90s allnativephase commands shareddeadline,10scleanupreserve; grader10s+cleanup6 separate; proxy45s/upstream40s absolute bounds",
+  "topology": "One internalisolated IPv6false actorbridge noGateway; host Unixbroker private0700socketdir/proxyonlyROsocketmount, matchinghostUID/GID; actors inspectedbeforestart exactlyhome/work mounts, no socketdir",
+  "provider_parameters": {
+    "Pi": {
+      "maxTokens": 1024,
+      "reasoning": false,
+      "thinking": "off",
+      "api": "openai-completions"
+    },
+    "Codex": {
+      "max_output_tokens": "TBD native default observedrequestcapturedprivate",
+      "api": "responses",
+      "model_reasoning_effort": "TBD native default"
+    },
+    "pooling": false,
+    "uniformity": "futurearms matchedwithinharness; no crossharness backendparameter equivalenceclaim"
+  },
+  "auth": "Dummykey only, brokerforwards noAuthorizationheader; realprovider authnotverified",
+  "runtime_actual_proofs": "Durable actor/proxy prestart inspect caps/UID/mount source/RW/networks, topologyfacts, verified container/networkabsence, serverworkers0 and socketabsent; proxycreate/inspect beforestart",
+  "provider_errors": "NumericHTTPstatus and boundedprivate64KiB body +hash/truncation retained underabsoluteupstreamdeadline; stop before nextactor",
+  "stop_policy": "Any behaviorfail stops before nextactor; readmissing can continue transportonly/readTBD. Fullreadiness onlybehaviorpass+successfulread evidence. Transportpass separatelyretained; no qualitywinner claim",
+  "stage_rationale": "NEWPi-onlyrepair readiness,1native90s4POST/noretry; Codexnotrepeated. PreservespriorPi0receiptavailabilityfailure; mockprovenexactNodeCLIproxyflag+fixedUnixCONNECTtunnel",
+  "owned_upstream_cleanup": "Track originalconnected socket independently of HTTPConnection.sock (may detach onHTTP1.0), abortshutdown originalsocket+closeonlyownedconnections beforeworkerdrain; clientsremovedfirst, bothlocks heldthroughproof",
+  "reused_source_sha256": {
+    "session.py": "91b8048ed82c35c08919af65a56cab88347097f3bbc2340ab06bc01b9f55ae0e",
+    "wrapper.py": "3868e4be3bd744369039ce9a9f8a95495d9910f6875e2035829bf564fd915c19",
+    "server.py": "59a2d9da646a721768fe186b89a28811945b3cfaaf2640a17cebff5be7f13e32",
+    "stream_proxy.py": "22a12af67bea5943c2cb2abe4450507956f55ba5c4496a4b38b3d9cb89b43481",
+    "run_native.py": "47af62c06ed63444a8b3fc8c7d70cde70f9361e7c76ac65d5d514f89da546dfd",
+    "test_session.py": "2f04916b188278fdee5c049ceefc1337c067d98a29779c13504b60f3a818a1ae",
+    "test_wrapper.py": "8ea522abfda6353d561d5bf3720d3ab28f23e1a67461ae6d841ffb72967c68e8",
+    "test_live_stream.py": "a227469c3462bdd7ecf23fe8482902f8bec1ddf47d9b08cc1479838e05e9e450",
+    "test_certificate.py": "f6d3030e3d412e350b98cb7f75e8d8ac9d7fa2c868cd60aaec1a69daa937f804",
+    "usage_normalization.py": "bd6cc9ebd88848c893ca3f02c8a44be1acbdfd92ecd4edd6a721b13bba730688",
+    "test_usage_normalization.py": "92861e2f12a4e41a2fec548f222d04181de53a16f1b83f8937c0faef3b2bd7c2",
+    "tunnel_proxy.py": "79cef0f8d0f30545d149e9ed127a10f4d585342e6dc5f95b1322a59d6724219e"
+  },
+  "SDK_tunnel_mock_certificate": {
+    "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/runtime/local-qwen/pi-unix-tunnel/mock-proxy-evidence.json",
+    "sha256": "6a6b75b8166361570dfb38d9a4c8dd9e1413818aeee56d2225a21857e78755ba",
+    "scope": "ownedmockHTTP400 CONNECT1POST1,notnativequality"
+  },
+  "native_start_order": [
+    "pi"
+  ],
+  "native_proxy_configuration": "Explicitpinned/opt/cursor/bin/node --use-env-proxy pinnedPi dist/bundle/cli.js; no unsupported NODE_OPTIONSenv guess",
+  "native_usage_audit": "Positiveactualnativeassistantmessage_end totalTokens+agent_end vs everyuniqueproviderterminalgross sum; missing/zero/duplicate/mismatch remainsnull, cachecompleteFalse",
+  "stage_id": "pi-tiny-readiness-idle-logged-2",
+  "previous_consumed_stage": {
+    "plan_sha256": "ded638116243c78db670c73de11de6a73815360be5cdba69ad183770438cd4a6",
+    "handle": 52106,
+    "native_starts": 0,
+    "POST": 0,
+    "reason": "busy_or_ambiguous_no_raw_load_retained",
+    "replacement": false
+  },
+  "idle_wait_policy": "No polling/retry orwaitexecution authorized; newstage performs one boundedGETunderbothlocks andpersistsrawload BEFORE assertion. Refusal stops0starts. Anyfutureboundedwaitneedsrootfrozenbudget."
+}
