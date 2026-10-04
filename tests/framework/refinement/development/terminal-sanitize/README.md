@@ -38,3 +38,9 @@ The first five records (Pi lean-parent availability; Codex Karpathy, shipped, no
 The remaining seven records retain per-file manifests and compressed deltas against [baseline-files.json](baseline-files.json), including full Git history and untracked files. Pi shipped has one explicit missing capture: `.git/index`; all other files, Git objects and refs are captured. Its replay restores the baseline index and is not a byte-exact original-index reconstruction. Full local snapshots stay outside the Git repository.
 
 [Credential scan](credential-scan.json) checks exact values from available host auth seeds, including decompressed archive members; discarded private refresh values are outside that scan’s available scope. Task fixtures deliberately contain fake credential strings.
+
+## Publication redaction
+
+GitHub push protection rejected token-shaped strings in public task transcripts and removed lines of patches. Published evidence replaces those strings with digest markers; original execution hashes remain unchanged, and [publication-redaction-audit.json](../publication-redaction-audit.json) records original and published hashes. Original raw files remain outside Git under restrictive local permissions. Protection is not bypassed.
+
+Replay reconstructs patch markers only from freshly copied pinned public baseline content, verifies the original patch SHA256 before applying it, and checks published transcript hashes against the redaction audit. It does not reconstruct original transcripts or hardcode credentials. All twelve verifier outcomes must still agree. The baseline verifier refreshed Git index stat-cache before the original baseline hash freeze; a compact preparation delta restores that index after replay verifies identical staged entries in the fresh image.

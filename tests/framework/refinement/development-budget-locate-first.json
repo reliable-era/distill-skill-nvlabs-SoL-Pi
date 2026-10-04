@@ -1,0 +1,32 @@
+{
+  "purpose": "Prepared next development stage; no confirmation or automatic launch",
+  "candidate": "locate-first",
+  "candidate_sha256": "8c753e5093f72a02660e35e1e0b1824c81c49bca623b8197e8fcfeed347b5b96",
+  "max_actor_attempts": 8,
+  "allocations": [
+    {
+      "task": "pallets__flask-5014",
+      "harnesses": [
+        "pi",
+        "codex"
+      ],
+      "arms": [
+        "none",
+        "karpathy",
+        "candidate",
+        "both"
+      ],
+      "max_attempts": 8
+    }
+  ],
+  "actor_timeout_seconds": 180,
+  "automatic_retries": 0,
+  "order_seed": 106,
+  "model_sampling_seed": "TBD",
+  "local_plan_sha256": "e0572fdf2e6cdcc915ae4808bfe2734ad01e86980cc9a73d3b57ec8882da8a2a",
+  "launch_status": "not_started",
+  "pi_credential_gate": "TBD: fresh human login or verified persistent private refreshed seed required after invalid_grant",
+  "credential_policy": "Seed private cache once outsideGit; preserve refreshed credentials under per-harness locks; never log credentials or writehostseeds",
+  "confirmation": "Sealed tasks untouched; do not infer stability from one reused development issue",
+  "monetary_cost": "TBD"
+}

@@ -11,39 +11,39 @@
             "skipped": 0,
             "pending": 0,
             "other": 0,
-            "start": 1791083109.1071603,
-            "stop": 1791083109.4556794
+            "start": 1791083592.6563144,
+            "stop": 1791083592.9838955
         },
         "tests": [
             {
-                "name": "test_outputs.py::test_removal_of_secret_information",
+                "name": "tests/test_outputs.py::test_removal_of_secret_information",
                 "status": "passed",
-                "duration": 0.0008195880800485611,
-                "start": 1791083109.156972,
-                "stop": 1791083109.1581066,
+                "duration": 0.0006230566650629044,
+                "start": 1791083592.7076066,
+                "stop": 1791083592.7084415,
                 "retries": 0,
-                "file_path": "test_outputs.py"
+                "file_path": "tests/test_outputs.py"
             },
             {
-                "name": "test_outputs.py::test_correct_replacement_of_secret_information",
+                "name": "tests/test_outputs.py::test_correct_replacement_of_secret_information",
                 "status": "failed",
                 "raw_status": "call_failed",
-                "duration": 0.0016620103269815445,
-                "start": 1791083109.1583023,
-                "stop": 1791083109.1761742,
+                "duration": 0.001386888325214386,
+                "start": 1791083592.7085824,
+                "stop": 1791083592.72466,
                 "retries": 0,
-                "file_path": "test_outputs.py",
+                "file_path": "tests/test_outputs.py",
                 "trace": "def test_correct_replacement_of_secret_information():\n        CONTAMINATED_PATHS = [\n            \"/app/dclm/ray_processing/ray_cluster.yaml\",\n            \"/app/dclm/ray_processing/process.py\",\n            \"/app/dclm/exp_data/datasets/tokenized/\"\n            \"rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json\",\n        ]\n        DECONTAMINATED_PATHS = [\n            Path(__file__).parent / \"ray_cluster.yaml\",\n            Path(__file__).parent / \"process.py\",\n            Path(__file__).parent\n            / (\"rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json\"),\n        ]\n    \n        for contaminated_path, decontaminated_path in zip(\n            CONTAMINATED_PATHS, DECONTAMINATED_PATHS\n        ):\n            with open(contaminated_path, \"r\") as file:\n                contaminated_text = file.read()\n    \n            with open(decontaminated_path, \"r\") as file:\n                decontaminated_text = file.read()\n    \n>           assert contaminated_text == decontaminated_text\nE           assert '# An unique ... $USER /tmp\\n' == '# An unique ... $USER /tmp\\n'\nE             \nE             Skipping 1098 identical leading characters in diff, use -v to show\nE             - SS_KEY_ID=<your-aws-access-key-id>' >> ~/.bashrc\nE             + SS_KEY_ID=\"<your-aws-access-key-id>\"' >> ~/.bashrc\nE             ?           +                        +\nE             -     - echo 'export AWS_SECRET_ACCESS_KEY=<your-aws-secret-access-key>' >> ~/.bashrc\nE             +     - echo 'export AWS_SECRET_ACCESS_KEY=\"<your-aws-secret-access-key>\"' >> ~/.bashrc...\nE             \nE             ...Full output truncated (22 lines hidden), use '-vv' to show\n\n/tests/test_outputs.py:57: AssertionError",
                 "message": "The test failed in the call phase due to an assertion error"
             },
             {
-                "name": "test_outputs.py::test_no_other_files_changed",
+                "name": "tests/test_outputs.py::test_no_other_files_changed",
                 "status": "passed",
-                "duration": 0.2786531075835228,
-                "start": 1791083109.1763494,
-                "stop": 1791083109.4553626,
+                "duration": 0.25843435898423195,
+                "start": 1791083592.724807,
+                "stop": 1791083592.9835725,
                 "retries": 0,
-                "file_path": "test_outputs.py"
+                "file_path": "tests/test_outputs.py"
             }
         ]
     }
