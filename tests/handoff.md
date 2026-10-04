@@ -1,3 +1,11 @@
+## Active refinement checkpoint — 2026-10-04
+
+Goal remains active under `goal.md`; no majority-harness win or canonical promotion. Completed audited results, selected polyglot controls and Docker egress mock controls are pushed at0963705; GitHub CI37176787694 succeeded. Locate-first three-task Codex total is13.1% above No skill. Bounded-search Terminal candidate fails exact replacement; retain all negatives and original hashes.
+
+Native agy Flask four-start phase and publication audit complete; SWE agent-scoped session47757 exited0. Root cannot poll that handle directly; the owning agent polls it, and root checks named `solpi-agy-flask-locate-*` containers and results. Reviewed plan bb29e288... / budget02535a... / execution authorization are preserved. All four official grades pass (1F2P/59P2P); root audit errors[]. Candidate168,379 tokens vsNone333,547/K196,669/Both143,299, so no all-comparator win. Do not infer success from SDK execution alone.
+
+Acceptance-first candidate changes only the verification bullet and passes structural validation; zero model calls. Terminal agent prepares a separate capped12-start three-family Codex screen, fixed family order and candidate-failure stop rule; root review required before calls. Selected4 polyglot images run native Codex/Pi offline, but login/isolation/confirmation gates remain unfinished. Copilot two-start accounting diagnostic has a guarded runner with two mock cutoff tests; native mode0600 token env-file path is pending human response. Pi refreshed login also pending. USD and independently observed backend unknowns remain TBD.
+
 # Current: first locate-first Codex screen positive; goal still active
 
 FourCodex locate-first actors and officialgrades finished, all4resolved; candidate84,948 complete tokens vs No skill112,352/K151,278/Both128,199. Savings24.4%/43.8%/33.7%, one reusedissue/round/harness only, no promotion. Rootindependentaudit all4artifacthashsets matches. Same frozeneight-start budget has fourPi slotsunused; Pi awaits freshhumanlogin (invalid_grant), do not silentlyreseedorretry. Persistentprivatecache /tmp/solpi-refinement-auth-cache preservesCodexrefresh safelyoutsideGit. No modeljobs remain in thisstage. Canonicalunchanged; sealedconfirmation untouched.
