@@ -90,10 +90,13 @@ reconciled provider usage. Codex's repaired development cohort stopped after
 four Terminal attempts: all four arms failed; the next scheduler idle grace
 expired, leaving eight Go/SWE cells unrun. Cleanup was independently verified.
 The common failure review found incomplete repairs and cutoffs, with no
-demonstrated delivery or grader defect. The unchanged Pi comparison is now
-running as a separate cohort. Preserve the earlier partial cohort and zero-start
-Pi stage separately. These development tasks cannot establish fresh wins, and
-the candidate has not qualified. A separate unexecuted scope-coverage candidate
+demonstrated delivery or grader defect. The unchanged Pi comparison stopped after
+one actor at its budget cutoff, with incomplete usage and frozen ungraded quality;
+eleven cells were unrun. Cleanup passed. Prospective successor protocols use the
+same longer budget for every arm and grade saved work after expected cutoffs;
+they remain unexecuted. Preserve the earlier partial cohort and zero-start Pi
+stage separately. These development tasks cannot establish fresh wins, and the
+candidate has not qualified. A separate unexecuted scope-coverage candidate
 tests whether conditional coverage of exhaustive requests prevents unsupported
 exclusions while retaining focused reads for local changes.
 

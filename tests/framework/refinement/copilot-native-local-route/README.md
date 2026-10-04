@@ -1,0 +1,13 @@
+# Copilot native local-route readiness
+
+**Native OpenAI-compatible local provider: supported by pinned help and official docs. Actual Qwen compatibility and complete gross ledger: TBD.** This research made zero model/auth/install calls and read no credential contents.
+
+Installed native Copilot **1.0.91** documents `COPILOT_PROVIDER_BASE_URL`, provider type `openai`, wire API `completions`, and `COPILOT_MODEL`. Its `help providers` explicitly states that GitHub authentication is unnecessary in this mode and provider keys are optional for local endpoints. This is native CLI configuration, not an SDK actor. `--model` alone does not activate provider routing.
+
+Current [official CLI BYOK docs](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models) independently support local OpenAI-compatible endpoints and require streaming/tool calling. `COPILOT_OFFLINE=true` prevents GitHub service access. A private isolated home with no imported account credentials and an explicit provider-only network policy is the appropriate future gate. Do not impersonate a catalog model to obtain capabilities; unknown model IDs have native safe defaults. Actual Qwen streaming/tool compatibility remains untested.
+
+Native `--usage-output-file` and metadata-only OpenTelemetry are promising accounting surfaces. [Official CLI reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) and retained native monitoring help name input/output/cache-read/cache-write/reasoning counters. They do not yet prove full accounting of failed requests, retries, background prompt refinement/session naming or forced termination. Input may include cache; reasoning containment is TBD. Preserve categories and reconcile unique request records rather than adding every category or cumulative snapshot. Native environment help says offline disables telemetry, so offline local-file OTel behavior also remains TBD; final usage JSON and a provider-side all-attempt receipt ledger should be collected independently.
+
+A separately authorized bounded development gate can test this same native CLI with the controlled local provider, fixed model and final usage file. Freeze provider-only routing, all-attempt receipt capture, partial-cost handling and caps before any prompt. This audit authorizes no execution. Copilot remains in the unchanged fixed primary-harness denominator. Prior account-auth uncertainty does not block the documented BYOK route, while prior missing pilot token counts remain TBD.
+
+[audit.json](audit.json) pins installed loader/native binary and static help hashes. Help files are generated CLI documentation, not user configuration. No absence-of-strings inference is used.

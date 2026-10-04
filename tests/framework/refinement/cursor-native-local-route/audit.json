@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-04",
+  "scope": "read-only native CLI research; zero model/auth/install calls; no credential files inspected",
+  "version": "2026.10.01-e373342",
+  "runtime_source_hashes": {
+    "cursor-agent": "2ccc9a8e167797641448b5e5c936f006ba137a2555f117f38c5eb76a5238a233",
+    "index.js": "39218adfc45db4c75727b3a19c61ac12ff671aa4417c94591a1b1469658c59ea",
+    "8096.index.js": "99b2da77d52174213307274bf428c95ca3f7c1216c27630e49c928cfef1b2442",
+    "2734.index.js": "a7c877a8dbaac4d1db3171939f9f7d6f397e9efcdbc2662d35fe0ffc054a56ec",
+    "7000.index.js": "fd0f1f6fbc18b41bb3ff6da962c9db79f596fed6b6b0091e5c577803f2fe4382"
+  },
+  "help_sha256": "c24026e17118188478fcb47ed8113fa842f93df2043da5116660a368d3dc64b0",
+  "native_endpoint_override": true,
+  "native_openai_compatible_local_qwen_route": "TBD: endpoint override binds Cursor AgentService RPC client, not documented OpenAI chat-completions provider selection",
+  "complete_gross_provider_ledger": "TBD",
+  "observed_usage_surface": "Bundled afterAgentResponse hook carries input/output/cache-read/cache-write counters; completeness, retry/auxiliary coverage and overlap semantics unproven",
+  "prior_saved_trial_terminal_results": 0,
+  "sdk_wrapper_counts_as_primary_native_harness": false,
+  "fixed_primary_denominator_changed": false,
+  "official_sources": [
+    {
+      "url": "https://cursor.com/docs/cli/reference/parameters",
+      "observed": "model/print options; current page does not enumerate endpoint flag present in pinned help"
+    },
+    {
+      "url": "https://cursor.com/docs/cli/reference/authentication",
+      "observed": "Cursor account/user API key authentication; no native OpenAI-compatible local-provider recipe"
+    },
+    {
+      "url": "https://cursor.com/docs/cli/reference/configuration",
+      "observed": "CLI configuration reference reviewed"
+    },
+    {
+      "url": "https://cursor.com/docs/cli/reference/output-format",
+      "observed": "terminal result schema includes timing/result/session/request fields, not complete token ledger"
+    }
+  ],
+  "next_gate": "Primary native-provider configuration/protocol evidence and complete provider request ledger required before any local-Qwen screen; no execution proposal justified yet"
+}

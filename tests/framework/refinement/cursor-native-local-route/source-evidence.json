@@ -1,0 +1,32 @@
+[
+  {
+    "source": "index.js",
+    "character_offset": 1703198,
+    "term": "CURSOR_API_ENDPOINT",
+    "excerpt": "var)\").hideHelp()).addOption(new f.c$(\"-e, --endpoint <url>\",\"Target API endpoint URL (can also use CURSOR_API_ENDPOINT env var)\").env(\"CURSOR_API_ENDPOINT\").default(te.ju[te.Uz].apiUrl)).addOption(new f.c$(\"--website-url <url>\",\"Website URL for browser login (defaults to the endpoint's environment; can also use CURSOR_WEBSITE_URL env var)\").env(\"CURSOR_WEBSITE_URL\").hideHelp()).addOption(new f.c$(\"--agent-endpoint <url>\",\"Agent endpoint URL (def"
+  },
+  {
+    "source": "index.js",
+    "character_offset": 1794458,
+    "term": "baseUrl:t.endpoint",
+    "excerpt": "lyAttemptTimeout:H}})}const _=(0,p.Zj)(g,A);return new n.PW(_,a)}function ee(e,t){const r=W(e,h.Wn,{baseUrl:t.endpoint,configProvider:t.configProvider});t.insecure&&t.endpoint.startsWith(\"https:\")&&(process.env.NODE_TLS_REJECT_UNAUTHORIZED=\"0\");const n=new q({baseUrl:t.endpoint,interceptors:[r]});return(0,v.UU)(y,n)}function te(e,t){const r=ee(e,t);(0,k.Bu)(r,e),(0,F.MC)(r,e)}function re(e,t){const r=W(e,t.requestMiddleware??h.Wn,{baseUrl:t.backe"
+  },
+  {
+    "source": "index.js",
+    "character_offset": 1777678,
+    "term": "agent.v1.AgentService",
+    "excerpt": "ig/dist/request.js\"),f=r(\"../proto/dist/generated/agent/v1/agent_service_pb.js\");const g={typeName:\"agent.v1.AgentService\",methods:{run:{name:\"Run\",I:f.KS,O:f.Oy,kind:o.I.BiDiStreaming},runSSE:{name:\"RunSSE\",I:i.$r,O:f.Oy,kind:o.I.ServerStreaming},runPoll:{name:\"RunPoll\",I:i.hD,O:i.xy,kind:o.I.ServerStreaming},nameAgent:{name:\"NameAgent\",I:f.Il,O:f.mw,kind:o.I.Unary},updateConversationMetadata:{name:\"UpdateConversationMetadata\",I:f.vw,O:f.HJ,kind"
+  },
+  {
+    "source": "index.js",
+    "character_offset": 3708284,
+    "term": "baseUrl:e.endpoint",
+    "excerpt": "_,(e=>p(e.inner)));return y}}function p(e){const t=m(e.credentialManager,e.requestMiddleware??c.Wn,{baseUrl:e.endpoint,configProvider:e.configProvider}),r=(0,i.wQ)({baseUrl:e.endpoint,httpVersion:\"1.1\",interceptors:[t,...e.extraInterceptors??[]],nodeOptions:{rejectUnauthorized:!0}});return(0,s.UU)(n.I,r)}},\"../cursor-config/dist/file-based-config-provider.js\"(e,t,r){\"use strict\";r.d(t,{F:()=>m});var n=r(\"node:crypto\"),s=r(\"node:fs\"),i=r(\"node:fs/"
+  },
+  {
+    "source": "index.js",
+    "character_offset": 3623465,
+    "term": "input_tokens:void 0!==e.inputTokens",
+    "excerpt": "e.conversationId??\"\",generation_id:e.generationId??\"\",model:e.model??\"\",...(0,Me.U4)(e),text:e.text,input_tokens:void 0!==e.inputTokens?Number(e.inputTokens):void 0,output_tokens:void 0!==e.outputTokens?Number(e.outputTokens):void 0,cache_read_tokens:void 0!==e.cacheReadTokens?Number(e.cacheReadTokens):void 0,cache_write_tokens:void 0!==e.cacheWriteTokens?Number(e.cacheWriteTokens):void 0}),new i.S1({response:new i.w5({response:{case:\"afterAgentR"
+  }
+]

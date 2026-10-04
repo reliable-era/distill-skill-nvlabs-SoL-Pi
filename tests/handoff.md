@@ -1,3 +1,46 @@
+## Latest checkpoint — development cutoff diagnosis
+
+Goal active; shipped skill unchanged, no qualifying candidate or majority win.
+Latest pushed 4b15785 passed GitHub validation 37188745811. Scope-coverage is a
+separate prepared, unexecuted candidate (603e81e6eba2c34de42ea3d0f4b8c039e01b2aa64ac962ef4a407a5caa9e715b);
+it changes only conditional evidence coverage for local versus exhaustive requests.
+The independent-reads candidate remains frozen in the current Pi cohort.
+
+Codex repaired cohort 56637196/session38918 is terminal: four Terminal attempts,
+all official failures (one of three tests passed each), 35 POST; eight Go/SWE cells
+unrun after idle grace expired. Prior two attempts/17 POST remain separate, giving
+six starts/52 POST cumulatively. Candidate captured226676 gross tokens with native
+reconciliation; K187838 captured gross is provider-complete but native-unreconciled;
+Both>=56126 and None>=168082 have missing terminal provider usage. All six owned
+Docker objects were independently absent, workers zero/socket absent. No complete
+comparison or adoption claim. Trace review found incomplete repairs/cutoffs with
+no demonstrated delivery or grader defect.
+
+Pi cohort b037a6a0/session3304 is terminal after one Terminal-K actor/eight POSTs.
+Seven complete requests total116442 gross; the last HTTP200 stream ended at the
+170-second reserved runtime with no EOF/terminal usage. Frozen quality is ungraded,
+not a verified failure; eleven cells unrun. Cleanup workers/socket/Docker absence
+passed. Prior zero-start stage remains separate. A supplemental diagnostic grading
+plan and prospective600-second matched successor protocols are being prepared;
+no retry, reclassification of frozen results, or successor model launch is authorized.
+The same six-control grader certificate is reused; fresh confirmation remains sealed.
+
+All eight selected SWE controls now validate across four unchanged tasks, with
+fourteen attempts retained. Requests uses documented isolated authentic HTTPbin
+and augmented public CA setup; Astropy uses pinned offline bootstrap dependencies.
+These are qualified grading environments, not leaderboard-equivalence claims.
+Sealed fresh confirmation remains unexecuted.
+
+Native agy and Cursor local-Qwen routes and complete usage remain TBD; the
+Antigravity SDK launches a different harness. Installed Copilot CLI documents a
+native local-provider route; routing/accounting audit and mock preparation are
+in progress, with no Copilot model launch authorized. Do not change the fixed
+five-harness denominator. Costs in dollars remain TBD.
+
+Earlier checkpoints below are historical.
+
+---
+
 ## Latest checkpoint — matched model screen authorized
 
 Goal active; shipped skill unchanged, no majority win. Published decc752 adds

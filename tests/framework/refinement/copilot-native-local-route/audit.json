@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-04",
+  "native_version": "1.0.91",
+  "loader_sha256": "0ea824a86be5757533fdb092eff7050871bd7a711a46babde0ffe0e44ac5ad88",
+  "native_binary_sha256": "5ba1d69542af6fd91702d4dbf4845f41c0a29efa3e9bc56fcc308347ff70ff3e",
+  "binary_source": "stripped native platform ELF; implementation accounting not established by help",
+  "help_hashes": {
+    "environment-help.txt": "6f73661907135dcd8aae729fbf4d929c4c46c33cf8062e927fb8476b463a37a4",
+    "monitoring-help.txt": "29203f654654a3015956159c8f378f70c92c42caab0e5bdf2853e79ddcab9423",
+    "providers-help.txt": "ea68db9a3e3971520a3e60e38894618b3aeaba2dc1ae44b356593678c3b170a2"
+  },
+  "native_openai_compatible_route": "documented supported",
+  "GitHub_account_auth_required_for_BYOK": false,
+  "local_provider_api_key_required": false,
+  "native_Qwen_actual_compatibility": "TBD: not executed; requires streaming/tool support",
+  "complete_gross_usage": "TBD: native stats/OTel must be reconciled to all provider attempts including auxiliary/failed traffic",
+  "proposed_configuration": {
+    "COPILOT_PROVIDER_BASE_URL": "http://<authorized local provider route>:8000/v1",
+    "COPILOT_PROVIDER_TYPE": "openai",
+    "COPILOT_PROVIDER_WIRE_API": "completions",
+    "COPILOT_MODEL": "Qwen3.8-27B-FP8",
+    "COPILOT_OFFLINE": "true"
+  },
+  "usage_mapping": {
+    "--usage-output-file": "native final usage JSON; exact 1.0.91 schema/forced-cutoff completeness TBD",
+    "gen_ai.usage.input_tokens": "reported input",
+    "gen_ai.usage.output_tokens": "reported output",
+    "gen_ai.usage.cache_read.input_tokens": "reported cached read; do not blindly add to inclusive input",
+    "gen_ai.usage.cache_write.input_tokens": "reported cache write; overlap TBD",
+    "gen_ai.usage.reasoning.output_tokens": "reasoning output; overlap TBD",
+    "gen_ai.client.token.usage": "input/output histogram; do not sum cumulative histogram snapshots as new traffic"
+  },
+  "offline_file_OTel_emission": "TBD: offline disables telemetry per native environment help; local file behavior needs separately authorized compatibility gate",
+  "scope": {
+    "model_calls": 0,
+    "auth_calls": 0,
+    "installs": 0,
+    "credential_content_reads": 0,
+    "SDK_wrapper_substitution": false,
+    "primary_denominator_changed": false
+  },
+  "primary_urls": [
+    "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models",
+    "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference"
+  ],
+  "prior_accounting_reference": "../../runtime/COPILOT-ACCOUNTING.md"
+}
