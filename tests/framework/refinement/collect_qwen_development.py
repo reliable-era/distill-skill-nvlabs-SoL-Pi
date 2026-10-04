@@ -40,6 +40,9 @@ def summarize(plan, evidence):
                            complete_tokens_per_solve=lower_bound/solved if complete and solved else None,
                            cost_usd_per_solve=None))
     return {'scope': 'reused development fixtures; not fresh confirmation',
+            'cohort': plan.get('cohort'), 'order_seed': plan.get('order_seed'),
+            'prior_consumed_attempts': plan.get('prior_consumed_attempts'),
+            'prior_attempts_included_in_arm_metrics': False,
             'backend': 'Qwen3.8-27B-FP8; separate from historical native routes',
             'errors': evidence.get('errors'), 'arms': output,
             'note': 'All recorded attempts contribute cost, including failures. Missing/incomplete costs remain TBD.'}

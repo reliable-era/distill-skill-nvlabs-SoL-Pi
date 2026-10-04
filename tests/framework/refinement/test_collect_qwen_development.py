@@ -15,6 +15,17 @@ class Accounting(unittest.TestCase):
     def test_failure_cost_included(self):
         self.assertEqual(self.collect(self.rows)['complete_tokens_per_solve'], 200)
 
+    def test_prior_cohort_is_disclosed_without_pooling(self):
+        self.plan.update(cohort='repaired', order_seed=127,
+                         prior_consumed_attempts={'native_starts': 2, 'provider_POST': 17})
+        result = summarize(self.plan, {'actors': self.rows})
+        self.assertEqual(result['cohort'], 'repaired')
+        self.assertEqual(result['order_seed'], 127)
+        self.assertEqual(result['prior_consumed_attempts']['native_starts'], 2)
+        self.assertFalse(result['prior_attempts_included_in_arm_metrics'])
+        self.assertEqual(result['arms'][2]['recorded_attempts'], 2)
+        self.assertEqual(result['arms'][2]['complete_tokens_per_solve'], 200)
+
     def test_partial_usage_cannot_certify_savings(self):
         rows = copy.deepcopy(self.rows)
         rows[1]['usage_complete'] = None
