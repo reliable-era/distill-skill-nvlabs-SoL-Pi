@@ -1,0 +1,16 @@
+{
+  "candidate": "independent-reads",
+  "status": "prepared_unmeasured",
+  "parent": "locate-first",
+  "parent_sha256": "8c753e5093f72a02660e35e1e0b1824c81c49bca623b8197e8fcfeed347b5b96",
+  "skill_sha256": "d9d83894c0cb6f1dae71297d47c85d441765b12abe511e203226352e02066010",
+  "change": "One added bullet batching necessary already-known independent read-only observations with labels and per-command exit status.",
+  "hypothesis": "Fewer tool round trips may lower whole-task cost; unmeasured.",
+  "evidence": "development/agy-flask-locate-first/mechanism-review.md",
+  "reference_manifest_sha256": "742e1e2056970cf22d6fb33e7e238f5981131d6f8691c759be167a4014253b61",
+  "model_calls": 0,
+  "canonical_promoted": false,
+  "quality": "TBD",
+  "economic_effect": "TBD",
+  "comparison": "Freeze candidate-matched Both; compare all four arms on development before independent confirmation."
+}
