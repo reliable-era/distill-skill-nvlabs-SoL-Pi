@@ -1,3 +1,27 @@
+## Latest checkpoint — 2026-10-04, transport and fixture preparation
+
+Goal active; canonical skill unchanged; no majority-harness win established.
+Latest pushed c9c0aa9 passed GitHub CI 37183196526.
+
+HTTPbin minimal readiness completed once: immutable image pull plus authentic
+source import, Python 3.6.6/Gunicorn 19.9.0, verified source hash and TLS settings.
+Actual network-none/1 CPU/512 MiB, read-only source and cleanup gates passed.
+No fixture listeners, grader controls or models ran in this phase. Next is an
+isolated HTTP/HTTPS fixture with bounded contract checks, then separately frozen
+Requests unchanged/gold controls. SWE validated control count remains six;
+eleven prior attempts are retained, including ungraded infrastructure failures.
+
+Local Qwen instrumented GET transport failed on the container-to-host bridge
+hop before any broker request handling. Proxy health passed; broker counters
+were all zero. No provider request or inference was made. A private Unix socket
+mounted only into the trusted proxy is being implemented to avoid that hop.
+Do not change host firewall, restart the shared server, or cancel unknown jobs.
+Native streaming runner is being completed but has no execution authorization.
+
+Earlier checkpoints below are historical and may contain superseded states.
+
+---
+
 ## Latest verified checkpoint — 2026-10-04
 
 Goal remains active; no canonical skill promotion or majority-harness win.
