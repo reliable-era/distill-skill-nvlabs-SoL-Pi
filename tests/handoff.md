@@ -1,3 +1,36 @@
+## Latest verified checkpoint — 2026-10-04
+
+Goal remains active; no canonical skill promotion or majority-harness win.
+Independent-reads candidate is frozen, but its performance remains TBD.
+
+SWE selected-task readiness now has six validated controls: unchanged/gold
+pairs for Matplotlib, scikit-learn, and Astropy. Eleven actual control attempts
+include all preserved infrastructure failures. Requests negative was ungraded
+because official tests require HTTP and HTTPS to httpbin.org; gold did not run.
+An authentic pinned HTTPbin source archive was acquired and inspected, but no
+fixture build or additional grader execution has occurred.
+
+Terminal selected-task controls remain eight of eight validated. Latest published
+commit c5cecaf086414deb629f7730a219d1322934aec2 passed GitHub CI 37181438482.
+Native Codex mock transport passed after the separately preserved HOME failure;
+this proves mock routing, not real inference or complete usage accounting.
+
+Local Qwen advertises Qwen3.8-27B-FP8. Its supported scheduler endpoint reported
+one running and one waiting request at the recorded sample; unknown jobs were
+untouched. Root reviewed and independently passed seven offline GET-only routing
+tests, then dispatched the sole hash-bound transport control to audit_resume.
+It permits no POST or model starts. Native readiness remains unexecuted pending
+routing evidence, idle checks under both existing locks, and a separate reviewed
+POST/usage protocol. Historical native backends must remain separate from Qwen.
+
+Copilot pinned documentation supports GH_TOKEN/GITHUB_TOKEN transport; acceptance,
+permissions, entitlement, and complete usage remain TBD. No new credential was
+read or model run performed during that investigation.
+
+Earlier checkpoints below are historical and may contain superseded live states.
+
+---
+
 ## Active refinement checkpoint, 2026-10-04
 
 The current goal in goal.md remains ACTIVE: verified economical majority wins across five native harnesses, three benchmark families, repeated matched rounds. Historical completion notes below describe earlier campaigns only. No skill was promoted and no full-objective win is established.

@@ -1,0 +1,304 @@
+{
+  "status": "stopped_requests_external_service_infrastructure",
+  "session": 83238,
+  "exit_code": 1,
+  "new_control_attempts": 3,
+  "new_validated_controls": 2,
+  "cumulative_validated_controls": 6,
+  "combined_attempts": 11,
+  "combined_attempt_cap": 12,
+  "combined_pulls": 4,
+  "models": 0,
+  "docker_builds": 0,
+  "retries": 0,
+  "records": [
+    {
+      "instance_id": "astropy__astropy-13236",
+      "kind": "unchanged",
+      "gate_passed": true,
+      "gate_error": null,
+      "resolved": false,
+      "report_sha256": "61de477fd30971e7eebd6a81adb61c6c1b060d75526bf80cbeda462c35446cd5",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 2
+        },
+        "PASS_TO_PASS": {
+          "success": 644,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "limits": {
+        "container_id": "3a311a421a53905779f87e3af565611e701c607eea307227b7b329e31322144e",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": false,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "3a311a421a53905779f87e3af565611e701c607eea307227b7b329e31322144e",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "offline_env": {
+        "readonly_wheelhouse_verified": true,
+        "pip_no_index": true,
+        "pip_find_links": true
+      },
+      "private_evidence": [
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/cleanup.json",
+          "sha256": "6936e35af10d39b898e8e6a83608d43978c2939f5a4f3d04ac9c17ea1b26ac12"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/control-start.json",
+          "sha256": "068fcdb027c196fbfaec77be81aca83f21f65f1ee1b49971df173016d70a8e19"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/offline-environment.json",
+          "sha256": "cd301774583e576551bcea33654bb7804d5054043f44aa161c7731ae8308bc1e"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/worker-result.json",
+          "sha256": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/container-limits.json",
+          "sha256": "ccdb4414c5eeeff59340ce50589bb314ac014fe15934813076e3e45a0b5a39a8"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/worker-start.json",
+          "sha256": "39507136940c3725d80ddcc06b65a9427a99843d1b1739225cfdab4fb29a8c06"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/logs/evaluation/solpi-confirm-remaining-0-unchanged/private-control/astropy__astropy-13236/patch.diff",
+          "sha256": "072233c6da0a88b936977969e92588ffc8913443583f8bb55dddfbf33a03dbcc"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/logs/evaluation/solpi-confirm-remaining-0-unchanged/private-control/astropy__astropy-13236/run_instance.log",
+          "sha256": "91d8e2a7948481d2b41e39cf45034c9deefee0cafc7f3ddae82d512340ff9f50"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/logs/evaluation/solpi-confirm-remaining-0-unchanged/private-control/astropy__astropy-13236/report.json",
+          "sha256": "61de477fd30971e7eebd6a81adb61c6c1b060d75526bf80cbeda462c35446cd5"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/logs/evaluation/solpi-confirm-remaining-0-unchanged/private-control/astropy__astropy-13236/test_output.txt",
+          "sha256": "df212c39ed65d630b4b33155592c73a96d9920701c40c0c8de1007800d016a98"
+        },
+        {
+          "path": "solpi-confirm-remaining-0-unchanged/logs/evaluation/solpi-confirm-remaining-0-unchanged/private-control/astropy__astropy-13236/eval.sh",
+          "sha256": "f86d90c9b8d09f9ed933eb1daa6266de68d9ef9c6bfb45c705fdbcde335e8540"
+        }
+      ]
+    },
+    {
+      "instance_id": "astropy__astropy-13236",
+      "kind": "gold",
+      "gate_passed": true,
+      "gate_error": null,
+      "resolved": true,
+      "report_sha256": "2c6d5dba666eee90169107daa6bce0bedcc84234196c79d182f5814b026d7412",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 644,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "limits": {
+        "container_id": "dd26e0b5e0ac62b95811f174310a1c55636e6382116152905091fd7960ed3718",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": false,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "dd26e0b5e0ac62b95811f174310a1c55636e6382116152905091fd7960ed3718",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "offline_env": {
+        "readonly_wheelhouse_verified": true,
+        "pip_no_index": true,
+        "pip_find_links": true
+      },
+      "private_evidence": [
+        {
+          "path": "solpi-confirm-remaining-1-gold/cleanup.json",
+          "sha256": "3f58e7507024aec6fb262671b16ca228c627fa8caa441f337844684ef8c61d03"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/control-start.json",
+          "sha256": "adb17b3eed1005aeff21bd819d0cde1e5fbcf00a476931bb717385ea85218f21"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/offline-environment.json",
+          "sha256": "cd301774583e576551bcea33654bb7804d5054043f44aa161c7731ae8308bc1e"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/worker-result.json",
+          "sha256": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/container-limits.json",
+          "sha256": "3c494662748f91b0dce9d1215411f98008f8febc59c40788e93ba277ef104bb9"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/worker-start.json",
+          "sha256": "fb9c515642fa8759aa3d43a0c27099ba314a69b041043772d1c9733efdf98310"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/logs/evaluation/solpi-confirm-remaining-1-gold/private-control/astropy__astropy-13236/patch.diff",
+          "sha256": "e3366b1923660fb0ae2bbc8fb16981184e77fc3f9e3669727f1a3e6061ddaa6d"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/logs/evaluation/solpi-confirm-remaining-1-gold/private-control/astropy__astropy-13236/run_instance.log",
+          "sha256": "30eeb053fa685b9277845379f2f92b71c101124667f7960462eccf0db1eec2e6"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/logs/evaluation/solpi-confirm-remaining-1-gold/private-control/astropy__astropy-13236/report.json",
+          "sha256": "2c6d5dba666eee90169107daa6bce0bedcc84234196c79d182f5814b026d7412"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/logs/evaluation/solpi-confirm-remaining-1-gold/private-control/astropy__astropy-13236/test_output.txt",
+          "sha256": "03a068135ecfa853f54dcd2b16667b86e1e89d999ad93d5350e7e68e1eaa2028"
+        },
+        {
+          "path": "solpi-confirm-remaining-1-gold/logs/evaluation/solpi-confirm-remaining-1-gold/private-control/astropy__astropy-13236/eval.sh",
+          "sha256": "f86d90c9b8d09f9ed933eb1daa6266de68d9ef9c6bfb45c705fdbcde335e8540"
+        }
+      ]
+    },
+    {
+      "instance_id": "psf__requests-1921",
+      "kind": "unchanged",
+      "gate_passed": false,
+      "gate_error": "infrastructure or ambiguous failure",
+      "resolved": false,
+      "report_sha256": "f79a9920c8c4da59f8ca26f75e3f556c4346e17e92a8137aa836d31f1cc192a1",
+      "test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 6
+        },
+        "PASS_TO_PASS": {
+          "success": 69,
+          "failure": 38
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "limits": {
+        "container_id": "3daf177c77e897f26903c9e52e39a72412d4d04e0b0cd4213909545cd2d5acca",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": false,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "3daf177c77e897f26903c9e52e39a72412d4d04e0b0cd4213909545cd2d5acca",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "offline_env": null,
+      "private_evidence": [
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/cleanup.json",
+          "sha256": "1992fc9b93839e0bd9328a0419d62623c55a7e97a0e3bc3ef98273531aaf180b"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/control-start.json",
+          "sha256": "40464b4c0dbb12071b29c6dfc3ac089c2d304433b35466ae2274ac91b32b40e5"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/worker-result.json",
+          "sha256": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/container-limits.json",
+          "sha256": "cd1371cce7a1d8a4dfd3e5f7a230e0c8830812fa49dbcd065dcce9ef80e23ed1"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/worker-start.json",
+          "sha256": "2729846f6997e74abf96654c936f95e46c277861d588d769ce04d49fe31368e9"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/logs/evaluation/solpi-confirm-remaining-2-unchanged/private-control/psf__requests-1921/patch.diff",
+          "sha256": "072233c6da0a88b936977969e92588ffc8913443583f8bb55dddfbf33a03dbcc"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/logs/evaluation/solpi-confirm-remaining-2-unchanged/private-control/psf__requests-1921/run_instance.log",
+          "sha256": "594d18f7b362fcc94c62f652492852531dd6f3b7be3c6e00c7488d0ed996ca14"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/logs/evaluation/solpi-confirm-remaining-2-unchanged/private-control/psf__requests-1921/report.json",
+          "sha256": "f79a9920c8c4da59f8ca26f75e3f556c4346e17e92a8137aa836d31f1cc192a1"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/logs/evaluation/solpi-confirm-remaining-2-unchanged/private-control/psf__requests-1921/test_output.txt",
+          "sha256": "ce26bb77175a033b19c250b062ab273b43674301ecd5c1b20582d2cf163c9cf8"
+        },
+        {
+          "path": "solpi-confirm-remaining-2-unchanged/logs/evaluation/solpi-confirm-remaining-2-unchanged/private-control/psf__requests-1921/eval.sh",
+          "sha256": "fdfea48acccbc7c8c3b2fa3485100153c6c3b80a15390d76e9c185d2d1c8a342"
+        }
+      ]
+    }
+  ],
+  "failure": "Requests pip install succeeded; official test HTTP traffic to httpbin.org:80 cannot resolve/reach host in networknone, P2P69pass38fail",
+  "remaining_unstarted": "Requests gold; no retry authorized",
+  "all_caps_and_cleanup_verified": true,
+  "frozen_runner_hash_matches": true,
+  "publication_scan": {
+    "scope": "all preflight folders including old snapshots and probes",
+    "private_patch_values": 8,
+    "exact_patch_matches": []
+  },
+  "credential_scope": "no credentials mounted/used; prior fullpreflightscan6values0matches; currentaddedfiles metadata only",
+  "next_step": "rootreview privategraderHTTPservice/network parity; taskfixed, no weakening tests"
+}

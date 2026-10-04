@@ -1,0 +1,13 @@
+# Remaining fixed SWE grader controls
+
+The following describes the frozen preparation; execution results appear below. At preparation, zero new controls, pulls, builds or models had run. Fixed order: Astropy unchanged/gold, then Requests unchanged/gold. Previously validated Matplotlib and scikit-learn pairs are retained without reruns. New cap is four controls; combined cap is twelve attempts including eight prior consumed attempts, for eight unique intended validated controls. Readiness probes and package setup are separately recorded.
+
+The runner uses unchanged pinned official source, parser/classifier and complete expected-test gates; 600-second tests/900-second outer timeout, 8 GiB/four CPUs, loopback-only network and bounded verified cleanup. Four exact planned pairs/order are enforced, with exclusive phase/worker markers and hash-bound authorization. Two cached immutable images are checked against RepoDigests; no acquisition allowed.
+
+Astropy containers additionally mount the verified private wheelhouse read-only and set PIP_NO_INDEX/PIP_FIND_LINKS for the official setup. Actual mount RW=false and environment values are verified before tests and retained as metadata. Requests receives its ordinary official setup. Full Docker SDK/Python harness sources, original private task files, all wheel hashes, successful bootstrap proof, and daemon/storage bindings are frozen. Twenty-two offline tests pass, including read-only mount/environment and fixed-budget guards. Root subsequently reviewed and authorized this exact plan once; the executed outcome below supersedes preparation status.
+
+## Executed outcome
+
+Session 83238 terminated exit 1 after three attempts: Astropy negative/gold passed complete gates with verified read-only wheels/environment; Requests negative failed the official environment classifier before gold started. All three caps and cleanup were verified. Requests installation succeeded, but its official tests require HTTP traffic to httpbin.org:80, unavailable under network-none: 69 P2P passed and 38 failed. Its negative is ungraded infrastructure failure, not a validated control. No retry, replacement, Requests gold, pull, model or image build occurred.
+
+Cumulative readiness is six validated controls across Matplotlib, scikit-learn and Astropy. Combined attempts consumed eleven of the reviewed maximum twelve, including preserved failures. Requests remains fixed and unready; resolving its official HTTP service contract requires separately reviewed grader-only infrastructure. [execution-audit.json](execution-audit.json) preserves exact counts, report/parser/limit/mount/cleanup evidence and a publication scan with zero private patch matches.
