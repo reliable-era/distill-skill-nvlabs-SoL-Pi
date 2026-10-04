@@ -1,3 +1,90 @@
+# Active goal: economical skill refinement
+
+Set 2026-10-04. Refine `skills/efficient-coding` so Ours beats No skill,
+Karpathy, and Both in most harnesses across different benchmark families,
+without sacrificing verified task completion. The goal is active, not achieved.
+
+## Acceptance criteria
+
+- Primary harness panel: Pi, Codex, Copilot CLI, native Antigravity agy,
+  and Cursor. Most means at least 3 of these 5, with the denominator frozen
+  before confirmation; unavailable or unmeasured harnesses do not count as wins.
+- In each winning harness, Ours must use at least 5% less complete reported
+  tokens per verified solve than each of No skill, Karpathy, and Both, with
+  no observed reduction in solved rate on the matched confirmation panel.
+  Include failures, timeouts, retries, and any reducer calls in costs.
+- Evaluate at least three benchmark families: repository repair (SWE-bench
+  Verified), multilingual coding (Aider polyglot), and terminal workflows
+  (Terminal-Bench 2). Official local graders are currently TBD; integrate
+  and validate them before claiming public benchmark results.
+- Start with metadata-selected small samples, never select tasks by observed
+  skill success. Keep development and sealed confirmation tasks separate;
+  exclude the reused two-fixture pilot from confirmation. Freeze task IDs,
+  revisions, difficulty strata, seeds, skill hashes, images and budgets.
+- Run at least three independently scheduled rounds per confirmation cell;
+  scheduling seeds are not model sampling seeds. Report paired task-cluster
+  uncertainty and round variability. A small or inconclusive sample remains
+  inconclusive; expand a frozen sample only under a predeclared rule.
+- A demonstrated win requires the paired 95% interval for the cost ratio
+  to lie below 1 against all three comparators in each winning harness.
+  Report quality uncertainty as well; small samples do not prove equivalence.
+- Report billing USD/solve and wall time/solve separately. Token-only wins
+  are token-efficiency wins, not monetary savings. Unknowns remain TBD.
+  Copilot/Cursor accounting must be resolved before claiming their cost wins.
+
+## Controls and refinement loop
+
+Freeze No skill and Karpathy. Freeze the existing Ours revision as an additional
+historical control. For each candidate, Both means the same candidate plus frozen
+Karpathy; it must not use an older, weaker Ours. Match backend/model/effort, task
+prompt, limits, skill delivery, and image within a harness. Auto-routed models
+must be stratified or treated as descriptive, not a controlled skill win.
+
+Audit prior traces for needless reads, repeated validation, planning overhead,
+and unnecessary code. Test a short conditional entrypoint, bounded evidence
+retrieval, reuse of existing functionality, and stopping after sufficient
+verification. Change one mechanism at a time; compare to the frozen original
+on development tasks. Preserve required tests and exact evidence recall.
+
+Keep portable skill instructions and optional harness extensions as separate
+experimental arms. A prompt cannot implement native context replacement or
+tool fusion. Count extension setup and auxiliary model costs. Do not install
+new paid services or assume credentials exist; any missing route is TBD.
+
+Promote only a frozen candidate that passes independent grading and the
+confirmation criteria. Do not tune on confirmation results or announce a win
+from cherry-picked tasks, model switches, reduced testing, or missing usage.
+Record unsuccessful candidates and retain Docker workspaces and transcripts.
+
+## References and hypotheses
+
+- [NVlabs/SoL-Pi](https://github.com/NVlabs/SoL-Pi): investigate bounded,
+  recoverable observations and evidence-preserving reduction. Native action
+  fusion and compaction require separately measured harness integration.
+- [Ponytail](https://github.com/dietrichgebert/ponytail): test reuse and platform
+  primitives before custom code; retain validation and correctness. Its published
+  results are external evidence, not performance of this skill.
+- Jev exact intended project: TBD. A provisional relevant implementation is
+  [lazniak/jevskill](https://github.com/lazniak/jevskill). Investigate selective,
+  reversible reduction and routing only when measured savings exceed helper
+  overhead. Its reported savings must be independently verified here.
+
+## Starting evidence and next milestone
+
+The completed native pilot contains 40 real attempts on two reused synthetic
+fixtures. Ours did not beat No skill on reported tokens in Pi, Codex or agy;
+Copilot/Cursor tokens and all actual billing remain TBD. See
+[trial results](framework/trials/README.md).
+
+Next milestone: audit traces, integrate the three public graders, resolve
+accounting/model controls, freeze a small development/confirmation plan, and
+screen bounded candidate variants. Per-stage attempt and wall-time caps must
+be recorded before launching inference; numeric campaign budget is TBD.
+
+---
+
+The following records the previous goal and historical campaign context.
+
 # Current evaluation status
 
 The requested parallel native-harness pilot is complete: 40 model attempts across

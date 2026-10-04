@@ -1,3 +1,15 @@
+# Active refinement goal
+
+Updated 2026-10-04. The new active goal and acceptance protocol are in
+[goal.md](goal.md): Ours should beat No skill, Karpathy and candidate-matched
+Both in at least 3/5 harnesses, across three benchmark families and repeated
+rounds, preserving verified quality. Require complete telemetry, independent
+grading, frozen development/confirmation splits and uncertainty. No win exists
+yet. First integrate public graders and fix accounting/model controls before
+candidate confirmation. References: SoL-Pi, Ponytail, and provisional Jev
+implementation; exact Jev project remains TBD. No new inference or canonical
+skill modification was performed while setting this goal.
+
 # Current handoff: native harness pilot complete
 
 Updated 2026-10-04. Parallel subagents completed 40 authenticated Docker attempts:
