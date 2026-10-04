@@ -1,0 +1,14 @@
+{
+  "path": "pi/both",
+  "tool_calls": 8,
+  "rg_unavailable": true,
+  "skill_reread": false,
+  "verification_commands": [
+    "python3 -m pytest tests/test_blueprints.py -q -k empty_name",
+    "python3 -m pytest tests/test_blueprints.py -q; git diff --check"
+  ],
+  "observed_models": [
+    "gpt-6.1-sol"
+  ],
+  "actual_model_observation": "agent_end message model"
+}

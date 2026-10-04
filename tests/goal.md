@@ -256,3 +256,7 @@ The desired stable majority win was not established. Latest held-out diagnostics
 ## Completed random-small follow-up (2026-10-03)
 
 All16 frozen attempts completed and independent-final16.json passed with errors[]. Ours4/4 at1,063,019tokens/solve; both4/4 at1,476,167; baseline3/4 at≥2,009,397; Karpathy3/4 at≥1,795,306. Ours/both0timeouts; baseline/K1each with incomplete costs. Public repair/source/test retrieval qualifies attribution. Two conditionally sampled easy tasks limit generalization; previous147 results remain separate. Compact README table and detailed report/evidence published. Skill/backends unchanged, queue terminal/model lockfree.
+
+## Newly observed confirmation gate
+
+Native agy Go No skill fetched public official tests during development. Mount isolation alone is insufficient: before confirmation, enforce and audit uniform provider-only network access, preventing test/solution retrieval across all compared arms. Retain exposed development grades and costs with explicit caveats; do not use them as clean held-out evidence. This does not alter frozen acceptance thresholds or sealed task selection.

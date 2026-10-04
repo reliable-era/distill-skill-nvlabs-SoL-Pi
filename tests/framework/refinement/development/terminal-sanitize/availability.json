@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "harness": "pi",
+      "arm": "lean-parent",
+      "status": "blocked_runtime_credential_refresh",
+      "quality": "ungraded",
+      "solved": null,
+      "model_requests_observed": 0,
+      "evidence": "Assistant stopReason error: Credential store modify failed open readonly /auth/.pi/agent/auth.json; zero usage and no tool calls",
+      "original_result_sha256": "d1cab3282bdc30ea7c5c6f5b2da00c4830308f0a7030ff67773bb007f05ca619",
+      "classified_result_sha256": "7b801812cc3ee37d3931695eed795e98fc25820f120186467b8ac7e2ad66e4d9"
+    },
+    {
+      "harness": "pi",
+      "arm": "both",
+      "status": "blocked_auth_oauth_invalid_grant",
+      "quality": "ungraded",
+      "solved": null,
+      "model_requests_observed": 0,
+      "evidence": "Assistant stopReason error: OAuth refresh rejected400 invalid_grant; zero usage and no toolcalls",
+      "original_result_sha256": "d8bace296c25d3f7f1a3472344bd627e7292e20a279149e9d03307d5be8d68c9",
+      "classified_result_sha256": "816c42bbc3a18c605f6dd08fc3ab2e118998d645c4d3f7ec72dde9d34f023f71"
+    }
+  ],
+  "note": "Scheduler terminal; aggregate results now normalized from classified individual records. Both availability starts remain ungraded; no automatic retries."
+}

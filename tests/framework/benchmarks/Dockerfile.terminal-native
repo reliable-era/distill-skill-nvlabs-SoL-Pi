@@ -1,0 +1,14 @@
+# Preserve the Terminal-Bench task's Python runtime and Git history.
+ARG AGENT_IMAGE=sol-pi-eval-polyglot-login:2026-10-04
+ARG EVAL_IMAGE=alexgshaw/sanitize-git-repo:20251031
+FROM ${AGENT_IMAGE} AS agents
+FROM ${EVAL_IMAGE}
+USER root
+COPY --from=agents /usr/local/bin/node /usr/local/bin/node
+COPY --from=agents /usr/local/lib/node_modules/@openai/codex /usr/local/lib/node_modules/@openai/codex
+COPY --from=agents /usr/local/lib/node_modules/@earendil-works/pi-coding-agent /usr/local/lib/node_modules/@earendil-works/pi-coding-agent
+RUN ln -sf /usr/local/lib/node_modules/@openai/codex/bin/codex.js /usr/local/bin/codex \
+ && ln -sf /usr/local/lib/node_modules/@earendil-works/pi-coding-agent/dist/cli.js /usr/local/bin/pi \
+ && python -m pip install --no-cache-dir pytest==8.4.1 gitpython==3.1.44 pytest-json-ctrf==0.3.5
+RUN git config --system --add safe.directory /app/dclm
+WORKDIR /app/dclm

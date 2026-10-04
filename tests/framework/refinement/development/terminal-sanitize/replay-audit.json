@@ -1,0 +1,116 @@
+{
+  "attempts": 12,
+  "replayed": 12,
+  "errors": [],
+  "records": [
+    {
+      "harness": "pi",
+      "arm": "lean-parent",
+      "reconstruction": "tracked-diff-only",
+      "grade_exit_code": 1,
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transcript_sha256": "702b862fa3fe504946646ed854287f463b65654a94c9b9feba88893aba0fc8f7",
+      "replay_grade_sha256": "5e3a63c5aceb5adfc7953e1561e76d2dcba8140e4ef2681c9a619e747a8a3a75"
+    },
+    {
+      "harness": "codex",
+      "arm": "karpathy",
+      "reconstruction": "tracked-diff-only",
+      "grade_exit_code": 0,
+      "patch_sha256": "8c4aa7dbe5c8942165075ba98c05ea8fa6b14a79e4afa39e3f7f9ba64be8bd60",
+      "transcript_sha256": "52da14375713daf15337f8f12212ba47f894f70ea015b9eb8fce148b6c0baa2d",
+      "replay_grade_sha256": "5064053fafe4cddbb2e2c6cb837fe788ac7738dcc283386d72db8e3ff79e51e4"
+    },
+    {
+      "harness": "codex",
+      "arm": "shipped",
+      "reconstruction": "tracked-diff-only",
+      "grade_exit_code": 0,
+      "patch_sha256": "8c4aa7dbe5c8942165075ba98c05ea8fa6b14a79e4afa39e3f7f9ba64be8bd60",
+      "transcript_sha256": "a8f86d5579c57f303b12c7e764ec06847efc41772e8e0227b621bbc358594150",
+      "replay_grade_sha256": "52a069e7671370d3af30cc090fa6c1e869a30c64083912423ec81dbd9546325e"
+    },
+    {
+      "harness": "codex",
+      "arm": "none",
+      "reconstruction": "tracked-diff-only",
+      "grade_exit_code": 0,
+      "patch_sha256": "8c4aa7dbe5c8942165075ba98c05ea8fa6b14a79e4afa39e3f7f9ba64be8bd60",
+      "transcript_sha256": "e7a41f2f1bcea88c12e605e3eb2bc2334c8f72e5061898745969b44ab3fc7f8a",
+      "replay_grade_sha256": "b02ccf6082199e6d7469b7b83c5cfd9e880b9f5a5061ed78371f0ba89e555d81"
+    },
+    {
+      "harness": "codex",
+      "arm": "no-reread",
+      "reconstruction": "tracked-diff-only",
+      "grade_exit_code": 0,
+      "patch_sha256": "8c4aa7dbe5c8942165075ba98c05ea8fa6b14a79e4afa39e3f7f9ba64be8bd60",
+      "transcript_sha256": "56fd1254d6b892e37e4ea18d917cad780d9791b283f2987a954363d2c192912a",
+      "replay_grade_sha256": "88c518f8013f8515a8e2a40aa71c348035206280d54a8831f86290e8ae932d41"
+    },
+    {
+      "harness": "pi",
+      "arm": "no-reread",
+      "reconstruction": "full-filesystem-delta",
+      "grade_exit_code": 1,
+      "patch_sha256": "2428a5210634828d64f5843a949cd0e78c74b954a55df50b441e7992257c542d",
+      "transcript_sha256": "5359f150d14d1f9a1382bcbf86a8dbc09d5aebe486d8d1300677f29e5a03e1b0",
+      "replay_grade_sha256": "7850d6a8173ee9f6044ce7bccff53488b24bd65ed4f04252f38b3ebe871737aa"
+    },
+    {
+      "harness": "pi",
+      "arm": "shipped",
+      "reconstruction": "full-history-filesystem-delta-with-index-uncaptured",
+      "grade_exit_code": 1,
+      "patch_sha256": "6aa1eca9f7e23a6d1805c86d00700ca0064c4e1147c5f9e145925fcb94b14c31",
+      "transcript_sha256": "ee248b03a424db7e0e67afac0067489e09742ea3f167c960ad6a896cc6942e45",
+      "replay_grade_sha256": "7dc7f55a1a15c8dfe818e1b38ba746a82dcba0d8d768004db6309364175a0997"
+    },
+    {
+      "harness": "pi",
+      "arm": "none",
+      "reconstruction": "full-filesystem-delta",
+      "grade_exit_code": 1,
+      "patch_sha256": "2428a5210634828d64f5843a949cd0e78c74b954a55df50b441e7992257c542d",
+      "transcript_sha256": "cef0a1a51af896d114aaf46f18922e8353f6cef0340de6696849dcf7562f0328",
+      "replay_grade_sha256": "e943f8d70cac378879d27ed3235adfbeac091373b60e9b5cb3dc0a2ef72edfae"
+    },
+    {
+      "harness": "pi",
+      "arm": "karpathy",
+      "reconstruction": "full-filesystem-delta",
+      "grade_exit_code": 0,
+      "patch_sha256": "8c4aa7dbe5c8942165075ba98c05ea8fa6b14a79e4afa39e3f7f9ba64be8bd60",
+      "transcript_sha256": "932f94d6bf36f1cb072b1d2e494af3688e2758b6b495ad1e009a0e8334c0c8a1",
+      "replay_grade_sha256": "cd60da5d76c6b4ae6c15d585f79699b280c1e26ce4d93361319e367bfca02624"
+    },
+    {
+      "harness": "codex",
+      "arm": "both",
+      "reconstruction": "full-filesystem-delta",
+      "grade_exit_code": 0,
+      "patch_sha256": "8c4aa7dbe5c8942165075ba98c05ea8fa6b14a79e4afa39e3f7f9ba64be8bd60",
+      "transcript_sha256": "69b839bfb4ce1f6a6043853f0ce0806a6af626af67d107d2be269da9f3f7bfee",
+      "replay_grade_sha256": "a76e1f67e8b203ad9751d4bed99c516f4006d4606f8639765a52eaf2a8431259"
+    },
+    {
+      "harness": "pi",
+      "arm": "both",
+      "reconstruction": "full-filesystem-delta",
+      "grade_exit_code": 1,
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transcript_sha256": "77a8104654d212cd2a98d7597812ffa0fc679b4072db474353e5a81ad1d85425",
+      "replay_grade_sha256": "5488d6ead5d3150885c6ffc48b9db870a2b0b754286b748946bf710cb2e3721e"
+    },
+    {
+      "harness": "codex",
+      "arm": "lean-parent",
+      "reconstruction": "full-filesystem-delta",
+      "grade_exit_code": 0,
+      "patch_sha256": "8c4aa7dbe5c8942165075ba98c05ea8fa6b14a79e4afa39e3f7f9ba64be8bd60",
+      "transcript_sha256": "35b4430b366ef373b2373d9f22fd852d5ddfceff1a3dd41b9d14ef0ad2494356",
+      "replay_grade_sha256": "528e3bef697034ee7fe9cc63c1073265abe7588b9e0dfdd2245513973b295aa1"
+    }
+  ],
+  "scope": "Independent full-filesystem delta reconstruction where captured, otherwise tracked-diff replay with Git/untracked completeness unverified; same official tests, no actors/model calls or credentials"
+}

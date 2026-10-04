@@ -1,0 +1,12 @@
+{
+  "path": "codex/shipped",
+  "tool_calls": 4,
+  "rg_unavailable": false,
+  "skill_reread": false,
+  "verification_commands": [
+    "/bin/bash -lc \"git status --short; rg -n 'class Blueprint|def __init__|name.*ValueError|pytest|test.*name' src/flask/blueprints.py src/flask/scaffold.py tests/test_blueprints.py pyproject.toml tox.ini; sed -n '160,250p' src/flask/blueprints.py; sed -n '1,100p' tests/test_blueprints.py\"",
+    "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py'"
+  ],
+  "observed_models": null,
+  "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+}

@@ -1,0 +1,76 @@
+{
+  "purpose": "development only; one public SWE fixture; no held-out confirmation",
+  "maximum_attempts": 12,
+  "maximum_actor_wall_seconds": 2160,
+  "attempt_timeout_seconds": 180,
+  "rounds": 1,
+  "order_seed": 105,
+  "model_sampling_seed": "TBD: unavailable",
+  "arms": {
+    "none": [],
+    "karpathy": [
+      "karpathy"
+    ],
+    "shipped": [
+      "shipped"
+    ],
+    "leanparent": [
+      "leanparent"
+    ],
+    "candidate": [
+      "candidate"
+    ],
+    "both": [
+      "karpathy",
+      "candidate"
+    ]
+  },
+  "order": [
+    "both",
+    "karpathy",
+    "leanparent",
+    "none",
+    "shipped",
+    "candidate"
+  ],
+  "harnesses": [
+    "pi",
+    "codex"
+  ],
+  "model": "gpt-6.1-sol",
+  "pi_thinking": "low",
+  "codex_effort": "native default",
+  "image_id": "sha256:10a67635ce037886b760a72f6eef8459beb6a0c6e070c0748a037839135acc45",
+  "task_manifest": {
+    "benchmark": "swe-bench-verified",
+    "instance_id": "pallets__flask-5014",
+    "base_commit": "7ee9ceb71e868944a46e1ff00b506772a53a4f1d",
+    "image_id": "sha256:bf8242431f5c177d67996b3c888a0f51e4bb7bd0b67009bee6c70842baca1241",
+    "private_dataset_sha256": "e2c783242ec6838839d589ffa683cdce0147bd98994c12079d972eb831482a0d",
+    "actor_prompt_sha256": "45f42169b9119f7c4e2f3e1547bd38a06cc2652be922b5584d4fe3b24e61dc89",
+    "gold_in_actor": false,
+    "upstream_git_history_in_actor": false,
+    "grading": "Official swebench harness, separate Docker",
+    "dataset_revision": "TBD: supply external frozen provenance alongside this manifest"
+  },
+  "dataset_revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+  "skill_delivery": "uniform inline text and readonly resources /skills",
+  "skill_sha256": {
+    "karpathy": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+    "shipped": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+    "leanparent": "bcb25e08d073272d329902a3ff55854f979441940af28fb94d087f630a9fb6b5",
+    "candidate": "9deb3cc1edbc434b1514232a97acab85d87851a93390d18967477ddd9152981e"
+  },
+  "prompt_sha256": {
+    "none": "c6ba28cedc562c8e3e285e6a898c1ec0840239f8bcc2b1358a89dd94fe61c8e6",
+    "karpathy": "a23da695c82945ba6b70bf0d5c20a1deccc6f89261bc559c8db26f4e7e21fa82",
+    "shipped": "3e4a747b2960769f84105fc5d046f05f6f4501b4761414fcab3923ee1337769f",
+    "leanparent": "9eed02cbc98a5282ccbfe7e860f01908d91b1278ad817f0eed250a79a054778b",
+    "candidate": "ff2c438683fddac1262fa0902868b0d8a6178cda5a7876781794334926cb32c4",
+    "both": "ee3aa014f2a7187f8fa77e98ba365e06e516794bfeb924460bfe7868083f0801"
+  },
+  "grading": "official swebench5.0.2 run_evaluation; private gold outside actors",
+  "stop_rule": "auth/quota rejection stops remaining actors for that harness; no automatic retries",
+  "known_unrelated_failures": "Three cookie-domain test_basic tests fail on original dependencies even with gold; official selected blueprint tests unaffected",
+  "billing_usd": "TBD"
+}

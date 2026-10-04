@@ -1,0 +1,61 @@
+{
+  "purpose": "Development only, not confirmation",
+  "task": "aider:go/exercises/practice/food-chain",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "model": "gemini-3.8-flash-low",
+  "arms": {
+    "none": [],
+    "karpathy": [
+      "karpathy"
+    ],
+    "shipped": [
+      "shipped"
+    ],
+    "parent": [
+      "parent"
+    ],
+    "candidate": [
+      "candidate"
+    ],
+    "both": [
+      "karpathy",
+      "candidate"
+    ]
+  },
+  "order": [
+    "both",
+    "karpathy",
+    "parent",
+    "none",
+    "shipped",
+    "candidate"
+  ],
+  "ordering_seed": 105,
+  "model_sampling_seed": "TBD",
+  "max_attempts": 6,
+  "actor_timeout_seconds": 180,
+  "rounds": 1,
+  "retries": 0,
+  "task_files": {
+    "manifest.json": "b8a951d197ed82b81c7126a5a520136a3bd728c6c88238a671bdf77ce79a1554",
+    "prompt.txt": "d773210f437b1d4e7f86b4832be2021063aad024d5712d3adc0bc47dbff92596",
+    "reference/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "reference/food_chain.go": "b28e716ee4b7aa3f1fce48941e06797faf53deefeb13fc0f5d5ac8df6c9fdadf",
+    "workspace/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "workspace/food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "grader/manifest.json": "b8a951d197ed82b81c7126a5a520136a3bd728c6c88238a671bdf77ce79a1554",
+    "grader/grade.py": "6a21b68df2273accd92512d3ae4e59b30cf357b1fd877ebcf45a8e3567949a1a",
+    "grader/tests/food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e",
+    "grader/support/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "grader/support/food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee"
+  },
+  "binary_sha256": "a759ce7c7a235d9b6c281a25ead97cbbf2e92314a3ffd224e2f9144f3fae7a86",
+  "skills": {
+    "karpathy": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+    "shipped": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+    "parent": "bcb25e08d073272d329902a3ff55854f979441940af28fb94d087f630a9fb6b5",
+    "candidate": "9deb3cc1edbc434b1514232a97acab85d87851a93390d18967477ddd9152981e"
+  },
+  "actual_billing_usd": "TBD",
+  "credential_policy": "Readonly mount into disposable HOME; no credentials to grader"
+}

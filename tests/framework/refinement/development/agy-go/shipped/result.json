@@ -1,0 +1,46 @@
+{
+  "harness": "agy",
+  "task": "aider:go/exercises/practice/food-chain",
+  "arm": "shipped",
+  "round": 1,
+  "configured_model": "gemini-3.8-flash-low",
+  "observed_model": "TBD",
+  "solved": false,
+  "execution_status": "provider_error_with_inner_timeout",
+  "terminal_results": [
+    {
+      "conversation_id": "48cf555e-f5c0-4fa5-9a5d-c60f476897cf",
+      "status": "ERROR",
+      "response": "",
+      "error": "API error (attempt 1): UNAVAILABLE (code 503): The service is currently unavailable.",
+      "duration_seconds": 168.097273367,
+      "num_turns": 1,
+      "usage": {
+        "input_tokens": 257645,
+        "output_tokens": 5641,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 449141,
+        "total_tokens": 263286
+      }
+    }
+  ],
+  "elapsed_seconds": 173.60124414786696,
+  "timeout": false,
+  "exit_code": 0,
+  "grade_exit_code": 1,
+  "reported_total_tokens": null,
+  "token_basis": "TBD: SDK ERROR and inner timeout; partial SDK usage retained separately, not complete attempt cost",
+  "tool_calls": 32,
+  "transcript_sha256": "2cd5b0116c647204a0a1b35435227e56a1804ca1c6111aa04d9a0d2687cd7051",
+  "actual_billing_usd": "TBD",
+  "actor_completed_successfully": false,
+  "partial_reported_usage": [
+    {
+      "input_tokens": 257645,
+      "output_tokens": 5641,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 449141,
+      "total_tokens": 263286
+    }
+  ]
+}

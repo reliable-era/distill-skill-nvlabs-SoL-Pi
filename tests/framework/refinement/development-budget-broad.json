@@ -1,0 +1,19 @@
+{
+  "purpose": "Broader development only; sealed confirmation untouched",
+  "stage": "repository-terminal-third-harness",
+  "ordering_seed": 105,
+  "model_sampling_seed": "TBD",
+  "max_actor_attempts": 30,
+  "actor_timeout_seconds": 180,
+  "automatic_retries": 0,
+  "allocations": [
+    {"task": "pallets__flask-5014", "harnesses": ["pi", "codex"], "max_attempts": 12},
+    {"task": "terminal-bench-2:sanitize-git-repo", "harnesses": ["pi", "codex"], "max_attempts": 12},
+    {"task": "aider:go/exercises/practice/food-chain", "harnesses": ["agy"], "max_attempts": 6}
+  ],
+  "arms": ["none", "karpathy", "shipped", "lean-tools-parent", "lean-tools-no-reread", "candidate+karpathy"],
+  "skill_delivery": "Uniform inline text with readonly supporting resources within each harness",
+  "model_routes": {"pi": "openai/gpt-6.1-sol thinking low", "codex": "gpt-6.1-sol requested; observed backend TBD", "agy": "gemini-3.8-flash-low requested"},
+  "promotion": "No promotion from development; independent repeated confirmation required",
+  "billing_usd": "TBD"
+}

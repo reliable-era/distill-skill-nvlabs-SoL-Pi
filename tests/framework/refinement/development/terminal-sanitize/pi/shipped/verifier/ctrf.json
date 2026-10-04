@@ -1,0 +1,50 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 2,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1791082558.5049853,
+            "stop": 1791082558.8472729
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_removal_of_secret_information",
+                "status": "passed",
+                "duration": 0.0006977543234825134,
+                "start": 1791082558.5549521,
+                "stop": 1791082558.555877,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_correct_replacement_of_secret_information",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0008865967392921448,
+                "start": 1791082558.556029,
+                "stop": 1791082558.5721161,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_correct_replacement_of_secret_information():\n        CONTAMINATED_PATHS = [\n            \"/app/dclm/ray_processing/ray_cluster.yaml\",\n            \"/app/dclm/ray_processing/process.py\",\n            \"/app/dclm/exp_data/datasets/tokenized/\"\n            \"rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json\",\n        ]\n        DECONTAMINATED_PATHS = [\n            Path(__file__).parent / \"ray_cluster.yaml\",\n            Path(__file__).parent / \"process.py\",\n            Path(__file__).parent\n            / (\"rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json\"),\n        ]\n    \n        for contaminated_path, decontaminated_path in zip(\n            CONTAMINATED_PATHS, DECONTAMINATED_PATHS\n        ):\n            with open(contaminated_path, \"r\") as file:\n                contaminated_text = file.read()\n    \n            with open(decontaminated_path, \"r\") as file:\n                decontaminated_text = file.read()\n    \n>           assert contaminated_text == decontaminated_text\nE           AssertionError: assert '# An unique ... $USER /tmp\\n' == '# An unique ... $USER /tmp\\n'\nE             \nE             Skipping 1808 identical leading characters in diff, use -v to show\nE             - n --token <your-huggingface-token> -y\nE             + n --token '<your-huggingface-token>' -y\nE             ?           +                        +\nE                   #- sudo mkfs -t xfs /dev/nvme1n1\nE                   #- sudo mount /dev/nvme1n1 /tmp\nE                   #- sudo chown -R $USER /tmp\n\n/tests/test_outputs.py:57: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_no_other_files_changed",
+                "status": "passed",
+                "duration": 0.27456472627818584,
+                "start": 1791082558.5722713,
+                "stop": 1791082558.8470604,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}

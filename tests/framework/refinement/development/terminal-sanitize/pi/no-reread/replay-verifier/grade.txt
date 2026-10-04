@@ -1,0 +1,63 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.7, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 3 items
+
+../../tests/test_outputs.py .F.                                          [100%]
+
+=================================== FAILURES ===================================
+________________ test_correct_replacement_of_secret_information ________________
+
+    def test_correct_replacement_of_secret_information():
+        CONTAMINATED_PATHS = [
+            "/app/dclm/ray_processing/ray_cluster.yaml",
+            "/app/dclm/ray_processing/process.py",
+            "/app/dclm/exp_data/datasets/tokenized/"
+            "rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json",
+        ]
+        DECONTAMINATED_PATHS = [
+            Path(__file__).parent / "ray_cluster.yaml",
+            Path(__file__).parent / "process.py",
+            Path(__file__).parent
+            / ("rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json"),
+        ]
+    
+        for contaminated_path, decontaminated_path in zip(
+            CONTAMINATED_PATHS, DECONTAMINATED_PATHS
+        ):
+            with open(contaminated_path, "r") as file:
+                contaminated_text = file.read()
+    
+            with open(decontaminated_path, "r") as file:
+                decontaminated_text = file.read()
+    
+>           assert contaminated_text == decontaminated_text
+E           assert '# An unique ... $USER /tmp\n' == '# An unique ... $USER /tmp\n'
+E             
+E             Skipping 1098 identical leading characters in diff, use -v to show
+E             - SS_KEY_ID=<your-aws-access-key-id>' >> ~/.bashrc
+E             + SS_KEY_ID="<your-aws-access-key-id>"' >> ~/.bashrc
+E             ?           +                        +
+E             -     - echo 'export AWS_SECRET_ACCESS_KEY=<your-aws-secret-access-key>' >> ~/.bashrc
+E             +     - echo 'export AWS_SECRET_ACCESS_KEY="<your-aws-secret-access-key>"' >> ~/.bashrc...
+E             
+E             ...Full output truncated (22 lines hidden), use '-vv' to show
+
+/tests/test_outputs.py:57: AssertionError
+=============================== warnings summary ===============================
+../../usr/local/lib/python3.13/site-packages/_pytest/cacheprovider.py:475
+  /usr/local/lib/python3.13/site-packages/_pytest/cacheprovider.py:475: PytestCacheWarning: could not create cache path /tests/.pytest_cache/v/cache/nodeids: [Errno 30] Read-only file system: '/tests/pytest-cache-files-_gtcyjok'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+../../usr/local/lib/python3.13/site-packages/_pytest/cacheprovider.py:429
+  /usr/local/lib/python3.13/site-packages/_pytest/cacheprovider.py:429: PytestCacheWarning: could not create cache path /tests/.pytest_cache/v/cache/lastfailed: [Errno 30] Read-only file system: '/tests/pytest-cache-files-memo72q6'
+    config.cache.set("cache/lastfailed", self.lastfailed)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../tests/test_outputs.py::test_removal_of_secret_information
+PASSED ../../tests/test_outputs.py::test_no_other_files_changed
+FAILED ../../tests/test_outputs.py::test_correct_replacement_of_secret_information
+=================== 1 failed, 2 passed, 2 warnings in 0.35s ====================

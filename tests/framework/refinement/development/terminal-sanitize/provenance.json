@@ -1,0 +1,14 @@
+{
+  "terminal_bench_commit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "verifier_invocation": "python -m pytest --ctrf /logs/verifier/ctrf.json /tests/test_outputs.py -rA",
+  "bootstrap": "Dependencies from official test.sh preinstalled in image; network-disabled verifier. uvx creates isolated environment; native-image installed identical pins using pip instead. Test source unchanged.",
+  "baseline_reward": 0,
+  "oracle_reward": 1,
+  "git_history": "Original image /app/dclm/.git retained; safe.directory fixes bind uid mismatch",
+  "python_version": "Python 3.13.7",
+  "task_base_image": [
+    "alexgshaw/sanitize-git-repo@sha256:4b5234da5bb0d67f3b0bf8db40a2883c07a5219f62b64c2bf9ff1ac84cd0f672"
+  ],
+  "native_image_id": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac",
+  "baseline_files_manifest_sha256": "3091006f5183b9acdd1c1269ff17d28ffaa8315e7ef44cb0d3cf783883968eb8"
+}

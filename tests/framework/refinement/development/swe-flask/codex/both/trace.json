@@ -1,0 +1,12 @@
+{
+  "path": "codex/both",
+  "tool_calls": 6,
+  "rg_unavailable": false,
+  "skill_reread": false,
+  "verification_commands": [
+    "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py -k empty_name'",
+    "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py'"
+  ],
+  "observed_models": null,
+  "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+}

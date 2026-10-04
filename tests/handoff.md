@@ -1,3 +1,9 @@
+# Current: broader development running; next candidate untested
+
+Updated 2026-10-04. Goal remains active; canonical unchanged. Frozen thirty-start development budget covers native Flask repair (12/12 official resolved), native agy Go (5/6 pass; shipped SDK503+inner timeout, complete usage TBD), and terminal sanitize (12starts terminal,10modelattempts+2availabilityfailures; replayaudit completed with documented partial-state limits). No-reread candidate does not beat No skill across completed screens; no promotion. Root checked all12 SWE report/patch hashes. New locate-first candidate changes only parent first context bullet, validates structurally, and has no inference yet. Freeze a new bounded stage before testing it. Sealed confirmation untouched.
+
+See framework/refinement/STATUS.md, development/swe-flask/README.md, development/agy-go/README.md and candidate-locate-first-manifest.json. Terminal startupcredential failure is ungraded availability, not taskqualityfailure. Preserve partial SDK costs and Git snapshot limitations. Historical handoffs follow.
+
 # Latest state: corrected-runtime screen terminal; repository actor prepared
 
 Updated2026-10-04. Pi/Codex Go v2 finished tenactorattempts, all tenpatches accepted

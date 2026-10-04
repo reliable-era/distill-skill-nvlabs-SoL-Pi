@@ -1,0 +1,157 @@
+{
+  "purpose": "Descriptive trace observations; no causal or stable inference",
+  "runtime_limit": "Observed Pi Bash tool calls report rg unavailable; Codex command tools resolve rg. All Pi arms attempted rg and fell back. Mechanism TBD; raw bash -c and -lc probes also lacked rg, so login-shell PATH is not established as the cause. No environment changed during campaign.",
+  "records": [
+    {
+      "path": "codex/both",
+      "tool_calls": 6,
+      "rg_unavailable": false,
+      "skill_reread": false,
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py -k empty_name'",
+        "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py'"
+      ],
+      "observed_models": null,
+      "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+    },
+    {
+      "path": "codex/candidate",
+      "tool_calls": 4,
+      "rg_unavailable": false,
+      "skill_reread": false,
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py'"
+      ],
+      "observed_models": null,
+      "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+    },
+    {
+      "path": "codex/karpathy",
+      "tool_calls": 6,
+      "rg_unavailable": false,
+      "skill_reread": false,
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -k empty_name_not_allowed -q'",
+        "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -q'"
+      ],
+      "observed_models": null,
+      "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+    },
+    {
+      "path": "codex/leanparent",
+      "tool_calls": 5,
+      "rg_unavailable": false,
+      "skill_reread": false,
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py'",
+        "/bin/bash -lc 'python3 -m pytest -q'"
+      ],
+      "observed_models": null,
+      "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+    },
+    {
+      "path": "codex/none",
+      "tool_calls": 4,
+      "rg_unavailable": false,
+      "skill_reread": false,
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -q'"
+      ],
+      "observed_models": null,
+      "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+    },
+    {
+      "path": "codex/shipped",
+      "tool_calls": 4,
+      "rg_unavailable": false,
+      "skill_reread": false,
+      "verification_commands": [
+        "/bin/bash -lc \"git status --short; rg -n 'class Blueprint|def __init__|name.*ValueError|pytest|test.*name' src/flask/blueprints.py src/flask/scaffold.py tests/test_blueprints.py pyproject.toml tox.ini; sed -n '160,250p' src/flask/blueprints.py; sed -n '1,100p' tests/test_blueprints.py\"",
+        "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py'"
+      ],
+      "observed_models": null,
+      "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+    },
+    {
+      "path": "pi/both",
+      "tool_calls": 8,
+      "rg_unavailable": true,
+      "skill_reread": false,
+      "verification_commands": [
+        "python3 -m pytest tests/test_blueprints.py -q -k empty_name",
+        "python3 -m pytest tests/test_blueprints.py -q; git diff --check"
+      ],
+      "observed_models": [
+        "gpt-6.1-sol"
+      ],
+      "actual_model_observation": "agent_end message model"
+    },
+    {
+      "path": "pi/candidate",
+      "tool_calls": 12,
+      "rg_unavailable": true,
+      "skill_reread": false,
+      "verification_commands": [
+        "grep -nE 'class Blueprint|def __init__|name|def test' src/flask/blueprints.py tests/test_blueprints.py | head -85; ls src/flask; grep -nE 'pytest|test' pyproject.toml tox.ini | head -45",
+        "python3 -m pytest -q tests/test_blueprints.py"
+      ],
+      "observed_models": [
+        "gpt-6.1-sol"
+      ],
+      "actual_model_observation": "agent_end message model"
+    },
+    {
+      "path": "pi/karpathy",
+      "tool_calls": 10,
+      "rg_unavailable": true,
+      "skill_reread": false,
+      "verification_commands": [
+        "python3 -m pytest tests/test_blueprints.py -k empty_blueprint_name -q",
+        "python3 -m pytest tests/test_blueprints.py -q; git diff --stat"
+      ],
+      "observed_models": [
+        "gpt-6.1-sol"
+      ],
+      "actual_model_observation": "agent_end message model"
+    },
+    {
+      "path": "pi/leanparent",
+      "tool_calls": 11,
+      "rg_unavailable": true,
+      "skill_reread": false,
+      "verification_commands": [
+        "python3 -m pytest -q tests/test_blueprints.py"
+      ],
+      "observed_models": [
+        "gpt-6.1-sol"
+      ],
+      "actual_model_observation": "agent_end message model"
+    },
+    {
+      "path": "pi/none",
+      "tool_calls": 9,
+      "rg_unavailable": true,
+      "skill_reread": false,
+      "verification_commands": [
+        "python3 -m pytest tests/test_blueprints.py -q"
+      ],
+      "observed_models": [
+        "gpt-6.1-sol"
+      ],
+      "actual_model_observation": "agent_end message model"
+    },
+    {
+      "path": "pi/shipped",
+      "tool_calls": 9,
+      "rg_unavailable": true,
+      "skill_reread": false,
+      "verification_commands": [
+        "python3 -m pytest tests/test_blueprints.py -q"
+      ],
+      "observed_models": [
+        "gpt-6.1-sol"
+      ],
+      "actual_model_observation": "agent_end message model"
+    }
+  ]
+}

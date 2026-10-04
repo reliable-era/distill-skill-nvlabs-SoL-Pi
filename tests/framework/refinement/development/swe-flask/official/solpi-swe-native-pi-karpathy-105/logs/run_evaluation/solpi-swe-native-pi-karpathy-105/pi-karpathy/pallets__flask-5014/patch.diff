@@ -1,0 +1,42 @@
+diff --git a/CHANGES.rst b/CHANGES.rst
+index 498d5e5..9024f50 100644
+--- a/CHANGES.rst
++++ b/CHANGES.rst
+@@ -33,6 +33,7 @@ Unreleased
+ -   Use modern packaging metadata with ``pyproject.toml`` instead of ``setup.cfg``.
+     :pr:`4947`
+ -   Ensure subdomains are applied with nested blueprints. :issue:`4834`
++-   Blueprint names must not be empty. :issue:`4944`
+ -   ``config.from_file`` can use ``text=False`` to indicate that the parser wants a
+     binary file instead. :issue:`4989`
+ 
+diff --git a/src/flask/blueprints.py b/src/flask/blueprints.py
+index eb50585..1aa8256 100644
+--- a/src/flask/blueprints.py
++++ b/src/flask/blueprints.py
+@@ -190,6 +190,9 @@ class Blueprint(Scaffold):
+             root_path=root_path,
+         )
+ 
++        if not name:
++            raise ValueError("'name' may not be empty.")
++
+         if "." in name:
+             raise ValueError("'name' may not contain a dot '.' character.")
+ 
+diff --git a/tests/test_blueprints.py b/tests/test_blueprints.py
+index d46b769..dccb7c8 100644
+--- a/tests/test_blueprints.py
++++ b/tests/test_blueprints.py
+@@ -993,6 +993,11 @@ def test_child_and_parent_subdomain(app, client) -> None:
+     assert response.status_code == 404
+ 
+ 
++def test_empty_blueprint_name():
++    with pytest.raises(ValueError, match="'name' may not be empty."):
++        flask.Blueprint("", __name__)
++
++
+ def test_unique_blueprint_names(app, client) -> None:
+     bp = flask.Blueprint("bp", __name__)
+     bp2 = flask.Blueprint("bp", __name__)

@@ -1,0 +1,14 @@
+{
+  "path": "pi/karpathy",
+  "tool_calls": 10,
+  "rg_unavailable": true,
+  "skill_reread": false,
+  "verification_commands": [
+    "python3 -m pytest tests/test_blueprints.py -k empty_blueprint_name -q",
+    "python3 -m pytest tests/test_blueprints.py -q; git diff --stat"
+  ],
+  "observed_models": [
+    "gpt-6.1-sol"
+  ],
+  "actual_model_observation": "agent_end message model"
+}

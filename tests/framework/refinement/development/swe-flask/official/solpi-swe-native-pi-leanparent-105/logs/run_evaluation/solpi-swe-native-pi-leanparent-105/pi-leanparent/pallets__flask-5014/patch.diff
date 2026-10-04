@@ -1,0 +1,42 @@
+diff --git a/CHANGES.rst b/CHANGES.rst
+index 498d5e5..f97b885 100644
+--- a/CHANGES.rst
++++ b/CHANGES.rst
+@@ -32,6 +32,7 @@ Unreleased
+     :issue:`4993`
+ -   Use modern packaging metadata with ``pyproject.toml`` instead of ``setup.cfg``.
+     :pr:`4947`
++-   Blueprint names must not be empty. :issue:`4944`
+ -   Ensure subdomains are applied with nested blueprints. :issue:`4834`
+ -   ``config.from_file`` can use ``text=False`` to indicate that the parser wants a
+     binary file instead. :issue:`4989`
+diff --git a/src/flask/blueprints.py b/src/flask/blueprints.py
+index eb50585..1aa8256 100644
+--- a/src/flask/blueprints.py
++++ b/src/flask/blueprints.py
+@@ -190,6 +190,9 @@ class Blueprint(Scaffold):
+             root_path=root_path,
+         )
+ 
++        if not name:
++            raise ValueError("'name' may not be empty.")
++
+         if "." in name:
+             raise ValueError("'name' may not contain a dot '.' character.")
+ 
+diff --git a/tests/test_blueprints.py b/tests/test_blueprints.py
+index d46b769..0932748 100644
+--- a/tests/test_blueprints.py
++++ b/tests/test_blueprints.py
+@@ -251,6 +251,11 @@ def test_templates_list(test_apps):
+     assert templates == ["admin/index.html", "frontend/index.html"]
+ 
+ 
++def test_empty_name_not_allowed():
++    with pytest.raises(ValueError, match="'name' may not be empty"):
++        flask.Blueprint("", __name__)
++
++
+ def test_dotted_name_not_allowed(app, client):
+     with pytest.raises(ValueError):
+         flask.Blueprint("app.ui", __name__)

@@ -1,0 +1,56 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 0,
+            "failed": 3,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1791081718.015866,
+            "stop": 1791081718.1311982
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_removal_of_secret_information",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0009775515645742416,
+                "start": 1791081718.0662472,
+                "stop": 1791081718.0827308,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_removal_of_secret_information():\n        for contaminated_path in CONTAMINATED_PATHS:\n            with open(contaminated_path, \"r\") as file:\n                contaminated_text = file.read()\n    \n>           assert FAKE_AWS_ACCESS_KEY_ID.lower() not in contaminated_text.lower()\nE           assert 'akia1234567890123456' not in '# an unique...$user /tmp\\n'\nE             \nE             'akia1234567890123456' is contained here:\nE               ss_key_id=akia1234567890123456' >> ~/.bashrc\nE                   - echo 'export aws_secret_access_key=d4w8z9wkn1avet3bpqj6kiun7wh8x0m9kfv5oqzf' >> ~/.bashrc\nE                   - pip install --upgrade pip setuptools wheel\nE                   - pip install -u \"ray[default] @ https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp310-cp310-manylinux2014_x86_64.whl\"\nE                   - pip install boto3==1.26.90...\nE             \nE             ...Full output truncated (14 lines hidden), use '-vv' to show\n\n/tests/test_outputs.py:27: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_correct_replacement_of_secret_information",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0009704083204269409,
+                "start": 1791081718.0828853,
+                "stop": 1791081718.0856147,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_correct_replacement_of_secret_information():\n        CONTAMINATED_PATHS = [\n            \"/app/dclm/ray_processing/ray_cluster.yaml\",\n            \"/app/dclm/ray_processing/process.py\",\n            \"/app/dclm/exp_data/datasets/tokenized/\"\n            \"rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json\",\n        ]\n        DECONTAMINATED_PATHS = [\n            Path(__file__).parent / \"ray_cluster.yaml\",\n            Path(__file__).parent / \"process.py\",\n            Path(__file__).parent\n            / (\"rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json\"),\n        ]\n    \n        for contaminated_path, decontaminated_path in zip(\n            CONTAMINATED_PATHS, DECONTAMINATED_PATHS\n        ):\n            with open(contaminated_path, \"r\") as file:\n                contaminated_text = file.read()\n    \n            with open(decontaminated_path, \"r\") as file:\n                decontaminated_text = file.read()\n    \n>           assert contaminated_text == decontaminated_text\nE           AssertionError: assert '# An unique ... $USER /tmp\\n' == '# An unique ... $USER /tmp\\n'\nE             \nE             Skipping 1098 identical leading characters in diff, use -v to show\nE             - SS_KEY_ID=<your-aws-access-key-id>' >> ~/.bashrc\nE             -     - echo 'export AWS_SECRET_ACCESS_KEY=<your-aws-secret-access-key>' >> ~/.bashrc\nE             + SS_KEY_ID=AKIA1234567890123456' >> ~/.bashrc\nE             +     - echo 'export AWS_SECRET_ACCESS_KEY=D4w8z9wKN1aVeT3BpQj6kIuN7wH8X0M9KfV5OqzF' >> ~/.bashrc\nE                   - pip install --upgrade pip setuptools wheel...\nE             \nE             ...Full output truncated (18 lines hidden), use '-vv' to show\n\n/tests/test_outputs.py:57: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_no_other_files_changed",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00439201295375824,
+                "start": 1791081718.085748,
+                "stop": 1791081718.1310303,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_no_other_files_changed():\n        # Check that no files other than CONTAMINATED_PATHS have been changed\n        repo = git.Repo(\"/app/dclm\")\n    \n        # Specific commit before any changes were made\n>       commit = repo.commit(\"d6987af002b122fef54bc0be402062c76488a4d9\")\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_outputs.py:65: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.13/site-packages/git/repo/base.py:726: in commit\n    return self.rev_parse(str(rev) + \"^0\")\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.13/site-packages/git/repo/fun.py:284: in rev_parse\n    obj = name_to_object(repo, rev[:start])\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.13/site-packages/git/repo/fun.py:205: in name_to_object\n    return Object.new_from_sha(repo, hex_to_bin(hexsha))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.13/site-packages/git/objects/base.py:149: in new_from_sha\n    oinfo = repo.odb.info(sha1)\n            ^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.13/site-packages/git/db.py:41: in info\n    hexsha, typename, size = self._git.get_object_header(bin_to_hex(binsha))\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.13/site-packages/git/cmd.py:1679: in get_object_header\n    return self.__get_object_header(cmd, ref)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.13/site-packages/git/cmd.py:1663: in __get_object_header\n    return self._parse_object_header(cmd.stdout.readline())\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <git.cmd.Git object at 0x7b4dfc1f83a0>, header_line = b''\n\n    def _parse_object_header(self, header_line: str) -> Tuple[str, str, int]:\n        \"\"\"\n        :param header_line:\n            A line of the form::\n    \n                <hex_sha> type_string size_as_int\n    \n        :return:\n            (hex_sha, type_string, size_as_int)\n    \n        :raise ValueError:\n            If the header contains indication for an error due to incorrect input sha.\n        \"\"\"\n        tokens = header_line.split()\n        if len(tokens) != 3:\n            if not tokens:\n                err_msg = (\n                    f\"SHA is empty, possible dubious ownership in the repository \"\n                    f\"\"\"at {self._working_dir}.\\n            If this is unintended run:\\n\\n         \"\"\"\n                    f\"\"\"             \"git config --global --add safe.directory {self._working_dir}\" \"\"\"\n                )\n>               raise ValueError(err_msg)\nE               ValueError: SHA is empty, possible dubious ownership in the repository at /app/dclm.\nE                           If this is unintended run:\nE               \nE                                     \"git config --global --add safe.directory /app/dclm\"\n\n/usr/local/lib/python3.13/site-packages/git/cmd.py:1622: ValueError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

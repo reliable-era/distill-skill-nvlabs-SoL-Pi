@@ -1,0 +1,12 @@
+{
+  "path": "codex/karpathy",
+  "tool_calls": 6,
+  "rg_unavailable": false,
+  "skill_reread": false,
+  "verification_commands": [
+    "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -k empty_name_not_allowed -q'",
+    "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -q'"
+  ],
+  "observed_models": null,
+  "actual_model_observation": "Configured model only; no verified model label in terminal JSON"
+}

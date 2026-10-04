@@ -46,10 +46,20 @@ Source revisions and image IDs for executed checks are in `grader-sanity/`.
 
 Corrected runtime images pass six root/evaluator login-shell probes; original
 failed-discovery image/data remain frozen. See [tool probes](../benchmarks/polyglot-login-probes.json)
-and [ten sanity checks](../benchmarks/polyglot-login-sanity.json). All current
-model and infrastructure jobs are terminal; no background inference remains.
+and [ten sanity checks](../benchmarks/polyglot-login-sanity.json). Previous corrected-Go jobs are terminal. The broader development stage below has separate bounded jobs; inspect its saved records for current completion.
 
-Corrected-runtime results: [v2 comparison](development/README-v2.md). New untested
-single-change candidate avoids duplicate instruction reads. Native repository
-actor preparation and private official-test sanity are ready; the automatic
-patch/official-grader bridge and native repair inference remain unfinished.
+Corrected-runtime results: [v2 comparison](development/README-v2.md). The single-change no-reread candidate now has native repository and agy development results. The automatic patch/official-grader bridge is implemented; native Flask repair ran twelve actors and twelve official grades.
+
+## Broader development, 2026-10-04
+
+Frozen [30-start budget](development-budget-broad.json) spans Flask repository repair, Terminal-Bench sanitize-git-repo, and native agy Go. One round only; sealed confirmation remains untouched.
+
+- [Flask](development/swe-flask/README.md): all 12 official grades pass. No-reread candidate costs +78.3% Pi/+7.1% Codex vs No skill; no promotion. Shipped ours saves 19.5% on Codex but costs 23.9% more on Pi.
+- [Native agy Go](development/agy-go/README.md): candidate passes but costs +3.1% vs No skill, and exceeds Karpathy/Both. Lean parent saves 27.5% on this one fixture. Shipped ours fails during SDK HTTP 503/internal timeout; complete usage TBD, partial counters retained.
+- Terminal screen has finished its original twelve-start cap (ten model attempts and two startup/auth availability failures). One Pi startup failure consumes an attempt and is not replayed. Preserve original grades separately from complete final-state replay availability.
+
+Canonical skill remains unchanged. Passing task checks is insufficient to show stable economic superiority; real dollars remain TBD.
+
+New cross-harness trace audit found native agy No skill downloaded public official tests. Preserve that exposed development result, but do not treat it as clean withheld evidence. Uniform provider-only actor egress and test/solution exposure audit are required before confirmation. The locally withheld fixture alone does not enforce a sealed evaluator.
+
+[Consolidated broader results](development/README-broad.md): no-reread candidate rejected. Prepared locate-first SWE plan has zero attempts and uses persistent private serialized credentials; do not launch before the new global stage and credential gate. Terminal replay audit completed: all twelve retained outcomes agree; six byte-exact full states, one missing-index state, and five tracked-diff-only reconstructions.
