@@ -1,0 +1,75 @@
+{
+  "status": "prepared_not_executed_root_review_required",
+  "kind": "native Codex mock transport only; not a model benchmark",
+  "maximum_native_starts": 2,
+  "maximum_seconds_per_start": 30,
+  "real_model_calls": 0,
+  "credentials": "dummy MOCK_KEY only; fresh empty HOME and CODEX_HOME; no host credential/config/session mounts",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "expected_cli_version": "0.160.0",
+  "source_hashes": {
+    "proxy.py": "b2cc86337d803cb2d4b70c5aed1d73aa422aea10ae4016bd76ef8275aa44eb38",
+    "mock.py": "2729a20921c452dc86f5169bcf630f3a7fa305f4e3db0705674f1669aeea9859",
+    "probe.py": "dddd1fcc60826dade7e8a814defbfe273824f524d23cb11838c4ef5d8a648999",
+    "test_docker.py": "725c01c3b9c83138cfe6bb87fe4814c270359401efdfc3c8ca594b80b275a060",
+    "codex_native_mock.py": "a156934e6935848c15b3787ad8a5b4c6ecb17b89269548d5fb4c52db03499d86",
+    "codex_mock400.py": "2e051169585a6962735137cc4e1606b3403f8675c939efe2c0ce177e1fc9efbe",
+    "test_codex_native_mock.py": "b8fdf339b456b27bc1375f2c435c0ac0dbec722bd7bb0ce988bf705e7f39d8e5"
+  },
+  "topology": "Reuse hardened isolated internal actor bridge IPv6false; proxy dual-connected to actor and internal provider bridge; mock provider only on provider bridge; owned names only; verifier networknone",
+  "provider_config": {
+    "model_provider": "mock",
+    "model": "transport-diagnostic",
+    "model_providers.mock.name": "owned mock",
+    "model_providers.mock.base_url": "http://provider.example:8000/v1",
+    "model_providers.mock.env_key": "MOCK_KEY",
+    "model_providers.mock.wire_api": "responses",
+    "model_providers.mock.requires_openai_auth": false,
+    "model_providers.mock.supports_websockets": false,
+    "model_providers.mock.request_max_retries": 0,
+    "model_providers.mock.stream_max_retries": 0
+  },
+  "proxy_env": {
+    "HTTP_PROXY": "http://proxy:8080",
+    "HTTPS_PROXY": "http://proxy:8080",
+    "http_proxy": "http://proxy:8080",
+    "https_proxy": "http://proxy:8080",
+    "NO_PROXY": "",
+    "no_proxy": ""
+  },
+  "mock": "New dedicated mock returns deterministic HTTP400 for every request; records method and path only, never headers/body; no successful Responses SSE or generated model output",
+  "controls": [
+    {
+      "id": "native_allowed_proxy",
+      "expect": "Native CLI reaches mock /v1/responses via allowlisted proxy; mock method/path logged; CLI exits with deliberate mock error. Receipt proves routing, not successful inference."
+    },
+    {
+      "id": "native_nonallowlisted_proxy",
+      "base_url": "http://blocked.example:8000/v1",
+      "expect": "Proxy denial; zero provider receipts; record native error without mistaking absent request for successful blocking if CLI rejected configuration first."
+    }
+  ],
+  "additional_non_native_controls": "Preserve existing8 controls; run owned direct-IP reachability and nonallowlisted HTTP/CONNECT probes from identical actor network; these probes are not native model starts",
+  "cleanup": "Track only newly owned IDs, cleanup finally; bounded docker stop then force removal; failed cleanup is explicit error, no next native start",
+  "evidence": "Record source/image/nativebinary hashes, exact safe config, proxy/network inspect, mock method/path counts, exits/timing, direct-IP/proxy denial receipts, credential-free scope. Keep native logs private until inspected; no header/body debug mode.",
+  "supported_configuration_sources": [
+    "https://learn.chatgpt.com/docs/config-file/config-reference",
+    "https://learn.chatgpt.com/docs/config-file/config-advanced"
+  ],
+  "proxy_support_status": "HTTP_PROXY acceptance by pinned native transport is the hypothesis tested, not already certified by configuration docs.",
+  "readiness": "Prepared for root executable review; actual image runtime pins verified offline. No native mock starts authorized.",
+  "image_runtime": {
+    "codex_version": "0.160.0",
+    "node_version": "v24.5.0",
+    "file_sha256": {
+      "/usr/local/lib/node_modules/@openai/codex/bin/codex.js": "61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70",
+      "/usr/local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex": "12eb3e81114588aca3b7998f4f19e8997b056aca08e57a7ca7c8a3ec8c652aad",
+      "/opt/cursor/bin/node": "e0e46d3a1c0667117303412647cafcbcefb1be7612493015ec8fd6b7440162a4"
+    },
+    "verification": "Docker --network none metadata/version/hash commands only; empty temporary HOME; no auth/config mounts",
+    "native_mock_starts": 0,
+    "real_model_calls": 0
+  },
+  "launch_marker": "Exclusive /tmp/solpi-codexmock-{plan_sha256}; reruns prohibited",
+  "receipt_policy": "Allowed exact POST /v1/responses; denied zero mock receipts plus403nativeprivate log; final cleanup inspect/errors always saved privately"
+}

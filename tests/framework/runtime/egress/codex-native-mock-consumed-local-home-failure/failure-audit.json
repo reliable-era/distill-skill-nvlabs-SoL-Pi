@@ -1,0 +1,58 @@
+{
+  "plan_sha256": "cc8cd1f5d4423277748993bda88f98cfdcc4cfc94ff7ab84b4a67fd7e737b7d4",
+  "source_hashes": {
+    "proxy.py": "b2cc86337d803cb2d4b70c5aed1d73aa422aea10ae4016bd76ef8275aa44eb38",
+    "mock.py": "2729a20921c452dc86f5169bcf630f3a7fa305f4e3db0705674f1669aeea9859",
+    "probe.py": "dddd1fcc60826dade7e8a814defbfe273824f524d23cb11838c4ef5d8a648999",
+    "test_docker.py": "725c01c3b9c83138cfe6bb87fe4814c270359401efdfc3c8ca594b80b275a060",
+    "codex_native_mock.py": "f4ba826afa054ddd50f6dff63d1965db67ffeccddec7f9f01fa95ef16ba4ea0b",
+    "codex_mock400.py": "2e051169585a6962735137cc4e1606b3403f8675c939efe2c0ce177e1fc9efbe",
+    "test_codex_native_mock.py": "09438b921cdf00d10a5867a2e87d199b9edccd7ec2550322b59bbeb56d36d307"
+  },
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "image_runtime_verified": true,
+  "network_attachments_verified": true,
+  "records": [
+    {
+      "id": "native_allowed_proxy",
+      "started": true,
+      "receipt_expectation_met": false,
+      "exit": 1,
+      "mock_receipts": 0,
+      "deadline_met": true,
+      "error_type": "RuntimeError",
+      "error": "native receipt/deadline expectation failed",
+      "seconds": 0.6501318570226431
+    }
+  ],
+  "native_starts": 1,
+  "maximum_starts": 2,
+  "probes": null,
+  "network_topology": {
+    "actor_internal": true,
+    "provider_internal": true,
+    "actor_ipv6": false,
+    "provider_ipv6": false,
+    "actor_gateway_mode": "isolated",
+    "actor_gateways": [
+      null
+    ]
+  },
+  "mock_method_path_records": [],
+  "errors": [
+    {
+      "phase": "primary",
+      "type": "RuntimeError",
+      "message": "native receipt/deadline expectation failed"
+    }
+  ],
+  "real_provider_calls": 0,
+  "model_benchmark": false,
+  "private_native_logs": "/tmp/solpi-codexmock-cc8cd1f5d4423277748993bda88f98cfdcc4cfc94ff7ab84b4a67fd7e737b7d4",
+  "final_cleanup_recorded": true,
+  "owned_containers_remaining": 0,
+  "owned_networks_remaining": 0,
+  "native_log_sha256": "1832f4e5eafb52718ce182cde1d632a99403af8c4fe2e87bcb266ef402b8360b",
+  "failure_diagnosis": "Local CODEX_HOME directory absent before HTTP; zero receipts; routing unverified",
+  "unused_starts": 1
+}

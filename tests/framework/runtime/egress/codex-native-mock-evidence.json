@@ -1,0 +1,66 @@
+{
+  "plan_sha256": "92cd18acf55040e8ed930031507f43d2572b59a1719e3f487ec1a96e89756d19",
+  "source_hashes": {
+    "proxy.py": "b2cc86337d803cb2d4b70c5aed1d73aa422aea10ae4016bd76ef8275aa44eb38",
+    "mock.py": "2729a20921c452dc86f5169bcf630f3a7fa305f4e3db0705674f1669aeea9859",
+    "probe.py": "dddd1fcc60826dade7e8a814defbfe273824f524d23cb11838c4ef5d8a648999",
+    "test_docker.py": "725c01c3b9c83138cfe6bb87fe4814c270359401efdfc3c8ca594b80b275a060",
+    "codex_native_mock.py": "4885a60a7cb2ad09ca1e8e01ea1c10999304284e9a6db501a3858d88a4ffd07b",
+    "codex_mock400.py": "2e051169585a6962735137cc4e1606b3403f8675c939efe2c0ce177e1fc9efbe",
+    "test_codex_native_mock.py": "493cc698019c73eb0378bc4e4d64f94dca689efef97b5a8a3e9c807b4c34eed8",
+    "codex-home-repair-offline-startup.json": "93820dab6a297b72191768c1e74f0d93c77359395929305c6a999a9f017e19dc"
+  },
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "image_runtime_verified": true,
+  "network_attachments_verified": true,
+  "records": [
+    {
+      "id": "native_allowed_proxy",
+      "started": true,
+      "receipt_expectation_met": true,
+      "exit": 1,
+      "mock_receipts": 1,
+      "deadline_met": true,
+      "seconds": 0.8304625358432531
+    },
+    {
+      "id": "native_nonallowlisted_proxy",
+      "started": true,
+      "receipt_expectation_met": true,
+      "exit": 1,
+      "mock_receipts": 0,
+      "deadline_met": true,
+      "seconds": 0.7806649953126907
+    }
+  ],
+  "native_starts": 2,
+  "maximum_starts": 2,
+  "probes": {
+    "direct_ip_blocked": true,
+    "nonallowed_denied": true,
+    "connect_denied": true
+  },
+  "network_topology": {
+    "actor_internal": true,
+    "provider_internal": true,
+    "actor_ipv6": false,
+    "provider_ipv6": false,
+    "actor_gateway_mode": "isolated",
+    "actor_gateways": [
+      null
+    ]
+  },
+  "mock_method_path_records": [
+    {
+      "method": "POST",
+      "path": "/v1/responses"
+    }
+  ],
+  "errors": [],
+  "real_provider_calls": 0,
+  "model_benchmark": false,
+  "private_native_logs": "/tmp/solpi-codexmock-92cd18acf55040e8ed930031507f43d2572b59a1719e3f487ec1a96e89756d19",
+  "final_cleanup_recorded": true,
+  "owned_containers_remaining": 0,
+  "owned_networks_remaining": 0
+}

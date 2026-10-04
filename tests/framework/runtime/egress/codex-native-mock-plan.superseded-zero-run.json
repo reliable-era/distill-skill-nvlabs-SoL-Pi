@@ -1,0 +1,57 @@
+{
+  "status": "prepared_not_executed_root_review_required",
+  "kind": "native Codex mock transport only; not a model benchmark",
+  "maximum_native_starts": 2,
+  "maximum_seconds_per_start": 30,
+  "real_model_calls": 0,
+  "credentials": "dummy MOCK_KEY only; fresh empty HOME and CODEX_HOME; no host credential/config/session mounts",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "expected_cli_version": "0.160.0; recheck offline before starts",
+  "source_hashes": {
+    "proxy.py": "b2cc86337d803cb2d4b70c5aed1d73aa422aea10ae4016bd76ef8275aa44eb38",
+    "mock.py": "2729a20921c452dc86f5169bcf630f3a7fa305f4e3db0705674f1669aeea9859",
+    "probe.py": "dddd1fcc60826dade7e8a814defbfe273824f524d23cb11838c4ef5d8a648999",
+    "test_docker.py": "725c01c3b9c83138cfe6bb87fe4814c270359401efdfc3c8ca594b80b275a060"
+  },
+  "topology": "Reuse hardened isolated internal actor bridge IPv6false; proxy dual-connected to actor and internal provider bridge; mock provider only on provider bridge; owned names only; verifier networknone",
+  "provider_config": {
+    "model_provider": "mock",
+    "model": "transport-diagnostic",
+    "model_providers.mock.name": "owned mock",
+    "model_providers.mock.base_url": "http://provider.example:8000/v1",
+    "model_providers.mock.env_key": "MOCK_KEY",
+    "model_providers.mock.wire_api": "responses",
+    "model_providers.mock.requires_openai_auth": false,
+    "model_providers.mock.supports_websockets": false,
+    "model_providers.mock.request_max_retries": 0,
+    "model_providers.mock.stream_max_retries": 0
+  },
+  "proxy_env": {
+    "HTTP_PROXY": "http://proxy:8080",
+    "HTTPS_PROXY": "http://proxy:8080",
+    "http_proxy": "http://proxy:8080",
+    "https_proxy": "http://proxy:8080",
+    "NO_PROXY": "",
+    "no_proxy": ""
+  },
+  "mock": "New dedicated mock returns deterministic HTTP400 for every request; records method and path only, never headers/body; no successful Responses SSE or generated model output",
+  "controls": [
+    {
+      "id": "native_allowed_proxy",
+      "expect": "Native CLI reaches mock /v1/responses via allowlisted proxy; mock method/path logged; CLI exits with deliberate mock error. Receipt proves routing, not successful inference."
+    },
+    {
+      "id": "native_nonallowlisted_proxy",
+      "base_url": "http://blocked.example:8000/v1",
+      "expect": "Proxy denial; zero provider receipts; record native error without mistaking absent request for successful blocking if CLI rejected configuration first."
+    }
+  ],
+  "additional_non_native_controls": "Preserve existing8 controls; run owned direct-IP reachability and nonallowlisted HTTP/CONNECT probes from identical actor network; these probes are not native model starts",
+  "cleanup": "Track only newly owned IDs, cleanup finally; bounded docker stop then force removal; failed cleanup is explicit error, no next native start",
+  "evidence": "Record source/image/nativebinary hashes, exact safe config, proxy/network inspect, mock method/path counts, exits/timing, direct-IP/proxy denial receipts, credential-free scope. Keep native logs private until inspected; no header/body debug mode.",
+  "supported_configuration_sources": [
+    "https://learn.chatgpt.com/docs/config-file/config-reference",
+    "https://learn.chatgpt.com/docs/config-file/config-advanced"
+  ],
+  "proxy_support_status": "HTTP_PROXY acceptance by pinned native transport is the hypothesis tested, not already certified by configuration docs."
+}
