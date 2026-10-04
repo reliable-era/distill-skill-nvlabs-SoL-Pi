@@ -63,3 +63,7 @@ Canonical skill remains unchanged. Passing task checks is insufficient to show s
 New cross-harness trace audit found native agy No skill downloaded public official tests. Preserve that exposed development result, but do not treat it as clean withheld evidence. Uniform provider-only actor egress and test/solution exposure audit are required before confirmation. The locally withheld fixture alone does not enforce a sealed evaluator.
 
 [Consolidated broader results](development/README-broad.md): no-reread candidate rejected. Prepared locate-first SWE plan has zero attempts and uses persistent private serialized credentials; do not launch before the new global stage and credential gate. Terminal replay audit completed: all twelve retained outcomes agree; six byte-exact full states, one missing-index state, and five tracked-diff-only reconstructions.
+
+## Locate-first Codex development
+
+Independent four-arm Codex screen completed on the reused Flask issue, order106: all four official grades resolved. Candidate84,948 tokens vs No skill112,352, Karpathy151,278, and Both128,199: descriptive savings24.4%,43.8%,33.7%. Root verified allfour patch/transcript/report hashes. [Evidence](development/swe-flask-locate-first/README.md). This positive single-issue round is not stable confirmation and does not justify promotion. Pi has zero starts, awaitingfreshlogin afterinvalid_grant; fourunused slots remain in the frozen eight-start budget. Canonical andsealedtasks unchanged; goalactive.

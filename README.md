@@ -53,7 +53,7 @@ The later development candidate was rejected and is not shipped. Original calibr
 
 ## Evaluation framework
 
-[Docker framework](tests/framework/README.md): nine agent CLIs, six benchmark sources, a frozen eight-task pilot, cost accounting, and isolated grading. [A four-configuration native pilot](tests/framework/trials/README.md) is complete for Pi, Codex, Copilot, Cursor Auto, and Antigravity `agy`: 40 real attempts on two reused synthetic fixtures. It does not establish a general efficiency win. [Native public-benchmark development](tests/framework/refinement/development/README-broad.md) now covers official Flask repair grading, a Go exercise and terminal sanitization. The new candidate was rejected; a stable economic win remains **TBD**. [Human login steps](tests/framework/runtime/README.md).
+[Docker framework](tests/framework/README.md): nine agent CLIs, six benchmark sources, a frozen eight-task pilot, cost accounting, and isolated grading. [A four-configuration native pilot](tests/framework/trials/README.md) is complete for Pi, Codex, Copilot, Cursor Auto, and Antigravity `agy`: 40 real attempts on two reused synthetic fixtures. It does not establish a general efficiency win. [Native public-benchmark development](tests/framework/refinement/development/README-broad.md) now covers official Flask repair grading, a Go exercise and terminal sanitization. The no-reread candidate was rejected; a [new locate-first candidate](tests/framework/refinement/development/swe-flask-locate-first/README.md) reduced tokens in one matched Codex Flask round. A stable economic win remains **TBD**. [Human login steps](tests/framework/runtime/README.md).
 
 ## Quick start
 

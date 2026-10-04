@@ -1,0 +1,75 @@
+{
+  "records": [
+    {
+      "arm": "candidate",
+      "command_executions": 4,
+      "file_change_operations": 1,
+      "command_output_characters": 13218,
+      "command_errors": [],
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -q'"
+      ]
+    },
+    {
+      "arm": "karpathy",
+      "command_executions": 8,
+      "file_change_operations": 2,
+      "command_output_characters": 28708,
+      "command_errors": [
+        {
+          "command": "/bin/bash -lc \"sed -n '170,205p' src/flask/blueprints.py; sed -n '1,55p' tests/test_blueprints.py; rg -n 'dot|invalid|name' tests/test_blueprints.py | head -20; git status --short; ls /AGENTS.md /workspace/AGENTS.md 2>/dev/null\"",
+          "exit_code": 2,
+          "output_characters": 3846
+        },
+        {
+          "command": "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py -k empty_name_not_allowed'",
+          "exit_code": 1,
+          "output_characters": 639
+        },
+        {
+          "command": "/bin/bash -lc 'python3 -m pytest -q'",
+          "exit_code": 1,
+          "output_characters": 13614
+        }
+      ],
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py -k empty_name_not_allowed'",
+        "/bin/bash -lc 'python3 -m pytest -q tests/test_blueprints.py'",
+        "/bin/bash -lc 'python3 -m pytest -q'"
+      ]
+    },
+    {
+      "arm": "none",
+      "command_executions": 5,
+      "file_change_operations": 1,
+      "command_output_characters": 22790,
+      "command_errors": [],
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -q'"
+      ]
+    },
+    {
+      "arm": "both",
+      "command_executions": 6,
+      "file_change_operations": 2,
+      "command_output_characters": 14630,
+      "command_errors": [
+        {
+          "command": "/bin/bash -lc \"pwd && rg -n 'class Blueprint|def test.*blueprint|empty.*name' src tests pyproject.toml setup.cfg\"",
+          "exit_code": 2,
+          "output_characters": 1223
+        },
+        {
+          "command": "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -q -k empty_name_not_allowed'",
+          "exit_code": 1,
+          "output_characters": 640
+        }
+      ],
+      "verification_commands": [
+        "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -q -k empty_name_not_allowed'",
+        "/bin/bash -lc 'python3 -m pytest tests/test_blueprints.py -q'"
+      ]
+    }
+  ],
+  "interpretation": "Descriptive one-round evidence; output characters are not tokens, and no causal attribution or general stable win follows."
+}

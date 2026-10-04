@@ -1,3 +1,13 @@
+# Current: first locate-first Codex screen positive; goal still active
+
+FourCodex locate-first actors and officialgrades finished, all4resolved; candidate84,948 complete tokens vs No skill112,352/K151,278/Both128,199. Savings24.4%/43.8%/33.7%, one reusedissue/round/harness only, no promotion. Rootindependentaudit all4artifacthashsets matches. Same frozeneight-start budget has fourPi slotsunused; Pi awaits freshhumanlogin (invalid_grant), do not silentlyreseedorretry. Persistentprivatecache /tmp/solpi-refinement-auth-cache preservesCodexrefresh safelyoutsideGit. No modeljobs remain in thisstage. Canonicalunchanged; sealedconfirmation untouched.
+
+Next: broaden/repeat candidate comparison under newboundedstage forotherfamilies/harnesses, completeuniformresource/egress/credentialgates beforeconfirmation. Verify actualcompleteusage and noqualityloss; keepUSD TBD. See framework/refinement/STATUS.md, development/swe-flask-locate-first/README.md and tests/goal.md. Historicalhandoffs follow.
+
+# Current next stage: Codex locate-first active; Pi login pending
+
+New global eight-start budget and independent per-harness guards are frozen. Codex-only four-start screen launched, officialgrader sanity thenactors; agent swe_development liveexec34863, log /tmp/solpi-swe-locate-first-codex-stage.txt. Persistentprivateauthcache /tmp/solpi-refinement-auth-cache outsideGit preservesrefreshupdates underlocks. Pi notlaunched, human freshlogin requested afterinvalid_grant. Do not replay startedactors. Canonicalunchanged; goalactive. Broaderstage30starts finished with no-rereadcandidate rejected; all12terminal patchhash-restored replaysagree. Published tokenpatterns redacted; originalrawretainedprivately and indexed by publication-redaction-audit.json. GitHub e8fb046 passed; preparedindependentguards pushed78b961f.
+
 # Current: broader development running; next candidate untested
 
 Updated 2026-10-04. Goal remains active; canonical unchanged. Frozen thirty-start development budget covers native Flask repair (12/12 official resolved), native agy Go (5/6 pass; shipped SDK503+inner timeout, complete usage TBD), and terminal sanitize (12starts terminal,10modelattempts+2availabilityfailures; replayaudit completed with documented partial-state limits). No-reread candidate does not beat No skill across completed screens; no promotion. Root checked all12 SWE report/patch hashes. New locate-first candidate changes only parent first context bullet, validates structurally, and has no inference yet. Freeze a new bounded stage before testing it. Sealed confirmation untouched.

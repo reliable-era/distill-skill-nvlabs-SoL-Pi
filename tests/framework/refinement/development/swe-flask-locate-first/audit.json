@@ -1,15 +1,50 @@
 {
-  "status": "prepared_only",
-  "actor_starts_recorded": 0,
-  "result_records": 0,
+  "status": "partial",
+  "actor_starts_recorded": 4,
+  "result_records": 4,
   "global_stage_sha256": "67ee9215c9b5be52394b4db6eb7441edd3bd49c97a9d6e0c7f259ca7d8344ac3",
   "model_calls_in_audit": 0,
-  "credential_values_checked": 10,
+  "credential_values_checked": 14,
   "credential_matching_files": [],
-  "official_reports": [],
+  "official_reports": [
+    {
+      "harness": "codex",
+      "arm": "both",
+      "resolved": true,
+      "infra_failure": false,
+      "fail_to_pass_success": 1,
+      "pass_to_pass_success": 59
+    },
+    {
+      "harness": "codex",
+      "arm": "candidate",
+      "resolved": true,
+      "infra_failure": false,
+      "fail_to_pass_success": 1,
+      "pass_to_pass_success": 59
+    },
+    {
+      "harness": "codex",
+      "arm": "karpathy",
+      "resolved": true,
+      "infra_failure": false,
+      "fail_to_pass_success": 1,
+      "pass_to_pass_success": 59
+    },
+    {
+      "harness": "codex",
+      "arm": "none",
+      "resolved": true,
+      "infra_failure": false,
+      "fail_to_pass_success": 1,
+      "pass_to_pass_success": 59
+    }
+  ],
   "errors": [],
   "plan_sha256": "0079a6319c94c3bdfbe98dd37b288efa64e553a89e07dbc282acaf1c455a99ab",
-  "launch_markers": [],
+  "launch_markers": [
+    "launch-codex.json"
+  ],
   "official_grader_version": "5.0.2",
   "private_dataset_hash_verified": true,
   "source_snapshot_git_commit_count": 1
