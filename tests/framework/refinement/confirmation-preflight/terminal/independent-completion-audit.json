@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "controls": [
+    {
+      "task": "distribution-search",
+      "agent": "nop",
+      "reward": 0.0,
+      "result_hashes_verified": true,
+      "patch_or_report_artifacts": [
+        {
+          "name": "reward.txt",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        }
+      ]
+    },
+    {
+      "task": "distribution-search",
+      "agent": "oracle",
+      "reward": 1.0,
+      "result_hashes_verified": true,
+      "patch_or_report_artifacts": [
+        {
+          "name": "reward.txt",
+          "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+        }
+      ]
+    },
+    {
+      "task": "extract-moves-from-video",
+      "agent": "nop",
+      "reward": 0.0,
+      "result_hashes_verified": true,
+      "patch_or_report_artifacts": [
+        {
+          "name": "reward.txt",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        }
+      ]
+    },
+    {
+      "task": "extract-moves-from-video",
+      "agent": "oracle",
+      "reward": 1.0,
+      "result_hashes_verified": true,
+      "patch_or_report_artifacts": [
+        {
+          "name": "reward.txt",
+          "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+        }
+      ]
+    },
+    {
+      "task": "db-wal-recovery",
+      "agent": "nop",
+      "reward": 0.0,
+      "result_hashes_verified": true,
+      "patch_or_report_artifacts": [
+        {
+          "name": "reward.txt",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        }
+      ]
+    },
+    {
+      "task": "db-wal-recovery",
+      "agent": "oracle",
+      "reward": 1.0,
+      "result_hashes_verified": true,
+      "patch_or_report_artifacts": [
+        {
+          "name": "reward.txt",
+          "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+        }
+      ]
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "agent": "nop",
+      "reward": 0.0,
+      "result_hashes_verified": true,
+      "patch_or_report_artifacts": [
+        {
+          "name": "reward.txt",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        }
+      ]
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "agent": "oracle",
+      "reward": 1.0,
+      "result_hashes_verified": true,
+      "patch_or_report_artifacts": [
+        {
+          "name": "reward.txt",
+          "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+        }
+      ]
+    }
+  ],
+  "resources_observed": 12,
+  "owned_containers_remaining": 0,
+  "publication_scan": {
+    "files": 33,
+    "full_gold_contents_checked": 12,
+    "full_gold_match_files": [],
+    "credential_values_checked": 3,
+    "credential_match_files": [],
+    "scope": "Exact full trusted test/solution files>=32bytes and current token/secret/key values>=16 chars from declared host/private seeds; not arbitrary fragments or unavailable rotated secrets",
+    "unsafe_git_files": [
+      "__pycache__/*.pyc"
+    ],
+    "raw_private": true
+  },
+  "model_calls": 0,
+  "completion": {
+    "official_controls_started": 8,
+    "unused_controls": 0,
+    "pull_attempts": 4,
+    "builds": 0,
+    "model_calls": 0,
+    "stop_reason": null,
+    "cleanup_verified": true,
+    "elapsed_seconds": 381.0093936622143,
+    "source_files_unchanged": true,
+    "disk_guard": "Measured32GiB growth +min40GiB free; no hard10GiB container quota claim",
+    "private_artifacts": "/tmp/solpi-terminal-confirmation-controls-42e8592c42ab"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "driver": "overlay2",
+  "driver_status": [
+    [
+      "Backing Filesystem",
+      "extfs"
+    ],
+    [
+      "Supports d_type",
+      "true"
+    ],
+    [
+      "Using metacopy",
+      "false"
+    ],
+    [
+      "Native Overlay Diff",
+      "true"
+    ],
+    [
+      "userxattr",
+      "false"
+    ]
+  ],
+  "docker_root_dir": "/var/lib/docker",
+  "cgroup_version": "2",
+  "memory_limit_supported": true,
+  "per_container_storage_cap_supported": false,
+  "reason": "Current overlay2 on extfs has no verified project-quota support; Harbor Docker capabilities advertise CPU/memory only. No claim that official10GiB declaration is enforced. Use measured global32GiB growth guard and min40GiB free."
+}

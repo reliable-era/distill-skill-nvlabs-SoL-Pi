@@ -1,0 +1,156 @@
+{
+  "purpose": "Offline-prepared infrastructure/grader confirmation preflight only; no models, skill/candidate tuning or performance result",
+  "status": "Prepared; zero pulls/builds/controls",
+  "source": "https://github.com/harbor-framework/terminal-bench-2",
+  "source_revision": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "selection_path": "tests/framework/refinement/confirmation-selection.json",
+  "selection_sha256": "6260412fad9d4b579c80b1a891e94a3d98f5346503e096bfdff632ef9affa11c",
+  "offline_inspection_sha256": "16389bb952b6fbf1f4055fa8df94a0ebee5aa0775a4348bfda22fdf764c01ad5",
+  "task_order": [
+    "distribution-search",
+    "extract-moves-from-video",
+    "db-wal-recovery",
+    "log-summary-date-ranges"
+  ],
+  "controls": [
+    {
+      "task": "distribution-search",
+      "agent": "nop",
+      "expected_official_reward": 0,
+      "attempts": 1
+    },
+    {
+      "task": "distribution-search",
+      "agent": "oracle",
+      "expected_official_reward": 1,
+      "attempts": 1
+    },
+    {
+      "task": "extract-moves-from-video",
+      "agent": "nop",
+      "expected_official_reward": 0,
+      "attempts": 1
+    },
+    {
+      "task": "extract-moves-from-video",
+      "agent": "oracle",
+      "expected_official_reward": 1,
+      "attempts": 1
+    },
+    {
+      "task": "db-wal-recovery",
+      "agent": "nop",
+      "expected_official_reward": 0,
+      "attempts": 1
+    },
+    {
+      "task": "db-wal-recovery",
+      "agent": "oracle",
+      "expected_official_reward": 1,
+      "attempts": 1
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "agent": "nop",
+      "expected_official_reward": 0,
+      "attempts": 1
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "agent": "oracle",
+      "expected_official_reward": 1,
+      "attempts": 1
+    }
+  ],
+  "maximum_official_controls": 8,
+  "maximum_model_calls": 0,
+  "automatic_retries": 0,
+  "task_replacement": false,
+  "concurrency": 1,
+  "time_caps": {
+    "image_pull_attempts": 4,
+    "per_pull_seconds": 300,
+    "maximum_builds": 0,
+    "per_build_seconds": 0,
+    "oracle_agent_seconds": 600,
+    "verifier_seconds": 600,
+    "baseline_control_outer_seconds": 900,
+    "oracle_control_outer_seconds": 1500,
+    "runtime_probe_seconds_per_task": 60,
+    "cleanup_seconds_per_container": 15,
+    "global_wall_seconds": 12000,
+    "isolation_probe_seconds_per_task": 60
+  },
+  "timeout_policy": "Preflight agent/verifier caps are lower than official task maxima and must be explicit config multipliers. Timeout, unavailable dependencies, network failure or missing reward is infrastructure-blocked, not a negative quality result. No automatic rerun/replacement. Stop after first unexpected control outcome or infrastructure issue, record unused controls.",
+  "disk_caps": {
+    "minimum_free_before_start_bytes": 42949672960,
+    "maximum_incremental_usage_bytes": 34359738368,
+    "maximum_single_image_size_bytes": 8589934592,
+    "per_control_declared_task_storage_mb": 10240,
+    "watchdog_poll_seconds": 5,
+    "enforcement": "Current overlay2/extfs does not support verified10GiB container quotas. Do NOT claim percontainer enforcement. Runner samples distinct Docker/private filesystems once per second, stops active subprocess+owned containers if global growth exceeds32GiB or free drops below40GiB; records measured polling limitation."
+  },
+  "resource_limits": {
+    "cpus": 1,
+    "memory_mb": 2048,
+    "gpus": 0,
+    "memory_and_cpu": "Require actual Docker limit enforcement/inspect confirmation; record mismatches as blocked preflight"
+  },
+  "image_policy": "Only the four original task.toml official prebuilt image references. No build fallback. After each authorized pull freeze resolved image ID/repository digest and assert unchanged before/after every control. Use private task runtime binding copy solely to pin docker_image to pulled digest; original selected source remains unchanged. Missing image blocks, never replace task.",
+  "runtime_compatibility": "After authorized pulls only: existing pinned Node/Codex/Pi trees readonly /cli, networknone/noauth version probes (60s each). Native startup failure blocks future inference, does not replace task or alter official controls. Timed/interrupted probes stop screen. Additional60s fresh-image directory/sourcehash isolation probe per task; raw contents private.",
+  "existing_agent_runtime_image": "sol-pi-eval-polyglot-login:2026-10-04",
+  "control_protocol": "Concrete Harbor0.23 runner executes only Nop/Oracle,1attempt/maxretries0/concurrency1; original bootstrap/tests/oracle bytes verified. Private task.toml copy replaces only docker_image with immutable digest. Compose pull_policy=never and no-force-build prohibit extra pulls/builds; CPU1/mem2GiB asserted from Docker inspect. Unexpected control/infrastructure/cleanup failure stops remaining controls.",
+  "network_policy": "Control network follows original allow_internet=true for official bootstrap/dependency retrieval; no mounted host auth, cloud secrets, SSH agent or model credentials. Do not silently use offline flags/cache substitutions. Remote asset availability for future video actors remains TBD even if its oracle passes.",
+  "private_artifacts": "New0700 /tmp/solpi-terminal-confirmation-controls-<nonce>; files0600. Root-signed runner stores all oracle/test/source copies and complete Harbor raw logs there; only numeric outcomes, dependency/hash metadata, resource/cleanup evidence published.",
+  "actor_isolation_requirements": [
+    "No actor/model execution in preflight",
+    "For any future inference, actor image filesystem must be scanned for /tests,/solution, reference/gold files and bootstrap mounts must be audited",
+    "Selected task instructions/environment inputs may be delivered only after candidate freeze; grader/oracle material remains withheld",
+    "No oracle-generated output or private control files inherited by any actor workspace; use fresh pinned images for each future actor",
+    "Native full skill resources and private credentials belong only to actor environment, never to verifier/oracle controls"
+  ],
+  "execution_gate": "run_controls.py execute requires root execution-authorization.json with authorized=true, exact plan_sha256, max_official_controls8/max_pulls4/max_builds0/max_model_calls0. Exclusive launch refuses repeats/resume. verify and unit tests perform no expensive operations.",
+  "harbor_version": "0.23.0",
+  "runtime_compatibility_results": "TBD",
+  "control_results": "TBD",
+  "existing_agent_runtime_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "existing_agent_runtime_image_size_bytes": 4616298788,
+  "existing_agent_runtime_file_sha256": {
+    "/usr/local/bin/node": "7fde7b8afa198da66257f42ee2001d874c7355631e6d1579a5fb5ef1f246df4c",
+    "/usr/local/lib/node_modules/@openai/codex/bin/codex.js": "61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70",
+    "/usr/local/lib/node_modules/@earendil-works/pi-coding-agent/dist/cli.js": "8189b66abc4f9f431dbb70941dcba690d76d040de1fbfff212886be35a53639d"
+  },
+  "runtime_source_probe": "Offline hashes of existing common image only; no selected task image execution or controls",
+  "runner_sha256": "3e2885fd20bcc94ce7586bdd06264788bb810081f1c137be9c299e1de44e3091",
+  "guard_tests_sha256": "8e3b332b71ec22b1bc12fe8fe885086e79ca4246fc43d71f163a55e287597767",
+  "metadata_files_sha256": {
+    "offline-inspection.json": "16389bb952b6fbf1f4055fa8df94a0ebee5aa0775a4348bfda22fdf764c01ad5",
+    "resolved-images.json": "a84c1ed7edfe630ac1447aaac9a69d86792a736ba7a74331e2cf314c1a00e19e",
+    "oracle-dependency-audit.json": "41c67835789ef653924348069cd5da856000df0967d5e2155423a5f750d4064d",
+    "docker-storage-audit.json": "16193596dc0f323fea3ec713aa592dda39d83c210bb04585b77bf90439c3792b",
+    "runtime-package-trees.json": "5cc7328ace2c41edc71e053088fc95add7b736e3f18856d47e89773ac4752a38"
+  },
+  "harbor_source_sha256": {
+    "/tmp/solpi-refinement-harbor-venv/lib/python3.13/site-packages/harbor/agents/oracle.py": "9bebb320fd3909aea0fe7da174b4cb7c9b761591224d9db8010d73d1a002915c",
+    "/tmp/solpi-refinement-harbor-venv/lib/python3.13/site-packages/harbor/agents/nop.py": "21b6a9b32e5da3bac32c14c50af63435260ebd7455ebb693edb1005874c60157",
+    "/tmp/solpi-refinement-harbor-venv/lib/python3.13/site-packages/harbor/environments/docker/docker.py": "8757d3fbc19e58c7ccd14c9b613a0d00dccd1b514375fa0e546ff41ca963a15e",
+    "/tmp/solpi-refinement-harbor-venv/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-prebuilt.yaml": "1dfdd58a598685bb60fb90ca11c4fc16024b5cb1cdf73d83f8f84a2a4978e4d4",
+    "/tmp/solpi-refinement-harbor-venv/lib/python3.13/site-packages/harbor/verifier/verifier.py": "6d3d9ed8882c5e07bae4aa6449732b096166fb9bbabc685b39c0e25f57b20aa9"
+  },
+  "immutable_images": {
+    "distribution-search": "alexgshaw/distribution-search@sha256:1448f7aa1c6080488251d00350e8e90477858989b1bec0accc866d7b3220738a",
+    "extract-moves-from-video": "alexgshaw/extract-moves-from-video@sha256:14a9dcca7d08ce53c5a0ed9fbd663a996ef28f207c199ed69d9ccf6064f8b184",
+    "db-wal-recovery": "alexgshaw/db-wal-recovery@sha256:0e33ea5ec823975d1bd6c3778395c9f94251dd88f571146057bff6adb7e4594e",
+    "log-summary-date-ranges": "alexgshaw/log-summary-date-ranges@sha256:cbeb6ba905c2fec294f16cd5e16e3ea7f2e04d38ac2484d51a11de262aa7dc51"
+  },
+  "existing_agent_runtime_package_trees": {
+    "codex": {
+      "sha256": "d4a2538d63cdad14dc81b26640e73cd6ce5c655443dfe515bc9aee7bac355cf8",
+      "entries": 65
+    },
+    "pi": {
+      "sha256": "3436b1bd24dc14516397ba34bb2293276c145a79284fd50390e93bf1f961cf12",
+      "entries": 16507
+    }
+  }
+}

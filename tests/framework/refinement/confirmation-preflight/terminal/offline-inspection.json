@@ -1,0 +1,441 @@
+{
+  "source_commit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "source": "https://github.com/harbor-framework/terminal-bench-2",
+  "controls_started": 0,
+  "pulls": 0,
+  "builds": 0,
+  "records": [
+    {
+      "task": "distribution-search",
+      "metadata": {
+        "schema_version": "1.1",
+        "artifacts": [],
+        "task": {
+          "name": "terminal-bench/distribution-search",
+          "description": "Tests the ability to find a probability distribution satisfying precise dual KL divergence constraints through numerical optimization.",
+          "keywords": [
+            "coding",
+            "statistics",
+            "machine-learning"
+          ],
+          "authors": [
+            {
+              "name": "Xuandong Zhao",
+              "email": "xuandongzhao@berkeley.edu"
+            }
+          ]
+        },
+        "metadata": {
+          "author_name": "Xuandong Zhao",
+          "author_email": "xuandongzhao@berkeley.edu",
+          "difficulty": "medium",
+          "category": "machine-learning",
+          "tags": [
+            "coding",
+            "statistics",
+            "machine-learning"
+          ],
+          "expert_time_estimate_min": 120.0,
+          "junior_time_estimate_min": 240.0
+        },
+        "verifier": {
+          "timeout_sec": 3600.0,
+          "env": {}
+        },
+        "agent": {
+          "timeout_sec": 3600.0
+        },
+        "environment": {
+          "build_timeout_sec": 600.0,
+          "docker_image": "alexgshaw/distribution-search:20251031",
+          "cpus": 1,
+          "memory_mb": 2048,
+          "storage_mb": 10240,
+          "gpus": 0,
+          "allow_internet": true,
+          "mcp_servers": [],
+          "env": {}
+        },
+        "solution": {
+          "env": {}
+        }
+      },
+      "docker_base_images": [
+        {
+          "reference": "python:3.13-slim-bookworm",
+          "available_locally": false
+        }
+      ],
+      "environment_files": [
+        {
+          "relative_path": "environment/Dockerfile",
+          "bytes": 277,
+          "sha256": "1eaa2eae5c9edd86316401ef3dca829dbe4125391b6845237fa73acd98c30012"
+        }
+      ],
+      "test_python_imports": [
+        "numpy",
+        "os",
+        "pytest"
+      ],
+      "test_runner_dependency_specs": [
+        "numpy==2.3.0",
+        "pytest",
+        "pytest==8.4.1"
+      ],
+      "private_content_file_hashes": {
+        "instruction.md": "aba2e1835b2f827686402c3d3ff9b309aab8c9cbac26e23fc46aaeb34e958915",
+        "README.md": "9cae587227be2776d260c5a3fd114d10e6e69f09a401fa19813e94acecd6d677",
+        "task.toml": "70c8e73cafd0a75306375bec2c2e1e4d82e0cb969fd7e38a63e7c344de43b681",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "1eaa2eae5c9edd86316401ef3dca829dbe4125391b6845237fa73acd98c30012",
+        "tests/test.sh": "3eb007081bf3cfef18cf9ef7ebb44b0a93f133e3d1f0fd44a0417e5a263b0ca5",
+        "tests/test_outputs.py": "02bca54db4849b7c911253fb92f941e21db8b1eea13261a7e5a9871fca68b4ed",
+        "solution/solve.sh": "19daaee18d534f36679854b0ba5727290df389ee023ebb67846cb89579d38bbe"
+      },
+      "private_test_and_solution_contents_published": false,
+      "docker_stage_count": 1,
+      "docker_run_instruction_count": 2,
+      "docker_copy_instruction_count": 0,
+      "official_image_availability": {
+        "reference": "alexgshaw/distribution-search:20251031",
+        "available_locally": false
+      },
+      "environment_apt_dependencies": [],
+      "environment_pip_dependency_names": [
+        "numpy",
+        "scipy"
+      ],
+      "pinned_source_file_hashes_verified": true
+    },
+    {
+      "task": "extract-moves-from-video",
+      "metadata": {
+        "schema_version": "1.1",
+        "artifacts": [],
+        "task": {
+          "name": "terminal-bench/extract-moves-from-video",
+          "description": "Evaluates the agent's ability to download a YouTube video, extract text commands through OCR or transcription, and produce a formatted text file with 90% accuracy.",
+          "keywords": [
+            "file-operations",
+            "web",
+            "video-processing"
+          ],
+          "authors": [
+            {
+              "name": "Nicholas Carlini",
+              "email": "nicholas@carlini.com"
+            }
+          ]
+        },
+        "metadata": {
+          "author_name": "Nicholas Carlini",
+          "author_email": "nicholas@carlini.com",
+          "difficulty": "hard",
+          "category": "file-operations",
+          "tags": [
+            "file-operations",
+            "web",
+            "video-processing"
+          ],
+          "expert_time_estimate_min": 120.0,
+          "junior_time_estimate_min": 480.0
+        },
+        "verifier": {
+          "timeout_sec": 1800.0,
+          "env": {}
+        },
+        "agent": {
+          "timeout_sec": 1800.0
+        },
+        "environment": {
+          "build_timeout_sec": 600.0,
+          "docker_image": "alexgshaw/extract-moves-from-video:20251031",
+          "cpus": 1,
+          "memory_mb": 2048,
+          "storage_mb": 10240,
+          "gpus": 0,
+          "allow_internet": true,
+          "mcp_servers": [],
+          "env": {}
+        },
+        "solution": {
+          "env": {}
+        }
+      },
+      "docker_base_images": [
+        {
+          "reference": "ubuntu:24.04",
+          "available_locally": true,
+          "image_id": "sha256:a6f81fb630d51837271b89f8193810a5fc493fa4f30a55d7ebcdb3a66f3cc63a",
+          "size_bytes": 78156528,
+          "repo_digests": [
+            "ubuntu@sha256:33ceb71981b602c1a7443a53469e4dba065f7503eab3078a2d7a57a2ab987517"
+          ]
+        }
+      ],
+      "environment_files": [
+        {
+          "relative_path": "environment/Dockerfile",
+          "bytes": 153,
+          "sha256": "aa271a9df218d1ddc646ad3b1c5a5e55a75d758c094ba5e08a88226f5c5dc970"
+        }
+      ],
+      "test_python_imports": [
+        "pathlib"
+      ],
+      "test_runner_dependency_specs": [
+        "pytest",
+        "pytest==8.4.1"
+      ],
+      "private_content_file_hashes": {
+        "instruction.md": "2d8634fcd1119de91a86fa246d225bf29b37539e456bf24b946c62d42dab04f5",
+        "README.md": "53a14c201411ef6d1d6b576a3e05055260b8b8778eaa0e500aa642d5afd1e371",
+        "task.toml": "f0ba9af241fab0217ef689c90d02d0bd17225c3aadf9a2788dc024f87dbf81ec",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "aa271a9df218d1ddc646ad3b1c5a5e55a75d758c094ba5e08a88226f5c5dc970",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "565a7617602f33c0f103d6c9b39c95e0cfe72ba8eadf4d3f859cabfd9235467e",
+        "solution/solve.sh": "102dbb49e51054e4f12cbf92252b9572506a1d735e393589a024c2cb45fa6b77"
+      },
+      "private_test_and_solution_contents_published": false,
+      "docker_stage_count": 1,
+      "docker_run_instruction_count": 0,
+      "docker_copy_instruction_count": 0,
+      "official_image_availability": {
+        "reference": "alexgshaw/extract-moves-from-video:20251031",
+        "available_locally": false
+      },
+      "environment_apt_dependencies": [],
+      "environment_pip_dependency_names": [],
+      "pinned_source_file_hashes_verified": true
+    },
+    {
+      "task": "db-wal-recovery",
+      "metadata": {
+        "schema_version": "1.1",
+        "artifacts": [],
+        "task": {
+          "name": "terminal-bench/db-wal-recovery",
+          "description": "Tests the ability to decrypt an XOR-encrypted SQLite WAL file and recover complete database contents including write-ahead log changes.",
+          "keywords": [
+            "database",
+            "encryption",
+            "recovery",
+            "file-operations"
+          ],
+          "authors": [
+            {
+              "name": "Xiangning Lin",
+              "email": "xiangnlin@alumni.cmu.edu"
+            }
+          ]
+        },
+        "metadata": {
+          "author_name": "Xiangning Lin",
+          "author_email": "xiangnlin@alumni.cmu.edu",
+          "difficulty": "medium",
+          "category": "file-operations",
+          "tags": [
+            "database",
+            "encryption",
+            "recovery"
+          ],
+          "expert_time_estimate_min": 45.0,
+          "junior_time_estimate_min": 240.0
+        },
+        "verifier": {
+          "timeout_sec": 900.0,
+          "env": {}
+        },
+        "agent": {
+          "timeout_sec": 900.0
+        },
+        "environment": {
+          "build_timeout_sec": 600.0,
+          "docker_image": "alexgshaw/db-wal-recovery:20251031",
+          "cpus": 1,
+          "memory_mb": 2048,
+          "storage_mb": 10240,
+          "gpus": 0,
+          "allow_internet": true,
+          "mcp_servers": [],
+          "env": {}
+        },
+        "solution": {
+          "env": {}
+        }
+      },
+      "docker_base_images": [
+        {
+          "reference": "ubuntu:24.04",
+          "available_locally": true,
+          "image_id": "sha256:a6f81fb630d51837271b89f8193810a5fc493fa4f30a55d7ebcdb3a66f3cc63a",
+          "size_bytes": 78156528,
+          "repo_digests": [
+            "ubuntu@sha256:33ceb71981b602c1a7443a53469e4dba065f7503eab3078a2d7a57a2ab987517"
+          ]
+        }
+      ],
+      "environment_files": [
+        {
+          "relative_path": "environment/main.db",
+          "bytes": 8192,
+          "sha256": "68cb288eb29e76d814b4e7ee6887b37c415675e644f88173bc191348e290d119"
+        },
+        {
+          "relative_path": "environment/main.db-wal.encrypted",
+          "bytes": 16512,
+          "sha256": "68753bdce26196a53194260d001544cc6bb8f9f38e2f2f6826d09798e31e6e26"
+        },
+        {
+          "relative_path": "environment/Dockerfile",
+          "bytes": 407,
+          "sha256": "63a260531c62f4ae72060db17f295c0aa03cfc6321f8162c324b7aa6b3f81302"
+        }
+      ],
+      "test_python_imports": [
+        "json",
+        "os"
+      ],
+      "test_runner_dependency_specs": [
+        "pytest",
+        "pytest==8.4.1"
+      ],
+      "private_content_file_hashes": {
+        "instruction.md": "5a20375162921b8911c67035d1905df7fd335d1bed03044271e608b2c3c93b26",
+        "README.md": "600762031a1a02ecc3b46d70f7683f3ff930b47c8a3d0e27cc31b146158c3126",
+        "task.toml": "1cdc2c615e259bc10265efbe71b518332070c1c002e226566399e9788f18d0aa",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/main.db": "68cb288eb29e76d814b4e7ee6887b37c415675e644f88173bc191348e290d119",
+        "environment/main.db-wal.encrypted": "68753bdce26196a53194260d001544cc6bb8f9f38e2f2f6826d09798e31e6e26",
+        "environment/Dockerfile": "63a260531c62f4ae72060db17f295c0aa03cfc6321f8162c324b7aa6b3f81302",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "88dc5c2a3abba75bca0e0f9136223ae5bb585d5984b8d9eba51a7829c1d2ba49",
+        "solution/solve.sh": "ed8530c94103bf19783a1d41bc63fe4db478cdd9629f22fee25c45a45699f5e8"
+      },
+      "private_test_and_solution_contents_published": false,
+      "docker_stage_count": 1,
+      "docker_run_instruction_count": 1,
+      "docker_copy_instruction_count": 2,
+      "official_image_availability": {
+        "reference": "alexgshaw/db-wal-recovery:20251031",
+        "available_locally": false
+      },
+      "environment_apt_dependencies": [
+        "python3",
+        "python3-pip",
+        "sqlite3",
+        "xxd"
+      ],
+      "environment_pip_dependency_names": [],
+      "pinned_source_file_hashes_verified": true
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "metadata": {
+        "schema_version": "1.1",
+        "artifacts": [],
+        "task": {
+          "name": "terminal-bench/log-summary-date-ranges",
+          "description": "Evaluates the ability to analyze date-stamped log files, calculate counts across multiple date ranges, and generate structured CSV output.",
+          "keywords": [
+            "log-analysis",
+            "report-generation",
+            "data-processing"
+          ],
+          "authors": [
+            {
+              "name": "Orfeas Menis Mastromichalakis",
+              "email": "menisorfeas@gmail.com"
+            }
+          ]
+        },
+        "metadata": {
+          "author_name": "Orfeas Menis Mastromichalakis",
+          "author_email": "menisorfeas@gmail.com",
+          "difficulty": "medium",
+          "category": "data-processing",
+          "tags": [
+            "log-analysis",
+            "report-generation",
+            "data-processing"
+          ],
+          "expert_time_estimate_min": 75.0,
+          "junior_time_estimate_min": 150.0
+        },
+        "verifier": {
+          "timeout_sec": 900.0,
+          "env": {}
+        },
+        "agent": {
+          "timeout_sec": 900.0
+        },
+        "environment": {
+          "build_timeout_sec": 600.0,
+          "docker_image": "alexgshaw/log-summary-date-ranges:20251031",
+          "cpus": 1,
+          "memory_mb": 2048,
+          "storage_mb": 10240,
+          "gpus": 0,
+          "allow_internet": true,
+          "mcp_servers": [],
+          "env": {}
+        },
+        "solution": {
+          "env": {}
+        }
+      },
+      "docker_base_images": [
+        {
+          "reference": "python:3.13-slim-bookworm",
+          "available_locally": false
+        }
+      ],
+      "environment_files": [
+        {
+          "relative_path": "environment/log_generator_deterministic.py",
+          "bytes": 3903,
+          "sha256": "beb6eff59979e9aa0be63ce8a0f1b0df1178f92871f04ba9f76fa70cf8beb81c"
+        },
+        {
+          "relative_path": "environment/Dockerfile",
+          "bytes": 508,
+          "sha256": "b479f6e987b63a6ec118fa1691b8bb85c437b2a6a0fe63feab5ed7154957fdfc"
+        }
+      ],
+      "test_python_imports": [
+        "csv",
+        "pathlib"
+      ],
+      "test_runner_dependency_specs": [
+        "pytest",
+        "pytest==8.4.1"
+      ],
+      "private_content_file_hashes": {
+        "instruction.md": "c1d4516ad4ec2238209740eaf01291df9ab48b0028a3fc5df383c6f831453484",
+        "README.md": "026000415cb577f3d3d5132902670262f7d5d8f69841903ec06a882292f756b4",
+        "task.toml": "9a9593673d6805ef3a301ea734e9c4dbaf80da1b37c0fe9d1f2ceea2a8c57e18",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/log_generator_deterministic.py": "beb6eff59979e9aa0be63ce8a0f1b0df1178f92871f04ba9f76fa70cf8beb81c",
+        "environment/Dockerfile": "b479f6e987b63a6ec118fa1691b8bb85c437b2a6a0fe63feab5ed7154957fdfc",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "2fc06a6ce1944ad82f84fb437395fa75ed8c0eadd385b92e375c27e5bc9cb2b4",
+        "solution/solve.sh": "9f6a8ee8947bdf1c0f31b530b6194ae998d66841a3b785fa2e246ee840350ab6"
+      },
+      "private_test_and_solution_contents_published": false,
+      "docker_stage_count": 1,
+      "docker_run_instruction_count": 2,
+      "docker_copy_instruction_count": 1,
+      "official_image_availability": {
+        "reference": "alexgshaw/log-summary-date-ranges:20251031",
+        "available_locally": false
+      },
+      "environment_apt_dependencies": [],
+      "environment_pip_dependency_names": [],
+      "pinned_source_file_hashes_verified": true
+    }
+  ],
+  "disk_available_bytes": 2064476758016,
+  "source_worktree_matches_selected_pinned_files": true
+}

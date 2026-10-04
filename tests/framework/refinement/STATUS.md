@@ -100,3 +100,10 @@ The remaining SWE pull succeeded. The first unchanged control hit a resource-ver
 Terminal plan114e23f184bb71dcb5da2035005734ab090ba6b4786ba5987d8809cda049f02e passed independent source review,18 offline tests and root frozen verification. Root launched its sole bounded execution in session24027 (four pulls/eight controls/zero builds/models); inspect live state before inferring completion.
 
 Independent-reads is a new unmeasured candidate derived from locate-first with one added batching bullet. Structural validation passes; no models launched or quality/economic claim. It preserves each command’s status and dependent sequencing. See candidate-independent-reads-manifest.json.
+
+
+## Selected Terminal controls complete
+
+All eight selected Terminal-Bench controls completed with expected unchanged0/oracle1 pairs across four fixed tasks. Actual1CPU/2GiB limits were observed, immutable image bindings match, original sources remain unchanged, and cleanup is verified. Independent audit errors[] and scoped publication scan pass; raw logs/gold stay private. Four pulls, zero builds and zero models. Storage protection is a measured global growth guard, not a hard per-container quota. This validates selected environments, not skill quality or economic superiority.
+
+SWE network/report phase consumed two infrastructure-failed controls; neither is graded correctness evidence. The first-negative infrastructure report did not stop the oldrunner, so the gold attempt is retained openly. Loopback-only readiness now passes; a distinct frozen phase enforces the pinned official report/parser schema, expected test IDs and actual F2P/P2P outcomes. Reviewed eight-control launch is live in agent-owned25816; combined maximum11attempts preserves prior3infrastructure attempts, plus2separate readinessprobes. No model calls or new pulls.
