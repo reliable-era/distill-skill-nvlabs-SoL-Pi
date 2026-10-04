@@ -1,0 +1,53 @@
+{
+  "status": "prepared_only_no_acquisition",
+  "model_calls": 0,
+  "controls": 0,
+  "pulls": 0,
+  "builds": 0,
+  "dependency_acquisitions": 0,
+  "fixed_task": "astropy__astropy-13236",
+  "evidence": {
+    "private_test_output_sha256": "978681480e83bd9b55619bdc82060d4a75644668cea9ee8a8d529a75b9ec8b3c",
+    "private_eval_script_sha256": "b1a543f2a3139bff0b7e2d4a1105a30fe7c969fcd3513d6717500cb2c6ea27d6",
+    "official_eval_bootstrap": "python -m pip install -e .[test] --verbose",
+    "python": "3.9",
+    "missing_build_requirement": "setuptools==68.0.0",
+    "complete_logged_build_requirement_list": [
+      "setuptools==68.0.0",
+      "setuptools_scm>=6.2",
+      "wheel",
+      "cython==0.29.22",
+      "oldest-supported-numpy",
+      "extension-helpers"
+    ],
+    "installation_result": "pip build dependency subprocess nonzero, then official script continued because no errexit",
+    "official_test_exit_code": 1,
+    "failure_relevance": "Required editable installation failed and classifier blocks readiness. Tests subsequently ran against existing image state; whether installation failure changes task correctness remains unproven. The selected report includes 2 F2P failures and 644 P2P passes; do not treat the environment failure as harmless."
+  },
+  "proposed_readiness_budget": {
+    "metadata_container_probes": 1,
+    "probe_seconds": 30,
+    "network": "none loopback enabled",
+    "purpose": "inspect exact existing installed package versions, Python/platform and wheel cache only; no tests/gold",
+    "anonymous_pypi_metadata_requests_max": 12,
+    "request_seconds": 15,
+    "maximum_metadata_bytes": 8388608,
+    "wheel_downloads_max": 12,
+    "maximum_total_download_bytes": 134217728,
+    "maximum_download_total_seconds": 240,
+    "source_distributions": 0,
+    "builds": 0,
+    "pulls": 0,
+    "controls": 0,
+    "automatic_retries": 0
+  },
+  "acquisition_gate": "root review required; resolve exact compatible versions/transitives and immutable PyPI SHA256 before any wheel download",
+  "repair_policy": "keep official source/eval/test patches unchanged; provide private grader-only readonly wheelhouse through PIP_NO_INDEX/PIP_FIND_LINKS for official subprocess; availability and full requirements must be proven before controls",
+  "unresolved": [
+    "installed package inventory and cachedwheel availability",
+    "compatible complete pinned build dependency closure including oldest-supported-numpy Python3.9 marker resolution",
+    "editable test extra dependency closure",
+    "whether official install then succeeds without fetching external dependencies"
+  ],
+  "previous_failed_control": "preserved fifth negative environment-blocked/ungraded; do not count validated or replace task"
+}

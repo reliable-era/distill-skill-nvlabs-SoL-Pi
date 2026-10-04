@@ -1,0 +1,59 @@
+{
+  "status": "bootstrap_ready_no_grader_controls",
+  "session": 10569,
+  "exit_code": 0,
+  "package_setup_attempts": 1,
+  "metadata_probes": 1,
+  "wheel_downloads": 10,
+  "wheel_bytes": 16350357,
+  "models": 0,
+  "graders": 0,
+  "docker_builds": 0,
+  "pulls": 0,
+  "retries": 0,
+  "bootstrap_plan_sha256": "08dfc76cb1cffeb82e4a7dc233ec2d1ceb4c2a8cfb81b93ae026b4a5ca97bfc8",
+  "runner_hash_matches": true,
+  "private_prefix_hash_matches": true,
+  "all_wheel_hashes_match": true,
+  "bootstrap_result_sha256": "b521b2ff04753dea6d600d72e86125b07e30fa648ce2b6428522689f01b94a1c",
+  "private_patch_values_scanned": 8,
+  "public_exact_patch_matches": [],
+  "credential_scope": "no agent credentials mounted or used; all acquisitions public anonymous metadata/immutable wheel URLs",
+  "readiness_limit": "proves original official setup prefix on same immutable Astropy image with wheelhouse; does not prove gold/negative test controls, no model score",
+  "caps_cleanup_numpy": {
+    "process_status": "finished",
+    "error_type": null,
+    "elapsed_seconds": 47.00977116264403,
+    "models": 0,
+    "graders": 0,
+    "pulls": 0,
+    "docker_builds": 0,
+    "package_setup_attempts": 1,
+    "worker-result": {
+      "exit_code": 0
+    },
+    "caps": {
+      "memory": 8589934592,
+      "nano_cpus": 4000000000,
+      "network_mode": "none",
+      "network_disabled": false
+    },
+    "cleanup": {
+      "container_id": "2400278459cd421ebcbb9f454848c38c0360f286f609d7d221e9aeeb078194e7",
+      "remove_exit": 0,
+      "absence_verified": true
+    },
+    "numpy-before": {
+      "numpy": "1.25.2"
+    },
+    "numpy-after": {
+      "numpy": "1.25.2"
+    },
+    "status": "validated_bootstrap_success",
+    "bootstrap_ready": true,
+    "private_log_hashes": {
+      "private-bootstrap.log": "bff703ec17984d55c0b10040eb4b3fb2f0aa2fe0b81bc471e6d4631761dba8fb",
+      "private-worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

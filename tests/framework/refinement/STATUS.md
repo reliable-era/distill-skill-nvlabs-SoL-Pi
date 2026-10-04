@@ -114,3 +114,10 @@ SWE network/report phase consumed two infrastructure-failed controls; neither is
 Separate reviewed home-creation repair completed exactly2native starts after preserving1localsetupfailed start. Allowed route received one POST/v1/responses and deliberate mock400; denied route returned403 with no provider receipts. Direct-IP, HTTP and CONNECT bypass checks pass; runtime pins, internal isolated topology and cleanup verified. Zero real models/providers/hostcredentials. This proves the tested mock transport, not real inference, subscription routing or cloud-tool isolation.
 
 SWE loopbackphase is terminal: five new attempts, four validated Matplotlib/scikit-learn controls; Astropy fifth remains environmentblocked after officialeditableinstall attempted unavailabledependencies. Combinedeight actualcontrolattempts retained. Finite metadata-only dependency investigation is underway; no wheels/builds/graders acquired. Shared localQwen advertises supported APIs; native compatibility, accounting, scheduling and isolated routing are being prepared separately, with no modelstarts authorized.
+
+
+## Astropy offline setup validated
+
+Ten immutable PyPI wheels (16,350,357bytes) downloaded and SHA-verified once. The exact official setup prefix succeeded in47.010seconds in the cached selected Astropy image with readonlywheelhouse/PIP_NO_INDEX, loopback-only networking,4CPU/8GiB and verifiedcleanup. Runtime NumPy1.25.2 stayedunchanged. One package-setup attempt,zero grader/model/Dockerbuild/pull calls; private partiallogs retained. This validates installation, not taskcorrectness. A separate four-control phase is being prepared for remainingAstropy/Requests pairs; retain the fouralreadyvalidated Matplotlib/scikit-learn controls and allfailedattempts.
+
+LocalQwen GET-only route and native readiness components are prepared but unexecuted. Two native offline metadata probes consumed (one strictfeatures CLIparse failure retained). Actualmodel/toolstream/accounting compatibility remainsTBD. No localQwen modelcalls authorized.

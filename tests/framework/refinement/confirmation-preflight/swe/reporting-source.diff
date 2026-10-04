@@ -1,0 +1,27 @@
+--- 
++++ 
+@@ -18,6 +18,7 @@
+     full_dataset: list,
+     run_id: str,
+     client: Optional[docker.DockerClient] = None,
++    report_dir: str = ".",
+ ) -> Path:
+     """
+     Make a final evaluation and run report of the instances that have been run.
+@@ -166,10 +167,13 @@
+                 "unremoved_images": list(sorted(unremoved_images)),
+             }
+         )
+-    # The report belongs with the run's other artifacts, and always goes there.
+-    report_dir = RUN_EVALUATION_LOG_DIR / run_id
++    report_dir = Path(report_dir)
+     report_dir.mkdir(parents=True, exist_ok=True)
+-    report_file = report_dir / "results.json"
++    report_file = report_dir / (
++        list(predictions.values())[0]["model_name_or_path"].replace("/", "__")
++        + f".{run_id}"
++        + ".json"
++    )
+     with open(report_file, "w") as f:
+         print(json.dumps(report, indent=4), file=f)
+     print(f"Report written to {report_file}")

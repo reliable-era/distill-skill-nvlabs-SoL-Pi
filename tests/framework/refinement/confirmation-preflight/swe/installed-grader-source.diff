@@ -1,0 +1,58 @@
+--- official-pinned
+
++++ installed
+
+@@ -707,6 +707,7 @@
+
+     timeout: int,
+     rewrite_reports: bool,
+     modal: bool,
++    report_dir: str = ".",
+     task_repo: str | None = None,
+ ):
+     """
+@@ -730,6 +731,11 @@
+
+ 
+     # set open file limit
+     assert len(run_id) > 0, "Run ID must be provided"
++    if report_dir is not None:
++        report_dir = Path(report_dir)
++        if not report_dir.exists():
++            report_dir.mkdir(parents=True)
++
+     # load predictions as map of instance_id to prediction
+     predictions = get_predictions_from_file(
+         predictions_path, dataset_name, split, task_repo, instance_ids
+@@ -765,7 +771,7 @@
+
+ 
+     if not dataset:
+         print("No instances to run.")
+-        return make_run_report(predictions, full_dataset, run_id, client)
++        return make_run_report(predictions, full_dataset, run_id, client, report_dir)
+     else:
+         # a re-grade reads existing logs and starts no container, so building the
+         # images it names would cost hours and change nothing
+@@ -785,7 +791,7 @@
+
+         )
+ 
+     # make final report
+-    return make_run_report(predictions, full_dataset, run_id, client)
++    return make_run_report(predictions, full_dataset, run_id, client, report_dir)
+ 
+ 
+ if __name__ == "__main__":
+@@ -846,6 +852,10 @@
+
+         default=False,
+         help="Doesn't run new instances, only writes reports for instances with existing test outputs",
+     )
++    parser.add_argument(
++        "--report_dir", type=str, default=".", help="Directory to write reports to"
++    )
++
+     # Modal execution args
+     parser.add_argument("--modal", type=str2bool, default=False, help="Run on Modal")
+ 
