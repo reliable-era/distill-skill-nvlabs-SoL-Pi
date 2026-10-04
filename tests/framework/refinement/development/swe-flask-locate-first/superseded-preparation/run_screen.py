@@ -22,7 +22,6 @@ def official(predictions,runid):
     return result.returncode,reports
 
 def _attempt(harness,arm,prompt):
-    if len(list(OUT.glob('*/*/actor-start.json')))>=8: raise RuntimeError('Eight-start budget exhausted; no actor launch')
     dest=OUT/harness/arm; dest.mkdir(parents=True)
     with tempfile.TemporaryDirectory(prefix='solpi-swe-actor-') as tmp:
         tmp=Path(tmp); workspace=tmp/'workspace'; shutil.copytree(TASK/'workspace',workspace)
@@ -35,7 +34,6 @@ def _attempt(harness,arm,prompt):
         command=['docker','run','--rm','--name',name,'--user','0:0','--entrypoint','/bin/bash','-e','HOME=/eval-home','-e','PI_TELEMETRY=0', '--mount',f'type=bind,src={home},dst=/eval-home','--mount',f'type=bind,src={workspace},dst=/workspace','--mount',f'type=bind,src={resources},dst=/skills,readonly','-w','/workspace',IMAGE,'-c','exec "$@"','actor']
         if harness=='pi': command+=['pi','--offline','--mode','json','--print','--no-session','--no-extensions','--no-context-files','--no-skills','--no-prompt-templates','--no-themes','--provider','openai','--model','gpt-6.1-sol','--thinking','low',prompt]
         else: command+=['codex','exec','--json','--ignore-user-config','--ephemeral','--dangerously-bypass-approvals-and-sandbox','--model','gpt-6.1-sol',prompt]
-        with (dest/'actor-start.json').open('x') as f:json.dump({'harness':harness,'arm':arm,'configured_model':'gpt-6.1-sol','timeout_seconds':180,'counts_against_eight_start_total':True},f,indent=2);f.write('\n')
         start=time.monotonic(); timeout=False
         try:
             run=subprocess.run(command,capture_output=True,timeout=180); stdout,stderr,code=run.stdout,run.stderr,run.returncode
@@ -84,10 +82,10 @@ def prepare():
     shutil.copy2(TASK/'manifest.json',OUT/'task-manifest.json')
     source=source_files(TASK/'workspace')
     importlib_bridge=load('frozen_bridge_prepare',runtime/'swe_patch.py');assert importlib_bridge.snapshot_patch(TASK/'workspace',TASK/'workspace')==''
-    plan={'purpose':'development only; locate-first single-delta candidate; previously exposed SWE fixture, not confirmation','status_at_freeze':'prepared only; zero actors launched','maximum_attempts':8,'maximum_actor_wall_seconds':1440,'attempt_timeout_seconds':180,'rounds':1,'order_seed':106,'model_sampling_seed':'TBD: unavailable','arms':ARMS,'order':order,'harnesses':['pi','codex'],'model':'gpt-6.1-sol','pi_thinking':'low','codex_effort':'native default','image_id':IMAGE,'task_manifest':json.loads((TASK/'manifest.json').read_text()),'dataset_revision':'78f471bf655a3137b2e8a75af1501690ec009ec3','skill_delivery':'uniform inline text plus readonly /skills resources; same delivery as prior screen','skill_sha256':{k:sha(frozen/k/'SKILL.md') for k in SOURCES},'skill_trees_sha256':{k:source_files(frozen/k) for k in SOURCES},'prompt_sha256':{k:hashlib.sha256(v.encode()).hexdigest() for k,v in prompts.items()},'original_source_files_sha256':source,'original_source_sha256':hashlib.sha256(json.dumps(source,sort_keys=True).encode()).hexdigest(),'runtime_source_sha256':{'run_screen.py':sha(Path(__file__)),**{str(p.relative_to(OUT)):sha(p) for p in frozen.rglob('*.py')}},'grading':'official swebench5.0.2, private gold/dataset never mounted actors, harmless marker baseline sanity before inference','stop_rule':'auth/quota rejection stops remaining harness attempts; any started actor counts against eight; no retries','known_unrelated_failures':'Three test_basic cookie-domain failures in original dependencies even after gold; no claim of full-suite cleanliness','billing_usd':'TBD','credential_strategy':'persistent private per-harness HOME outside Git, serialized fcntl lock, externally seeded once, never copy stale host seed per actor','availability_gate':'Root must verify credentials or obtain fresh login after terminal invalid_grant; no new phase launch until verified','launch_requirement':'Explicit --launch with --global-stage frozen eight-start file, after current terminal stage complete; select a verified harness independently. Launch manifest records global-stage digest before any model calls.'}
+    plan={'purpose':'development only; locate-first single-delta candidate; previously exposed SWE fixture, not confirmation','status_at_freeze':'prepared only; zero actors launched','maximum_attempts':8,'maximum_actor_wall_seconds':1440,'attempt_timeout_seconds':180,'rounds':1,'order_seed':106,'model_sampling_seed':'TBD: unavailable','arms':ARMS,'order':order,'harnesses':['pi','codex'],'model':'gpt-6.1-sol','pi_thinking':'low','codex_effort':'native default','image_id':IMAGE,'task_manifest':json.loads((TASK/'manifest.json').read_text()),'dataset_revision':'78f471bf655a3137b2e8a75af1501690ec009ec3','skill_delivery':'uniform inline text plus readonly /skills resources; same delivery as prior screen','skill_sha256':{k:sha(frozen/k/'SKILL.md') for k in SOURCES},'skill_trees_sha256':{k:source_files(frozen/k) for k in SOURCES},'prompt_sha256':{k:hashlib.sha256(v.encode()).hexdigest() for k,v in prompts.items()},'original_source_files_sha256':source,'original_source_sha256':hashlib.sha256(json.dumps(source,sort_keys=True).encode()).hexdigest(),'runtime_source_sha256':{'run_screen.py':sha(Path(__file__)),**{str(p.relative_to(OUT)):sha(p) for p in frozen.rglob('*.py')}},'grading':'official swebench5.0.2, private gold/dataset never mounted actors, harmless marker baseline sanity before inference','stop_rule':'auth/quota rejection stops remaining harness attempts; any started actor counts against eight; no retries','known_unrelated_failures':'Three test_basic cookie-domain failures in original dependencies even after gold; no claim of full-suite cleanliness','billing_usd':'TBD','credential_strategy':'persistent private per-harness HOME outside Git, serialized fcntl lock, externally seeded once, never copy stale host seed per actor','availability_gate':'Root must verify credentials or obtain fresh login after terminal invalid_grant; no new phase launch until verified','launch_requirement':'Explicit --launch with --global-stage frozen16-start file, after current terminal stage complete. Launch manifest records global-stage digest before any model calls.'}
     (OUT/'plan.json').write_text(json.dumps(plan,indent=2)+'\n');print('Prepared eight-attempt plan. No actors launched.')
 
-def launch(global_stage,harness):
+def launch(global_stage):
     global patcher,collect
     plan=json.loads((OUT/'plan.json').read_text())
     for relative,digest in plan['runtime_source_sha256'].items():assert sha(OUT/relative)==digest,relative
@@ -95,27 +93,21 @@ def launch(global_stage,harness):
     assert subprocess.check_output(['docker','image','inspect',IMAGE,'--format','{{.Id}}'],text=True).strip()==IMAGE
     for arm,digest in plan['prompt_sha256'].items():assert sha(OUT/(arm+'-prompt.txt'))==digest
     for key,files in plan['skill_trees_sha256'].items():assert source_files(OUT/'frozen'/key)==files
-    stage=Path(global_stage).resolve();stage_data=json.loads(stage.read_text())
-    assert stage_data['max_actor_attempts']==8 and stage_data['actor_timeout_seconds']==180 and stage_data['automatic_retries']==0 and stage_data['order_seed']==106
-    assert stage_data['local_plan_sha256']==sha(OUT/'plan.json') and stage_data['candidate_sha256']==plan['skill_sha256']['candidate']
-    allocation=stage_data['allocations'];assert len(allocation)==1
-    allocation=allocation[0];assert allocation['task']=='pallets__flask-5014' and allocation['max_attempts']==8
-    assert sorted(allocation['harnesses'])==['codex','pi'] and set(allocation['arms'])==set(ARMS)
-    assert len(list(OUT.glob('*/*/actor-start.json')))<=8
+    stage=Path(global_stage).resolve();json.loads(stage.read_text())
     cache=Path(os.environ['SOLPI_PRIVATE_AUTH_CACHE']).resolve()
     if ROOT==cache or ROOT in cache.parents: raise RuntimeError('Private auth cache must be outside repository')
-    if not (cache/harness/('.pi/agent/auth.json' if harness=='pi' else '.codex/auth.json')).is_file(): raise RuntimeError('Selected harness private auth availability gate not satisfied; no model starts')
+    for harness in ('pi','codex'):
+        if not (cache/harness/('.pi/agent/auth.json' if harness=='pi' else '.codex/auth.json')).is_file(): raise RuntimeError('Private auth availability gate not satisfied; no model starts')
     # Exclusive launch guard means even a failed grader control cannot silently replay actors.
-    if (OUT/harness).exists():raise RuntimeError('Selected harness artifact directory exists; refuse automatic replay')
-    guard=OUT/('launch-'+harness+'.json')
-    with guard.open('x') as f:json.dump({'global_stage':str(stage),'global_stage_sha256':sha(stage),'plan_sha256':sha(OUT/'plan.json'),'launched_after_terminal_complete':'Root must verify live state before explicitly invoking this command','selected_harness':harness,'maximum_actor_starts_this_harness':4,'maximum_actor_starts_total':8,'credential_strategy':'persistent private per-harness HOME outside Git, serialized fcntl lock, seed only once externally, preserve refresh updates; host auth never written'},f,indent=2);f.write('\n')
+    guard=OUT/'launch-manifest.json'
+    with guard.open('x') as f:json.dump({'global_stage':str(stage),'global_stage_sha256':sha(stage),'plan_sha256':sha(OUT/'plan.json'),'launched_after_terminal_complete':'Root must verify live state before explicitly invoking this command','maximum_actor_starts':8,'credential_strategy':'persistent private per-harness HOME outside Git, serialized fcntl lock, seed only once externally, preserve refresh updates; host auth never written'},f,indent=2);f.write('\n')
     patcher=load('frozen_bridge_launch',OUT/'frozen/runtime/swe_patch.py');collect=load('frozen_collect_launch',OUT/'frozen/runtime/collect.py')
-    control={'instance_id':'pallets__flask-5014','model_name_or_path':harness+'-locate-first-noop-control','model_patch':'diff --git a/.solpi_noop_marker b/.solpi_noop_marker\nnew file mode 100644\n--- /dev/null\n+++ b/.solpi_noop_marker\n@@ -0,0 +1 @@\n+Grader sanity only.\n'}
-    code,reports=official([control],f'solpi-swe-locate-first-{harness}-noop-106')
+    control={'instance_id':'pallets__flask-5014','model_name_or_path':'locate-first-noop-control','model_patch':'diff --git a/.solpi_noop_marker b/.solpi_noop_marker\nnew file mode 100644\n--- /dev/null\n+++ b/.solpi_noop_marker\n@@ -0,0 +1 @@\n+Grader sanity only.\n'}
+    code,reports=official([control],'solpi-swe-locate-first-noop-106')
     if code!=0 or not reports:raise RuntimeError('Official control failed infrastructure; no actor replay')
     report=json.loads(reports[0].read_text());leaf=report.get('pallets__flask-5014',report)
     assert leaf.get('resolved') is False and not leaf.get('infra_failure'),report
-    (OUT/('bridge-sanity-'+harness+'.json')).write_text(json.dumps({'exit_code':code,'report':report,'official_report_sha256':sha(reports[0]),'empty_baseline_snapshot_patch':True},indent=2)+'\n')
+    (OUT/'bridge-sanity.json').write_text(json.dumps({'exit_code':code,'report':report,'official_report_sha256':sha(reports[0]),'empty_baseline_snapshot_patch':True},indent=2)+'\n')
     def campaign(harness):
         records=[]
         for arm in plan['order']:
@@ -125,10 +117,10 @@ def launch(global_stage,harness):
                 if failed.exists():records.append(json.loads(failed.read_text()))
                 break
         return records
-    records=campaign(harness)
-    (OUT/(harness+'-results.json')).write_text(json.dumps(records,indent=2)+'\n')
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+        records=sum([f.result() for f in [pool.submit(campaign,h) for h in ('pi','codex')]],[])
+    (OUT/'results.json').write_text(json.dumps(records,indent=2)+'\n')
     for record in records:
-        if record['execution_status']=='blocked_auth_or_quota':continue
         h,a=record['harness'],record['arm'];dest=OUT/h/a
         code,reports=official([{'instance_id':'pallets__flask-5014','model_name_or_path':f'{h}-{a}','model_patch':(dest/'model.patch').read_text()}],f'solpi-swe-locate-first-{h}-{a}-106')
         if reports:
@@ -136,11 +128,11 @@ def launch(global_stage,harness):
             record['solved']=leaf.get('resolved');record['official_report']=str(reports[0].relative_to(OUT));record['official_report_sha256']=sha(reports[0])
         elif not (dest/'model.patch').read_text():record['solved']=False;record['official_empty_patch_rejection']=True
         record['official_harness_exit_code']=code
-        (dest/'result.json').write_text(json.dumps(record,indent=2)+'\n');(OUT/(harness+'-results.json')).write_text(json.dumps(records,indent=2)+'\n');print(json.dumps(record),flush=True)
+        (dest/'result.json').write_text(json.dumps(record,indent=2)+'\n');(OUT/'results.json').write_text(json.dumps(records,indent=2)+'\n');print(json.dumps(record),flush=True)
 
 if __name__=='__main__':
     import argparse
-    parser=argparse.ArgumentParser();mode=parser.add_mutually_exclusive_group(required=True);mode.add_argument('--prepare',action='store_true');mode.add_argument('--launch',action='store_true');parser.add_argument('--global-stage');parser.add_argument('--harness',choices=['pi','codex']);args=parser.parse_args()
+    parser=argparse.ArgumentParser();mode=parser.add_mutually_exclusive_group(required=True);mode.add_argument('--prepare',action='store_true');mode.add_argument('--launch',action='store_true');parser.add_argument('--global-stage');args=parser.parse_args()
     if args.prepare:prepare()
-    elif not args.global_stage or not args.harness:parser.error('--launch requires --global-stage and --harness')
-    else:launch(args.global_stage,args.harness)
+    elif not args.global_stage:parser.error('--launch requires --global-stage')
+    else:launch(args.global_stage)

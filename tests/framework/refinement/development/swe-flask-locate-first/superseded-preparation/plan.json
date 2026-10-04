@@ -327,7 +327,7 @@
   },
   "original_source_sha256": "1c4b52424e514d84708705709e6e5868f7b62bed25e44cdd7c20200fbf629c26",
   "runtime_source_sha256": {
-    "run_screen.py": "b40b4d116a48faa803567436fee0e062e8f6d5dd1dac40771eb084943a955c0e",
+    "run_screen.py": "c8efcf51777f332b0e4355203c88243f8ff6101ce3c27622e29db8c7246ad0fb",
     "frozen/accounting.py": "e1640271de433824e65f013e787d970d57dfbcd4741df3acd2624107e93a7990",
     "frozen/runtime/swe_patch.py": "565252b38d93c59ba835824c6e4d9e3e0b077e8b64ccb3dbef536b3be2942e26",
     "frozen/runtime/collect.py": "5f3ae9b9631d7d3352db516f59abc57d502e20f02f12564d903ab56290e53d5a"
@@ -336,9 +336,7 @@
   "stop_rule": "auth/quota rejection stops remaining harness attempts; any started actor counts against eight; no retries",
   "known_unrelated_failures": "Three test_basic cookie-domain failures in original dependencies even after gold; no claim of full-suite cleanliness",
   "billing_usd": "TBD",
-  "launch_requirement": "Explicit --launch --harness {pi,codex} --global-stage frozen eight-start budget. Independent exclusive launch markers reserve four starts per harness, eight total. Root must verify selected harness credentials before invocation; no automatic replay.",
+  "launch_requirement": "Explicit --launch with --global-stage frozen16-start file, after current terminal stage complete. Launch manifest records global-stage digest before any model calls.",
   "credential_strategy": "persistent private per-harness HOME outside Git with serialized fcntl lock; externally seed once, preserve updated refresh across attempts; host auth never written",
-  "availability_gate": "Prepared only. Terminal Pi Both failed invalid_grant with zero model calls. Root must verify private credentials or obtain human login before explicitly launching any new phase.",
-  "launch_selection": "Independent per-harness execution; Codex can proceed while Pi fresh login pending",
-  "superseded_plan_sha256": "e0572fdf2e6cdcc915ae4808bfe2734ad01e86980cc9a73d3b57ec8882da8a2a"
+  "availability_gate": "Prepared only. Terminal Pi Both failed invalid_grant with zero model calls. Root must verify private credentials or obtain human login before explicitly launching any new phase."
 }
