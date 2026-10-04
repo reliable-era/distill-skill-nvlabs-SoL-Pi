@@ -58,5 +58,29 @@ class Accounting(unittest.TestCase):
         self.assertIsNone(result['complete_tokens_per_solve'])
 
 
+class ProtocolGate(unittest.TestCase):
+    setUp = Accounting.setUp
+    collect = Accounting.collect
+    def test_false_protocol_blocks_complete_comparison_retains_cost(self):
+        rows = copy.deepcopy(self.rows)
+        rows[0]['protocol_valid'] = False
+        result = self.collect(rows)
+        self.assertTrue(result['usage_complete'])
+        self.assertFalse(result['protocol_valid'])
+        self.assertFalse(result['comparison_eligible'])
+        self.assertEqual(result['observed_gross_tokens_lower_bound'], 200)
+        self.assertIsNone(result['complete_tokens_per_solve'])
+
+    def test_new_profile_requires_explicit_valid_protocol(self):
+        self.plan['require_protocol_valid'] = True
+        result = self.collect(self.rows)
+        self.assertFalse(result['comparison_eligible'])
+        rows = copy.deepcopy(self.rows)
+        for row in rows:
+            row['protocol_valid'] = True
+        result = self.collect(rows)
+        self.assertTrue(result['comparison_eligible'])
+        self.assertEqual(result['complete_tokens_per_solve'], 200)
+
 if __name__ == '__main__':
     unittest.main()

@@ -93,11 +93,14 @@ The common failure review found incomplete repairs and cutoffs, with no
 demonstrated delivery or grader defect. The unchanged Pi comparison stopped after
 one actor at its budget cutoff, with incomplete usage and frozen ungraded quality;
 eleven cells were unrun. Cleanup passed. Prospective successor protocols use the
-same longer budget for every arm and grade saved work after expected cutoffs;
-they remain unexecuted. Preserve the earlier partial cohort and zero-start Pi
-stage separately. These development tasks cannot establish fresh wins, and the
-candidate has not qualified. A separate unexecuted scope-coverage candidate
-tests whether conditional coverage of exhaustive requests prevents unsupported
+same longer budget for every arm and grade saved work after expected cutoffs.
+The Pi scope-coverage successor is running twelve fixed reused cells (seed 131,
+600 seconds and sixteen provider requests per actor); Codex is queued behind it.
+These use a separate prospective protocol; the earlier results remain unchanged.
+Preserve the earlier partial cohort and zero-start Pi stage separately. These
+development tasks cannot establish fresh wins, and the candidate has not qualified.
+The scope-coverage candidate tests whether conditional coverage of exhaustive
+requests prevents unsupported
 exclusions while retaining focused reads for local changes.
 
 The six development grading controls pass. All eight intended selected SWE
@@ -109,6 +112,12 @@ controls also pass. Fresh confirmation remains sealed and unexecuted.
 References are pinned in `framework/refinement/references.json`; Jev's intended
 identity remains TBD. Evaluate one mechanism at a time, preserving unfavorable
 results. Candidate performance, most-harness superiority, and billing remain TBD.
+Native Copilot documents a local-provider route without account authentication.
+Routing validation remains unfinished: its version preflight reproduced bundled
+package extraction failure under the initial 128 MiB scratch limit. A separate
+larger-resource metadata probe is authorized; no Copilot model calls have run.
+Native agy and Cursor local-provider and full accounting support remain TBD.
+
 The shipped skill is unchanged. Every execution stage has numeric start, request,
 time and resource caps; fresh confirmation starts only after final candidate freeze.
 

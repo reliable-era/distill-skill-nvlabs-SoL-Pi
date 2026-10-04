@@ -33,11 +33,14 @@ def summarize(plan, evidence):
         solved = sum(valid_grade(row) and row['grade']['solved'] for row in rows)
         ungraded = sum(not valid_grade(row) for row in rows)
         complete = len(rows) == expected and all(row.get('usage_complete') is True for row in rows)
+        protocol_invalid = sum(row.get('protocol_valid') is False for row in rows)
+        protocol_valid = len(rows) == expected and not protocol_invalid and (not plan.get('require_protocol_valid') or all(row.get('protocol_valid') is True for row in rows))
+        comparison_eligible = complete and protocol_valid and not ungraded and not evidence.get('errors')
         lower_bound = sum(row.get('observed_gross_tokens_lower_bound') or 0 for row in rows)
         output.append(dict(arm=arm, expected_attempts=expected, recorded_attempts=len(rows),
                            missing_attempts=expected-len(rows), solved=solved, ungraded=ungraded,
-                           usage_complete=complete, observed_gross_tokens_lower_bound=lower_bound,
-                           complete_tokens_per_solve=lower_bound/solved if complete and solved else None,
+                           usage_complete=complete, protocol_valid=protocol_valid, protocol_invalid_attempts=protocol_invalid, comparison_eligible=comparison_eligible, observed_gross_tokens_lower_bound=lower_bound,
+                           complete_tokens_per_solve=lower_bound/solved if comparison_eligible and solved else None,
                            cost_usd_per_solve=None))
     return {'scope': 'reused development fixtures; not fresh confirmation',
             'cohort': plan.get('cohort'), 'order_seed': plan.get('order_seed'),
