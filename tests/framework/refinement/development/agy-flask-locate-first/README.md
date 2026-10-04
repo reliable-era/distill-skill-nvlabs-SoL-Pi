@@ -2,7 +2,7 @@
 
 Four native `agy` attempts completed with SDK SUCCESS and passed independent official grading. This reuses development issue `pallets__flask-5014` from SWE-bench Verified. One round, no confirmation and no promotion.
 
-| Skill | Solved | Reported tokens | Actor seconds |
+| Skill | Solved | SDK-reported total | Actor seconds |
 |---|---:|---:|---:|
 | No skill | 1/1 | 333,547 | 139.0 |
 | Karpathy | 1/1 | 196,669 | 92.7 |
@@ -13,7 +13,7 @@ Locate-first uses **49.5% fewer** reported tokens than no skill and **14.4% fewe
 
 Each official report records one fail-to-pass and 59 pass-to-pass successes, with no infrastructure failure. All four actors exited 0 within their caps; no SDK errors, timeouts or auth rejection occurred. The original marker no-op control was independently rejected before inference.
 
-Requested native model: `gemini-3.8-flash-low`; actual backend routing is **TBD**, not inferred from the requested label. Native ELF 1.2.16 was mounted readonly and SHA pinned. Reported counters use explicit terminal SDK `usage.total_tokens` once; cache/thinking components are not added again. Billing component completeness and invoice dollars are **TBD**.
+Requested native model: `gemini-3.8-flash-low`; actual backend routing is **TBD**, not inferred from the requested label. Native ELF 1.2.16 was mounted readonly and SHA pinned. The displayed metric is terminal SDK `usage.total_tokens`, retained once without assuming cache/thinking overlap. Cache-read counters exceed that total in some arms; complete gross token traffic, counter scopes and overlap require verification and remain **TBD**. These totals cannot yet satisfy the goal’s complete-token accounting gate. Billing components and invoice dollars are **TBD**.
 
 The frozen local/global four-start budget, runner/classifier/bridge/accounting/collector hashes, original prompt/source, native ELF and image were verified before calls. Order seed 108 controls order, not model sampling. The pre-call auth classifier correction is preserved under `superseded-preparation/`. Classification tests distinguish terminal ERROR.error from benign source/tool text. An exclusive launch marker forbids automatic replay.
 

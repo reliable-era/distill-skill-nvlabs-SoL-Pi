@@ -56,6 +56,30 @@ class AccountingTests(unittest.TestCase):
         # Equal usage on separate calls must not be deduplicated by token count.
         self.assertIsNone(terminal_usage(events[:-1], 'pi')['input_tokens'])
 
+    def test_pi_compaction_cannot_be_silently_omitted(self):
+        message = dict(role='assistant', stopReason='stop',
+                       usage=dict(input=10, output=20, cacheRead=30, cacheWrite=0, totalTokens=60))
+        for kind in ('compaction_start', 'compaction_end', 'branch_summary'):
+            with self.subTest(kind=kind):
+                result = terminal_usage([dict(type=kind), dict(type='agent_end', messages=[message])], 'pi')
+                self.assertFalse(result['usage_complete'])
+                self.assertEqual(result['input_tokens'], 10)
+                self.assertIn('auxiliary scope unresolved', result['usage_source'])
+
+    def test_pi_nested_tool_usage_requires_scope_reconciliation(self):
+        message = dict(role='assistant', stopReason='stop',
+                       usage=dict(input=10, output=20, cacheRead=30, cacheWrite=0, totalTokens=60))
+        tool = dict(role='toolResult', usage=dict(input=2, output=3))
+        result = terminal_usage([dict(type='agent_end', messages=[message, tool])], 'pi')
+        self.assertFalse(result['usage_complete'])
+        self.assertEqual(result['output_tokens'], 20)
+
+    def test_pi_ordinary_tool_result_keeps_verified_main_scope(self):
+        message = dict(role='assistant', stopReason='stop',
+                       usage=dict(input=10, output=20, cacheRead=30, cacheWrite=0, totalTokens=60))
+        result = terminal_usage([dict(type='agent_end', messages=[message, dict(role='toolResult', content='ok')])], 'pi')
+        self.assertTrue(result['usage_complete'])
+
     def test_pi_placeholder_or_missing_usage_not_complete(self):
         m=dict(role='assistant',stopReason='stop',usage=dict(input=0,output=0,
                cacheRead=0,cacheWrite=0,totalTokens=0))

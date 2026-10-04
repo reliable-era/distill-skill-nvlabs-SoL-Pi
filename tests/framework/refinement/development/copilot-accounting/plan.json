@@ -1,0 +1,89 @@
+{
+  "status": "prepared_unlaunched_requires_root_authorization_and_private_credential_path",
+  "purpose": "native accounting diagnostic only, no quality/efficiency arm comparison",
+  "maximum_actor_starts": 2,
+  "retries": 0,
+  "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70",
+  "cli_version": "1.0.91",
+  "model": "auto",
+  "model_reason": "Offline native help does not enumerate supported fixed models; prior gpt-5.4 rejected. Preserve actual resolved models.",
+  "credential_policy": "Root-provided private Copilot seed/env file; host seed read-only, disposable private HOME cache mode0700, no refresh before authorization, no values in published artifacts",
+  "arms": {
+    "executed": "none for both controls",
+    "whole_resource_provenance": {
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/frozen/latest/karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/SKILL.md": "5a3081f5ef244c0f3361993a1e4c07cd43e539cf81240acf87fcc4300b85d84b",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/trials/codex/both/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+    },
+    "note": "Resource arm hashes retained for future identical instrumentation; two starts cannot constitute four-arm screen"
+  },
+  "command": [
+    "copilot",
+    "-p",
+    "{prompt}",
+    "--output-format",
+    "json",
+    "--allow-all",
+    "--model",
+    "auto",
+    "--usage-output-file",
+    "/artifacts/usage.json"
+  ],
+  "controls": [
+    {
+      "id": "normal",
+      "timeout_seconds": 90,
+      "fixture": "def add(a,b): return a-b",
+      "prompt": "In calculator.py fix add(a,b) to return their sum. Verify with python -c \"from calculator import add; assert add(2,3)==5\". Do not access network or other directories.",
+      "soft_cutoff_seconds": 70
+    },
+    {
+      "id": "interruption",
+      "timeout_seconds": 90,
+      "interrupt_after_seconds": 20,
+      "signal_policy": "Actual Docker stop -t5 at20 seconds, followed by docker rm -f; cleanup errors stop the campaign. Not process-group signaling.",
+      "fixture": "empty scratch workspace",
+      "prompt": "Run python -c \"import time; time.sleep(60)\" and wait for it to finish. Then create done.txt containing done. Do not access network or other directories."
+    }
+  ],
+  "capture": [
+    "native JSONL",
+    "usage.json if produced",
+    "exit/signal timing",
+    "actual models",
+    "image/native binary hashes",
+    "pre/post fixture hashes",
+    "all returned usage field names without guessing schema"
+  ],
+  "publication_scan": "Before publishing scan all artifact bytes for exact credential string values from declared private seed/cache; counts and hit paths only. Never log secrets.",
+  "complete_accounting_gate": "Actual output must establish inclusive session/per-model totals and cache semantics; interruption missing/partial output is incomplete, never zero. SDK docs not proof native output identical.",
+  "calls_started": 0,
+  "credential_route": "Explicit private mode0600 env file with one GH_TOKEN or GITHUB_TOKEN entry, supported by installed package README; opaque host config is not extracted",
+  "source_hashes": {
+    "run_gate.py": "cfa7e9512e6666ced8ddf30567d51e1f19f79f8b1d361cb79baf16c39e61427c",
+    "test_runner.py": "65a545147a07361722d742f9fa0cb71735d83eb62e19901077b1c508e7b72ee8"
+  },
+  "private_output_policy": "Fresh explicit /tmp path outside Git, raw output never published by default"
+}

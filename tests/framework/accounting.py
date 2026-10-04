@@ -107,8 +107,14 @@ def terminal_usage(events, agent):
                 return result
             totals = [a+b for a,b in zip(totals, values)]
         result.update(zip(TOKEN_FIELDS, totals))
-        result.update(usage_complete=True, token_semantics='exclusive',
-                      usage_source='pi.agent_end.messages.usage')
+        auxiliary_types = {'compaction_start', 'compaction_end', 'compaction',
+                           'branch_summary', 'auto_compaction_start', 'auto_compaction_end'}
+        auxiliary_seen = (any(e.get('type') in auxiliary_types for e in events)
+                          or any(isinstance(m, dict) and m.get('role') != 'assistant'
+                                 and m.get('usage') is not None for m in ends[0]['messages']))
+        result.update(usage_complete=not auxiliary_seen, token_semantics='exclusive',
+                      usage_source=('pi.agent_end.messages.usage; auxiliary scope unresolved'
+                                    if auxiliary_seen else 'pi.agent_end.messages.usage'))
         return result
 
     if agent in ('claude', 'claude-code'):

@@ -1,0 +1,475 @@
+{
+  "schema": 1,
+  "model_calls_added": 0,
+  "streams_checked": 18,
+  "all_terminal_step_sums_match": true,
+  "scope": "terminal cumulative session counters; deduplicated per-step counters; never sum terminal and steps",
+  "gross_provider_traffic": "TBD",
+  "invoice_dollars": "TBD",
+  "thinking_tokens_overlap": "TBD: observed total=input+output even when thinking>0 does not prove thinking containment or omission",
+  "primary_reference": {
+    "url": "https://www.antigravity.google/docs/cli/headless/",
+    "repo_commit": "65a3c69e388148c9327f307efe82ddb1c0c8d7d4",
+    "version_alignment": "current docs, not verified 1.2.16 implementation source",
+    "retrieval_error": "URLError"
+  },
+  "streams": [
+    {
+      "path": "tests/framework/refinement/development/agy-flask-locate-first/agy/both/stdout.jsonl",
+      "sha256": "238b5550625692de5a06e8df07e6f54b8675e32774284c73d2bb4709a93ffcff",
+      "terminal_line": 74,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 141771,
+        "output_tokens": 1528,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 113555,
+        "total_tokens": 143299
+      },
+      "unique_usage_steps": 15,
+      "deduplicated_step_sum": {
+        "input_tokens": 141771,
+        "output_tokens": 1528,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 113555,
+        "total_tokens": 143299
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-flask-locate-first/agy/candidate/stdout.jsonl",
+      "sha256": "d7fcea16f727789d867acca0393389b699bdb5beb87b9f91864cf31f3a70d987",
+      "terminal_line": 85,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 166636,
+        "output_tokens": 1743,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 149996,
+        "total_tokens": 168379
+      },
+      "unique_usage_steps": 18,
+      "deduplicated_step_sum": {
+        "input_tokens": 166636,
+        "output_tokens": 1743,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 149996,
+        "total_tokens": 168379
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-flask-locate-first/agy/karpathy/stdout.jsonl",
+      "sha256": "1280af10be052e08dbda52fac18ef3425b6be368a3385ae0b164f37385368d0a",
+      "terminal_line": 112,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 194310,
+        "output_tokens": 2359,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 401362,
+        "total_tokens": 196669
+      },
+      "unique_usage_steps": 27,
+      "deduplicated_step_sum": {
+        "input_tokens": 194310,
+        "output_tokens": 2359,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 401362,
+        "total_tokens": 196669
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-flask-locate-first/agy/none/stdout.jsonl",
+      "sha256": "f7797dba09fc44f023686530cb4e24e0de05713ced19265e9f085c48cf0a2386",
+      "terminal_line": 159,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 329429,
+        "output_tokens": 4118,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 747762,
+        "total_tokens": 333547
+      },
+      "unique_usage_steps": 45,
+      "deduplicated_step_sum": {
+        "input_tokens": 329429,
+        "output_tokens": 4118,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 747762,
+        "total_tokens": 333547
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-go/both/stdout.jsonl",
+      "sha256": "c483722bc81ce3c5f775449f2fbc2f4ea06270e1108f61b091adbafa0c418a22",
+      "terminal_line": 73,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 187761,
+        "output_tokens": 2914,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 24282,
+        "total_tokens": 190675
+      },
+      "unique_usage_steps": 14,
+      "deduplicated_step_sum": {
+        "input_tokens": 187761,
+        "output_tokens": 2914,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 24282,
+        "total_tokens": 190675
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-go/candidate/stdout.jsonl",
+      "sha256": "6ad09937de3e2f6ec758776a281813cbb30f9e7e6e48451ae8d1f00beb700442",
+      "terminal_line": 65,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 204876,
+        "output_tokens": 1670,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 0,
+        "total_tokens": 206546
+      },
+      "unique_usage_steps": 14,
+      "deduplicated_step_sum": {
+        "input_tokens": 204876,
+        "output_tokens": 1670,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 0,
+        "total_tokens": 206546
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-go/karpathy/stdout.jsonl",
+      "sha256": "ca3f055dcc3011eac7da317d90b3e1d25439b7f93719bd63d081cff1517e4777",
+      "terminal_line": 83,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 149911,
+        "output_tokens": 2921,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 52677,
+        "total_tokens": 152832
+      },
+      "unique_usage_steps": 13,
+      "deduplicated_step_sum": {
+        "input_tokens": 149911,
+        "output_tokens": 2921,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 52677,
+        "total_tokens": 152832
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-go/none/stdout.jsonl",
+      "sha256": "616bed5972a8e13da941dec9bc54708cc8de923171f4b409a896d5c91d865414",
+      "terminal_line": 108,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 197877,
+        "output_tokens": 2426,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 137656,
+        "total_tokens": 200303
+      },
+      "unique_usage_steps": 20,
+      "deduplicated_step_sum": {
+        "input_tokens": 197877,
+        "output_tokens": 2426,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 137656,
+        "total_tokens": 200303
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-go/parent/stdout.jsonl",
+      "sha256": "6d4c7e28a08aaf21bd66e24ab038905bc9a37ce6536d836eb91284cfc78bfd0e",
+      "terminal_line": 53,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 142332,
+        "output_tokens": 2864,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 20283,
+        "total_tokens": 145196
+      },
+      "unique_usage_steps": 11,
+      "deduplicated_step_sum": {
+        "input_tokens": 142332,
+        "output_tokens": 2864,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 20283,
+        "total_tokens": 145196
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/refinement/development/agy-go/shipped/stdout.jsonl",
+      "sha256": "2cd5b0116c647204a0a1b35435227e56a1804ca1c6111aa04d9a0d2687cd7051",
+      "terminal_line": 102,
+      "status": "ERROR",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 257645,
+        "output_tokens": 5641,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 449141,
+        "total_tokens": 263286
+      },
+      "unique_usage_steps": 33,
+      "deduplicated_step_sum": {
+        "input_tokens": 257645,
+        "output_tokens": 5641,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 449141,
+        "total_tokens": 263286
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "TBD"
+    },
+    {
+      "path": "tests/framework/trials/agy/d2_interfaces-both/stdout.jsonl",
+      "sha256": "0afd2b3363a3b4608a7e200b8908acf17f4ab01be8e4dd337606b8b9f3cdbd56",
+      "terminal_line": 114,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 180406,
+        "output_tokens": 1801,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 52517,
+        "total_tokens": 182207
+      },
+      "unique_usage_steps": 15,
+      "deduplicated_step_sum": {
+        "input_tokens": 180406,
+        "output_tokens": 1801,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 52517,
+        "total_tokens": 182207
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/trials/agy/d2_interfaces-karpathy/stdout.jsonl",
+      "sha256": "305b7c695e455b28f639ef2be8a8fbe0efcd629abdfc09b36b731bdc73f8a9f2",
+      "terminal_line": 127,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 154216,
+        "output_tokens": 2132,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 255236,
+        "total_tokens": 156348
+      },
+      "unique_usage_steps": 22,
+      "deduplicated_step_sum": {
+        "input_tokens": 154216,
+        "output_tokens": 2132,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 255236,
+        "total_tokens": 156348
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/trials/agy/d2_interfaces-none/stdout.jsonl",
+      "sha256": "1a0391aeed2fc14cd43ec0db9bae69e25755ae088159a89d3040fe72652c1ec3",
+      "terminal_line": 92,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 156463,
+        "output_tokens": 1568,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 64759,
+        "total_tokens": 158031
+      },
+      "unique_usage_steps": 15,
+      "deduplicated_step_sum": {
+        "input_tokens": 156463,
+        "output_tokens": 1568,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 64759,
+        "total_tokens": 158031
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/trials/agy/d2_interfaces-ours/stdout.jsonl",
+      "sha256": "f07b4778ecd198398db2f4b6ee7d3c12b97f7f92dc798d5150d516a6172f89e3",
+      "terminal_line": 119,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 195456,
+        "output_tokens": 1919,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 56613,
+        "total_tokens": 197375
+      },
+      "unique_usage_steps": 17,
+      "deduplicated_step_sum": {
+        "input_tokens": 195456,
+        "output_tokens": 1919,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 56613,
+        "total_tokens": 197375
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/trials/agy/d5_small_control-both/stdout.jsonl",
+      "sha256": "cda1e3ce77dcfbe6946287ee53ee21a70613aad30a22b0c70dc3a0173cd38dae",
+      "terminal_line": 87,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 131897,
+        "output_tokens": 1192,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 20278,
+        "total_tokens": 133089
+      },
+      "unique_usage_steps": 10,
+      "deduplicated_step_sum": {
+        "input_tokens": 131897,
+        "output_tokens": 1192,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 20278,
+        "total_tokens": 133089
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/trials/agy/d5_small_control-karpathy/stdout.jsonl",
+      "sha256": "f8a00711b158794da7ba4159752744ed0c28f4cfafe20df76b31e404d7c3521b",
+      "terminal_line": 87,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 183076,
+        "output_tokens": 1386,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 24288,
+        "total_tokens": 184462
+      },
+      "unique_usage_steps": 14,
+      "deduplicated_step_sum": {
+        "input_tokens": 183076,
+        "output_tokens": 1386,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 24288,
+        "total_tokens": 184462
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/trials/agy/d5_small_control-none/stdout.jsonl",
+      "sha256": "0b4a419cecabe7d8c4c04fc931b1b656f278ff1bba332bc7d34da5f698efcf18",
+      "terminal_line": 75,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 137359,
+        "output_tokens": 1140,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 8098,
+        "total_tokens": 138499
+      },
+      "unique_usage_steps": 11,
+      "deduplicated_step_sum": {
+        "input_tokens": 137359,
+        "output_tokens": 1140,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 8098,
+        "total_tokens": 138499
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    },
+    {
+      "path": "tests/framework/trials/agy/d5_small_control-ours/stdout.jsonl",
+      "sha256": "6e55ecad88afb9fead1900c1c60e3ec9973fdc5e63cb76ef1ff51acccb837e03",
+      "terminal_line": 87,
+      "status": "SUCCESS",
+      "num_turns": 1,
+      "terminal_usage": {
+        "input_tokens": 120282,
+        "output_tokens": 3653,
+        "thinking_tokens": 2158,
+        "cache_read_tokens": 105454,
+        "total_tokens": 123935
+      },
+      "unique_usage_steps": 14,
+      "deduplicated_step_sum": {
+        "input_tokens": 120282,
+        "output_tokens": 3653,
+        "thinking_tokens": 2158,
+        "cache_read_tokens": 105454,
+        "total_tokens": 123935
+      },
+      "matches_all_five_counters": true,
+      "total_equals_input_plus_output": true,
+      "error_cost_completeness": "provider coverage and billing TBD"
+    }
+  ],
+  "cache_input_semantic_disjointness": "TBD: separate counters and documented arithmetic are observed, not proof of implementation category definitions",
+  "category_definition_review": {
+    "official_headless_table": "names counters, containment not defined",
+    "pinned_repo_tree": "documentation, examples, issue templates; no SDK usage implementation",
+    "primary_containment_proof_found": false,
+    "third_party_mappings": "not adopted"
+  }
+}

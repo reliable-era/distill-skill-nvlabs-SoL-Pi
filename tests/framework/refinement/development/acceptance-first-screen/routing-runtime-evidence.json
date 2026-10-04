@@ -1,0 +1,54 @@
+{
+  "model_calls": 0,
+  "auth_calls": 0,
+  "image_id": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac",
+  "codex_version": "0.160.0",
+  "native_codex_binary_sha256": "12eb3e81114588aca3b7998f4f19e8997b056aca08e57a7ca7c8a3ec8c652aad",
+  "binary_error_string": "workspace routing discovery failed",
+  "neighboring_binary_error_categories": [
+    "workspace routing requires a ChatGPT account id",
+    "account changed during workspace routing discovery",
+    "workspace routing discovery unauthorized (401)",
+    "selected workspace missing from routing discovery",
+    "configuration changed during workspace routing discovery"
+  ],
+  "auth_metadata_only": {
+    "top_level_field_names": [
+      "OPENAI_API_KEY",
+      "auth_mode",
+      "last_refresh",
+      "tokens"
+    ],
+    "tokens_field_names": [
+      "access_token",
+      "account_id",
+      "id_token",
+      "refresh_token"
+    ],
+    "auth_mode": "chatgpt",
+    "cached_account_id_present": true,
+    "private_home_config_toml_present": true
+  },
+  "image_configuration_metadata_only": {
+    "environment_field_names": [
+      "GPG_KEY",
+      "PATH",
+      "PYTHON_SHA256",
+      "PYTHON_VERSION"
+    ],
+    "model_or_auth_override_env_names": [],
+    "entrypoint": null
+  },
+  "private_auth_values_logged": false,
+  "network_runtime_probes": 0,
+  "private_config_metadata_only": {
+    "field_names": [
+      "projects"
+    ],
+    "configured_model": "TBD",
+    "provider_names": [],
+    "provider_endpoint_hostnames": {},
+    "actor_command_uses_ignore_user_config": true,
+    "actor_command_explicit_model": "gpt-6.1-sol"
+  }
+}

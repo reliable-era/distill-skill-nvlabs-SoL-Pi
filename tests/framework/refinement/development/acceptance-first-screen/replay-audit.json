@@ -1,0 +1,79 @@
+{
+  "actors_launched": 0,
+  "records": [
+    {
+      "family": "terminal",
+      "arm": "karpathy",
+      "original_solved": true,
+      "replayed_solved": true,
+      "original_grade_exit_code": 0,
+      "replayed_grade_exit_code": 0,
+      "original_patch_and_transcript_sha256_verified": true,
+      "full_git_and_untracked_file_hashes_verified": true,
+      "public_delta_available": true,
+      "agrees": true,
+      "publication": {
+        "path": "terminal/codex/karpathy/replay/verifier/grade.txt",
+        "original_sha256": "a6918fb660eb11663e115a9c09e97a810107eaca2d1c6c7a0ef0bb487e9eb6d1",
+        "published_sha256": "a6918fb660eb11663e115a9c09e97a810107eaca2d1c6c7a0ef0bb487e9eb6d1",
+        "redaction_count": 0
+      }
+    },
+    {
+      "family": "terminal",
+      "arm": "none",
+      "original_solved": false,
+      "replayed_solved": false,
+      "original_grade_exit_code": 1,
+      "replayed_grade_exit_code": 1,
+      "original_patch_and_transcript_sha256_verified": true,
+      "full_git_and_untracked_file_hashes_verified": true,
+      "public_delta_available": true,
+      "agrees": true,
+      "publication": {
+        "path": "terminal/codex/none/replay/verifier/grade.txt",
+        "original_sha256": "a2d30c289fcdf86f0d6fad36ce3a6a3ab31c41bc4aa95612f6bed2ef307d66ba",
+        "published_sha256": "a2d30c289fcdf86f0d6fad36ce3a6a3ab31c41bc4aa95612f6bed2ef307d66ba",
+        "redaction_count": 0
+      }
+    },
+    {
+      "family": "terminal",
+      "arm": "candidate",
+      "original_solved": false,
+      "replayed_solved": false,
+      "original_grade_exit_code": 1,
+      "replayed_grade_exit_code": 1,
+      "original_patch_and_transcript_sha256_verified": true,
+      "full_git_and_untracked_file_hashes_verified": true,
+      "public_delta_available": true,
+      "agrees": true,
+      "publication": {
+        "path": "terminal/codex/candidate/replay/verifier/grade.txt",
+        "original_sha256": "69ab37f7e726182d4b4cd7deb1dd717f618ae7683b13635e57f8506b01ed206a",
+        "published_sha256": "69ab37f7e726182d4b4cd7deb1dd717f618ae7683b13635e57f8506b01ed206a",
+        "redaction_count": 0
+      }
+    },
+    {
+      "family": "terminal",
+      "arm": "both",
+      "original_solved": false,
+      "replayed_solved": false,
+      "original_grade_exit_code": 1,
+      "replayed_grade_exit_code": 1,
+      "original_patch_and_transcript_sha256_verified": true,
+      "full_git_and_untracked_file_hashes_verified": true,
+      "public_delta_available": true,
+      "agrees": true,
+      "publication": {
+        "path": "terminal/codex/both/replay/verifier/grade.txt",
+        "original_sha256": "013fdd042ed170e72f3a20c5185d9fb788dcc1e06e662a633f1da69da750cb82",
+        "published_sha256": "013fdd042ed170e72f3a20c5185d9fb788dcc1e06e662a633f1da69da750cb82",
+        "redaction_count": 0
+      }
+    }
+  ],
+  "errors": [],
+  "source_policy": "Terminal baseline freshly extracted from exact pinned native image. Go/Flask reused pinned pristine baselines verified against frozen complete manifests. Full Git plus working/untracked bytes reconstructed from delta and all hashes verified. Digest patches restored only from baseline bytes; original patch/transcript hashes checked. Official graders without auth mounts; no models."
+}

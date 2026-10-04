@@ -1,0 +1,21 @@
+{
+  "scope": "Offline cached-auth check; no network, model request, refresh, host write or route validation",
+  "checked_at_utc": "2026-10-04T04:46:01.830178+00:00",
+  "exit_code": 0,
+  "cached_chatgpt_login_reported": true,
+  "auth_bytes_unchanged": true,
+  "jwt_expiration_checks": [
+    {
+      "field": "id_token",
+      "expiration_claim_present": true,
+      "expired_at_probe": true
+    },
+    {
+      "field": "access_token",
+      "expiration_claim_present": true,
+      "expired_at_probe": false
+    }
+  ],
+  "root_cause": "TBD: cached login success does not establish provider workspace routing availability",
+  "official_auth_docs": "https://learn.chatgpt.com/docs/auth"
+}

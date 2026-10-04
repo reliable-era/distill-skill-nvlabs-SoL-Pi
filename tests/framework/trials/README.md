@@ -22,7 +22,7 @@ Each cell above is solved attempts. Both loads Karpathy and ours together. Ours 
 | agy | 148,265.0 | 170,405.0 | 160,655.0 | 157,648.0 |
 | cursor | TBD | TBD | TBD | TBD |
 
-Codex/Pi totals sum verified exclusive input, output, cache-read and cache-write counters once. Antigravity uses the terminal SDK `total_tokens` without adding cache or thinking counters again; separate billing-component completeness remains unverified. Cursor cache semantics and Copilot full-run token counts remain TBD. **All actual dollar billing is TBD**, including subscription costs.
+Codex/Pi totals sum verified exclusive input, output, cache-read and cache-write counters once. Antigravity retains terminal SDK `total_tokens` separately from cache and thinking counters; their overlap and complete gross traffic remain TBD. Cursor cache semantics and Copilot full-run token counts remain TBD. **All actual dollar billing is TBD**, including subscription costs.
 
 ## Time and cutoffs
 

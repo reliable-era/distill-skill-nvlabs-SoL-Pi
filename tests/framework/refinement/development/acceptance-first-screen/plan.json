@@ -1,0 +1,138 @@
+{
+  "purpose": "Separate acceptance-first matched reused development allocation, not confirmation",
+  "status_at_freeze": "Prepared only; zero actors",
+  "candidate": "acceptance-first",
+  "candidate_manifest_sha256": "4b51c42849c5c06db6e140c0b59bdbe2d76597d5858f4f8e0adfd202e987f4c6",
+  "harness": "codex",
+  "requested_model": "gpt-6.1-sol",
+  "resolved_server_model": "TBD",
+  "effort": "native defaults",
+  "model_sampling_seed": "TBD",
+  "budget_sha256": "bd6457f37a39391f9ffec363e1b28513d95eb4549a87c43341bb15d717a57245",
+  "family_order": [
+    "terminal",
+    "go",
+    "flask"
+  ],
+  "order": [
+    "karpathy",
+    "none",
+    "candidate",
+    "both"
+  ],
+  "maximum_actor_starts": 12,
+  "actor_timeout_seconds": 180,
+  "automatic_retries": 0,
+  "runner_sha256": "2a6dd6be52c1f3a9cfd6ad851498aa19decc48e9723b8e6054187aa74488d8d5",
+  "classifier_sha256": "6d7e816798e545157654ff0a64e7712ad7e8ac0573350eba149619dfd9cbcee4",
+  "classifier_test_sha256": "3750a34e7ae319d739a682b9fce1774a9836283d08506482532bca678674bc9b",
+  "runtime_probes": {
+    "terminal": {
+      "stdout_sha256": "334dfa001c2623bd2074ba1bd86001a935e315ce09533d3c75c425ddb9ed5e90",
+      "stdout": "codex-cli 0.160.0\n61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70  /usr/local/lib/node_modules/@openai/codex/bin/codex.js\n",
+      "image_id": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac"
+    },
+    "go": {
+      "stdout_sha256": "334dfa001c2623bd2074ba1bd86001a935e315ce09533d3c75c425ddb9ed5e90",
+      "stdout": "codex-cli 0.160.0\n61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70  /usr/local/lib/node_modules/@openai/codex/bin/codex.js\n",
+      "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118"
+    },
+    "flask": {
+      "stdout_sha256": "334dfa001c2623bd2074ba1bd86001a935e315ce09533d3c75c425ddb9ed5e90",
+      "stdout": "codex-cli 0.160.0\n61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70  /usr/local/lib/node_modules/@openai/codex/bin/codex.js\n",
+      "image_id": "sha256:10a67635ce037886b760a72f6eef8459beb6a0c6e070c0748a037839135acc45"
+    }
+  },
+  "reused_source_files_sha256": {
+    "tests/framework/refinement/development/terminal-bounded-search/run_screen.py": "d303ac81e5bd05d247aa6765b687ebb7e26c97b04625e0e05fa698baaca18b21",
+    "tests/framework/refinement/development/terminal-bounded-search/frozen/runtime/collect.py": "5f3ae9b9631d7d3352db516f59abc57d502e20f02f12564d903ab56290e53d5a",
+    "tests/framework/refinement/development/terminal-bounded-search/plan.json": "15e83bfd03940b92ee49f70de6da330867c25e0363c60399d30c473c54aaa6bb",
+    "/tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/tests/test.sh": "16014722171ae4479112051d2e8af7d0c5bb231bae6aff1b80cfa19e718c814f",
+    "/tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/tests/process.py": "3525f32100c994ee517ba06a355f6d2130c332857da017d921aa8d9252b7022d",
+    "/tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/tests/ray_cluster.yaml": "4827a78e929c005853df1af502f1a5aae2e2e9ce721ee0d33ab0731eefa128a5",
+    "/tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/tests/rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json": "2d281c309cb03e9802f532931ac6c1eca129f75c4583ae48996dbb4130f57c0f",
+    "/tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/tests/test_outputs.py": "57e4904177acac5807b51f7c32444bde1968ba0445855fa4333d9eb73865b59e",
+    "tests/framework/refinement/development/go-locate-first/run_screen.py": "78fb908467beef45708821bca68cd822e816c7bf5d318c69ca6bb40006335e6a",
+    "tests/framework/refinement/development/go-locate-first/frozen/runtime/collect.py": "5f3ae9b9631d7d3352db516f59abc57d502e20f02f12564d903ab56290e53d5a",
+    "tests/framework/refinement/development/go-locate-first/frozen/runtime/swe_patch.py": "565252b38d93c59ba835824c6e4d9e3e0b077e8b64ccb3dbef536b3be2942e26",
+    "tests/framework/refinement/development/go-locate-first/frozen/grader/grade.py": "6a21b68df2273accd92512d3ae4e59b30cf357b1fd877ebcf45a8e3567949a1a",
+    "tests/framework/refinement/development/go-locate-first/frozen/grader/manifest.json": "b8a951d197ed82b81c7126a5a520136a3bd728c6c88238a671bdf77ce79a1554",
+    "tests/framework/refinement/development/go-locate-first/frozen/grader/support/food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "tests/framework/refinement/development/go-locate-first/frozen/grader/support/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "tests/framework/refinement/development/go-locate-first/frozen/grader/tests/food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e",
+    "tests/framework/refinement/development/go-locate-first/plan.json": "286de6805bddc4168b161dbd55f5986b69fc051184b8765a74135f3a6fd575e6",
+    "tests/framework/refinement/development/swe-flask-locate-first/run_screen.py": "b40b4d116a48faa803567436fee0e062e8f6d5dd1dac40771eb084943a955c0e",
+    "tests/framework/refinement/development/swe-flask-locate-first/frozen/runtime/collect.py": "5f3ae9b9631d7d3352db516f59abc57d502e20f02f12564d903ab56290e53d5a",
+    "tests/framework/refinement/development/swe-flask-locate-first/frozen/runtime/swe_patch.py": "565252b38d93c59ba835824c6e4d9e3e0b077e8b64ccb3dbef536b3be2942e26",
+    "tests/framework/refinement/development/swe-flask-locate-first/plan.json": "0079a6319c94c3bdfbe98dd37b288efa64e553a89e07dbc282acaf1c455a99ab",
+    "/tmp/solpi-refinement-swe-data.json": "e2c783242ec6838839d589ffa683cdce0147bd98994c12079d972eb831482a0d"
+  },
+  "skills": {
+    "karpathy": {
+      "path": "tests/eval/pruned/frozen/latest/karpathy-guidelines",
+      "files_sha256": {
+        "SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      }
+    },
+    "candidate": {
+      "path": "tests/framework/refinement/candidates/acceptance-first/efficient-coding",
+      "files_sha256": {
+        "SKILL.md": "4be6bafc3df19732067b8e321e15e5b0e9b7aad37eaa368dd308285e6cfe2029"
+      }
+    }
+  },
+  "families": {
+    "terminal": {
+      "adapter": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/terminal-bounded-search/run_screen.py",
+      "workspace": "/tmp/solpi-terminal-bounded-search-baseline",
+      "prompt": "/tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/instruction.md",
+      "image": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac",
+      "mount": "/app/dclm",
+      "task": "terminal-bench-2/sanitize-git-repo",
+      "baseline_manifest_sha256": "77132c543d3f8d76e1615695dab4902b9500461a095cac3e9995856d2a0e931c",
+      "prompt_sha256": {
+        "none": "d9e10a56e94e51592c6016efb02adef852d4fd08f9ba23dc304d2673d1478e8a",
+        "karpathy": "48f57cfe88b43d109b5de0117aa19dd845a264387ffb21ee8f080c9cb0126ac5",
+        "candidate": "6c1671640ba280acf957c3cf9e849e519e58cf43189dac240361e2a731ab3236",
+        "both": "8afa619f9e24216b8021c648a62968bace3b6a9ee6e38a57d06ee61a0045a2e5"
+      }
+    },
+    "go": {
+      "adapter": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/go-locate-first/run_screen.py",
+      "workspace": "/tmp/solpi-polyglot-go-smoke-v2/workspace",
+      "prompt": "/tmp/solpi-polyglot-go-smoke-v2/prompt.txt",
+      "image": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "mount": "/workspace",
+      "task": "go/exercises/practice/food-chain",
+      "baseline_manifest_sha256": "b1819ac3af5f2bf3ecf6d88dafa4569fe38c4fbf63fdfcb4f8d9a44ba2367dd2",
+      "prompt_sha256": {
+        "none": "d773210f437b1d4e7f86b4832be2021063aad024d5712d3adc0bc47dbff92596",
+        "karpathy": "b0105619c3ba536d40901848a74669808c1ece58e46b200a8368fc6dfdfb215d",
+        "candidate": "0b68db8c2446a825dd647cf6986e2eb64fa80281b9a2c92b92d2dbd9b12564ff",
+        "both": "89829e4f0940d6b2ff89d1482b1151e768882d2c49dc2d8a20896a407f49d656"
+      }
+    },
+    "flask": {
+      "adapter": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/swe-flask-locate-first/run_screen.py",
+      "workspace": "/tmp/solpi-refinement-flask-native-task-v2/workspace",
+      "prompt": "/tmp/solpi-refinement-flask-native-task-v2/prompt.txt",
+      "image": "sha256:10a67635ce037886b760a72f6eef8459beb6a0c6e070c0748a037839135acc45",
+      "mount": "/workspace",
+      "task": "pallets__flask-5014",
+      "baseline_manifest_sha256": "50ae04ce2cc84a8bc5043e896b5e0ab446b55a68b137513f2da3f45a26b593c1",
+      "prompt_sha256": {
+        "none": "c6ba28cedc562c8e3e285e6a898c1ec0840239f8bcc2b1358a89dd94fe61c8e6",
+        "karpathy": "4b0b28e571e71a9e21c8271c3259d56bfe69da3f71674881ed6bec6a72601aad",
+        "candidate": "a7f2d792b1f7902bd7d6b3b887fa6d1a0a9c3068c13de6614be1da56fdaaa3f5",
+        "both": "dc451545c432eb4b706f4a30eed131247dff629b5c054cec62d5c9abc78412a2"
+      }
+    }
+  },
+  "auth": "Only persistent private /tmp/solpi-refinement-auth-cache/codex HOME mounted writable; shared fcntl codex.lock; host seed never written",
+  "resources": "Full selected skill trees readonly /skills, inline SKILL instructions uniform",
+  "capture": "Complete Git plus working/untracked content delta before cleanup/verifier from first actor; trusted baseline patch, all outcomes and partial usage retained",
+  "publication": "Private originals outside Git, digest-redacted HF text, binary archive publication refused if it contains HF-shaped plaintext",
+  "source_policy": "Existing frozen adapters/runtime/grader files reused by hash without copies; no selected sealed tasks touched",
+  "gate": "Root execution-authorization.json must match exact plan and budget hashes; exclusive launch refuses repeat",
+  "billing_usd": "TBD"
+}

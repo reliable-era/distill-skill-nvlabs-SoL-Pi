@@ -25,7 +25,7 @@ def events(path):
 
 
 def token_total(agent, log_events):
-    """Return complete reported totals only; never infer zero from missing usage."""
+    """Return verified native totals or the explicitly scoped agy SDK total; missing usage is never zero."""
     if agent in ('codex','pi'):
         usage=terminal_usage(log_events,agent)
         if usage['usage_complete'] and usage['token_semantics']=='exclusive':
@@ -39,8 +39,8 @@ def token_total(agent, log_events):
         values=[u.get(k) for k in ('input_tokens','output_tokens','total_tokens')]
         if (all(isinstance(v,int) and not isinstance(v,bool) and v>=0 for v in values)
                 and values[2]==values[0]+values[1]):
-            # Use Google's explicit SDK total. Cache/thinking are not added again.
-            # This does not establish completeness of separate billing components.
+            # Retain the explicit SDK total without assuming cache/thinking overlap.
+            # This does not establish complete traffic or billing components.
             return values[2],'agy terminal SDK usage.total_tokens; billing components unverified'
         return None,'TBD: inconsistent SDK token total'
     return None,'TBD: full-run token accounting not verified'
@@ -107,7 +107,7 @@ def render(rows):
         selected=[next(r for r in rows if r['harness']==h and r['arm']==a) for a in ARMS]
         values=['TBD' if r['reported_tokens_per_solve'] is None else f'{r["reported_tokens_per_solve"]:,.1f}' for r in selected]
         lines.append('| '+' | '.join([h,*values])+' |')
-    lines += ['', 'Codex/Pi totals sum verified exclusive input, output, cache-read and cache-write counters once. Antigravity uses the terminal SDK `total_tokens` without adding cache or thinking counters again; separate billing-component completeness remains unverified. Cursor cache semantics and Copilot full-run token counts remain TBD. **All actual dollar billing is TBD**, including subscription costs.', '',
+    lines += ['', 'Codex/Pi totals sum verified exclusive input, output, cache-read and cache-write counters once. Antigravity retains terminal SDK `total_tokens` separately from cache and thinking counters; their overlap and complete gross traffic remain TBD. Cursor cache semantics and Copilot full-run token counts remain TBD. **All actual dollar billing is TBD**, including subscription costs.', '',
               '## Time and cutoffs','',
               '| Harness | Configuration | Agent seconds / solve | 120-second cutoffs |',
               '|---|---|---:|---:|']

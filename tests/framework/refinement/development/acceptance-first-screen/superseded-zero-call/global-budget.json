@@ -1,0 +1,22 @@
+{
+  "purpose": "Separate acceptance-first matched reused development allocation, not confirmation",
+  "maximum_actor_starts": 12,
+  "per_family_maximum": 4,
+  "actor_timeout_seconds": 180,
+  "maximum_actor_wall_seconds": 2160,
+  "automatic_retries": 0,
+  "family_order": [
+    "terminal",
+    "go",
+    "flask"
+  ],
+  "order_seed": 110,
+  "arm_order": [
+    "karpathy",
+    "none",
+    "candidate",
+    "both"
+  ],
+  "harness": "codex",
+  "stop_rule": "Finish the four matched arms within a family, then stop all later families if official candidate solved is not True. Auth/quota/infrastructure ambiguity stops immediately. Record all unused starts; no replacement tasks or retries."
+}

@@ -1,0 +1,27 @@
+{
+  "original_plan_sha256": "cb5122e4dee0f0051081da8ec90cdae33ea6f576cce207970d1a53c1a6954814",
+  "original_budget_unchanged": true,
+  "original_results_unchanged": true,
+  "budget_rule": "Auth/quota/infrastructure ambiguity stops immediately",
+  "implementation_defect": "Only auth/quota and unknown grader were classified as immediate stop; structured workspace routing discovery failure was not handled",
+  "timeline": [
+    "K started first; reached180s cap and captured passing state",
+    "None started second; native routing failure exit1 after168.2s, no command items",
+    "Candidate was then started contrary to infrastructure stop rule; partial execution,180s cap, original graderFalse",
+    "Both had already started when root stop instruction arrived; explicit docker rm -f interrupted it at39.5s, removal succeeded",
+    "Parent captured Both stdout/full filesystem/original grade and exited; candidateFalse family gate prevented Go/Flask"
+  ],
+  "actor_starts": 4,
+  "unused_starts": 8,
+  "external_interruption": {
+    "container": "solpi-acceptance-terminal-both",
+    "removal_exit_code": 0,
+    "actor_exit_code": 137,
+    "elapsed_seconds": 39.529621213674545
+  },
+  "current_running_stage_containers": 0,
+  "stage_eligible_for_performance_comparison": false,
+  "reason": "Incomplete native token accounting, provider availability failure, protocol stop discrepancy and externally interrupted arm",
+  "winner": "TBD: no valid benchmark winner",
+  "models_for_audit": 0
+}
