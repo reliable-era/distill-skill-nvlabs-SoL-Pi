@@ -1,0 +1,124 @@
+{
+  "status": "stopped_pre_probe_network_membership_gate",
+  "owned_session": 91425,
+  "terminal_exit_code": 1,
+  "fixture_starts": 1,
+  "cumulative_listener_starts": 3,
+  "probe_creations": 1,
+  "probe_starts": 0,
+  "HTTP_send_attempts": 0,
+  "TLS_handshake_validation": "not executed",
+  "graders": 0,
+  "models": 0,
+  "pulls": 0,
+  "builds": 0,
+  "retries": 0,
+  "authentic_import": [
+    {
+      "stage": "authentic_import",
+      "source_path": "/fixture/httpbin/core.py",
+      "core_sha256": "2963d500dc4f02a08ebf3028cc59713c5e95132b9a183415db074614d9351619"
+    }
+  ],
+  "service_state_before_cleanup": {
+    "Status": "running",
+    "Running": true,
+    "ExitCode": 0,
+    "OOMKilled": false,
+    "Error": "",
+    "StartedAt": "2026-10-04T07:10:51.05446948Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "listener_log_sha256": "52fe5c61388259b9b5baf6ba9f2a98ca5d56e28619203f85c3352023539246b4",
+  "listener_log_bytes": 692,
+  "listeners_booted": [
+    "http:80",
+    "https:443"
+  ],
+  "failure_location": "network inspect Containers set guard after probe creation/mount verification, before probe start",
+  "missing_evidence": "failing raw network membership snapshot was not persisted before assertion; actual missing/extra IDs TBD",
+  "mechanism_hypothesis": "network inspect operational Containers membership may omit not-started probe; exact mismatch not retained",
+  "plan_sha256": "77fe6694d901b5071e836d040a0717810cb80e5fa244ce23bf57b8c39a24c257",
+  "source_hashes_match": true,
+  "consumed_previous_phases_hashes_match": true,
+  "authorization_sha256": "b929863a12439a405c7e119ba98b02bb0a9bf11d23a1738ad10f461b3bc85986",
+  "result_sha256": "3d1048f30577ee044e63e66e868f91d8fefce52dbb8a15ad45e5483fbf404347",
+  "actual_limits": {
+    "service": {
+      "memory": 536870912,
+      "nano_cpus": 1000000000,
+      "mounts": [
+        [
+          "/tmp/solpi-confirmation-httpbin-authentic-source/httpbin-f8ec666b4d1b654e4ff6aedd356f510dcac09f83/httpbin",
+          "/fixture/httpbin",
+          false
+        ],
+        [
+          "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-parity-python3/listener.sh",
+          "/fixture-listener.sh",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/server.pem",
+          "/certs/server.pem",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/server.key",
+          "/certs/server.key",
+          false
+        ]
+      ],
+      "network": "solpi-httpbin-python3-internal",
+      "published_ports": false,
+      "sensitive_env_absent": true,
+      "log_config": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "1",
+          "max-size": "64k"
+        }
+      }
+    },
+    "probe": {
+      "memory": 8589934592,
+      "nano_cpus": 4000000000,
+      "mounts": [
+        [
+          "/tmp/solpi-httpbin-parity-python3/output",
+          "/output",
+          true
+        ],
+        [
+          "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-parity-python3/probe.py",
+          "/probe.py",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/ca.pem",
+          "/certs/ca.pem",
+          false
+        ]
+      ],
+      "network": "solpi-httpbin-python3-internal",
+      "published_ports": false,
+      "sensitive_env_absent": true
+    }
+  },
+  "cleanup_all_absence_verified": true,
+  "private_evidence_hashes": {
+    "cleanup.json": "c21d9ae354969f68423447debf182a07c39ebc27e3f9525895a7fa0bde1de589",
+    "phase-start.json": "318be21d9c9780dd554df4438b16a42074e3ad1ab65820a8d56a2482e1eefd7c",
+    "private-capture.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pre-listener-limits.json": "0b4221d1df053d989b1b943984cd50cd2ac125d18cc20983d574546093851dce",
+    "worker-start.json": "318be21d9c9780dd554df4438b16a42074e3ad1ab65820a8d56a2482e1eefd7c",
+    "private-worker.log": "d8b7f4c3e3beb93550401170bc34c00f05beb6977620e46db6a5738a49e490f2",
+    "owned.json": "263a96299f85fd6fc4258137fdef4ef0c977c2f71ad3de115e66bd1ccbd955c8",
+    "service.json": "7748ae68e9e5dac8357a8241bd27f4a0ebeb60b8aaace82382c394d930348081",
+    "service-evidence/pre-cleanup-evidence.json": "ba03a8bb2b6097e6b007a9a96e045541644b1ed736569f03748262f6ec853ca4",
+    "service-evidence/private-listener.log": "52fe5c61388259b9b5baf6ba9f2a98ca5d56e28619203f85c3352023539246b4"
+  },
+  "private_values_scanned": 10,
+  "publication_matches": [],
+  "followup_authorized": false
+}

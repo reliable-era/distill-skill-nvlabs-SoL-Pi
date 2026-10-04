@@ -1,3 +1,38 @@
+## Latest checkpoint — matched development preparation
+
+Goal active: economical wins over No skill, Karpathy and candidate-matched Both
+in at least three of five primary harnesses across three fresh benchmark families.
+No canonical promotion or majority win. Published checkpoint 42f00df passed CI.
+
+Local Qwen native readiness phase two completed Codex's tiny repair with four
+complete Responses requests and independent grading. Gross reported usage is
+27,444 tokens (26,834 input plus 610 output); cache-read and reasoning counts are
+subsets and must not be added again. This is transport readiness, not a skill
+benchmark. Pi started but failed before any provider POST. Its availability and
+cost remain TBD. Owned workers, socket, containers and network cleanup passed.
+The earlier interrupted Codex phase and incomplete usage remain preserved.
+
+Parallel work is preparing a twelve-run Codex screen of the independent-reads
+candidate: three reused development tasks, four matched arms, one scheduled
+round. This screen cannot establish fresh confirmation or a majority win.
+Pi proxy diagnosis is mock-only until reviewed; no new real Pi model run is
+currently authorized. Shared inference uses both existing locks and idle checks.
+
+SWE controls remain six validated, eleven actual attempts. Four HTTPbin fixture
+starts are retained: three prior phases made zero HTTP requests; the waiting-probe
+phase passed twelve contract sends with TLS verification and exact two-member
+internal network proof. All owned Docker objects were verified absent. Official
+Requests negative/gold controls still require a separate reviewed plan.
+
+Pi's bounded mock diagnosis observed one CONNECT to provider.example:8000,
+rejected with HTTP 403, zero POSTs. A proxy CONNECT repair is being prepared;
+no additional real Pi inference is authorized. This is a transport diagnosis,
+not evidence about skill quality. Mock Docker cleanup passed.
+
+Earlier checkpoints below are historical.
+
+---
+
 ## Latest checkpoint — 2026-10-04, transport and fixture preparation
 
 Goal active; canonical skill unchanged; no majority-harness win established.

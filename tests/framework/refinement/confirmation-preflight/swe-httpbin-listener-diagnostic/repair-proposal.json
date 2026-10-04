@@ -1,0 +1,21 @@
+{
+  "status": "proposal_only_not_authorized",
+  "change": "replace listener import python with proven python3; invoke Gunicorn through same interpreter rather than rely on binary path",
+  "candidate_invocation": "python3 -m gunicorn",
+  "proven": "python3 and import gunicorn19.9 passed earlier immutable image metadata gate",
+  "unproven": "gunicorn.__main__ command dispatch/listener/TLS/API parity not executed",
+  "no_dependency_changes": true,
+  "no_adaptive_packages": true,
+  "required_new_phase": "separate hash-bound authorization; preserve both consumed listener phases",
+  "logging_requirement": "continuous bounded Docker logging plus state/stdout/stderr capture before any cleanup",
+  "next_budget_proposal": {
+    "fixture_starts": 1,
+    "probe_starts": 1,
+    "HTTP_send_cap": 12,
+    "pulls": 0,
+    "builds": 0,
+    "graders": 0,
+    "models": 0,
+    "retries": 0
+  }
+}

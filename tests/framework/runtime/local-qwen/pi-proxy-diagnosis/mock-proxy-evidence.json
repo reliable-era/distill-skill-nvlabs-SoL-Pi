@@ -1,0 +1,35 @@
+{
+  "plan_sha256": "48e143226f3cf78db80251c70c624fe93e1e7f37b9d3b5477d45b17d0a7307f1",
+  "mock_starts": 1,
+  "result": {
+    "counts": {
+      "proxy_POST": 0,
+      "mock_POST": 0,
+      "CONNECT": 1
+    },
+    "method_receipts": [
+      {
+        "method": "CONNECT",
+        "authority": "provider.example:8000",
+        "status": 403
+      }
+    ],
+    "sdk_exit": 3,
+    "sdk_status": null,
+    "expectedMock400": false,
+    "failure": null,
+    "models": 0,
+    "real_provider_calls": 0,
+    "private_stream_hashes": {
+      "sdk.stdout": "2c04eb6b27fa7bdd5354b54bbafa38341ac27560c2820695732b16c246d07522",
+      "sdk.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "container_exit": 1,
+  "diagnosis_category": "CONNECT_denied_transport_diagnosis",
+  "forwarded_POST_route_proved": false,
+  "cleanup_absence_verified": true,
+  "errors": [],
+  "models": 0,
+  "real_provider_calls": 0
+}

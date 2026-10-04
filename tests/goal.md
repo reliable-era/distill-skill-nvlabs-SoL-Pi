@@ -83,12 +83,20 @@ PATH issue changes verification behavior; future images now pass six login-shell
 probes. Five-language starter/reference sanity passes ten checks. The twelve-task
 sealed allocation and predefined extension are frozen under framework/refinement.
 
-Next milestone: freeze a corrected-runtime development stage and compare the
-candidate under functioning tools; broaden development to repair/terminal tasks,
-then test a different mechanism if needed. Resolve accounting/model controls,
-validate sealed-task environments and freeze a final candidate before confirmation.
-Every inference stage needs numeric attempt/time caps; the full confirmation
-budget remains TBD. No canonical skill was promoted and no win is established.
+Next milestone: run a matched development screen of the frozen independent-reads
+candidate on three reused families and four arms. The local Qwen Codex transport
+now completes a tiny independently graded repair with reconciled full usage;
+Pi transport repair remains in progress. Complete controls for the new grading
+adapter before model runs. These development tasks cannot establish fresh wins.
+The selected Terminal controls pass; selected SWE controls are six validated of
+eight intended. Authentic HTTP/HTTPS fixture parity now passes twelve checks;
+remaining Requests controls require a separately frozen execution plan.
+
+References are pinned in `framework/refinement/references.json`; Jev's intended
+identity remains TBD. Evaluate one mechanism at a time, preserving unfavorable
+results. Candidate performance, most-harness superiority, and billing remain TBD.
+The shipped skill is unchanged. Every execution stage has numeric start, request,
+time and resource caps; fresh confirmation starts only after final candidate freeze.
 
 ---
 

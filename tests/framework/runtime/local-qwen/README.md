@@ -1,6 +1,7 @@
 # Local Qwen transport readiness
 
-AF_UNIX metadata transport passed; native inference is still unexecuted.
+AF_UNIX metadata transport passed. Native phase two completed Codex readiness;
+Pi failed before any provider POST. The first native attempt remains preserved.
 [Unix routing audit](unix-routing-audit.json) records the sole successful phase:
 two metadata GETs, denied foreign authority/path, actual 1 CPU/512 MiB helpers,
 proxy-only read-only socket mount, actor zero mounts, and verified cleanup.
@@ -16,3 +17,20 @@ attempts, not model quality results. Native code under native-readiness requires
 its own reviewed plan, a hash-bound routing certificate, both existing inference
 locks, an idle scheduler sample, and bounded execution. Usage and monetary
 savings remain TBD until observed and audited.
+
+The separately frozen first native phase started Codex once and issued two
+Responses requests. The first completed with observed usage; the second was
+interrupted by the readiness deadline. Pi and the grader did not start. Complete
+stage usage and tool readiness remain TBD. Docker resources and the socket were
+removed; server worker cleanup was not certified. Raw records stay private.
+A new readiness phase must preserve this attempt and fix owned upstream cleanup
+before any launch; readiness observations are not skill performance results.
+
+
+Native phase two completed the tiny Codex repair and independent grader. All four
+provider streams ended with terminal usage and EOF; native and provider counters
+agree on 27,444 gross tokens. Cache-read tokens are included in input; reasoning
+is included in output. Billing remains TBD. Pi returned a connection error with
+zero provider POSTs, so full two-harness readiness did not pass. Owned broker
+workers and all Docker/socket resources were verified absent. These observations
+measure runtime readiness only; they do not demonstrate skill savings.

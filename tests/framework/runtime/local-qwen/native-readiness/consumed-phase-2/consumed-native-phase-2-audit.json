@@ -1,0 +1,343 @@
+{
+  "plan_sha256": "fe7327078464a4ae477a3b0d327e80227cb0d38ea76f9c6b3d721cd083fba6a1",
+  "actual_proofs": {
+    "topology": {
+      "internal": true,
+      "ipv6": false,
+      "gateway_mode": "isolated",
+      "gateways": [
+        null
+      ]
+    },
+    "proxy": {
+      "verified": true,
+      "user": "1003:1004",
+      "nano_cpus": 1000000000,
+      "memory": 536870912,
+      "pids": 32,
+      "mounts": [
+        {
+          "source": "/tmp/solpi-qwennative-fe7327078464a4ae477a3b0d327e80227cb0d38ea76f9c6b3d721cd083fba6a1/broker",
+          "destination": "/broker",
+          "RW": false
+        },
+        {
+          "source": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/runtime/local-qwen/native-readiness",
+          "destination": "/app",
+          "RW": false
+        }
+      ],
+      "networks": [
+        "solpi-qwennative-e74bf0c22c-actor"
+      ]
+    },
+    "actors": [
+      {
+        "harness": "codex",
+        "prestart_verified": true,
+        "user": "1003:1004",
+        "nano_cpus": 1000000000,
+        "memory": 536870912,
+        "pids": 64,
+        "mounts": [
+          {
+            "source": "/tmp/solpi-qwennative-fe7327078464a4ae477a3b0d327e80227cb0d38ea76f9c6b3d721cd083fba6a1/codex/home",
+            "destination": "/tmp/home",
+            "RW": true
+          },
+          {
+            "source": "/tmp/solpi-qwennative-fe7327078464a4ae477a3b0d327e80227cb0d38ea76f9c6b3d721cd083fba6a1/codex/work",
+            "destination": "/work",
+            "RW": true
+          }
+        ],
+        "networks": [
+          "solpi-qwennative-e74bf0c22c-actor"
+        ]
+      },
+      {
+        "harness": "pi",
+        "prestart_verified": true,
+        "user": "1003:1004",
+        "nano_cpus": 1000000000,
+        "memory": 536870912,
+        "pids": 64,
+        "mounts": [
+          {
+            "source": "/tmp/solpi-qwennative-fe7327078464a4ae477a3b0d327e80227cb0d38ea76f9c6b3d721cd083fba6a1/pi/home",
+            "destination": "/tmp/home",
+            "RW": true
+          },
+          {
+            "source": "/tmp/solpi-qwennative-fe7327078464a4ae477a3b0d327e80227cb0d38ea76f9c6b3d721cd083fba6a1/pi/work",
+            "destination": "/work",
+            "RW": true
+          }
+        ],
+        "networks": [
+          "solpi-qwennative-e74bf0c22c-actor"
+        ]
+      }
+    ],
+    "cleanup": {
+      "server_workers": 0,
+      "socket_absent": true,
+      "containers": [
+        {
+          "name": "solpi-qwennative-e74bf0c22c-codex",
+          "absence_verified": true
+        },
+        {
+          "name": "solpi-qwennative-e74bf0c22c-pi",
+          "absence_verified": true
+        },
+        {
+          "name": "solpi-qwennative-e74bf0c22c-proxy",
+          "absence_verified": true
+        }
+      ],
+      "networks": [
+        {
+          "name": "solpi-qwennative-e74bf0c22c-actor",
+          "absence_verified": true
+        }
+      ],
+      "aborted_owned_upstreams": 0
+    }
+  },
+  "actors": [
+    {
+      "harness": "codex",
+      "availability": "started",
+      "usage_complete": null,
+      "prestart_inspection_verified": true,
+      "exit": 0,
+      "native_phase_seconds": 33.76936407759786,
+      "native_log_sha256": "e09033385f9a78f1350eee2e7777b47a3504152c37eedb6df23c7ef4124dc81b",
+      "grade": {
+        "grader_metadata": {
+          "exit": 0,
+          "timeout": false,
+          "streams": {
+            "stdout": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "stderr": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        },
+        "behavior_pass": true,
+        "required_read_observed": true,
+        "solved": true,
+        "usage_complete": null,
+        "usage": null
+      },
+      "transport_pass": true,
+      "readiness_category": "full"
+    },
+    {
+      "harness": "pi",
+      "availability": "started",
+      "usage_complete": null,
+      "prestart_inspection_verified": true,
+      "exit": 0,
+      "native_phase_seconds": 1.1038099937140942,
+      "native_log_sha256": "964377cbdb1611d8a8e7cdf2f491d41619a2295d09c5eb55435780e1ce687dba",
+      "grade": {
+        "grader_metadata": {
+          "exit": 1,
+          "timeout": false,
+          "streams": {
+            "stdout": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "stderr": {
+              "bytes": 292,
+              "sha256": "bef7d3f24c2cc9a8b1a6919206913bcec298f389a0b095f13a9c214e630526ab"
+            }
+          }
+        },
+        "behavior_pass": false,
+        "required_read_observed": null,
+        "solved": false,
+        "usage_complete": null,
+        "usage": null
+      },
+      "transport_pass": false,
+      "readiness_category": "behavior_failed"
+    }
+  ],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "behavior failure stops before next actor"
+    }
+  ],
+  "containers_remaining": [],
+  "networks_remaining": [],
+  "native_starts": 2,
+  "provider_POST": 4,
+  "usage_complete": null,
+  "transport_records": [
+    {
+      "started_utc": "2026-10-04T07:02:34.812954+00:00",
+      "ended_utc": "2026-10-04T07:03:03.202082+00:00",
+      "elapsed_seconds": 28.38916878774762,
+      "provider_status": 200,
+      "private_error_body_sha256": null,
+      "private_error_body_bytes": 0,
+      "error_body_truncated": false,
+      "request": 1,
+      "actor": "codex",
+      "path": "/v1/responses",
+      "request_bytes": 29366,
+      "request_sha256": "067ce6e7227d90a42ce55df667530035236b38f8f411258e73903fa8896a3944",
+      "bytes": 64822,
+      "stream_eof": true,
+      "usage_observed": true,
+      "usage_complete": true,
+      "usage_audit": {
+        "complete": true,
+        "provider_fields": [
+          "input_tokens",
+          "output_tokens",
+          "total_tokens"
+        ],
+        "input": 6400,
+        "output": 102,
+        "total": 6502
+      },
+      "error": null,
+      "sha256": "6af5a7111885c26fca81c4587273d3e7e9a6219db0096ebe96513aacad951bd0"
+    },
+    {
+      "started_utc": "2026-10-04T07:03:03.300117+00:00",
+      "ended_utc": "2026-10-04T07:03:05.023349+00:00",
+      "elapsed_seconds": 1.7232671044766903,
+      "provider_status": 200,
+      "private_error_body_sha256": null,
+      "private_error_body_bytes": 0,
+      "error_body_truncated": false,
+      "request": 2,
+      "actor": "codex",
+      "path": "/v1/responses",
+      "request_bytes": 30665,
+      "request_sha256": "f898e2fb02ec9dd5f70bd4e06d9d27273e56c4ff92b42113ce026b7903c1c420",
+      "bytes": 70952,
+      "stream_eof": true,
+      "usage_observed": true,
+      "usage_complete": true,
+      "usage_audit": {
+        "complete": true,
+        "provider_fields": [
+          "input_tokens",
+          "output_tokens",
+          "total_tokens"
+        ],
+        "input": 6569,
+        "output": 187,
+        "total": 6756
+      },
+      "error": null,
+      "sha256": "582f91262de47e6d89e88ee42d8dadc5340e5361baec6608a726dc7475c81dca"
+    },
+    {
+      "started_utc": "2026-10-04T07:03:05.093305+00:00",
+      "ended_utc": "2026-10-04T07:03:06.110522+00:00",
+      "elapsed_seconds": 1.0172429736703634,
+      "provider_status": 200,
+      "private_error_body_sha256": null,
+      "private_error_body_bytes": 0,
+      "error_body_truncated": false,
+      "request": 3,
+      "actor": "codex",
+      "path": "/v1/responses",
+      "request_bytes": 32548,
+      "request_sha256": "040bab4441de1bf894d055f38bcb968756639a96deb2b553988977fbc810ad54",
+      "bytes": 62807,
+      "stream_eof": true,
+      "usage_observed": true,
+      "usage_complete": true,
+      "usage_audit": {
+        "complete": true,
+        "provider_fields": [
+          "input_tokens",
+          "output_tokens",
+          "total_tokens"
+        ],
+        "input": 6828,
+        "output": 140,
+        "total": 6968
+      },
+      "error": null,
+      "sha256": "534971bf9e0a9a0d7968397dd390dff70411d1fde6566a176ad73d5cc1918e13"
+    },
+    {
+      "started_utc": "2026-10-04T07:03:06.233309+00:00",
+      "ended_utc": "2026-10-04T07:03:07.605437+00:00",
+      "elapsed_seconds": 1.37215737067163,
+      "provider_status": 200,
+      "private_error_body_sha256": null,
+      "private_error_body_bytes": 0,
+      "error_body_truncated": false,
+      "request": 4,
+      "actor": "codex",
+      "path": "/v1/responses",
+      "request_bytes": 33744,
+      "request_sha256": "d4d1ae53d1f474a36df5a46df5416fd276f63d18769c2082a9694fa3fbb9627d",
+      "bytes": 68961,
+      "stream_eof": true,
+      "usage_observed": true,
+      "usage_complete": true,
+      "usage_audit": {
+        "complete": true,
+        "provider_fields": [
+          "input_tokens",
+          "output_tokens",
+          "total_tokens"
+        ],
+        "input": 7037,
+        "output": 181,
+        "total": 7218
+      },
+      "error": null,
+      "sha256": "b7e8cc0a1116f70d08f8dee04f7ec5a68f830ce6261d895b19764008a2104b77"
+    }
+  ],
+  "supplemental_availability": {
+    "pi": {
+      "category": "native_connection_error_before_provider_receipt",
+      "quality_evaluable": false,
+      "native_exit": 0,
+      "native_stopReason": "error",
+      "error_message": "Connection error.",
+      "original_behavior_grade_preserved": false
+    },
+    "codex": {
+      "category": "full_tiny_fixture_readiness",
+      "skill_performance_claim": false
+    }
+  },
+  "partial_provider_tokens": {
+    "codex": 27444,
+    "pi": null,
+    "whole_phase_usage_complete": null
+  },
+  "private_final_sha256": "dc86630d05202ae033f9b588636645e7f4d2734f2e716cda99ca69ca9617c53b",
+  "raw_requests_responses_published": false,
+  "supplemental_codex_usage_audit": {
+    "complete": true,
+    "basis": "single native turn.completed matches all4 terminal provider Responses usage inputs/outputs exactly",
+    "input_tokens": 26834,
+    "cached_input_tokens": 19968,
+    "uncached_input_tokens": 6866,
+    "output_tokens": 610,
+    "total_tokens": 27444,
+    "provider_reported_cache_verified": "TBD",
+    "dollars": null
+  }
+}

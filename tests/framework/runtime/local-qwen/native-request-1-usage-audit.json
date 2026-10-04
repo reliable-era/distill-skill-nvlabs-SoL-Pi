@@ -1,0 +1,31 @@
+{
+  "scope": "Complete first provider request only; consumed native phase unchanged",
+  "native_phase_plan_sha256": "4a07a73b800a487fae9aab42fdead03c6613c2ab2e80b45b5bc92a9037b1e114",
+  "request_1": {
+    "status": 200,
+    "stream_eof": true,
+    "terminal_response_completed_usage_records": 1,
+    "input_tokens_inclusive": 6400,
+    "output_tokens_inclusive": 185,
+    "reasoning_tokens_subset_of_output": 82,
+    "gross_recorded_tokens": 6585,
+    "reported_cached_tokens": 0,
+    "reported_cache_write_tokens": 0,
+    "arithmetic": "6400 + 185 = 6585; do not add reasoning82 or cache again",
+    "cache_component_completeness": "Not established: SGLang cache details conditional on enable_prompt_tokens_details; Responses serializer hardcodes cache_write_tokens0. These reported zeros are not independent measurement of all caching activity.",
+    "request_metadata": {"model": "Qwen3.8-27B-FP8", "stream": true, "reasoning": {"summary": "auto"}, "max_output_tokens_present": false, "temperature_present": false}
+  },
+  "request_2": {"status": 200, "stream_eof": false, "terminal_usage_records": 0, "error": "BrokenPipeError", "tokens": null},
+  "native_terminal_turn_completed_usage_records": 0,
+  "stage_usage_complete": false,
+  "stage_total_tokens": null,
+  "recorded_completed_request_lower_bound_tokens": 6585,
+  "installed_source": {
+    "serving_responses.py": {"path": "/sgl-workspace/sglang/python/sglang/srt/entrypoints/openai/serving_responses.py", "sha256": "fd0a230ba33186d514e95884cd20fd7d42956be148e39518f1db559135641517", "evidence_lines": "2209-2217 latest scheduler metadata;2494-2528 terminal UsageInfo and response.completed"},
+    "protocol.py": {"path": "/sgl-workspace/sglang/python/sglang/srt/entrypoints/openai/protocol.py", "sha256": "57bcb123838432d67f9a96a6cfe18dbe4a4f7dcfdfa2e58cae3c74485e755602", "evidence_lines": "1890-1910 Responses serializer preserves prompt/completion totals and separate reasoning; cache write hardcoded0"}
+  },
+  "deduplication": "Use one terminal response.completed usage per request; do not sum repeated stream snapshots or reasoning/cache subcategories. No cumulative native terminal available for reconciliation.",
+  "economic_scope": "No whole-stage gross total, cache billing completeness, dollars, savings, or native accounting certification established",
+  "audit_model_calls": 0,
+  "private_prompts_tool_inputs_outputs_published": false
+}

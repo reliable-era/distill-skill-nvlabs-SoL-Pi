@@ -1,0 +1,27 @@
+{
+  "status": "proposal_only",
+  "authentic_source_commit": "f8ec666b4d1b654e4ff6aedd356f510dcac09f83",
+  "source_repository": "https://github.com/postmanlabs/httpbin",
+  "current_image_source_correspondence": "TBD; manifest metadata insufficient",
+  "fallback": "build authentic source without reimplementing API; original tests unchanged",
+  "prerequisites": [
+    "complete source archive SHA256 and lockfile hash",
+    "immutable base image",
+    "pinned compatible binary dependency artifacts",
+    "finite build budget reviewed before acquisition/build",
+    "HTTP and HTTPS listeners/certificate behavior contract parity"
+  ],
+  "proposed_next_source_metadata_budget": {
+    "source_archive_jobs": 1,
+    "maximum_bytes": 10485760,
+    "seconds": 30,
+    "pulls": 0,
+    "builds": 0,
+    "fixtures": 0,
+    "graders": 0,
+    "models": 0,
+    "retries": 0
+  },
+  "no_authorization_assumed": true,
+  "registry_result_sha256": "50ab13a681abf7376e62fcb79a770663bdaabc797ead74ec9eba54390cf92f47"
+}

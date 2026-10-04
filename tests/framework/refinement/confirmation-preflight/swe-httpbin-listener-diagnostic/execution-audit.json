@@ -1,0 +1,82 @@
+{
+  "status": "diagnostic_evidence_retained_listener_failed",
+  "owned_session": 84248,
+  "terminal_exit_code": 0,
+  "diagnostic_listener_starts": 1,
+  "combined_listener_starts": 2,
+  "HTTP_requests": 0,
+  "probes": 0,
+  "graders": 0,
+  "models": 0,
+  "pulls": 0,
+  "builds": 0,
+  "retries": 0,
+  "listener_state": {
+    "Status": "exited",
+    "Running": false,
+    "ExitCode": 127,
+    "OOMKilled": false,
+    "Error": "",
+    "StartedAt": "2026-10-04T07:03:46.386300974Z",
+    "FinishedAt": "2026-10-04T07:03:46.515398774Z"
+  },
+  "retained_error": "/listener.sh: 3: /listener.sh: python: not found",
+  "diagnosis": "Listener shell requires python executable absent from this pinned image; source import/Gunicorn/TLS never reached. Prior successful import readiness used python3.",
+  "initial_fixture_cause_scope": "Same python command defect is consistent with original exit, but original logs/exit code were not retained; diagnostic is the direct evidence.",
+  "plan_sha256": "70d6cc9b4d5b80d74440994e2d955d0370de825ee414c52b2f75d15f5a56aefa",
+  "source_hashes_match": true,
+  "consumed_previous_phase_hashes_match": true,
+  "authorization_sha256": "8848d36f198f5930da756f6e346971679e7b129fdcaed4c862a8d4391a84206c",
+  "result_sha256": "34a056a24ffb2d60c5f3ef5ef1421a0ef1f1fb7ded04c1ae42b8bad575e5682a",
+  "private_evidence_hashes": {
+    "cleanup.json": "2b13a8d92ebed504ef4f33a361220ab8fe4b4eeb8acdabe233b90ff4e6c568e4",
+    "pre-cleanup-evidence.json": "64e981c69c7224c157f5b68fd6bb751650075a91c7b9001419a3354daeea765c",
+    "phase-start.json": "9941bfaf18bb950fd0114de870c519f0bdaf9dcae69fa4ab5207ce4b779066bc",
+    "worker-result.json": "ae058ad9be9b8a67f041dcfe364df513464a037cecc5fba64e2c26fb60c70c49",
+    "container.json": "0d31b463fee14c2bee8f72854b6d5d406386d539e418511531033c09e50e491d",
+    "actual-config.json": "7653e9e0d3f2785bc8646d349f666f9b459c89429795764e89565f175a16d074",
+    "private-listener.log": "cf31b7ef7245eb88471cfcfacfc1bbe27d3a19d297bb02cef8d56309dd4be229",
+    "listener-start.json": "0e99e34b590daaabacf7866da7cb4df60e3da7543b2af4eb86f566fd5ebd8b8d",
+    "worker-start.json": "9941bfaf18bb950fd0114de870c519f0bdaf9dcae69fa4ab5207ce4b779066bc",
+    "private-worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "actual_config": {
+    "memory": 536870912,
+    "nano_cpus": 1000000000,
+    "network_mode": "none",
+    "network_disabled": false,
+    "log_config": {
+      "Type": "json-file",
+      "Config": {
+        "max-file": "1",
+        "max-size": "64k"
+      }
+    },
+    "mounts": [
+      [
+        "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-listener-diagnostic/listener.sh",
+        "/listener.sh",
+        false
+      ],
+      [
+        "/tmp/solpi-confirmation-httpbin-authentic-source/httpbin-f8ec666b4d1b654e4ff6aedd356f510dcac09f83/httpbin",
+        "/fixture/httpbin",
+        false
+      ],
+      [
+        "/tmp/solpi-httpbin-fixture-parity/server.key",
+        "/certs/server.key",
+        false
+      ],
+      [
+        "/tmp/solpi-httpbin-fixture-parity/server.pem",
+        "/certs/server.pem",
+        false
+      ]
+    ]
+  },
+  "cleanup_absence_verified": true,
+  "private_values_scanned": 10,
+  "publication_matches": [],
+  "followup_execution_authorized": false
+}

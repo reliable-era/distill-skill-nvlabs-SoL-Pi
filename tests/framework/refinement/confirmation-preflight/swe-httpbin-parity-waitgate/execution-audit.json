@@ -1,0 +1,162 @@
+{
+  "status": "validated_protocol_parity",
+  "owned_session": 47309,
+  "terminal_exit_code": 0,
+  "fixture_starts": 1,
+  "cumulative_listener_starts": 4,
+  "probe_starts": 1,
+  "HTTPAdapter_send_attempts": 12,
+  "protocol": {
+    "status": "passed",
+    "http_requests": 12,
+    "elapsed_seconds": 0.03411870077252388,
+    "TLS_verification": true,
+    "remote_hosts": 0
+  },
+  "actual_network": {
+    "id": "64a336d4a2902a66bf5c32ef3db70803bb8ebef55aeed3bdbc19d7693c043de5",
+    "Internal": true,
+    "IPv6": false,
+    "gateway_mode_ipv4": "isolated",
+    "Gateway": [
+      null
+    ],
+    "members": [
+      "cc5f2e415495b8f4e071fc82d453d3e4d0b893040a0ec2fb2257e0cee8d173ae",
+      "d35f7407b0053493ec6ef577d1ce34c06e76ca1c03ed05e232243951245e73a6"
+    ]
+  },
+  "private_network_snapshot_sha256": "b6d1e70f0414306f7537eb32d7f8c33edb2e2c835f8e86a1f7fad18e51c582b1",
+  "gate_proof_sha256": "26a5879b8c9e692f0ce5e331edf87186f5723fbc710a74187696f0cc0171fcc9",
+  "service_evidence": {
+    "status": "captured",
+    "container_id": "cc5f2e415495b8f4e071fc82d453d3e4d0b893040a0ec2fb2257e0cee8d173ae",
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "ExitCode": 0,
+      "OOMKilled": false,
+      "Error": "",
+      "StartedAt": "2026-10-04T07:21:38.292938052Z",
+      "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "log_bytes": 692,
+    "log_sha256": "7875afd2901cbe670f277dd90b93265ebfe95f16592509fde6dc2e67f0072738",
+    "truncated_or_at_cap": false
+  },
+  "actual_limits": {
+    "service": {
+      "memory": 536870912,
+      "nano_cpus": 1000000000,
+      "mounts": [
+        [
+          "/tmp/solpi-confirmation-httpbin-authentic-source/httpbin-f8ec666b4d1b654e4ff6aedd356f510dcac09f83/httpbin",
+          "/fixture/httpbin",
+          false
+        ],
+        [
+          "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-parity-waitgate/listener.sh",
+          "/fixture-listener.sh",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/server.pem",
+          "/certs/server.pem",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/server.key",
+          "/certs/server.key",
+          false
+        ]
+      ],
+      "network": "solpi-httpbin-waitgate-internal",
+      "published_ports": false,
+      "sensitive_env_absent": true,
+      "log_config": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "1",
+          "max-size": "64k"
+        }
+      }
+    },
+    "probe": {
+      "memory": 8589934592,
+      "nano_cpus": 4000000000,
+      "mounts": [
+        [
+          "/tmp/solpi-httpbin-parity-waitgate/output",
+          "/output",
+          true
+        ],
+        [
+          "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-parity-waitgate/gate.py",
+          "/gate.py",
+          false
+        ],
+        [
+          "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-parity-waitgate/probe.py",
+          "/probe.py",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/ca.pem",
+          "/certs/ca.pem",
+          false
+        ]
+      ],
+      "network": "solpi-httpbin-waitgate-internal",
+      "published_ports": false,
+      "sensitive_env_absent": true
+    },
+    "internal_network_members_only": true,
+    "network": {
+      "internal": true,
+      "IPv6": false,
+      "gateway_mode_ipv4": "isolated",
+      "Gateway": [
+        null
+      ],
+      "members": [
+        "cc5f2e415495b8f4e071fc82d453d3e4d0b893040a0ec2fb2257e0cee8d173ae",
+        "d35f7407b0053493ec6ef577d1ce34c06e76ca1c03ed05e232243951245e73a6"
+      ]
+    }
+  },
+  "cleanup_all_absence_verified": true,
+  "plan_sha256": "b7aea00620092e4ba1cd497bc8743ccef9c220acc95e1e6ee077443fa0e58202",
+  "source_hashes_match": true,
+  "preserved_phases_hashes_match": true,
+  "private_evidence_hashes": {
+    "cleanup.json": "c5a87c1d4f6fa0606273953b19a1c20382e7b3c3a44e7d7a05d448c2c28dbb0d",
+    "probe-start.json": "6c41e1ba39c789fce0b0e48c2f91170aac1a88cca0a63a69ba4c94e09aa594c9",
+    "http-release-proof.json": "26a5879b8c9e692f0ce5e331edf87186f5723fbc710a74187696f0cc0171fcc9",
+    "phase-start.json": "074e5bdf26a6201cbd784bcb2f76b4f23c7e5db046ba46c757f3021066c6b3a7",
+    "private-capture.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pre-listener-limits.json": "489bcbfd860d96d7866b6a34fc037c7c310d9782b88c41d609831f8614c69ef1",
+    "network-state-final-before-cleanup.json": "6ec36da549a0e22ec2888de18aaf48da5d1e0af61258f3cbb61356aa8e02e1ac",
+    "network-state-before-http-release.json": "b6d1e70f0414306f7537eb32d7f8c33edb2e2c835f8e86a1f7fad18e51c582b1",
+    "worker-start.json": "074e5bdf26a6201cbd784bcb2f76b4f23c7e5db046ba46c757f3021066c6b3a7",
+    "private-worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "network-state-created.json": "746cd2b6cbefc43c92ae3701d73c6d16b0c4671b3b156db2a510b5085e73074a",
+    "actual-limits.json": "03249224876a82abae74bce0ba8e390ebdd9ae111de64215206eb1addd957367",
+    "owned.json": "32e97b9f60d041517c3d09628ede3b0001b3f86f6af7ac5ad47637276d7c11ea",
+    "service.json": "6355a6081c455faf449caa0805c072eb0639245860a32f62471fe373127526de",
+    "service-evidence/pre-cleanup-evidence.json": "370439728ee73cb67ed7523264cbf2ac962d67de6a1664916d3c2cd16178a4d1",
+    "service-evidence/private-listener.log": "7875afd2901cbe670f277dd90b93265ebfe95f16592509fde6dc2e67f0072738",
+    "output/private-probe.log": "b34a70eebc155aac2641720bdbb2d668ebf57bfc007bbad186e81a46e84ba581",
+    "output/protocol-result.json": "01bc5ba51b926b46465ab1b87536ad7604a0cce616082b5372e58ca2183fa054",
+    "output/private-responses.jsonl": "3ec45b46c9789f22e78131a454be74687d16b3a105244d2f66f333ddc6d8c654",
+    "output/private-send-count.json": "c66eb6b029b27150f953d6259208634118141f35bacdf328763ba542d35a6b12",
+    "output/allow-http": "405d07676f70dc83f6969e9c4f6fe1de4262b0544655ec604fdcc2fe24e74a0e"
+  },
+  "private_values_scanned": 10,
+  "publication_matches": [],
+  "graders": 0,
+  "models": 0,
+  "pulls": 0,
+  "builds": 0,
+  "retries": 0,
+  "proof_scope": "Representative twelve-send API/TLS probe on adapted trusted fixture; complete Requests original-test contract and official controls still pending"
+}

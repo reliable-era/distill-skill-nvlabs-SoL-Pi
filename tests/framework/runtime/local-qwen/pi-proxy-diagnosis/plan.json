@@ -1,0 +1,37 @@
+{
+  "status": "prepared_notexecuted_root_review_required",
+  "scope": "one owned loopback SDKHTTPPOST400; zero realprovider/model/auth calls",
+  "maximum_mock_POST": 1,
+  "maximum_container_starts": 1,
+  "network": "none",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "entrypoint": "python3 /app/mock_probe.py",
+  "resources": {
+    "cpus": 1,
+    "memory": "512m",
+    "pids": 32,
+    "deadline_seconds": 15,
+    "cleanup_seconds": 8
+  },
+  "node": "/opt/cursor/bin/node v24.5.0",
+  "proxy_configuration": "--use-env-proxy supported by exactpinnedNode --help; do not silentlysetunprovenenvflag",
+  "source_hashes": {
+    "probe.mjs": "2092c766ee0573e7421e4306a43fb0c267508e6955ab7bfc48edcdbd59c88dff",
+    "mock_probe.py": "f5cb5b42176d7aa512fca07a335e2c42619d09d6a37d69e347f2cb2c6bc35b89",
+    "offline-node-help.json": "dab03b7270f4cf122fae5fa8907274f968c19894e3ed2d7f3f2fc28a858fdebb",
+    "run_probe.py": "a0ed04d20878e2da6803d34b9afba5d549ae05ee3f60083b3afabff50abe6d5e",
+    "cached-undici-source-proof.json": "37f0ee7acffc3b13a835b147034542f5ba13f9c2ccfc3a668d3f99458a63985e",
+    "test_mock.py": "c524737f4e2bd2f4c43e80ebaff560ddf0659fa9f722c48cd001b91d8675ed82"
+  },
+  "pinned_sdk_sources": {
+    "openai-completions-JXDDPZ23.js": "2c228712e915e48c925d1e0cc5cc4253eae98363e283712253ff654600ea7b1c",
+    "chunk-H3QXYIF7.js": "e703aeabc15090409eab28c53bdcae29137400de8581c2da23d1ec2953779a50"
+  },
+  "diagnosis": "Pinned Pi createClient passes options.fetch to OpenAISDK; absentcustomfetch SDKusesglobalfetch. Frozenphase2 onlyHTTP_PROXY/no--use-env-proxy; PiConnectionerror0receipts consistent withunconfiguredNodeproxy hypothesis, notrootcauseprovedyet",
+  "execution_guard": "run_probe.py --execute-mock-only --plan-sha256 EXACT; exclusive/tmpmarker;image+sourceguards; create+inspectbeforestart; namedcontainer registeredbeforecreate;15s+bounded8scleanup, durableprivateerrors/receiptmetadata",
+  "maximum_CONNECT_attempts": 1,
+  "mock_policy": "FirstCONNECT403 recordedauthority/status; anyadditionalattempt429 makescapfailure, noforwarding. POSTguard1 fixedownedmock only. Transportmethod observed ratherthanpresumed flagfix",
+  "evidence": "PersistSDKstdout/stderr private\u226464KiB+SDKexit/status/cause beforegenericfailure; publicmethodauthoritynumericstatus counts only; no model/provider/auth",
+  "offline_tests": "3pass test_mock.py; actualfield sdk_status regression, distinctCONNECTdiagnosis andcapreject",
+  "diagnostic_outcomes": "ForwardedmockPOST requires sdk_status400+exactPOSTcounts+exit0; boundedCONNECT403 exactauthority/oneattempt/zeroPOST SDKexit3 retained as CONNECT_denied_transport_diagnosis, forwarded_POST_route_provedFalse; unknown/cap/cleanupfailure stops. No HTTP400/inferenceclaim onCONNECTdenial"
+}

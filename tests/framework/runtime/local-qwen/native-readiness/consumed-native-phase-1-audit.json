@@ -1,0 +1,146 @@
+{
+  "plan_sha256": "4a07a73b800a487fae9aab42fdead03c6613c2ab2e80b45b5bc92a9037b1e114",
+  "actual_proofs": {
+    "topology": {
+      "internal": true,
+      "ipv6": false,
+      "gateway_mode": "isolated",
+      "gateways": [
+        null
+      ]
+    },
+    "proxy": {
+      "verified": true,
+      "user": "1003:1004",
+      "nano_cpus": 1000000000,
+      "memory": 536870912,
+      "pids": 32,
+      "mounts": [
+        {
+          "source": "/tmp/solpi-qwennative-4a07a73b800a487fae9aab42fdead03c6613c2ab2e80b45b5bc92a9037b1e114/broker",
+          "destination": "/broker",
+          "RW": false
+        },
+        {
+          "source": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/runtime/local-qwen/native-readiness",
+          "destination": "/app",
+          "RW": false
+        }
+      ],
+      "networks": [
+        "solpi-qwennative-f43ceb7d49-actor"
+      ]
+    },
+    "actors": [
+      {
+        "harness": "codex",
+        "prestart_verified": true,
+        "user": "1003:1004",
+        "nano_cpus": 1000000000,
+        "memory": 536870912,
+        "pids": 64,
+        "mounts": [
+          {
+            "source": "/tmp/solpi-qwennative-4a07a73b800a487fae9aab42fdead03c6613c2ab2e80b45b5bc92a9037b1e114/codex/work",
+            "destination": "/work",
+            "RW": true
+          },
+          {
+            "source": "/tmp/solpi-qwennative-4a07a73b800a487fae9aab42fdead03c6613c2ab2e80b45b5bc92a9037b1e114/codex/home",
+            "destination": "/tmp/home",
+            "RW": true
+          }
+        ],
+        "networks": [
+          "solpi-qwennative-f43ceb7d49-actor"
+        ]
+      }
+    ],
+    "cleanup": {
+      "server_workers": null,
+      "socket_absent": true,
+      "containers": [
+        {
+          "name": "solpi-qwennative-f43ceb7d49-codex",
+          "absence_verified": true
+        },
+        {
+          "name": "solpi-qwennative-f43ceb7d49-proxy",
+          "absence_verified": true
+        }
+      ],
+      "networks": [
+        {
+          "name": "solpi-qwennative-f43ceb7d49-actor",
+          "absence_verified": true
+        }
+      ]
+    }
+  },
+  "actors": [
+    {
+      "harness": "codex",
+      "availability": "deadline_interrupted",
+      "usage_complete": null,
+      "prestart_inspection_verified": true,
+      "exit": 137,
+      "native_phase_seconds": 22.24211661145091,
+      "native_log_sha256": "2687b8e826a29a5721f14249231b206292da8570f0ff703636d7939ede9d23e5"
+    }
+  ],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "native interrupted/error; quality unknown"
+    },
+    {
+      "cleanup": "server",
+      "type": "RuntimeError"
+    }
+  ],
+  "containers_remaining": [],
+  "networks_remaining": [],
+  "native_starts": 1,
+  "provider_POST": 2,
+  "usage_complete": null,
+  "transport_records": [
+    {
+      "provider_status": 200,
+      "private_error_body_sha256": null,
+      "private_error_body_bytes": 0,
+      "error_body_truncated": false,
+      "request": 1,
+      "actor": "codex",
+      "path": "/v1/responses",
+      "request_bytes": 29366,
+      "request_sha256": "6b0e330b80d8e18353031291a540a9d7ddbf2ee8cc639abd0c0001105c6f10dd",
+      "bytes": 67684,
+      "stream_eof": true,
+      "usage_observed": true,
+      "usage_complete": null,
+      "error": null,
+      "sha256": "d3e82ae8a71e0ee524232c67359840cb4ab27b533b9947cd051b463cb73d808e"
+    },
+    {
+      "provider_status": 200,
+      "private_error_body_sha256": null,
+      "private_error_body_bytes": 0,
+      "error_body_truncated": false,
+      "request": 2,
+      "actor": "codex",
+      "path": "/v1/responses",
+      "request_bytes": 31032,
+      "request_sha256": "6b8a08d8507bca7a9f9f15a9e5cd1ec6cb3b1efba5074a9997b45ef532945bf1",
+      "bytes": 36487,
+      "stream_eof": false,
+      "usage_observed": false,
+      "usage_complete": null,
+      "error": "BrokenPipeError",
+      "sha256": "58eb45cfb72669f3a6c46e88259e8626017eb40164cdec034a1080f09ec16d0b"
+    }
+  ],
+  "read_evidence": null,
+  "scope": "Consumed1native/2POST; interruptedsecondstream, fullreadiness/totalusageTBD, noPi orqualitycomparison",
+  "private_final_sha256": "3030329fa13cadf38f2b09a3170cdfffd830d8ee6099d996aec5109cee5900ba",
+  "raw_requests_responses_published": false
+}

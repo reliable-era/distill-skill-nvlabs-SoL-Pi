@@ -1,0 +1,66 @@
+{
+  "status": "failed_stopped_no_retry",
+  "owned_session": 32394,
+  "terminal_exit_code": 1,
+  "fixture_starts": 1,
+  "probe_starts": 0,
+  "actual_HTTP_sends": 0,
+  "TLS_validation": "not executed",
+  "graders": 0,
+  "models": 0,
+  "pulls": 0,
+  "builds": 0,
+  "retries": 0,
+  "failure_location": "service running-state assertion after fixed two-second wait; probe creation not reached",
+  "error_type": "AssertionError",
+  "listener_exit_cause": "TBD: service stdout/stderr and exit code were not retained before verified removal",
+  "evidence_limitation": "executed runner does not capture service logs before cleanup; no posthoc recovery claimed",
+  "plan_sha256": "fbdd8b82bafe10a15197c27fe71c36888cf25cd4060174b73e72918710f1fd86",
+  "frozen_source_hashes_match": true,
+  "authorization_sha256": "be8799878d1de1806106fc9dcb171f04bc8fe03700770b2e64a01e06d3a34d89",
+  "result_sha256": "32327507dde0b1181bc815b0c4b011b22fc8552048cd176f6147d8ad78daad89",
+  "private_evidence_hashes": {
+    "phase-start.json": "c9e5531bc76ee110a3c1a9e45257f54c2f097902d4d19cb83fb9d0d82013f263",
+    "worker-start.json": "c9e5531bc76ee110a3c1a9e45257f54c2f097902d4d19cb83fb9d0d82013f263",
+    "owned.json": "68a25504da3b21205fb51fd6220ebd1d50f927391a0e9b5e57764d60dfc0721a",
+    "pre-listener-limits.json": "2dc691185a88cb8943c8d068747fe6c9794cad5c57d8195f085f58df7bee883d",
+    "cleanup.json": "714af38ed1467dba6a8427c2a0041867ca0d9932133e1cd18b05a385ec4fa457",
+    "private-worker.log": "b13ada2d82d3d586961a9c19e09257890e2b588a7055fa44abd2e80cc41cfada"
+  },
+  "actual_service_limits": {
+    "memory": 536870912,
+    "nano_cpus": 1000000000,
+    "mounts": [
+      [
+        "/tmp/solpi-confirmation-httpbin-authentic-source/httpbin-f8ec666b4d1b654e4ff6aedd356f510dcac09f83/httpbin",
+        "/fixture/httpbin",
+        false
+      ],
+      [
+        "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-fixture-parity/listener.sh",
+        "/fixture-listener.sh",
+        false
+      ],
+      [
+        "/tmp/solpi-httpbin-fixture-parity/server.pem",
+        "/certs/server.pem",
+        false
+      ],
+      [
+        "/tmp/solpi-httpbin-fixture-parity/server.key",
+        "/certs/server.key",
+        false
+      ]
+    ],
+    "network": "solpi-httpbin-parity-internal",
+    "published_ports": false,
+    "sensitive_env_absent": true
+  },
+  "cleanup_all_absence_verified": true,
+  "isolated_network_assertions": "Internal, IPv6 false, isolated IPv4 gateway mode, absent Gateway passed before service create; raw network attributes not separately retained",
+  "probe_certificate_scope": "probe not created; source now mounts CA certificate and separate output only",
+  "private_values_scanned": 10,
+  "public_exact_private_value_matches": [],
+  "official_Requests_controls_authorized": false,
+  "prior_control_attempts": 11
+}

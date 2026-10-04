@@ -1,0 +1,118 @@
+{
+  "status": "validated_protocol_parity",
+  "error_type": null,
+  "limits": {
+    "service": {
+      "memory": 536870912,
+      "nano_cpus": 1000000000,
+      "mounts": [
+        [
+          "/tmp/solpi-confirmation-httpbin-authentic-source/httpbin-f8ec666b4d1b654e4ff6aedd356f510dcac09f83/httpbin",
+          "/fixture/httpbin",
+          false
+        ],
+        [
+          "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-parity-waitgate/listener.sh",
+          "/fixture-listener.sh",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/server.pem",
+          "/certs/server.pem",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/server.key",
+          "/certs/server.key",
+          false
+        ]
+      ],
+      "network": "solpi-httpbin-waitgate-internal",
+      "published_ports": false,
+      "sensitive_env_absent": true,
+      "log_config": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "1",
+          "max-size": "64k"
+        }
+      }
+    },
+    "probe": {
+      "memory": 8589934592,
+      "nano_cpus": 4000000000,
+      "mounts": [
+        [
+          "/tmp/solpi-httpbin-parity-waitgate/output",
+          "/output",
+          true
+        ],
+        [
+          "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-parity-waitgate/gate.py",
+          "/gate.py",
+          false
+        ],
+        [
+          "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-httpbin-parity-waitgate/probe.py",
+          "/probe.py",
+          false
+        ],
+        [
+          "/tmp/solpi-httpbin-fixture-parity/ca.pem",
+          "/certs/ca.pem",
+          false
+        ]
+      ],
+      "network": "solpi-httpbin-waitgate-internal",
+      "published_ports": false,
+      "sensitive_env_absent": true
+    },
+    "internal_network_members_only": true,
+    "network": {
+      "internal": true,
+      "IPv6": false,
+      "gateway_mode_ipv4": "isolated",
+      "Gateway": [
+        null
+      ],
+      "members": [
+        "cc5f2e415495b8f4e071fc82d453d3e4d0b893040a0ec2fb2257e0cee8d173ae",
+        "d35f7407b0053493ec6ef577d1ce34c06e76ca1c03ed05e232243951245e73a6"
+      ]
+    }
+  },
+  "cleanup": [
+    {
+      "id": "d35f7407b0053493ec6ef577d1ce34c06e76ca1c03ed05e232243951245e73a6",
+      "absence_verified": true
+    },
+    {
+      "id": "cc5f2e415495b8f4e071fc82d453d3e4d0b893040a0ec2fb2257e0cee8d173ae",
+      "absence_verified": true
+    },
+    {
+      "id": "64a336d4a2902a66bf5c32ef3db70803bb8ebef55aeed3bdbc19d7693c043de5",
+      "absence_verified": true
+    }
+  ],
+  "service_evidence": {
+    "status": "captured",
+    "container_id": "cc5f2e415495b8f4e071fc82d453d3e4d0b893040a0ec2fb2257e0cee8d173ae",
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "ExitCode": 0,
+      "OOMKilled": false,
+      "Error": "",
+      "StartedAt": "2026-10-04T07:21:38.292938052Z",
+      "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "log_bytes": 692,
+    "log_sha256": "7875afd2901cbe670f277dd90b93265ebfe95f16592509fde6dc2e67f0072738",
+    "truncated_or_at_cap": false
+  },
+  "models": 0,
+  "graders": 0,
+  "pulls": 0,
+  "builds": 0
+}

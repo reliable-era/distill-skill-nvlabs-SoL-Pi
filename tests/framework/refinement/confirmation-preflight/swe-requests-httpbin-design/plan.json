@@ -1,0 +1,110 @@
+{
+  "status": "prepared_only_zero_run",
+  "models": 0,
+  "graders": 0,
+  "pulls": 0,
+  "builds": 0,
+  "remote_http_test_calls": 0,
+  "registry_resolution_jobs_started": 0,
+  "task": "psf__requests-1921",
+  "original_source": {
+    "repo": "psf/requests",
+    "base_commit": "3c88e520da24ae6f736929a750876e7654accc3d",
+    "public_test_file_sha256": "37ef77c0f9c3bddee646e2e3fd496e1a114daf6e8b05d3e47897ebc2e0d7630e",
+    "private_retained_path": "/tmp/solpi-confirmation-requests-httpbin-design/original-tests.py"
+  },
+  "legitimate_fixture_source": {
+    "repo": "postmanlabs/httpbin",
+    "commit": "f8ec666b4d1b654e4ff6aedd356f510dcac09f83",
+    "license": "ISC",
+    "source_files": [
+      {
+        "name": "httpbin-Dockerfile",
+        "url": "https://raw.githubusercontent.com/postmanlabs/httpbin/f8ec666b4d1b654e4ff6aedd356f510dcac09f83/Dockerfile",
+        "sha256": "0d04c237c2bf864f0e75120b23fbca1e6f5160e2c379d22ec096089757e59ff4",
+        "bytes": 537
+      },
+      {
+        "name": "httpbin-README",
+        "url": "https://raw.githubusercontent.com/postmanlabs/httpbin/f8ec666b4d1b654e4ff6aedd356f510dcac09f83/README.md",
+        "sha256": "b11f5bea08cae0864560d78fd1f4fee75fed2ba25c346888e077455acc7f4230",
+        "bytes": 672
+      }
+    ],
+    "image_candidate": "kennethreitz/httpbin",
+    "image_digest": "TBD; resolve only after root review",
+    "image_source_commit_correspondence": "TBD: source pin alone does not prove published image build correspondence",
+    "source_dockerfile_protocol": "HTTP port80 gunicorn official httpbin:app, no TLS by default"
+  },
+  "original_contract_metadata": {
+    "http_required": true,
+    "https_required": true,
+    "https_source_location": {
+      "line": 418,
+      "default_certificate_verification": true,
+      "expected_p2p_https_test_count": 1,
+      "observed_failed_in_current_networknone_control": true
+    },
+    "endpoint_families": [
+      "basic-auth",
+      "digest-auth",
+      "cookies",
+      "get",
+      "head",
+      "headers",
+      "html",
+      "post",
+      "put",
+      "redirect",
+      "redirect-to",
+      "response-headers",
+      "status",
+      "user-agent",
+      "gzip",
+      "unicode path encoding"
+    ],
+    "protocols_required": [
+      "http://httpbin.org:80",
+      "https://httpbin.org:443"
+    ],
+    "source_body_published": false
+  },
+  "proposed_isolation": {
+    "grader_network": "dedicated Docker internal bridge, no external attachment/NAT; only grader and fixture",
+    "dns_alias": "httpbin.org assigned only to service; localhost retained",
+    "actors": "provider-only network, never attach fixture bridge, no fixtures/tests/gold mounts",
+    "service": "authentic httpbin app; no custom endpoint stub or Go reimplementation",
+    "tls": "trusted private grader CA/SANhttpbin.org; authentic gunicorn TLS listener alongside HTTP; read-only CA and REQUESTS_CA_BUNDLE in grader only",
+    "tls_and_image_runtime_support": "TBD; must inspect pinned image before configuration, no cert-verification disabling",
+    "fixed_service_addresses": "explicit isolated hostname/ports only, no remote test calls",
+    "egress_gate": "must prove no external interfaces/routes or connection path beyond internal grader+fixture; internal bridge has local route so networknone-only route test must be revised explicitly",
+    "ca_environment_primary_support": {
+      "url": "https://raw.githubusercontent.com/psf/requests/3c88e520da24ae6f736929a750876e7654accc3d/requests/sessions.py",
+      "sha256": "32e30eadf91367b3aefb90e8541cf3fc20d3d950a16828c0101f4232d36a78a9",
+      "REQUESTS_CA_BUNDLE_present": true,
+      "implementation_semantics": "environment CA bundle lookup exists; interaction with HTTPS test pyOpenSSL and expected public certificate behavior remains parity TBD"
+    }
+  },
+  "proposed_next_metadata_budget": {
+    "registry_digest_resolution_jobs": 1,
+    "job_seconds": 30,
+    "anonymous_token_request": 1,
+    "manifest_request": 1,
+    "per_request_seconds": 15,
+    "manifest_max_bytes": 1048576,
+    "pulls": 0,
+    "builds": 0,
+    "fixtures_started": 0,
+    "graders": 0,
+    "models": 0,
+    "retries": 0
+  },
+  "parity_gate": "TBD: bounded HTTP/HTTPS/auth/cookie/redirect/gzip/unicode contract controls then unchanged/gold official matched controls, expected full test IDs/counts; no promotion or leaderboard-equivalent claim before parity",
+  "attempt_provenance": {
+    "prior_control_attempts": 11,
+    "validated_controls": 6,
+    "remaining_task_fixed": true,
+    "no_new_attempt_budget_authorized": true
+  },
+  "classification": "adapted trusted grader HTTP-service setup; official test source unchanged, external published HTTPbin parity TBD"
+}
