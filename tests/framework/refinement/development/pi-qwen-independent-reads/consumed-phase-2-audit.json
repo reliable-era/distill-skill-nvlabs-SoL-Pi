@@ -1,0 +1,73 @@
+{
+  "status": "STOPPED_AVAILABILITY_UNGRADED",
+  "plan_sha256": "b037a6a0f2a474a739d99b9d88208a811947e6bf343f926a41843723629bcca3",
+  "owned_exec_handle": 3304,
+  "exit": 1,
+  "native_starts": 1,
+  "provider_POST": 8,
+  "unused_cells": 11,
+  "retries": 0,
+  "actor_id": "terminal-K",
+  "availability": "native_provider_error",
+  "quality_status": "ungraded",
+  "official_grade": null,
+  "native_phase_seconds": 169.8251075129956,
+  "observed_gross_tokens_lower_bound": 116442,
+  "usage_complete": false,
+  "cache_components_complete": false,
+  "actual_dollars": "TBD",
+  "last_request": {
+    "request": 8,
+    "provider_status": 200,
+    "elapsed_seconds": 26.993340080603957,
+    "bytes": 26415,
+    "stream_eof": false,
+    "usage_complete": false,
+    "error": "IncompleteRead"
+  },
+  "native_error": "Stream ended without finish_reason",
+  "native_error_line_numbers": [
+    1565,
+    1566
+  ],
+  "cleanup": {
+    "server_workers": 0,
+    "socket_absent": true,
+    "containers": [
+      {
+        "name": "solpi-pi-qwendev-04bc7af9c5-terminal-K",
+        "absence_verified": true
+      },
+      {
+        "name": "solpi-pi-qwendev-04bc7af9c5-proxy",
+        "absence_verified": true
+      }
+    ],
+    "networks": [
+      {
+        "name": "solpi-pi-qwendev-04bc7af9c5-actor",
+        "absence_verified": true
+      }
+    ],
+    "aborted_owned_upstreams": 0
+  },
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "Pi provider error stops screen"
+    }
+  ],
+  "private_evidence_hashes": {
+    "final-evidence.json": "8fae6d186ce431cc468b1f33c7abb0b87f71104a9edbeb0111a892b97cfd1727",
+    "launch.json": "c91fd2bbb75d3998a46a330679cb0dec40515bfb85da7f155e51dc0b1879024f",
+    "idle-grace-before-topology/0.json": "1449ab02f6ac7199d34b5d40ea6bf9db71535725f336195d8d89abaaa17c1f30",
+    "idle-grace-before-topology/0.metadata.json": "9d1ab17f151464a660ecff34eaced25d5264144d9e4a8669af395771f392752c",
+    "idle-grace-before-topology/grace.json": "29a1aa4d900435bb719b76ceff3ae2996222ec8be32d205773d5b8fa9f0c2187",
+    "terminal-K/native.jsonl": "207a5e8f517039bce4ecf183b1ffe4793e1a8dafd0899c0c88c3224a9de41e00",
+    "idle-grace-terminal-K/0.json": "cbf482bcb3ee76ee881acf1abfbb9dd9c1df7b31a7038f1d247feae6df6af3ab",
+    "idle-grace-terminal-K/0.metadata.json": "9d1ab17f151464a660ecff34eaced25d5264144d9e4a8669af395771f392752c",
+    "idle-grace-terminal-K/grace.json": "a1c1bb7bee02401ff466108f21784a6b3d660eba330641e8022eb072f0cf0816",
+    "transport/ledger.json": "3b22af58245649af6181e000c9c8f9b1058df9673680771b3d55d7acd0699165"
+  },
+  "scope": "Reused exposed development; partial availability outcome, no skill comparison or quality winner. Missing native usage zeros are not zero cost."
+}

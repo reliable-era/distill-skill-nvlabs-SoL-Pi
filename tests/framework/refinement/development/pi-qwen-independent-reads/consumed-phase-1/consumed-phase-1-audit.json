@@ -1,0 +1,52 @@
+{
+  "plan_sha256": "36a14253684ae886889ffad30c5ab2db186930dbb8e832f8df552d61500c34f5",
+  "actual_proofs": {
+    "topology": null,
+    "proxy": null,
+    "actors": [],
+    "cleanup": {
+      "server_workers": null,
+      "socket_absent": null,
+      "containers": [],
+      "networks": []
+    }
+  },
+  "actors": [],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "scheduler busy or ambiguous"
+    }
+  ],
+  "containers_remaining": [],
+  "networks_remaining": [],
+  "native_starts": 0,
+  "provider_POST": 0,
+  "usage_complete": null,
+  "execution_handle": 53202,
+  "execution_exit": 1,
+  "scope": "Consumedlaunch, schedulerbusybeforetopology, zeroPiDevelopmentstarts. No retry, comparison/costcertificateTBD",
+  "private_evidence_hashes": {
+    "final-evidence.json": "f12ac0760f92288a070b25b2c5b3e92d05cf07fba9f3f4ae42ec106d12b7386a",
+    "load-before-topology.json": "ada6761fa38721c0cfaf5e24d3d6220d92fecdb28ba6f211b5f7a6553d6cb395",
+    "launch.json": "e6453b002e413d5ace3f9c18e072c572e7fe0235062b7c02e7667e5f871bd5cc",
+    "load-before-topology.metadata.json": "d928534579cdc6c8fb9c964929b86ede9362ad9959ac551754e60ab60ed081b8"
+  },
+  "logged_load": [
+    {
+      "dp_rank": 0,
+      "num_reqs": 1,
+      "num_waiting_reqs": 0,
+      "num_tokens": 48357,
+      "num_pending_tokens": 0,
+      "ts_tic": 12635143.60269023
+    }
+  ],
+  "logged_load_metadata": {
+    "status": 200,
+    "bytes": 118,
+    "truncated": false
+  },
+  "remaining_unstarted_cells": 12,
+  "actual_cost_certificate": null
+}

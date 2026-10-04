@@ -1,0 +1,194 @@
+{
+  "status": "consumed_partial_cohort",
+  "plan_sha256": "566371965b91c3966be683997917ffff47a1b23dcb5b62bce5f2e071646aa0f3",
+  "final_evidence_sha256": "32ce0cced654111c5f343556a302e977cf6494ca8118a44fb29c5c7646544cb2",
+  "attempts": [
+    {
+      "id": "terminal-K",
+      "solved": false,
+      "original_test_events": {
+        "source": "original CTRF",
+        "expected_tests": 3,
+        "actual_test_events": 3,
+        "passed": 1,
+        "failed": 2,
+        "functional_failure": true
+      },
+      "native_exit": 137,
+      "seconds": 169.80332248657942,
+      "frozen_usage_complete": false,
+      "provider_POST_counter": 9,
+      "request_record_count": 9,
+      "complete_provider_records": 9,
+      "observed_provider_gross_tokens": 187838,
+      "broker_observed_provider_gross_complete": true,
+      "native_reconciliation": {
+        "complete": false,
+        "reason": "native_terminal_missing_or_duplicate"
+      },
+      "incomplete_provider_requests": []
+    },
+    {
+      "id": "terminal-Both",
+      "solved": false,
+      "original_test_events": {
+        "source": "original CTRF",
+        "expected_tests": 3,
+        "actual_test_events": 3,
+        "passed": 1,
+        "failed": 2,
+        "functional_failure": true
+      },
+      "native_exit": 1,
+      "seconds": 169.74968248791993,
+      "frozen_usage_complete": false,
+      "provider_POST_counter": 5,
+      "request_record_count": 5,
+      "complete_provider_records": 4,
+      "observed_provider_gross_tokens": 56126,
+      "broker_observed_provider_gross_complete": false,
+      "native_reconciliation": {
+        "complete": false,
+        "reason": "native_terminal_missing_or_duplicate"
+      },
+      "incomplete_provider_requests": [
+        {
+          "request": 14,
+          "error": "IncompleteRead",
+          "EOF": false
+        }
+      ]
+    },
+    {
+      "id": "terminal-candidate",
+      "solved": false,
+      "original_test_events": {
+        "source": "original CTRF",
+        "expected_tests": 3,
+        "actual_test_events": 3,
+        "passed": 1,
+        "failed": 2,
+        "functional_failure": true
+      },
+      "native_exit": 0,
+      "seconds": 99.85151707008481,
+      "frozen_usage_complete": true,
+      "provider_POST_counter": 12,
+      "request_record_count": 12,
+      "complete_provider_records": 12,
+      "observed_provider_gross_tokens": 226676,
+      "broker_observed_provider_gross_complete": true,
+      "native_reconciliation": {
+        "complete": true,
+        "native_usage": {
+          "input_tokens": 217487,
+          "cached_input_tokens": 198400,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9189,
+          "reasoning_output_tokens": 5815
+        },
+        "provider_expected": {
+          "input_tokens": 217487,
+          "output_tokens": 9189
+        },
+        "scope": "this actor forwarded Responses traffic only; cache billing and unobserved helper traffic not certified"
+      },
+      "incomplete_provider_requests": []
+    },
+    {
+      "id": "terminal-none",
+      "solved": false,
+      "original_test_events": {
+        "source": "original CTRF",
+        "expected_tests": 3,
+        "actual_test_events": 3,
+        "passed": 1,
+        "failed": 2,
+        "functional_failure": true
+      },
+      "native_exit": 1,
+      "seconds": 169.77379685640335,
+      "frozen_usage_complete": false,
+      "provider_POST_counter": 9,
+      "request_record_count": 9,
+      "complete_provider_records": 8,
+      "observed_provider_gross_tokens": 168082,
+      "broker_observed_provider_gross_complete": false,
+      "native_reconciliation": {
+        "complete": false,
+        "reason": "native_terminal_missing_or_duplicate"
+      },
+      "incomplete_provider_requests": [
+        {
+          "request": 35,
+          "error": "IncompleteRead",
+          "EOF": false
+        }
+      ]
+    }
+  ],
+  "actual_native_starts": 4,
+  "actual_POST": 35,
+  "combined_starts": 6,
+  "combined_POST": 52,
+  "unrun_planned_cells": 8,
+  "stage_errors": [
+    {
+      "type": "RuntimeError",
+      "message": "scheduler idle grace exhausted or ambiguous"
+    }
+  ],
+  "audit_errors": [],
+  "source_pin_mismatches": [],
+  "independent_absence_proofs": [
+    {
+      "kind": "containers",
+      "name": "solpi-qwendev-243dab5475-terminal-K",
+      "absence_verified": true
+    },
+    {
+      "kind": "containers",
+      "name": "solpi-qwendev-243dab5475-terminal-Both",
+      "absence_verified": true
+    },
+    {
+      "kind": "containers",
+      "name": "solpi-qwendev-243dab5475-terminal-candidate",
+      "absence_verified": true
+    },
+    {
+      "kind": "containers",
+      "name": "solpi-qwendev-243dab5475-terminal-none",
+      "absence_verified": true
+    },
+    {
+      "kind": "containers",
+      "name": "solpi-qwendev-243dab5475-proxy",
+      "absence_verified": true
+    },
+    {
+      "kind": "networks",
+      "name": "solpi-qwendev-243dab5475-actor",
+      "absence_verified": true
+    }
+  ],
+  "broker_workers_remaining": 0,
+  "socket_absent": true,
+  "post_terminal_scheduler": {
+    "HTTP": 200,
+    "error": null,
+    "load": [
+      {
+        "dp_rank": 0,
+        "num_reqs": 0,
+        "num_waiting_reqs": 0
+      }
+    ],
+    "eligible_at_observation": true,
+    "unknown_jobs_untouched": true
+  },
+  "accounting_scope": "Supplemental provider-authoritative captured fixed-broker Responses traffic only, with exact counter/record/terminal EOF reconciliation and actor/proxy cleanup. Native turn terminal missing remains unreconciled. No global helper/account-wide coverage, cache-price/dollars certification. Frozen flags/gates unchanged.",
+  "complete_comparison": false,
+  "supported_efficiency": false,
+  "adoption": false
+}

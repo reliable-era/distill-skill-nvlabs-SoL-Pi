@@ -1,0 +1,25 @@
+{
+  "status": "FAIL_control_infrastructure_no_retry",
+  "grading_plan_sha256": "b8b0c2354e3fed992dc7d660cd2302283cade9f5af7e948eddd40e3031ea4941",
+  "screen_plan_sha256": "63df38357895a15a3ca9ce097880ed78b4dea610f43e361b8d8cf8251b785584",
+  "private_evidence_path": "/tmp/solpi-qwendev-controls-b8b0c2354e3fed992dc7d660cd2302283cade9f5af7e948eddd40e3031ea4941/final-evidence.json",
+  "private_evidence_sha256": "cee3d8147943b43ecb49c3411269dcef2b76200f4440eb5baeb41584660abb7e",
+  "completed_official_controls": 1,
+  "oracle_setup_attempts": 1,
+  "remaining_controls_not_run": 5,
+  "native_starts": 0,
+  "provider_POST": 0,
+  "cleanup_confirmed": true,
+  "diagnosis": {
+    "oracle_permission_errors": 5,
+    "oracle_uid": 0,
+    "work_owner_uid": 1003,
+    "cap_drop": [
+      "ALL"
+    ],
+    "baseline_permission_error_observed": true,
+    "baseline_numeric_failure_is_not_yet_validated_quality_negative": true
+  },
+  "limitations": "Permission failure is proven; root without DAC override versus host-owned workspace is consistent with observed UID/modes. No source repair or second execution is authorized.",
+  "pass_certificate_issued": false
+}

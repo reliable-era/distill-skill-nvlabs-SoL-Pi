@@ -1,0 +1,268 @@
+{
+  "status": "PASS_six_official_grading_controls",
+  "success": true,
+  "plan_sha256": "c89a26ca67ed75a4e11c418f95359156e943bf1b446198dff0129843d0e42a17",
+  "screen_plan_sha256": "c71b9ca2f36dbb0536d65cc8c39c175fc355bbddc2b1d564cf3ec0fc10878b53",
+  "private_final_evidence_sha256": "3a1688728a44f11c8f12618ea283603c29ed246af94b325215350f32a5aeb676",
+  "controls": [
+    {
+      "family": "terminal",
+      "kind": "baseline",
+      "expected": false,
+      "expected_matched": true,
+      "solved": false,
+      "infrastructure_error": null,
+      "grade_result_sha256": "8481b073d5dbab35c694251aaeee6703fe7084c90ce1fd5b5a5d63c5d38bbde5",
+      "private_artifact_hashes": {
+        "ctrf.json": "0df2215aca82c6ea7efff0a6498ed052e7eeca52098ad1b997186bdc723899f3",
+        "resource-inspect.json": "cc066a8df01dfcc7de832bbe85f79b64bce390a7e126c2d5e3248c936d3e7c7f",
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "103dabbeeff756da797407af05dfdb15833224760e032431ebbfdeefdb621438"
+      },
+      "test_events": {
+        "source": "original CTRF",
+        "expected_tests": 3,
+        "actual_test_events": 3,
+        "passed": 1,
+        "failed": 2,
+        "functional_failure": true
+      }
+    },
+    {
+      "family": "terminal",
+      "kind": "gold",
+      "expected": true,
+      "expected_matched": true,
+      "solved": true,
+      "infrastructure_error": null,
+      "grade_result_sha256": "a3050f56dbe7192034c6eabb3cbf3941508519029054fd2f13e5b404ba0d6d96",
+      "private_artifact_hashes": {
+        "ctrf.json": "f55ea9cae262d3acf205293cfbbf52e30bf0144057146d9ce53766be03456dd3",
+        "resource-inspect.json": "a0e0b0da567724418adb4368dd1c3851d1254f2d6e49ae061f8f3319539d0186",
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "86a11519e9291857bedcfe5b7893dcceda31351f74dfcab3e8310cc162519b51"
+      },
+      "test_events": {
+        "source": "original CTRF",
+        "expected_tests": 3,
+        "actual_test_events": 3,
+        "passed": 3,
+        "failed": 0,
+        "functional_failure": false
+      }
+    },
+    {
+      "family": "go",
+      "kind": "baseline",
+      "expected": false,
+      "expected_matched": true,
+      "solved": false,
+      "infrastructure_error": null,
+      "grade_result_sha256": "ad4b270cbc79ab1fa14e97f680b116df17c5ae9b9180c7ff73bbfe20939e7635",
+      "private_artifact_hashes": {
+        "resource-inspect.json": "a69373c7c01aade5905fe0a58aa95bd4cce58ac5746c2d6204ef3ff0dbf057f3",
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "274c903577bb4c729fb2b8e92367e4e24638ae5a398786d7b40bb8e1c61fcb89"
+      }
+    },
+    {
+      "family": "go",
+      "kind": "gold",
+      "expected": true,
+      "expected_matched": true,
+      "solved": true,
+      "infrastructure_error": null,
+      "grade_result_sha256": "62216d59cb7323ecddc28414a9a71293aea96f51094acfbe6d3bd405efe7b96e",
+      "private_artifact_hashes": {
+        "resource-inspect.json": "0b2d9321c4e8ed5d6a6fcd4cb16593e0010a17fe878c082fbfa90aac649dbbe3",
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "00a052d69b5dd2fbc5269d9d761d14e76c3f7ac2e5fb33eea6147614996f801d"
+      }
+    },
+    {
+      "family": "swe",
+      "kind": "baseline",
+      "expected": false,
+      "expected_matched": true,
+      "solved": false,
+      "infrastructure_error": null,
+      "grade_result_sha256": "ecc217acee5cffa75ceb590cd51aff75a86ece474ee11ff2f9c268f65007d392",
+      "private_artifact_hashes": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "prediction.json": "1ceefe522727c43285c509e765aff8649d8b873cdda56e87a2db24f9ae591bbf",
+        "logs/run_evaluation/qwendev-63d800212dcd43e397aa4c93394de033/codex-local-qwen-development/pallets__flask-5014/run_instance.log": "d4ded0db1f149d18241866cb8c803a9b3f0ee35a94f0cb01052bfba939274261",
+        "logs/run_evaluation/qwendev-63d800212dcd43e397aa4c93394de033/codex-local-qwen-development/pallets__flask-5014/report.json": "d13c3aaf7f0ebe8956382b29d2a1f7f60c17833879ccc930fa634f817c7b41c3",
+        "logs/run_evaluation/qwendev-63d800212dcd43e397aa4c93394de033/codex-local-qwen-development/pallets__flask-5014/test_output.txt": "bd47a3066324f45e48d4d2cf3f4569c6baa95da230b7913b0f36ae5153b3ab3d",
+        "logs/run_evaluation/qwendev-63d800212dcd43e397aa4c93394de033/codex-local-qwen-development/pallets__flask-5014/eval.sh": "ddbdee5ea6095a371b999d4d2613710c33ee3345790e82882538640c82f7ba1f"
+      },
+      "coverage": {
+        "FAIL_TO_PASS": {
+          "expected": 1,
+          "success": 0,
+          "failure": 1,
+          "parsed_expected": 1
+        },
+        "PASS_TO_PASS": {
+          "expected": 59,
+          "success": 59,
+          "failure": 0,
+          "parsed_expected": 59
+        },
+        "official_resolved": false,
+        "test_output_found": true,
+        "patch_successfully_applied_report": true,
+        "empty_patch_skip_application": true
+      },
+      "original_test_control_validated": true
+    },
+    {
+      "family": "swe",
+      "kind": "gold",
+      "expected": true,
+      "expected_matched": true,
+      "solved": true,
+      "infrastructure_error": null,
+      "grade_result_sha256": "121b6e076f687c710afc3abd45a4c70a4ccc6d825074550e0ce03a3fa126ee4a",
+      "private_artifact_hashes": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "prediction.json": "4cf486e01c4f8e04e22a50714746a602912fd2e9323df4eca7f541b02b681d53",
+        "logs/run_evaluation/qwendev-f66269d274f64540b8811c7766487e69/codex-local-qwen-development/pallets__flask-5014/patch.diff": "087d51d66413bfa35111ac0eca31f1db1636572702cfd967c428049b453f451d",
+        "logs/run_evaluation/qwendev-f66269d274f64540b8811c7766487e69/codex-local-qwen-development/pallets__flask-5014/run_instance.log": "ba552466a917a85cba3496ee319a26c57963b971c62bdde18bb1ed8839ea9fd0",
+        "logs/run_evaluation/qwendev-f66269d274f64540b8811c7766487e69/codex-local-qwen-development/pallets__flask-5014/report.json": "0a2ad8be764698b129e3371cbf63c3363c816b87a6d1404c42779f49afafce9a",
+        "logs/run_evaluation/qwendev-f66269d274f64540b8811c7766487e69/codex-local-qwen-development/pallets__flask-5014/test_output.txt": "614756d849ccdd7efa1f9c583a57c87137bbf485fd560f2bb28142543a4a0acd",
+        "logs/run_evaluation/qwendev-f66269d274f64540b8811c7766487e69/codex-local-qwen-development/pallets__flask-5014/eval.sh": "ddbdee5ea6095a371b999d4d2613710c33ee3345790e82882538640c82f7ba1f"
+      },
+      "coverage": {
+        "FAIL_TO_PASS": {
+          "expected": 1,
+          "success": 1,
+          "failure": 0,
+          "parsed_expected": 1
+        },
+        "PASS_TO_PASS": {
+          "expected": 59,
+          "success": 59,
+          "failure": 0,
+          "parsed_expected": 59
+        },
+        "official_resolved": true,
+        "test_output_found": true,
+        "patch_successfully_applied_report": true,
+        "empty_patch_skip_application": false
+      },
+      "original_test_control_validated": true
+    }
+  ],
+  "errors": [],
+  "native_starts": 0,
+  "POST": 0,
+  "new_official_verifiers": 6,
+  "new_oracle_setups": 1,
+  "combined_official_verifiers": 7,
+  "combined_oracle_setups": 2,
+  "prior_infrastructure_attempts": {
+    "grading_plan_sha256": "b8b0c2354e3fed992dc7d660cd2302283cade9f5af7e948eddd40e3031ea4941",
+    "official_verifiers": 1,
+    "oracle_setups": 1,
+    "quality": "ungraded infrastructure permission failure; numeric baseline exit1 is not a functional negative",
+    "public_audit_sha256": "06a6b620ca107a337f3dff9b5bf515d15ad6fbdc2542c892de29ded7c89e98b7"
+  },
+  "actual_resource_proofs": [
+    {
+      "name": "solpi-qwendev-grade-23468a1f8fba",
+      "image_id": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac",
+      "user": "1003:1004",
+      "network": "none",
+      "memory": 2147483648,
+      "nano_cpus": 1000000000,
+      "pids": 128
+    },
+    {
+      "name": "solpi-qwendev-grade-a17b6877fb3a",
+      "image_id": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac",
+      "user": "1003:1004",
+      "network": "none",
+      "memory": 2147483648,
+      "nano_cpus": 1000000000,
+      "pids": 128
+    },
+    {
+      "name": "solpi-qwendev-grade-7d50eaca36e5",
+      "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "user": "1003:1004",
+      "network": "none",
+      "memory": 2147483648,
+      "nano_cpus": 1000000000,
+      "pids": 128
+    },
+    {
+      "name": "solpi-qwendev-grade-d64f2ece469f",
+      "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "user": "1003:1004",
+      "network": "none",
+      "memory": 2147483648,
+      "nano_cpus": 1000000000,
+      "pids": 128
+    },
+    {
+      "name": "sweb.eval.pallets__flask-5014.qwendev-63d800212dcd43e397aa4c93394de033",
+      "image_id": "sha256:bf8242431f5c177d67996b3c888a0f51e4bb7bd0b67009bee6c70842baca1241",
+      "network": "none",
+      "memory": 2147483648,
+      "nano_cpus": 1000000000,
+      "pids": 128
+    },
+    {
+      "name": "sweb.eval.pallets__flask-5014.qwendev-f66269d274f64540b8811c7766487e69",
+      "image_id": "sha256:bf8242431f5c177d67996b3c888a0f51e4bb7bd0b67009bee6c70842baca1241",
+      "network": "none",
+      "memory": 2147483648,
+      "nano_cpus": 1000000000,
+      "pids": 128
+    },
+    {
+      "name": "solpi-qwendev-oracle-805b4e3a66bd",
+      "image_id": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac",
+      "user": "1003:1004",
+      "network": "none",
+      "memory": 2147483648,
+      "nano_cpus": 1000000000,
+      "pids": 128,
+      "role": "trusted oracle setup"
+    }
+  ],
+  "independent_absence_proofs": [
+    {
+      "name": "solpi-qwendev-grade-23468a1f8fba",
+      "absence_verified": true
+    },
+    {
+      "name": "solpi-qwendev-grade-a17b6877fb3a",
+      "absence_verified": true
+    },
+    {
+      "name": "solpi-qwendev-grade-7d50eaca36e5",
+      "absence_verified": true
+    },
+    {
+      "name": "solpi-qwendev-grade-d64f2ece469f",
+      "absence_verified": true
+    },
+    {
+      "name": "sweb.eval.pallets__flask-5014.qwendev-63d800212dcd43e397aa4c93394de033",
+      "absence_verified": true
+    },
+    {
+      "name": "sweb.eval.pallets__flask-5014.qwendev-f66269d274f64540b8811c7766487e69",
+      "absence_verified": true
+    },
+    {
+      "name": "solpi-qwendev-oracle-805b4e3a66bd",
+      "absence_verified": true
+    }
+  ],
+  "frozen_source_pin_mismatches": [],
+  "scope": "Trusted verifier infrastructure controls only. Gold never actor-mounted. No model or candidate performance evidence. Failed original UID phase preserved as ungraded infrastructure."
+}

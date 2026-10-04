@@ -1,0 +1,89 @@
+{
+  "stage": "Pi-localQwen-independent-reads-development",
+  "maximum_native_starts": 12,
+  "seconds_per_actor": 180,
+  "maximum_provider_POST_per_actor": 16,
+  "maximum_provider_POST_total": 192,
+  "maximum_native_phase_seconds": 2160,
+  "rounds": 1,
+  "seed": 113,
+  "retries": 0,
+  "schedule": [
+    {
+      "id": "terminal-Both",
+      "family": "terminal",
+      "arm": "Both",
+      "round": 1
+    },
+    {
+      "id": "terminal-K",
+      "family": "terminal",
+      "arm": "K",
+      "round": 1
+    },
+    {
+      "id": "terminal-candidate",
+      "family": "terminal",
+      "arm": "candidate",
+      "round": 1
+    },
+    {
+      "id": "terminal-none",
+      "family": "terminal",
+      "arm": "none",
+      "round": 1
+    },
+    {
+      "id": "go-Both",
+      "family": "go",
+      "arm": "Both",
+      "round": 1
+    },
+    {
+      "id": "go-candidate",
+      "family": "go",
+      "arm": "candidate",
+      "round": 1
+    },
+    {
+      "id": "go-K",
+      "family": "go",
+      "arm": "K",
+      "round": 1
+    },
+    {
+      "id": "go-none",
+      "family": "go",
+      "arm": "none",
+      "round": 1
+    },
+    {
+      "id": "swe-candidate",
+      "family": "swe",
+      "arm": "candidate",
+      "round": 1
+    },
+    {
+      "id": "swe-none",
+      "family": "swe",
+      "arm": "none",
+      "round": 1
+    },
+    {
+      "id": "swe-Both",
+      "family": "swe",
+      "arm": "Both",
+      "round": 1
+    },
+    {
+      "id": "swe-K",
+      "family": "swe",
+      "arm": "K",
+      "round": 1
+    }
+  ],
+  "scope": "3previouslyexposed development tasks, matchedfourarms, notconfirmation",
+  "model": "Qwen3.8-27B-FP8",
+  "harness": "Pi1.0.0",
+  "execution_authorized": false
+}

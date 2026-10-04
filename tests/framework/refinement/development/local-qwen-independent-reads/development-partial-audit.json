@@ -1,0 +1,126 @@
+{
+  "status": "PARTIAL_consumed_stop_no_retry",
+  "plan_sha256": "c71b9ca2f36dbb0536d65cc8c39c175fc355bbddc2b1d564cf3ec0fc10878b53",
+  "private_evidence_sha256": "b84c4f666badd1893c28100ee8f8a28a059bc59cf88ddb86eee9b83ec1c58130",
+  "actual_native_starts": 2,
+  "actual_provider_POST": 17,
+  "actual_graded_cells": 2,
+  "unrun_planned_cells": 10,
+  "attempts": [
+    {
+      "id": "terminal-Both",
+      "family": "terminal",
+      "arm": "Both",
+      "exit": 0,
+      "native_seconds": 94.72972092032433,
+      "solved": true,
+      "original_test_events": {
+        "source": "original CTRF",
+        "expected_tests": 3,
+        "actual_test_events": 3,
+        "passed": 3,
+        "failed": 0,
+        "functional_failure": false
+      },
+      "gross_tokens_observed": 203141,
+      "usage_complete": true,
+      "provider_requests": 10,
+      "incomplete_requests": [],
+      "initial_file_state_sha256": "2a5aac79054ad1ce08d21819c57c67b2e0466105b6ad0704cc04cba83ec9c362",
+      "final_file_state_sha256": "3a1a00f48dd4219c4a63cbcd1d9100dab7fde71f20cff055dc7114b07c8ffdac",
+      "grade_result_sha256": "e02cc3d73526505ca85ac200137727aa668c24be8feea2cd81f0ef9421e73ec9",
+      "native_log_sha256": "9b4448344ece6b57ce02643d54095d6026cd63ea27a23a070aabb27274ce1c4f",
+      "descriptive_trace_metrics": {
+        "completed_tool_items": 13,
+        "completed_command_calls": 10,
+        "read_like_command_calls": 7,
+        "command_return_bytes": 68838,
+        "read_like_return_bytes": 66195,
+        "nonzero_command_exits": 0,
+        "missing_item_ids": 0,
+        "duplicate_completed_ids": 0,
+        "scope": "Last completed item per native ID; missing IDs counted separately. Read-like regex includes searches and compound shell commands, not proof of independent reads; truncated logs undercount. Descriptive only, separate from solve and gross-token metrics."
+      }
+    },
+    {
+      "id": "terminal-K",
+      "family": "terminal",
+      "arm": "K",
+      "exit": 1,
+      "native_seconds": 107.5976780820638,
+      "solved": false,
+      "original_test_events": {
+        "source": "original CTRF",
+        "expected_tests": 3,
+        "actual_test_events": 3,
+        "passed": 1,
+        "failed": 2,
+        "functional_failure": true
+      },
+      "gross_tokens_observed": 84204,
+      "usage_complete": false,
+      "provider_requests": 7,
+      "incomplete_requests": [
+        17
+      ],
+      "initial_file_state_sha256": "2a5aac79054ad1ce08d21819c57c67b2e0466105b6ad0704cc04cba83ec9c362",
+      "final_file_state_sha256": "7a9729eec60b8a98f38f2467d798bc94fe99b7e6bf3c479a41907e1882b71768",
+      "grade_result_sha256": "6600027775aba3a33f4d285250a16e4e417b00ed2a3b67862022e8a40680faf3",
+      "native_log_sha256": "65a1e7ffa427d56aa7413c379cdf6bef04249ffc5f73b57c397f0131a774f4a8",
+      "descriptive_trace_metrics": {
+        "completed_tool_items": 8,
+        "completed_command_calls": 7,
+        "read_like_command_calls": 7,
+        "command_return_bytes": 41427,
+        "read_like_return_bytes": 41427,
+        "nonzero_command_exits": 0,
+        "missing_item_ids": 0,
+        "duplicate_completed_ids": 0,
+        "scope": "Last completed item per native ID; missing IDs counted separately. Read-like regex includes searches and compound shell commands, not proof of independent reads; truncated logs undercount. Descriptive only, separate from solve and gross-token metrics."
+      }
+    }
+  ],
+  "stage_errors": [
+    {
+      "type": "RuntimeError",
+      "message": "scheduler busy or ambiguous"
+    }
+  ],
+  "audit_errors": [],
+  "source_pin_mismatches": [],
+  "independent_absence_proofs": [
+    {
+      "kind": "containers",
+      "name": "solpi-qwendev-b66fd259cb-terminal-Both",
+      "absence_verified": true
+    },
+    {
+      "kind": "containers",
+      "name": "solpi-qwendev-b66fd259cb-terminal-K",
+      "absence_verified": true
+    },
+    {
+      "kind": "containers",
+      "name": "solpi-qwendev-b66fd259cb-proxy",
+      "absence_verified": true
+    },
+    {
+      "kind": "networks",
+      "name": "solpi-qwendev-b66fd259cb-actor",
+      "absence_verified": true
+    }
+  ],
+  "broker_workers_remaining": 0,
+  "broker_socket_absent": true,
+  "complete_comparison": false,
+  "supported_efficiency": false,
+  "adoption": false,
+  "deadline_evidence": {
+    "request": 17,
+    "seconds": 40.001255698502064,
+    "HTTP": 200,
+    "stream_eof": false,
+    "error": "IncompleteRead"
+  },
+  "scope": "Both and K on one previously exposed Terminal task only; none/candidate and other two families unrun. K partial cost retained, omitted response tokens unknown. No actor exclusion or savings/mechanism claim. Scheduler busy after cutoff; its ownership/idleness not inferred."
+}

@@ -1,0 +1,68 @@
+{
+  "scope": "reused development fixtures; not fresh confirmation",
+  "backend": "Qwen3.8-27B-FP8; separate from historical native routes",
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "scheduler busy or ambiguous"
+    }
+  ],
+  "arms": [
+    {
+      "arm": "none",
+      "expected_attempts": 3,
+      "recorded_attempts": 0,
+      "missing_attempts": 3,
+      "solved": 0,
+      "ungraded": 0,
+      "usage_complete": false,
+      "observed_gross_tokens_lower_bound": 0,
+      "complete_tokens_per_solve": null,
+      "cost_usd_per_solve": null
+    },
+    {
+      "arm": "K",
+      "expected_attempts": 3,
+      "recorded_attempts": 1,
+      "missing_attempts": 2,
+      "solved": 0,
+      "ungraded": 0,
+      "usage_complete": false,
+      "observed_gross_tokens_lower_bound": 84204,
+      "complete_tokens_per_solve": null,
+      "cost_usd_per_solve": null
+    },
+    {
+      "arm": "candidate",
+      "expected_attempts": 3,
+      "recorded_attempts": 0,
+      "missing_attempts": 3,
+      "solved": 0,
+      "ungraded": 0,
+      "usage_complete": false,
+      "observed_gross_tokens_lower_bound": 0,
+      "complete_tokens_per_solve": null,
+      "cost_usd_per_solve": null
+    },
+    {
+      "arm": "Both",
+      "expected_attempts": 3,
+      "recorded_attempts": 1,
+      "missing_attempts": 2,
+      "solved": 1,
+      "ungraded": 0,
+      "usage_complete": false,
+      "observed_gross_tokens_lower_bound": 203141,
+      "complete_tokens_per_solve": null,
+      "cost_usd_per_solve": null
+    }
+  ],
+  "note": "All recorded attempts contribute cost, including failures. Missing/incomplete costs remain TBD.",
+  "protocol_cohort": "consumed seed113,40s upstream/45s proxy; separate from prepared seed127",
+  "plan_sha256": "c71b9ca2f36dbb0536d65cc8c39c175fc355bbddc2b1d564cf3ec0fc10878b53",
+  "evidence_sha256": "b84c4f666badd1893c28100ee8f8a28a059bc59cf88ddb86eee9b83ec1c58130",
+  "collector_sha256": "4e34e3be0f08694121cbe1b020872da96435af5c2e98eb0085df9f790c1d5b7b",
+  "all_comparator_metrics_TBD": true,
+  "actual_native_starts": 2,
+  "actual_provider_POST": 17
+}
