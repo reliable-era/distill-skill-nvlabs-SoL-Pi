@@ -1,0 +1,31 @@
+{
+  "status": "prepared_unexecuted",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "model": "Qwen3.8-27B-FP8",
+  "model_starts": 0,
+  "maximum_future_starts": 2,
+  "future_timeout_seconds": 30,
+  "future_request_cap": 2,
+  "source_hashes": {
+    "broker.py": "59cdf16aa482a82e643442fbeebdbd1fcbec5e4d882f57bb97c8708f96bde319",
+    "route.py": "6fe9ab071cdd94b863e2b87a3333c3b51d5a6c4682a23000d1589349577125dd",
+    "test_broker.py": "c01f05794a2c3e44f49439b0747f14014e01246a8b0bb9587774d81b01b5f280"
+  },
+  "shared_inference_lock": "TBD exactexistinglock from root; refuseinference until frozen",
+  "idleness": "Not proven: GET/get_server_info exposes configuredmaxrunning1 but no observedrunning/queued counters; GET/metrics returnsHTTPerror. Inference remainsblocked.",
+  "native_actor_runner": "Future two starts blocked until native routecontrols pass and observableidle evidence obtained; no unsupported synthetic idleness assertion",
+  "server_changes": 0,
+  "rawlogs": "None; GETmodels only; broker never logsheaders/body",
+  "shared_inference_locks": [
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206852991
+    },
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206919231
+    }
+  ]
+}

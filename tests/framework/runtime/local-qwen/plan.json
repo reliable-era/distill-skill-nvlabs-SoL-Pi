@@ -1,0 +1,58 @@
+{
+  "status": "prepared_AF_UNIX_phase4_noexecution",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "model": "Qwen3.8-27B-FP8",
+  "model_starts": 0,
+  "maximum_future_starts": 2,
+  "future_timeout_seconds": 30,
+  "future_request_cap": "TBD separately frozen native readiness cap; metadata broker hasnoPOSTroute and cannotrun models",
+  "source_hashes": {
+    "route.py": "a2cd7bd4fdedf0e769af4065f47e4b62969f86bae25feef014f1c7d12d1a327d",
+    "broker.py": "3c4e7c81dabf241b3b6dca203eac5dd3ced62d4a6a737a55dcd19e96c4ac11f7",
+    "test_broker.py": "e41c3f9eb28518967162903e6ced615fb85643ca732130dbb38b58cb9d2aa737",
+    "metadata_proxy.py": "a21a11f968bfdf39fb40fefc5bb9d230ff312c07d831038ab6e716e2be96098e"
+  },
+  "shared_inference_lock": "Resolvedbothdistinctexistinginodepins in shared_inference_locks; nonblockingacquireboth",
+  "idleness": "Supported/get_load nowknown; rootobservedbusy. GET-onlyroute canrunwithoutidleclaim; nativeinferenceblockedwhilebusy",
+  "native_actor_runner": "Future two starts blocked until native routecontrols pass and observableidle evidence obtained; no unsupported synthetic idleness assertion",
+  "server_changes": 0,
+  "rawlogs": "None; GETmodels only; broker never logsheaders/body",
+  "shared_inference_locks": [
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206852991
+    },
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206919231
+    }
+  ],
+  "post_requests": 0,
+  "routing_deadline_seconds": 45,
+  "readiness": "GET-only executable prepared for rootreview;0runs. Native inference blocked on observedidleness and separateactor runner/requestcap.",
+  "metadata_helper_resources": {
+    "cpus": 1,
+    "memory_bytes": 536870912,
+    "inspect_required": true
+  },
+  "scheduler_load_endpoint": {
+    "url": "http://127.0.0.1:8000/get_load",
+    "installed_version": "0.0.0.dev1+g5f55db35e.d20260822",
+    "source": "/sgl-workspace/sglang/python/sglang/srt/entrypoints/http_server.py",
+    "source_sha256": "305a02a9238b62da90c9dc90ecbbdc0811ba7725f13056677e3ed7dbbfc81d4e",
+    "source_lines": "829-852",
+    "eligibility": "Allreportedranks num_reqs==0 and num_waiting_reqs==0 underbothlocks beforefutureinference; no cancel/restart",
+    "root_observation": "Busy num_reqs2 waiting1; runtime/local-qwen-server-observation.json"
+  },
+  "previous_consumed_phase": "consumed-get-phase-3",
+  "logging": {
+    "capture_limit_per_stream_bytes": 32768,
+    "capture": "Private stdout/stderr and categorized operation/exit/timeout/hash metadata for failedcommands; no commandtext/header/body publication",
+    "diagnosis": "Prior failedprobe hasno retainedstderr, rootcauseunknown; urllib routingorhelperconfiguration arehypothesesonly"
+  },
+  "metadata_attempts_maximum": 4,
+  "instrumentation": "proxyUnixdirectGET/startuphealth/actorproxyGET, numericbroker/proxy counters, exactsocketabsence andworkertermination",
+  "topology": "OneisolatedinternalactorbridgeIPv6false nogateway; ownedproxy+probeonly. Proxyhasreadonlyprivate700socket-onlydir; actorzero mounts; hostOwnedUnixServer noIP listener fixedloopback8000GETmodels"
+}

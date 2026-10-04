@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "scope": "Stable local-qwen root plus preservedconsumed/superseded phases; native-readiness excluded whileedited; __pycache__/pyc excluded",
+  "files_scanned": 34,
+  "private_patches_scanned": 8,
+  "private_patch_match_files": [],
+  "credential_values_checked": 5,
+  "credential_match_files": [],
+  "credential_scope": "Exact current string values>=16chars from hostCodex seed/privateCodexcache; priorrotated/unavailablecredentials excluded; valuesnotlogged",
+  "plan_source_provenance": [
+    {
+      "path": "plan.json",
+      "sha256": "f7b0801c58bd6156400958bc49781703a4d1e03bfef5d878093cbd49d5b53b4c",
+      "source_mismatches": []
+    },
+    {
+      "path": "consumed-get-phase-3/plan.json",
+      "sha256": "2bd308ec54f15f662cd454167992f7a0777544463eb4d8355f6ab0f1936d4080",
+      "source_mismatches": []
+    },
+    {
+      "path": "superseded-before-final-get-guards/plan.json",
+      "sha256": "e5591645183463b65d25bbe8128ba9df2f5e590a573479634a4d0c4bbfa432d0",
+      "source_mismatches": []
+    },
+    {
+      "path": "consumed-get-phase-2/plan.json",
+      "sha256": "85d38522276c043be1e76fcf28d39b04147a2c53cbfbe29346c80e662ea57baf",
+      "source_mismatches": []
+    },
+    {
+      "path": "superseded-zero-run/plan.json",
+      "sha256": "368b03316141d50b541a08a4b2ae05df391c4b07e42dd91a4e4e241f9aa2a526",
+      "source_mismatches": []
+    },
+    {
+      "path": "consumed-get-phase-1/plan.json",
+      "sha256": "dd9af3cc10ee41fca20a4d53f70f686e52284bcb90bf097d8ce95e582d7f7e40",
+      "source_mismatches": []
+    }
+  ],
+  "errors": [],
+  "root_README_sha256": "a76347361205c10a06716f44bbbf146f9593736b344a3af8fe59dd338b01b0d7",
+  "README_is_frozen_plan_source": false,
+  "raw_private_logs_copied": false,
+  "unsafe_to_stage": [
+    "__pycache__",
+    "*.pyc",
+    "native-readiness (separate active preparation, outsideaudit scope)"
+  ],
+  "real_model_calls": 0
+}

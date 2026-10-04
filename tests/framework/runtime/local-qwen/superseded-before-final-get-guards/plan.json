@@ -1,0 +1,35 @@
+{
+  "status": "prepared_unexecuted",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "model": "Qwen3.8-27B-FP8",
+  "model_starts": 0,
+  "maximum_future_starts": 2,
+  "future_timeout_seconds": 30,
+  "future_request_cap": "TBD separately frozen native readiness cap; metadata broker hasnoPOSTroute and cannotrun models",
+  "source_hashes": {
+    "route.py": "ee29a29d361b6ca6cbe167c288188ffbcf83a2a04f0cd2d819d61a7a33155c52",
+    "broker.py": "7845ac5c5dd259d08dbe87166bddc1ad19c69ca98eda0c70b9931184aa624626",
+    "test_broker.py": "3309d8350a34d566bc3281178ee92cff3f2a0fce109a956bb3117b1049f2da19",
+    "../egress/proxy.py": "b2cc86337d803cb2d4b70c5aed1d73aa422aea10ae4016bd76ef8275aa44eb38"
+  },
+  "shared_inference_lock": "TBD exactexistinglock from root; refuseinference until frozen",
+  "idleness": "Not proven: GET/get_server_info exposes configuredmaxrunning1 but no observedrunning/queued counters; GET/metrics returnsHTTPerror. Inference remainsblocked.",
+  "native_actor_runner": "Future two starts blocked until native routecontrols pass and observableidle evidence obtained; no unsupported synthetic idleness assertion",
+  "server_changes": 0,
+  "rawlogs": "None; GETmodels only; broker never logsheaders/body",
+  "shared_inference_locks": [
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206852991
+    },
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206919231
+    }
+  ],
+  "post_requests": 0,
+  "routing_deadline_seconds": 45,
+  "readiness": "GET-only executable prepared for rootreview;0runs. Native inference blocked on observedidleness and separateactor runner/requestcap."
+}
