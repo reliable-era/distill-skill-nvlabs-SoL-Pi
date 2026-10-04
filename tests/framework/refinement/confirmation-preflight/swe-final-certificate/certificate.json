@@ -1,0 +1,230 @@
+{
+  "status": "four_selected_pairs_eight_intended_controls_validated",
+  "control_attempts_consumed": 14,
+  "intended_validated_controls": 8,
+  "preserved_failed_control_attempts": 6,
+  "models": 0,
+  "task_selection": "unchanged four frozen SWE Verified tasks; no replacements",
+  "official_clean_source": "/tmp/solpi-confirmation-clean-official/SWE-bench-SWE-bench-02e7a74",
+  "official_parser_source_sha256": "a095273010175001a6779e365b3b77abb8657c7ac2e4f80b4bc360faa6f09483",
+  "certificate_method": "Independent readonly official parser/full expected test-ID/P2P/negative/gold gate recheck; no grader reruns",
+  "qualified_setup": {
+    "astropy": "Pinned private offline wheelhouse supplies unchanged official bootstrap; runtime NumPy preserved.",
+    "requests": "Pinned authentic HTTPbin isolated service/private CA appended to original public default bundle; adapted trusted setup, no leaderboard environment equivalence claim."
+  },
+  "phases": [
+    {
+      "phase": "swe",
+      "consumed_control_attempts": 0,
+      "plan_sha256": "67d7490abceedd879a9c49335e3617065b76478b2d414e3e0de0255c4be86a3d",
+      "runner_sha256_matches": true
+    },
+    {
+      "phase": "swe-inventory-repair",
+      "consumed_control_attempts": 1,
+      "plan_sha256": "13de95560264858e61321cbdec3394e77b868900692402ccfcbd9505c5eeb9d7",
+      "runner_sha256_matches": true
+    },
+    {
+      "phase": "swe-network-report-repair",
+      "consumed_control_attempts": 2,
+      "plan_sha256": "e487380c6edb13e67296ae342c57c62fd685c1df72c9de69a8a7d40fe6ed05de",
+      "runner_sha256_matches": true
+    },
+    {
+      "phase": "swe-loopback-repair",
+      "consumed_control_attempts": 5,
+      "plan_sha256": "2f1836c04219b09a4413f1718607cf1f3208f8d8e496a0fd6087e166c3f54da9",
+      "runner_sha256_matches": true
+    },
+    {
+      "phase": "swe-remaining-controls",
+      "consumed_control_attempts": 3,
+      "plan_sha256": "0eb8b9afff7d2de22b82e541c3266873c90d47315399228abee96733a146cfb9",
+      "runner_sha256_matches": true
+    },
+    {
+      "phase": "swe-requests-isolated-controls",
+      "consumed_control_attempts": 1,
+      "plan_sha256": "0bc9c5381717f57f6bd02fc5cca04014022b326557a529b4cded6acc35849af6",
+      "runner_sha256_matches": true
+    },
+    {
+      "phase": "swe-requests-merged-ca-controls",
+      "consumed_control_attempts": 2,
+      "plan_sha256": "e9d3dcec0bd27fd4c2d55255f205055bdab549efea5968924b7ce12af3efc861",
+      "runner_sha256_matches": true
+    }
+  ],
+  "validated_controls": [
+    {
+      "task": "matplotlib__matplotlib-22865",
+      "kind": "unchanged",
+      "phase": "swe-loopback-repair",
+      "run_id": "solpi-confirm-loopback-repair-0-unchanged",
+      "resolved": false,
+      "infra_failure": false,
+      "F2P": {
+        "success": 0,
+        "failure": 3
+      },
+      "P2P": {
+        "success": 57,
+        "failure": 0
+      },
+      "official_report_sha256": "a4e06ae6827809859964e39f0e8525c270194730bf501f39df12f8b650d6e2de",
+      "official_parser_gate_recheck": true,
+      "actual_limits_sha256": "98e102664c7b2d71bee3a2d6b12f5874cf6d2b3fbc6d9a5301bfd7a86257c001",
+      "cleanup_sha256": "ca79995c12f9962683a0b327a5ee78d0b1dd5d90bfea9e00201481286c4ab5a7",
+      "cleanup_absence_verified": true
+    },
+    {
+      "task": "matplotlib__matplotlib-22865",
+      "kind": "gold",
+      "phase": "swe-loopback-repair",
+      "run_id": "solpi-confirm-loopback-repair-1-gold",
+      "resolved": true,
+      "infra_failure": false,
+      "F2P": {
+        "success": 3,
+        "failure": 0
+      },
+      "P2P": {
+        "success": 57,
+        "failure": 0
+      },
+      "official_report_sha256": "42d7cd837a9e883e413fef869680b31d6bacecfa31b775c57abb9f86d1f49146",
+      "official_parser_gate_recheck": true,
+      "actual_limits_sha256": "18add44c084e5ea192c770f15e5abffbc6edbb3260e96e842d5977a219f717a7",
+      "cleanup_sha256": "01c14ef15d12686b749cd721de65b4c17bc1a4ab961f48bb538f61c3289979f8",
+      "cleanup_absence_verified": true
+    },
+    {
+      "task": "scikit-learn__scikit-learn-10844",
+      "kind": "unchanged",
+      "phase": "swe-loopback-repair",
+      "run_id": "solpi-confirm-loopback-repair-2-unchanged",
+      "resolved": false,
+      "infra_failure": false,
+      "F2P": {
+        "success": 0,
+        "failure": 1
+      },
+      "P2P": {
+        "success": 16,
+        "failure": 0
+      },
+      "official_report_sha256": "625e8b803d44f2a15ebc71d8ff4a4cc423c72904cfaa6bfb3e267e98f2a1a46c",
+      "official_parser_gate_recheck": true,
+      "actual_limits_sha256": "d625112961626098f7d738d2b71c68ccfab41e9e0c60deaa915d1ef722da8d44",
+      "cleanup_sha256": "9858833ba3ae7b97f7895584d45c769f58a8e5ccd57e15d458f11ccc61e80805",
+      "cleanup_absence_verified": true
+    },
+    {
+      "task": "scikit-learn__scikit-learn-10844",
+      "kind": "gold",
+      "phase": "swe-loopback-repair",
+      "run_id": "solpi-confirm-loopback-repair-3-gold",
+      "resolved": true,
+      "infra_failure": false,
+      "F2P": {
+        "success": 1,
+        "failure": 0
+      },
+      "P2P": {
+        "success": 16,
+        "failure": 0
+      },
+      "official_report_sha256": "0de85d57c4082a5d80f24d50edadda45ccd3bd5de72bd80abfd731e60f0f8985",
+      "official_parser_gate_recheck": true,
+      "actual_limits_sha256": "8888014e1c2085f75f0bc3c78ac56c3ca9013853bcb648e460aec958d9ad1807",
+      "cleanup_sha256": "9a0838283f93942c1c482ba3e0d8b001085316d11f07903a7ad603ccee77fb1f",
+      "cleanup_absence_verified": true
+    },
+    {
+      "task": "astropy__astropy-13236",
+      "kind": "unchanged",
+      "phase": "swe-remaining-controls",
+      "run_id": "solpi-confirm-remaining-0-unchanged",
+      "resolved": false,
+      "infra_failure": false,
+      "F2P": {
+        "success": 0,
+        "failure": 2
+      },
+      "P2P": {
+        "success": 644,
+        "failure": 0
+      },
+      "official_report_sha256": "61de477fd30971e7eebd6a81adb61c6c1b060d75526bf80cbeda462c35446cd5",
+      "official_parser_gate_recheck": true,
+      "actual_limits_sha256": "ccdb4414c5eeeff59340ce50589bb314ac014fe15934813076e3e45a0b5a39a8",
+      "cleanup_sha256": "6936e35af10d39b898e8e6a83608d43978c2939f5a4f3d04ac9c17ea1b26ac12",
+      "cleanup_absence_verified": true
+    },
+    {
+      "task": "astropy__astropy-13236",
+      "kind": "gold",
+      "phase": "swe-remaining-controls",
+      "run_id": "solpi-confirm-remaining-1-gold",
+      "resolved": true,
+      "infra_failure": false,
+      "F2P": {
+        "success": 2,
+        "failure": 0
+      },
+      "P2P": {
+        "success": 644,
+        "failure": 0
+      },
+      "official_report_sha256": "2c6d5dba666eee90169107daa6bce0bedcc84234196c79d182f5814b026d7412",
+      "official_parser_gate_recheck": true,
+      "actual_limits_sha256": "3c494662748f91b0dce9d1215411f98008f8febc59c40788e93ba277ef104bb9",
+      "cleanup_sha256": "3f58e7507024aec6fb262671b16ca228c627fa8caa441f337844684ef8c61d03",
+      "cleanup_absence_verified": true
+    },
+    {
+      "task": "psf__requests-1921",
+      "kind": "unchanged",
+      "phase": "swe-requests-merged-ca-controls",
+      "run_id": "solpi-confirm-requests-merged-ca-unchanged",
+      "resolved": false,
+      "infra_failure": false,
+      "F2P": {
+        "success": 5,
+        "failure": 1
+      },
+      "P2P": {
+        "success": 107,
+        "failure": 0
+      },
+      "official_report_sha256": "f3d0c4d7244b4c747352eff1f7f58441496b62afcba84c5b266b6e03a4c7cfcf",
+      "official_parser_gate_recheck": true,
+      "actual_limits_sha256": "4c8c559e84fa0063280bb89736260787b343bbe0d420b57225855cbded333f96",
+      "cleanup_sha256": "d59a0a908ef437fef22777059198e168d84a0de0377d1aed354f0ee5b501f10f",
+      "cleanup_absence_verified": true
+    },
+    {
+      "task": "psf__requests-1921",
+      "kind": "gold",
+      "phase": "swe-requests-merged-ca-controls",
+      "run_id": "solpi-confirm-requests-merged-ca-gold",
+      "resolved": true,
+      "infra_failure": false,
+      "F2P": {
+        "success": 6,
+        "failure": 0
+      },
+      "P2P": {
+        "success": 107,
+        "failure": 0
+      },
+      "official_report_sha256": "d0ca8a4cd36e3b1955f389e12d5206839620110214309fdd90e7fa6aa794831e",
+      "official_parser_gate_recheck": true,
+      "actual_limits_sha256": "53e21581fe0d5c1969084a557eb4e9b26c1dae5d5bfa4127250f8a16dc760953",
+      "cleanup_sha256": "395a8a37d1fe946078a338d5e1981e6a3e61e264fe4c03b04b031db42a73e2c8",
+      "cleanup_absence_verified": true
+    }
+  ],
+  "next_actor_calls_authorized": false
+}

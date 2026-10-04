@@ -1,0 +1,139 @@
+{
+  "status": "stopped_ungraded_P2P_trust_failure",
+  "owned_session": 58218,
+  "terminal_exit_code": 1,
+  "controls_started": 1,
+  "controls_validated": 0,
+  "gold_started": false,
+  "prior_control_attempts": 11,
+  "cumulative_control_attempts": 12,
+  "fixture_starts": 1,
+  "models": 0,
+  "pulls": 0,
+  "builds": 0,
+  "retries": 0,
+  "official_report_flags": {
+    "infra_failure": false,
+    "patch_is_None": false,
+    "patch_exists": true,
+    "patch_successfully_applied": true,
+    "resolved": false
+  },
+  "official_test_counts": {
+    "FAIL_TO_PASS": {
+      "success": 5,
+      "failure": 1
+    },
+    "PASS_TO_PASS": {
+      "success": 106,
+      "failure": 1
+    },
+    "FAIL_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    },
+    "PASS_TO_FAIL": {
+      "success": 0,
+      "failure": 0
+    }
+  },
+  "official_report_sha256": "e851adbca82981c90db5c03a18ad73da14e0c68fe4cb02b8a39601c31f11f2e7",
+  "failed_P2P_test": "test_requests.py::RequestsTestCase::test_mixed_case_scheme_acceptable",
+  "expected": "Prepared mixed-case HTTP/HTTPS requests succeed with certificate verification enabled.",
+  "observed": "HTTPS send raised certificate verification failure: unable to get local issuer certificate.",
+  "primary_source_diagnosis": "Pinned Session.send defaults to self.verify without REQUESTS_CA_BUNDLE merging; Session.request merges that environment override; adapter verifyTrue uses default CA bundle. Cached-image source/default-bundle verification remains pending.",
+  "not_app_version_claim": "No HTTP API response was reached on the failing HTTPS request; evidence does not identify app response/version mismatch.",
+  "actual_grader_caps_CA_network": {
+    "container_id": "f056a05236173a028f3980c8c3386df7eaae645e9c2afc54fdaaabff287aeadd",
+    "memory": 8589934592,
+    "nano_cpus": 4000000000,
+    "network": "solpi-requests-fixture-internal",
+    "config_network_disabled": false,
+    "mounts": [
+      [
+        "/tmp/solpi-httpbin-fixture-parity/ca.pem",
+        "/certs/ca.pem",
+        false
+      ]
+    ],
+    "CA_environment_verified": true,
+    "verified_before_test": true,
+    "exact_membership_verified": true
+  },
+  "process_groups": [
+    {
+      "pid": 1189761,
+      "pgid": 1189761,
+      "sid": 1189761,
+      "terminal": true,
+      "remaining_members": [],
+      "signals": []
+    },
+    {
+      "pid": 1190524,
+      "pgid": 1190524,
+      "sid": 1190524,
+      "terminal": true,
+      "remaining_members": [],
+      "signals": []
+    }
+  ],
+  "all_process_groups_terminal": true,
+  "grader_cleanup_absence_verified": true,
+  "fixture_cleanup": {
+    "records": [
+      {
+        "id": "0e64f00207f71707c907f137d6b2327141ca0fbf2a2e112241a75c170c90680c",
+        "absence_verified": true
+      },
+      {
+        "id": "88a5f14777fd0eb9de1432efea2992744e4943e690d6b7f3ff0f62d78945ac57",
+        "absence_verified": true
+      }
+    ],
+    "error": null
+  },
+  "all_fixture_objects_absence_verified": true,
+  "plan_sha256": "0bc9c5381717f57f6bd02fc5cca04014022b326557a529b4cded6acc35849af6",
+  "runner_sha256_matches": true,
+  "source_hashes_match": true,
+  "authorization_sha256": "c2ab4cebba98ab8f2b4b90209ce046a743ec0673b37461e305c97985de52732f",
+  "private_evidence_hashes": {
+    "fixture-cleanup.json": "8bcc58aa36dda011dcc2243cd3c6a9aa17e23b853360943f9c04e3bea2c9a1a9",
+    "phase-worker-start.json": "e14c19bb0ba37fccac39b66f6c817ef83717ac9edfd97b61dea3d411820238a0",
+    "phase-start.json": "e14c19bb0ba37fccac39b66f6c817ef83717ac9edfd97b61dea3d411820238a0",
+    "phase-process.json": "37889f1bf3bb6e4ac99e4bca7f0896e3bf6797cce9476f906dc0c96dd8584a77",
+    "private-precise-P2P-diagnosis.json": "ad0f14d61b5e8800f3e4331059a8d20eb21782a9695c36ca789bb462f11a39a4",
+    "fixture.json": "5de8ca4c831248bd43c6d5ae21add1d00eb2a999dc890d8923d31f4d2d2c32d2",
+    "private-single-P2P-diagnosis.json": "44ecc06e5680b686e81e191e2b264af4274c31457ed48c937e6896f9422dbebe",
+    "fixture-state-after-start.json": "6f903a83e3868e981abbf86d13e96832c615ca3cb6d749dfc2ed045745f17eaa",
+    "fixture-start.json": "e14c19bb0ba37fccac39b66f6c817ef83717ac9edfd97b61dea3d411820238a0",
+    "private-phase.log": "a572675b6fe50d73a043988c9f41da80ebab6f7f3f03435dec098fb24d17de1b",
+    "private-fixture-capture.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fixture-actual-config.json": "9435256bc69f4cfb47f4c0c379a93ccb29f0401ebd1771aa30d3700c87146e31",
+    "network-state-created.json": "04ef67d95a671d5a96d4140f50fc09bdd224df817e45747bcb0e9aadbd0d5198",
+    "launch-start.json": "af47ac001c348790f1ef3362b8e6ff1cfecfdcfae7ca7c7d24b369c59faf1b50",
+    "process-group-terminal.json": "eac60c541cf09cb7eb549f20e024042814d02baae4ced51bbc6c564241408a4c",
+    "fixture-evidence/pre-cleanup-evidence.json": "1561dc2c20b1165ddf7dd25c0d945aec9ad261a3855198f9ac3dbfd4011abe4e",
+    "fixture-evidence/private-listener.log": "f2aaa51e25cfcc33b3e2c70113e971cc220c19a26f2a9c2fb070e1643a3b918b",
+    "solpi-confirm-requests-isolated-unchanged/fixture-state-before-test.json": "6f903a83e3868e981abbf86d13e96832c615ca3cb6d749dfc2ed045745f17eaa",
+    "solpi-confirm-requests-isolated-unchanged/cleanup.json": "267a10c600e6d4b1a12f111e89bf7ef51aa952767f9a1bc7b477564911a8b1ff",
+    "solpi-confirm-requests-isolated-unchanged/control-start.json": "0265043c179e62b234a3b6a0fda2f932312892544f37efb6f03be847bbf194e5",
+    "solpi-confirm-requests-isolated-unchanged/private-harness.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solpi-confirm-requests-isolated-unchanged/worker-result.json": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51",
+    "solpi-confirm-requests-isolated-unchanged/network-state-before-test.json": "40850ef226d2f891b4e8f60afaca0d7fb77d26ae3823e6bef7f396d68454311b",
+    "solpi-confirm-requests-isolated-unchanged/outer-cleanup.json": "267a10c600e6d4b1a12f111e89bf7ef51aa952767f9a1bc7b477564911a8b1ff",
+    "solpi-confirm-requests-isolated-unchanged/container-limits.json": "158bf7f7472bf65cf13ecec80a5596e59727979c43b4551dcce47722292932e0",
+    "solpi-confirm-requests-isolated-unchanged/worker-process.json": "fa0ae4534f91cc4687719e1fce55a0fb4205af2083d3eff8d4a4dc4ff2b455d7",
+    "solpi-confirm-requests-isolated-unchanged/worker-start.json": "bbddd57657329225d72544a774cb9f8645c305d48a9ef9cbd58a5dd67d857e4a",
+    "solpi-confirm-requests-isolated-unchanged/process-group-terminal.json": "4104fee1e8d6cfc00de871c59983632eb1d421b795427b5a7d40df09de1f6371",
+    "solpi-confirm-requests-isolated-unchanged/logs/evaluation/solpi-confirm-requests-isolated-unchanged/private-control/psf__requests-1921/patch.diff": "072233c6da0a88b936977969e92588ffc8913443583f8bb55dddfbf33a03dbcc",
+    "solpi-confirm-requests-isolated-unchanged/logs/evaluation/solpi-confirm-requests-isolated-unchanged/private-control/psf__requests-1921/run_instance.log": "f5bfb0d4bc10f1bb24df73331100f0dcf33d4288f3c6582b3eed3b6f27dff3b3",
+    "solpi-confirm-requests-isolated-unchanged/logs/evaluation/solpi-confirm-requests-isolated-unchanged/private-control/psf__requests-1921/report.json": "e851adbca82981c90db5c03a18ad73da14e0c68fe4cb02b8a39601c31f11f2e7",
+    "solpi-confirm-requests-isolated-unchanged/logs/evaluation/solpi-confirm-requests-isolated-unchanged/private-control/psf__requests-1921/test_output.txt": "6fe7f96ce970788094d553ad54cb6a0697a6a545f53ff511d9dc085a91db2d3a",
+    "solpi-confirm-requests-isolated-unchanged/logs/evaluation/solpi-confirm-requests-isolated-unchanged/private-control/psf__requests-1921/eval.sh": "fdfea48acccbc7c8c3b2fa3485100153c6c3b80a15390d76e9c185d2d1c8a342"
+  },
+  "private_values_scanned": 10,
+  "publication_matches": [],
+  "next_controls_authorized": false
+}

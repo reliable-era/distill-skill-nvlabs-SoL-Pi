@@ -1,0 +1,49 @@
+{
+  "native_version_from_frozen_plan": "1.2.16",
+  "native_sha256": "a759ce7c7a235d9b6c281a25ead97cbbf2e92314a3ffd224e2f9144f3fae7a86",
+  "native_matches_frozen_binary": true,
+  "native_format": "stripped ELF x86_64; source/compiler language not established",
+  "native_help_sha256": "8fcf40227fe84704f7f8155b3b5ebcee79dfdc5208fde6e8b07569c24425f976",
+  "native_help_supported_endpoint_flag": false,
+  "native_local_OpenAI_supported_config": "TBD; no supported route established from native help/current primary CLI docs",
+  "negative_evidence_limit": "Help absence and binary string search cannot prove no hidden route exists. No parser/mock/model experiment performed.",
+  "SDK_source_commit": "12f9a4c3becf487302dc799b0f59054f01f3ddb9",
+  "SDK_package_version": "0.1.20",
+  "SDK_model_config": "LocalOpenAIAgentConfig(model,base_url) constructs localharness GemmaEndpoint(base_url)",
+  "SDK_harness_executable": "google/antigravity/bin/localharness; override ANTIGRAVITY_HARNESS_PATH; distinct from native agy",
+  "SDK_harness_source_description": "Go-based local harness in pinned Python SDK source; this description is not assigned to native agy ELF",
+  "SDK_process_source_locations": {
+    "local_config": "local_openai_connection_config.py:85",
+    "endpoint": "local_openai_connection.py:45",
+    "binary_resolution": "local_connection.py:764",
+    "spawn": "local_connection.py:1421",
+    "cumulative_usage_accessor": "local_connection.py:457"
+  },
+  "native_1_2_16_implementation_usage_mapping": "TBD: SDK source not aligned to native CLI; previous raw SDK-counter observations retained only as SDK-reported totals",
+  "cached_SDK_search": "No Google antigravity Python SDK under inspected /tmp venvs; antigravity staging empty; native binary reused unchanged",
+  "model_calls": 0,
+  "auth_refreshes": 0,
+  "installs": 0,
+  "practical_routes": [
+    {
+      "route": "Native agy OpenAI-compatible override",
+      "status": "TBD; do not count as metered primary harness until native config/implementation and bounded observed routing prove it."
+    },
+    {
+      "route": "Pinned Antigravity SDK LocalOpenAI localharness arm",
+      "status": "Supported by current primary docs/source; separate harness identity, not native agy; preparation/runtime would need its own authorization and provider ledger."
+    },
+    {
+      "route": "Native CLI credentialed provider or another already-selected primary harness",
+      "status": "Requires actual provider usage ledger/defined complete traffic, or authenticated Copilot/Cursor readiness; not substituted by SDK."
+    }
+  ],
+  "primary_pages": [
+    "https://www.antigravity.google/docs/sdk/local-models/",
+    "https://www.antigravity.google/docs/cli/reference/",
+    "https://www.antigravity.google/changelog?tab=cli"
+  ],
+  "source_provenance_sha256": "b4f1d030650c2b943579cbad1599621b9e547e3061a9fc439dbc8b137da219e3",
+  "credential_files_opened_by_research": false,
+  "native_help_internal_file_access": "not traced; research invokes help only, no authentication/model command"
+}

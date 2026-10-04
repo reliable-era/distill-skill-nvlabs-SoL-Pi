@@ -83,14 +83,19 @@ PATH issue changes verification behavior; future images now pass six login-shell
 probes. Five-language starter/reference sanity passes ten checks. The twelve-task
 sealed allocation and predefined extension are frozen under framework/refinement.
 
-Next milestone: run a matched development screen of the frozen independent-reads
-candidate on three reused families and four arms. The local Qwen Codex transport
-now completes a tiny independently graded repair with reconciled full usage;
-Pi transport repair remains in progress. Complete controls for the new grading
-adapter before model runs. These development tasks cannot establish fresh wins.
-The selected Terminal controls pass; selected SWE controls are six validated of
-eight intended. Authentic HTTP/HTTPS fixture parity now passes twelve checks;
-remaining Requests controls require a separately frozen execution plan.
+Current milestone: complete the matched development screen of the frozen
+independent-reads candidate on three reused families and four arms. Both local
+Qwen Codex and Pi transports now pass a tiny independently graded repair with
+reconciled provider usage. Codex's repaired development cohort is running; Pi
+is queued behind it on the shared server. Preserve the earlier partial cohort
+and zero-start Pi stage separately. These development tasks cannot establish
+fresh wins, and the current candidate has already failed its Terminal task.
+
+The six development grading controls pass. All eight intended selected SWE
+controls now pass across four tasks, with fourteen actual attempts retained.
+Requests uses a documented isolated HTTP/HTTPS fixture and public CA adaptation;
+this is not the public leaderboard protocol. Selected Terminal and polyglot
+controls also pass. Fresh confirmation remains sealed and unexecuted.
 
 References are pinned in `framework/refinement/references.json`; Jev's intended
 identity remains TBD. Evaluate one mechanism at a time, preserving unfavorable

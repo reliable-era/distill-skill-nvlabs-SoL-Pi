@@ -1,0 +1,11 @@
+# Cached Requests CA provenance — installed scope verified
+
+One authorized metadata probe completed; zero HTTP requests, tests, graders, models, pulls or builds. The previous unchanged control failed only its mixed-case-scheme P2P TLS trust check; its gold control never started. Twelve prior control attempts remain preserved and hash-bound.
+
+Pinned public Requests sources confirm that direct Session.send defaults to self.verify, while Session.request merges the CA environment setting. This proposed local cached-image import probe will verify the actual installed sources and effective DEFAULT_CA_BUNDLE_PATH before any repair. It copies/hashes only sessions/adapters/certs plus the existing public CA bundle into private output, capped at one MiB. No selected tests/gold are mounted or read. No package or trust configuration is modified.
+
+The proposed one-shot probe has a ten-second outer cap, network none, one CPU/512 MiB and a read-only container filesystem. Only the fixed probe script and separate private output are mounted. Partial logs survive cleanup; actual state is retained before removal. State fallback/removal/absence inspection are bounded at five/twenty-five/ten seconds. Four offline checks pass; root must review the exact plan before this metadata runtime starts. A later additive trusted-CA setup and unchanged/gold phase require separate review with a transparent fourteen-attempt cap (twelve prior plus two new), preserving certificate verification and original tests/source.
+
+All four installed trust facts must match the reviewed direct-send/environment/default-bundle distinction exactly; a reversed or missing fact stops readiness.
+
+The single probe finished synchronously (exit 0, 0.433 seconds), confirming Requests 2.3.0, all four trust facts, original-base sessions/adapters hashes and a 149-certificate default bundle; 343,622 bytes were privately extracted. Read-only filesystem/caps and cleanup were verified. [execution-audit.json](execution-audit.json) records the evidence. Scope matters: this script imported installed site-packages, whereas prior pytest used `/testbed/requests`. The installed bundle path must not be treated as the grader repo bundle path without separate verification. No bundle mutation or further runtime is authorized.

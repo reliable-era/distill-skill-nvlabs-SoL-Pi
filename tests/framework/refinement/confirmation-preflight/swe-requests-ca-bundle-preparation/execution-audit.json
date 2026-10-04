@@ -1,0 +1,111 @@
+{
+  "status": "installed_Requests_CA_metadata_verified",
+  "terminal_exit_code": 0,
+  "execution_handle": "synchronous completed command; no session ID allocated",
+  "tool_elapsed_seconds": 0.432916104,
+  "metadata_probe_starts": 1,
+  "HTTP_requests": 0,
+  "graders": 0,
+  "models": 0,
+  "pulls": 0,
+  "builds": 0,
+  "retries": 0,
+  "requests_version": "2.3.0",
+  "installed_metadata": {
+    "requests_version": "2.3.0",
+    "records": {
+      "sessions": {
+        "path": "/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/requests/sessions.py",
+        "sha256": "32e30eadf91367b3aefb90e8541cf3fc20d3d950a16828c0101f4232d36a78a9",
+        "bytes": 19902
+      },
+      "adapters": {
+        "path": "/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/requests/adapters.py",
+        "sha256": "4002f9ad2c04ceeaece4fe2ac23148cc74086de515f0eb1498a06f796e2bf899",
+        "bytes": 14742
+      },
+      "certs": {
+        "path": "/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/requests/certs.py",
+        "sha256": "c126aa8523680748a0a7a0dafa15b0d23b5720229705b2fc692f6cc2d865b79d",
+        "bytes": 544
+      },
+      "default_CA": {
+        "path": "/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/requests/cacert.pem",
+        "sha256": "6a4eeafeaf28cc7750f5f7f6ed4f84d6f08dacb8ac151412332f732647694253",
+        "bytes": 308434,
+        "PEM_certificate_count": 149
+      }
+    },
+    "extracted_bytes": 343622,
+    "facts": {
+      "send_defaults_to_self_verify": true,
+      "send_merges_CA_environment": false,
+      "request_merges_CA_environment": true,
+      "adapter_uses_default_CA": true
+    },
+    "HTTP_requests": 0
+  },
+  "installed_source_matches_original_base": {
+    "sessions": true,
+    "adapters": true
+  },
+  "actual_config": {
+    "memory": 536870912,
+    "nano_cpus": 1000000000,
+    "network_mode": "none",
+    "network_disabled": false,
+    "read_only": true,
+    "mounts": [
+      [
+        "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-ca-bundle-preparation/probe.py",
+        "/probe.py",
+        false
+      ],
+      [
+        "/tmp/solpi-requests-ca-bundle-preparation/output",
+        "/output",
+        true
+      ]
+    ],
+    "verified_before_execution": true
+  },
+  "state_before_cleanup": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-10-04T07:52:46.116825043Z",
+    "FinishedAt": "2026-10-04T07:52:46.316765665Z"
+  },
+  "cleanup_absence_verified": true,
+  "scope_limit": "This script imported installed site-packages Requests. Prior pytest imported /testbed/requests. Installed default CA path is not automatically the grading repo default; repo bundle path/bytes still require local verification or clearly qualified static derivation before overlay.",
+  "plan_sha256": "f8e1cf4f3c25884cc4466a569929e04fff40eda7f6fed94a2efe9e43bebbef9c",
+  "source_hashes_match": true,
+  "preserved_phase_hashes_match": true,
+  "result_sha256": "a480730dff812b22aa1de0947052aacfb4b8e6afb15367409b427a2360f97dd1",
+  "authorization_sha256": "06427967adfe523e9bd3a8d58918f3f90119917a930a1af34b7a8e8976860bd2",
+  "private_evidence_hashes": {
+    "cleanup.json": "dc52ef1ff757def20492c280b437e3a51bf9281b9046cb70531c065c4bce856c",
+    "phase-start.json": "6bb6bcc54fb233d65c1174d1f96055cacf27acf89098db7c8c6afba86d24f20b",
+    "worker-result.json": "81868a6e94ffc0178bf833deb1c9013d9fab4ee95ddb876a5e8ec4f1d26376d2",
+    "container.json": "7af7a1212ab75ce232acf6ef8500599e0ce7bff06791bd0f38753b4901f10a8a",
+    "actual-config.json": "1150e5bfe431ad7daeb88245d09c8a05c95edcadf006a3be0993f6e94bd66ae5",
+    "state-before-cleanup.json": "c6e4cac84d9e03390f6aef6c2e69e1d9cd7989416b267420905c5234baba4fe9",
+    "worker-start.json": "6bb6bcc54fb233d65c1174d1f96055cacf27acf89098db7c8c6afba86d24f20b",
+    "private-worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output/private-probe.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output/metadata.json": "a210be38619985a09c0f244d1f7415ca2097123830cb9721f699748ebc7a6505",
+    "output/sessions.py": "32e30eadf91367b3aefb90e8541cf3fc20d3d950a16828c0101f4232d36a78a9",
+    "output/certs.py": "c126aa8523680748a0a7a0dafa15b0d23b5720229705b2fc692f6cc2d865b79d",
+    "output/original-default-ca.pem": "6a4eeafeaf28cc7750f5f7f6ed4f84d6f08dacb8ac151412332f732647694253",
+    "output/adapters.py": "4002f9ad2c04ceeaece4fe2ac23148cc74086de515f0eb1498a06f796e2bf899"
+  },
+  "private_values_scanned": 10,
+  "publication_matches": [],
+  "next_runtime_authorized": false
+}

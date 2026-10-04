@@ -1,0 +1,71 @@
+{
+  "status": "readonly_repo_CA_copied",
+  "terminal_exit_code": 0,
+  "elapsed_seconds": 0.246512816,
+  "containers_created": 1,
+  "containers_started": 0,
+  "HTTP_requests": 0,
+  "graders": 0,
+  "models": 0,
+  "pulls": 0,
+  "builds": 0,
+  "retries": 0,
+  "actual_config": {
+    "memory": 536870912,
+    "nano_cpus": 1000000000,
+    "network_mode": "none",
+    "network_disabled": false,
+    "readonly": true,
+    "state": {
+      "Status": "created",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "0001-01-01T00:00:00Z",
+      "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "mounts": []
+  },
+  "records": [
+    {
+      "path": "/testbed/requests/certs.py",
+      "sha256": "c126aa8523680748a0a7a0dafa15b0d23b5720229705b2fc692f6cc2d865b79d",
+      "bytes": 544,
+      "PEM_certificates": 0
+    },
+    {
+      "path": "/testbed/requests/cacert.pem",
+      "sha256": "6a4eeafeaf28cc7750f5f7f6ed4f84d6f08dacb8ac151412332f732647694253",
+      "bytes": 308434,
+      "PEM_certificates": 149
+    }
+  ],
+  "bytes": 308978,
+  "archive_bytes": 312832,
+  "proven_default": {
+    "repo_default_CA_path": "/testbed/requests/cacert.pem",
+    "certs_where_function_line": 18,
+    "return_AST": "Call(func=Attribute(value=Attribute(value=Name(id='os', ctx=Load()), attr='path', ctx=Load()), attr='join', ctx=Load()), args=[Call(func=Attribute(value=Attribute(value=Name(id='os', ctx=Load()), attr='path', ctx=Load()), attr='dirname', ctx=Load()), args=[Name(id='__file__', ctx=Load())], keywords=[]), Constant(value='cacert.pem')], keywords=[])",
+    "repo_certs_sha256": "c126aa8523680748a0a7a0dafa15b0d23b5720229705b2fc692f6cc2d865b79d",
+    "repo_bundle_sha256": "6a4eeafeaf28cc7750f5f7f6ed4f84d6f08dacb8ac151412332f732647694253",
+    "installed_bundle_matches_repository": true
+  },
+  "cleanup_absence_verified": true,
+  "plan_sha256": "5ce026edf0968d2f15efe250674ff850ed1d0fdca1b1abf103a361183eb05636",
+  "runner_sha256_matches": true,
+  "private_evidence_hashes": {
+    "cleanup.json": "89ed40fb1014cf070b1c88c47c56e2fdf0cfcd6ec33a5b5445e22d12ee3b5d09",
+    "phase-start.json": "901a40fb675836a318753dbcf95084ccfeff89bba63fe02fecc3dd546237167c",
+    "cacert.pem": "6a4eeafeaf28cc7750f5f7f6ed4f84d6f08dacb8ac151412332f732647694253",
+    "container.json": "6f246ca2e0b0954058f38e1d19a1722dc07758f5fc31c89bd3eb105bcd8d9911",
+    "actual-config.json": "cb932cf975f774b3839c95058cc4419cc95c624d7b7d9bc72debedb019198f15",
+    "certs.py": "c126aa8523680748a0a7a0dafa15b0d23b5720229705b2fc692f6cc2d865b79d",
+    "copy-result.json": "be0a64f6505177eaa7a85df2a9d96cbf6fc0d156a8e7d89a5986d280119cca6c",
+    "private-worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

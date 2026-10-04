@@ -1,0 +1,60 @@
+{
+  "status": "prepared_only",
+  "maximum_metadata_probe_starts": 1,
+  "probe_seconds": 10,
+  "cleanup_seconds": 40,
+  "maximum_private_extracted_bytes": 1048576,
+  "maximum_pulls": 0,
+  "maximum_builds": 0,
+  "maximum_HTTP_requests": 0,
+  "maximum_graders": 0,
+  "maximum_models": 0,
+  "maximum_retries": 0,
+  "image": "swebench/sweb.eval.x86_64.psf_1776_requests-1921@sha256:2ee0a4c706f04d2926a1622ec51b53d4ce6010b80d3ee10d414ea2a276c26cc9",
+  "image_id": "sha256:ef715951df0c8e5504514a14c03362da52774c57faa88f990965b8787512d171",
+  "interpreter": "/opt/miniconda3/envs/testbed/bin/python",
+  "caps": {
+    "memory": 536870912,
+    "nano_cpus": 1000000000,
+    "network_mode": "none",
+    "network_disabled": false,
+    "read_only": true
+  },
+  "private_root": "/tmp/solpi-requests-ca-bundle-preparation",
+  "source_probe_scope": "import cached-image Requests only; read/hash/export actual installed sessions/adapters/certs and effective default CA bundle; no HTTP, tests, gold, package installs or CA mutation",
+  "daemon_id": "bb2b5847-e25d-4cc5-b9f6-d97f47414120",
+  "docker_root_dir": "/var/lib/docker",
+  "preserved_consumed_phase": {
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-isolated-controls/execution-plan.json": "0bc9c5381717f57f6bd02fc5cca04014022b326557a529b4cded6acc35849af6",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-isolated-controls/run_controls.py": "732da25dc8ab496bf187d9c3c4d11b3debbae384f76597f3172d2acd553c7bf2",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-isolated-controls/execution-authorization.json": "c2ab4cebba98ab8f2b4b90209ce046a743ec0673b37461e305c97985de52732f",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-isolated-controls/execution-audit.json": "fa0b11cfe265caad629947841cb6a36fb96776dacfebb4ac6e00d0f7c8180cd1",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-isolated-controls/progress.json": "622c8e31db3a692b3dfdf9e8f8fb362f35efbb1d4e571ecbf0e85abbf8492485"
+  },
+  "prior_control_attempts": 12,
+  "future_control_plan_required": {
+    "new_attempts": 2,
+    "combined_cap": 14,
+    "fixed_order": [
+      "unchanged",
+      "gold"
+    ],
+    "authorization": false
+  },
+  "source_hashes": {
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-ca-bundle-preparation/probe.py": "8c22bf162253afeefbd6333a57f485f8e38a6fe7a495aa66ced96f8652c79da0",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-ca-bundle-preparation/run_preparation.py": "5e93e29d9c797889f7b4e8cccb671accf7cb81660f5d116857eb9baff0c4192f",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/confirmation-preflight/swe-requests-ca-bundle-preparation/test_preparation.py": "f8ed57761f880ff008ac71dddab5cfcf8e369df49f7c07cfa8d06eaafbdbd8ae"
+  },
+  "maximum_total_seconds": 50,
+  "state_capture_seconds": 5,
+  "remove_seconds": 25,
+  "absence_inspect_seconds": 10,
+  "offline_tests_passed": 4,
+  "required_installed_trust_facts": {
+    "send_defaults_to_self_verify": true,
+    "send_merges_CA_environment": false,
+    "request_merges_CA_environment": true,
+    "adapter_uses_default_CA": true
+  }
+}
