@@ -1,0 +1,12 @@
+911c63d2afae239ea1bee306d14c17611aaad32ac1eaa9a485f5dee4fed71bbc
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import os; os.environ.update(HOME='/tmp',GOCACHE='/tmp/go-cache'); exec(compile(open('/grade/grade.py').read().replace('/grader','/grade'),'/grade/grade.py','exec'))
+                                                                       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/grade/grade.py", line 85, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/grade/grade.py", line 19, in main
+    grader = Path(__file__).resolve().parent
+                  ^^^^^^^^
+NameError: name '__file__' is not defined. Did you mean: '__name__'?

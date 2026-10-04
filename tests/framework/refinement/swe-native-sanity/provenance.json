@@ -1,0 +1,35 @@
+{
+  "purpose": "Native actor runtime and private official-task test sanity, not inference",
+  "image_id": "sha256:10a67635ce037886b760a72f6eef8459beb6a0c6e070c0748a037839135acc45",
+  "source_manifest": {
+    "benchmark": "swe-bench-verified",
+    "instance_id": "pallets__flask-5014",
+    "base_commit": "7ee9ceb71e868944a46e1ff00b506772a53a4f1d",
+    "image_id": "sha256:bf8242431f5c177d67996b3c888a0f51e4bb7bd0b67009bee6c70842baca1241",
+    "private_dataset_sha256": "e2c783242ec6838839d589ffa683cdce0147bd98994c12079d972eb831482a0d",
+    "actor_prompt_sha256": "45f42169b9119f7c4e2f3e1547bd38a06cc2652be922b5584d4fe3b24e61dc89",
+    "gold_in_actor": false,
+    "upstream_git_history_in_actor": false,
+    "grading": "Official swebench harness, separate Docker",
+    "dataset_revision": "TBD: supply external frozen provenance alongside this manifest"
+  },
+  "dataset_revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+  "baseline": {
+    "exit_code": 1,
+    "failed": 1,
+    "passed": 59
+  },
+  "gold_reference": {
+    "passed": 60,
+    "failed": 0
+  },
+  "tests_restored_privately": true,
+  "gold_in_actor_workspace": false,
+  "python_import_source": "/workspace/src/flask/__init__.py",
+  "unrelated_baseline_failures": "tests/test_basic.py has3cookie-domain failures under original official image dependencies, unchanged by gold. Do not claim whole-project clean; official task grader uses blueprints60tests.",
+  "official_harness_control_evidence": "../grader-sanity/provenance.json",
+  "actor_inference_attempts": 0,
+  "previous_probe_image_id": "sha256:981b6b4bb598cbab7605168e5b2a7519cc37fc2ce80648a1991a9a6247afaf29",
+  "actor_history": "Fresh single snapshot commit; upstream refs removed; native image /testbed/.git removed",
+  "native_probe": "Node/Codex/Pi launch; Python imports mounted source; /workspace Git single-commit snapshot trusted; /testbed/.git absent"
+}

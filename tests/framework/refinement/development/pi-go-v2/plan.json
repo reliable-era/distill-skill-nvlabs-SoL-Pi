@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "purpose": "development only, not confirmation",
+  "task": "go/exercises/practice/food-chain",
+  "rounds": 1,
+  "maximum_attempts": 5,
+  "attempt_timeout_seconds": 120,
+  "maximum_actor_wall_seconds": 600,
+  "order_seed": 104,
+  "order": [
+    "candidate",
+    "both",
+    "shipped",
+    "karpathy",
+    "none"
+  ],
+  "model_sampling_seed": "TBD: unavailable",
+  "harness": "pi",
+  "provider": "openai",
+  "model": "gpt-6.1-sol",
+  "thinking": "low",
+  "image": "sol-pi-eval-polyglot-login:2026-10-04",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "arms": {
+    "none": [],
+    "karpathy": [
+      "karpathy"
+    ],
+    "shipped": [
+      "shipped"
+    ],
+    "candidate": [
+      "candidate"
+    ],
+    "both": [
+      "karpathy",
+      "candidate"
+    ]
+  },
+  "skill_delivery": "uniform inline SKILL.md; readonly resources",
+  "skill_sha256": {
+    "karpathy": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+    "shipped": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+    "candidate": "bcb25e08d073272d329902a3ff55854f979441940af28fb94d087f630a9fb6b5"
+  },
+  "prompt_sha256": {
+    "none": "d773210f437b1d4e7f86b4832be2021063aad024d5712d3adc0bc47dbff92596",
+    "karpathy": "e328f5ef642323f8af4f978aef8ba06c73484077fcd4d0f19ce305184fc39ab0",
+    "shipped": "61feabea867a76161b506c56e25361d0d7a6d7a8ea104041371e9a26973e2c4d",
+    "candidate": "5fe429ea6ad6fe76199c65b38aca02c5abfd62da5c79a32166a83df950f471f3",
+    "both": "518b98984963fa57667cd27ba62220a7016794a2580f8b537e32ab2d2c2865f9"
+  },
+  "task_manifest_sha256": "b8a951d197ed82b81c7126a5a520136a3bd728c6c88238a671bdf77ce79a1554",
+  "workspace_sha256": {
+    "food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08"
+  },
+  "stop_rule": "First auth/quota error stops remaining attempts; no automatic retries or provider substitutions",
+  "billing_usd": "TBD",
+  "correction": "login-capable runtime preserves Go executable discovery; prior round retained",
+  "grader_file_sha256": {
+    "grade.py": "6a21b68df2273accd92512d3ae4e59b30cf357b1fd877ebcf45a8e3567949a1a",
+    "manifest.json": "b8a951d197ed82b81c7126a5a520136a3bd728c6c88238a671bdf77ce79a1554",
+    "support/food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "support/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "tests/food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e"
+  }
+}

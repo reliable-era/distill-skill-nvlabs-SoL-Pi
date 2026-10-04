@@ -1,0 +1,34 @@
+{
+  "kind": "corrected-runtime development provenance",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "grader_file_sha256": {
+    "grade.py": "6a21b68df2273accd92512d3ae4e59b30cf357b1fd877ebcf45a8e3567949a1a",
+    "manifest.json": "b8a951d197ed82b81c7126a5a520136a3bd728c6c88238a671bdf77ce79a1554",
+    "support/food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "support/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "tests/food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e"
+  },
+  "grader_command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--user",
+    "0:0",
+    "-e",
+    "HOME=/tmp",
+    "-e",
+    "GOCACHE=/tmp/go-cache",
+    "--mount",
+    "type=bind,src=<actor-workspace>,dst=/workspace,readonly",
+    "--mount",
+    "type=bind,src=/tmp/solpi-polyglot-go-smoke-v2/grader,dst=/grader,readonly",
+    "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+    "python3",
+    "/grader/grade.py"
+  ],
+  "actor_context": "fresh HOME; no session/extensions/context-files/skills/templates/themes; inline frozen instructions; read-only credential-only mount; no tests/reference",
+  "grader_policy": "network none; original support and tests restored from frozen trusted grader; actor solution files only",
+  "prior_round": "../pi-go retained; model sampling seed unavailable; order seed104"
+}

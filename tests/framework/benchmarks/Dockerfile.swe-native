@@ -1,0 +1,18 @@
+# Local native CLI image and official SWE task image must be pinned by ID in plans.
+ARG AGENT_IMAGE=sol-pi-eval-polyglot-login:2026-10-04
+ARG EVAL_IMAGE=swebench/sweb.eval.x86_64.pallets_1776_flask-5014:latest
+FROM ${AGENT_IMAGE} AS agents
+FROM ${EVAL_IMAGE}
+USER root
+COPY --from=agents /usr/local/bin/node /usr/local/bin/node
+COPY --from=agents /usr/local/lib/node_modules/@openai/codex /usr/local/lib/node_modules/@openai/codex
+COPY --from=agents /usr/local/lib/node_modules/@earendil-works/pi-coding-agent /usr/local/lib/node_modules/@earendil-works/pi-coding-agent
+RUN ln -sf /usr/local/lib/node_modules/@openai/codex/bin/codex.js /usr/local/bin/codex \
+ && ln -sf /usr/local/lib/node_modules/@earendil-works/pi-coding-agent/dist/cli.js /usr/local/bin/pi \
+ && ln -sf /opt/miniconda3/envs/testbed/bin/python /usr/local/bin/python3 \
+ && ln -sf /opt/miniconda3/envs/testbed/bin/python /usr/local/bin/python
+RUN rm -rf /testbed/.git \
+ && git config --system --add safe.directory /workspace
+ENV PATH="/opt/miniconda3/envs/testbed/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin"
+ENV PYTHONPATH="/workspace/src:/workspace"
+WORKDIR /workspace

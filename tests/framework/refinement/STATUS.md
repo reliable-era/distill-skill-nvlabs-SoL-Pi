@@ -9,7 +9,7 @@ Goal is active. No candidate has been promoted and no majority-harness win exist
 | SWE-bench grader | [Official sanity](grader-sanity/provenance.json) | Reference resolves; nonempty no-op rejects |
 | Terminal-Bench grader | [Official sanity](grader-sanity/provenance.json) | Oracle reward 1; no-op reward 0 |
 | Aider five-language grader | [Adapter protocol](../benchmarks/POLYGLOT.md) | Five starters reject; five reference examples pass; executed-test counts checked |
-| Native development | [Frozen budget](development-budget.json) | Complete: ten passes; candidate fails baseline target in both harnesses |
+| Native development | [Frozen budget](development-budget.json) | Two stages complete: twenty accepted patches; no baseline win |
 | Sealed confirmation | [Metadata allocation](confirmation-selection.json) | Twelve tasks selected without outcomes; inference not launched |
 | Stable economic win | [Goal](../../goal.md) | TBD |
 
@@ -48,3 +48,8 @@ Corrected runtime images pass six root/evaluator login-shell probes; original
 failed-discovery image/data remain frozen. See [tool probes](../benchmarks/polyglot-login-probes.json)
 and [ten sanity checks](../benchmarks/polyglot-login-sanity.json). All current
 model and infrastructure jobs are terminal; no background inference remains.
+
+Corrected-runtime results: [v2 comparison](development/README-v2.md). New untested
+single-change candidate avoids duplicate instruction reads. Native repository
+actor preparation and private official-test sanity are ready; the automatic
+patch/official-grader bridge and native repair inference remain unfinished.

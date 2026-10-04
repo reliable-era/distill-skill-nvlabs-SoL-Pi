@@ -4,6 +4,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import json
+import subprocess
+import sys
 
 spec = importlib.util.spec_from_file_location('polyglot', Path(__file__).with_name('polyglot.py'))
 module = importlib.util.module_from_spec(spec)
@@ -47,6 +49,14 @@ class PolyglotTests(unittest.TestCase):
             self.assertEqual(manifest['solution_files'], ['src/lib.rs'])
             self.assertEqual((root / 'output/grader/support/Cargo.toml').read_text(), '[package]')
             self.assertTrue(any('Cargo.toml' in deviation for deviation in manifest['protocol_deviations']))
+
+    def test_grader_launch_error_is_ungraded(self):
+        # Real subprocess runs script without trusted manifest; must be infra2,
+        # not test rejection1. Prepared/frozen graders remain unchanged.
+        result = subprocess.run([sys.executable, str(Path(__file__).with_name('polyglot_grade.py'))],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn('Grader infrastructure error:', result.stdout)
 
     def test_wrong_revision_and_unsupported_track_fail(self):
         with tempfile.TemporaryDirectory() as temp:

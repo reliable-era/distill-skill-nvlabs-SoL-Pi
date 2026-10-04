@@ -1,0 +1,19 @@
+{
+  "purpose": "New corrected-runtime development experiment, not confirmation or automatic replay",
+  "task": "aider:go/exercises/practice/food-chain",
+  "harnesses": ["pi", "codex"],
+  "arms": ["none", "karpathy", "shipped", "lean-tools", "lean-tools+karpathy"],
+  "rounds": 1,
+  "ordering_seed": 104,
+  "model_sampling_seed": "TBD: scheduling seed is not model sampling seed",
+  "max_model_attempts": 10,
+  "actor_timeout_seconds": 120,
+  "automatic_retries": 0,
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "skill_delivery": "uniform inline text within each harness",
+  "model": "gpt-6.1-sol",
+  "pi_thinking": "low",
+  "cross_harness_effort_control": "TBD",
+  "promotion": "Not permitted from single-task screen",
+  "actual_billing_usd": "TBD"
+}

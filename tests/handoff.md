@@ -1,3 +1,25 @@
+# Latest state: corrected-runtime screen terminal; repository actor prepared
+
+Updated2026-10-04. Pi/Codex Go v2 finished tenactorattempts, all tenpatches accepted
+by parent directofficialgrader. Lean candidate stillworse thanno skill:
+Pi+9.8%,Codex+2.1%; no promotion. PiKarpathy tokenTBD due finalcontent_filtererror.
+Codex initialgrader NameError isungraded infra, visiblysuperseded by hash-bound
+independentgrading. All current owned jobs terminal; no modelretries. Evidence:
+framework/refinement/development/README-v2.md and independent-grade-audit-v2.json.
+
+New single-change untested candidate: lean-tools-no-reread, avoidingduplicate
+instructionfile reads afterinline delivery. Frozenmanifest links traceevidence;
+canonicalsource remainsunchanged. Nextstage must freezescope/budget before models.
+
+NativeSWEFlaskimage and privateoriginaltask are prepared, with freshsingle-commit
+Git snapshot and actorimport-path probes. /testbed upstreamhistoryremoved.
+Prepared /tmp/solpi-refinement-flask-native-task-v2; imageIDin
+framework/refinement/swe-native-sanity/provenance.json. Officialtasktests:
+unchanged1fail/59pass,gold60pass; goldfilesoutsideactors. See benchmarks/SWE-NATIVE.md
+forknownunrelatedtest failures and next snapshot-to-patch officialgrading bridge.
+No SWE nativeinference yet. Broaden development onFlask andterminal tasks, then
+freeze a finalcandidate before any sealedconfirmation. Goal remainsactive.
+
 # Latest state: all current jobs terminal, tool discovery fixed
 
 Officialgrader controls and ten modeldevelopment attempts finished. No liveowned

@@ -1,0 +1,140 @@
+{
+  "stage": "development only; public task exposed to candidate selection; not confirmation",
+  "configured_backend": "OpenAI ChatGPT OAuth gpt-6.1-sol; native default effort",
+  "seed": "schedule only; model random seed uncontrolled",
+  "attempts": [
+    {
+      "result": "tests/framework/refinement/development/codex-go-v2/results/00000-4c4006ad9850/result.json",
+      "result_sha256": "c0b448f5f88bed0fced84686e9c444b8ffa540b757173a7e031b2275b4e4bef8",
+      "transcript_sha256": "211e42a7032093c2f1deb184de98ab5f5bbfc98ddb8e86118eefce9a4c08ce8d",
+      "configuration": "candidate",
+      "solved": true,
+      "original_grader_interpretation": "infrastructure error; ungraded",
+      "accepted_grader_exit_code": 0,
+      "status": "completed",
+      "elapsed_seconds": 55.40966440550983,
+      "observed_tool_calls": 5,
+      "usage": {
+        "input_tokens": 4222,
+        "output_tokens": 891,
+        "cache_read_tokens": 58368,
+        "cache_write_tokens": 0,
+        "usage_complete": true,
+        "token_semantics": "exclusive",
+        "usage_source": "codex.turn.completed"
+      },
+      "observed_backend": "TBD",
+      "nonzero_tool_exit_events": [
+        {
+          "item_id": "item_2",
+          "type": "command_execution",
+          "exit_code": 1
+        }
+      ]
+    },
+    {
+      "result": "tests/framework/refinement/development/codex-go-v2/results/00001-236106a1849e/result.json",
+      "result_sha256": "700779ab97591f4bf4e31483c422f16d283bb32e49e440bcc2f695a59dd19416",
+      "transcript_sha256": "cdcfcc7f7723edda1ba8d36f4fa0c726c792d57aed3bb4e9444f0f6637e2f874",
+      "configuration": "both",
+      "solved": true,
+      "original_grader_interpretation": "infrastructure error; ungraded",
+      "accepted_grader_exit_code": 0,
+      "status": "completed",
+      "elapsed_seconds": 58.044626984745264,
+      "observed_tool_calls": 5,
+      "usage": {
+        "input_tokens": 8887,
+        "output_tokens": 994,
+        "cache_read_tokens": 73216,
+        "cache_write_tokens": 0,
+        "usage_complete": true,
+        "token_semantics": "exclusive",
+        "usage_source": "codex.turn.completed"
+      },
+      "observed_backend": "TBD",
+      "nonzero_tool_exit_events": [
+        {
+          "item_id": "item_2",
+          "type": "command_execution",
+          "exit_code": 1
+        }
+      ]
+    },
+    {
+      "result": "tests/framework/refinement/development/codex-go-v2/results/00002-d870ce81f49d/result.json",
+      "result_sha256": "c9f85cca43f139da376a5c66c6b3138d788ac1fea178d42b368ca1f78afa4f21",
+      "transcript_sha256": "209ff7af1042e37aa6d03d395dd8113aa81ec7a54009a62e8b327f3843c5bf3c",
+      "configuration": "ours",
+      "solved": true,
+      "original_grader_interpretation": "infrastructure error; ungraded",
+      "accepted_grader_exit_code": 0,
+      "status": "completed",
+      "elapsed_seconds": 58.07847505249083,
+      "observed_tool_calls": 4,
+      "usage": {
+        "input_tokens": 8278,
+        "output_tokens": 810,
+        "cache_read_tokens": 54912,
+        "cache_write_tokens": 0,
+        "usage_complete": true,
+        "token_semantics": "exclusive",
+        "usage_source": "codex.turn.completed"
+      },
+      "observed_backend": "TBD",
+      "nonzero_tool_exit_events": []
+    },
+    {
+      "result": "tests/framework/refinement/development/codex-go-v2/results/00003-2ed8ac25277f/result.json",
+      "result_sha256": "1747eeefd928e6b4d77d5e8fc3f2593b74b15d18f2aa6ef717fb2481b01ab5b6",
+      "transcript_sha256": "82a3b05edc24528cd8f9743b60b104e542c34183edf1d045e2bef07f21dfc73c",
+      "configuration": "karpathy",
+      "solved": true,
+      "original_grader_interpretation": "infrastructure error; ungraded",
+      "accepted_grader_exit_code": 0,
+      "status": "completed",
+      "elapsed_seconds": 54.76082597672939,
+      "observed_tool_calls": 4,
+      "usage": {
+        "input_tokens": 9725,
+        "output_tokens": 1001,
+        "cache_read_tokens": 55040,
+        "cache_write_tokens": 0,
+        "usage_complete": true,
+        "token_semantics": "exclusive",
+        "usage_source": "codex.turn.completed"
+      },
+      "observed_backend": "TBD",
+      "nonzero_tool_exit_events": []
+    },
+    {
+      "result": "tests/framework/refinement/development/codex-go-v2/results/00004-56a586780841/result.json",
+      "result_sha256": "9a2cbe857c9bc3b644898551a63d06d1733e49999ad2814f866e0bd16fa5f2c3",
+      "transcript_sha256": "64bd8b91e77e3642e4152eec07666787e4139b07d875ce95b3a37a71ae64d05a",
+      "configuration": "none",
+      "solved": true,
+      "original_grader_interpretation": "infrastructure error; ungraded",
+      "accepted_grader_exit_code": 0,
+      "status": "completed",
+      "elapsed_seconds": 46.54045447520912,
+      "observed_tool_calls": 4,
+      "usage": {
+        "input_tokens": 7484,
+        "output_tokens": 792,
+        "cache_read_tokens": 53888,
+        "cache_write_tokens": 0,
+        "usage_complete": true,
+        "token_semantics": "exclusive",
+        "usage_source": "codex.turn.completed"
+      },
+      "observed_backend": "TBD",
+      "nonzero_tool_exit_events": [
+        {
+          "item_id": "item_2",
+          "type": "command_execution",
+          "exit_code": 1
+        }
+      ]
+    }
+  ]
+}

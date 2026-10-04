@@ -82,4 +82,8 @@ def main():
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except Exception as error:
+        print('Grader infrastructure error:', type(error).__name__, str(error))
+        sys.exit(2)
