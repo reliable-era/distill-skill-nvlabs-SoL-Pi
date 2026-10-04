@@ -86,10 +86,16 @@ sealed allocation and predefined extension are frozen under framework/refinement
 Current milestone: complete the matched development screen of the frozen
 independent-reads candidate on three reused families and four arms. Both local
 Qwen Codex and Pi transports now pass a tiny independently graded repair with
-reconciled provider usage. Codex's repaired development cohort is running; Pi
-is queued behind it on the shared server. Preserve the earlier partial cohort
-and zero-start Pi stage separately. These development tasks cannot establish
-fresh wins, and the current candidate has already failed its Terminal task.
+reconciled provider usage. Codex's repaired development cohort stopped after
+four Terminal attempts: all four arms failed; the next scheduler idle grace
+expired, leaving eight Go/SWE cells unrun. Cleanup was independently verified.
+The common failure review found incomplete repairs and cutoffs, with no
+demonstrated delivery or grader defect. The unchanged Pi comparison is now
+running as a separate cohort. Preserve the earlier partial cohort and zero-start
+Pi stage separately. These development tasks cannot establish fresh wins, and
+the candidate has not qualified. A separate unexecuted scope-coverage candidate
+tests whether conditional coverage of exhaustive requests prevents unsupported
+exclusions while retaining focused reads for local changes.
 
 The six development grading controls pass. All eight intended selected SWE
 controls now pass across four tasks, with fourteen actual attempts retained.
