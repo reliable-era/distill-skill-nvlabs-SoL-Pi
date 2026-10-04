@@ -231,3 +231,7 @@ tests/framework/*.env
 # Preserve audited model/grade transcripts from native harness trials
 !tests/framework/trials/**/agent.log
 !tests/framework/trials/**/grader.log
+
+# Audited refinement development transcripts
+!tests/framework/refinement/development/**/agent.log
+!tests/framework/refinement/development/**/grader.log

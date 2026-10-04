@@ -1,0 +1,56 @@
+{
+  "kind": "offline credential-free native/login shell probes",
+  "image": "sol-pi-eval-polyglot-java-login:2026-10-04",
+  "image_id": "sha256:95b20c222db5063b990a542842c4a286fa2d82dec5abb1b4775b2d16bd8a5b0c",
+  "checks": [
+    {
+      "user": "0:0",
+      "shell": "/bin/sh",
+      "flag": "-c",
+      "exit_code": 0,
+      "stdout": "/usr/local/go/bin/go\n/usr/local/go/bin/gofmt\n/usr/local/cargo/bin/rustc\n/usr/local/cargo/bin/cargo\n/usr/bin/cmake\n/usr/bin/javac\n/usr/local/bin/python3\ngo version go1.25.1 linux/amd64\nrustc 1.90.0 (1159e78c4 2025-09-14)\ncargo 1.90.0 (840b83a10 2025-07-30)\njavac 17.0.20.1\n",
+      "stderr": ""
+    },
+    {
+      "user": "0:0",
+      "shell": "/bin/sh",
+      "flag": "-lc",
+      "exit_code": 0,
+      "stdout": "/usr/local/bin/go\n/usr/local/bin/gofmt\n/usr/local/bin/rustc\n/usr/local/bin/cargo\n/usr/bin/cmake\n/usr/bin/javac\n/usr/local/bin/python3\ngo version go1.25.1 linux/amd64\nrustc 1.90.0 (1159e78c4 2025-09-14)\ncargo 1.90.0 (840b83a10 2025-07-30)\njavac 17.0.20.1\n",
+      "stderr": ""
+    },
+    {
+      "user": "0:0",
+      "shell": "/bin/bash",
+      "flag": "-lc",
+      "exit_code": 0,
+      "stdout": "/usr/local/bin/go\n/usr/local/bin/gofmt\n/usr/local/bin/rustc\n/usr/local/bin/cargo\n/usr/bin/cmake\n/usr/bin/javac\n/usr/local/bin/python3\ngo version go1.25.1 linux/amd64\nrustc 1.90.0 (1159e78c4 2025-09-14)\ncargo 1.90.0 (840b83a10 2025-07-30)\njavac 17.0.20.1\n",
+      "stderr": ""
+    },
+    {
+      "user": "evaluator",
+      "shell": "/bin/sh",
+      "flag": "-c",
+      "exit_code": 0,
+      "stdout": "/usr/local/go/bin/go\n/usr/local/go/bin/gofmt\n/usr/local/cargo/bin/rustc\n/usr/local/cargo/bin/cargo\n/usr/bin/cmake\n/usr/bin/javac\n/usr/local/bin/python3\ngo version go1.25.1 linux/amd64\nrustc 1.90.0 (1159e78c4 2025-09-14)\ncargo 1.90.0 (840b83a10 2025-07-30)\njavac 17.0.20.1\n",
+      "stderr": ""
+    },
+    {
+      "user": "evaluator",
+      "shell": "/bin/sh",
+      "flag": "-lc",
+      "exit_code": 0,
+      "stdout": "/usr/local/bin/go\n/usr/local/bin/gofmt\n/usr/local/bin/rustc\n/usr/local/bin/cargo\n/usr/bin/cmake\n/usr/bin/javac\n/usr/local/bin/python3\ngo version go1.25.1 linux/amd64\nrustc 1.90.0 (1159e78c4 2025-09-14)\ncargo 1.90.0 (840b83a10 2025-07-30)\njavac 17.0.20.1\n",
+      "stderr": ""
+    },
+    {
+      "user": "evaluator",
+      "shell": "/bin/bash",
+      "flag": "-lc",
+      "exit_code": 0,
+      "stdout": "/usr/local/bin/go\n/usr/local/bin/gofmt\n/usr/local/bin/rustc\n/usr/local/bin/cargo\n/usr/bin/cmake\n/usr/bin/javac\n/usr/local/bin/python3\ngo version go1.25.1 linux/amd64\nrustc 1.90.0 (1159e78c4 2025-09-14)\ncargo 1.90.0 (840b83a10 2025-07-30)\njavac 17.0.20.1\n",
+      "stderr": ""
+    }
+  ],
+  "passed": true
+}

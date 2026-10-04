@@ -23,6 +23,7 @@ jobs:
           python3 -m unittest discover -s tests/framework -p 'test_*.py'
           python3 -m unittest discover -s tests/framework/benchmarks -p 'test_*.py'
           python3 -m unittest discover -s tests/framework/trials -p 'test_collect.py'
+          python3 -m unittest discover -s tests/framework/refinement -p 'test_*.py'
       - name: Verify isolated grading, timeout cleanup, and credential boundaries
         run: python3 tests/framework/verify.py --output tests/framework/runtime/runner-check.json
       - uses: actions/upload-artifact@v4

@@ -1,0 +1,6 @@
+# Build context: externally prewarmed Gradle cache; never credentials or tasks.
+FROM sol-pi-eval-polyglot-multilingual-login:2026-10-04
+USER root
+COPY . /opt/gradle-cache
+USER evaluator
+WORKDIR /workspace

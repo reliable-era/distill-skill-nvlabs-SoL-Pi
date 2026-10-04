@@ -1,0 +1,788 @@
+{
+  "method": "One observed call event per native tool id/step. Read/test flags match explicit tool names/argument strings and can overlap. They are not a full semantic classification. AGY output often reports a byte/line summary, not actual returned text. Unknown output is null. No token overhead attribution or causality inferred.",
+  "controls": {
+    "skills/efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+    "tests/eval/pruned/frozen/latest/karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+  },
+  "records": [
+    {
+      "harness": "pi",
+      "arm": "both",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 22527,
+      "calls": 13,
+      "explicit_read_calls": 7,
+      "test_command_calls": 2,
+      "skill_path_calls": 2,
+      "tool_output_chars": 5841,
+      "transcript": "tests/framework/trials/pi_openai/d2_interfaces-both/stdout.jsonl",
+      "sha256": "29d38bfdb631f9688a33c56d37ddc924f588ae97eaab12795a035c2447da2286",
+      "tool_names": {
+        "read": 7,
+        "bash": 3,
+        "edit": 3
+      }
+    },
+    {
+      "harness": "pi",
+      "arm": "karpathy",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 19867,
+      "calls": 12,
+      "explicit_read_calls": 6,
+      "test_command_calls": 2,
+      "skill_path_calls": 1,
+      "tool_output_chars": 5166,
+      "transcript": "tests/framework/trials/pi_openai/d2_interfaces-karpathy/stdout.jsonl",
+      "sha256": "603378180520caeda7fd8b7a13298c0906417ddec86323520ac778dd62a9a046",
+      "tool_names": {
+        "read": 6,
+        "bash": 3,
+        "edit": 3
+      }
+    },
+    {
+      "harness": "pi",
+      "arm": "none",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 9037,
+      "calls": 10,
+      "explicit_read_calls": 5,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": 809,
+      "transcript": "tests/framework/trials/pi_openai/d2_interfaces-none/stdout.jsonl",
+      "sha256": "6a85ef7ec9ed56a7910988171ada86b7392258dce98b905ed5507b8341810670",
+      "tool_names": {
+        "bash": 2,
+        "read": 5,
+        "edit": 3
+      }
+    },
+    {
+      "harness": "pi",
+      "arm": "ours",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 15358,
+      "calls": 12,
+      "explicit_read_calls": 6,
+      "test_command_calls": 2,
+      "skill_path_calls": 1,
+      "tool_output_chars": 3505,
+      "transcript": "tests/framework/trials/pi_openai/d2_interfaces-ours/stdout.jsonl",
+      "sha256": "f7d9dea87ad21994b837b1418e4318d4ce424a9c3d50c119097a6d457023a45b",
+      "tool_names": {
+        "read": 6,
+        "bash": 3,
+        "edit": 3
+      }
+    },
+    {
+      "harness": "pi",
+      "arm": "both",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 21671,
+      "calls": 11,
+      "explicit_read_calls": 5,
+      "test_command_calls": 2,
+      "skill_path_calls": 2,
+      "tool_output_chars": 6454,
+      "transcript": "tests/framework/trials/pi_openai/d5_small_control-both/stdout.jsonl",
+      "sha256": "6b813ed68d8db4a3a3ad40f18a945f8525f8e235eb7cd7c3066d935db423ae80",
+      "tool_names": {
+        "read": 5,
+        "bash": 4,
+        "edit": 2
+      }
+    },
+    {
+      "harness": "pi",
+      "arm": "karpathy",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 17103,
+      "calls": 9,
+      "explicit_read_calls": 4,
+      "test_command_calls": 2,
+      "skill_path_calls": 1,
+      "tool_output_chars": 3669,
+      "transcript": "tests/framework/trials/pi_openai/d5_small_control-karpathy/stdout.jsonl",
+      "sha256": "589fd00f4ccf014095fc6dc06bf10c41eaa1c4e825221d9cead44923005a1c47",
+      "tool_names": {
+        "read": 4,
+        "bash": 3,
+        "edit": 2
+      }
+    },
+    {
+      "harness": "pi",
+      "arm": "none",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 9112,
+      "calls": 7,
+      "explicit_read_calls": 3,
+      "test_command_calls": 2,
+      "skill_path_calls": 0,
+      "tool_output_chars": 529,
+      "transcript": "tests/framework/trials/pi_openai/d5_small_control-none/stdout.jsonl",
+      "sha256": "abf8a839959299b2b913e27e250b4758dcf7b5aac7b250ab5dbe0c8aef9c5f75",
+      "tool_names": {
+        "bash": 2,
+        "read": 3,
+        "edit": 2
+      }
+    },
+    {
+      "harness": "pi",
+      "arm": "ours",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 13770,
+      "calls": 8,
+      "explicit_read_calls": 4,
+      "test_command_calls": 2,
+      "skill_path_calls": 1,
+      "tool_output_chars": 3139,
+      "transcript": "tests/framework/trials/pi_openai/d5_small_control-ours/stdout.jsonl",
+      "sha256": "5caf4b949a948cc8999db9846441b72c6a7b607baf00022b6c694174e7c0f124",
+      "tool_names": {
+        "read": 4,
+        "bash": 2,
+        "edit": 2
+      }
+    },
+    {
+      "harness": "codex",
+      "arm": "karpathy",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 83475,
+      "calls": 7,
+      "explicit_read_calls": 1,
+      "test_command_calls": 2,
+      "skill_path_calls": 2,
+      "tool_output_chars": 7809,
+      "transcript": "tests/framework/trials/codex/results/00000-8aeb38963b79/agent.log",
+      "sha256": "4a46fd1352cd17468edcfc8b753aef3555aecd58b848e2fdf9f974b88283050e",
+      "tool_names": {
+        "command_execution": 5,
+        "file_change": 2
+      }
+    },
+    {
+      "harness": "codex",
+      "arm": "ours",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 60691,
+      "calls": 5,
+      "explicit_read_calls": 2,
+      "test_command_calls": 1,
+      "skill_path_calls": 1,
+      "tool_output_chars": 710,
+      "transcript": "tests/framework/trials/codex/results/00001-9d3ab7097821/agent.log",
+      "sha256": "2ad99cafd2dec05dca6b57fd4879ff80d146cb1e22e4c59dbb158327664d63d2",
+      "tool_names": {
+        "command_execution": 4,
+        "file_change": 1
+      }
+    },
+    {
+      "harness": "codex",
+      "arm": "none",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 58874,
+      "calls": 5,
+      "explicit_read_calls": 2,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": 720,
+      "transcript": "tests/framework/trials/codex/results/00002-594deaa37582/agent.log",
+      "sha256": "2731a564feaec96295ab96b0261d0ba1074e04889c168926ee0eb9d616ce32f8",
+      "tool_names": {
+        "command_execution": 4,
+        "file_change": 1
+      }
+    },
+    {
+      "harness": "codex",
+      "arm": "karpathy",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 96076,
+      "calls": 7,
+      "explicit_read_calls": 2,
+      "test_command_calls": 2,
+      "skill_path_calls": 3,
+      "tool_output_chars": 5529,
+      "transcript": "tests/framework/trials/codex/results/00003-b14f4e4b4157/agent.log",
+      "sha256": "87165f60cfa39b670ccc72e0da32c5983429ba7121897a94bf420bbca59a0870",
+      "tool_names": {
+        "command_execution": 5,
+        "file_change": 2
+      }
+    },
+    {
+      "harness": "codex",
+      "arm": "both",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 87105,
+      "calls": 7,
+      "explicit_read_calls": 1,
+      "test_command_calls": 2,
+      "skill_path_calls": 2,
+      "tool_output_chars": 9468,
+      "transcript": "tests/framework/trials/codex/results/00004-71068e60cff2/agent.log",
+      "sha256": "855cfa8bc816f594631c968e23bb8d0d8f170df75ea10f014750df1a01370b9c",
+      "tool_names": {
+        "command_execution": 5,
+        "file_change": 2
+      }
+    },
+    {
+      "harness": "codex",
+      "arm": "both",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 79210,
+      "calls": 6,
+      "explicit_read_calls": 1,
+      "test_command_calls": 2,
+      "skill_path_calls": 1,
+      "tool_output_chars": 1376,
+      "transcript": "tests/framework/trials/codex/results/00005-7db74d569a13/agent.log",
+      "sha256": "48b1265443650ff28002cbbd423f6f54bee7eaac21493ccb1d628db90ec67b8b",
+      "tool_names": {
+        "command_execution": 4,
+        "file_change": 2
+      }
+    },
+    {
+      "harness": "codex",
+      "arm": "none",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 74748,
+      "calls": 5,
+      "explicit_read_calls": 2,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": 1227,
+      "transcript": "tests/framework/trials/codex/results/00006-5bc784c9ae65/agent.log",
+      "sha256": "45be0a39b45e516b80003dc5b4f32519bb0bcb118969b9c9fb0e05a80cb37389",
+      "tool_names": {
+        "command_execution": 4,
+        "file_change": 1
+      }
+    },
+    {
+      "harness": "codex",
+      "arm": "ours",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 79049,
+      "calls": 5,
+      "explicit_read_calls": 2,
+      "test_command_calls": 1,
+      "skill_path_calls": 2,
+      "tool_output_chars": 4154,
+      "transcript": "tests/framework/trials/codex/results/00007-25aca002ac3a/agent.log",
+      "sha256": "aec02035da767eb815491357c02f91d4d441955f1455840f711a026dfc65c418",
+      "tool_names": {
+        "command_execution": 4,
+        "file_change": 1
+      }
+    },
+    {
+      "harness": "copilot",
+      "arm": "karpathy",
+      "task": "d2_interfaces",
+      "solved": false,
+      "reported_total_tokens": null,
+      "calls": 6,
+      "explicit_read_calls": 5,
+      "test_command_calls": 0,
+      "skill_path_calls": 0,
+      "tool_output_chars": 487,
+      "transcript": "tests/framework/trials/copilot/results-auto/00000-8aeb38963b79/agent.log",
+      "sha256": "10820866dcfd55563cc5b1907a55b2ea84a077ecf3dcb7de9ff46dd3c72dd9f1",
+      "tool_names": {
+        "glob": 1,
+        "view": 5
+      }
+    },
+    {
+      "harness": "copilot",
+      "arm": "ours",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 6,
+      "explicit_read_calls": 3,
+      "test_command_calls": 0,
+      "skill_path_calls": 0,
+      "tool_output_chars": 486,
+      "transcript": "tests/framework/trials/copilot/results-auto/00001-9d3ab7097821/agent.log",
+      "sha256": "bc0353cd1a3670c3d143bd63fc7e72c8ddb948dc81ad68c5277f02b275f1ea58",
+      "tool_names": {
+        "glob": 1,
+        "rg": 1,
+        "view": 3,
+        "apply_patch": 1
+      }
+    },
+    {
+      "harness": "copilot",
+      "arm": "none",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 5,
+      "explicit_read_calls": 3,
+      "test_command_calls": 0,
+      "skill_path_calls": 0,
+      "tool_output_chars": 346,
+      "transcript": "tests/framework/trials/copilot/results-auto/00002-594deaa37582/agent.log",
+      "sha256": "9dd8b38bae7a6ee23d26f0aa215e2d406b6ad1607d18c75bc239bf617757118d",
+      "tool_names": {
+        "glob": 1,
+        "view": 3,
+        "apply_patch": 1
+      }
+    },
+    {
+      "harness": "copilot",
+      "arm": "karpathy",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 7,
+      "explicit_read_calls": 3,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": 677,
+      "transcript": "tests/framework/trials/copilot/results-auto/00003-b14f4e4b4157/agent.log",
+      "sha256": "51c8e80aaafb1abee756b06569225d27ceb01cdcb09985b1d08701d2dd565d4d",
+      "tool_names": {
+        "glob": 1,
+        "rg": 1,
+        "view": 3,
+        "apply_patch": 1,
+        "bash": 1
+      }
+    },
+    {
+      "harness": "copilot",
+      "arm": "both",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 8,
+      "explicit_read_calls": 5,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": 720,
+      "transcript": "tests/framework/trials/copilot/results-auto/00004-71068e60cff2/agent.log",
+      "sha256": "f3d9d506c9a3bad3609cb404f2ed3949e73189483995d5410eb9b5b846d0fdb1",
+      "tool_names": {
+        "glob": 1,
+        "view": 5,
+        "apply_patch": 1,
+        "bash": 1
+      }
+    },
+    {
+      "harness": "copilot",
+      "arm": "both",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 8,
+      "explicit_read_calls": 4,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": 895,
+      "transcript": "tests/framework/trials/copilot/results-auto/00005-7db74d569a13/agent.log",
+      "sha256": "9ed01f5828444cea13fe28d21786124d9efdbcb89d1a800909af74b38df0943e",
+      "tool_names": {
+        "bash": 2,
+        "grep": 1,
+        "view": 3,
+        "edit": 2
+      }
+    },
+    {
+      "harness": "copilot",
+      "arm": "none",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 9,
+      "explicit_read_calls": 5,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": 925,
+      "transcript": "tests/framework/trials/copilot/results-auto/00006-5bc784c9ae65/agent.log",
+      "sha256": "7abc931305e53cc5a45b86459076f69c1fba9e0bc6f60236abb8c3ca34fe29e1",
+      "tool_names": {
+        "glob": 1,
+        "rg": 1,
+        "view": 5,
+        "apply_patch": 1,
+        "bash": 1
+      }
+    },
+    {
+      "harness": "copilot",
+      "arm": "ours",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 9,
+      "explicit_read_calls": 5,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": 934,
+      "transcript": "tests/framework/trials/copilot/results-auto/00007-25aca002ac3a/agent.log",
+      "sha256": "84470f82f185aad4304525ea98eec55d29630c7da0c8bba03dd59c5e59f745cd",
+      "tool_names": {
+        "glob": 1,
+        "rg": 1,
+        "view": 5,
+        "apply_patch": 1,
+        "bash": 1
+      }
+    },
+    {
+      "harness": "agy",
+      "arm": "both",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 182207,
+      "calls": 19,
+      "explicit_read_calls": 11,
+      "test_command_calls": 2,
+      "skill_path_calls": 2,
+      "tool_output_chars": 638,
+      "transcript": "tests/framework/trials/agy/d2_interfaces-both/stdout.jsonl",
+      "sha256": "0afd2b3363a3b4608a7e200b8908acf17f4ab01be8e4dd337606b8b9f3cdbd56",
+      "tool_names": {
+        "view_file": 11,
+        "run_command": 5,
+        "replace_file_content": 3
+      }
+    },
+    {
+      "harness": "agy",
+      "arm": "karpathy",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 156348,
+      "calls": 21,
+      "explicit_read_calls": 10,
+      "test_command_calls": 2,
+      "skill_path_calls": 1,
+      "tool_output_chars": 17451,
+      "transcript": "tests/framework/trials/agy/d2_interfaces-karpathy/stdout.jsonl",
+      "sha256": "305b7c695e455b28f639ef2be8a8fbe0efcd629abdfc09b36b731bdc73f8a9f2",
+      "tool_names": {
+        "view_file": 9,
+        "run_command": 8,
+        "replace_file_content": 4
+      }
+    },
+    {
+      "harness": "agy",
+      "arm": "none",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 158031,
+      "calls": 14,
+      "explicit_read_calls": 5,
+      "test_command_calls": 3,
+      "skill_path_calls": 0,
+      "tool_output_chars": 2557,
+      "transcript": "tests/framework/trials/agy/d2_interfaces-none/stdout.jsonl",
+      "sha256": "1a0391aeed2fc14cd43ec0db9bae69e25755ae088159a89d3040fe72652c1ec3",
+      "tool_names": {
+        "run_command": 6,
+        "view_file": 4,
+        "search_web": 1,
+        "replace_file_content": 3
+      }
+    },
+    {
+      "harness": "agy",
+      "arm": "ours",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": 197375,
+      "calls": 16,
+      "explicit_read_calls": 6,
+      "test_command_calls": 3,
+      "skill_path_calls": 1,
+      "tool_output_chars": 2593,
+      "transcript": "tests/framework/trials/agy/d2_interfaces-ours/stdout.jsonl",
+      "sha256": "f07b4778ecd198398db2f4b6ee7d3c12b97f7f92dc798d5150d516a6172f89e3",
+      "tool_names": {
+        "view_file": 5,
+        "run_command": 8,
+        "replace_file_content": 3
+      }
+    },
+    {
+      "harness": "agy",
+      "arm": "both",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 133089,
+      "calls": 13,
+      "explicit_read_calls": 7,
+      "test_command_calls": 2,
+      "skill_path_calls": 2,
+      "tool_output_chars": 7815,
+      "transcript": "tests/framework/trials/agy/d5_small_control-both/stdout.jsonl",
+      "sha256": "cda1e3ce77dcfbe6946287ee53ee21a70613aad30a22b0c70dc3a0173cd38dae",
+      "tool_names": {
+        "view_file": 7,
+        "run_command": 4,
+        "replace_file_content": 2
+      }
+    },
+    {
+      "harness": "agy",
+      "arm": "karpathy",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 184462,
+      "calls": 13,
+      "explicit_read_calls": 6,
+      "test_command_calls": 3,
+      "skill_path_calls": 1,
+      "tool_output_chars": 10041,
+      "transcript": "tests/framework/trials/agy/d5_small_control-karpathy/stdout.jsonl",
+      "sha256": "f8a00711b158794da7ba4159752744ed0c28f4cfafe20df76b31e404d7c3521b",
+      "tool_names": {
+        "view_file": 6,
+        "run_command": 5,
+        "replace_file_content": 2
+      }
+    },
+    {
+      "harness": "agy",
+      "arm": "none",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 138499,
+      "calls": 10,
+      "explicit_read_calls": 5,
+      "test_command_calls": 2,
+      "skill_path_calls": 0,
+      "tool_output_chars": 1252,
+      "transcript": "tests/framework/trials/agy/d5_small_control-none/stdout.jsonl",
+      "sha256": "0b4a419cecabe7d8c4c04fc931b1b656f278ff1bba332bc7d34da5f698efcf18",
+      "tool_names": {
+        "run_command": 3,
+        "view_file": 5,
+        "replace_file_content": 2
+      }
+    },
+    {
+      "harness": "agy",
+      "arm": "ours",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": 123935,
+      "calls": 13,
+      "explicit_read_calls": 5,
+      "test_command_calls": 4,
+      "skill_path_calls": 1,
+      "tool_output_chars": 10557,
+      "transcript": "tests/framework/trials/agy/d5_small_control-ours/stdout.jsonl",
+      "sha256": "6e55ecad88afb9fead1900c1c60e3ec9973fdc5e63cb76ef1ff51acccb837e03",
+      "tool_names": {
+        "view_file": 5,
+        "run_command": 6,
+        "replace_file_content": 2
+      }
+    },
+    {
+      "harness": "cursor",
+      "arm": "both",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 13,
+      "explicit_read_calls": 8,
+      "test_command_calls": 2,
+      "skill_path_calls": 5,
+      "tool_output_chars": null,
+      "transcript": "tests/framework/trials/cursor_auto/d2_interfaces-both/stdout.jsonl",
+      "sha256": "67ebfc35c32ff86675cc28c73989795e75a732b5394a8acf00e17ca88e8bb974",
+      "tool_names": {
+        "readToolCall": 2,
+        "shellToolCall": 8,
+        "grepToolCall": 2,
+        "globToolCall": 1
+      }
+    },
+    {
+      "harness": "cursor",
+      "arm": "karpathy",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 20,
+      "explicit_read_calls": 6,
+      "test_command_calls": 5,
+      "skill_path_calls": 1,
+      "tool_output_chars": null,
+      "transcript": "tests/framework/trials/cursor_auto/d2_interfaces-karpathy/stdout.jsonl",
+      "sha256": "c36597dc0b4df618d4976a7025cfd655611aae0325d69c6fa8c83dfb94c668c1",
+      "tool_names": {
+        "readToolCall": 6,
+        "getMcpToolsToolCall": 2,
+        "grepToolCall": 2,
+        "globToolCall": 2,
+        "updateTodosToolCall": 3,
+        "shellToolCall": 2,
+        "editToolCall": 3
+      }
+    },
+    {
+      "harness": "cursor",
+      "arm": "none",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 19,
+      "explicit_read_calls": 6,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": null,
+      "transcript": "tests/framework/trials/cursor_auto/d2_interfaces-none/stdout.jsonl",
+      "sha256": "1a6dbbe8f3e97d3220bd4bc827348efa504567d77b8dbf2e5c504d7bbc02615b",
+      "tool_names": {
+        "getMcpToolsToolCall": 2,
+        "grepToolCall": 3,
+        "globToolCall": 2,
+        "readToolCall": 5,
+        "updateTodosToolCall": 3,
+        "shellToolCall": 2,
+        "editToolCall": 2
+      }
+    },
+    {
+      "harness": "cursor",
+      "arm": "ours",
+      "task": "d2_interfaces",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 16,
+      "explicit_read_calls": 6,
+      "test_command_calls": 1,
+      "skill_path_calls": 1,
+      "tool_output_chars": null,
+      "transcript": "tests/framework/trials/cursor_auto/d2_interfaces-ours/stdout.jsonl",
+      "sha256": "f999738cb846feee5c9620830bbc5a28cfde5568343b7cbd4fa4990ba21c3705",
+      "tool_names": {
+        "readToolCall": 6,
+        "grepToolCall": 3,
+        "globToolCall": 3,
+        "editToolCall": 3,
+        "shellToolCall": 1
+      }
+    },
+    {
+      "harness": "cursor",
+      "arm": "both",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 8,
+      "explicit_read_calls": 4,
+      "test_command_calls": 1,
+      "skill_path_calls": 2,
+      "tool_output_chars": null,
+      "transcript": "tests/framework/trials/cursor_auto/d5_small_control-both/stdout.jsonl",
+      "sha256": "8733907419294f2ffa4daf5c6a7486bb71d00d27887e799a89000ed944722703",
+      "tool_names": {
+        "readToolCall": 4,
+        "grepToolCall": 1,
+        "globToolCall": 1,
+        "editToolCall": 1,
+        "shellToolCall": 1
+      }
+    },
+    {
+      "harness": "cursor",
+      "arm": "karpathy",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 10,
+      "explicit_read_calls": 3,
+      "test_command_calls": 1,
+      "skill_path_calls": 1,
+      "tool_output_chars": null,
+      "transcript": "tests/framework/trials/cursor_auto/d5_small_control-karpathy/stdout.jsonl",
+      "sha256": "fba6c3938473e5a9bd26d46b10216e58c12c5b2e5fc26b2fab03d04325a5cc05",
+      "tool_names": {
+        "globToolCall": 1,
+        "grepToolCall": 1,
+        "readToolCall": 3,
+        "editToolCall": 4,
+        "shellToolCall": 1
+      }
+    },
+    {
+      "harness": "cursor",
+      "arm": "none",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 6,
+      "explicit_read_calls": 2,
+      "test_command_calls": 1,
+      "skill_path_calls": 0,
+      "tool_output_chars": null,
+      "transcript": "tests/framework/trials/cursor_auto/d5_small_control-none/stdout.jsonl",
+      "sha256": "61d8100238d3db38e195371e4305c14b69f3a9e26a251b9604bf970ddc4bedc8",
+      "tool_names": {
+        "grepToolCall": 1,
+        "globToolCall": 1,
+        "readToolCall": 2,
+        "editToolCall": 1,
+        "shellToolCall": 1
+      }
+    },
+    {
+      "harness": "cursor",
+      "arm": "ours",
+      "task": "d5_small_control",
+      "solved": true,
+      "reported_total_tokens": null,
+      "calls": 6,
+      "explicit_read_calls": 3,
+      "test_command_calls": 1,
+      "skill_path_calls": 1,
+      "tool_output_chars": null,
+      "transcript": "tests/framework/trials/cursor_auto/d5_small_control-ours/stdout.jsonl",
+      "sha256": "7ce845d297274c971c6b381c573c1451fa3f6ec50a035e3a8983a3295842d790",
+      "tool_names": {
+        "readToolCall": 3,
+        "grepToolCall": 1,
+        "globToolCall": 1,
+        "shellToolCall": 1
+      }
+    }
+  ]
+}

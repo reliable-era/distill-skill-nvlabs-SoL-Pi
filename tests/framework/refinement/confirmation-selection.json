@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "selection_method": "sha256-ranked strata round-robin; no outcomes",
+  "seed": 1042026,
+  "requested_size": 12,
+  "selected_size": 12,
+  "eligible_unique_tasks": 789,
+  "strata": [
+    "benchmark"
+  ],
+  "balance_within": [
+    "language",
+    "repo"
+  ],
+  "stratum_count": 3,
+  "all_strata_covered": true,
+  "exclusions": [
+    "aider:go/exercises/practice/food-chain",
+    "aider:javascript/exercises/practice/bowling",
+    "aider:python/exercises/practice/proverb",
+    "apache__lucene-12196",
+    "astropy__astropy-13033",
+    "astropy__astropy-13033-42",
+    "astropy__astropy-13033-73",
+    "astropy__astropy-7336",
+    "django__django-11149",
+    "django__django-11292",
+    "django__django-11964",
+    "django__django-11964-42",
+    "django__django-11964-73",
+    "django__django-13128",
+    "django__django-13195",
+    "django__django-13195-42",
+    "django__django-13195-73",
+    "django__django-14155",
+    "django__django-14752",
+    "django__django-15380",
+    "pallets__flask-5014",
+    "phpoffice__phpspreadsheet-4114",
+    "pydata__xarray-4966",
+    "pylint-dev__pylint-4551",
+    "pylint-dev__pylint-4551-42",
+    "pylint-dev__pylint-4551-73",
+    "pytest-dev__pytest-8399",
+    "sphinx-doc__sphinx-7440",
+    "sphinx-doc__sphinx-8265",
+    "sympy__sympy-12481",
+    "sympy__sympy-12481-42",
+    "sympy__sympy-12481-73",
+    "sympy__sympy-16886",
+    "sympy__sympy-19040",
+    "sympy__sympy-19637",
+    "sympy__sympy-19637-42",
+    "sympy__sympy-19637-73",
+    "terminal-bench-2:code-from-image",
+    "terminal-bench-2:sanitize-git-repo"
+  ],
+  "candidate_metadata_sha256": "4f842a7bd377cca35c2ee5ad1cf3bc29eaf7e653b8c82705179f9af241d946e5",
+  "selected_tasks": [
+    {
+      "benchmark": "terminal-bench-2",
+      "canonical_id": "terminal-bench-2:distribution-search",
+      "id": "distribution-search",
+      "language": "mixed",
+      "repo": "harbor-framework/terminal-bench-2"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:java/exercises/practice/ocr-numbers",
+      "id": "java/exercises/practice/ocr-numbers",
+      "language": "java",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "swe-bench-verified",
+      "canonical_id": "matplotlib__matplotlib-22865",
+      "difficulty": "15 min - 1 hour",
+      "id": "matplotlib__matplotlib-22865",
+      "language": "python",
+      "repo": "matplotlib/matplotlib"
+    },
+    {
+      "benchmark": "terminal-bench-2",
+      "canonical_id": "terminal-bench-2:extract-moves-from-video",
+      "id": "extract-moves-from-video",
+      "language": "mixed",
+      "repo": "harbor-framework/terminal-bench-2"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:cpp/exercises/practice/robot-name",
+      "id": "cpp/exercises/practice/robot-name",
+      "language": "cpp",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "swe-bench-verified",
+      "canonical_id": "scikit-learn__scikit-learn-10844",
+      "difficulty": "15 min - 1 hour",
+      "id": "scikit-learn__scikit-learn-10844",
+      "language": "python",
+      "repo": "scikit-learn/scikit-learn"
+    },
+    {
+      "benchmark": "terminal-bench-2",
+      "canonical_id": "terminal-bench-2:db-wal-recovery",
+      "id": "db-wal-recovery",
+      "language": "mixed",
+      "repo": "harbor-framework/terminal-bench-2"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:go/exercises/practice/pig-latin",
+      "id": "go/exercises/practice/pig-latin",
+      "language": "go",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "swe-bench-verified",
+      "canonical_id": "astropy__astropy-13236",
+      "difficulty": "15 min - 1 hour",
+      "id": "astropy__astropy-13236",
+      "language": "python",
+      "repo": "astropy/astropy"
+    },
+    {
+      "benchmark": "terminal-bench-2",
+      "canonical_id": "terminal-bench-2:log-summary-date-ranges",
+      "id": "log-summary-date-ranges",
+      "language": "mixed",
+      "repo": "harbor-framework/terminal-bench-2"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:rust/exercises/practice/simple-cipher",
+      "id": "rust/exercises/practice/simple-cipher",
+      "language": "rust",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "swe-bench-verified",
+      "canonical_id": "psf__requests-1921",
+      "difficulty": "<15 min fix",
+      "id": "psf__requests-1921",
+      "language": "python",
+      "repo": "psf/requests"
+    }
+  ],
+  "selection_sha256": "a50f01f9e01f8c6f1aae3b55edae3823344e817ba5e3c4fd6a72530f04a0c1ee",
+  "purpose": "Sealed confirmation allocation; metadata only. No prompts, tests or solutions inspected for this allocation.",
+  "source_revisions": {
+    "swe-bench-verified": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+    "swe-bench-multilingual": "846e647b9f33c0b51b739d005d13d85493c9af09",
+    "terminal-bench-2": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+    "aider-polyglot": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f"
+  },
+  "allocation_rule": "Initial4tasks per3families. If intervals inconclusive, extend once to8tasks per family by same frozen ranking; never replace failures or unsupported tasks. Freeze candidate before confirmation inference.",
+  "inference_status": "not launched; task environments/model controls/budget must be validated first",
+  "candidate_status": "TBD: freeze after development before confirmation",
+  "model_attempt_budget": "TBD: freeze numeric cap before inference; metadata selection authorizes no inference"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "Development screen complete: not promoted; failed no-skill token target in Pi and Codex on one Go task",
+  "candidate": "tests/framework/refinement/candidates/lean-tools/efficient-coding/SKILL.md",
+  "candidate_sha256": "bcb25e08d073272d329902a3ff55854f979441940af28fb94d087f630a9fb6b5",
+  "candidate_bytes": 1182,
+  "control_hashes": {
+    "skills/efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+    "tests/eval/pruned/frozen/latest/karpathy-guidelines/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+  },
+  "control_bytes": {
+    "skills/efficient-coding/SKILL.md": 2584,
+    "tests/eval/pruned/frozen/latest/karpathy-guidelines/SKILL.md": 2518
+  },
+  "hypotheses": [
+    "Reduce always-loaded instruction bytes",
+    "Avoid unnecessary process and repeat reads while preserving project-required verification"
+  ],
+  "rationale": "Native traces show Ours adds observed calls on Pi and agy, matches Codex, and uses fewer calls on Cursor, so fewer calls alone cannot explain reported token changes. Candidate tests a smaller instruction intervention, not an established remedy. SoL-Pi runtime compaction/fusion cannot be implemented by prose; Ponytail reuse does not authorize expanding scope; provisional Jev reducer routes are not introduced because these short fixtures do not establish benefit or billing.",
+  "references": "references.json",
+  "development_evidence": "development/README.md"
+}

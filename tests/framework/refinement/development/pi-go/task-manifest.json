@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "benchmark": "aider-polyglot",
+  "task_id": "go/exercises/practice/food-chain",
+  "dataset_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+  "harness_revision": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+  "source": "https://github.com/Aider-AI/polyglot-benchmark",
+  "official_runner_source": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/benchmark/benchmark.py",
+  "test_command": [
+    "go",
+    "test",
+    "./..."
+  ],
+  "solution_files": [
+    "food_chain.go"
+  ],
+  "test_files": [
+    "food_chain_test.go"
+  ],
+  "test_timeout_seconds": 180,
+  "protocol_deviations": [
+    "Native harness, not Aider",
+    "One fixed-budget attempt; no post-grade repair turn",
+    "Tests absent from actor filesystem; official tests restored independently"
+  ],
+  "source_files_sha256": {
+    ".docs/instructions.md": "282ba689e0653e74892e2104962c2ed4ef79fd307a182c343cd72ae807e466f3",
+    ".meta/config.json": "6aa890bfce863adbf81acad3cf1862128bf1b0ccf3dca9c639f98a89b3228dc1",
+    ".meta/example.go": "b28e716ee4b7aa3f1fce48941e06797faf53deefeb13fc0f5d5ac8df6c9fdadf",
+    ".meta/tests.toml": "9ce37a5168ddb753354c14ec4843d1f0a717aa9ebc3c79b8ba15677f465ba0ff",
+    "food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e",
+    "go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08"
+  }
+}

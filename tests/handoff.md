@@ -1,3 +1,74 @@
+# Latest state: all current jobs terminal, tool discovery fixed
+
+Officialgrader controls and ten modeldevelopment attempts finished. No liveowned
+jobs remain. Five-language adapters (Python/Go/C++/Rust/Java) pass10positive/negative
+checks under/grade, with executedtestcounts, and correctedimages pass6login-shell
+probes. Artifacts: framework/benchmarks/polyglot-{login-probes,login-sanity}.json.
+CorrectedGoimage IDsha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118;
+preparedv2 task /tmp/solpi-polyglot-go-smoke-v2. Originalv1development data preserved.
+
+Next: freeze a NEW bounded development stage on correctedruntime, compareallarms,
+and broaden to repository/terminal development. Prior stage10attemptcap is spent;
+no autorerun. Review STATUS.md and goal.md before starting. Canonical skill unchanged,
+confirmation not launched, goal active. Historical state follows.
+
+# Newly identified runtime control issue
+
+Codex Go login-shell PATH hides installedGo. No skill stopped after unavailable
+checks; candidate locatedthebinaries andcontinuedverification. Recordedtokens
+are valid for thoseattempts butnot a clean prompt-effectcomparison. Fix future
+image login-shelltool discovery, freeze anewstage/budget, and retainpriorrecords.
+No automaticreplay. Independentverbose regrades verify actualofficialtests
+TestVerse,TestVerses,TestSong all execute andpass, withoutskips.
+
+# Current refinement evidence: first candidate rejected
+
+Updated2026-10-04. Ten real public Go development attempts completed in Pi and
+Codex, fivearms each, one round, all passed. Lean-tools candidate reportedtokens
+vs no skill: Pi+4.0%, Codex+58.8%. Do not promote: no baselinewin. Canonical
+skill unchanged. Evidence: framework/refinement/development/README.md; parent
+independent regrade checks all10 snapshots without repeated inference.
+
+Twelve sealed metadata confirmation tasks across SWE-bench Verified, Aider
+polyglot and Terminal-Bench2 are frozen in refinement/confirmation-selection.json,
+with one predeclared extension to24tasks. No confirmation inference launched;
+selectedtask environments, modelcontrols, finalcandidate and numericbudget still
+need completion. Do not inspect sealed task solutions during candidate development.
+Official SWE/Terminal positive+negative controls and Python/Go adapter sanity pass.
+Offline Java/C++/Rust support is being built by public_graders, current live
+session32492; check authoritative process/result before any restart.
+
+New traceaudit/candidate/accountingcomparison/preflight tools and tests live under
+framework/refinement. Future effort must change the mechanism and broaden
+publicdevelopment tasks, rather than repeat this unsuccessful candidate on heldout.
+All billingUSD remainsTBD; Copilot/Cursor comparable usage remainsTBD. Goal active.
+
+# Refinement progress: public graders validated; development screen running
+
+Updated 2026-10-04. Official grader sanity passes:
+SWE-bench5.0.2 Flask5014 goldresolved/nonempty-noopunresolved;
+Harbor0.23.0 Terminal-Bench sanitize-git-repo oracle1/nop0;
+Aider native-subset Python/Go starterreject/referencepass (4checks).
+Evidence: framework/refinement/grader-sanity/ and
+framework/benchmarks/polyglot-sanity.json. These are infrastructure checks,
+not model performance. Polyglot single-attempt/withheld-test deviations are
+explicit in framework/benchmarks/POLYGLOT.md.
+
+A reproducible40-trace audit and unpromoted1182-byte lean-tools candidate are
+under framework/refinement/. Canonical skill is unchanged. Two subagents are
+running a frozen10-attempt Gofood-chain development screen: Pi and Codex,
+fivearms including shippedcontrol, newcandidate and candidate+Karpathy.
+120seconds/attempt, no automaticretries; same inline skill delivery in each
+harness. Budget: framework/refinement/development-budget.json. Plans/results:
+framework/refinement/development/{pi-go,codex-go}/. Check live execution before
+resuming; never restart recordedattempts. Current child sessions: Pi86598,
+Codex38687 (owned by public_graders and trace_refinement respectively).
+
+Paired task-cluster confirmation comparison code and seven audit/analysis tests
+are added. Three-family repeated confirmation, full native actor integration
+for SWE/Terminal, Copilot/Cursor accounting/model controls, and an actual
+3/5harness win remain unfinished. Do not promote based on this small Go screen.
+
 # Active refinement goal
 
 Updated 2026-10-04. The new active goal and acceptance protocol are in

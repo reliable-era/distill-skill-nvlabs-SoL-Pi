@@ -15,8 +15,9 @@ without sacrificing verified task completion. The goal is active, not achieved.
   Include failures, timeouts, retries, and any reducer calls in costs.
 - Evaluate at least three benchmark families: repository repair (SWE-bench
   Verified), multilingual coding (Aider polyglot), and terminal workflows
-  (Terminal-Bench 2). Official local graders are currently TBD; integrate
-  and validate them before claiming public benchmark results.
+  (Terminal-Bench 2). Official positive/negative grader controls and five-language polyglot
+  adapters now pass. Integration for the sealed selected tasks remains
+  unfinished; validate those environments before claiming confirmation results.
 - Start with metadata-selected small samples, never select tasks by observed
   skill success. Keep development and sealed confirmation tasks separate;
   exclude the reused two-fixture pilot from confirmation. Freeze task IDs,
@@ -76,10 +77,18 @@ fixtures. Ours did not beat No skill on reported tokens in Pi, Codex or agy;
 Copilot/Cursor tokens and all actual billing remain TBD. See
 [trial results](framework/trials/README.md).
 
-Next milestone: audit traces, integrate the three public graders, resolve
-accounting/model controls, freeze a small development/confirmation plan, and
-screen bounded candidate variants. Per-stage attempt and wall-time caps must
-be recorded before launching inference; numeric campaign budget is TBD.
+First screen completed: ten public Go attempts in Pi/Codex, all graded passing.
+The lean candidate fails the baseline token target in both. A Codex login-shell
+PATH issue changes verification behavior; future images now pass six login-shell
+probes. Five-language starter/reference sanity passes ten checks. The twelve-task
+sealed allocation and predefined extension are frozen under framework/refinement.
+
+Next milestone: freeze a corrected-runtime development stage and compare the
+candidate under functioning tools; broaden development to repair/terminal tasks,
+then test a different mechanism if needed. Resolve accounting/model controls,
+validate sealed-task environments and freeze a final candidate before confirmation.
+Every inference stage needs numeric attempt/time caps; the full confirmation
+budget remains TBD. No canonical skill was promoted and no win is established.
 
 ---
 

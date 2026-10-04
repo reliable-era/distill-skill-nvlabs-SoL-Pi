@@ -1,0 +1,197 @@
+{
+  "mode": "native",
+  "backend_id": "OpenAI ChatGPT OAuth; gpt-6.1-sol; native default effort",
+  "configurations": [
+    {
+      "id": "none",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-polyglot:2026-10-04",
+      "credential_volume": "solpi-refinement-codex-go-auth-20261004",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill_text": "",
+      "skill_sha256": null,
+      "skill_dir": null,
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:6091ea5671e21cd19864423a06795c363b7f21b6347734bb8a9a78403da64109"
+    },
+    {
+      "id": "karpathy",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-polyglot:2026-10-04",
+      "credential_volume": "solpi-refinement-codex-go-auth-20261004",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/frozen/latest/karpathy-guidelines/SKILL.md",
+      "skill_text": "---\nname: karpathy-guidelines\ndescription: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.\nlicense: MIT\n---\n\n# Karpathy Guidelines\n\nBehavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.\n\n**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.\n\n## 1. Think Before Coding\n\n**Don't assume. Don't hide confusion. Surface tradeoffs.**\n\nBefore implementing:\n- State your assumptions explicitly. If uncertain, ask.\n- If multiple interpretations exist, present them - don't pick silently.\n- If a simpler approach exists, say so. Push back when warranted.\n- If something is unclear, stop. Name what's confusing. Ask.\n\n## 2. Simplicity First\n\n**Minimum code that solves the problem. Nothing speculative.**\n\n- No features beyond what was asked.\n- No abstractions for single-use code.\n- No \"flexibility\" or \"configurability\" that wasn't requested.\n- No error handling for impossible scenarios.\n- If you write 200 lines and it could be 50, rewrite it.\n\nAsk yourself: \"Would a senior engineer say this is overcomplicated?\" If yes, simplify.\n\n## 3. Surgical Changes\n\n**Touch only what you must. Clean up only your own mess.**\n\nWhen editing existing code:\n- Don't \"improve\" adjacent code, comments, or formatting.\n- Don't refactor things that aren't broken.\n- Match existing style, even if you'd do it differently.\n- If you notice unrelated dead code, mention it - don't delete it.\n\nWhen your changes create orphans:\n- Remove imports/variables/functions that YOUR changes made unused.\n- Don't remove pre-existing dead code unless asked.\n\nThe test: Every changed line should trace directly to the user's request.\n\n## 4. Goal-Driven Execution\n\n**Define success criteria. Loop until verified.**\n\nTransform tasks into verifiable goals:\n- \"Add validation\" \u2192 \"Write tests for invalid inputs, then make them pass\"\n- \"Fix the bug\" \u2192 \"Write a test that reproduces it, then make it pass\"\n- \"Refactor X\" \u2192 \"Ensure tests pass before and after\"\n\nFor multi-step tasks, state a brief plan:\n```\n1. [Step] \u2192 verify: [check]\n2. [Step] \u2192 verify: [check]\n3. [Step] \u2192 verify: [check]\n```\n\nStrong success criteria let you loop independently. Weak criteria (\"make it work\") require constant clarification.\n",
+      "skill_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+      "skill_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/frozen/latest/karpathy-guidelines",
+      "skill_tree_sha256": "7b1df8bd4c5c4bfa7cede2aa1f48df7020b050a7d958ace5ab8f4bc7338c0c10",
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:6091ea5671e21cd19864423a06795c363b7f21b6347734bb8a9a78403da64109"
+    },
+    {
+      "id": "ours",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-polyglot:2026-10-04",
+      "credential_volume": "solpi-refinement-codex-go-auth-20261004",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/SKILL.md",
+      "skill_text": "---\nname: efficient-coding\ndescription: Reduce repeated reads and avoidable tool turns in coding tasks, especially when debugging long logs or resuming work. Use focused context and verify the requested behavior.\n---\n\n# Efficient Coding\n\nSpend fewer requests on repeated work while completing and verifying the task.\nFor a small fix, keep the acceptance check in working memory and edit directly.\n\n- Search for the affected symbol or diagnostic, then read its relevant source,\n  callers, or tests. Expand when needed; reuse what you have already learned.\n- Batch independent reads. Combine a mutation with a predetermined check only\n  when the available tool can execute them sequentially after mutation succeeds.\n  With separate Edit and Bash calls, run them in order; that still uses two calls.\n- Keep long command output in its existing artifact or a local log. Search for\n  the decisive error and inspect nearby lines, including the middle of the log.\n  Capture the command's actual exit status before shortening output; a successful\n  `tail` or `grep` does not prove the original command passed.\n- Check a quoted diagnostic against its original source before relying on it.\n  A matching quote can still omit another failure. Read more evidence when needed.\n- If a tool rejects its arguments, correct or simplify the next call instead of\n  repeating the malformed payload. Reassess repeated failed attempts from evidence.\n- On resumption, read the existing continuation note and check current files and\n  verification state. Reuse completed work; rerun checks affected by new edits.\n- Run the checks required by the change and project. Continue repairs when they\n  fail. Report the changed behavior, observed validation, and remaining blockers.\n\nUse supporting resources only for a current need:\n\n- Repeated long-log handling: [execution.md](references/execution.md), including\n  the offline `scripts/evidence.py` archive, recall, and receipt checker.\n- Authorized worker handoffs: [coordination.md](references/coordination.md).\n- Requested efficiency evaluation: [measurement.md](references/measurement.md).\n- Workflow examples: [worked-examples.md](references/worked-examples.md).\n- SoL-Pi provenance and implementation: [sol-pi-evidence.md](references/sol-pi-evidence.md).\n\nThis skill guides tool use. It cannot replace past API messages, register fused\ntools, or trigger native compaction. Summaries do not remove existing context;\nthose savings require runtime support. Do not add task cards, cost reports, or\nextra agents merely to demonstrate that this skill was followed.\n",
+      "skill_sha256": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+      "skill_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding",
+      "skill_tree_sha256": "3e7b0f2152c6c004994e96465b7087eba12547564bd75fd7be08255dc816a6eb",
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:6091ea5671e21cd19864423a06795c363b7f21b6347734bb8a9a78403da64109"
+    },
+    {
+      "id": "candidate",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-polyglot:2026-10-04",
+      "credential_volume": "solpi-refinement-codex-go-auth-20261004",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/candidates/lean-tools/efficient-coding/SKILL.md",
+      "skill_text": "---\nname: efficient-coding\ndescription: Reduce avoidable tool calls and repeated context during repository changes while preserving required verification.\n---\n\n# Efficient Coding\n\nFor a clear local change, keep the acceptance condition in memory and work directly.\n\n- Read the affected implementation and relevant callers or tests together when independent. Reuse their contents; reread only when edits or new evidence make that useful.\n- Choose each next call to resolve a specific uncertainty or advance the patch. Avoid separate planning artifacts, status calls, or repository-wide exploration for an already understood change.\n- Keep commands and returned output focused. For long logs, preserve the original result and inspect the relevant failure context; a successful output filter does not establish the command's success.\n- Apply the necessary change, then run the checks required by its behavior and the project. Repair failures. Repeat passing checks when subsequent edits affect them or unresolved evidence requires it.\n- Finish once the requested behavior and required checks are satisfied. Report the change, observed verification, and unresolved limitations briefly.\n",
+      "skill_sha256": "bcb25e08d073272d329902a3ff55854f979441940af28fb94d087f630a9fb6b5",
+      "skill_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/candidates/lean-tools/efficient-coding",
+      "skill_tree_sha256": "bf1752739288b257f16856e10369bbf94b85ad8f9193883e1992ea39d268c517",
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:6091ea5671e21cd19864423a06795c363b7f21b6347734bb8a9a78403da64109"
+    },
+    {
+      "id": "both",
+      "agent": "codex",
+      "model": "gpt-6.1-sol",
+      "image": "sol-pi-eval-polyglot:2026-10-04",
+      "credential_volume": "solpi-refinement-codex-go-auth-20261004",
+      "command_template": [
+        "codex",
+        "exec",
+        "--json",
+        "--skip-git-repo-check",
+        "--ignore-user-config",
+        "--ephemeral",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--model",
+        "{model}",
+        "{prompt}"
+      ],
+      "skill": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/codex-go/both/SKILL.md",
+      "skill_text": "---\nname: karpathy-guidelines\ndescription: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.\nlicense: MIT\n---\n\n# Karpathy Guidelines\n\nBehavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.\n\n**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.\n\n## 1. Think Before Coding\n\n**Don't assume. Don't hide confusion. Surface tradeoffs.**\n\nBefore implementing:\n- State your assumptions explicitly. If uncertain, ask.\n- If multiple interpretations exist, present them - don't pick silently.\n- If a simpler approach exists, say so. Push back when warranted.\n- If something is unclear, stop. Name what's confusing. Ask.\n\n## 2. Simplicity First\n\n**Minimum code that solves the problem. Nothing speculative.**\n\n- No features beyond what was asked.\n- No abstractions for single-use code.\n- No \"flexibility\" or \"configurability\" that wasn't requested.\n- No error handling for impossible scenarios.\n- If you write 200 lines and it could be 50, rewrite it.\n\nAsk yourself: \"Would a senior engineer say this is overcomplicated?\" If yes, simplify.\n\n## 3. Surgical Changes\n\n**Touch only what you must. Clean up only your own mess.**\n\nWhen editing existing code:\n- Don't \"improve\" adjacent code, comments, or formatting.\n- Don't refactor things that aren't broken.\n- Match existing style, even if you'd do it differently.\n- If you notice unrelated dead code, mention it - don't delete it.\n\nWhen your changes create orphans:\n- Remove imports/variables/functions that YOUR changes made unused.\n- Don't remove pre-existing dead code unless asked.\n\nThe test: Every changed line should trace directly to the user's request.\n\n## 4. Goal-Driven Execution\n\n**Define success criteria. Loop until verified.**\n\nTransform tasks into verifiable goals:\n- \"Add validation\" \u2192 \"Write tests for invalid inputs, then make them pass\"\n- \"Fix the bug\" \u2192 \"Write a test that reproduces it, then make it pass\"\n- \"Refactor X\" \u2192 \"Ensure tests pass before and after\"\n\nFor multi-step tasks, state a brief plan:\n```\n1. [Step] \u2192 verify: [check]\n2. [Step] \u2192 verify: [check]\n3. [Step] \u2192 verify: [check]\n```\n\nStrong success criteria let you loop independently. Weak criteria (\"make it work\") require constant clarification.\n\n\n---\nname: efficient-coding\ndescription: Reduce avoidable tool calls and repeated context during repository changes while preserving required verification.\n---\n\n# Efficient Coding\n\nFor a clear local change, keep the acceptance condition in memory and work directly.\n\n- Read the affected implementation and relevant callers or tests together when independent. Reuse their contents; reread only when edits or new evidence make that useful.\n- Choose each next call to resolve a specific uncertainty or advance the patch. Avoid separate planning artifacts, status calls, or repository-wide exploration for an already understood change.\n- Keep commands and returned output focused. For long logs, preserve the original result and inspect the relevant failure context; a successful output filter does not establish the command's success.\n- Apply the necessary change, then run the checks required by its behavior and the project. Repair failures. Repeat passing checks when subsequent edits affect them or unresolved evidence requires it.\n- Finish once the requested behavior and required checks are satisfied. Report the change, observed verification, and unresolved limitations briefly.\n",
+      "skill_sha256": "aa721e2a18b71640fc65d65ddff7318a6fc0bf32e25caa8109d813d59daa74a5",
+      "skill_dir": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/codex-go/both",
+      "skill_tree_sha256": "790670fa332ce0bb65c7038b0fa7d6ad13b40d728f106f560b2fc88d4f322bd9",
+      "skill_loading": "explicit prompt text; native skill discovery not assumed",
+      "image_id": "sha256:6091ea5671e21cd19864423a06795c363b7f21b6347734bb8a9a78403da64109"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "go-food-chain",
+      "benchmark": "aider-polyglot-development",
+      "workspace": "/tmp/solpi-polyglot-go-smoke-final/workspace",
+      "prompt": "# Instructions\n\nGenerate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'.\n\nWhile you could copy/paste the lyrics, or read them from a file, this problem is much more interesting if you approach it algorithmically.\n\nThis is a [cumulative song][cumulative-song] of unknown origin.\n\nThis is one of many common variants.\n\n```text\nI know an old lady who swallowed a fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a spider.\nIt wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a bird.\nHow absurd to swallow a bird!\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a cat.\nImagine that, to swallow a cat!\nShe swallowed the cat to catch the bird.\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a dog.\nWhat a hog, to swallow a dog!\nShe swallowed the dog to catch the cat.\nShe swallowed the cat to catch the bird.\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a goat.\nJust opened her throat and swallowed a goat!\nShe swallowed the goat to catch the dog.\nShe swallowed the dog to catch the cat.\nShe swallowed the cat to catch the bird.\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a cow.\nI don't know how she swallowed a cow!\nShe swallowed the cow to catch the goat.\nShe swallowed the goat to catch the dog.\nShe swallowed the dog to catch the cat.\nShe swallowed the cat to catch the bird.\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a horse.\nShe's dead, of course!\n```\n\n[cumulative-song]: https://en.wikipedia.org/wiki/Cumulative_song\n\n\nModify only these solution files: food_chain.go. Preserve existing public names. Use only standard libraries.\n",
+      "grader_dir": "/tmp/solpi-polyglot-go-smoke-final/grader",
+      "grader_image": "sol-pi-eval-polyglot:2026-10-04",
+      "grader_argv": [
+        "python3",
+        "-c",
+        "import os; os.environ.update(HOME='/tmp',GOCACHE='/tmp/go-cache'); exec(compile(open('/grade/grade.py').read().replace('/grader','/grade'),'/grade/grade.py','exec'))"
+      ],
+      "workspace_sha256": "4e85d28a2dc398b6673db426b8ef14a6a891334952982c94093bfe37f7385de1",
+      "grader_sha256": "043ec39f52ef148a4962953153d4f20ec412a74ecf33c41b4a14fbab09318ebb",
+      "grader_image_id": "sha256:6091ea5671e21cd19864423a06795c363b7f21b6347734bb8a9a78403da64109"
+    }
+  ],
+  "rounds": [
+    1
+  ],
+  "schedule_seed": 20261004,
+  "timeout_seconds": 120,
+  "grade_timeout_seconds": 190,
+  "budget": {
+    "max_attempts": 5,
+    "max_wall_seconds": 1600
+  },
+  "agent_network": "bridge",
+  "cpus": 2,
+  "memory": "4g",
+  "schema_version": 1,
+  "jobs": [
+    {
+      "task": "go-food-chain",
+      "config": "candidate",
+      "round": 1
+    },
+    {
+      "task": "go-food-chain",
+      "config": "ours",
+      "round": 1
+    },
+    {
+      "task": "go-food-chain",
+      "config": "both",
+      "round": 1
+    },
+    {
+      "task": "go-food-chain",
+      "config": "none",
+      "round": 1
+    },
+    {
+      "task": "go-food-chain",
+      "config": "karpathy",
+      "round": 1
+    }
+  ],
+  "retries": 0,
+  "seed_semantics": "selection/scheduling only; model random seeds are not controlled",
+  "registry_sha256": "e9a2be43dd1af976ee7fe00716a04d07d4562b17f0047fe658ca22e643c2b026",
+  "plan_sha256": "c0b9b3710e2681a6b18cc022acc936ec8697a00355cbcd12d60b9721b55c1ae3"
+}

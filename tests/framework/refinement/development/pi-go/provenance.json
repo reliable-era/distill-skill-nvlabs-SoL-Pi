@@ -1,0 +1,14 @@
+{
+  "kind": "non-model grader provenance",
+  "grader_file_sha256": {
+    "grade.py": "0f942cda4ce644840880b35ba4f8c84964ccbf14e55eb1608f52bd2429c3fce2",
+    "manifest.json": "a970080ad692b36f3d06a114ec0915eed57b0d2868bce714de3efba4ec697d19",
+    "support/food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "support/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "tests/food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e"
+  },
+  "actor_mount_policy": "workspace read-write; frozen skill resources read-only; credential-only read-only; tests and reference absent",
+  "grader_mount_policy": "workspace read-only; trusted grader read-only; network none; no auth; disposable container",
+  "actor_host_context_policy": "Pi no context files, skills, extensions, prompt templates, themes; disposable HOME",
+  "cli_versions": "1.0.0\ngo version go1.25.1 linux/amd64\nPython 3.14.8\n"
+}
