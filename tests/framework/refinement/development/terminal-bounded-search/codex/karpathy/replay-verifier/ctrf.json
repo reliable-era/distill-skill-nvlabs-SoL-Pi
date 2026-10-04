@@ -1,0 +1,50 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 2,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1791087098.8060575,
+            "stop": 1791087099.1342063
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_removal_of_secret_information",
+                "status": "passed",
+                "duration": 0.0005759783089160919,
+                "start": 1791087098.853627,
+                "stop": 1791087098.8543751,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_correct_replacement_of_secret_information",
+                "status": "passed",
+                "duration": 0.0004532579332590103,
+                "start": 1791087098.8545153,
+                "stop": 1791087098.8550668,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_no_other_files_changed",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.26386310532689095,
+                "start": 1791087098.8551853,
+                "stop": 1791087099.134048,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_no_other_files_changed():\n        # Check that no files other than CONTAMINATED_PATHS have been changed\n        repo = git.Repo(\"/app/dclm\")\n    \n        # Specific commit before any changes were made\n        commit = repo.commit(\"d6987af002b122fef54bc0be402062c76488a4d9\")\n        diff = commit.diff(None)\n    \n        for d in diff:\n            path = d.b_path\n            if os.path.join(\"/app/dclm\", path) not in CONTAMINATED_PATHS:\n>               raise ValueError(f\"File {path} has been changed\")\nE               ValueError: File tools/eval_expdb.py has been changed\n\n/tests/test_outputs.py:71: ValueError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

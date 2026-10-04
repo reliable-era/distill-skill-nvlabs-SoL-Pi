@@ -1,0 +1,46 @@
+{
+  "purpose": "Broaden locate-first development only, no sealed confirmation",
+  "max_actor_attempts": 12,
+  "max_initial_codex_attempts": 8,
+  "actor_timeout_seconds": 180,
+  "automatic_retries": 0,
+  "order_seed": 107,
+  "model_sampling_seed": "TBD",
+  "candidate_sha256": "8c753e5093f72a02660e35e1e0b1824c81c49bca623b8197e8fcfeed347b5b96",
+  "allocations": [
+    {
+      "task": "terminal-bench-2:sanitize-git-repo",
+      "harnesses": [
+        "codex"
+      ],
+      "arms": [
+        "none",
+        "karpathy",
+        "candidate",
+        "both"
+      ],
+      "max_attempts": 4
+    },
+    {
+      "task": "aider:go/exercises/practice/food-chain",
+      "harnesses": [
+        "codex",
+        "pi"
+      ],
+      "arms": [
+        "none",
+        "karpathy",
+        "candidate",
+        "both"
+      ],
+      "max_attempts": 8,
+      "pi_launch": "Fresh human login required; do not launch before rootauthorization"
+    }
+  ],
+  "credential_policy": "Persistent private per-harness HOME outside Git; shared fcntl cache/codex.lock serializes all Codex actors",
+  "skill_delivery": "Fullreadonlyresourcebundles + uniform inline text within harness",
+  "quality": "Alloriginalfailures/timeout/availability outcomes retained; independentoffline officialtestgrading; no repairs/retries",
+  "task_freshness": "Reused public development fixtures; do not present as held-out or fresh confirmation",
+  "billing_usd": "TBD",
+  "promotion": "No promotion from these single-round development screens"
+}

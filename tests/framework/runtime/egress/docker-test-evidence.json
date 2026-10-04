@@ -1,0 +1,30 @@
+{
+  "prototype_only": true,
+  "actor_gateway_mode": "isolated",
+  "actor_gateway_assigned": false,
+  "actor_ipv6_enabled": false,
+  "host_canary_positive": true,
+  "docker_server_version": "28.0.2",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "tests": {
+    "allowed_http": true,
+    "test_url_denied": true,
+    "connect_nonallowlist_denied": true,
+    "connect_allowed": true,
+    "direct_mock_ip_blocked": true,
+    "direct_public_ip_blocked": true,
+    "proxy_direct_ip_denied": true,
+    "direct_host_gateway_blocked": true
+  },
+  "exit_code": 0,
+  "verifier_network": "none",
+  "source_sha256": {
+    "test_docker.py": "725c01c3b9c83138cfe6bb87fe4814c270359401efdfc3c8ca594b80b275a060",
+    "proxy.py": "b2cc86337d803cb2d4b70c5aed1d73aa422aea10ae4016bd76ef8275aa44eb38",
+    "probe.py": "dddd1fcc60826dade7e8a814defbfe273824f524d23cb11838c4ef5d8a648999",
+    "mock.py": "2729a20921c452dc86f5169bcf630f3a7fa305f4e3db0705674f1669aeea9859"
+  },
+  "real_model_calls": 0,
+  "credentials_used": false,
+  "production_oauth_support": "TBD: endpoint set and native proxy/TLS integration unverified"
+}

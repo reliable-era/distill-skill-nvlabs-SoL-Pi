@@ -1,0 +1,33 @@
+{
+  "purpose": "New bounded-search Terminal development stage, prepared only; no confirmation",
+  "max_actor_attempts": 4,
+  "actor_timeout_seconds": 180,
+  "maximum_actor_wall_seconds": 720,
+  "automatic_retries": 0,
+  "order_seed": 109,
+  "model_sampling_seed": "TBD",
+  "candidate_sha256": "f0ca503005883fa3cfaec8a58686d51ddaf3cdeb233e271c8ebd65293515d3c3",
+  "allocations": [
+    {
+      "task": "terminal-bench-2:sanitize-git-repo",
+      "harnesses": [
+        "codex"
+      ],
+      "arms": [
+        "none",
+        "karpathy",
+        "candidate",
+        "both"
+      ],
+      "max_attempts": 4
+    }
+  ],
+  "previous_allocations": "Separate new allocation; does not extend prior broad12-stage",
+  "credential_policy": "Persistent private Codex HOME outside Git; same fcntl /tmp/solpi-refinement-auth-cache/codex.lock serializes refresh",
+  "skill_delivery": "Full read-only selected resource bundles and uniform inline Markdown",
+  "quality": "All original failures/timeouts/availability outcomes retained; complete Git/worktree/untracked file contents before verifier; independent offline official tests",
+  "task_freshness": "Reused development fixture, not held-out confirmation",
+  "billing_usd": "TBD",
+  "launch_status": "Prepared only; execution guard requires separate explicit root authorization file bound to immutable plan and this budget",
+  "promotion": "Canonical unchanged; no promotion from one development round"
+}

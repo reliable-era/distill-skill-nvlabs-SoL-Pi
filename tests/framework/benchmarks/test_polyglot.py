@@ -50,6 +50,38 @@ class PolyglotTests(unittest.TestCase):
             self.assertEqual((root / 'output/grader/support/Cargo.toml').read_text(), '[package]')
             self.assertTrue(any('Cargo.toml' in deviation for deviation in manifest['protocol_deviations']))
 
+    def test_private_reference_auxiliary_never_enters_actor_or_default_grader(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp); exercise = root / 'source/java/exercises/practice/example'
+            (exercise / '.meta/ref').mkdir(parents=True)
+            (exercise / 'src').mkdir()
+            (exercise / '.meta/config.json').write_text(json.dumps({'files': {
+                'solution': ['src/Main.java'], 'test': ['Test.java'],
+                'example': ['.meta/ref/Main.java', '.meta/ref/Helper.java']}}))
+            for name, content in [('src/Main.java', 'stub'), ('Test.java', 'test'),
+                                  ('.meta/ref/Main.java', 'reference'), ('.meta/ref/Helper.java', 'private helper')]:
+                (exercise / name).write_text(content)
+            with patch.object(module.subprocess, 'check_output', return_value=module.REVISION), patch.object(module.subprocess, 'run', return_value=module.subprocess.CompletedProcess([], 0)):
+                manifest = module.prepare(root / 'source', 'java/exercises/practice/example', root / 'output')
+            self.assertEqual(manifest['reference_auxiliary_files'], ['src/Helper.java'])
+            self.assertTrue((root / 'output/reference/src/Helper.java').exists())
+            self.assertFalse((root / 'output/workspace/src/Helper.java').exists())
+            self.assertFalse((root / 'output/grader/support/src/Helper.java').exists())
+
+    def test_ambiguous_reference_filename_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp); exercise = root / 'source/java/exercises/practice/example'
+            for folder in ('src', '.meta/first', '.meta/second'):
+                (exercise / folder).mkdir(parents=True)
+            (exercise / '.meta/config.json').write_text(json.dumps({'files': {
+                'solution': ['src/Main.java'], 'test': [],
+                'example': ['.meta/first/Main.java', '.meta/second/Main.java']}}))
+            for name in ('src/Main.java', '.meta/first/Main.java', '.meta/second/Main.java'):
+                (exercise / name).write_text('source')
+            with patch.object(module.subprocess, 'check_output', return_value=module.REVISION), patch.object(module.subprocess, 'run', return_value=module.subprocess.CompletedProcess([], 0)):
+                with self.assertRaisesRegex(ValueError, 'Ambiguous reference filename'):
+                    module.prepare(root / 'source', 'java/exercises/practice/example', root / 'output')
+
     def test_grader_launch_error_is_ungraded(self):
         # Real subprocess runs script without trusted manifest; must be infra2,
         # not test rejection1. Prepared/frozen graders remain unchanged.

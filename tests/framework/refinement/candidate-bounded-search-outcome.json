@@ -1,0 +1,22 @@
+{
+  "candidate": "bounded-search",
+  "candidate_sha256": "f0ca503005883fa3cfaec8a58686d51ddaf3cdeb233e271c8ebd65293515d3c3",
+  "frozen_manifest_sha256": "79ccb1c41725fbad4370748834bb2737618494e5579c56e95b3fd827f30c1ea0",
+  "status": "Rejected for promotion after development quality failure",
+  "evidence_files_sha256": {
+    "development/terminal-bounded-search/results.json": "ee9df7716ef535bdc2d3d7719b8a93fb24b80872998ec5d60be793552fbd386a",
+    "development/terminal-bounded-search/replay-audit.json": "04628567f28d02631cb3992027e1143cf33ca6768beae51e2c5dcf8d1fc1663a",
+    "development/terminal-bounded-search/trace-metrics.json": "683137f618a795b968b8bfe30421e64ab1347f7347f17a7c2e917f2873927038"
+  },
+  "matched_quality": {
+    "both": true,
+    "karpathy": false,
+    "none": true,
+    "candidate": false
+  },
+  "raw_reported_token_ratio_vs_none": 0.8551924249261731,
+  "eligible_efficiency_win": false,
+  "billing_usd": "TBD",
+  "explanation": "Fewer reported tokens do not offset failure of exact replacement acceptance check. Original failed attempt and replay retained; no repair/retry.",
+  "frozen_manifest_note": "Original pre-call manifest remains unchanged; its untested status describes freeze time, not current result."
+}

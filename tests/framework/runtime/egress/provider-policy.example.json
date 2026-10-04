@@ -1,0 +1,14 @@
+{
+  "prototype_only": true,
+  "same_policy_all_arms": true,
+  "actor_network": "internal bridge; proxy only",
+  "verifier_network": "none",
+  "mock_allowlist": {"provider.example:8000": "mock"},
+  "production_native_endpoints": {
+    "pi_openai_oauth": "TBD",
+    "codex_chatgpt_oauth": "TBD",
+    "agy_oauth_and_model_control_plane": "TBD"
+  },
+  "allow_wildcards": false,
+  "unknown_destination": "deny; classify required-client failures as infrastructure"
+}

@@ -1,0 +1,441 @@
+{
+  "scope": "Measured original unredacted per-command aggregated_output Unicode characters, not tokens or proof of exact model-visible tool context. Counts each completed command once. Original transcript SHA checked against execution results. Publication preserves JSONL line positions.",
+  "arms": [
+    {
+      "arm": "none",
+      "original_transcript_sha256": "e93ac56bf69ff176feff56dc2e62a93bbf25fe299113b9689ff021921d0289f8",
+      "reported_tokens": 235386,
+      "elapsed_seconds": 122.21045626141131,
+      "command_calls": 10,
+      "nonzero_shell_exit_lines": [
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          127
+        ],
+        [
+          20,
+          1
+        ]
+      ],
+      "original_returned_output_chars": 32357,
+      "original_returned_output_lines": 320,
+      "max_returned_call_chars": 16946,
+      "usage": {
+        "input_tokens": 232534,
+        "cached_input_tokens": 192256,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2852,
+        "reasoning_output_tokens": 268
+      },
+      "commands": [
+        {
+          "original_jsonl_line": 5,
+          "published_jsonl_line": 5,
+          "returned_chars": 10,
+          "returned_lines": 1,
+          "exit_code": 1
+        },
+        {
+          "original_jsonl_line": 7,
+          "published_jsonl_line": 7,
+          "returned_chars": 187,
+          "returned_lines": 23,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 9,
+          "published_jsonl_line": 9,
+          "returned_chars": 10134,
+          "returned_lines": 136,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 11,
+          "published_jsonl_line": 11,
+          "returned_chars": 16946,
+          "returned_lines": 105,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 13,
+          "published_jsonl_line": 13,
+          "returned_chars": 614,
+          "returned_lines": 11,
+          "exit_code": 127
+        },
+        {
+          "original_jsonl_line": 15,
+          "published_jsonl_line": 15,
+          "returned_chars": 26,
+          "returned_lines": 1,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 17,
+          "published_jsonl_line": 17,
+          "returned_chars": 1676,
+          "returned_lines": 12,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 20,
+          "published_jsonl_line": 20,
+          "returned_chars": 1460,
+          "returned_lines": 7,
+          "exit_code": 1
+        },
+        {
+          "original_jsonl_line": 22,
+          "published_jsonl_line": 22,
+          "returned_chars": 766,
+          "returned_lines": 16,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 24,
+          "published_jsonl_line": 24,
+          "returned_chars": 538,
+          "returned_lines": 8,
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "arm": "karpathy",
+      "original_transcript_sha256": "9971e67d4cb7011de60bebe507cd59e60616cd8a2c7ac2fd194e234c57d06d1f",
+      "reported_tokens": 235145,
+      "elapsed_seconds": 131.47685142420232,
+      "command_calls": 9,
+      "nonzero_shell_exit_lines": [],
+      "original_returned_output_chars": 148270,
+      "original_returned_output_lines": 967,
+      "max_returned_call_chars": 78301,
+      "usage": {
+        "input_tokens": 232607,
+        "cached_input_tokens": 211712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2538,
+        "reasoning_output_tokens": 136
+      },
+      "commands": [
+        {
+          "original_jsonl_line": 5,
+          "published_jsonl_line": 5,
+          "returned_chars": 36,
+          "returned_lines": 2,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 7,
+          "published_jsonl_line": 7,
+          "returned_chars": 176,
+          "returned_lines": 6,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 9,
+          "published_jsonl_line": 9,
+          "returned_chars": 7795,
+          "returned_lines": 148,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 11,
+          "published_jsonl_line": 11,
+          "returned_chars": 53342,
+          "returned_lines": 401,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 13,
+          "published_jsonl_line": 13,
+          "returned_chars": 5359,
+          "returned_lines": 31,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 15,
+          "published_jsonl_line": 15,
+          "returned_chars": 2776,
+          "returned_lines": 30,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 17,
+          "published_jsonl_line": 17,
+          "returned_chars": 464,
+          "returned_lines": 4,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 20,
+          "published_jsonl_line": 20,
+          "returned_chars": 78301,
+          "returned_lines": 344,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 22,
+          "published_jsonl_line": 22,
+          "returned_chars": 21,
+          "returned_lines": 1,
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "arm": "candidate",
+      "original_transcript_sha256": "32e58b97132513d6e08c800a945bf2ba01994a2cc4ea431945e6649748d12835",
+      "reported_tokens": 315603,
+      "elapsed_seconds": 144.93938017450273,
+      "command_calls": 12,
+      "nonzero_shell_exit_lines": [],
+      "original_returned_output_chars": 381806,
+      "original_returned_output_lines": 2270,
+      "max_returned_call_chars": 370890,
+      "usage": {
+        "input_tokens": 312006,
+        "cached_input_tokens": 273920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3597,
+        "reasoning_output_tokens": 236
+      },
+      "commands": [
+        {
+          "original_jsonl_line": 5,
+          "published_jsonl_line": 5,
+          "returned_chars": 37,
+          "returned_lines": 2,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 7,
+          "published_jsonl_line": 7,
+          "returned_chars": 1463,
+          "returned_lines": 36,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 9,
+          "published_jsonl_line": 9,
+          "returned_chars": 370890,
+          "returned_lines": 2109,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 11,
+          "published_jsonl_line": 11,
+          "returned_chars": 1772,
+          "returned_lines": 18,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 13,
+          "published_jsonl_line": 13,
+          "returned_chars": 2513,
+          "returned_lines": 22,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 15,
+          "published_jsonl_line": 15,
+          "returned_chars": 1224,
+          "returned_lines": 19,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 18,
+          "published_jsonl_line": 18,
+          "returned_chars": 104,
+          "returned_lines": 4,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 20,
+          "published_jsonl_line": 20,
+          "returned_chars": 3084,
+          "returned_lines": 46,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 22,
+          "published_jsonl_line": 22,
+          "returned_chars": 206,
+          "returned_lines": 4,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 24,
+          "published_jsonl_line": 24,
+          "returned_chars": 141,
+          "returned_lines": 2,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 26,
+          "published_jsonl_line": 26,
+          "returned_chars": 291,
+          "returned_lines": 6,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 29,
+          "published_jsonl_line": 29,
+          "returned_chars": 81,
+          "returned_lines": 2,
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "arm": "both",
+      "original_transcript_sha256": "928d3fb7429f30c55d4af85f379d2173cd326691cae02e6d5e61c4cc355ae871",
+      "reported_tokens": 435312,
+      "elapsed_seconds": 171.7170541472733,
+      "command_calls": 15,
+      "nonzero_shell_exit_lines": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          27,
+          1
+        ]
+      ],
+      "original_returned_output_chars": 442797,
+      "original_returned_output_lines": 2418,
+      "max_returned_call_chars": 408060,
+      "usage": {
+        "input_tokens": 431588,
+        "cached_input_tokens": 404480,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3724,
+        "reasoning_output_tokens": 252
+      },
+      "commands": [
+        {
+          "original_jsonl_line": 5,
+          "published_jsonl_line": 5,
+          "returned_chars": 10,
+          "returned_lines": 1,
+          "exit_code": 1
+        },
+        {
+          "original_jsonl_line": 7,
+          "published_jsonl_line": 7,
+          "returned_chars": 3790,
+          "returned_lines": 82,
+          "exit_code": 1
+        },
+        {
+          "original_jsonl_line": 9,
+          "published_jsonl_line": 9,
+          "returned_chars": 408060,
+          "returned_lines": 2236,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 11,
+          "published_jsonl_line": 11,
+          "returned_chars": 1272,
+          "returned_lines": 23,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 13,
+          "published_jsonl_line": 13,
+          "returned_chars": 23529,
+          "returned_lines": 16,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 15,
+          "published_jsonl_line": 15,
+          "returned_chars": 14,
+          "returned_lines": 1,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 17,
+          "published_jsonl_line": 17,
+          "returned_chars": 0,
+          "returned_lines": 0,
+          "exit_code": 1
+        },
+        {
+          "original_jsonl_line": 19,
+          "published_jsonl_line": 19,
+          "returned_chars": 0,
+          "returned_lines": 0,
+          "exit_code": 1
+        },
+        {
+          "original_jsonl_line": 21,
+          "published_jsonl_line": 21,
+          "returned_chars": 3221,
+          "returned_lines": 22,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 24,
+          "published_jsonl_line": 24,
+          "returned_chars": 1442,
+          "returned_lines": 7,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 27,
+          "published_jsonl_line": 27,
+          "returned_chars": 277,
+          "returned_lines": 6,
+          "exit_code": 1
+        },
+        {
+          "original_jsonl_line": 29,
+          "published_jsonl_line": 29,
+          "returned_chars": 368,
+          "returned_lines": 7,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 31,
+          "published_jsonl_line": 31,
+          "returned_chars": 531,
+          "returned_lines": 11,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 33,
+          "published_jsonl_line": 33,
+          "returned_chars": 283,
+          "returned_lines": 6,
+          "exit_code": 0
+        },
+        {
+          "original_jsonl_line": 35,
+          "published_jsonl_line": 35,
+          "returned_chars": 0,
+          "returned_lines": 0,
+          "exit_code": 0
+        }
+      ]
+    }
+  ]
+}

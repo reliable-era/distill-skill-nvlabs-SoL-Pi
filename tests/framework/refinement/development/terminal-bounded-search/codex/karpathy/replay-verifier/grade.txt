@@ -1,0 +1,42 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.7, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 3 items
+
+../../tests/test_outputs.py ..F                                          [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_no_other_files_changed __________________________
+
+    def test_no_other_files_changed():
+        # Check that no files other than CONTAMINATED_PATHS have been changed
+        repo = git.Repo("/app/dclm")
+    
+        # Specific commit before any changes were made
+        commit = repo.commit("d6987af002b122fef54bc0be402062c76488a4d9")
+        diff = commit.diff(None)
+    
+        for d in diff:
+            path = d.b_path
+            if os.path.join("/app/dclm", path) not in CONTAMINATED_PATHS:
+>               raise ValueError(f"File {path} has been changed")
+E               ValueError: File tools/eval_expdb.py has been changed
+
+/tests/test_outputs.py:71: ValueError
+=============================== warnings summary ===============================
+../../usr/local/lib/python3.13/site-packages/_pytest/cacheprovider.py:475
+  /usr/local/lib/python3.13/site-packages/_pytest/cacheprovider.py:475: PytestCacheWarning: could not create cache path /tests/.pytest_cache/v/cache/nodeids: [Errno 30] Read-only file system: '/tests/pytest-cache-files-1ubg5vhb'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+../../usr/local/lib/python3.13/site-packages/_pytest/cacheprovider.py:429
+  /usr/local/lib/python3.13/site-packages/_pytest/cacheprovider.py:429: PytestCacheWarning: could not create cache path /tests/.pytest_cache/v/cache/lastfailed: [Errno 30] Read-only file system: '/tests/pytest-cache-files-6kya2xla'
+    config.cache.set("cache/lastfailed", self.lastfailed)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../tests/test_outputs.py::test_removal_of_secret_information
+PASSED ../../tests/test_outputs.py::test_correct_replacement_of_secret_information
+FAILED ../../tests/test_outputs.py::test_no_other_files_changed - ValueError:...
+=================== 1 failed, 2 passed, 2 warnings in 0.33s ====================

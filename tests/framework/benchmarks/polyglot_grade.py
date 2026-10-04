@@ -23,7 +23,10 @@ def main():
         scratch.mkdir()
         # Do not trust candidate build/test config or extra executable artifacts.
         shutil.copytree(grader / 'support', scratch, dirs_exist_ok=True)
-        for name in manifest['solution_files']:
+        names = list(manifest['solution_files'])
+        if '--reference-control' in sys.argv[1:]:
+            names += manifest.get('reference_auxiliary_files', [])
+        for name in names:
             candidate = Path('/workspace') / name
             if not candidate.is_file() or candidate.is_symlink() or not candidate.resolve().is_relative_to(Path('/workspace').resolve()):
                 print('Missing or symlinked solution file:', name)

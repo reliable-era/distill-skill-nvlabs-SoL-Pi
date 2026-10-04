@@ -1,0 +1,115 @@
+{
+  "purpose": "Previously exposed public Aider polyglot adapted Go development task; no clean held-out claim",
+  "maximum_attempts": 8,
+  "maximum_actor_wall_seconds": 1440,
+  "attempt_timeout_seconds": 180,
+  "rounds": 1,
+  "order_seed": 107,
+  "model_sampling_seed": "TBD",
+  "arms": {
+    "none": [],
+    "karpathy": [
+      "karpathy"
+    ],
+    "candidate": [
+      "candidate"
+    ],
+    "both": [
+      "karpathy",
+      "candidate"
+    ]
+  },
+  "order": [
+    "none",
+    "both",
+    "candidate",
+    "karpathy"
+  ],
+  "harnesses": [
+    "pi",
+    "codex"
+  ],
+  "model": "gpt-6.1-sol",
+  "pi_thinking": "low",
+  "codex_effort": "native default",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "task_manifest": {
+    "schema_version": 1,
+    "benchmark": "aider-polyglot",
+    "task_id": "go/exercises/practice/food-chain",
+    "dataset_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+    "harness_revision": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+    "source": "https://github.com/Aider-AI/polyglot-benchmark",
+    "official_runner_source": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/benchmark/benchmark.py",
+    "test_command": [
+      "go",
+      "test",
+      "-json",
+      "./..."
+    ],
+    "solution_files": [
+      "food_chain.go"
+    ],
+    "test_files": [
+      "food_chain_test.go"
+    ],
+    "test_timeout_seconds": 180,
+    "protocol_deviations": [
+      "Native harness, not Aider",
+      "One fixed-budget attempt; no post-grade repair turn",
+      "Tests absent from actor filesystem; official tests restored independently",
+      "Offline dependency flags; Go JSON events for executed-test accounting"
+    ],
+    "source_files_sha256": {
+      ".docs/instructions.md": "282ba689e0653e74892e2104962c2ed4ef79fd307a182c343cd72ae807e466f3",
+      ".meta/config.json": "6aa890bfce863adbf81acad3cf1862128bf1b0ccf3dca9c639f98a89b3228dc1",
+      ".meta/example.go": "b28e716ee4b7aa3f1fce48941e06797faf53deefeb13fc0f5d5ac8df6c9fdadf",
+      ".meta/tests.toml": "9ce37a5168ddb753354c14ec4843d1f0a717aa9ebc3c79b8ba15677f465ba0ff",
+      "food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+      "food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e",
+      "go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08"
+    }
+  },
+  "skill_delivery": "uniform inline SKILL.md plus complete readonly resources /skills",
+  "skill_sha256": {
+    "karpathy": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+    "candidate": "8c753e5093f72a02660e35e1e0b1824c81c49bca623b8197e8fcfeed347b5b96"
+  },
+  "skill_trees_sha256": {
+    "karpathy": {
+      "SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+    },
+    "candidate": {
+      "SKILL.md": "8c753e5093f72a02660e35e1e0b1824c81c49bca623b8197e8fcfeed347b5b96"
+    }
+  },
+  "prompt_sha256": {
+    "none": "d773210f437b1d4e7f86b4832be2021063aad024d5712d3adc0bc47dbff92596",
+    "karpathy": "e328f5ef642323f8af4f978aef8ba06c73484077fcd4d0f19ce305184fc39ab0",
+    "candidate": "21dcf9cb0d7300f234dac4a4f97aa6aa7436ebc1c7802679a8cea61ddc91c56f",
+    "both": "970a7b1c4bca53db1cfc744a60ee8d784df226c717a5158905480d5ead9da210"
+  },
+  "original_source_files_sha256": {
+    "food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08"
+  },
+  "grader_files_sha256": {
+    "grade.py": "6a21b68df2273accd92512d3ae4e59b30cf357b1fd877ebcf45a8e3567949a1a",
+    "manifest.json": "b8a951d197ed82b81c7126a5a520136a3bd728c6c88238a671bdf77ce79a1554",
+    "support/food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "support/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "tests/food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e"
+  },
+  "runtime_source_sha256": {
+    "run_screen.py": "78fb908467beef45708821bca68cd822e816c7bf5d318c69ca6bb40006335e6a",
+    "frozen/accounting.py": "e1640271de433824e65f013e787d970d57dfbcd4741df3acd2624107e93a7990",
+    "frozen/grader/grade.py": "6a21b68df2273accd92512d3ae4e59b30cf357b1fd877ebcf45a8e3567949a1a",
+    "frozen/runtime/swe_patch.py": "565252b38d93c59ba835824c6e4d9e3e0b077e8b64ccb3dbef536b3be2942e26",
+    "frozen/runtime/collect.py": "5f3ae9b9631d7d3352db516f59abc57d502e20f02f12564d903ab56290e53d5a"
+  },
+  "protocol": "native harness, fixed single attempt, no post-grade repair; restore original official tests independently, count executed accepted tests, network none, no credentials in grader",
+  "credential_policy": "externally seeded-once persistent private per-harness HOME, shared cache/codex.lock or pi.lock across concurrent campaigns, preserve refreshed auth, host seeds never written",
+  "stop_rule": "all starts count; auth/quota failures stop affected harness, no retries",
+  "exposure": "task previously exposed to development harnesses; external test fetch audit mandatory; no clean held-out claims",
+  "billing_usd": "TBD"
+}

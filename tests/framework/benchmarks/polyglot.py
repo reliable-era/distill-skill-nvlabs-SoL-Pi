@@ -57,10 +57,34 @@ def prepare(source, task, output):
     shutil.copytree(actor, reference, dirs_exist_ok=True)
     shutil.copytree(actor, grader / 'support', dirs_exist_ok=True)
     examples = files.get('example', [])
-    if len(examples) != len(files['solution']):
-        raise ValueError('Reference mapping requires one example per solution')
-    for solution, example in zip(files['solution'], examples):
-        shutil.copy2(exercise / example, reference / solution)
+    # Examples may include private auxiliary source; cardinality is not a contract.
+    mapping = {}
+    remaining = list(examples)
+    for solution in files['solution']:
+        matches = [example for example in remaining if Path(example).name == Path(solution).name]
+        if len(matches) > 1:
+            raise ValueError('Ambiguous reference filename match')
+        if len(matches) == 1:
+            mapping[solution] = matches[0]; remaining.remove(matches[0])
+    unmapped = [name for name in files['solution'] if name not in mapping]
+    if unmapped:
+        if len(unmapped) != len(remaining):
+            raise ValueError('Ambiguous reference-to-solution mapping')
+        mapping.update(zip(unmapped, remaining)); remaining = []
+    for solution, example in mapping.items():
+        dest = reference / solution; dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(exercise / example, dest)
+    auxiliary = []
+    for example in remaining:
+        # A helper must share a reference source directory with a mapped example.
+        parents = {str(Path(solution).parent) for solution, mapped in mapping.items()
+                   if Path(mapped).parent == Path(example).parent}
+        if len(parents) != 1:
+            raise ValueError('Ambiguous reference auxiliary source directory')
+        name = str(Path(parents.pop()) / Path(example).name)
+        if name in mapping or (reference / name).exists():
+            raise ValueError('Reference auxiliary destination collision')
+        shutil.copy2(exercise / example, reference / name); auxiliary.append(name)
     docs = exercise / '.docs'
     prompt = '\n\n'.join((docs / name).read_text() for name in ('introduction.md', 'instructions.md', 'instructions.append.md') if (docs / name).exists())
     prompt += '\n\nModify only these solution files: ' + ', '.join(files['solution'])
@@ -71,11 +95,12 @@ def prepare(source, task, output):
                 'source': 'https://github.com/Aider-AI/polyglot-benchmark',
                 'official_runner_source': 'https://github.com/Aider-AI/aider/blob/' + HARNESS_REVISION + '/benchmark/benchmark.py',
                 'test_command': COMMANDS[parts[0]], 'solution_files': files['solution'], 'test_files': files['test'],
-                'test_timeout_seconds': 180,
+                'test_timeout_seconds': 180, 'reference_mapping': mapping, 'reference_auxiliary_files': auxiliary,
                 'protocol_deviations': ['Native harness, not Aider', 'One fixed-budget attempt; no post-grade repair turn',
                                         'Tests absent from actor filesystem; official tests restored independently',
                                         'Offline dependency flags; Go JSON events for executed-test accounting'] +
-                                       (['Cargo.toml is immutable trusted support to prevent suppressing tests'] if protected else []),
+                                       (['Cargo.toml is immutable trusted support to prevent suppressing tests'] if protected else []) +
+                                       (['Private reference control overlays auxiliary examples; default candidate grader accepts only declared solution files'] if auxiliary else []),
                 'source_files_sha256': {str(p.relative_to(exercise)): digest(p) for p in sorted(exercise.rglob('*')) if p.is_file()}}
     (output / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     shutil.copy2(output / 'manifest.json', grader / 'manifest.json')

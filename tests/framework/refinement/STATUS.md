@@ -67,3 +67,9 @@ New cross-harness trace audit found native agy No skill downloaded public offici
 ## Locate-first Codex development
 
 Independent four-arm Codex screen completed on the reused Flask issue, order106: all four official grades resolved. Candidate84,948 tokens vs No skill112,352, Karpathy151,278, and Both128,199: descriptive savings24.4%,43.8%,33.7%. Root verified allfour patch/transcript/report hashes. [Evidence](development/swe-flask-locate-first/README.md). This positive single-issue round is not stable confirmation and does not justify promotion. Pi has zero starts, awaitingfreshlogin afterinvalid_grant; fourunused slots remain in the frozen eight-start budget. Canonical andsealedtasks unchanged; goalactive.
+
+## Updated refinement checkpoint
+
+The goal remains active: at least3/5 primary harnesses, three benchmark families and repeated matched confirmation rounds under the unchanged criteria in [goal.md](../../goal.md). Locate-first passes all three reused Codex development tasks but costs13.1% more than No skill overall; [consolidated evidence](development/README-locate-first-broad.md). Bounded-search terminal screen completed four starts and four agreeing full-state replays: No skill/Both pass, Karpathy/candidate fail. Lower candidate tokens do not qualify as a win. Canonical skill unchanged.
+
+Four selected polyglot environments now pass nine offline grader controls, including a Java check that prevents private reference helpers entering candidate grading. Native actor readiness remains TBD. Eight mock Docker egress controls pass; native provider integration and cloud-tool restrictions remain TBD. Frozen Copilot supports native `--usage-output-file`; complete schema and cutoff accounting still need validation. Pi requires refreshed login. Prepared native agy Flask awaits classifier review before its separately capped four starts.

@@ -1,0 +1,29 @@
+{"Time":"2026-10-04T03:30:58.220280525Z","Action":"start","Package":"foodchain"}
+{"Time":"2026-10-04T03:30:58.224792522Z","Action":"run","Package":"foodchain","Test":"TestVerse"}
+{"Time":"2026-10-04T03:30:58.224829206Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"=== RUN   TestVerse\n"}
+{"Time":"2026-10-04T03:30:58.224874564Z","Action":"run","Package":"foodchain","Test":"TestVerse/verse_1"}
+{"Time":"2026-10-04T03:30:58.224880203Z","Action":"output","Package":"foodchain","Test":"TestVerse/verse_1","Output":"=== RUN   TestVerse/verse_1\n"}
+{"Time":"2026-10-04T03:30:58.224897849Z","Action":"output","Package":"foodchain","Test":"TestVerse/verse_1","Output":"--- FAIL: TestVerse/verse_1 (0.00s)\n"}
+{"Time":"2026-10-04T03:30:58.224904289Z","Action":"fail","Package":"foodchain","Test":"TestVerse/verse_1","Elapsed":0}
+{"Time":"2026-10-04T03:30:58.224913873Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"--- FAIL: TestVerse (0.00s)\n"}
+{"Time":"2026-10-04T03:30:58.226922477Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"panic: Please implement the Verse function [recovered, repanicked]\n"}
+{"Time":"2026-10-04T03:30:58.226933112Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"\n"}
+{"Time":"2026-10-04T03:30:58.226938701Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"goroutine 7 [running]:\n"}
+{"Time":"2026-10-04T03:30:58.226947774Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"testing.tRunner.func1.2({0x54d2c0, 0x5ba460})\n"}
+{"Time":"2026-10-04T03:30:58.226954344Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"\t/usr/local/go/src/testing/testing.go:1872 +0x237\n"}
+{"Time":"2026-10-04T03:30:58.226959993Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"testing.tRunner.func1()\n"}
+{"Time":"2026-10-04T03:30:58.22696503Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"\t/usr/local/go/src/testing/testing.go:1875 +0x35b\n"}
+{"Time":"2026-10-04T03:30:58.226984639Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"panic({0x54d2c0?, 0x5ba460?})\n"}
+{"Time":"2026-10-04T03:30:58.226990819Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"\t/usr/local/go/src/runtime/panic.go:783 +0x132\n"}
+{"Time":"2026-10-04T03:30:58.226995986Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"foodchain.Verse(...)\n"}
+{"Time":"2026-10-04T03:30:58.227000884Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"\t/tmp/polyglot-grade-_e967aye/food-chain/food_chain.go:4\n"}
+{"Time":"2026-10-04T03:30:58.227006332Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"foodchain.TestVerse.func1(0xc000003c00?)\n"}
+{"Time":"2026-10-04T03:30:58.227015666Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"\t/tmp/polyglot-grade-_e967aye/food-chain/food_chain_test.go:90 +0x25\n"}
+{"Time":"2026-10-04T03:30:58.227022146Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"testing.tRunner(0xc000003c00, 0xc00001e400)\n"}
+{"Time":"2026-10-04T03:30:58.227027033Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"\t/usr/local/go/src/testing/testing.go:1934 +0xea\n"}
+{"Time":"2026-10-04T03:30:58.227039522Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"created by testing.(*T).Run in goroutine 6\n"}
+{"Time":"2026-10-04T03:30:58.227048134Z","Action":"output","Package":"foodchain","Test":"TestVerse","Output":"\t/usr/local/go/src/testing/testing.go:1997 +0x465\n"}
+{"Time":"2026-10-04T03:30:58.227431708Z","Action":"fail","Package":"foodchain","Test":"TestVerse","Elapsed":0}
+{"Time":"2026-10-04T03:30:58.227456225Z","Action":"output","Package":"foodchain","Output":"FAIL\tfoodchain\t0.007s\n"}
+{"Time":"2026-10-04T03:30:58.227465278Z","Action":"fail","Package":"foodchain","Elapsed":0.007}
+

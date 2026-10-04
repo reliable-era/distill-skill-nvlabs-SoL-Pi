@@ -1,0 +1,304 @@
+{
+  "private_root": "/tmp/solpi-sealed-polyglot-preflight-v2-83ce78f2",
+  "selected_metadata_sha256": "6260412fad9d4b579c80b1a891e94a3d98f5346503e096bfdff632ef9affa11c",
+  "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+  "source_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+  "harness_revision": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+  "source_hashes": {
+    "polyglot.py": "38fee8929888f8f620faa2a49090774c95daa6579300e9b36e7dca68f1ea3082",
+    "polyglot_grade.py": "8163131e9822dbcad2c987f40fce490833bdae72197542cb81db4060e891db14",
+    "polyglot_cpp_test.sh": "51184a5f17c90e5cfeec37bb7f7cb37119b9fe7c295621f36bdcef5094713eca"
+  },
+  "protocol": "Native single attempt, withheld tests, offline official grading; private gold control overlays auxiliary reference sources explicitly. Default grading never overlays private helper sources. No actor/model calls or canonical edits.",
+  "rows": [
+    {
+      "task": "java/exercises/practice/ocr-numbers",
+      "private_preparation": "/tmp/solpi-sealed-polyglot-preflight-v2-83ce78f2/java",
+      "manifest": {
+        "schema_version": 1,
+        "benchmark": "aider-polyglot",
+        "task_id": "java/exercises/practice/ocr-numbers",
+        "dataset_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+        "harness_revision": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+        "source": "https://github.com/Aider-AI/polyglot-benchmark",
+        "official_runner_source": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/benchmark/benchmark.py",
+        "test_command": [
+          "bash",
+          "./gradlew",
+          "--offline",
+          "test"
+        ],
+        "solution_files": [
+          "src/main/java/OpticalCharacterReader.java"
+        ],
+        "test_files": [
+          "src/test/java/OpticalCharacterReaderTest.java"
+        ],
+        "test_timeout_seconds": 180,
+        "reference_mapping": {
+          "src/main/java/OpticalCharacterReader.java": ".meta/src/reference/java/OpticalCharacterReader.java"
+        },
+        "reference_auxiliary_files": [
+          "src/main/java/Digit.java"
+        ],
+        "protocol_deviations": [
+          "Native harness, not Aider",
+          "One fixed-budget attempt; no post-grade repair turn",
+          "Tests absent from actor filesystem; official tests restored independently",
+          "Offline dependency flags; Go JSON events for executed-test accounting"
+        ],
+        "source_files_sha256": {
+          ".docs/instructions.md": "cc9dae7e1e774a12dbf608991fa20d3ce08257abdc90d9e8d5d52725b6d911d0",
+          ".meta/config.json": "c52d7ab96d231558cd6c96efad6dde5a3a87682fcf46058fb0490e898b4ad6f1",
+          ".meta/src/reference/java/Digit.java": "0cf9573f53231fbc766c7500ccfc14957288ebbb08d74e95ce9980c66e52b21d",
+          ".meta/src/reference/java/OpticalCharacterReader.java": "0badb5cc10d707a1c70c32dc58a51608c33fb5bc5fcc100732342e5424e26f84",
+          ".meta/tests.toml": "79a23f2a5cb1ef808b9906d550da580a318b55b012c0341696a9ec28d13b4a19",
+          "build.gradle": "a4c46817089967addcdafc9b979d4b4ef96a1c7f39b594fbeeb28efa7bc0c9c5",
+          "gradle/wrapper/gradle-wrapper.jar": "cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8",
+          "gradle/wrapper/gradle-wrapper.properties": "025ad9787315e9eed5f009d42a574e415ffa845cd25f2a0bd42491352c14dcae",
+          "gradlew": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d",
+          "gradlew.bat": "bdecf875b6868cbcbd36a1f85eedf0832f358ff28092c5797ed645f7edce77d9",
+          "src/main/java/OpticalCharacterReader.java": "f41954898968851ae464fdd9ac3ff03e44c612ecf7fe99f1ed6eb13282e582c8",
+          "src/test/java/OpticalCharacterReaderTest.java": "ba27b34019ff436739a0059d4c6fcfa6f513b2aa0b4a17ea841df6b0c0e2eb07"
+        }
+      },
+      "manifest_sha256": "651117b2d2b5ebdc6db8b09aef844951eeeae389f859d313f3c70dca583cdcb5",
+      "actor_file_hashes": {
+        "build.gradle": "a4c46817089967addcdafc9b979d4b4ef96a1c7f39b594fbeeb28efa7bc0c9c5",
+        "gradle/wrapper/gradle-wrapper.jar": "cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8",
+        "gradle/wrapper/gradle-wrapper.properties": "025ad9787315e9eed5f009d42a574e415ffa845cd25f2a0bd42491352c14dcae",
+        "gradlew": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d",
+        "gradlew.bat": "bdecf875b6868cbcbd36a1f85eedf0832f358ff28092c5797ed645f7edce77d9",
+        "src/main/java/OpticalCharacterReader.java": "f41954898968851ae464fdd9ac3ff03e44c612ecf7fe99f1ed6eb13282e582c8"
+      },
+      "controls": {
+        "unchanged": {
+          "exit_code": 2,
+          "log_sha256": "6449e1fb09dd8d3f3c5a34c41d81d7a2b08c039f799520a47db11fad65fc888b",
+          "classification": "infrastructure_error"
+        },
+        "reference": {
+          "exit_code": 2,
+          "log_sha256": "6449e1fb09dd8d3f3c5a34c41d81d7a2b08c039f799520a47db11fad65fc888b",
+          "classification": "infrastructure_error"
+        }
+      }
+    },
+    {
+      "task": "cpp/exercises/practice/robot-name",
+      "private_preparation": "/tmp/solpi-sealed-polyglot-preflight-v2-83ce78f2/cpp",
+      "manifest": {
+        "schema_version": 1,
+        "benchmark": "aider-polyglot",
+        "task_id": "cpp/exercises/practice/robot-name",
+        "dataset_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+        "harness_revision": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+        "source": "https://github.com/Aider-AI/polyglot-benchmark",
+        "official_runner_source": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/benchmark/benchmark.py",
+        "test_command": [
+          "bash",
+          "/grader/cpp-test.sh"
+        ],
+        "solution_files": [
+          "robot_name.cpp",
+          "robot_name.h"
+        ],
+        "test_files": [
+          "robot_name_test.cpp"
+        ],
+        "test_timeout_seconds": 180,
+        "reference_mapping": {
+          "robot_name.cpp": ".meta/example.cpp",
+          "robot_name.h": ".meta/example.h"
+        },
+        "reference_auxiliary_files": [],
+        "protocol_deviations": [
+          "Native harness, not Aider",
+          "One fixed-budget attempt; no post-grade repair turn",
+          "Tests absent from actor filesystem; official tests restored independently",
+          "Offline dependency flags; Go JSON events for executed-test accounting"
+        ],
+        "source_files_sha256": {
+          ".docs/instructions.md": "bbb01d54e892de555eb900b3b93fd3645ad7fcfd09eace353fb6b81e768c4310",
+          ".meta/config.json": "a034a2e4b27f5c2e8dc2ad151dd1b76afeba55e65f9e2add28767dfcc0a48718",
+          ".meta/example.cpp": "7723754d4c589fb896145ce76990051474da3b4d2a05e1d0f1f986c792a54e95",
+          ".meta/example.h": "0887f0ebd0fe974d16e11dc24eeeadc5d936821cddfad13e996387e2ec74fa44",
+          "CMakeLists.txt": "53d531120e650972adf19a2a42aa2d5bc716c93700ffac74c1c2868fdce633ff",
+          "robot_name.cpp": "61e1d035dc6a39e98c1a1b08710fd0b446bfd2338e341265c481f3aa8d498072",
+          "robot_name.h": "6e65500486ff46f332347dc4c3a1bf5adb8788f2cf3fc7025c837a7a67df51b3",
+          "robot_name_test.cpp": "a61980d1065cad95bba9e8042e46fca8890b782367767a2a0e4b9c856de58fd5",
+          "test/catch.hpp": "681e7505a50887c9085539e5135794fc8f66d8e5de28eadf13a30978627b0f47",
+          "test/tests-main.cpp": "5847fda35c1320d94f8d088aaf34229d689f66f1da235f885cbb28c8f17e4260"
+        }
+      },
+      "manifest_sha256": "e12561724bbc654146c7bf9442cd8f25a6f28b4f1c8e74a2963d05d88a6bfa85",
+      "actor_file_hashes": {
+        "CMakeLists.txt": "53d531120e650972adf19a2a42aa2d5bc716c93700ffac74c1c2868fdce633ff",
+        "robot_name.cpp": "61e1d035dc6a39e98c1a1b08710fd0b446bfd2338e341265c481f3aa8d498072",
+        "robot_name.h": "6e65500486ff46f332347dc4c3a1bf5adb8788f2cf3fc7025c837a7a67df51b3",
+        "test/catch.hpp": "681e7505a50887c9085539e5135794fc8f66d8e5de28eadf13a30978627b0f47",
+        "test/tests-main.cpp": "5847fda35c1320d94f8d088aaf34229d689f66f1da235f885cbb28c8f17e4260"
+      },
+      "controls": {
+        "unchanged": {
+          "exit_code": 1,
+          "log_sha256": "f5471c2b18cedf294c51443a712d350d8c900188f138a08b63cec7d7a4051eb1",
+          "classification": "quality_rejection"
+        },
+        "reference": {
+          "exit_code": 1,
+          "log_sha256": "f5471c2b18cedf294c51443a712d350d8c900188f138a08b63cec7d7a4051eb1",
+          "classification": "quality_rejection"
+        }
+      }
+    },
+    {
+      "task": "go/exercises/practice/pig-latin",
+      "private_preparation": "/tmp/solpi-sealed-polyglot-preflight-v2-83ce78f2/go",
+      "manifest": {
+        "schema_version": 1,
+        "benchmark": "aider-polyglot",
+        "task_id": "go/exercises/practice/pig-latin",
+        "dataset_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+        "harness_revision": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+        "source": "https://github.com/Aider-AI/polyglot-benchmark",
+        "official_runner_source": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/benchmark/benchmark.py",
+        "test_command": [
+          "go",
+          "test",
+          "-json",
+          "./..."
+        ],
+        "solution_files": [
+          "pig_latin.go"
+        ],
+        "test_files": [
+          "pig_latin_test.go"
+        ],
+        "test_timeout_seconds": 180,
+        "reference_mapping": {
+          "pig_latin.go": ".meta/example.go"
+        },
+        "reference_auxiliary_files": [],
+        "protocol_deviations": [
+          "Native harness, not Aider",
+          "One fixed-budget attempt; no post-grade repair turn",
+          "Tests absent from actor filesystem; official tests restored independently",
+          "Offline dependency flags; Go JSON events for executed-test accounting"
+        ],
+        "source_files_sha256": {
+          ".approaches/config.json": "19a449250ad70dc51cda3ba0836179533a3edb2664e1c16812f5637c73f21695",
+          ".approaches/introduction.md": "b5c7d3f68db39997fae70e981c24c46609ef7c2ea6561d1b5a8e3eacc2e3d652",
+          ".approaches/map-lookups/content.md": "a8774a90b5fc4afbc8cef72ca6d6cfad4c20cd03e6549414980f60af73e6f3d6",
+          ".approaches/map-lookups/snippet.txt": "c803c74792a9f16a2e72bed1e77ed5e66bd787e646f82fa744676df38ee794f9",
+          ".approaches/map-lookups-with-generics/content.md": "7c77b41da90685971039f1acbdf1c2adbb9df0c2bc7d979f36ccc480c6a17545",
+          ".approaches/map-lookups-with-generics/snippet.txt": "c188783ad50038c57a02cf493d161e99731c3f585d765b2883436bde02f33c27",
+          ".articles/config.json": "b008b140cd4c044b7b4974356f7407388005758503580aac1d00db85dc50a431",
+          ".articles/performance/content.md": "16d9351dfa17b30b367988de8615f7f2860d7f4a3ec494c2cbfe0200880f3d18",
+          ".articles/performance/snippet.md": "e91b43f75dc3808c2d01977a88421a7af305a0a3a91744c0f9bdf3b3fcd85178",
+          ".docs/instructions.md": "9251a0956bafeb2ddd68e2755429be65224907f71163756535b3ccb983e571ee",
+          ".docs/introduction.md": "215d592a2a5bb66bf521678d712e71e395e9f3375219bf59d69dfe0ba524698a",
+          ".meta/config.json": "f0254fec184f6eb9173b3d955ccc13686e8af3f0e61703e45b21089523bc133c",
+          ".meta/example.go": "0afa53ce47ead0f63d7da5e9f2a7fa914678e66598a27bc6f7a9b0e94975393d",
+          ".meta/gen.go": "2acef1331e234536e700921d82de23489299d199354e121f2c624ae3a54b8c59",
+          ".meta/tests.toml": "44f8fd467227b6506600b4c6f271438a4acc6994c51e3e9da196a2fd9d23c71b",
+          "cases_test.go": "4c83cfc40e48933bc3451c17cb02f665632cf90dfa22ffc61e912d8adcd1637d",
+          "go.mod": "ae41df9c918b27a595b45a1864ea4adf4f36f0a326951758a31d46bcaf45df85",
+          "pig_latin.go": "b370899f26d102e9d3a17d490d5d651cc6594bbd37ed5b906930efee06d03c07",
+          "pig_latin_test.go": "38b79935b4e12c21b34c8f7e4532ddc0884c52bde1be9a73a684deae3111feb7"
+        }
+      },
+      "manifest_sha256": "f682df24ce134bc588ce9d2757b76904b0dc990a51b26381a4f7f4829ce5bb24",
+      "actor_file_hashes": {
+        ".approaches/config.json": "19a449250ad70dc51cda3ba0836179533a3edb2664e1c16812f5637c73f21695",
+        ".approaches/introduction.md": "b5c7d3f68db39997fae70e981c24c46609ef7c2ea6561d1b5a8e3eacc2e3d652",
+        ".approaches/map-lookups/content.md": "a8774a90b5fc4afbc8cef72ca6d6cfad4c20cd03e6549414980f60af73e6f3d6",
+        ".approaches/map-lookups/snippet.txt": "c803c74792a9f16a2e72bed1e77ed5e66bd787e646f82fa744676df38ee794f9",
+        ".approaches/map-lookups-with-generics/content.md": "7c77b41da90685971039f1acbdf1c2adbb9df0c2bc7d979f36ccc480c6a17545",
+        ".approaches/map-lookups-with-generics/snippet.txt": "c188783ad50038c57a02cf493d161e99731c3f585d765b2883436bde02f33c27",
+        ".articles/config.json": "b008b140cd4c044b7b4974356f7407388005758503580aac1d00db85dc50a431",
+        ".articles/performance/content.md": "16d9351dfa17b30b367988de8615f7f2860d7f4a3ec494c2cbfe0200880f3d18",
+        ".articles/performance/snippet.md": "e91b43f75dc3808c2d01977a88421a7af305a0a3a91744c0f9bdf3b3fcd85178",
+        "cases_test.go": "4c83cfc40e48933bc3451c17cb02f665632cf90dfa22ffc61e912d8adcd1637d",
+        "go.mod": "ae41df9c918b27a595b45a1864ea4adf4f36f0a326951758a31d46bcaf45df85",
+        "pig_latin.go": "b370899f26d102e9d3a17d490d5d651cc6594bbd37ed5b906930efee06d03c07"
+      },
+      "controls": {
+        "unchanged": {
+          "exit_code": 1,
+          "log_sha256": "350ac3ad0caeb91963650ffacfff83bc9cacb3ba68d0a594f7bc3ba353b78920",
+          "classification": "quality_rejection"
+        },
+        "reference": {
+          "exit_code": 1,
+          "log_sha256": "350ac3ad0caeb91963650ffacfff83bc9cacb3ba68d0a594f7bc3ba353b78920",
+          "classification": "quality_rejection"
+        }
+      }
+    },
+    {
+      "task": "rust/exercises/practice/simple-cipher",
+      "private_preparation": "/tmp/solpi-sealed-polyglot-preflight-v2-83ce78f2/rust",
+      "manifest": {
+        "schema_version": 1,
+        "benchmark": "aider-polyglot",
+        "task_id": "rust/exercises/practice/simple-cipher",
+        "dataset_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+        "harness_revision": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+        "source": "https://github.com/Aider-AI/polyglot-benchmark",
+        "official_runner_source": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/benchmark/benchmark.py",
+        "test_command": [
+          "cargo",
+          "test",
+          "--offline",
+          "--",
+          "--include-ignored"
+        ],
+        "solution_files": [
+          "src/lib.rs"
+        ],
+        "test_files": [
+          "tests/simple-cipher.rs"
+        ],
+        "test_timeout_seconds": 180,
+        "reference_mapping": {
+          "src/lib.rs": ".meta/example.rs"
+        },
+        "reference_auxiliary_files": [],
+        "protocol_deviations": [
+          "Native harness, not Aider",
+          "One fixed-budget attempt; no post-grade repair turn",
+          "Tests absent from actor filesystem; official tests restored independently",
+          "Offline dependency flags; Go JSON events for executed-test accounting",
+          "Cargo.toml is immutable trusted support to prevent suppressing tests"
+        ],
+        "source_files_sha256": {
+          ".docs/instructions.md": "c15aca9f2992bbde817e717c954efa4e983a219e476ca4aeaa45f4aa1c64665e",
+          ".meta/config.json": "a16b3828c359efc686ce4cf59a75f67def6df7a813ba816841ae405c32503aba",
+          ".meta/example.rs": "aa53f353a41c27c583958428812ae869d98be569762fe5cc184040d4c4bdc659",
+          ".meta/tests.toml": "0ab409f873ceb1b2a6d4c092469b6f1998b9bd8b18610c3109b1ce2f1e984d91",
+          "Cargo.toml": "fa55005bd733ba2f2f472176dce2e257eb49f1e233a86ac4d108f4c259455e1d",
+          "src/lib.rs": "f0cbf80b9d0a2360ac4e6bf07295167cfb8a51a61c610429c09a67b68c685f88",
+          "tests/simple-cipher.rs": "1ac0b63b892446af467b0cf6f17fb83b522cc924a19d8795619fb2fafd220125"
+        }
+      },
+      "manifest_sha256": "34b20790fd350b1d4fe63858ad5e30f8698846950be616d58e5f84e5fa3a1e5d",
+      "actor_file_hashes": {
+        "Cargo.toml": "fa55005bd733ba2f2f472176dce2e257eb49f1e233a86ac4d108f4c259455e1d",
+        "src/lib.rs": "f0cbf80b9d0a2360ac4e6bf07295167cfb8a51a61c610429c09a67b68c685f88"
+      },
+      "controls": {
+        "unchanged": {
+          "exit_code": 2,
+          "log_sha256": "f013792c1200722407bfb0d88d9034b91f5c4d8b30651a902b0ccbc22142fef1",
+          "classification": "infrastructure_error"
+        },
+        "reference": {
+          "exit_code": 2,
+          "log_sha256": "f013792c1200722407bfb0d88d9034b91f5c4d8b30651a902b0ccbc22142fef1",
+          "classification": "infrastructure_error"
+        }
+      }
+    }
+  ]
+}

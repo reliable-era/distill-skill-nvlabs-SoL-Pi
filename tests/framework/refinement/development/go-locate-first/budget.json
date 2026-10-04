@@ -1,0 +1,21 @@
+{
+  "purpose": "Root-authorized development allocation; no automatic launch",
+  "max_actor_attempts": 8,
+  "per_harness_maximum": 4,
+  "actor_timeout_seconds": 180,
+  "automatic_retries": 0,
+  "order_seed": 107,
+  "harnesses": [
+    "pi",
+    "codex"
+  ],
+  "arms": [
+    "none",
+    "karpathy",
+    "candidate",
+    "both"
+  ],
+  "task": "go/exercises/practice/food-chain",
+  "local_plan_sha256": "286de6805bddc4168b161dbd55f5986b69fc051184b8765a74135f3a6fd575e6",
+  "launch_policy": "Codex four initially; Pi requires fresh human auth and separate root authorization"
+}

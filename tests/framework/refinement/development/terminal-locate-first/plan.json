@@ -1,0 +1,77 @@
+{
+  "purpose": "New bounded development stage on reused sanitize task; not confirmation",
+  "harness": "codex",
+  "candidate": "locate-first",
+  "requested_model": "gpt-6.1-sol",
+  "resolved_server_model": "TBD",
+  "reasoning": "native defaults",
+  "maximum_actor_starts": 4,
+  "actor_timeout_seconds": 180,
+  "maximum_actor_wall_seconds": 720,
+  "automatic_retries": 0,
+  "rounds": 1,
+  "order_seed": 107,
+  "order": [
+    "none",
+    "both",
+    "candidate",
+    "karpathy"
+  ],
+  "model_sampling_seed": "TBD",
+  "arms": {
+    "none": [],
+    "karpathy": [
+      "karpathy"
+    ],
+    "candidate": [
+      "candidate"
+    ],
+    "both": [
+      "karpathy",
+      "candidate"
+    ]
+  },
+  "image_id": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac",
+  "source_commit": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "task_sha256": {
+    ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+    "README.md": "e85102807fbc1ac0a5bf276d353bc1f00d53b0b59bdf7dc9df3b952d0812eeb1",
+    "environment/Dockerfile": "bd91e6f3b7b3c0db2c1c7ca31a1028735ca3b129d1d7949f490cbd92b441437c",
+    "environment/setup.sh": "452fc789f723c006ec1605b75696131614178135df156b978b8e58fe3e64316f",
+    "instruction.md": "d9e10a56e94e51592c6016efb02adef852d4fd08f9ba23dc304d2673d1478e8a",
+    "solution/solve.sh": "40b6f8e8d2d61333e4ea02aefb7ce906cf6886f0b50e9e8c5d534a1d7d62d721",
+    "task.toml": "ff209feb7d07c68b8bd0d2e9abee96a1431c332095a1bbe0a532c44a833a264d",
+    "tests/process.py": "3525f32100c994ee517ba06a355f6d2130c332857da017d921aa8d9252b7022d",
+    "tests/ray_cluster.yaml": "4827a78e929c005853df1af502f1a5aae2e2e9ce721ee0d33ab0731eefa128a5",
+    "tests/rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json": "2d281c309cb03e9802f532931ac6c1eca129f75c4583ae48996dbb4130f57c0f",
+    "tests/test.sh": "16014722171ae4479112051d2e8af7d0c5bb231bae6aff1b80cfa19e718c814f",
+    "tests/test_outputs.py": "57e4904177acac5807b51f7c32444bde1968ba0445855fa4333d9eb73865b59e"
+  },
+  "skill_delivery": "uniform inline SKILL.md plus FULL readonly /skills resources; only selected bundles mounted",
+  "skill_files_sha256": {
+    "karpathy": {
+      "SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+    },
+    "candidate": {
+      "SKILL.md": "8c753e5093f72a02660e35e1e0b1824c81c49bca623b8197e8fcfeed347b5b96"
+    }
+  },
+  "prompt_sha256": {
+    "none": "d9e10a56e94e51592c6016efb02adef852d4fd08f9ba23dc304d2673d1478e8a",
+    "karpathy": "48f57cfe88b43d109b5de0117aa19dd845a264387ffb21ee8f080c9cb0126ac5",
+    "candidate": "b19167fa8ebb2b23c819c160c55950390b79c604542a6597b2830d5415b4ad5d",
+    "both": "78f97f55f2d7d9af0f5293835c86c0c20a6f8cd2a1225d444316a38866e83342"
+  },
+  "runtime_sha256": {
+    "collect.py": "5f3ae9b9631d7d3352db516f59abc57d502e20f02f12564d903ab56290e53d5a"
+  },
+  "accounting_sha256": "e1640271de433824e65f013e787d970d57dfbcd4741df3acd2624107e93a7990",
+  "runner_sha256": "76f8fc6532d615dbb61ba7f23a9ed534df42d1d979de9e4e8939314ebc263b1a",
+  "baseline_manifest_sha256": "77132c543d3f8d76e1615695dab4902b9500461a095cac3e9995856d2a0e931c",
+  "auth": "persistent private cache /tmp/solpi-refinement-auth-cache/codex mounted writable; shared fcntl codex.lock serializes refresh; host original never written",
+  "stop_rule": "Auth/quota failure stops later starts; no retries or substitution",
+  "billing_usd": "TBD",
+  "publication": "HF-shaped tokens digest-redacted; raw originals private outside Git; full filesystem delta captured before original grader from first actor",
+  "global_budget_path": "tests/framework/refinement/development-budget-locate-first-broad.json",
+  "global_budget_sha256": "5d9b1bdafb4dd14a72e1641039f829e4ae552c45f54e4f32cb673e3a316b2294"
+}
