@@ -1,0 +1,51 @@
+{
+  "status": "stopped_infrastructure_guard_failure",
+  "session": 55630,
+  "exit_code": 1,
+  "phase_pulls": 1,
+  "combined_pulls": 4,
+  "control_starts": 1,
+  "worker_starts": 1,
+  "official_test_runs": 0,
+  "gold_controls": 0,
+  "model_calls": 0,
+  "automatic_retries": 0,
+  "failure": "network_disabled flag was injected but NetworkMode none checked without setting network_mode; resource guard failed before container start/test",
+  "actual_container_limits": {
+    "container_id": "c01eebd13f3ca5637416fe2903d4f5e3485d22beca1f6c9213def5088fa450b3",
+    "verified_before_test": false
+  },
+  "cleanup": {
+    "container_id": "c01eebd13f3ca5637416fe2903d4f5e3485d22beca1f6c9213def5088fa450b3",
+    "remove_exit": 0,
+    "inspect_exit": 1,
+    "absence_verified": true
+  },
+  "official_run_instance_return": null,
+  "official_report_count": 0,
+  "latent_report_path_bug": {
+    "runner_glob": "logs/run_evaluation/**/report.json",
+    "pinned_official_log_dir": "logs/evaluation"
+  },
+  "frozen_runner_hash_matches": true,
+  "plan_sha256": "13de95560264858e61321cbdec3394e77b868900692402ccfcbd9505c5eeb9d7",
+  "public_exact_gold_test_patch_matches": [],
+  "private_logs": [
+    {
+      "path": "pull-0.log",
+      "sha256": "e4acb5891729fffb3023ee5eb600390f2f840c3a1698d95874ae66e8bef93125",
+      "bytes": 1220
+    },
+    {
+      "path": "solpi-confirm-inventory-repair-0-unchanged/private-harness.log",
+      "sha256": "e7dab6c25515b520486b0a337610458c56fe0eaba1da3c0a9254b90af58bc261",
+      "bytes": 244
+    },
+    {
+      "path": "solpi-confirm-inventory-repair-0-unchanged/logs/evaluation/solpi-confirm-inventory-repair-0-unchanged/private-control/matplotlib__matplotlib-22865/run_instance.log",
+      "sha256": "0ff4274924f420971b0ef34399ea58a47527a92ab371417e24f611cdade05e39",
+      "bytes": 2768
+    }
+  ],
+  "next_step": "separate root-reviewed repair; do not replay consumed attempt or edit frozen runner"
+}

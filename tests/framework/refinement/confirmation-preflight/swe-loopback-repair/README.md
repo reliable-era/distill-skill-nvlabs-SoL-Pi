@@ -1,0 +1,13 @@
+# Loopback readiness and prepared infrastructure gate
+
+No new grader controls, pulls, builds or model calls. Two authorized readiness probes were consumed. Probe 1 failed while reading an omitted false NetworkDisabled field; its failure is retained. Probe 2 used the exact immutable Matplotlib image, network_mode none and network_disabled false, observed 8 GiB/four CPUs, resolved/bound localhost, found only loopback and no default route/external interface, and verified cleanup. Its elapsed time was 0.255 seconds under a 30-second outer limit. Readiness metadata publishes no task/gold content.
+
+The prepared grader runner retains external network isolation while permitting loopback. Missing Config.NetworkDisabled is interpreted as false, matching Docker's serialization. Official infrastructure failures now stop immediately before the next control even if resolved=false appears to match a negative. Twenty offline tests pass, including a negative infrastructure report that prevents starting gold and the actual SDK/network/report-path regressions.
+
+Previous frozen stages remain unchanged: four pulled images and three consumed control attempts, zero validated controls. The proposed new eight-control phase would make eleven combined attempts; this explicitly requires root review and does not rewrite the old caps. No automatic retries or replacement tasks. New run IDs/private marker distinguish this phase; execution still requires exact-plan authorization.
+
+## Executed outcome
+
+Session 25816 terminated exit 1 after five controls: Matplotlib and scikit-learn negative/gold pairs passed all gates (four validated controls). Astropy negative produced a parsed report with two expected F2P failures and 644 passing P2P tests, but the official log classifier flagged an environment network failure: its required editable-install build subprocess could not acquire setuptools 68.0.0. The fifth control is environment-blocked/ungraded, not a validated negative. The stage stopped before Astropy gold or either Requests control; no retries/replacements. Combined consumed control attempts are eight (prior three plus five), with four image pulls and zero models/builds.
+
+All five current containers recorded 8 GiB/four CPUs/network-none/NetworkDisabled false and verified cleanup absence. Independent read-only replay of the pinned parser/gates confirms four pass and the fifth environment block. [execution-audit.json](execution-audit.json) includes metadata/evidence hashes and publication scan across all preflight snapshots/probes: zero exact private-patch or credential matches. Offline Astropy prerequisites are prepared separately with no acquisition or new execution.

@@ -1,3 +1,17 @@
+## Active refinement checkpoint, 2026-10-04
+
+The current goal in goal.md remains ACTIVE: verified economical majority wins across five native harnesses, three benchmark families, repeated matched rounds. Historical completion notes below describe earlier campaigns only. No skill was promoted and no full-objective win is established.
+
+Latest pushed57e2a64 GitHub CI37180520049 passed. Selected Terminal environments completed8/8expected official controls, fourimmutablepulls/0builds/0models; independent audit errors[],actual1CPU/2GiB,verifiedcleanup. Measured32GiBglobalgrowthguard is nothard10GiBcontainerquota.
+
+New independent-reads candidate (one batching bullet on locate-first) is frozen and independently reviewed, performanceTBD. Candidate-matchedBoth required; no newcandidate models launched. Codex workspace-routing availability investigation is read-only. Pi refreshedlogin/Copilotprivatecredentialpath pending; actualbackend/dollars/auxiliaryusage scope unknowns remainTBD.
+
+SWE prior3infrastructure-control attempts retained; fourimmutableimages pulled. Latest loopback-only phase reviewed/authorized exactplan2f1836c04219b09a4413f1718607cf1f3208f8d8e496a0fd6087e166c3f54da9, agent swe_development owns live25816. Max8newcontrols/0pull/build/models; combined11attemptcap includes3priorinfrastructurefailures, plus2separate consumedreadinessprobes. Session25816 now terminalexit1 after5newattempts:4validated Matplotlib/scikit-learn pairs; Astropy environmentblocked due officialeditable-install missingbuilddependencies. Combined8actualattempts; no retry. Bounded metadata-only offline dependency preparation authorized separately, no wheels/graders yet. Latestrunner validates actualofficialpatch/testschema and completeexpectedF2P/P2Poutcomes.
+
+NativeCodexmock finalplancc8cd1f5d4423277748993bda88f98cfdcc4cfc94ff7ab84b4a67fd7e737b7d4 reviewed and authorized ONCE via agent terminal_development:2starts totalnative30s deadlines, dummykey/emptyHOME/internalbridges only,0realmodels/providers. Twelveofflinetests pass. Firstmockexecution stopped after1start due missingemptyCODEX_HOME directory,0HTTPreceipts/realproviders; cleanupverified. Separatemkdirrepairprepared, notyetauthorizedHTTPexecution. Unpublished SWE/mock folders are deliberately untracked until finalaudits/publicationscans; frozen oldexecutedplans/sources must remainunchanged.
+
+---
+
 ## Active refinement checkpoint — 2026-10-04
 
 Current continuation: acceptance-first Codex screen terminated after four Terminal starts/eight unused; no later-family actors or retries. Original grades and full-state replays retained, all token totals TBD. Routing failure/timeouts and late infrastructure-stop discrepancy invalidate performance comparison. Root runtime/provider_failures.py tests6pass; Pi auxiliary-scope accounting guards14accounting tests pass and all8pilot totals unchanged. New selected SWE/Terminal preflight is offline only (no models/controls/pulls/builds yet). Accounting scope audit flags auxiliary/compaction and agy cache/thinking ambiguity; complete economic win remains unproven. Latest pushed19ee476 GitHubCI37177193919 succeeded. Superseded live-phase notes below are historical.

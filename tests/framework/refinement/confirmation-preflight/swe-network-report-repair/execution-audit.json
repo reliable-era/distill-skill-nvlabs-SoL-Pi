@@ -1,0 +1,105 @@
+{
+  "status": "stopped_infrastructure_failure",
+  "session": 14543,
+  "session_exit_code": 1,
+  "new_control_attempts": 2,
+  "combined_attempts": 3,
+  "pulls": 0,
+  "combined_pulls": 4,
+  "models": 0,
+  "builds": 0,
+  "retries": 0,
+  "validated_controls": 0,
+  "failure": "pytest_rerunfailures loopback hostname resolution raises socket.gaierror before collection",
+  "patch_application": "marker and gold independently applied cleanly according to separate official logs; report patch_successfully_applied false reflects infra branch",
+  "report_reuse": false,
+  "runner_stop_omission": "negative resolvedFalse was accepted despite infra_failureTrue; second control ran. Future phase must gate infra_failure before quality comparisons. Frozen source unchanged.",
+  "records": [
+    {
+      "run_id": "solpi-confirm-network-report-repair-0-unchanged",
+      "report_sha256": "bd099efe2b611f06e74b7eee76270dca7f00e28d3fdd77df5a2df7bb4357efce",
+      "official_grade": {
+        "matplotlib__matplotlib-22865": {
+          "patch_is_None": false,
+          "patch_exists": true,
+          "patch_successfully_applied": false,
+          "resolved": false,
+          "infra_failure": true,
+          "infra_failure_reason": "network_unreachable"
+        }
+      },
+      "limits": {
+        "container_id": "e4eda0f8582329481858cd874232d5b52a41a38178fc080de53e7cd880e117f5",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": true,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "e4eda0f8582329481858cd874232d5b52a41a38178fc080de53e7cd880e117f5",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "private_logs": [
+        {
+          "path": "solpi-confirm-network-report-repair-0-unchanged/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-network-report-repair-0-unchanged/logs/evaluation/solpi-confirm-network-report-repair-0-unchanged/private-control/matplotlib__matplotlib-22865/run_instance.log",
+          "sha256": "01136f2063f6ef4285d1f79ec464be22f31d54b3a920deac703eb73b2488a5c4"
+        }
+      ],
+      "test_output_sha256": [
+        "e02ea11b1f1690da02f93257b6bf1a6533c669a4d9ace28002bd6715f92b9fa6"
+      ]
+    },
+    {
+      "run_id": "solpi-confirm-network-report-repair-1-gold",
+      "report_sha256": "bd099efe2b611f06e74b7eee76270dca7f00e28d3fdd77df5a2df7bb4357efce",
+      "official_grade": {
+        "matplotlib__matplotlib-22865": {
+          "patch_is_None": false,
+          "patch_exists": true,
+          "patch_successfully_applied": false,
+          "resolved": false,
+          "infra_failure": true,
+          "infra_failure_reason": "network_unreachable"
+        }
+      },
+      "limits": {
+        "container_id": "d733bf9141402ad232d2d1cb7c9169fb23a4c5900e5ef1ed0ac91cff3880b485",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": true,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "d733bf9141402ad232d2d1cb7c9169fb23a4c5900e5ef1ed0ac91cff3880b485",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "private_logs": [
+        {
+          "path": "solpi-confirm-network-report-repair-1-gold/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-network-report-repair-1-gold/logs/evaluation/solpi-confirm-network-report-repair-1-gold/private-control/matplotlib__matplotlib-22865/run_instance.log",
+          "sha256": "f2449e6a86979b019e5908a68e07cc3163c80a31009c8ff9075da280100eda51"
+        }
+      ],
+      "test_output_sha256": [
+        "a9aa4ddeaac1bc2f2663bee134fbe9cff59b5074a38b5581a32501bf56a37be6"
+      ]
+    }
+  ],
+  "public_exact_patch_matches": [],
+  "frozen_runner_hash_matches": true,
+  "plan_sha256": "e487380c6edb13e67296ae342c57c62fd685c1df72c9de69a8a7d40fe6ed05de",
+  "next_action": "root review required; no replay of consumed attempts"
+}

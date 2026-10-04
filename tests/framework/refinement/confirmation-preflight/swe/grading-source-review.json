@@ -1,0 +1,31 @@
+{
+  "official_commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+  "files": [
+    {
+      "path": "swebench/harness/grading.py",
+      "exact_match": true,
+      "official_sha256": "a095273010175001a6779e365b3b77abb8657c7ac2e4f80b4bc360faa6f09483",
+      "installed_sha256": "a095273010175001a6779e365b3b77abb8657c7ac2e4f80b4bc360faa6f09483"
+    },
+    {
+      "path": "swebench/harness/reporting.py",
+      "exact_match": false,
+      "official_sha256": "a780f1f5a79f35e066d578d9886d7bf8f10d428051ff85f2376e25dd22faa6c5",
+      "installed_sha256": "0e0eb5be4ebec061cd7e3839c0cc3001923fea36016ad9a417a3b70efbc8a902"
+    },
+    {
+      "path": "swebench/harness/docker_utils.py",
+      "exact_match": false,
+      "official_sha256": "f1c3941d24580df56a8e2346df86d34e658319b9a70d4d05c504504b541d431e",
+      "installed_sha256": "2c7bec870d5af8f439c468a019db3a4ec69be7c2f87972f32aed64aa95bf5025"
+    },
+    {
+      "path": "swebench/types.py",
+      "exact_match": true,
+      "official_sha256": "558b6e7193306c304f9847a8a83dcab6a03ee333f6d51e61152e8821f89e0725",
+      "installed_sha256": "558b6e7193306c304f9847a8a83dcab6a03ee333f6d51e61152e8821f89e0725"
+    }
+  ],
+  "entrypoint_delta": "report_dir parameter, directory creation, report destination forwarding, CLI argument only; diff inspected; run_instance/test/grading path unchanged in entrypoint",
+  "controls": 0
+}

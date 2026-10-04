@@ -1,0 +1,129 @@
+{
+  "model_calls": 0,
+  "grader_controls": 0,
+  "docker_builds_or_pulls": 0,
+  "official_task_source_repo": "https://github.com/SWE-bench/swe-bench-tasks",
+  "official_task_source_commit": "3d07b464b7b311a0cbfb5ed5b2d8a3b96f84a33d",
+  "harness_source_reference_commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+  "official_apis": [
+    "swebench.task.repo.load_task_repo",
+    "swebench.harness.utils.make_test_spec"
+  ],
+  "private_task_root": "/tmp/solpi-confirmation-swe-task-source",
+  "private_content_published": false,
+  "source_fetch": "pinned official repository files; no test execution",
+  "previous_plan_sha256": "e71248e9de4d4a39ae9f3486d71d1e3cd9cd62c916a3fe48b9b0d51b225eea47",
+  "cache_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+  "selection_revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+  "revision_equivalence": "not yet established; selected substantive fields compared individually",
+  "checks": [
+    {
+      "instance_id": "matplotlib__matplotlib-22865",
+      "source_file_sha256": {
+        "task.yaml": "b961a9e6143a6df8257f56db9e190f7fe37e236775cf01f8235c45adff3e6ea1",
+        "tests.json": "f3045cc7f553056c36a9748fb8f56d113d13f6d7192a261f4b96a4d53ab84b33",
+        "problem_statement.md": "59bd59ccfcb72e1937305af38434e86d804f312430f62fe056769ed708670d49",
+        "gold.patch": "4769b39c4deb49d7077839b9db329f693d031890ce5b6759d8ac076d5b4ef125",
+        "test.patch": "5348211f1621f4572bccacc05fb38191e9e705d379167d0687e55ace954c9b14",
+        "eval.sh": "32d3641c243f829cceaaf05494e597ef8f8045005c8db09c2413485838a53f38",
+        "Dockerfile": "0e5836b4cbd20a54dfe9c5882a996433e0dbcac115255d21000fb8abf139e5d8"
+      },
+      "original_field_matches": {
+        "base_commit": true,
+        "environment_setup_commit": true,
+        "repo": true,
+        "version": true,
+        "patch": true,
+        "test_patch": true,
+        "problem_statement": true,
+        "FAIL_TO_PASS": true,
+        "PASS_TO_PASS": true
+      },
+      "schema_compatible": true,
+      "official_image_tag": "swebench/sweb.eval.x86_64.matplotlib_1776_matplotlib-22865:latest",
+      "eval_script_sha256": "f631545a54c1b9fd0b09b7477d124c5f9cbece8eae86212914816addcc114e37",
+      "local_image_present": false
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-10844",
+      "source_file_sha256": {
+        "task.yaml": "6e25efcb1ce383e21c23f97a186492e2445f5d33c11ecbbae81a5bbe72371743",
+        "tests.json": "e9f3d7eaa22c1ed991fe13829c77442c1e9437cf1fe1dace0a6d6c2ee7a80a74",
+        "problem_statement.md": "43c3e45ef59dc9057830a2c20fe3663e490c3a54df511936a4c7965337f4d1a0",
+        "gold.patch": "6b23af07d11343fd59602be794f7e7b6dba69127d5898f87d8e5760b6a531271",
+        "test.patch": "624954065b6a0e853d0f4e1f450a87fc3a40fe90f47626b74ed3d150b25d879c",
+        "eval.sh": "edc7420c091e7dc6ab5bd1cb791e00dcdaa2db012cb331cf3d3cc95888354877",
+        "Dockerfile": "b44750ee8034122b24b6278365788595fb3516b0bc7b68096255c3020f26ea5a"
+      },
+      "original_field_matches": {
+        "base_commit": true,
+        "environment_setup_commit": true,
+        "repo": true,
+        "version": true,
+        "patch": true,
+        "test_patch": true,
+        "problem_statement": true,
+        "FAIL_TO_PASS": true,
+        "PASS_TO_PASS": true
+      },
+      "schema_compatible": true,
+      "official_image_tag": "swebench/sweb.eval.x86_64.scikit-learn_1776_scikit-learn-10844:latest",
+      "eval_script_sha256": "c0e487efc6ee86435fe81d7a7b8cc93361c294a5de8de4147542256cffd25f7e",
+      "local_image_present": false
+    },
+    {
+      "instance_id": "astropy__astropy-13236",
+      "source_file_sha256": {
+        "task.yaml": "6dc04bcc68629b0a51e39b56b7ff8568a3fb7ba369576183315c96a470583e9f",
+        "tests.json": "0d7aa29ad0ee570175d087ce4793eae9b71b1a3b75fa0f5f3afd11b635b764b9",
+        "problem_statement.md": "1f01b57c4e17057a2427b8ed897618f91782d22e98804b706826ba936a3d5ec4",
+        "gold.patch": "e3366b1923660fb0ae2bbc8fb16981184e77fc3f9e3669727f1a3e6061ddaa6d",
+        "test.patch": "bdf3a74fbfa6e071adde3a57b4ae6157461fa432ad3197f19210da5e3be4319a",
+        "eval.sh": "b1a543f2a3139bff0b7e2d4a1105a30fe7c969fcd3513d6717500cb2c6ea27d6",
+        "Dockerfile": "76c30b34e469bf171d944a178c03f810a6a5dba5e569e23ebd1099e13d70a7ae"
+      },
+      "original_field_matches": {
+        "base_commit": true,
+        "environment_setup_commit": true,
+        "repo": true,
+        "version": true,
+        "patch": true,
+        "test_patch": true,
+        "problem_statement": true,
+        "FAIL_TO_PASS": true,
+        "PASS_TO_PASS": true
+      },
+      "schema_compatible": true,
+      "official_image_tag": "swebench/sweb.eval.x86_64.astropy_1776_astropy-13236:latest",
+      "eval_script_sha256": "f86d90c9b8d09f9ed933eb1daa6266de68d9ef9c6bfb45c705fdbcde335e8540",
+      "local_image_present": false
+    },
+    {
+      "instance_id": "psf__requests-1921",
+      "source_file_sha256": {
+        "task.yaml": "28aeaa65c662600ea008e659ed5c84cf3e370c2127a81ccc953b2cb7c4c58985",
+        "tests.json": "02d9bce6799ea4121a08e9d752fa668071d7a4078b4f1be7de00e1262a90fac5",
+        "problem_statement.md": "3f7bdcd805645db3f6bbfa3476d3207f878afdfa4a91f8c8d56705d9aaf48e8d",
+        "gold.patch": "33fc461de67706a7d3c91008799489d6d1e6b521bfc0131dd22c4959d00b9f08",
+        "test.patch": "a9542a0223dcb934125f74642468fb69c5cae8d5fa1602279a3745862db6252d",
+        "eval.sh": "98a45d135800c49fc0c71411389cfa2c5d7d8f912af849c9c4ebe6dc4c612da6",
+        "Dockerfile": "9b80ae6ce9065761d16b7607869e02dc61f0996abd56f283592c0deebf85efcd"
+      },
+      "original_field_matches": {
+        "base_commit": true,
+        "environment_setup_commit": true,
+        "repo": true,
+        "version": true,
+        "patch": true,
+        "test_patch": true,
+        "problem_statement": true,
+        "FAIL_TO_PASS": true,
+        "PASS_TO_PASS": true
+      },
+      "schema_compatible": true,
+      "official_image_tag": "swebench/sweb.eval.x86_64.psf_1776_requests-1921:latest",
+      "eval_script_sha256": "fdfea48acccbc7c8c3b2fa3485100153c6c3b80a15390d76e9c185d2d1c8a342",
+      "local_image_present": false
+    }
+  ]
+}

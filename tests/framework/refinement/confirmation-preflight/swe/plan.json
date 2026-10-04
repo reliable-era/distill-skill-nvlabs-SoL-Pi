@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "status": "prepared_only",
+  "model_calls": 0,
+  "grader_controls_started": 0,
+  "maximum_grader_controls": 8,
+  "selection_sha256": "6260412fad9d4b579c80b1a891e94a3d98f5346503e096bfdff632ef9affa11c",
+  "dataset_revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+  "cached_original_dataset": {
+    "path": "/home/wangjian/.cache/huggingface/datasets/princeton-nlp___swe-bench_verified/default/0.0.0/c104f840cc67f8b6eec6f759ebc8b2693d585d4a/swe-bench_verified-test.arrow",
+    "sha256": "0d119efe73413554335bd410a04d82fd4a586bfd312cee677ee40af5de2ac46e",
+    "rows": 500,
+    "revision_correspondence": "TBD: verify cache against frozen revision before use"
+  },
+  "existing_private_adapter_dataset": {
+    "path": "/tmp/solpi-refinement-swe-data.json",
+    "sha256": "e2c783242ec6838839d589ffa683cdce0147bd98994c12079d972eb831482a0d",
+    "rows": 2
+  },
+  "harness": {
+    "version": "5.0.2",
+    "python": "/tmp/solpi-refinement-harbor-venv/bin/python",
+    "run_evaluation_source_sha256": "39b7e95f726df65c67f19f8d79a0f5f10f9d9e12e224076c8cb011851d060016",
+    "make_test_spec_source_sha256": "c22f38fdd4ffd34301da7f837b82926cf261d81ca0387d92dd2990b393517c79"
+  },
+  "tasks": [
+    {
+      "instance_id": "matplotlib__matplotlib-22865",
+      "repo": "matplotlib/matplotlib",
+      "base_commit": "c6c7ec1978c22ae2c704555a873d0ec6e1e2eaa8",
+      "environment_setup_commit": "de98877e3dc45de8dd441d008f23d88738dc015d",
+      "version": "3.5",
+      "original_record_sha256": "57af198f23230148bf0bdc1742007998b622a8951c15cb9faf86deab7fac7de0",
+      "gold_patch_sha256": "4769b39c4deb49d7077839b9db329f693d031890ce5b6759d8ac076d5b4ef125",
+      "private_test_patch_sha256": "5348211f1621f4572bccacc05fb38191e9e705d379167d0687e55ace954c9b14",
+      "fail_to_pass_count": 3,
+      "pass_to_pass_count": 57,
+      "existing_private_adapter_present": false,
+      "matching_local_images": [],
+      "official_adapter_status": "TBD: original record lacks image/eval_script/log_parser/eval_type"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-10844",
+      "repo": "scikit-learn/scikit-learn",
+      "base_commit": "97523985b39ecde369d83352d7c3baf403b60a22",
+      "environment_setup_commit": "55bf5d93e5674f13a1134d93a11fd0cd11aabcd1",
+      "version": "0.20",
+      "original_record_sha256": "21587a00d75c18399e07ce3a0c15c3599ac80a9bfc95863374d41584b76ddeb0",
+      "gold_patch_sha256": "6b23af07d11343fd59602be794f7e7b6dba69127d5898f87d8e5760b6a531271",
+      "private_test_patch_sha256": "624954065b6a0e853d0f4e1f450a87fc3a40fe90f47626b74ed3d150b25d879c",
+      "fail_to_pass_count": 1,
+      "pass_to_pass_count": 16,
+      "existing_private_adapter_present": false,
+      "matching_local_images": [],
+      "official_adapter_status": "TBD: original record lacks image/eval_script/log_parser/eval_type"
+    },
+    {
+      "instance_id": "astropy__astropy-13236",
+      "repo": "astropy/astropy",
+      "base_commit": "6ed769d58d89380ebaa1ef52b300691eefda8928",
+      "environment_setup_commit": "cdf311e0714e611d48b0a31eb1f0e2cbffab7f23",
+      "version": "5.0",
+      "original_record_sha256": "69b0893457187032259f0e3319c4a6da23d6ea908f9ef2aabe800cffc1f1821f",
+      "gold_patch_sha256": "e3366b1923660fb0ae2bbc8fb16981184e77fc3f9e3669727f1a3e6061ddaa6d",
+      "private_test_patch_sha256": "bdf3a74fbfa6e071adde3a57b4ae6157461fa432ad3197f19210da5e3be4319a",
+      "fail_to_pass_count": 2,
+      "pass_to_pass_count": 644,
+      "existing_private_adapter_present": false,
+      "matching_local_images": [],
+      "official_adapter_status": "TBD: original record lacks image/eval_script/log_parser/eval_type"
+    },
+    {
+      "instance_id": "psf__requests-1921",
+      "repo": "psf/requests",
+      "base_commit": "3c88e520da24ae6f736929a750876e7654accc3d",
+      "environment_setup_commit": "3eb69be879063de4803f7f0152b83738a1c95ca4",
+      "version": "2.3",
+      "original_record_sha256": "a280bde3938f1c1e6ad981522db0d00874237c466fe3962f60342ec8bcb96ea9",
+      "gold_patch_sha256": "33fc461de67706a7d3c91008799489d6d1e6b521bfc0131dd22c4959d00b9f08",
+      "private_test_patch_sha256": "a9542a0223dcb934125f74642468fb69c5cae8d5fa1602279a3745862db6252d",
+      "fail_to_pass_count": 6,
+      "pass_to_pass_count": 107,
+      "existing_private_adapter_present": false,
+      "matching_local_images": [],
+      "official_adapter_status": "TBD: original record lacks image/eval_script/log_parser/eval_type"
+    }
+  ],
+  "control_policy": {
+    "per_task": [
+      "unchanged marker patch negative",
+      "private gold positive"
+    ],
+    "serial_workers": 1,
+    "test_timeout_seconds": 600,
+    "outer_control_timeout_seconds": 900,
+    "max_container_memory_bytes": 8589934592,
+    "max_container_cpus": 4,
+    "max_added_image_disk_bytes": 85899345920,
+    "minimum_free_disk_bytes": 107374182400,
+    "minimum_available_memory_bytes": 17179869184,
+    "automatic_retries": 0,
+    "infra_failure": "stop; preserve artifacts; root review before repair/retry",
+    "execution": "root review required before Docker build/pull or controls",
+    "negative_patch": "harmless marker addition; avoids empty prediction skip",
+    "positive_patch": "read only inside private grader process; never actor mount or chat"
+  },
+  "host_free_disk_bytes": 2064317931520,
+  "security": "No actors started; no gold/test contents copied into repository or chat. Future private adapted rows outside Git mode600; reports publish hashes/counts only. Sealed tasks fixed, no replacement based on outcomes.",
+  "gaps": [
+    "Four selected tasks absent from existing private adapted dataset",
+    "No matching selected-task local images",
+    "Pinned official adapter construction for this package must be established before grading",
+    "Cached original dataset revision binding requires verification"
+  ]
+}

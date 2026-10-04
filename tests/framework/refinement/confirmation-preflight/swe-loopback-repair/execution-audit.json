@@ -1,0 +1,459 @@
+{
+  "status": "stopped_classifier_environment_gate",
+  "session": 25816,
+  "session_exit_code": 1,
+  "new_control_attempts": 5,
+  "validated_controls": 4,
+  "combined_control_attempts": 8,
+  "combined_pulls": 4,
+  "models": 0,
+  "builds": 0,
+  "retries": 0,
+  "records": [
+    {
+      "index": 0,
+      "instance_id": "matplotlib__matplotlib-22865",
+      "kind": "unchanged",
+      "gate_passed": true,
+      "gate_error": null,
+      "resolved": false,
+      "report_sha256": "a4e06ae6827809859964e39f0e8525c270194730bf501f39df12f8b650d6e2de",
+      "tests_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 3
+        },
+        "PASS_TO_PASS": {
+          "success": 57,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "limits": {
+        "container_id": "78f691b22f2c4fe40e2cec34da54e802714531f8e63d621eec8b1626076ca99b",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": false,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "78f691b22f2c4fe40e2cec34da54e802714531f8e63d621eec8b1626076ca99b",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "private_evidence": [
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/cleanup.json",
+          "sha256": "ca79995c12f9962683a0b327a5ee78d0b1dd5d90bfea9e00201481286c4ab5a7"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/control-start.json",
+          "sha256": "ef4a0a19bf17b542551fedbc91c9e31863338a6ca6d2b1eebc10ac304fbc49ae"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/worker-result.json",
+          "sha256": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/container-limits.json",
+          "sha256": "98e102664c7b2d71bee3a2d6b12f5874cf6d2b3fbc6d9a5301bfd7a86257c001"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/worker-start.json",
+          "sha256": "bb919521a0d85b14e1a70394d4ba893d5d1d9629e9442210b792b4f2c3076f28"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/logs/evaluation/solpi-confirm-loopback-repair-0-unchanged/private-control/matplotlib__matplotlib-22865/patch.diff",
+          "sha256": "072233c6da0a88b936977969e92588ffc8913443583f8bb55dddfbf33a03dbcc"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/logs/evaluation/solpi-confirm-loopback-repair-0-unchanged/private-control/matplotlib__matplotlib-22865/run_instance.log",
+          "sha256": "f3a7d918031c77c8436c26337687289fdf686e3b0346de1b947e254050092b35"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/logs/evaluation/solpi-confirm-loopback-repair-0-unchanged/private-control/matplotlib__matplotlib-22865/report.json",
+          "sha256": "a4e06ae6827809859964e39f0e8525c270194730bf501f39df12f8b650d6e2de"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/logs/evaluation/solpi-confirm-loopback-repair-0-unchanged/private-control/matplotlib__matplotlib-22865/test_output.txt",
+          "sha256": "049ab1be32faa579689a81b465c4b95b815d4ff395ccb9b471a178986966eadd"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-0-unchanged/logs/evaluation/solpi-confirm-loopback-repair-0-unchanged/private-control/matplotlib__matplotlib-22865/eval.sh",
+          "sha256": "f631545a54c1b9fd0b09b7477d124c5f9cbece8eae86212914816addcc114e37"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "instance_id": "matplotlib__matplotlib-22865",
+      "kind": "gold",
+      "gate_passed": true,
+      "gate_error": null,
+      "resolved": true,
+      "report_sha256": "42d7cd837a9e883e413fef869680b31d6bacecfa31b775c57abb9f86d1f49146",
+      "tests_counts": {
+        "FAIL_TO_PASS": {
+          "success": 3,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 57,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "limits": {
+        "container_id": "da21d5c149178d901a6d5378063c880a94c7b34be07e999ca9ed9acd3efb74cf",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": false,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "da21d5c149178d901a6d5378063c880a94c7b34be07e999ca9ed9acd3efb74cf",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "private_evidence": [
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/cleanup.json",
+          "sha256": "01c14ef15d12686b749cd721de65b4c17bc1a4ab961f48bb538f61c3289979f8"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/control-start.json",
+          "sha256": "1bc49d4086ef56b6cc63f69e31568081312773933f8b3495d1375071c0822593"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/worker-result.json",
+          "sha256": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/container-limits.json",
+          "sha256": "18add44c084e5ea192c770f15e5abffbc6edbb3260e96e842d5977a219f717a7"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/worker-start.json",
+          "sha256": "a30f6be9696cfc3d1d4d63d4d873d25196224ac17d77ad56118d24ba5214a1ff"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/logs/evaluation/solpi-confirm-loopback-repair-1-gold/private-control/matplotlib__matplotlib-22865/patch.diff",
+          "sha256": "4769b39c4deb49d7077839b9db329f693d031890ce5b6759d8ac076d5b4ef125"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/logs/evaluation/solpi-confirm-loopback-repair-1-gold/private-control/matplotlib__matplotlib-22865/run_instance.log",
+          "sha256": "5cc5c91011bf3c860bb7385b46c17c0801d4f323eed8788c265dc41e28a914ca"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/logs/evaluation/solpi-confirm-loopback-repair-1-gold/private-control/matplotlib__matplotlib-22865/report.json",
+          "sha256": "42d7cd837a9e883e413fef869680b31d6bacecfa31b775c57abb9f86d1f49146"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/logs/evaluation/solpi-confirm-loopback-repair-1-gold/private-control/matplotlib__matplotlib-22865/test_output.txt",
+          "sha256": "d38acf7847a780e7c5c3cc3814815be318e28b5f20ba85b31189d7274dd285d7"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-1-gold/logs/evaluation/solpi-confirm-loopback-repair-1-gold/private-control/matplotlib__matplotlib-22865/eval.sh",
+          "sha256": "f631545a54c1b9fd0b09b7477d124c5f9cbece8eae86212914816addcc114e37"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "instance_id": "scikit-learn__scikit-learn-10844",
+      "kind": "unchanged",
+      "gate_passed": true,
+      "gate_error": null,
+      "resolved": false,
+      "report_sha256": "625e8b803d44f2a15ebc71d8ff4a4cc423c72904cfaa6bfb3e267e98f2a1a46c",
+      "tests_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 1
+        },
+        "PASS_TO_PASS": {
+          "success": 16,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "limits": {
+        "container_id": "ab0f47a78535a07057927429ad2118b34d9227bc656d07ccb4c840864e4f4224",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": false,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "ab0f47a78535a07057927429ad2118b34d9227bc656d07ccb4c840864e4f4224",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "private_evidence": [
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/cleanup.json",
+          "sha256": "9858833ba3ae7b97f7895584d45c769f58a8e5ccd57e15d458f11ccc61e80805"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/control-start.json",
+          "sha256": "b8dec3bf4ab16756398624361916307a5d0911f3b638164acbfb90a78afe993b"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/worker-result.json",
+          "sha256": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/container-limits.json",
+          "sha256": "d625112961626098f7d738d2b71c68ccfab41e9e0c60deaa915d1ef722da8d44"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/worker-start.json",
+          "sha256": "31f400490cdf0dce3f0302cbcc4eb620bd222593d7cf7a53ff464f173a707cac"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/logs/evaluation/solpi-confirm-loopback-repair-2-unchanged/private-control/scikit-learn__scikit-learn-10844/patch.diff",
+          "sha256": "072233c6da0a88b936977969e92588ffc8913443583f8bb55dddfbf33a03dbcc"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/logs/evaluation/solpi-confirm-loopback-repair-2-unchanged/private-control/scikit-learn__scikit-learn-10844/run_instance.log",
+          "sha256": "42b9f5a1e78dd163ec58b3438e3a0684da21677a88c04209a3ab0f2f31abb57c"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/logs/evaluation/solpi-confirm-loopback-repair-2-unchanged/private-control/scikit-learn__scikit-learn-10844/report.json",
+          "sha256": "625e8b803d44f2a15ebc71d8ff4a4cc423c72904cfaa6bfb3e267e98f2a1a46c"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/logs/evaluation/solpi-confirm-loopback-repair-2-unchanged/private-control/scikit-learn__scikit-learn-10844/test_output.txt",
+          "sha256": "16e43d2aef4703826e0c612504d9760f655e97151d72b4c35688cb0b390df3fb"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-2-unchanged/logs/evaluation/solpi-confirm-loopback-repair-2-unchanged/private-control/scikit-learn__scikit-learn-10844/eval.sh",
+          "sha256": "c0e487efc6ee86435fe81d7a7b8cc93361c294a5de8de4147542256cffd25f7e"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "instance_id": "scikit-learn__scikit-learn-10844",
+      "kind": "gold",
+      "gate_passed": true,
+      "gate_error": null,
+      "resolved": true,
+      "report_sha256": "0de85d57c4082a5d80f24d50edadda45ccd3bd5de72bd80abfd731e60f0f8985",
+      "tests_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 16,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "limits": {
+        "container_id": "ad6af82dfb1e472cf0e3a4945991836365cb57906985437a296df0f8a7a85580",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": false,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "ad6af82dfb1e472cf0e3a4945991836365cb57906985437a296df0f8a7a85580",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "private_evidence": [
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/cleanup.json",
+          "sha256": "9a0838283f93942c1c482ba3e0d8b001085316d11f07903a7ad603ccee77fb1f"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/control-start.json",
+          "sha256": "7d031e4f82a1a6fd7d845e0cb522738e9a8ce23fad8f0d23e0d4599ebd14f40a"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/worker-result.json",
+          "sha256": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/container-limits.json",
+          "sha256": "8888014e1c2085f75f0bc3c78ac56c3ca9013853bcb648e460aec958d9ad1807"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/worker-start.json",
+          "sha256": "6eb288b7e3b275665747a93c537d23766d2c9f58526c740107a20bce314b6ded"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/logs/evaluation/solpi-confirm-loopback-repair-3-gold/private-control/scikit-learn__scikit-learn-10844/patch.diff",
+          "sha256": "6b23af07d11343fd59602be794f7e7b6dba69127d5898f87d8e5760b6a531271"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/logs/evaluation/solpi-confirm-loopback-repair-3-gold/private-control/scikit-learn__scikit-learn-10844/run_instance.log",
+          "sha256": "4464ed4df980ae1fc2e803836d1395d02915622e94f35d805942160a4fa72086"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/logs/evaluation/solpi-confirm-loopback-repair-3-gold/private-control/scikit-learn__scikit-learn-10844/report.json",
+          "sha256": "0de85d57c4082a5d80f24d50edadda45ccd3bd5de72bd80abfd731e60f0f8985"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/logs/evaluation/solpi-confirm-loopback-repair-3-gold/private-control/scikit-learn__scikit-learn-10844/test_output.txt",
+          "sha256": "f3b6c1c438283f44a40089b8419e4736ec5a29c5f5e81237990eeb2c9133e2ec"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-3-gold/logs/evaluation/solpi-confirm-loopback-repair-3-gold/private-control/scikit-learn__scikit-learn-10844/eval.sh",
+          "sha256": "c0e487efc6ee86435fe81d7a7b8cc93361c294a5de8de4147542256cffd25f7e"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "instance_id": "astropy__astropy-13236",
+      "kind": "unchanged",
+      "gate_passed": false,
+      "gate_error": "infrastructure or ambiguous failure",
+      "resolved": false,
+      "report_sha256": "61de477fd30971e7eebd6a81adb61c6c1b060d75526bf80cbeda462c35446cd5",
+      "tests_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 2
+        },
+        "PASS_TO_PASS": {
+          "success": 644,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      },
+      "limits": {
+        "container_id": "c907d2dd404e5b5b0000c976a23e3b27da20f4cc101859437ea27e82c8aeb023",
+        "memory": 8589934592,
+        "nano_cpus": 4000000000,
+        "network": "none",
+        "config_network_disabled": false,
+        "verified_before_test": true
+      },
+      "cleanup": {
+        "container_id": "c907d2dd404e5b5b0000c976a23e3b27da20f4cc101859437ea27e82c8aeb023",
+        "remove_exit": 0,
+        "inspect_exit": 1,
+        "absence_verified": true
+      },
+      "private_evidence": [
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/cleanup.json",
+          "sha256": "a6ea59c33099e482cc36cfacb55882b4fbc04e9a3f5fd4ed8bb220940a9fec3d"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/control-start.json",
+          "sha256": "3e44e43de7feeab5a5d2ea2198b6087100d12f3f2645ac6754c8d6c71d0ee379"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/private-harness.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/worker-result.json",
+          "sha256": "aba328825995d6d397bb517ab2b7044dce3ac3f51a4f032648569b765ae4ab51"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/container-limits.json",
+          "sha256": "27efc54fe0cc5743629322ff089988c6ed80bf445060e5cf9ef581a68d09bf97"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/worker-start.json",
+          "sha256": "a7eadf60fd06923aebae90f211b6b42ae62b457e3aa2a8b4b2bbf20fc43a23f5"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/logs/evaluation/solpi-confirm-loopback-repair-4-unchanged/private-control/astropy__astropy-13236/patch.diff",
+          "sha256": "072233c6da0a88b936977969e92588ffc8913443583f8bb55dddfbf33a03dbcc"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/logs/evaluation/solpi-confirm-loopback-repair-4-unchanged/private-control/astropy__astropy-13236/run_instance.log",
+          "sha256": "46c2331aa30dc7835c7b8ad01dfb848985750e55ff389ca952a47079c72124ad"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/logs/evaluation/solpi-confirm-loopback-repair-4-unchanged/private-control/astropy__astropy-13236/report.json",
+          "sha256": "61de477fd30971e7eebd6a81adb61c6c1b060d75526bf80cbeda462c35446cd5"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/logs/evaluation/solpi-confirm-loopback-repair-4-unchanged/private-control/astropy__astropy-13236/test_output.txt",
+          "sha256": "978681480e83bd9b55619bdc82060d4a75644668cea9ee8a8d529a75b9ec8b3c"
+        },
+        {
+          "path": "solpi-confirm-loopback-repair-4-unchanged/logs/evaluation/solpi-confirm-loopback-repair-4-unchanged/private-control/astropy__astropy-13236/eval.sh",
+          "sha256": "f86d90c9b8d09f9ed933eb1daa6266de68d9ef9c6bfb45c705fdbcde335e8540"
+        }
+      ]
+    }
+  ],
+  "frozen_runner_hash_matches": true,
+  "publication_scan": {
+    "scope": "all confirmation-preflight files including superseded phases/probes",
+    "files": 136,
+    "private_patch_values": 8,
+    "patch_matches": [],
+    "credential_values": 6,
+    "credential_matches": []
+  },
+  "next_step": "Astropy offline build dependency preparation reviewed separately; fifth negative ungraded environment failure; no replacement"
+}

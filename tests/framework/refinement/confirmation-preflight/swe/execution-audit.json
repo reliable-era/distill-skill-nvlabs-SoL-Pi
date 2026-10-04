@@ -1,0 +1,51 @@
+{
+  "status": "stopped_infrastructure_failure",
+  "session": 36190,
+  "session_exit_code": 1,
+  "model_calls": 0,
+  "grader_controls_started": 0,
+  "worker_starts": 0,
+  "pulls_attempted": 3,
+  "pulls_completed": 3,
+  "maximum_pulls": 4,
+  "maximum_controls": 8,
+  "automatic_retries": 0,
+  "containers_created": 0,
+  "actual_container_limits": "not applicable: zero controls/containers",
+  "cleanup": "not applicable: no control containers created",
+  "failure": "post-third-pull inventory listed an image then image inspect returned No such image; observed race, remover/cause TBD",
+  "frozen_runner_hash_matches": true,
+  "frozen_plan_sha256": "67d7490abceedd879a9c49335e3617065b76478b2d414e3e0de0255c4be86a3d",
+  "private_directory_mode": "0o700",
+  "public_gold_test_exact_patch_matches": [],
+  "patch_values_scanned": 8,
+  "credential_scope": "runner used no agent credential mounts; public downloads only; private logs not published; anonymous registry acquisition happened earlier, tokens not stored",
+  "private_logs": [
+    {
+      "name": "pull-0.log",
+      "sha256": "c056c6e559606d356160aaec2a9bded093e0b1fdf54214250c505ccfb27f62b1",
+      "bytes": 1195
+    },
+    {
+      "name": "pull-1.log",
+      "sha256": "5a8b0c7675a84c729bb2316b086a6f2a0dbc8cf2d1994fff9cb1393aad88c8d7",
+      "bytes": 1243
+    },
+    {
+      "name": "pull-2.log",
+      "sha256": "22d3228ee6437ed5ad589131a5d0803a07b8dbbb1b317a6209ea8cb9b0f6b7e2",
+      "bytes": 1057
+    }
+  ],
+  "filesystems": [
+    {
+      "path": "/var/lib/docker",
+      "free_bytes": 2052040429568
+    },
+    {
+      "path": "/tmp",
+      "free_bytes": 2052040429568
+    }
+  ],
+  "next_step": "no repair/retry until root review; preserve frozen source/plan and partial evidence"
+}
