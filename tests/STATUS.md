@@ -1,6 +1,6 @@
 # G1 status
 
-Step 0 complete; Step 1 awaits a written server reservation. No model calls made for G1.
+Steps 0–1 complete; Step 2 samples frozen and grader controls in progress. No G1 model calls.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
@@ -44,9 +44,9 @@ All nine old Terminal-Bench tasks are development-only. No historical candidate 
 | Stage | Starts | Solves | Tokens | Decision / next step |
 |---|---:|---:|---:|---|
 | 0: commit and archive | 0 | — | 0 | Complete; B3(a) recorded |
-| 1: server reservation | 0 | — | 0 | Request window; wait for user |
-| 2: sealed samples and controls | 0 | — | 0 | Not started; 9 + 9 fresh tasks |
-| 3: No-skill calibration | 0 | — | 0 | Not started; 30 min / 60 requests initially |
+| 1: shared-server admission | 0 | — | 0 | Approved; bounded queue checks, no reservation |
+| 2: sealed samples and controls | 0 | — | 0 | Seed 20261006; 9 + 9 frozen; controls active |
+| 3: No-skill calibration | 0 | — | 0 | Not started; 60 requests / 60-minute safety cap |
 | 4: measured mechanisms | 0 | — | 0 | Not started; at most 3 candidates |
 | 5: multi-task screens | 0 | — | 0 | Not started; ≥3 solvable tasks per candidate |
 | 6: winner freeze | 0 | — | 0 | Not started |

@@ -63,9 +63,10 @@ No Copilot, agy, Cursor or mock-infrastructure development is allowed. Staging
 existing diagnostic files for archival commits did not modify their contents,
 launch an actor or perform inference. No shared server was queried or changed.
 
-Step 1 needs a written server reservation from the user. Do not poll for idle
-availability, draw the Step 2 samples early, or make any model call while waiting.
-The wording about committing Steps 0–3 before model calls conflicts with model
-calibration in Step 3. Ask the user to explicitly authorize No-skill calibration
-under the reserved window after the sealed controls and calibration plan are
-committed; do not infer permission from the old goal.
+The user has replaced the reservation request with bounded shared-server
+admission and authorized Step 2 immediately. See `tests/G1-AUTHORIZATION.md`.
+Step 2 must finish and be committed before its eight-hour calibration window
+starts. No model call is allowed until the Step 3 calibration contract is also
+committed. After calibration, commit and report, then stop before Step 4.
+The old checkpoint contents and earlier reservation request remain historical;
+neither overrides this new authorization.
