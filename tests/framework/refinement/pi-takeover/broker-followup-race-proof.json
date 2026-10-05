@@ -1,0 +1,58 @@
+{
+  "root": "/tmp/solpi-broker-followup-mkwtrrr7",
+  "old": {
+    "prospective": false,
+    "terminal_frame_visible_before_first_worker_release": true,
+    "followup_HTTP_status": 429,
+    "fake_session_forward_calls": 1,
+    "fake_forward_calls_serialized": true,
+    "followup_seconds": 0.002845369279384613,
+    "response_bytes_unchanged": true,
+    "byte_journal_records": [],
+    "admission_journal_records": [],
+    "real_provider_POST": 0,
+    "real_native_actor_starts": 0,
+    "benchmark_or_official_test_runs": 0,
+    "source_server_sha256": "120e08b2e32c4803ee8e71636ea7cfefb82742933e8041c6ad397581e07ede0b",
+    "server_derived_sha256": "46f23abfda5d606b4641483b220b15fbd8be635576711dee25c63027fb98af63",
+    "source_proxy_sha256": "1b28e4025ff14e71c3c01dacb650d3fb5eb1c0a50330d18bd47e1872c44813c9"
+  },
+  "prospective": {
+    "prospective": true,
+    "terminal_frame_visible_before_first_worker_release": true,
+    "followup_HTTP_status": 200,
+    "fake_session_forward_calls": 2,
+    "fake_forward_calls_serialized": true,
+    "followup_seconds": 0.1526375375688076,
+    "response_bytes_unchanged": true,
+    "byte_journal_records": [],
+    "admission_journal_records": [],
+    "real_provider_POST": 0,
+    "real_native_actor_starts": 0,
+    "benchmark_or_official_test_runs": 0,
+    "source_server_sha256": "120e08b2e32c4803ee8e71636ea7cfefb82742933e8041c6ad397581e07ede0b",
+    "server_derived_sha256": "d150b341cc97c55050c1aadb7c866395f1fead6071713faa388489cef4c16a5a",
+    "source_proxy_sha256": "1b28e4025ff14e71c3c01dacb650d3fb5eb1c0a50330d18bd47e1872c44813c9"
+  },
+  "historical_native429_cause_confirmed": false,
+  "scope": "mechanismreproducednotexacthistoricaltiming;prospectiveundeployed",
+  "original_runtime_unchanged": true,
+  "real_model_POST": 0,
+  "goal_complete": false,
+  "proof_module_hashes": {
+    "reproduce_broker_followup_race.py": "ac6336d52f5d7263ed522206b2d1695d077ecb06f9414ec37e76f5b3361101e5",
+    "prospective_broker_admission.py": "c39ec6ff3688915093eab20848014bac53b7500731903a4461c66b3ac3007769",
+    "prospective_body_capacity.py": "ed5f26b08d992e7b6920cf752d6f23d8a93034c1f4e6c86643dd0bd3d1ae22d4",
+    "private_rejection_journal.py": "31e4537de8d25e0367654c489bd8445f7446f477b480d2cb72835e88f9a21c0e"
+  },
+  "artifact_hashes": {
+    "prospective/result.json": "ae0c921cb8be46cb3c0b5e8c858d9d6f8d7f011d1aa10c7f8ca94831d60592b2",
+    "prospective/admission-rejections.json": "2ba894dc28fe1d12ea7af80acb9f6c583714f61f77fba3e03b6fab7d37489e0e",
+    "prospective/broker-byte-rejections.json": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "prospective/proxy-byte-rejections.json": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "old/result.json": "4430fadd98f39b6613f1168aaaf67b07782f6f742ec389a02099b171de5cd1a6",
+    "old/admission-rejections.json": "2ba894dc28fe1d12ea7af80acb9f6c583714f61f77fba3e03b6fab7d37489e0e",
+    "old/broker-byte-rejections.json": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "old/proxy-byte-rejections.json": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399"
+  }
+}

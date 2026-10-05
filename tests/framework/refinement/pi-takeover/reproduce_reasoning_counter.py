@@ -1,0 +1,15 @@
+"""Offline execution of copied exact SGLang methods;no imports of server or inference."""
+import ast,hashlib,json,pathlib,types
+SOURCE=pathlib.Path('/tmp/solpi-provider-receipt-review/schedule_batch.py');text=SOURCE.read_text();tree=ast.parse(text);cls=next(x for x in tree.body if isinstance(x,ast.ClassDef) and x.name=='Req');names={'update_reasoning_tokens','update_finish_state','output_ids_through_stop'};methods=[x for x in cls.body if isinstance(x,ast.FunctionDef) and x.name in names];assert len(methods)==3
+class Matcher:
+ def __init__(self,ids):pass
+ def __len__(self):return 1
+ def advance(self,state,token):return 0 # No think-end token in all-reasoning run.
+namespace={'TokenSequenceMatcher':Matcher,'FINISH_LENGTH':lambda length:types.SimpleNamespace(length=length)}
+module=ast.Module(body=[ast.ImportFrom(module='__future__',names=[ast.alias(name='annotations')],level=0),ast.ClassDef(name='ExtractedReq',bases=[],keywords=[],body=methods,decorator_list=[])],type_ignores=[]);exec(compile(ast.fix_missing_locations(module),str(SOURCE),'exec'),namespace)
+def case(before,accepted,cap):
+ req=namespace['ExtractedReq']();req._is_reasoning_over=False;req._think_end_matcher=None;req._think_end_match_len=0;req.reasoning_tokens=before;req.output_ids=list(range(before));req.finished_len=None;req.finished_reason=None;req.to_finish=None;req.grammar=None;req.sampling_params=types.SimpleNamespace(max_new_tokens=cap);req.finished=lambda:req.finished_reason is not None;req._check_vocab_boundary_finish=lambda _:False;req._check_str_based_finish=lambda _:False;req._check_token_based_finish=lambda _:False
+ batch=list(range(before,before+accepted));req.output_ids.extend(batch);req.update_reasoning_tokens(batch,[-1]);req.update_finish_state(accepted)
+ return {'before':before,'accepted_batch':accepted,'length_cap':cap,'raw_reasoning_tokens':req.reasoning_tokens,'emitted_completion_tokens':len(req.output_ids_through_stop),'subset_valid':req.reasoning_tokens<=len(req.output_ids_through_stop)}
+cases=[case(8188,5,8190),case(8,2,10),case(8,5,10)];assert cases[0]['raw_reasoning_tokens']==8193 and cases[0]['emitted_completion_tokens']==8190 and not cases[0]['subset_valid'];assert cases[1]['subset_valid'];assert not cases[2]['subset_valid']
+report={'source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),'executed_exact_methods':sorted(names),'mocked_dependencies':'No-think-end matcher and finish-reason container;no real model/tokenizer/server','cases':cases,'checks_passed':3,'model_POSTs':0,'live_server_changes':False,'historical_accounting_changed':False,'interpretation':'Accepted speculative batch increments reasoning before finish clipping;streamer publishes raw reasoning and clipped completion,violating reasoning-subset invariant. This explains a reachable observed shape,not proof of actual accepted-token billing or safe historical cost repair.'};out=pathlib.Path(__file__).with_name('provider-counter-reproduction.json');out.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

@@ -1,0 +1,115 @@
+{
+  "task": "overfull-hbox",
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "plan_sha256": "a5997e10f95b7f33b81203f1c5e33ab8eea9394d3970e2cfcec6c42335e435fc",
+  "baseline": {
+    "verifier_exit": 0,
+    "reward": "0",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_main_synonyms_not_modified",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_compilation_successful",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_no_overfull_hboxes",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_input_file_matches",
+        "status": "passed"
+      }
+    ]
+  },
+  "protected_before": {
+    "/app/main.tex": {
+      "bytes": 328,
+      "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+      "capture_complete": true
+    },
+    "/app/synonyms.txt": {
+      "bytes": 6008,
+      "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+      "capture_complete": true
+    }
+  },
+  "oracle_exit": 0,
+  "protected_after": {
+    "/app/main.tex": {
+      "bytes": 328,
+      "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+      "capture_complete": true
+    },
+    "/app/synonyms.txt": {
+      "bytes": 6008,
+      "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+      "capture_complete": true
+    }
+  },
+  "protected_check": {
+    "unchanged": true,
+    "reason": null
+  },
+  "synthetic_tamper_check": {
+    "unchanged": false,
+    "reason": "changed_input",
+    "path": "/app/main.tex"
+  },
+  "capture": {
+    "bytes": 5173,
+    "sha256": "b656ecc5cb859d98b0f595644d7a86788dbfedd6b6e2c1cb322e7b44685600b8",
+    "capture_complete": true
+  },
+  "replay": {
+    "verifier_exit": 0,
+    "reward": "1",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_main_synonyms_not_modified",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_compilation_successful",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_no_overfull_hboxes",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_input_file_matches",
+        "status": "passed"
+      }
+    ]
+  },
+  "same_test_collection": true,
+  "valid_output_replay": true,
+  "cleanup_verified": true,
+  "source_unchanged": true,
+  "candidate_unchanged": true,
+  "artifact_hashes": {
+    "after-main.tex": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+    "after-main.tex-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after-synonyms.txt": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+    "after-synonyms.txt-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline/logs/verifier/ctrf.json": "2ecb97fa21d815716207b8d01f8dfc0cc1197777f1bbecc7c61b72779de5372a",
+    "baseline/logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "baseline/verifier.log": "e4212a417e65692d66644bd01601a1896e45d0c1a780a1e06b19a4be1371e6dc",
+    "before-main.tex": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+    "before-main.tex-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before-synonyms.txt": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+    "before-synonyms.txt-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "capture-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "captured-output": "b656ecc5cb859d98b0f595644d7a86788dbfedd6b6e2c1cb322e7b44685600b8",
+    "oracle.log": "2b3fd3f3a071538065e09e74c7d2f3e1a69564fe99d7ee03253e738c0253b8d3",
+    "plan.json": "a5997e10f95b7f33b81203f1c5e33ab8eea9394d3970e2cfcec6c42335e435fc",
+    "replay/logs/verifier/ctrf.json": "766c95c2a2ef3a18d52491430edff66df33d0a967e07d410c43e9d658e5f3f4a",
+    "replay/logs/verifier/reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "replay/verifier.log": "32bab30f1111be16c5ed39ccfdc717c1e69c7b2fc888f9f01a58663b3be6cf69",
+    "synthetic-tampered-main.tex": "82fd3b3a2002130053e87205254cf4c3c535a24c8a6d541e4ba54f09eb6d766e"
+  }
+}

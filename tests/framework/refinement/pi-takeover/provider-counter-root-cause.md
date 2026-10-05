@@ -1,0 +1,17 @@
+# Provider counter inconsistency — offline diagnosis,live change NOT applied
+
+Observed frozen pilot receipt:input8067,output8190,total16257,reasoning8193,HTTP200,response.completed/statusincomplete. Existing strict normalizer correctly rejects the reasoning-subset invariant;historical costs/grade/eligibility remainunchanged.
+
+Read-only copied GPU0/1 SGLang source:
+- batch_result_processor.py around865 incrementsreasoning for entireaccepted speculative run beforeupdate_finish_state.
+- schedule_batch.py update_reasoning_tokens addswholebatch whilethinking;update_finish_state capsfinished_len;output_ids_through_stop returnsclippedIDs.
+- output_streamer.py around424publishesrawreq.reasoning_tokens alongside len(clippedoutputIDs).
+- serving_responses.py around2495forwardscompletion/reasoningmetadata directly.
+
+`reproduce_reasoning_counter.py` executes three exact copiedReqmethods,with a no-think-end matcher andfinish-reasonstub. Accepted8188+5withcap8190 producesreasoning8193/output8190,matchingthe observedshape. Normalboundarypasses;anotherovershootfails. ThreechecksPASS,0modelPOSTs. This demonstrates a reachable sourcebug consistentwiththereceipt,notproof ofthatrequest'sexactlastacceptedbatch ortruebilling.
+
+`provider-counter-proposal.patch` proposes ONLY publishing min(rawreasoning,emittedoutputIDs) as emittedreasoningdetail. Schedulerrawcounterretained;input/outputgrosscount,weights,sampling,outputcap,routingunchanged. FourofflineboundschecksPASS. This is metadata conformance,NOT speculativewasted-compute measurement,historicalcostrepairorproductionverification.
+
+**Owner authorization required** beforeediting/restarting sharedmodelservices;earlierauthorization coveredLBmigration,notunrelatedsourcepatches. No livepatch,restart,serverflagchange orfurthermodelrequests wereperformed. Ifapproved:verifybothreplicas'sourcehashes,drainunderbothlocks,applyonlythisreviewedchange,retainrollback,performseparatelychargedboundedconformanceprobesonbothbackends,thenfreezeanewprotocol. Do notreplayconsumedcandidateauthorization orpoolold/newcohorts.
+
+Independent usefulworkcontinues:remainingfixed8tasks'officialcontrolsrununder2workersmax,300soracle/600sverifier,1800sperworker,0retries/modelcalls. Firsttasknotrepeated. Existingnegativecontrolresultsremainvisible:build-cython-ext goldoracleexit0but10/11tests(passreward0);build-pmars goldoracleexit100/reward0;financial-document-processor baseline0/gold1. Unavailable/failedtasksarenotsubstituted;theseareenvironmentcontrols,notcandidateoutcomes.

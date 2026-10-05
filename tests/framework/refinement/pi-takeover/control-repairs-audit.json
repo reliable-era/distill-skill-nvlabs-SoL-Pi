@@ -1,0 +1,30 @@
+{
+  "repairs": [
+    {
+      "task": "train-fasttext",
+      "source_and_artifact_hashes_match": true,
+      "same_test_collection": true,
+      "baseline_reward": "0",
+      "gold_reward": "1",
+      "cleanup_verified": true,
+      "historical_failure_preserved": true
+    },
+    {
+      "task": "make-doom-for-mips",
+      "source_and_artifact_hashes_match": true,
+      "same_test_collection": true,
+      "baseline_reward": "0",
+      "gold_reward": "1",
+      "cleanup_verified": true,
+      "historical_failure_preserved": true
+    }
+  ],
+  "validated_task_count": 7,
+  "fixed_allocation": 9,
+  "remaining_blocked": [
+    "build-cython-ext",
+    "build-pmars"
+  ],
+  "model_POSTs": 0,
+  "all_environments_certified": false
+}

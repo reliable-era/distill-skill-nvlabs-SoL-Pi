@@ -1,0 +1,110 @@
+{
+  "status": "TERMINAL_PARTIAL_rejected_observed_quality_loss_vs_Both",
+  "checked_utc": "2026-10-05T09:15:41.722899+00:00",
+  "worker_pid": 3926134,
+  "worker_active": false,
+  "plan_sha256": "7cd69b82b6a7aff8adc39733f2222c3e275572d1a9b9fdc89a7e55c331f5eb78",
+  "root": "/tmp/solpi-mf16-7cd69b82b6a7aff8ad",
+  "starts": 3,
+  "POST": 48,
+  "complete_provider_gross_tokens": 894158,
+  "unknown_cost_requests": [],
+  "rows": [
+    {
+      "arm": "candidate",
+      "POST": 16,
+      "known_gross_lower_bound": 194401,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 212.32421553507447,
+      "setup_seconds": 2.9126668237149715,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 1.101568341255188e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12725657.196069488
+      }
+    },
+    {
+      "arm": "Both",
+      "POST": 16,
+      "known_gross_lower_bound": 385537,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 1,
+      "actor_seconds": 298.7495553921908,
+      "setup_seconds": 2.9939341135323048,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 2.2232532501220703e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12725893.61715302
+      }
+    },
+    {
+      "arm": "none",
+      "POST": 16,
+      "known_gross_lower_bound": 314220,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": null,
+      "actor_seconds": 315.091435207054,
+      "setup_seconds": null,
+      "partial_failure": {
+        "type": "CaptureError",
+        "message": "unexpected member,type,name,or size"
+      },
+      "capture_rejections": [
+        {
+          "reason": "size_cap",
+          "member_index": 1,
+          "name_bytes": 9,
+          "name_sha256": "15d442008fc30bee1d28a81d2d926f17005fe428e465c2062627366bf2a68019",
+          "regular_file": true,
+          "declared_size": 179226803,
+          "max_bytes": 167772160,
+          "payload_read": false,
+          "capture_complete": false,
+          "official_grade": "unavailable_not_inferred_zero"
+        }
+      ],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 6.919726729393005e-06,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12726218.014441011
+      }
+    }
+  ],
+  "unstarted": [
+    "K"
+  ],
+  "matched_panel_complete": false,
+  "candidate_promotion_rejected": true,
+  "observed_quality_loss_vs_Both": true,
+  "cleanup_verified": true,
+  "goal_complete": false
+}

@@ -1,0 +1,29 @@
+{
+  "private_root": "/tmp/solpi-pmars-partial-a931f93528",
+  "native_starts": 0,
+  "provider_POST": 0,
+  "grader_calls": 0,
+  "target_builds": 0,
+  "target_installs": 0,
+  "scope": "new source-only transfer gate;not repeat of completed baseline/gold controls or executable transfer",
+  "actor_isolation": {
+    "verified": true,
+    "public_input_mounts": 2,
+    "original_grader_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+    "actor_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee"
+  },
+  "passed": false,
+  "error": {
+    "type": "CaptureError",
+    "message": "PMARS stopped state changed during capture"
+  },
+  "cleanup_verified": true,
+  "evidence_hashes": {
+    "captured/payload-0/src/marker.c": "c46e22b36953ccb1c13990340755c2e58566208d2b7a7340b729d78ebf6cf95d"
+  },
+  "module_hashes": {
+    "pmars_output_state.py": "89910722e3d3aa18250758a5cf02b2d948b0db19b4917399ca444dde507e3feb",
+    "pmars_partial_output.py": "2d440da7fac7479dd3a583b6360cc2d40e3d5d470aadb69b43b6c05febb76574",
+    "run_pmars_partial_transfer_probe.py": "03916d8242b7796fef9f928ee56f6df52fbae26b219a54295f1fd797ebff63e0"
+  }
+}

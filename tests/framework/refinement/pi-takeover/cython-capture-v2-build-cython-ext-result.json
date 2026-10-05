@@ -1,0 +1,1180 @@
+{
+  "task": "build-cython-ext",
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "plan_sha256": "1dcfc6c464f80342d526a02d876254e053b4bf4fadeca411377526a131c202a8",
+  "baseline": {
+    "verifier_exit": 0,
+    "reward": "0",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_numpy_version",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_repo_cloned",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_pyknotid_core_import",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_chelpers_cython_extension",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_ccomplexity_cython_extension",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_cinvariants_cython_extension",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_chelpers",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_ccomplexity",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_cinvariants_python_vs_cython",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_example_usage",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_pyknotid_repository_tests",
+        "status": "failed"
+      }
+    ]
+  },
+  "oracle_exit": 0,
+  "installation_layout": "editable",
+  "capture_paths": [
+    "/app/pyknotid",
+    "/usr/local/lib/python3.13/site-packages/pyknotid-0.5.3.dist-info"
+  ],
+  "capture_files": [
+    "/usr/local/lib/python3.13/site-packages/__editable__.pyknotid-0.5.3.pth",
+    "/usr/local/lib/python3.13/site-packages/__editable___pyknotid_0_5_3_finder.py"
+  ],
+  "sidecar_capture": {
+    "/usr/local/lib/python3.13/site-packages/__editable__.pyknotid-0.5.3.pth": {
+      "bytes": 87,
+      "sha256": "00c5d9cace74fd05f6b8159d0140f217c50d55c1d1e006259cfd8fdece904902",
+      "capture_complete": true
+    },
+    "/usr/local/lib/python3.13/site-packages/__editable___pyknotid_0_5_3_finder.py": {
+      "bytes": 3375,
+      "sha256": "7aea25aeed041f21809b2cf2e999236a8e06da9206a8fcdd569cb42713fb75c4",
+      "capture_complete": true
+    }
+  },
+  "directory_capture": {
+    "/app/pyknotid": {
+      "capture_complete": true,
+      "bytes": 29516337,
+      "entries": 236,
+      "files": {
+        ".git/HEAD": {
+          "bytes": 41,
+          "sha256": "3ea0548d5abd5f24fce57dece908fef1a96df90cc1cc71eb6d53101794beabac"
+        },
+        ".git/config": {
+          "bytes": 201,
+          "sha256": "791637fe3662981ad1dd618e56aa69bdf3b71677fe23131931b24a91a8b74d84"
+        },
+        ".git/description": {
+          "bytes": 73,
+          "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee"
+        },
+        ".git/hooks/applypatch-msg.sample": {
+          "bytes": 478,
+          "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7"
+        },
+        ".git/hooks/commit-msg.sample": {
+          "bytes": 896,
+          "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437"
+        },
+        ".git/hooks/fsmonitor-watchman.sample": {
+          "bytes": 4726,
+          "sha256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0"
+        },
+        ".git/hooks/post-update.sample": {
+          "bytes": 189,
+          "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5"
+        },
+        ".git/hooks/pre-applypatch.sample": {
+          "bytes": 424,
+          "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475"
+        },
+        ".git/hooks/pre-commit.sample": {
+          "bytes": 1643,
+          "sha256": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a"
+        },
+        ".git/hooks/pre-merge-commit.sample": {
+          "bytes": 416,
+          "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53"
+        },
+        ".git/hooks/pre-push.sample": {
+          "bytes": 1374,
+          "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a"
+        },
+        ".git/hooks/pre-rebase.sample": {
+          "bytes": 4898,
+          "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3"
+        },
+        ".git/hooks/pre-receive.sample": {
+          "bytes": 544,
+          "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989"
+        },
+        ".git/hooks/prepare-commit-msg.sample": {
+          "bytes": 1492,
+          "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619"
+        },
+        ".git/hooks/push-to-checkout.sample": {
+          "bytes": 2783,
+          "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f"
+        },
+        ".git/hooks/update.sample": {
+          "bytes": 3650,
+          "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106"
+        },
+        ".git/index": {
+          "bytes": 15851,
+          "sha256": "0de586805f8145be4022d0d2956e846b285a0e27775c222358bea80e5712fc4d"
+        },
+        ".git/info/exclude": {
+          "bytes": 240,
+          "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1"
+        },
+        ".git/logs/HEAD": {
+          "bytes": 185,
+          "sha256": "3dfbdc495d2684c1375ed35badccd11a90d6d90460847847de8e82039afc489b"
+        },
+        ".git/objects/pack/pack-46091c9c4b95a0d312fd1b613bc6e8b00deb4ebe.idx": {
+          "bytes": 5776,
+          "sha256": "3a444416b408d7d3570fff0b85add909cf38918ec21d1a5e4d42698af69e6e14"
+        },
+        ".git/objects/pack/pack-46091c9c4b95a0d312fd1b613bc6e8b00deb4ebe.pack": {
+          "bytes": 1823849,
+          "sha256": "69628db9700cadf636d432ec8b89fa36173c43d46aaac0c57e17bebc4a216566"
+        },
+        ".git/packed-refs": {
+          "bytes": 103,
+          "sha256": "407a1b9cf369aa241223a0efc18f6bbfef15c4007d5b3fc89d432961af54a1d7"
+        },
+        ".git/shallow": {
+          "bytes": 41,
+          "sha256": "3ea0548d5abd5f24fce57dece908fef1a96df90cc1cc71eb6d53101794beabac"
+        },
+        ".gitignore": {
+          "bytes": 19,
+          "sha256": "d616d2b255a9b12ca12211afc27ab7e1afa1ed6b0ba617c467eb9b70a3d92c2a"
+        },
+        ".projectile": {
+          "bytes": 12,
+          "sha256": "988a1862f360f3ab07bdb544b5215a3a20b2194998784f2a7870c7fb1ffe618b"
+        },
+        "LICENSE.txt": {
+          "bytes": 1079,
+          "sha256": "c006f19b458ea3953834e72cf2d0474273b3a443a7476854e6ae07df7cfcd426"
+        },
+        "README.rst": {
+          "bytes": 2666,
+          "sha256": "d8ebfce6f7bfdf3d596f8062f99bc39e4c1a071890eff793a41052bba69784e0"
+        },
+        "build/lib.linux-x86_64-cpython-313/pyknotid/cinvariants.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 1092856,
+          "sha256": "37b335758a91b9dd44d5cdd0613eec03f02e9a85e21363f4949586d5a255f8db"
+        },
+        "build/lib.linux-x86_64-cpython-313/pyknotid/simplify/coctree.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 1630656,
+          "sha256": "c053774603b13e58c41a9a49bdd787edd66a95e4ba8ae5d3dccdc8227bbe11d7"
+        },
+        "build/lib.linux-x86_64-cpython-313/pyknotid/spacecurves/ccomplexity.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 1273256,
+          "sha256": "a89a7fede36adb8514a9cb782287128f1f156b49fcaede0bfcacb0a47efc1e05"
+        },
+        "build/lib.linux-x86_64-cpython-313/pyknotid/spacecurves/chelpers.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 1190528,
+          "sha256": "4a575638f6f39c2e75a7a13a3eb457b142fe32195ed7edceb49b10c6f1bd4af9"
+        },
+        "build/temp.linux-x86_64-cpython-313/pyknotid/cinvariants.o": {
+          "bytes": 2053976,
+          "sha256": "5947820aa70a9471cfa57281fa1b8b3e12b07e7e86a30db3f7d680b7e307c7d6"
+        },
+        "build/temp.linux-x86_64-cpython-313/pyknotid/simplify/coctree.o": {
+          "bytes": 2948360,
+          "sha256": "6995b5274bf3890fceb7777639ea8e8568defce425e8cee206ca23226f42b35a"
+        },
+        "build/temp.linux-x86_64-cpython-313/pyknotid/spacecurves/ccomplexity.o": {
+          "bytes": 2387256,
+          "sha256": "dd290fea3e88c8546da1f587587ff63b216d5ababd2e0f0bc5a6a453ceb1d93a"
+        },
+        "build/temp.linux-x86_64-cpython-313/pyknotid/spacecurves/chelpers.o": {
+          "bytes": 2228760,
+          "sha256": "fbfad8fd42adf8bb1af13ff37d8ca315347e7886246bdb2432b1591d5290be40"
+        },
+        "doc/Makefile": {
+          "bytes": 6772,
+          "sha256": "c8a9ce7189f79d1255df2c269fb5e1b37a7cad27825058fd7e63bc60c764c80a"
+        },
+        "doc/conf.py": {
+          "bytes": 8692,
+          "sha256": "f6a56c5553928143d1e8902a9b7f5c3e32da635a4d1b46faf5a4267c96420aa1"
+        },
+        "doc/ext/docscrape.py": {
+          "bytes": 15366,
+          "sha256": "7986fbbbb6997811881dbbc89ce72dbb703f172328835c7735057240bc0a5051"
+        },
+        "doc/ext/docscrape_sphinx.py": {
+          "bytes": 7741,
+          "sha256": "481bf7ef0b520ffd81b0a079112eb402949839dcfb57e1a752fbc526fadf95c5"
+        },
+        "doc/ext/sphinx_rtd_theme/.gitignore": {
+          "bytes": 136,
+          "sha256": "d2fe3d723b8416346f9dac06a00488e064efcfbc4ca406a260e39c5e5c7ca19e"
+        },
+        "doc/ext/sphinx_rtd_theme/Gemfile": {
+          "bytes": 64,
+          "sha256": "6e1e973a0a3245899ec41cde3ddf95774e984e0f7eafec6151648af90dfef583"
+        },
+        "doc/ext/sphinx_rtd_theme/Gemfile.lock": {
+          "bytes": 235,
+          "sha256": "6e72539b95e9badc6afdb9fb3d12837864a6a5efda69100d452b23380a03ba63"
+        },
+        "doc/ext/sphinx_rtd_theme/Gruntfile.js": {
+          "bytes": 2948,
+          "sha256": "464573e0cd809534494804aaeb1723fff6574a10ac63e87b0d556d2daffcd357"
+        },
+        "doc/ext/sphinx_rtd_theme/LICENSE": {
+          "bytes": 1078,
+          "sha256": "f6b3bcf46d6a06da81b72230b32b22e0f418ecddce55e0501d7f54fb5aa29ba9"
+        },
+        "doc/ext/sphinx_rtd_theme/MANIFEST.in": {
+          "bytes": 360,
+          "sha256": "4e9319bed03f533b409a1bbfd94844368aac325d964005497ed48abd54a044e9"
+        },
+        "doc/ext/sphinx_rtd_theme/README.rst": {
+          "bytes": 6150,
+          "sha256": "93b28589828cdf7e22723656993e43dab531409cbac2f2f306f93aaee0ae5566"
+        },
+        "doc/ext/sphinx_rtd_theme/bower.json": {
+          "bytes": 570,
+          "sha256": "709120e0000321d8b5b01887d5df4aa665f12af11bf373b0d83d5cbe23d71770"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/Makefile": {
+          "bytes": 5621,
+          "sha256": "071dbdeff54151860129c9a7555b2775874779162e252a8457f2c51a32185625"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/source/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/source/conf.py": {
+          "bytes": 8213,
+          "sha256": "f1ae7ee0580ee2fe1452372b213c2d3e3f4314b3802fce3e08e18b8fd043e0cd"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/source/demo.rst": {
+          "bytes": 15469,
+          "sha256": "24638d5deda4217a52f670e855f616a758e545e6ae01078c3aa332d453a5f1bc"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/source/index.rst": {
+          "bytes": 7776,
+          "sha256": "ffdc390ee2de830b73eb7c0e049717eb115357a4d5cd67d5cd93ba0946b80fb4"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/source/list.rst": {
+          "bytes": 1341,
+          "sha256": "4fab88f27e388be133b0075c6dbb9297015fdf6376674cda32019db5feafa783"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/source/static/yi_jing_01_chien.jpg": {
+          "bytes": 9498,
+          "sha256": "8c4da008d25f46c3663db67c349345c8b0efcc421242633cabbc7771665bfc17"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/source/test_py_module/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "doc/ext/sphinx_rtd_theme/demo_docs/source/test_py_module/test.py": {
+          "bytes": 2855,
+          "sha256": "c47422a75c48d0d3a605a5de73eb7c99a0780744ac7a19649ce763c5a971b29b"
+        },
+        "doc/ext/sphinx_rtd_theme/package.json": {
+          "bytes": 446,
+          "sha256": "03e9cb65ec35f4ef2830032b878acdb2c8cd99fd3e29f053f341dfd376adedc5"
+        },
+        "doc/ext/sphinx_rtd_theme/requirements.txt": {
+          "bytes": 12,
+          "sha256": "43e0e56861914fa83c607569882448a882102a6b400a601c421476d6cbc2c210"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/_theme_badge.sass": {
+          "bytes": 1991,
+          "sha256": "9e9330e75ed6f83eb30b2b9fd3a6f62749d30bd327a22d8f9a18a644e2685ed8"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/_theme_badge_fa.sass": {
+          "bytes": 1195,
+          "sha256": "079bb52999d542b6a4647abfe1a5abc9186f610283efae5c8f2ba840e1625338"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/_theme_breadcrumbs.sass": {
+          "bytes": 469,
+          "sha256": "23c8df06275d8c178701f5348a2720b1e8b74a85343d3566fb338dc1dbfe5e81"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/_theme_font_awesome_compatability.sass": {
+          "bytes": 404,
+          "sha256": "21a677ff084436c3e7e9126f2690038308d8ba4671685a8428acc311f9f73873"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/_theme_layout.sass": {
+          "bytes": 7473,
+          "sha256": "58bc80a86f3e1e0dc8e16baa3778117107e012c188dae304dc44f945214c8528"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/_theme_mathjax.sass": {
+          "bytes": 77,
+          "sha256": "73071984158ccdeedac1a80b19aebbb7130bf85b0894bf647b0b8fdac7fe9c03"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/_theme_rst.sass": {
+          "bytes": 9459,
+          "sha256": "6dabbd5a60cdfac548419feaa95cb43ceecb22a466e03d320f7ebcb8dd25b269"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/_theme_variables.sass": {
+          "bytes": 875,
+          "sha256": "03e7a893afbbb054227523e1d2b8cbb848651468b9b49027401122491e07dfe4"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/badge_only.sass": {
+          "bytes": 573,
+          "sha256": "cd32d942c042c930b03346b62049f6ee9d198ac77d204391484bbb74ae29a5ea"
+        },
+        "doc/ext/sphinx_rtd_theme/sass/theme.sass": {
+          "bytes": 1486,
+          "sha256": "358766b86a3ff1c264d08811afd69c3806d72ee91c8acdb1e0adf4ad49da5c15"
+        },
+        "doc/ext/sphinx_rtd_theme/screen_desktop.png": {
+          "bytes": 156671,
+          "sha256": "895dba18e6b46391595516e279d2eb64a06081d3354a204cbbf13014da94b97a"
+        },
+        "doc/ext/sphinx_rtd_theme/screen_mobile.png": {
+          "bytes": 96294,
+          "sha256": "3d55b651c3a6434204845d98f25d0f57e7d9500205e90ce33885391b5ea8cfe3"
+        },
+        "doc/ext/sphinx_rtd_theme/setup.py": {
+          "bytes": 1313,
+          "sha256": "323a119f833a55c7c7411e65c982610ba8777eac052665d377a81a1f100ed2c6"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/__init__.py": {
+          "bytes": 371,
+          "sha256": "1e705f9fc022158f2835b5fe6f06617470da0f2b2803c7f2a2038289db13f56b"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/breadcrumbs.html": {
+          "bytes": 1035,
+          "sha256": "e02d33c1744603be18e941cdf2862578fe5f6f678c8e0268bcd7680baeb852fe"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/footer.html": {
+          "bytes": 1263,
+          "sha256": "1cce3d4105f5b260a1f22f7b056c8a80e5d54da4d7e9b5dfe99a48fc6ef44b6c"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/layout.html": {
+          "bytes": 5355,
+          "sha256": "b128d42234ac8d88641e5012fbf47d18e5b6c983b3ff9bf09400b1d46a1e1c10"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/layout_old.html": {
+          "bytes": 7341,
+          "sha256": "f1d6ffde493436ed34209c9064a487f9990aa32a9fc6ee912eb6889610bec6c9"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/search.html": {
+          "bytes": 1530,
+          "sha256": "5c4dfdf52d544ea20a46da5c4908dea1d336667caac0e4f97dcf8ff2021e5366"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/searchbox.html": {
+          "bytes": 308,
+          "sha256": "fa4f04f4f5b81f63e1d272551fc57d55c925cf1ec4cb11b5c8e6ba7252f2c956"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/css/badge_only.css": {
+          "bytes": 3403,
+          "sha256": "c3e42a05bced9cec61d749aa842c6957a76a969ba0a179ba9bf9625913a4bd86"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/css/theme.css": {
+          "bytes": 88728,
+          "sha256": "ed4b0a74247ec4914d2d6742de3865754e55d449758a5886970d73827177c2eb"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/FontAwesome.otf": {
+          "bytes": 62856,
+          "sha256": "6c5ea915b5685dcd865d218b4122050fe75872c7ec91762c11b6913ee9074eb5"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/fontawesome-webfont.eot": {
+          "bytes": 38205,
+          "sha256": "39e237c07403e62f00bd6ddf0b59d3349c7bd3869250aaadc389419db6aa40ef"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/fontawesome-webfont.svg": {
+          "bytes": 202148,
+          "sha256": "b751f81b4b0db77c49a73fe8067c0aed1f1e46eb12f367ee53fe6df8b9043703"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/fontawesome-webfont.ttf": {
+          "bytes": 80652,
+          "sha256": "6b49348ad53886d09ce4c32fa146e899c820de3f85a8dd3704a0624eb3bf7fa1"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/fontawesome-webfont.woff": {
+          "bytes": 44432,
+          "sha256": "0fd28fece9ebd606b8b071460ebd3fc2ed7bc7a66ef91c8834f11dfacab4a849"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/js/theme.js": {
+          "bytes": 1675,
+          "sha256": "a34621f5bdfa5c3b909b7b301648f51555fd2319066b21358811aac31578d4f1"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/theme.conf": {
+          "bytes": 125,
+          "sha256": "e7b72deae232a91d8a9df557da2cbfecd3ec80f01d361be662ed3fc00d0c2f04"
+        },
+        "doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/versions.html": {
+          "bytes": 1219,
+          "sha256": "4474224c909414774838721fc1e4a4e740b44589190f8d5aade8b7d28d4a57cf"
+        },
+        "doc/index.rst": {
+          "bytes": 936,
+          "sha256": "a25e660b22cbb2830dce762fa2b4c7c96b33fe1aba0c1b2ff87b0fc073adabfc"
+        },
+        "doc/k10_51_ideal.png": {
+          "bytes": 96446,
+          "sha256": "86b16f79da0ec8c33ec02884ba5ae7f5518c0ad0f1d6c82653cfbcca87f8d532"
+        },
+        "doc/k10_92_ideal.png": {
+          "bytes": 117473,
+          "sha256": "28f2c241b284dd154b334522b1be26284c43edfb27a9621d4f1a8df332d697bc"
+        },
+        "doc/k10_92_ideal_small.png": {
+          "bytes": 32317,
+          "sha256": "0fd713f9ac7fd47ab82ac01906525174672545fa16b5cfcd4a4f0837ce213075"
+        },
+        "doc/make.bat": {
+          "bytes": 6708,
+          "sha256": "73d7bdff97fcb2368d5c4f531c171f6c05afdd1e9ffac1c64600158a95eeacee"
+        },
+        "doc/sources/about.rst": {
+          "bytes": 1080,
+          "sha256": "f81fc09aa3088314a5562c5975a8148bf763e2578750b9bebf0c71be4ee0521e"
+        },
+        "doc/sources/catalogue/database.rst": {
+          "bytes": 58,
+          "sha256": "95c5bd8d2382780788b291a3ebe3f6e129c2254eb374ce301b8fefe00ee62f72"
+        },
+        "doc/sources/catalogue/getdb.rst": {
+          "bytes": 55,
+          "sha256": "9b2562c4b352765c3dff4cf4ada2959977b54f25eab112f9d784f4c950a452fb"
+        },
+        "doc/sources/catalogue/identify.rst": {
+          "bytes": 59,
+          "sha256": "f9d197c120fdeadc61902acba1996a627e59b0abf52554563a9d10afe0a75d8e"
+        },
+        "doc/sources/catalogue/index.rst": {
+          "bytes": 130,
+          "sha256": "1fe4e1066a38d16911df64c17f17e2e95c1b769354281c1d7c22dadcca8099e1"
+        },
+        "doc/sources/invariants.rst": {
+          "bytes": 50,
+          "sha256": "4e746f636ab060acd172703abb477fbce3fe3565171ac7a5da21cc729c655117"
+        },
+        "doc/sources/k10_11_ideal.png": {
+          "bytes": 93766,
+          "sha256": "3ef4678f612bafeaf1a74c1ed505d66711c3216c63d45f3e00ca9865b76c3547"
+        },
+        "doc/sources/overview.rst": {
+          "bytes": 4280,
+          "sha256": "16c803e8b46c5b56088b198adbddaa442629c8fd67abf717c5c3615a9a6de1b7"
+        },
+        "doc/sources/representations/dtnotation.rst": {
+          "bytes": 66,
+          "sha256": "6e750fad23bea3cab45187c413ec68bec123db403f3dd0aa637fd9b08d44fbb7"
+        },
+        "doc/sources/representations/example_gauss_diagram_k10_93.png": {
+          "bytes": 56496,
+          "sha256": "237b6f2b3de17f0aeb311965b6b7dda425d01b3735aa5483f395da67097a95f8"
+        },
+        "doc/sources/representations/gausscode.rst": {
+          "bytes": 65,
+          "sha256": "845946dcfc9b0d38e7f1c80914fca17552cf6e6a93c990ae54b5746284677c7b"
+        },
+        "doc/sources/representations/gaussdiagram.rst": {
+          "bytes": 68,
+          "sha256": "90aa05e4702ecefd5fcaecdf41d6f6e58f412b303df01192e42712c415cb6019"
+        },
+        "doc/sources/representations/index.rst": {
+          "bytes": 229,
+          "sha256": "04b57244ee1e502092d16235931c6cf6be2a2d9990bbe41304ce087635256227"
+        },
+        "doc/sources/representations/planardiagram.rst": {
+          "bytes": 69,
+          "sha256": "de0c9fc60cdb77c7a6afd17fdbad5e212accf077086c7a71ebec8627ad8fdbed"
+        },
+        "doc/sources/representations/representation.rst": {
+          "bytes": 70,
+          "sha256": "67e8473baf2ec6c0f26a0d5b49b54c4ecaf53b9236a2dda5150c4a00d17d1b63"
+        },
+        "doc/sources/spacecurves/colours.png": {
+          "bytes": 191254,
+          "sha256": "de94ee0e7f0c4e5b8ab04bed71e2bf7f8c58f5e6cdf5864ad73346db6e173ff5"
+        },
+        "doc/sources/spacecurves/example_knot_projection_9_5.png": {
+          "bytes": 42005,
+          "sha256": "09c0af824bd46baa4cd59d6554513bb7231b73b6e84ae1beec97fbf623037ceb"
+        },
+        "doc/sources/spacecurves/index.rst": {
+          "bytes": 195,
+          "sha256": "2fbd160578f4005fe55d87532dda7c13e0f41102b36fe82639ad1dd4db0247b3"
+        },
+        "doc/sources/spacecurves/knot.rst": {
+          "bytes": 56,
+          "sha256": "8c49a40400a4a39d7efba5e411a0f47e13afb4e949f5f63ae8d98711f5ed7851"
+        },
+        "doc/sources/spacecurves/link.rst": {
+          "bytes": 55,
+          "sha256": "9a6f4461613ab30170a7f2cd811af8b8884058cabff9e7f499a4825fc635963a"
+        },
+        "doc/sources/spacecurves/openknot.rst": {
+          "bytes": 60,
+          "sha256": "e6f62f3f677ebc2d7f595eaafe1316d1ad92290bf579b02149fd8392eb2ef016"
+        },
+        "doc/sources/spacecurves/p7_q4__torus_knot.png": {
+          "bytes": 132941,
+          "sha256": "91ec80ae71382143846dc98beaa2e2bc426f8ba35b1d5d6b70fde17d21cd3195"
+        },
+        "doc/sources/spacecurves/periodiccell.rst": {
+          "bytes": 63,
+          "sha256": "8f01ef0670be0b0c396a1c5ff4a1c220fbfd1793e243b131172463443764e306"
+        },
+        "doc/sources/spacecurves/random_walk_length_30.png": {
+          "bytes": 70095,
+          "sha256": "6ba4a16f3af4981b72250d06a2b477e4e1ddefa4988d71695c8f73277469f280"
+        },
+        "doc/sources/spacecurves/spacecurve.rst": {
+          "bytes": 62,
+          "sha256": "a03123a9bd4512328fb0ecc3fc6f646de92f2d9c86c0ff24bd24f18acc01d416"
+        },
+        "doc/sources/spacecurves/torus_hopf_link.png": {
+          "bytes": 39104,
+          "sha256": "7e48c7ed0913dd2c635ace70105b6ebbdaca4287f01a21b84d4e35c5a79f423f"
+        },
+        "doc/sources/spacecurves/trefoil.png": {
+          "bytes": 126279,
+          "sha256": "151ec92e3f6fc94138e7f717941b5746f107e8d1d61c93caaf3513529a8f344b"
+        },
+        "doc/sources/spacecurves/trefoil_few_points.png": {
+          "bytes": 76680,
+          "sha256": "d611b4ae1b65287fc5d8b44acd2b2aad538eec19e14ace16f43c075db44b4c71"
+        },
+        "doc/sources/spacecurves/trefoil_torus_knot.png": {
+          "bytes": 66641,
+          "sha256": "ecdd2912597f74663fec0e18b76ee82130daa11de5cfa07bc1bf9f8b871431cd"
+        },
+        "doc/sources/visualise.rst": {
+          "bytes": 92,
+          "sha256": "056b342b8b9b9e7d02530b42d836952754d75d4f8034b5bda2d11764ee41a6bb"
+        },
+        "pyknotid/__init__.py": {
+          "bytes": 87,
+          "sha256": "3494fc0bee4650aeb33b2322ee2a94b44b3259603f6177cbdd4b237125cd30d9"
+        },
+        "pyknotid/catalogue/__init__.py": {
+          "bytes": 3120,
+          "sha256": "3c93487eaf59b9e2c5ba65c8991a96bcd27d61f43c15f4a82198c0c17227e491"
+        },
+        "pyknotid/catalogue/build.py": {
+          "bytes": 6105,
+          "sha256": "9a8c6e2a613522112c6091a5d60c355ab0735fa4f73fd88f63525cd1792ecfa0"
+        },
+        "pyknotid/catalogue/converters.py": {
+          "bytes": 6688,
+          "sha256": "150a93c9972214079806cada7b5047e864e27220424a9bcdbcc5a34328b8970d"
+        },
+        "pyknotid/catalogue/database.py": {
+          "bytes": 7929,
+          "sha256": "31c3f675e0c5b88ecf79c50e9b4b734deb2973160a33f3d72d1dc05d837f1b34"
+        },
+        "pyknotid/catalogue/getdb.py": {
+          "bytes": 4161,
+          "sha256": "d859d0b46e53d41aa925445ec0c0428f569bd9273584c564419f0d3e19bc6bc5"
+        },
+        "pyknotid/catalogue/identify.py": {
+          "bytes": 9978,
+          "sha256": "3b3e6fa8818360ba9275751c2dc4dcfff11ab987bab62655ab2cf4a5051c6b7a"
+        },
+        "pyknotid/catalogue/improve.py": {
+          "bytes": 15515,
+          "sha256": "c8db22a217889951df7b313b0728d53d71a6c916624524c86558b89794b66299"
+        },
+        "pyknotid/cinvariants.c": {
+          "bytes": 1149145,
+          "sha256": "53e24ea5343f4a27207cac12c7f84a9fb03eb767c4f05be7c92d3b56b3237c66"
+        },
+        "pyknotid/cinvariants.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 1092856,
+          "sha256": "37b335758a91b9dd44d5cdd0613eec03f02e9a85e21363f4949586d5a255f8db"
+        },
+        "pyknotid/cinvariants.pyx": {
+          "bytes": 2121,
+          "sha256": "cd29ce952ca06f5bc5a8706884a146a1d9f96d8bca3aef656d89ed3dc35ca577"
+        },
+        "pyknotid/cli/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "pyknotid/cli/analyse_knot_file.py": {
+          "bytes": 4412,
+          "sha256": "cf1f463d0490fc80a72f814a16b62ef14a2088e8f0df90d462ce52b23d0d18f2"
+        },
+        "pyknotid/cli/plot_knot.py": {
+          "bytes": 2711,
+          "sha256": "cac9d1bcc7291813cf9993830322147deb5781a7a9ca2c4acc21e4adf01205f6"
+        },
+        "pyknotid/invariants.py": {
+          "bytes": 53348,
+          "sha256": "2364d265669b3a5537373773edbee5dd761aa638b316fbbeac86e6558ac6ea30"
+        },
+        "pyknotid/io.py": {
+          "bytes": 1840,
+          "sha256": "5dfaf7761a9f89196539e73be83e2698296d7df60b68d31a748a2453752004ba"
+        },
+        "pyknotid/make/__init__.py": {
+          "bytes": 488,
+          "sha256": "b1a4185ede5a5bd415a811352cbc8b0b9b4b2436b3d3a13f9e35ea0fba57ee93"
+        },
+        "pyknotid/make/named.py": {
+          "bytes": 2463,
+          "sha256": "7b61b6ca26c3343742c35868410b98a727345fbd30f215371a16baa0efeec1e2"
+        },
+        "pyknotid/make/periodic_knot.py": {
+          "bytes": 17541,
+          "sha256": "936a49d9f07ca6fa36829dd7eccbaeddb0b30f3c05cd4ff7aa20e9b0bd8694fc"
+        },
+        "pyknotid/make/torus.py": {
+          "bytes": 5695,
+          "sha256": "fad9d8e73c525af6834207b00bad8c4442c6d994afb5cf087557ddf034919e4d"
+        },
+        "pyknotid/representations/__init__.py": {
+          "bytes": 3317,
+          "sha256": "f8ee48bebe05e2ec650131f5ac7a4b1ece3453d81259e8a881e5047a69aa41ca"
+        },
+        "pyknotid/representations/dtnotation.py": {
+          "bytes": 3044,
+          "sha256": "be0dd5cfe1b67a8290933bacaed5dfdb82bf1196eec38e0bb5e2032d0cb36253"
+        },
+        "pyknotid/representations/gausscode.py": {
+          "bytes": 16298,
+          "sha256": "7a205c2ba37db2480ae0cf9957fecc880803fef2d1e097486277d2a2b025486e"
+        },
+        "pyknotid/representations/gaussdiagram.py": {
+          "bytes": 3065,
+          "sha256": "243cad57124ab18f15d37cb4e3a6e005ee9f6e6e384001110b5efdb15572922d"
+        },
+        "pyknotid/representations/planardiagram.py": {
+          "bytes": 13581,
+          "sha256": "6ebbdba81bb705d12068976796816bc6323b7d451cde1af207b7aede6f636a31"
+        },
+        "pyknotid/representations/representation.py": {
+          "bytes": 23207,
+          "sha256": "20a280b37ae9c20220171fc8b4f577e56567cf0076e490272a3780ed27b7dfff"
+        },
+        "pyknotid/simplify/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "pyknotid/simplify/coctree.c": {
+          "bytes": 1371199,
+          "sha256": "543406ad0360b5e03546437c63c9662e32d732ef42e15a26c9aeedcae7fe5d9a"
+        },
+        "pyknotid/simplify/coctree.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 1630656,
+          "sha256": "c053774603b13e58c41a9a49bdd787edd66a95e4ba8ae5d3dccdc8227bbe11d7"
+        },
+        "pyknotid/simplify/coctree.pyx": {
+          "bytes": 7699,
+          "sha256": "995e4d431617af2e26d133994dc5fa312d4b2d6aa9386eca7ec8add0b5b95a3e"
+        },
+        "pyknotid/simplify/octree.py": {
+          "bytes": 31383,
+          "sha256": "e1c43dbb16c9cbffda49b95e21453ab63cd701f7058c5c6830fe718375c5f7eb"
+        },
+        "pyknotid/spacecurves/__init__.py": {
+          "bytes": 2978,
+          "sha256": "18fb4d19f472d630437b0b53643ff08333e9b7c57177566da60d806c58d3db85"
+        },
+        "pyknotid/spacecurves/ccomplexity.c": {
+          "bytes": 1250132,
+          "sha256": "6f8a1c8b20f9f3fa050caa7db8c310e84bfd7d7e1849265c8d1ee43384f6a971"
+        },
+        "pyknotid/spacecurves/ccomplexity.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 1273256,
+          "sha256": "a89a7fede36adb8514a9cb782287128f1f156b49fcaede0bfcacb0a47efc1e05"
+        },
+        "pyknotid/spacecurves/ccomplexity.pyx": {
+          "bytes": 6322,
+          "sha256": "b9c798423b60ac78108bddf57d6a3c63d677df6ef244004ecf127b599eed81a9"
+        },
+        "pyknotid/spacecurves/chelpers.c": {
+          "bytes": 1217260,
+          "sha256": "e68dcbff4c08194768c82fdcb78974e2cf1369d1d3c32f770fd5772684bb47ee"
+        },
+        "pyknotid/spacecurves/chelpers.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 1190528,
+          "sha256": "4a575638f6f39c2e75a7a13a3eb457b142fe32195ed7edceb49b10c6f1bd4af9"
+        },
+        "pyknotid/spacecurves/chelpers.pyx": {
+          "bytes": 5817,
+          "sha256": "494ff73290d1ca7319964f92b5ec46c78b8f17d1337e575ce0c88f6ca2fd1950"
+        },
+        "pyknotid/spacecurves/complexity.py": {
+          "bytes": 20115,
+          "sha256": "38b549888b263cc6fe02485ba6294ab4320ee07085494702c829c0d32a4399a5"
+        },
+        "pyknotid/spacecurves/geometry.py": {
+          "bytes": 1434,
+          "sha256": "7e8cca75521cfea90ef401ce1e9eb2cf8a407ec1793e64922af22080d36862af"
+        },
+        "pyknotid/spacecurves/helpers.py": {
+          "bytes": 5007,
+          "sha256": "4ec44c375cc98371fc325aa51c4ef2bd06e36b90526c110e1af62e5cd978e329"
+        },
+        "pyknotid/spacecurves/knot.py": {
+          "bytes": 28231,
+          "sha256": "7dd6113fd352d79e9f8f986a6e9babc5940a7e9133af8e930846c81938e82c30"
+        },
+        "pyknotid/spacecurves/link.py": {
+          "bytes": 18178,
+          "sha256": "08c90b4ca669f5b64fd8eb9260bba7894d91ae8f88883862e303cde543df6432"
+        },
+        "pyknotid/spacecurves/openknot.py": {
+          "bytes": 49586,
+          "sha256": "00cf770e2c24b9b9f1d03cf42f4e91e1806f9db0611ad8b2f58b5eaf4d90d7aa"
+        },
+        "pyknotid/spacecurves/periodic.py": {
+          "bytes": 62010,
+          "sha256": "55f89a61b4c0f8e86ef2c3e8886da0193e51ea46b4d9341d216e0dc9fc295d84"
+        },
+        "pyknotid/spacecurves/periodiccell.py": {
+          "bytes": 18859,
+          "sha256": "4f973c61a3119987be12aea3b63e07176542e47b52c1f6f0cae823c33fd33cc7"
+        },
+        "pyknotid/spacecurves/periodicline.py": {
+          "bytes": 39,
+          "sha256": "bfeab3303c3b1701c396a6356887e7405c3d1a4bbd9864e4406294994e97010b"
+        },
+        "pyknotid/spacecurves/rotation.py": {
+          "bytes": 2275,
+          "sha256": "1a26b326216d04799f455967f46bef453f9775062c451858ed0ce53a35d77255"
+        },
+        "pyknotid/spacecurves/setup.py": {
+          "bytes": 359,
+          "sha256": "bcaffb9c3a6ae8bca3edf95f04ca2ddd076d3fb9c9859a608202f9cb9091ca24"
+        },
+        "pyknotid/spacecurves/smooth.py": {
+          "bytes": 1975,
+          "sha256": "fe2e94d0f3cf5c523dcc070ba395ef0fd03212cf049e533f3553b849efe3ce68"
+        },
+        "pyknotid/spacecurves/spacecurve.py": {
+          "bytes": 43526,
+          "sha256": "4c7dec002b5531b192d39d1d5fe84e90008b06709a8f73e44ecb98a5363f6539"
+        },
+        "pyknotid/utils.py": {
+          "bytes": 1904,
+          "sha256": "89372e1f954ab9d7999160ec36ca409bd19b890e74a6e828caf45c8ff826df5d"
+        },
+        "pyknotid/visualcollection.py": {
+          "bytes": 1170,
+          "sha256": "47636f8b5f41ed2f4a2f2a39af1d15fde6bee7f20a19c009ea39e71a24575dd7"
+        },
+        "pyknotid/visualise.py": {
+          "bytes": 41763,
+          "sha256": "9c3efacadf046e3119b56057c482902c9a4959283b9dc155cbc12ce06409dbc1"
+        },
+        "pyknotid/writhes.py": {
+          "bytes": 15846,
+          "sha256": "c7bda3f3ac984a918d18839ae65e0e3a6c7f54d9bd84d6f37d820248e7279579"
+        },
+        "pyknotid.egg-info/PKG-INFO": {
+          "bytes": 1625,
+          "sha256": "a87e2b0fac1722d01a4db2dc55550daaa1d701af603e8039fa8a06b6ca70e227"
+        },
+        "pyknotid.egg-info/SOURCES.txt": {
+          "bytes": 1753,
+          "sha256": "de2ebc3176319aaf874577eab30c9f194961c8852dd89564e9b3c4843819f8b6"
+        },
+        "pyknotid.egg-info/dependency_links.txt": {
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        "pyknotid.egg-info/entry_points.txt": {
+          "bytes": 114,
+          "sha256": "d0f8e24fffbd94dce5f1649af234678b2d6c0f0f01f534e1e655e4fe5734f3ff"
+        },
+        "pyknotid.egg-info/requires.txt": {
+          "bytes": 66,
+          "sha256": "62b4b4d6dc81f71009664847e0b0ce110c0296b29b4ceb7f8df69d0b1af2e693"
+        },
+        "pyknotid.egg-info/top_level.txt": {
+          "bytes": 9,
+          "sha256": "511d31dbf6ce77bc0ee3c66745b63066d64d3341ee26fd49ad711b2ec0361574"
+        },
+        "setup.py": {
+          "bytes": 4600,
+          "sha256": "bb8c93d660624755d0e6e5dce274714df3f10c0e25e032d7f890a05a43f01ddc"
+        },
+        "tests/test_catalogue.py": {
+          "bytes": 1040,
+          "sha256": "cf51e4516b128ef39a33db2b8d4d8192f8e11abf2b7707ca9aa3e9d34d682a79"
+        },
+        "tests/test_knot.py": {
+          "bytes": 637,
+          "sha256": "8837876d9db8ed0f437c98d0a25bca3afb3d6783a8a2c763b97781d862fa7fe0"
+        },
+        "tests/test_random_curves.py": {
+          "bytes": 383,
+          "sha256": "e2ba3c2f327878a07528dccbe53ad810c4c68a649cf053c34b04050e5cb1f135"
+        },
+        "tests/test_spacecurve.py": {
+          "bytes": 2318,
+          "sha256": "74fa145039ef7720e011098f61e984ee8eba29bdc98b3d864cfabc47d16d1aa0"
+        }
+      }
+    },
+    "/usr/local/lib/python3.13/site-packages/pyknotid-0.5.3.dist-info": {
+      "capture_complete": true,
+      "bytes": 4179,
+      "entries": 11,
+      "files": {
+        "INSTALLER": {
+          "bytes": 4,
+          "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508"
+        },
+        "METADATA": {
+          "bytes": 1625,
+          "sha256": "a87e2b0fac1722d01a4db2dc55550daaa1d701af603e8039fa8a06b6ca70e227"
+        },
+        "RECORD": {
+          "bytes": 1194,
+          "sha256": "dcc809a41496d34264bdec3b706171674e9144eec75e8c7d720b98d03b590fdd"
+        },
+        "REQUESTED": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "WHEEL": {
+          "bytes": 91,
+          "sha256": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1"
+        },
+        "direct_url.json": {
+          "bytes": 63,
+          "sha256": "7b224e5bbb33ae1a92dd82e0745dbab4ca822aa04b346c28dec1e009c3c19ea5"
+        },
+        "entry_points.txt": {
+          "bytes": 114,
+          "sha256": "d0f8e24fffbd94dce5f1649af234678b2d6c0f0f01f534e1e655e4fe5734f3ff"
+        },
+        "licenses/LICENSE.txt": {
+          "bytes": 1079,
+          "sha256": "c006f19b458ea3953834e72cf2d0474273b3a443a7476854e6ae07df7cfcd426"
+        },
+        "top_level.txt": {
+          "bytes": 9,
+          "sha256": "511d31dbf6ce77bc0ee3c66745b63066d64d3341ee26fd49ad711b2ec0361574"
+        }
+      }
+    }
+  },
+  "global_import_witness": {
+    "numpy": "2.3.0",
+    "installed_version": "0.5.3",
+    "package": "/app/pyknotid/pyknotid/__init__.py",
+    "extensions": [
+      "/app/pyknotid/pyknotid/spacecurves/chelpers.cpython-313-x86_64-linux-gnu.so",
+      "/app/pyknotid/pyknotid/spacecurves/ccomplexity.cpython-313-x86_64-linux-gnu.so",
+      "/app/pyknotid/pyknotid/cinvariants.cpython-313-x86_64-linux-gnu.so"
+    ]
+  },
+  "replay": {
+    "verifier_exit": 0,
+    "reward": "1",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_numpy_version",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_repo_cloned",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_pyknotid_core_import",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_chelpers_cython_extension",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_ccomplexity_cython_extension",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_cinvariants_cython_extension",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_chelpers",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_ccomplexity",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_cinvariants_python_vs_cython",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_example_usage",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_pyknotid_repository_tests",
+        "status": "passed"
+      }
+    ]
+  },
+  "same_test_collection": true,
+  "trusted_dependency_lock_sha256": "657b9faec1748c8f39cec5e6e7e9f8b9c01436fd93b28f550ca895e72dc3c2a8",
+  "valid_output_replay": true,
+  "cleanup_verified": true,
+  "source_unchanged": true,
+  "candidate_unchanged": true,
+  "artifact_hashes": {
+    "__editable__.pyknotid-0.5.3.pth-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "__editable___pyknotid_0_5_3_finder.py-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after/pyknotid-0.5.3.dist-info/INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+    "after/pyknotid-0.5.3.dist-info/METADATA": "a87e2b0fac1722d01a4db2dc55550daaa1d701af603e8039fa8a06b6ca70e227",
+    "after/pyknotid-0.5.3.dist-info/RECORD": "dcc809a41496d34264bdec3b706171674e9144eec75e8c7d720b98d03b590fdd",
+    "after/pyknotid-0.5.3.dist-info/REQUESTED": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after/pyknotid-0.5.3.dist-info/WHEEL": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1",
+    "after/pyknotid-0.5.3.dist-info/direct_url.json": "7b224e5bbb33ae1a92dd82e0745dbab4ca822aa04b346c28dec1e009c3c19ea5",
+    "after/pyknotid-0.5.3.dist-info/entry_points.txt": "d0f8e24fffbd94dce5f1649af234678b2d6c0f0f01f534e1e655e4fe5734f3ff",
+    "after/pyknotid-0.5.3.dist-info/licenses/LICENSE.txt": "c006f19b458ea3953834e72cf2d0474273b3a443a7476854e6ae07df7cfcd426",
+    "after/pyknotid-0.5.3.dist-info/top_level.txt": "511d31dbf6ce77bc0ee3c66745b63066d64d3341ee26fd49ad711b2ec0361574",
+    "baseline/logs/verifier/ctrf.json": "afaced7cd958af7507ee17ff02c8ee14ba511708af15cde887dabc3d3c0982e0",
+    "baseline/logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "baseline/verifier.log": "2727ace570176b56536d746083499f77feacfddbb4be8199a5ce420570aee834",
+    "baseline-trusted-dependencies.log": "80222769cbb9cb5d86f5a7dacf3ab8392b713bea2dee62a3eb43d98889bc774e",
+    "docker-diff.log": "65395e9969a5a161782772dafd66bc3ae52205ef724200fa9b094338e2cd51c4",
+    "global/pyknotid-0.5.3.dist-info/INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+    "global/pyknotid-0.5.3.dist-info/METADATA": "a87e2b0fac1722d01a4db2dc55550daaa1d701af603e8039fa8a06b6ca70e227",
+    "global/pyknotid-0.5.3.dist-info/RECORD": "dcc809a41496d34264bdec3b706171674e9144eec75e8c7d720b98d03b590fdd",
+    "global/pyknotid-0.5.3.dist-info/REQUESTED": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "global/pyknotid-0.5.3.dist-info/WHEEL": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1",
+    "global/pyknotid-0.5.3.dist-info/direct_url.json": "7b224e5bbb33ae1a92dd82e0745dbab4ca822aa04b346c28dec1e009c3c19ea5",
+    "global/pyknotid-0.5.3.dist-info/entry_points.txt": "d0f8e24fffbd94dce5f1649af234678b2d6c0f0f01f534e1e655e4fe5734f3ff",
+    "global/pyknotid-0.5.3.dist-info/licenses/LICENSE.txt": "c006f19b458ea3953834e72cf2d0474273b3a443a7476854e6ae07df7cfcd426",
+    "global/pyknotid-0.5.3.dist-info/top_level.txt": "511d31dbf6ce77bc0ee3c66745b63066d64d3341ee26fd49ad711b2ec0361574",
+    "global-pyknotid-0.5.3.dist-info-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "oracle-trusted-dependencies.log": "2bd76994060b2804b954bc837a57075e0e2cf6dd25ea1f400ed8bcc3db836db0",
+    "oracle.log": "f792a58a6b7f5ddd5f009b0a138cf5533c03d999e467431c506b7500900ada72",
+    "plan.json": "1dcfc6c464f80342d526a02d876254e053b4bf4fadeca411377526a131c202a8",
+    "replay/logs/verifier/ctrf.json": "5c5375fbc2be7958a50bb4dc3a55bd756ef53ecf4a8a534a2da728feb3a8dc53",
+    "replay/logs/verifier/reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "replay/verifier.log": "c84cba0ff5b69dd71cc2c154ed2c6f517fc2ab6f9491b3739480edf4619767d2",
+    "replay-trusted-dependencies.log": "237fda7dd1c9a5162901be9c042cac2324ec7750335ccd76530ad738f3fe5d55",
+    "sidecars/__editable__.pyknotid-0.5.3.pth": "00c5d9cace74fd05f6b8159d0140f217c50d55c1d1e006259cfd8fdece904902",
+    "sidecars/__editable___pyknotid_0_5_3_finder.py": "7aea25aeed041f21809b2cf2e999236a8e06da9206a8fcdd569cb42713fb75c4",
+    "source/pyknotid/.git/HEAD": "3ea0548d5abd5f24fce57dece908fef1a96df90cc1cc71eb6d53101794beabac",
+    "source/pyknotid/.git/config": "791637fe3662981ad1dd618e56aa69bdf3b71677fe23131931b24a91a8b74d84",
+    "source/pyknotid/.git/description": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+    "source/pyknotid/.git/hooks/applypatch-msg.sample": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+    "source/pyknotid/.git/hooks/commit-msg.sample": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+    "source/pyknotid/.git/hooks/fsmonitor-watchman.sample": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+    "source/pyknotid/.git/hooks/post-update.sample": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+    "source/pyknotid/.git/hooks/pre-applypatch.sample": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+    "source/pyknotid/.git/hooks/pre-commit.sample": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a",
+    "source/pyknotid/.git/hooks/pre-merge-commit.sample": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+    "source/pyknotid/.git/hooks/pre-push.sample": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+    "source/pyknotid/.git/hooks/pre-rebase.sample": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+    "source/pyknotid/.git/hooks/pre-receive.sample": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+    "source/pyknotid/.git/hooks/prepare-commit-msg.sample": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+    "source/pyknotid/.git/hooks/push-to-checkout.sample": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+    "source/pyknotid/.git/hooks/update.sample": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+    "source/pyknotid/.git/index": "0de586805f8145be4022d0d2956e846b285a0e27775c222358bea80e5712fc4d",
+    "source/pyknotid/.git/info/exclude": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+    "source/pyknotid/.git/logs/HEAD": "3dfbdc495d2684c1375ed35badccd11a90d6d90460847847de8e82039afc489b",
+    "source/pyknotid/.git/objects/pack/pack-46091c9c4b95a0d312fd1b613bc6e8b00deb4ebe.idx": "3a444416b408d7d3570fff0b85add909cf38918ec21d1a5e4d42698af69e6e14",
+    "source/pyknotid/.git/objects/pack/pack-46091c9c4b95a0d312fd1b613bc6e8b00deb4ebe.pack": "69628db9700cadf636d432ec8b89fa36173c43d46aaac0c57e17bebc4a216566",
+    "source/pyknotid/.git/packed-refs": "407a1b9cf369aa241223a0efc18f6bbfef15c4007d5b3fc89d432961af54a1d7",
+    "source/pyknotid/.git/shallow": "3ea0548d5abd5f24fce57dece908fef1a96df90cc1cc71eb6d53101794beabac",
+    "source/pyknotid/.gitignore": "d616d2b255a9b12ca12211afc27ab7e1afa1ed6b0ba617c467eb9b70a3d92c2a",
+    "source/pyknotid/.projectile": "988a1862f360f3ab07bdb544b5215a3a20b2194998784f2a7870c7fb1ffe618b",
+    "source/pyknotid/LICENSE.txt": "c006f19b458ea3953834e72cf2d0474273b3a443a7476854e6ae07df7cfcd426",
+    "source/pyknotid/README.rst": "d8ebfce6f7bfdf3d596f8062f99bc39e4c1a071890eff793a41052bba69784e0",
+    "source/pyknotid/build/lib.linux-x86_64-cpython-313/pyknotid/cinvariants.cpython-313-x86_64-linux-gnu.so": "37b335758a91b9dd44d5cdd0613eec03f02e9a85e21363f4949586d5a255f8db",
+    "source/pyknotid/build/lib.linux-x86_64-cpython-313/pyknotid/simplify/coctree.cpython-313-x86_64-linux-gnu.so": "c053774603b13e58c41a9a49bdd787edd66a95e4ba8ae5d3dccdc8227bbe11d7",
+    "source/pyknotid/build/lib.linux-x86_64-cpython-313/pyknotid/spacecurves/ccomplexity.cpython-313-x86_64-linux-gnu.so": "a89a7fede36adb8514a9cb782287128f1f156b49fcaede0bfcacb0a47efc1e05",
+    "source/pyknotid/build/lib.linux-x86_64-cpython-313/pyknotid/spacecurves/chelpers.cpython-313-x86_64-linux-gnu.so": "4a575638f6f39c2e75a7a13a3eb457b142fe32195ed7edceb49b10c6f1bd4af9",
+    "source/pyknotid/build/temp.linux-x86_64-cpython-313/pyknotid/cinvariants.o": "5947820aa70a9471cfa57281fa1b8b3e12b07e7e86a30db3f7d680b7e307c7d6",
+    "source/pyknotid/build/temp.linux-x86_64-cpython-313/pyknotid/simplify/coctree.o": "6995b5274bf3890fceb7777639ea8e8568defce425e8cee206ca23226f42b35a",
+    "source/pyknotid/build/temp.linux-x86_64-cpython-313/pyknotid/spacecurves/ccomplexity.o": "dd290fea3e88c8546da1f587587ff63b216d5ababd2e0f0bc5a6a453ceb1d93a",
+    "source/pyknotid/build/temp.linux-x86_64-cpython-313/pyknotid/spacecurves/chelpers.o": "fbfad8fd42adf8bb1af13ff37d8ca315347e7886246bdb2432b1591d5290be40",
+    "source/pyknotid/doc/Makefile": "c8a9ce7189f79d1255df2c269fb5e1b37a7cad27825058fd7e63bc60c764c80a",
+    "source/pyknotid/doc/conf.py": "f6a56c5553928143d1e8902a9b7f5c3e32da635a4d1b46faf5a4267c96420aa1",
+    "source/pyknotid/doc/ext/docscrape.py": "7986fbbbb6997811881dbbc89ce72dbb703f172328835c7735057240bc0a5051",
+    "source/pyknotid/doc/ext/docscrape_sphinx.py": "481bf7ef0b520ffd81b0a079112eb402949839dcfb57e1a752fbc526fadf95c5",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/.gitignore": "d2fe3d723b8416346f9dac06a00488e064efcfbc4ca406a260e39c5e5c7ca19e",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/Gemfile": "6e1e973a0a3245899ec41cde3ddf95774e984e0f7eafec6151648af90dfef583",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/Gemfile.lock": "6e72539b95e9badc6afdb9fb3d12837864a6a5efda69100d452b23380a03ba63",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/Gruntfile.js": "464573e0cd809534494804aaeb1723fff6574a10ac63e87b0d556d2daffcd357",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/LICENSE": "f6b3bcf46d6a06da81b72230b32b22e0f418ecddce55e0501d7f54fb5aa29ba9",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/MANIFEST.in": "4e9319bed03f533b409a1bbfd94844368aac325d964005497ed48abd54a044e9",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/README.rst": "93b28589828cdf7e22723656993e43dab531409cbac2f2f306f93aaee0ae5566",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/bower.json": "709120e0000321d8b5b01887d5df4aa665f12af11bf373b0d83d5cbe23d71770",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/Makefile": "071dbdeff54151860129c9a7555b2775874779162e252a8457f2c51a32185625",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/source/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/source/conf.py": "f1ae7ee0580ee2fe1452372b213c2d3e3f4314b3802fce3e08e18b8fd043e0cd",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/source/demo.rst": "24638d5deda4217a52f670e855f616a758e545e6ae01078c3aa332d453a5f1bc",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/source/index.rst": "ffdc390ee2de830b73eb7c0e049717eb115357a4d5cd67d5cd93ba0946b80fb4",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/source/list.rst": "4fab88f27e388be133b0075c6dbb9297015fdf6376674cda32019db5feafa783",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/source/static/yi_jing_01_chien.jpg": "8c4da008d25f46c3663db67c349345c8b0efcc421242633cabbc7771665bfc17",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/source/test_py_module/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/demo_docs/source/test_py_module/test.py": "c47422a75c48d0d3a605a5de73eb7c99a0780744ac7a19649ce763c5a971b29b",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/package.json": "03e9cb65ec35f4ef2830032b878acdb2c8cd99fd3e29f053f341dfd376adedc5",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/requirements.txt": "43e0e56861914fa83c607569882448a882102a6b400a601c421476d6cbc2c210",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/_theme_badge.sass": "9e9330e75ed6f83eb30b2b9fd3a6f62749d30bd327a22d8f9a18a644e2685ed8",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/_theme_badge_fa.sass": "079bb52999d542b6a4647abfe1a5abc9186f610283efae5c8f2ba840e1625338",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/_theme_breadcrumbs.sass": "23c8df06275d8c178701f5348a2720b1e8b74a85343d3566fb338dc1dbfe5e81",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/_theme_font_awesome_compatability.sass": "21a677ff084436c3e7e9126f2690038308d8ba4671685a8428acc311f9f73873",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/_theme_layout.sass": "58bc80a86f3e1e0dc8e16baa3778117107e012c188dae304dc44f945214c8528",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/_theme_mathjax.sass": "73071984158ccdeedac1a80b19aebbb7130bf85b0894bf647b0b8fdac7fe9c03",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/_theme_rst.sass": "6dabbd5a60cdfac548419feaa95cb43ceecb22a466e03d320f7ebcb8dd25b269",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/_theme_variables.sass": "03e7a893afbbb054227523e1d2b8cbb848651468b9b49027401122491e07dfe4",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/badge_only.sass": "cd32d942c042c930b03346b62049f6ee9d198ac77d204391484bbb74ae29a5ea",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sass/theme.sass": "358766b86a3ff1c264d08811afd69c3806d72ee91c8acdb1e0adf4ad49da5c15",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/screen_desktop.png": "895dba18e6b46391595516e279d2eb64a06081d3354a204cbbf13014da94b97a",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/screen_mobile.png": "3d55b651c3a6434204845d98f25d0f57e7d9500205e90ce33885391b5ea8cfe3",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/setup.py": "323a119f833a55c7c7411e65c982610ba8777eac052665d377a81a1f100ed2c6",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/__init__.py": "1e705f9fc022158f2835b5fe6f06617470da0f2b2803c7f2a2038289db13f56b",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/breadcrumbs.html": "e02d33c1744603be18e941cdf2862578fe5f6f678c8e0268bcd7680baeb852fe",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/footer.html": "1cce3d4105f5b260a1f22f7b056c8a80e5d54da4d7e9b5dfe99a48fc6ef44b6c",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/layout.html": "b128d42234ac8d88641e5012fbf47d18e5b6c983b3ff9bf09400b1d46a1e1c10",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/layout_old.html": "f1d6ffde493436ed34209c9064a487f9990aa32a9fc6ee912eb6889610bec6c9",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/search.html": "5c4dfdf52d544ea20a46da5c4908dea1d336667caac0e4f97dcf8ff2021e5366",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/searchbox.html": "fa4f04f4f5b81f63e1d272551fc57d55c925cf1ec4cb11b5c8e6ba7252f2c956",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/css/badge_only.css": "c3e42a05bced9cec61d749aa842c6957a76a969ba0a179ba9bf9625913a4bd86",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/css/theme.css": "ed4b0a74247ec4914d2d6742de3865754e55d449758a5886970d73827177c2eb",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/FontAwesome.otf": "6c5ea915b5685dcd865d218b4122050fe75872c7ec91762c11b6913ee9074eb5",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/fontawesome-webfont.eot": "39e237c07403e62f00bd6ddf0b59d3349c7bd3869250aaadc389419db6aa40ef",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/fontawesome-webfont.svg": "b751f81b4b0db77c49a73fe8067c0aed1f1e46eb12f367ee53fe6df8b9043703",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/fontawesome-webfont.ttf": "6b49348ad53886d09ce4c32fa146e899c820de3f85a8dd3704a0624eb3bf7fa1",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/fonts/fontawesome-webfont.woff": "0fd28fece9ebd606b8b071460ebd3fc2ed7bc7a66ef91c8834f11dfacab4a849",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/static/js/theme.js": "a34621f5bdfa5c3b909b7b301648f51555fd2319066b21358811aac31578d4f1",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/theme.conf": "e7b72deae232a91d8a9df557da2cbfecd3ec80f01d361be662ed3fc00d0c2f04",
+    "source/pyknotid/doc/ext/sphinx_rtd_theme/sphinx_rtd_theme/versions.html": "4474224c909414774838721fc1e4a4e740b44589190f8d5aade8b7d28d4a57cf",
+    "source/pyknotid/doc/index.rst": "a25e660b22cbb2830dce762fa2b4c7c96b33fe1aba0c1b2ff87b0fc073adabfc",
+    "source/pyknotid/doc/k10_51_ideal.png": "86b16f79da0ec8c33ec02884ba5ae7f5518c0ad0f1d6c82653cfbcca87f8d532",
+    "source/pyknotid/doc/k10_92_ideal.png": "28f2c241b284dd154b334522b1be26284c43edfb27a9621d4f1a8df332d697bc",
+    "source/pyknotid/doc/k10_92_ideal_small.png": "0fd713f9ac7fd47ab82ac01906525174672545fa16b5cfcd4a4f0837ce213075",
+    "source/pyknotid/doc/make.bat": "73d7bdff97fcb2368d5c4f531c171f6c05afdd1e9ffac1c64600158a95eeacee",
+    "source/pyknotid/doc/sources/about.rst": "f81fc09aa3088314a5562c5975a8148bf763e2578750b9bebf0c71be4ee0521e",
+    "source/pyknotid/doc/sources/catalogue/database.rst": "95c5bd8d2382780788b291a3ebe3f6e129c2254eb374ce301b8fefe00ee62f72",
+    "source/pyknotid/doc/sources/catalogue/getdb.rst": "9b2562c4b352765c3dff4cf4ada2959977b54f25eab112f9d784f4c950a452fb",
+    "source/pyknotid/doc/sources/catalogue/identify.rst": "f9d197c120fdeadc61902acba1996a627e59b0abf52554563a9d10afe0a75d8e",
+    "source/pyknotid/doc/sources/catalogue/index.rst": "1fe4e1066a38d16911df64c17f17e2e95c1b769354281c1d7c22dadcca8099e1",
+    "source/pyknotid/doc/sources/invariants.rst": "4e746f636ab060acd172703abb477fbce3fe3565171ac7a5da21cc729c655117",
+    "source/pyknotid/doc/sources/k10_11_ideal.png": "3ef4678f612bafeaf1a74c1ed505d66711c3216c63d45f3e00ca9865b76c3547",
+    "source/pyknotid/doc/sources/overview.rst": "16c803e8b46c5b56088b198adbddaa442629c8fd67abf717c5c3615a9a6de1b7",
+    "source/pyknotid/doc/sources/representations/dtnotation.rst": "6e750fad23bea3cab45187c413ec68bec123db403f3dd0aa637fd9b08d44fbb7",
+    "source/pyknotid/doc/sources/representations/example_gauss_diagram_k10_93.png": "237b6f2b3de17f0aeb311965b6b7dda425d01b3735aa5483f395da67097a95f8",
+    "source/pyknotid/doc/sources/representations/gausscode.rst": "845946dcfc9b0d38e7f1c80914fca17552cf6e6a93c990ae54b5746284677c7b",
+    "source/pyknotid/doc/sources/representations/gaussdiagram.rst": "90aa05e4702ecefd5fcaecdf41d6f6e58f412b303df01192e42712c415cb6019",
+    "source/pyknotid/doc/sources/representations/index.rst": "04b57244ee1e502092d16235931c6cf6be2a2d9990bbe41304ce087635256227",
+    "source/pyknotid/doc/sources/representations/planardiagram.rst": "de0c9fc60cdb77c7a6afd17fdbad5e212accf077086c7a71ebec8627ad8fdbed",
+    "source/pyknotid/doc/sources/representations/representation.rst": "67e8473baf2ec6c0f26a0d5b49b54c4ecaf53b9236a2dda5150c4a00d17d1b63",
+    "source/pyknotid/doc/sources/spacecurves/colours.png": "de94ee0e7f0c4e5b8ab04bed71e2bf7f8c58f5e6cdf5864ad73346db6e173ff5",
+    "source/pyknotid/doc/sources/spacecurves/example_knot_projection_9_5.png": "09c0af824bd46baa4cd59d6554513bb7231b73b6e84ae1beec97fbf623037ceb",
+    "source/pyknotid/doc/sources/spacecurves/index.rst": "2fbd160578f4005fe55d87532dda7c13e0f41102b36fe82639ad1dd4db0247b3",
+    "source/pyknotid/doc/sources/spacecurves/knot.rst": "8c49a40400a4a39d7efba5e411a0f47e13afb4e949f5f63ae8d98711f5ed7851",
+    "source/pyknotid/doc/sources/spacecurves/link.rst": "9a6f4461613ab30170a7f2cd811af8b8884058cabff9e7f499a4825fc635963a",
+    "source/pyknotid/doc/sources/spacecurves/openknot.rst": "e6f62f3f677ebc2d7f595eaafe1316d1ad92290bf579b02149fd8392eb2ef016",
+    "source/pyknotid/doc/sources/spacecurves/p7_q4__torus_knot.png": "91ec80ae71382143846dc98beaa2e2bc426f8ba35b1d5d6b70fde17d21cd3195",
+    "source/pyknotid/doc/sources/spacecurves/periodiccell.rst": "8f01ef0670be0b0c396a1c5ff4a1c220fbfd1793e243b131172463443764e306",
+    "source/pyknotid/doc/sources/spacecurves/random_walk_length_30.png": "6ba4a16f3af4981b72250d06a2b477e4e1ddefa4988d71695c8f73277469f280",
+    "source/pyknotid/doc/sources/spacecurves/spacecurve.rst": "a03123a9bd4512328fb0ecc3fc6f646de92f2d9c86c0ff24bd24f18acc01d416",
+    "source/pyknotid/doc/sources/spacecurves/torus_hopf_link.png": "7e48c7ed0913dd2c635ace70105b6ebbdaca4287f01a21b84d4e35c5a79f423f",
+    "source/pyknotid/doc/sources/spacecurves/trefoil.png": "151ec92e3f6fc94138e7f717941b5746f107e8d1d61c93caaf3513529a8f344b",
+    "source/pyknotid/doc/sources/spacecurves/trefoil_few_points.png": "d611b4ae1b65287fc5d8b44acd2b2aad538eec19e14ace16f43c075db44b4c71",
+    "source/pyknotid/doc/sources/spacecurves/trefoil_torus_knot.png": "ecdd2912597f74663fec0e18b76ee82130daa11de5cfa07bc1bf9f8b871431cd",
+    "source/pyknotid/doc/sources/visualise.rst": "056b342b8b9b9e7d02530b42d836952754d75d4f8034b5bda2d11764ee41a6bb",
+    "source/pyknotid/pyknotid/__init__.py": "3494fc0bee4650aeb33b2322ee2a94b44b3259603f6177cbdd4b237125cd30d9",
+    "source/pyknotid/pyknotid/catalogue/__init__.py": "3c93487eaf59b9e2c5ba65c8991a96bcd27d61f43c15f4a82198c0c17227e491",
+    "source/pyknotid/pyknotid/catalogue/build.py": "9a8c6e2a613522112c6091a5d60c355ab0735fa4f73fd88f63525cd1792ecfa0",
+    "source/pyknotid/pyknotid/catalogue/converters.py": "150a93c9972214079806cada7b5047e864e27220424a9bcdbcc5a34328b8970d",
+    "source/pyknotid/pyknotid/catalogue/database.py": "31c3f675e0c5b88ecf79c50e9b4b734deb2973160a33f3d72d1dc05d837f1b34",
+    "source/pyknotid/pyknotid/catalogue/getdb.py": "d859d0b46e53d41aa925445ec0c0428f569bd9273584c564419f0d3e19bc6bc5",
+    "source/pyknotid/pyknotid/catalogue/identify.py": "3b3e6fa8818360ba9275751c2dc4dcfff11ab987bab62655ab2cf4a5051c6b7a",
+    "source/pyknotid/pyknotid/catalogue/improve.py": "c8db22a217889951df7b313b0728d53d71a6c916624524c86558b89794b66299",
+    "source/pyknotid/pyknotid/cinvariants.c": "53e24ea5343f4a27207cac12c7f84a9fb03eb767c4f05be7c92d3b56b3237c66",
+    "source/pyknotid/pyknotid/cinvariants.cpython-313-x86_64-linux-gnu.so": "37b335758a91b9dd44d5cdd0613eec03f02e9a85e21363f4949586d5a255f8db",
+    "source/pyknotid/pyknotid/cinvariants.pyx": "cd29ce952ca06f5bc5a8706884a146a1d9f96d8bca3aef656d89ed3dc35ca577",
+    "source/pyknotid/pyknotid/cli/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/pyknotid/pyknotid/cli/analyse_knot_file.py": "cf1f463d0490fc80a72f814a16b62ef14a2088e8f0df90d462ce52b23d0d18f2",
+    "source/pyknotid/pyknotid/cli/plot_knot.py": "cac9d1bcc7291813cf9993830322147deb5781a7a9ca2c4acc21e4adf01205f6",
+    "source/pyknotid/pyknotid/invariants.py": "2364d265669b3a5537373773edbee5dd761aa638b316fbbeac86e6558ac6ea30",
+    "source/pyknotid/pyknotid/io.py": "5dfaf7761a9f89196539e73be83e2698296d7df60b68d31a748a2453752004ba",
+    "source/pyknotid/pyknotid/make/__init__.py": "b1a4185ede5a5bd415a811352cbc8b0b9b4b2436b3d3a13f9e35ea0fba57ee93",
+    "source/pyknotid/pyknotid/make/named.py": "7b61b6ca26c3343742c35868410b98a727345fbd30f215371a16baa0efeec1e2",
+    "source/pyknotid/pyknotid/make/periodic_knot.py": "936a49d9f07ca6fa36829dd7eccbaeddb0b30f3c05cd4ff7aa20e9b0bd8694fc",
+    "source/pyknotid/pyknotid/make/torus.py": "fad9d8e73c525af6834207b00bad8c4442c6d994afb5cf087557ddf034919e4d",
+    "source/pyknotid/pyknotid/representations/__init__.py": "f8ee48bebe05e2ec650131f5ac7a4b1ece3453d81259e8a881e5047a69aa41ca",
+    "source/pyknotid/pyknotid/representations/dtnotation.py": "be0dd5cfe1b67a8290933bacaed5dfdb82bf1196eec38e0bb5e2032d0cb36253",
+    "source/pyknotid/pyknotid/representations/gausscode.py": "7a205c2ba37db2480ae0cf9957fecc880803fef2d1e097486277d2a2b025486e",
+    "source/pyknotid/pyknotid/representations/gaussdiagram.py": "243cad57124ab18f15d37cb4e3a6e005ee9f6e6e384001110b5efdb15572922d",
+    "source/pyknotid/pyknotid/representations/planardiagram.py": "6ebbdba81bb705d12068976796816bc6323b7d451cde1af207b7aede6f636a31",
+    "source/pyknotid/pyknotid/representations/representation.py": "20a280b37ae9c20220171fc8b4f577e56567cf0076e490272a3780ed27b7dfff",
+    "source/pyknotid/pyknotid/simplify/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/pyknotid/pyknotid/simplify/coctree.c": "543406ad0360b5e03546437c63c9662e32d732ef42e15a26c9aeedcae7fe5d9a",
+    "source/pyknotid/pyknotid/simplify/coctree.cpython-313-x86_64-linux-gnu.so": "c053774603b13e58c41a9a49bdd787edd66a95e4ba8ae5d3dccdc8227bbe11d7",
+    "source/pyknotid/pyknotid/simplify/coctree.pyx": "995e4d431617af2e26d133994dc5fa312d4b2d6aa9386eca7ec8add0b5b95a3e",
+    "source/pyknotid/pyknotid/simplify/octree.py": "e1c43dbb16c9cbffda49b95e21453ab63cd701f7058c5c6830fe718375c5f7eb",
+    "source/pyknotid/pyknotid/spacecurves/__init__.py": "18fb4d19f472d630437b0b53643ff08333e9b7c57177566da60d806c58d3db85",
+    "source/pyknotid/pyknotid/spacecurves/ccomplexity.c": "6f8a1c8b20f9f3fa050caa7db8c310e84bfd7d7e1849265c8d1ee43384f6a971",
+    "source/pyknotid/pyknotid/spacecurves/ccomplexity.cpython-313-x86_64-linux-gnu.so": "a89a7fede36adb8514a9cb782287128f1f156b49fcaede0bfcacb0a47efc1e05",
+    "source/pyknotid/pyknotid/spacecurves/ccomplexity.pyx": "b9c798423b60ac78108bddf57d6a3c63d677df6ef244004ecf127b599eed81a9",
+    "source/pyknotid/pyknotid/spacecurves/chelpers.c": "e68dcbff4c08194768c82fdcb78974e2cf1369d1d3c32f770fd5772684bb47ee",
+    "source/pyknotid/pyknotid/spacecurves/chelpers.cpython-313-x86_64-linux-gnu.so": "4a575638f6f39c2e75a7a13a3eb457b142fe32195ed7edceb49b10c6f1bd4af9",
+    "source/pyknotid/pyknotid/spacecurves/chelpers.pyx": "494ff73290d1ca7319964f92b5ec46c78b8f17d1337e575ce0c88f6ca2fd1950",
+    "source/pyknotid/pyknotid/spacecurves/complexity.py": "38b549888b263cc6fe02485ba6294ab4320ee07085494702c829c0d32a4399a5",
+    "source/pyknotid/pyknotid/spacecurves/geometry.py": "7e8cca75521cfea90ef401ce1e9eb2cf8a407ec1793e64922af22080d36862af",
+    "source/pyknotid/pyknotid/spacecurves/helpers.py": "4ec44c375cc98371fc325aa51c4ef2bd06e36b90526c110e1af62e5cd978e329",
+    "source/pyknotid/pyknotid/spacecurves/knot.py": "7dd6113fd352d79e9f8f986a6e9babc5940a7e9133af8e930846c81938e82c30",
+    "source/pyknotid/pyknotid/spacecurves/link.py": "08c90b4ca669f5b64fd8eb9260bba7894d91ae8f88883862e303cde543df6432",
+    "source/pyknotid/pyknotid/spacecurves/openknot.py": "00cf770e2c24b9b9f1d03cf42f4e91e1806f9db0611ad8b2f58b5eaf4d90d7aa",
+    "source/pyknotid/pyknotid/spacecurves/periodic.py": "55f89a61b4c0f8e86ef2c3e8886da0193e51ea46b4d9341d216e0dc9fc295d84",
+    "source/pyknotid/pyknotid/spacecurves/periodiccell.py": "4f973c61a3119987be12aea3b63e07176542e47b52c1f6f0cae823c33fd33cc7",
+    "source/pyknotid/pyknotid/spacecurves/periodicline.py": "bfeab3303c3b1701c396a6356887e7405c3d1a4bbd9864e4406294994e97010b",
+    "source/pyknotid/pyknotid/spacecurves/rotation.py": "1a26b326216d04799f455967f46bef453f9775062c451858ed0ce53a35d77255",
+    "source/pyknotid/pyknotid/spacecurves/setup.py": "bcaffb9c3a6ae8bca3edf95f04ca2ddd076d3fb9c9859a608202f9cb9091ca24",
+    "source/pyknotid/pyknotid/spacecurves/smooth.py": "fe2e94d0f3cf5c523dcc070ba395ef0fd03212cf049e533f3553b849efe3ce68",
+    "source/pyknotid/pyknotid/spacecurves/spacecurve.py": "4c7dec002b5531b192d39d1d5fe84e90008b06709a8f73e44ecb98a5363f6539",
+    "source/pyknotid/pyknotid/utils.py": "89372e1f954ab9d7999160ec36ca409bd19b890e74a6e828caf45c8ff826df5d",
+    "source/pyknotid/pyknotid/visualcollection.py": "47636f8b5f41ed2f4a2f2a39af1d15fde6bee7f20a19c009ea39e71a24575dd7",
+    "source/pyknotid/pyknotid/visualise.py": "9c3efacadf046e3119b56057c482902c9a4959283b9dc155cbc12ce06409dbc1",
+    "source/pyknotid/pyknotid/writhes.py": "c7bda3f3ac984a918d18839ae65e0e3a6c7f54d9bd84d6f37d820248e7279579",
+    "source/pyknotid/pyknotid.egg-info/PKG-INFO": "a87e2b0fac1722d01a4db2dc55550daaa1d701af603e8039fa8a06b6ca70e227",
+    "source/pyknotid/pyknotid.egg-info/SOURCES.txt": "de2ebc3176319aaf874577eab30c9f194961c8852dd89564e9b3c4843819f8b6",
+    "source/pyknotid/pyknotid.egg-info/dependency_links.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "source/pyknotid/pyknotid.egg-info/entry_points.txt": "d0f8e24fffbd94dce5f1649af234678b2d6c0f0f01f534e1e655e4fe5734f3ff",
+    "source/pyknotid/pyknotid.egg-info/requires.txt": "62b4b4d6dc81f71009664847e0b0ce110c0296b29b4ceb7f8df69d0b1af2e693",
+    "source/pyknotid/pyknotid.egg-info/top_level.txt": "511d31dbf6ce77bc0ee3c66745b63066d64d3341ee26fd49ad711b2ec0361574",
+    "source/pyknotid/setup.py": "bb8c93d660624755d0e6e5dce274714df3f10c0e25e032d7f890a05a43f01ddc",
+    "source/pyknotid/tests/test_catalogue.py": "cf51e4516b128ef39a33db2b8d4d8192f8e11abf2b7707ca9aa3e9d34d682a79",
+    "source/pyknotid/tests/test_knot.py": "8837876d9db8ed0f437c98d0a25bca3afb3d6783a8a2c763b97781d862fa7fe0",
+    "source/pyknotid/tests/test_random_curves.py": "e2ba3c2f327878a07528dccbe53ad810c4c68a649cf053c34b04050e5cb1f135",
+    "source/pyknotid/tests/test_spacecurve.py": "74fa145039ef7720e011098f61e984ee8eba29bdc98b3d864cfabc47d16d1aa0",
+    "source-pyknotid-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "trusted-dependencies-lock.txt": "657b9faec1748c8f39cec5e6e7e9f8b9c01436fd93b28f550ca895e72dc3c2a8"
+  }
+}

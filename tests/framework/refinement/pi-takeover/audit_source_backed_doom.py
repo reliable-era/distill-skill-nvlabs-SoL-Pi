@@ -1,0 +1,25 @@
+"""IndependentDoomcell/finalaudit,read-only;no model/grade/replay."""
+import pathlib
+R=pathlib.Path(__file__).resolve().parent;code=(R/'audit_matched_financial.py').read_text()
+def replace(old,new):
+ global code
+ if code.count(old)!=1:raise RuntimeError('Doomauditreplacementnotunique '+old[:80])
+ code=code.replace(old,new)
+replace('from financial_output import verify','from doom_output import verify_missing\nfrom task_artifacts import descriptor\nfrom task_replay import verify_payload')
+code=code.replace('matched-financial-plan.json','source-backed-doom-plan.json').replace('matched-financial-progress.json','source-backed-doom-progress.json').replace('matched-financial-result.json','source-backed-doom-result.json').replace('matched-financial-audit.json','source-backed-doom-audit.json')
+replace("root=pathlib.Path('/tmp/solpi-mf-'+digest[:20])","root=pathlib.Path('/tmp/solpi-sbd-'+digest[:18])")
+replace('/tmp/solpi-refinement-terminal-bench-2/financial-document-processor','/tmp/solpi-refinement-terminal-bench-2/make-doom-for-mips')
+replace("runtime=R.parent/'development/pi-takeover-qwen-incremental-coverage/runtime'","runtime=R.parent/'development/pi-takeover-qwen-source-backed-verification/runtime'")
+replace("sha(R/'public-financial-tools-draft.json')","sha(R/'doom-dependency-actor-image.json')")
+replace("plan['memory_mb']==4096","plan['memory_mb']==plan['public_recipe']['memory_mb']==2048")
+replace(" ledger=json.loads", " freeze_path=runtime.parent/'freeze-manifest.json';assert sha(freeze_path)==plan['new_candidate_freeze_sha256'];freeze=json.loads(freeze_path.read_text());assert all(sha(runtime.parent/'frozen'/n)==h for n,h in freeze['frozen_manifest'].items());assert freeze['candidate_sha256']==plan['candidate_sha256']==sha(runtime.parent/'frozen/candidate/SKILL.md');assert plan['previous_model_outcomes_not_reused']\n ledger=json.loads")
+replace("  cap=verify(root/arm/'captured',plan['actor_image_id']);assert row['replay']['replay_complete'] and not row['replay']['rebuild_performed'];assert set(row['replay']['absent_paths_preserved'])=={p for p,r in cap['artifacts'].items() if r['state']=='absent'};", "  caproot=root/arm/'captured'\n  if row['output_present']:\n   cap=json.loads((caproot/'capture.json').read_text());assert cap['capture_complete'] and cap['stopped_actor_verified'] and cap['image_id']==plan['actor_image_id'];items=descriptor('make-doom-for-mips');assert set(cap['artifacts'])=={i['path'] for i in items}\n   for n,item in enumerate(items):\n    rec=cap['artifacts'][item['path']];assert all(rec.get(k)==v for k,v in item.items()) and rec['local_payload']=='payload-'+str(n);verify_payload(caproot/rec['local_payload'],rec)\n   assert row['replay']['restored_paths']==['/app/doomgeneric_mips']\n  else:\n   cap=verify_missing(caproot,plan['actor_image_id']);assert row['replay']['installed_binary_absence_preserved']\n  assert row['replay']['replay_complete'] and not row['replay']['rebuild_performed'];assert set(row['replay']['witness_paths_not_replayed'])=={'/app/vm.js','/app/doom.wad','/app/doomgeneric/doomgeneric/doomgeneric_img.c'};assert row['original_vm_wad_verified'];")
+replace("setup['pandas']=='2.3.2'","setup['numpy']=='2.3.1' and setup['pillow']=='11.2.1' and setup['original_vm_and_wad_retained']")
+replace("len(tests)==row['test_events']==7","len(tests)==row['test_events']==3")
+replace("'directory_states':{p:r['state'] for p,r in cap['artifacts'].items()}","'output_present':row['output_present'],'original_vm_wad_verified':row['original_vm_wad_verified'],'nonreplayed_input_witnesses':{p:rec['sha256'] for p,rec in cap['artifacts'].items() if p!='/app/doomgeneric_mips'}")
+replace("c=v['accounting_view']['derived_cost'];assert", "c=v['accounting_view']['derived_cost'];assert v['accounting_view']['framing_complete'] and (v['accounting_view']['raw_provider_protocol_valid'] or v['accounting_view']['correction_applied']);assert")
+replace("  gross=sum(c['gross_tokens']", "  last_request=requests[-1]['request'];last_events=[json.loads(l[6:]) for l in (root/'transport'/f'response-{last_request}.sse').read_bytes().splitlines() if l.startswith(b'data: ') and l[6:]!=b'[DONE]'];provider_terminal=next(e['response'] for e in last_events if e['type']=='response.completed')\n  gross=sum(c['gross_tokens']")
+replace("'output_present':row['output_present']", "'provider_last_response_status':provider_terminal['status'],'provider_last_incomplete_details':provider_terminal.get('incomplete_details'),'provider_last_usage':provider_terminal['usage'],'output_present':row['output_present']")
+code=code.replace('name=solpi-tfp','name=solpi-sbd')
+compile(code,'source-backed-doom-audit','exec')
+if __name__=='__main__':exec(compile(code,'source-backed-doom-audit','exec'),{'__name__':'__main__','__file__':str(__file__)})

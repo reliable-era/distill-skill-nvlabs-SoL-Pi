@@ -1,0 +1,154 @@
+{
+  "checked_at": "2026-10-05T21:29:16+0800",
+  "model_POSTs": 16,
+  "replicas": [
+    {
+      "backend": "http://10.193.104.97:18001",
+      "max_running_requests": 8,
+      "max_mamba_cache_size": 48,
+      "peak_running_requests": 8,
+      "memory_usage": {
+        "weight": 14.48,
+        "kvcache": 8.0,
+        "startup_available": 7.206,
+        "token_capacity": 262144,
+        "token_capacity_swa": null,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 0.439,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.363,
+          "draft_extend": 0.0
+        }
+      },
+      "model_POSTs": 8,
+      "checks": [
+        {
+          "index": 0,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.870079776272178
+        },
+        {
+          "index": 1,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.826039681211114
+        },
+        {
+          "index": 2,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.665133463218808
+        },
+        {
+          "index": 3,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.665028728544712
+        },
+        {
+          "index": 4,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.432028980925679
+        },
+        {
+          "index": 5,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.386256972327828
+        },
+        {
+          "index": 6,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.869671139866114
+        },
+        {
+          "index": 7,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 6.247489729896188
+        }
+      ],
+      "elapsed_seconds": 6.256031541153789,
+      "output_tokens_per_second": 163.6820392071018
+    },
+    {
+      "backend": "http://10.193.104.97:18002",
+      "max_running_requests": 8,
+      "max_mamba_cache_size": 48,
+      "peak_running_requests": 8,
+      "memory_usage": {
+        "weight": 14.48,
+        "kvcache": 8.0,
+        "startup_available": 7.206,
+        "token_capacity": 262144,
+        "token_capacity_swa": null,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 0.439,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.363,
+          "draft_extend": 0.0
+        }
+      },
+      "model_POSTs": 8,
+      "checks": [
+        {
+          "index": 0,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.294926991686225
+        },
+        {
+          "index": 1,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.727455124258995
+        },
+        {
+          "index": 2,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.728138983249664
+        },
+        {
+          "index": 3,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 6.271002380177379
+        },
+        {
+          "index": 4,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.8632262125611305
+        },
+        {
+          "index": 5,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.631132394075394
+        },
+        {
+          "index": 6,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.580092776566744
+        },
+        {
+          "index": 7,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.863586926832795
+        }
+      ],
+      "elapsed_seconds": 6.276941943913698,
+      "output_tokens_per_second": 163.13676455027587
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "observed_utc": "2026-10-04T17:52:26.166060+00:00",
+  "tasks": [
+    {
+      "task": "build-cython-ext",
+      "worker_exit": 0,
+      "valid_pair": false,
+      "controls": [
+        {
+          "control": "baseline",
+          "oracle_exit": null,
+          "reward": "0",
+          "test_events": 11,
+          "error_type": null,
+          "owned_container_absent": true
+        },
+        {
+          "control": "gold",
+          "oracle_exit": 0,
+          "reward": "0",
+          "test_events": 11,
+          "error_type": null,
+          "owned_container_absent": true
+        }
+      ]
+    },
+    {
+      "task": "build-pmars",
+      "worker_exit": 0,
+      "valid_pair": false,
+      "controls": [
+        {
+          "control": "baseline",
+          "oracle_exit": null,
+          "reward": "0",
+          "test_events": 4,
+          "error_type": null,
+          "owned_container_absent": true
+        },
+        {
+          "control": "gold",
+          "oracle_exit": 100,
+          "reward": "0",
+          "test_events": 4,
+          "error_type": null,
+          "owned_container_absent": true
+        }
+      ]
+    },
+    {
+      "task": "financial-document-processor",
+      "worker_exit": 0,
+      "valid_pair": true,
+      "controls": [
+        {
+          "control": "baseline",
+          "oracle_exit": null,
+          "reward": "0",
+          "test_events": 7,
+          "error_type": null,
+          "owned_container_absent": true
+        },
+        {
+          "control": "gold",
+          "oracle_exit": 0,
+          "reward": "1",
+          "test_events": 7,
+          "error_type": null,
+          "owned_container_absent": true
+        }
+      ]
+    },
+    {
+      "task": "make-doom-for-mips",
+      "worker_exit": 0,
+      "valid_pair": false,
+      "controls": [
+        {
+          "control": "baseline",
+          "oracle_exit": null,
+          "reward": "0",
+          "test_events": 3,
+          "error_type": null,
+          "owned_container_absent": true
+        },
+        {
+          "control": "gold",
+          "oracle_exit": 2,
+          "reward": "0",
+          "test_events": 3,
+          "error_type": null,
+          "owned_container_absent": true
+        }
+      ]
+    },
+    {
+      "task": "overfull-hbox",
+      "worker_exit": 0,
+      "valid_pair": true,
+      "controls": [
+        {
+          "control": "baseline",
+          "oracle_exit": null,
+          "reward": "0",
+          "test_events": 4,
+          "error_type": null,
+          "owned_container_absent": true
+        },
+        {
+          "control": "gold",
+          "oracle_exit": 0,
+          "reward": "1",
+          "test_events": 4,
+          "error_type": null,
+          "owned_container_absent": true
+        }
+      ]
+    },
+    {
+      "task": "regex-log",
+      "worker_exit": 0,
+      "valid_pair": true,
+      "controls": [
+        {
+          "control": "baseline",
+          "oracle_exit": null,
+          "reward": "0",
+          "test_events": 1,
+          "error_type": null,
+          "owned_container_absent": true
+        },
+        {
+          "control": "gold",
+          "oracle_exit": 0,
+          "reward": "1",
+          "test_events": 1,
+          "error_type": null,
+          "owned_container_absent": true
+        }
+      ]
+    },
+    {
+      "task": "sparql-university",
+      "worker_exit": 0,
+      "valid_pair": true,
+      "controls": [
+        {
+          "control": "baseline",
+          "oracle_exit": null,
+          "reward": "0",
+          "test_events": 3,
+          "error_type": null,
+          "owned_container_absent": true
+        },
+        {
+          "control": "gold",
+          "oracle_exit": 0,
+          "reward": "1",
+          "test_events": 3,
+          "error_type": null,
+          "owned_container_absent": true
+        }
+      ]
+    },
+    {
+      "task": "train-fasttext",
+      "worker_exit": 0,
+      "valid_pair": false,
+      "controls": [
+        {
+          "control": "baseline",
+          "oracle_exit": null,
+          "reward": "0",
+          "test_events": 2,
+          "error_type": null,
+          "owned_container_absent": true
+        },
+        {
+          "control": "gold",
+          "oracle_exit": 0,
+          "reward": "0",
+          "test_events": 2,
+          "error_type": null,
+          "owned_container_absent": true
+        }
+      ]
+    }
+  ],
+  "model_POSTs": 0,
+  "first_task_not_repeated": true,
+  "scope": "Official environment baseline/gold controls;not model comparison or final certification"
+}

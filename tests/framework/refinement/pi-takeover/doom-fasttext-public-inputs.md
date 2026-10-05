@@ -1,0 +1,11 @@
+# Doom/fastText public prerequisites
+
+Doom:21hashed cross-toolchain Debian packages (36100652bytes) from original configured signed repositories;little-endian compiler selection is supported by the public vm.js input. No target flags,oracle or tests supplied. Original-image offline install with CAP_DROPALL failed on binutils file ownership;JSON/full log retained. Do not pretend actors can install those packages under that policy.
+
+A trusted,offline pre-actor setup installed only cached prerequisites and committed a separately pinned dependency image. Every /app file hash matches original baseline,and doomgeneric_mips remains absent. A separate probe of the prepared image under networknone/CAP_DROPALL confirmed compiler availability,identical /app manifest and absent target. All helper containers removed. Actors retain dropped capabilities;only setup had default container capabilities. Allarms must use the same prepared image in a new frozen protocol. Original image remains the trusted grader runtime;no historical pooling or source/task/solution change.
+
+fastText:5hashed software wheels (23072183bytes),public pre-image-date stable releases fasttext0.9.3/pybind113.0.1/setuptools80.9.0/wheel0.45.1,with original task NumPy2.3.3 preserved. Trusted helper compiled public training software,never read Yelp data or trained a model. Original-image networknone/CAP_DROPALL probe installed/imported wheels,verified training API availability and model.bin absent. Cache unchanged;containers removed. Import availability does not establish training,accuracy or compatibility of every method.
+
+`doom-fasttext-public-input-bindings.json` binds the two recipes. `task_replay.py` now accepts a separately explicit prepared-actor image pin while checking original grader image independently. Unpinned prepared captures reject before mutation.66combined replay/cache/discovery/capture tests pass;new argument behavior is unit-tested,previous default-path Docker smoke is retained rather than repeated.
+
+No Qwen/native actor/official control/grader activity in this step. Complete uniform input delivery,source/package hash checks,isolation for expanded mounts,real provider accounting conformance and native actor->capture->original trusted official grading remain pending. These readiness probes are not skill comparisons or completion evidence.

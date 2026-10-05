@@ -1,0 +1,94 @@
+{
+  "host": "gpu02",
+  "probes": [
+    {
+      "physical_gpu_pair": "01",
+      "NCCL_P2P_DISABLE": 0,
+      "status": "stalled_over_120_seconds",
+      "transport_observed": [
+        "P2P/CUMEM"
+      ]
+    },
+    {
+      "physical_gpu_pair": "01",
+      "NCCL_P2P_DISABLE": 0,
+      "status": "stalled_over_120_seconds",
+      "transport_observed": [
+        "P2P/IPC"
+      ],
+      "NCCL_CUMEM_ENABLE": 0
+    },
+    {
+      "physical_gpu_pair": "01",
+      "NCCL_P2P_DISABLE": 1,
+      "status": "pass",
+      "transport_observed": [
+        "SHM/direct/direct"
+      ],
+      "measurement": {
+        "world_size": 2,
+        "all_reduce_sum": 3.0,
+        "buffer_bytes": 16777216,
+        "iterations": 20,
+        "elapsed_seconds": 0.043532149866223335,
+        "average_all_reduce_ms": 2.1766074933111668,
+        "p2p_access": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "torch_version": "2.13.0+cu129",
+        "nccl_version": [
+          2,
+          29,
+          7
+        ],
+        "gpu_names": [
+          "NVIDIA L40S",
+          "NVIDIA L40S"
+        ]
+      }
+    },
+    {
+      "physical_gpu_pair": "23",
+      "NCCL_P2P_DISABLE": 0,
+      "status": "pass",
+      "transport_observed": [
+        "P2P/CUMEM"
+      ],
+      "measurement": {
+        "world_size": 2,
+        "all_reduce_sum": 3.0,
+        "buffer_bytes": 16777216,
+        "iterations": 20,
+        "elapsed_seconds": 0.021686524152755737,
+        "average_all_reduce_ms": 1.0843262076377869,
+        "p2p_access": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "torch_version": "2.13.0+cu129",
+        "nccl_version": [
+          2,
+          29,
+          7
+        ],
+        "gpu_names": [
+          "NVIDIA L40S",
+          "NVIDIA L40S"
+        ]
+      }
+    }
+  ]
+}

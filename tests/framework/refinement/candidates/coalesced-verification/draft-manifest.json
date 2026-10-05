@@ -1,0 +1,18 @@
+{
+  "parent_sha256": "94647e4415a384dc39c31eaaadc5cd5b486e9cacc8b6c61e104cc7139e072374",
+  "candidate_sha256": "cff132600efdd10e64ec47283e164be66c0992ce1d610ce442f6715a705aad87",
+  "mechanism": "co-locatechangesandrequiredverification;avoiddiscretionaryrereportingchecks",
+  "only_one_existing_bullet_replaced": true,
+  "old_bullet": "- Apply the necessary change, then run the checks required by its behavior and the project. Repair failures. Repeat passing checks when subsequent edits affect them or unresolved evidence requires it.",
+  "new_bullet": "- Apply the necessary change with its required checks in one tool or shell call when they can run together safely; keep labeled results and each exit status. Use the results to decide the next action. Repair failures, and rerun checks affected by later edits or unresolved evidence. Do not add a separate artifact dump or repeat a successful check just to prepare the final report; retain source-backed checks needed to establish correctness.",
+  "word_count_before": 394,
+  "word_count_after": 436,
+  "scope_coverage_source_validation_irreversible_safeguards_final_verification_other_text_byte_identical": true,
+  "motivation_evidence": "behavior-first-sparql-trace-summary.json;observedmoreinputandoneextratoolvsnone,NOTcausalattribution",
+  "task_answer_or_budget_text_added": false,
+  "model_POST": 0,
+  "scored_actor_starts": 0,
+  "runtime_frozen": false,
+  "canonical_changed": false,
+  "promotion": false
+}

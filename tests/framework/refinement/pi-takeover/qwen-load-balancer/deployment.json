@@ -1,0 +1,70 @@
+{
+  "pid": 2493188,
+  "prefix": "/tmp/solpi-qwen-load-balancer-18080",
+  "config": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/qwen-load-balancer/nginx.conf",
+  "config_sha256": "caaca766f7e105839e61a1c13571e0a973962c2f6a8a605dc2554e31ee04f7f6",
+  "base_url": "http://127.0.0.1:18080/v1",
+  "model": "Qwen3.8-27B-FP8",
+  "read_only_routing_checks": [
+    {
+      "status": 200,
+      "backend": "127.0.0.1:8000",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:8000",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:8000",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:8000",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    }
+  ],
+  "model_POSTs": 0,
+  "model_servers_restarted": false,
+  "unrelated_nginx_modified": false,
+  "active_frozen_evaluation_route_unchanged": true
+}

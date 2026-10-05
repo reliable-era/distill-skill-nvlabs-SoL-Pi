@@ -1,0 +1,18 @@
+{
+  "candidate_sha256": "03f47302defb5548ff05f246da9187a6faa925a733d095c2bffbfbe96204049b",
+  "parent_sha256": "cff132600efdd10e64ec47283e164be66c0992ce1d610ce442f6715a705aad87",
+  "changed_bullet": "reversible end-to-end behavior bullet only",
+  "clause": "Before expensive upstream work, cheaply exercise unverified result-handling steps with disposable inputs; dependency imports alone do not verify the output contract.",
+  "parent_words": 436,
+  "candidate_words": 457,
+  "evidence_sha256": "6285d4e31e382310d634f7b17c81cd46e9b6e4794adcc9c59b1d1436784ddff5",
+  "counterexample": "historical passing Both saved successfully without separate preflight",
+  "mechanism": "conditional cheap downstream output-contract exercise, not resource measurement/defaults/polling/recovery environment retention",
+  "unfrozen": true,
+  "unscored": true,
+  "new_actor_model_POST": 0,
+  "no_runtime_change": true,
+  "no_task_parameters_answers_paths_or_API_names": true,
+  "promotion": false,
+  "goal_complete": false
+}

@@ -1,0 +1,30 @@
+{
+  "task": "make-doom-for-mips",
+  "image_id": "sha256:c503768044b13ea799f26ee48c83c5885cd9697114bc3e320e1e5f926276188f",
+  "source_hashes": {
+    ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+    "README.md": "b1fcf8c6f2300038a15afdfaf2d80a25e490dee5a047912c911fce28785bc7be",
+    "environment/Dockerfile": "1da0fdafc36e59fcf685a8dbed9717b291195e251fe0e1247267bc5a0a9980ed",
+    "environment/task-deps/doomgeneric_img.c": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26",
+    "environment/task-deps/vm.js": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+    "instruction.md": "1903b660e4c64966ff257f828c932adff2b289de589bd6aee22b933bb4fef429",
+    "solution/solve.sh": "a9cd034a5e76fa2b22481717a9669869214f43fec5b4fedc957d83dd2ef6a84a",
+    "task.toml": "a7d7a498f0d3a992b384e5086ba2b411767c1c1a013d1b41f6a25cdaf6d05acc",
+    "tests/reference.jpg": "d1909be8f3266a72686c3945029a553b82e5b46acd624eda65f3fdd5eb339574",
+    "tests/test.sh": "25809a2ebcb714b1c4e55563b0db16add23e2fd9b68d03e51b1734f8dbb392e1",
+    "tests/test_outputs.py": "f1748ff20bfd670af1e1cb935647503eb176a4a14dd15f20935264ad7e4a98f6"
+  },
+  "candidate_sha256": "da92dbba09ecaa0af422bc8cfbb77fb811c8fcb39bc71a3f2f0251567301de71",
+  "controls": [
+    "baseline",
+    "gold"
+  ],
+  "cpus": 1,
+  "memory_mb": 2048,
+  "oracle_seconds": 300,
+  "verifier_seconds": 600,
+  "retry": 0,
+  "model_POSTs": 0,
+  "network": "Docker bridge for official dependency/source downloads;no host credentials/model config",
+  "candidate_changes_allowed": false
+}

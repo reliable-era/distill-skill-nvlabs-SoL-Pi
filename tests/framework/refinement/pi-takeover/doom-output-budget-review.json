@@ -1,0 +1,27 @@
+{
+  "type": "read_only_output_budget_and_termination_review",
+  "plan_sha256": "20572b2ceffdd555410ad0c946e538c16eec544fb261a451987c23d5abf781a5",
+  "receipt_count": 56,
+  "all_forwarded_max_output_tokens": 8192,
+  "native_configuration_claim": false,
+  "truncated_final_responses": {
+    "candidate": 13,
+    "none": 40
+  },
+  "emitted_output_and_reasoning_each": 8190,
+  "native_completed_not_task_or_generation_completion": true,
+  "provider_cost_complete_even_if_generation_incomplete": true,
+  "both_K_native_usage_unavailable_not_zero": true,
+  "reasoning_adapter_correction_scope": "exact8192/sourcepinnedovershoot1..7,othercapsfailclosed",
+  "would_require_new_cohort_and_adapter_tests_for_budget_change": true,
+  "no_ended_actor_continuation": true,
+  "no_models_launched": true,
+  "no_live_provider_patches": true,
+  "decision": "holdautomaticexpansion;no same-taskrerun/budgetchangeauthorizedbythisreview",
+  "module_hashes": {
+    "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/prospective_reasoning_adapter.py": "32c5ea0cb8098e6635d1008a32d3132f6e2fd665567dcf85479f8d58ca1fe4a8",
+    "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/pi-takeover-qwen-source-backed-verification/runtime/output_policy.py": "2753078d7ec1c14427f2798b368ecf2297b4cec71fcfefe4cb5e5c6463b6b744",
+    "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/pi-takeover-qwen-source-backed-verification/runtime/session.py": "e83791779bdc825edcc81efd671744a10724bcd2fa3e4c9467bde0bfa22cc559"
+  },
+  "goal_complete": false
+}

@@ -1,0 +1,32 @@
+{
+  "old_early_close": {
+    "error": "AttributeError",
+    "message": "'NoneType' object has no attribute 'read1'",
+    "stream_eof": false,
+    "deadline_unchanged": true,
+    "workers_exited": true
+  },
+  "prospective_drain_before_close": {
+    "body": "ACK",
+    "stream_eof": true,
+    "passive_drain": {
+      "drained": true,
+      "wait_seconds": 0.05036023072898388,
+      "deadline_unchanged": true,
+      "actor_continued": false,
+      "extra_POST": 0,
+      "completion_limit": 12719280.399920419
+    },
+    "deadline_unchanged": true,
+    "workers_exited": true
+  },
+  "real_model_POST": 0,
+  "native_jobs": 0,
+  "benchmark_or_gold_runs": 0,
+  "historical_request31_exact_stack_proven": false,
+  "mechanism": "HTTPResponse._get_chunk_leftreturnslen thenconcurrentconnection.closeclearsfp beforefp.read1",
+  "source_sha256": "da18ec9ebe8b6003df4f6fe6793752994dc01993076f3e1565efe969668f49e1",
+  "stdlib_HTTP_client_sha256": "d7aa9849de03845d34c2d0d9943d2e015d541d781eb4903147f3e6f902a8cbdc",
+  "runner_sha256": "a67ef7e1d0d1ffac8a006873045dffb4657514f68da8ae245420c6e19b1f082e",
+  "deployed": false
+}

@@ -1,0 +1,71 @@
+{
+  "plan_sha256": "af4727dcb3e4da412bfc7ea359d7f13c3220185e3647d20764e58d59cb876c88",
+  "private_root": "/tmp/solpi-admission-native-deda9eafac",
+  "real_model_POST": 0,
+  "real_generated_tokens": 0,
+  "scored_actor_starts": 0,
+  "official_test_or_gold_runs": 0,
+  "synthetic_native_starts": 1,
+  "native_exit": 0,
+  "fake_exchanges": 2,
+  "native_fake_usage_reconciled": true,
+  "fake_usage_not_real_billing": true,
+  "tool_executed_successfully": true,
+  "assistant_ack": true,
+  "admission_denials": [],
+  "controlled_terminal_holds": [
+    0.3500381391495466
+  ],
+  "deadline_not_extended": true,
+  "synthetic_gross_usage": 226,
+  "overcap_status": 413,
+  "byte_rejections": [
+    {
+      "reason": "body_byte_cap",
+      "declared_body_bytes": 8388609,
+      "body_byte_cap": 8388608,
+      "status": 413,
+      "provider_forwarded": false,
+      "provider_POST": 0
+    }
+  ],
+  "proxy_journal": {
+    "journal_collected": true,
+    "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "records": [],
+    "provider_POST": 0,
+    "contains_request_payloads": false
+  },
+  "passed": true,
+  "cleanup_containers_absent": true,
+  "cleanup_network_absent": true,
+  "workers_exited": true,
+  "all_original_runtime_hashes_unchanged": true,
+  "goal_complete": false,
+  "artifact_hashes": {
+    "native.jsonl": "cd08f49f681716da1c549b45f4abc9a6e5a47e5ee8a82235addc52786f55c4c6",
+    "broker-byte.json": "a7ced93908eb9ecd965cff9f63d5d5c49d9d1bcf5c6382b0c24aa9a41a427375",
+    "admission.json": "2ba894dc28fe1d12ea7af80acb9f6c583714f61f77fba3e03b6fab7d37489e0e",
+    "prompt.txt": "ed0616946f51840ca881facbcf4eafd8445ca098215cc39869aae43be91fff0b",
+    "proxy-bundle/bundle.json": "851259d5a17da50ffc299e8bf72f7d5a8b070a97aa4c3eda5bb39719fef0ab6c",
+    "transport/derived-response-2.sse": "0f115fa0ddcfdd333bd33753ccb10abdcc6e885659784227f786670be8820eb6",
+    "transport/request-2.json": "51c6e3d9927f2e8002e8349903deefe44e5868b293a492806fcea7c030fcd321",
+    "transport/prospective-ledger.json": "966b99a733b35362160ec1dcc125a0d9c93684ac9bc54801ac8d62058c174ba2",
+    "transport/response-1.sse": "a7f7fc5085c90436805148a81b2f17b7f173c74bd4b3c5138600bf29687baa3b",
+    "transport/response-2.sse": "0f115fa0ddcfdd333bd33753ccb10abdcc6e885659784227f786670be8820eb6",
+    "transport/derived-response-1.sse": "a7f7fc5085c90436805148a81b2f17b7f173c74bd4b3c5138600bf29687baa3b",
+    "transport/forwarded-request-2.json": "17ea8d650189f8efa10a3ba98e4063d518576a791ed3a0497f80331e8d482bda",
+    "transport/usage-1.json": "44cf9b5ae9c8a674215458cc5544866318104353fd168473acc4b4ed5b36bea5",
+    "transport/ledger.json": "8909d6bd2adfd946e2e7a740a5d3fb7ea86dfca869303e00849c82c6e993c372",
+    "transport/usage-2.json": "9859807a871603808666731afc8dd80959d642b622f472d7d443b3345c7932e9",
+    "transport/request-1.json": "7e8c1182a72d2b119f837e3599b00cb0f21205d85a0460dcd853ffb1b4fe3d84",
+    "transport/forwarded-request-1.json": "0ea4fe4d256f841ca500d741e13eee337c3327997e31b14a395ab17d95cf8af5",
+    "proxy-bundle/journal/proxy.json": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "proxy-bundle/runtime/pins.json": "784dbde4bc16ac7ddbfb8844a65d653b3f84aad3c9227bafc5d3ecd9414b1afa",
+    "proxy-bundle/runtime/launcher.py": "a8c1783d814a046bd269042220c1cf8e564cd80135560390eb0a73471eb1fba6",
+    "proxy-bundle/runtime/private_rejection_journal.py": "31e4537de8d25e0367654c489bd8445f7446f477b480d2cb72835e88f9a21c0e",
+    "proxy-bundle/runtime/prospective_body_capacity.py": "ed5f26b08d992e7b6920cf752d6f23d8a93034c1f4e6c86643dd0bd3d1ae22d4",
+    "proxy-bundle/runtime/stream_proxy.py": "1b28e4025ff14e71c3c01dacb650d3fb5eb1c0a50330d18bd47e1872c44813c9",
+    "proxy-bundle/runtime/server.py": "120e08b2e32c4803ee8e71636ea7cfefb82742933e8041c6ad397581e07ede0b"
+  }
+}

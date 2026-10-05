@@ -1,0 +1,623 @@
+{
+  "task": "build-pmars",
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "plan_sha256": "5923224505fb0687778825e61627484df1a4ad074eb2c6d8e62354e28ef3b215",
+  "baseline": {
+    "verifier_exit": 0,
+    "reward": "0",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_pmars_works",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_headless_no_x11",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_debian_source_used",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_built_from_source",
+        "status": "failed"
+      }
+    ]
+  },
+  "oracle_exit": 0,
+  "capture": {
+    "bytes": 106192,
+    "sha256": "dd1db782eecc7c3b6f000df2bc833ae6439d2dd0867e0b812c57630f12cfa8d4",
+    "capture_complete": true,
+    "source_mode": 493,
+    "source_executable": true,
+    "restored_mode": 457
+  },
+  "source_directory_name": "pmars-0.9.4",
+  "source_capture": {
+    "capture_complete": true,
+    "bytes": 1314726,
+    "entries": 124,
+    "files": {
+      ".pc/.quilt_patches": {
+        "bytes": 15,
+        "sha256": "0623de532bc23399e87e6c1914e8e90e999efbfd26b6b956666a493893739f0d"
+      },
+      ".pc/.quilt_series": {
+        "bytes": 7,
+        "sha256": "9afbb183d1b683d2770aecb9b379093804ccc56027f07ecf7fc252d5b93a8df2"
+      },
+      ".pc/.version": {
+        "bytes": 2,
+        "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+      },
+      ".pc/applied-patches": {
+        "bytes": 74,
+        "sha256": "ebc93333eaeb2da0a9088dcfcc21aaedaa21184e0a0c082fb7f81574f4f18356"
+      },
+      ".pc/buildflags.patch/src/Makefile": {
+        "bytes": 2011,
+        "sha256": "b2e7feae4113d0d043893ae07ca096b6cd5888e233adfc2b350884720410ab30"
+      },
+      ".pc/fix-implicit-sighandler.patch/src/xwindisp.c": {
+        "bytes": 42205,
+        "sha256": "6093788501b27a285ea850024cc9ec7c0b3c8affd2ff77c2af4914cb013b7a33"
+      },
+      ".pc/manpage.patch/doc/pmars.6": {
+        "bytes": 47953,
+        "sha256": "b9f8e9979551cbe828858d5b42592cc310aff2ad26c72d1070ff87bc5b73ade9"
+      },
+      ".pc/printf.patch/src/asm.c": {
+        "bytes": 60868,
+        "sha256": "02bda4c765b3027d7094a7c2be6cb0c7a9c3927f55c2f9b4f17100e0f94e6e45"
+      },
+      ".pc/printf.patch/src/cdb.c": {
+        "bytes": 74981,
+        "sha256": "c87864bac45d2e7af281b9be3fbacacdbc4b87632232772a2e8e244686e3de59"
+      },
+      ".pc/printf.patch/src/clparse.c": {
+        "bytes": 19782,
+        "sha256": "f24a2d92d72019895b45045ea49f545f456b7569cb5f913b6cd4fafbaa03cd36"
+      },
+      ".pc/printf.patch/src/gtdisp.c": {
+        "bytes": 12181,
+        "sha256": "75c6982c927d7acf9b7e38d6928e5ce8e366ebbd2c4aedacf2f2efd770fcd4c5"
+      },
+      ".pc/printf.patch/src/lnxdisp.c": {
+        "bytes": 26486,
+        "sha256": "e420497a0d724eab08105a1dba080e6cd406ac370a88fe0d3b02e0e8499bb51d"
+      },
+      ".pc/printf.patch/src/pmars.c": {
+        "bytes": 11168,
+        "sha256": "69fd9115de7d3375d3e2ddd01b40d17a58a1f7bafbc55d8c5dcb90b0cc1d2032"
+      },
+      ".pc/printf.patch/src/xwindisp.c": {
+        "bytes": 42199,
+        "sha256": "bb043478f1d4e8fb97fdba57261da46d7205e4f093ee3637b671f99e68238278"
+      },
+      "AUTHORS": {
+        "bytes": 763,
+        "sha256": "f16179a501456d55ba2483deb9afd9c3b6ec4a7652d242c518ab5c537e17b8b5"
+      },
+      "CONTRIB": {
+        "bytes": 1919,
+        "sha256": "9f9efbf8ad20087bfe9cc3ab4f844883464ff5c996aa84878c6c32b9700dcb72"
+      },
+      "COPYING": {
+        "bytes": 17997,
+        "sha256": "58530d09b6fcb91ae27071be0081af90e6c2d7fdf991d34a29e234a2a5e75455"
+      },
+      "ChangeLog": {
+        "bytes": 1245,
+        "sha256": "96bab54f8ce23dae14b6e43d4c44a3cd5d83b6902ab8cb588d9e9d4748bf73a5"
+      },
+      "README": {
+        "bytes": 8290,
+        "sha256": "b799302cc147bf63e25300fb3a26ada6e89c9ae9861b84f1881d1b4e34b3771d"
+      },
+      "config/88.opt": {
+        "bytes": 233,
+        "sha256": "6051548ee642b76dea8479b8ec7d7b24103246d3a50a65bac084d00bb7964a9b"
+      },
+      "config/94.opt": {
+        "bytes": 195,
+        "sha256": "eca7e384b43a492a1d3bc201e3ef194e973226180e23cd8a98228f0980dde61b"
+      },
+      "config/94b.opt": {
+        "bytes": 192,
+        "sha256": "345db4433956e78d078496e513357941e5fe743d14e031a3896162006ef24c40"
+      },
+      "config/94m.opt": {
+        "bytes": 231,
+        "sha256": "66ae4ffc293c3b378889b0210a5dcd4404efd53977af7246121f5040b51c5977"
+      },
+      "config/94nop.opt": {
+        "bytes": 243,
+        "sha256": "0980ccb08345048409f643d5517b6ae41267d6305582f4f6e34114c03bc41777"
+      },
+      "config/94t.opt": {
+        "bytes": 189,
+        "sha256": "2f1583aca49be8f19895bca6620c6d8baf3cea50b637d4fd0ff138e97bc9eed1"
+      },
+      "config/94x.opt": {
+        "bytes": 197,
+        "sha256": "989941ad410d546e5ff102645b0387cb8ae60fd767beb335258b7b892afd3a2b"
+      },
+      "config/94xm.opt": {
+        "bytes": 212,
+        "sha256": "1d16c87301de3cf37a5ad125dbbec4f1f84b6bb8b1179418060bc3ca593d2d46"
+      },
+      "config/icws.opt": {
+        "bytes": 250,
+        "sha256": "5690fa04ee10f13d2af075d8f5f6b5ae99964ec533769cd2362b5edd59439e60"
+      },
+      "config/lp.opt": {
+        "bytes": 195,
+        "sha256": "4dc59504909980dc0c824c65c21ee5f2f9df1fda20c4af9010a1b6a6878a88c5"
+      },
+      "config/mp.opt": {
+        "bytes": 235,
+        "sha256": "eda27a1846a34a887e23a883aa4682ed124397bfce81672a80ec4ad01bda90bb"
+      },
+      "config/mw.mac": {
+        "bytes": 644,
+        "sha256": "1163c2a3fb8607ecfc873e2c85be52a2d0e20f9d97d5c695a3c985d97d31d78a"
+      },
+      "config/nano.opt": {
+        "bytes": 184,
+        "sha256": "324d28adb5913bfd32b77bf8fd331e32d6aba029ed9f474d480c14e6087dce08"
+      },
+      "config/pmars.mac": {
+        "bytes": 6089,
+        "sha256": "bcd9fea9974f0b97e9c00d43d124a6bd7958b2fd331a1a0447c08d7a518b6527"
+      },
+      "config/tiny.opt": {
+        "bytes": 184,
+        "sha256": "e367d0683a6fcc65fd12a07204ed78133a8d819fe8a53d14d2574652a9e721b7"
+      },
+      "config/tinylp.opt": {
+        "bytes": 191,
+        "sha256": "110a9cb9c0dad38aaffed9834f26a859de4115a0f1073ca1c271d141bcd79847"
+      },
+      "debian/changelog": {
+        "bytes": 473,
+        "sha256": "b0b743666634b6a66fd23ab15fd28c6afbdbfed521878693431b9c2458ec76e6"
+      },
+      "debian/compat": {
+        "bytes": 3,
+        "sha256": "a1fb50e6c86fae1679ef3351296fd6713411a08cf8dd1790a4fd05fae8688164"
+      },
+      "debian/control": {
+        "bytes": 783,
+        "sha256": "2c5a0d09c49fd8914bd1df7617ef219cdaa4fd7fab8e62c8a0e2427c9be9419f"
+      },
+      "debian/copyright": {
+        "bytes": 876,
+        "sha256": "6e0c9e571b318c09e90876f1b043d827bdb2317b79ccafb1e8a80ae2cc80b5fe"
+      },
+      "debian/manpages": {
+        "bytes": 12,
+        "sha256": "f152ea9d7a329a620b3f554bd0b10884da2d4f235c23c860dc5e32f69ab5bc50"
+      },
+      "debian/patches/buildflags.patch": {
+        "bytes": 1078,
+        "sha256": "caf4a47f39cd3d1b3db372f94d7a7cb6815f0907fd6565277d01fe3b9880fa98"
+      },
+      "debian/patches/fix-implicit-sighandler.patch": {
+        "bytes": 431,
+        "sha256": "475f7a6105f19083721e721f715eaf1fab9d796f9a83e0ea99c266bddf1b67d9"
+      },
+      "debian/patches/manpage.patch": {
+        "bytes": 978,
+        "sha256": "eccd6f9150f2ac6f62b4397867691c376667c9046601ced0fdce099cadddbb73"
+      },
+      "debian/patches/printf.patch": {
+        "bytes": 4904,
+        "sha256": "8723818d2ee8f18bb33733ef7fa5eb260c057c62edb945e2ad1c017ec272e263"
+      },
+      "debian/patches/series": {
+        "bytes": 74,
+        "sha256": "ebc93333eaeb2da0a9088dcfcc21aaedaa21184e0a0c082fb7f81574f4f18356"
+      },
+      "debian/pmars.examples": {
+        "bytes": 15,
+        "sha256": "0a8fc23383041b144702b2d7ffb2940848fe41e62f10af52201e02ba0e6f9d8d"
+      },
+      "debian/pmars.install": {
+        "bytes": 20,
+        "sha256": "39609f0fab6d8291405bb1fb2ce8ffede707fa8793a84fd0102ca1bc82e906e2"
+      },
+      "debian/rules": {
+        "bytes": 208,
+        "sha256": "a11c74334eff2c20d52901016b94f14ad69229b992f82f99937196823562e252"
+      },
+      "debian/source/format": {
+        "bytes": 12,
+        "sha256": "1be7080d72e6b566df3e236ce2c55efdfbbb8fa1c972d825e5b672ff8773be1a"
+      },
+      "debian/watch": {
+        "bytes": 67,
+        "sha256": "fd30dc7bff5c8910b6fe3056d9eb53056927583ba182b8fa6d9a40633dbd93b7"
+      },
+      "doc/Makefile": {
+        "bytes": 296,
+        "sha256": "406f72f2b03844d8a862e07d541be9b438a6172364c47b241d3915f377fbc145"
+      },
+      "doc/corewar-faq.html": {
+        "bytes": 31274,
+        "sha256": "51f3b9b76a74cd80d6dd5548a81841ed544bd86348f25e62429f4c0b7850b75b"
+      },
+      "doc/corewar-glossary.html": {
+        "bytes": 20083,
+        "sha256": "c35349469cb8d0b726c40cfcaeaf3047a54b8735ae3ec04ee28d09dbcf458dc4"
+      },
+      "doc/makedoc.ex": {
+        "bytes": 117,
+        "sha256": "32a6e87cc044d20ce3a401627a60c45b7ab54b4dec685285edf40d3749ea11f1"
+      },
+      "doc/pmars.6": {
+        "bytes": 47945,
+        "sha256": "2249b305c31a92868f6774c760ba23a5b4a50969b03681f20a891a7fa0a7de54"
+      },
+      "doc/pmars.txt": {
+        "bytes": 54513,
+        "sha256": "e3e5988e315c50ec39995506844908667b211bab8b9b96d384c8d7056816ffb7"
+      },
+      "doc/primer.94": {
+        "bytes": 5738,
+        "sha256": "3e851a1fc42608075919e934218afe7d2b552d224ff8014cc8a68d9827cdcc4a"
+      },
+      "doc/primer.cdb": {
+        "bytes": 2782,
+        "sha256": "7eeb89db85ec89281a27cf8e7279fb52fddee4af9801382a82e26ddf7a5703c7"
+      },
+      "doc/redcode.ref": {
+        "bytes": 12121,
+        "sha256": "7626c0d021196d7fafa960479602923c7ee2c613467804626d4cad033d7f2e2f"
+      },
+      "doc/whatsnew.080": {
+        "bytes": 5457,
+        "sha256": "f8888c20638b2c4154fcdbe91fdc3710bce60856ea48a505dc355ac01b717c75"
+      },
+      "src/Makefile": {
+        "bytes": 1973,
+        "sha256": "6d9ec73118c074fb135e3da5ed5337a27aeebb0e2dd7e90b6dd20361b12d0a92"
+      },
+      "src/Makefile.djg": {
+        "bytes": 1405,
+        "sha256": "2b81f6cad73a74737781715c2399079f99fe7f517dcd9a24e0fa492e3faff624"
+      },
+      "src/Makefile.wat": {
+        "bytes": 1453,
+        "sha256": "df61ca37e30a6d6f06d0012198b824620dc1fccfcb5118b84679cc31a5beeeb4"
+      },
+      "src/alldisp.c": {
+        "bytes": 2583,
+        "sha256": "7f750b14e12fdf00980ae8db73dfe5a24d2278e5c51885efc6ac977c1da9484a"
+      },
+      "src/asm.c": {
+        "bytes": 60898,
+        "sha256": "f5078307c4bcb4f08f63391685353df9c9a1341793929254d9d7d7bb411f2523"
+      },
+      "src/asm.h": {
+        "bytes": 1875,
+        "sha256": "16198ab6f65580c133169a06b59daea1cf723a5104ce2b95ce26bba9af5a0f5b"
+      },
+      "src/asm.o": {
+        "bytes": 60216,
+        "sha256": "e59997f127bd21202a21cedd992ce819f1f0f42627b05f54e5c83a59a10955dc"
+      },
+      "src/cdb.c": {
+        "bytes": 74999,
+        "sha256": "ea3a3fc9368f599c1bc8be762385e6ed2d756e7e03a6a04daa94fc1e04341d1f"
+      },
+      "src/cdb.o": {
+        "bytes": 48856,
+        "sha256": "7e22d42d76995365aed863d5809e94aa9bae9dc1fadfd1963d21aec6288f12f9"
+      },
+      "src/clparse.c": {
+        "bytes": 19800,
+        "sha256": "f3489b7864ef9a5920a6b29f2a625173d5266e04faf6462c342021811549b029"
+      },
+      "src/clparse.o": {
+        "bytes": 20352,
+        "sha256": "e0af386405866e6226dea7bc63fe5076b2691b1fb60a0311f3df9bb0eb917018"
+      },
+      "src/config.h": {
+        "bytes": 11773,
+        "sha256": "beeb52c23a7bf6724fbf685de0e03b0767a261c940466b94a18b1fbfa6da890b"
+      },
+      "src/curdisp.c": {
+        "bytes": 15035,
+        "sha256": "e2a6b7705cf895627b9a5e6c310bdb1f9e78294154ac66e7cbcbd4004317aa62"
+      },
+      "src/disasm.c": {
+        "bytes": 3633,
+        "sha256": "861ca93214a143da7bf83bef6875888575d907dfa91ec4af105da6f0dddec068"
+      },
+      "src/disasm.o": {
+        "bytes": 4312,
+        "sha256": "b94d1847c3fdbaf03fbc48aa1dded01281d4c58a8feac1beec2b54827664111d"
+      },
+      "src/eval.c": {
+        "bytes": 11494,
+        "sha256": "2f6ff3a51aa1159d5053e7e92d4910564b288b6015ffcd435d32d60723d2dc2f"
+      },
+      "src/eval.o": {
+        "bytes": 8224,
+        "sha256": "613555897684bc189d8018fa9ddbae3f3e8cec8f8240849dd075844e53a76013"
+      },
+      "src/global.c": {
+        "bytes": 3085,
+        "sha256": "42f98e1c2807bc682d2866c6e950855e01b48e3d957ae5fc726aff08dd064e07"
+      },
+      "src/global.h": {
+        "bytes": 14307,
+        "sha256": "a38dc94841c8652144d571140f3f6e90cfda326bf23164deb0536bd54f9d2ff7"
+      },
+      "src/global.o": {
+        "bytes": 2280,
+        "sha256": "a461261a7e8b7feae1106a19bfaec108b15ce4b3c6f00a212fd5ae8d5ea6c42c"
+      },
+      "src/grxdisp.c": {
+        "bytes": 11378,
+        "sha256": "b286ef027b95accd7b9e9e2a08421812ff2856817130523a2eeca8eb052f7c7d"
+      },
+      "src/gtdisp.c": {
+        "bytes": 12187,
+        "sha256": "35af28519ee5d7bce74b397929e180938ead8504326d26b4f13183cf54ed3d51"
+      },
+      "src/lnxdisp.c": {
+        "bytes": 26504,
+        "sha256": "04f1ba5c32563b9e3f3b6a80aee18becafc32134237c365a91c17432c6eaebec"
+      },
+      "src/lnxdisp.h": {
+        "bytes": 4211,
+        "sha256": "bff60a7cd45caa49b54338258b9d6b85baecd7fb598e067f7549bc7ed18aa429"
+      },
+      "src/pmars": {
+        "bytes": 106192,
+        "sha256": "dd1db782eecc7c3b6f000df2bc833ae6439d2dd0867e0b812c57630f12cfa8d4"
+      },
+      "src/pmars.c": {
+        "bytes": 11187,
+        "sha256": "49f5f49b73d7f237e213949cd4367a441e333860790d3ab8c0f33c0d4e376c6b"
+      },
+      "src/pmars.o": {
+        "bytes": 7240,
+        "sha256": "653c417bc98769a3594c6dbbad05b3b33dc6d7a8bca21728b8f721271663365c"
+      },
+      "src/pmarsicn.h": {
+        "bytes": 3475,
+        "sha256": "da70c6dd76d5159aa8288792b919fc707ee2adaeb66a12750055d2c8ecc55ba8"
+      },
+      "src/pos.c": {
+        "bytes": 5905,
+        "sha256": "fd152d8c37bcdef1a33f32be1fc7fa55ee97e19f6777713c7a04dd0d7826b879"
+      },
+      "src/pos.o": {
+        "bytes": 3712,
+        "sha256": "652aa5a91fff9f7f76243169f945fb5bfb3227b845f17de782b740a8a5940b02"
+      },
+      "src/sim.c": {
+        "bytes": 34057,
+        "sha256": "68e1552eb7f2beb764f683cffca3280e96b6bd9b15bc8dfa9b6a961858a974a2"
+      },
+      "src/sim.h": {
+        "bytes": 2976,
+        "sha256": "d3f65b9074a7bd8a6e56c2b428c1fc9534c03e1a8d24f7488d4625731c5d093e"
+      },
+      "src/sim.o": {
+        "bytes": 28104,
+        "sha256": "cf273a6dba991122d421699cf76855bc281688ea3cecc4c863c540b073b0d279"
+      },
+      "src/str_eng.c": {
+        "bytes": 20091,
+        "sha256": "812fe6abf830521053fb14fd565e6a4c24297fc262da811df3385e9354507831"
+      },
+      "src/str_eng.o": {
+        "bytes": 20488,
+        "sha256": "315758ae2511543a6b2ff1497577e68726bffc669424541ba44b539343a2a78b"
+      },
+      "src/token.c": {
+        "bytes": 5346,
+        "sha256": "98e294f655d40ea68551a261270087f539ee7d861a89987733e5270c2aeb1521"
+      },
+      "src/token.o": {
+        "bytes": 3464,
+        "sha256": "aa40a20a3bf1a349e19621e2effd3014ea6ee7e0bba8699871ea2afc3af047a8"
+      },
+      "src/uidisp.c": {
+        "bytes": 6036,
+        "sha256": "d723ca79188a1aba61f4587715bce767fbabf8910a062172b88f7b11963f0827"
+      },
+      "src/xgraphio.c": {
+        "bytes": 7672,
+        "sha256": "e233c7427a30d35f003a76fb92617b872e8bc7d7a42b9f03a8979a24e623279c"
+      },
+      "src/xwindisp.c": {
+        "bytes": 42241,
+        "sha256": "21f0a5e5b50002f897b486c72895a470ffdbb44d47f8b27a6aa49da6a7f21f88"
+      },
+      "src/xwindisp.h": {
+        "bytes": 2936,
+        "sha256": "a1aa47092367b0016361a807bb46237c87890423c318784086cc0ed817567dfe"
+      },
+      "warriors/aeka.red": {
+        "bytes": 4018,
+        "sha256": "95d2c74611ea46740c9212a18c31b273302e95cc6f2b99a2485604321cead183"
+      },
+      "warriors/flashpaper.red": {
+        "bytes": 1095,
+        "sha256": "1a0da06e019a67664e29e0902f6844cea25f4f5580953d54b1cfb3c94a807b31"
+      },
+      "warriors/pspace.red": {
+        "bytes": 1510,
+        "sha256": "3bab43da3deb9d0528d8e68794e8b361e41b3136000f44b8808962dcbbdb72c9"
+      },
+      "warriors/rave.red": {
+        "bytes": 784,
+        "sha256": "b4c8acf763957da9de0ec8568d765214ef9e8271aac9b51bb1ab09753e3afb66"
+      },
+      "warriors/test_eval.red": {
+        "bytes": 473,
+        "sha256": "faf523be28867c42c11626303578d906f7761f14b162fce90301b4d2f24c4f1c"
+      },
+      "warriors/validate.red": {
+        "bytes": 2821,
+        "sha256": "7baee6f3ac9a8db93763e0112b83fe4aee511f681e50135febe438782bb4f217"
+      }
+    }
+  },
+  "replay": {
+    "verifier_exit": 0,
+    "reward": "1",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_pmars_works",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_headless_no_x11",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_debian_source_used",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_built_from_source",
+        "status": "passed"
+      }
+    ]
+  },
+  "same_test_collection": true,
+  "valid_output_replay": true,
+  "cleanup_verified": true,
+  "source_unchanged": true,
+  "candidate_unchanged": true,
+  "artifact_hashes": {
+    "baseline/logs/verifier/ctrf.json": "e1e18de806c2aceb5982b380908e87667dadc669f0264c3e598a67a8e17d708d",
+    "baseline/logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "baseline/verifier.log": "6e0d45b166accf97e572976797d328661a9b01f469ca0f83324b81290246a3f9",
+    "baseline-archive-metadata.log": "1edbcea72c2f570b9065ad8f870e543378e9169f8e4b0090b729a12e3d118cef",
+    "capture-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "captured-output": "dd1db782eecc7c3b6f000df2bc833ae6439d2dd0867e0b812c57630f12cfa8d4",
+    "oracle-archive-metadata.log": "3860693c0595b4927b78684f977cfae4ddb775d6cae64a6e003db5dd9d89d1e3",
+    "oracle.log": "380ca3fa00802d9bc53ae208b5fafba34cc4a99fef4b512c8d8825d9aaceb395",
+    "plan.json": "5923224505fb0687778825e61627484df1a4ad074eb2c6d8e62354e28ef3b215",
+    "replay/logs/verifier/ctrf.json": "44b28059c3f562696ebed62d490d363628a0c1b2927c14bb74ffc2e1178ae085",
+    "replay/logs/verifier/reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "replay/verifier.log": "4a373376cf944c228224db4b080ded796eff81de3769a3b91ea6ec9213643277",
+    "replay-archive-metadata.log": "2d0ca34d8c6bacd92b9d364246f095da28a1491e3bc1eea7f314ad5aa9b2e4bd",
+    "source-capture/pmars-0.9.4/.pc/.quilt_patches": "0623de532bc23399e87e6c1914e8e90e999efbfd26b6b956666a493893739f0d",
+    "source-capture/pmars-0.9.4/.pc/.quilt_series": "9afbb183d1b683d2770aecb9b379093804ccc56027f07ecf7fc252d5b93a8df2",
+    "source-capture/pmars-0.9.4/.pc/.version": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    "source-capture/pmars-0.9.4/.pc/applied-patches": "ebc93333eaeb2da0a9088dcfcc21aaedaa21184e0a0c082fb7f81574f4f18356",
+    "source-capture/pmars-0.9.4/.pc/buildflags.patch/src/Makefile": "b2e7feae4113d0d043893ae07ca096b6cd5888e233adfc2b350884720410ab30",
+    "source-capture/pmars-0.9.4/.pc/fix-implicit-sighandler.patch/src/xwindisp.c": "6093788501b27a285ea850024cc9ec7c0b3c8affd2ff77c2af4914cb013b7a33",
+    "source-capture/pmars-0.9.4/.pc/manpage.patch/doc/pmars.6": "b9f8e9979551cbe828858d5b42592cc310aff2ad26c72d1070ff87bc5b73ade9",
+    "source-capture/pmars-0.9.4/.pc/printf.patch/src/asm.c": "02bda4c765b3027d7094a7c2be6cb0c7a9c3927f55c2f9b4f17100e0f94e6e45",
+    "source-capture/pmars-0.9.4/.pc/printf.patch/src/cdb.c": "c87864bac45d2e7af281b9be3fbacacdbc4b87632232772a2e8e244686e3de59",
+    "source-capture/pmars-0.9.4/.pc/printf.patch/src/clparse.c": "f24a2d92d72019895b45045ea49f545f456b7569cb5f913b6cd4fafbaa03cd36",
+    "source-capture/pmars-0.9.4/.pc/printf.patch/src/gtdisp.c": "75c6982c927d7acf9b7e38d6928e5ce8e366ebbd2c4aedacf2f2efd770fcd4c5",
+    "source-capture/pmars-0.9.4/.pc/printf.patch/src/lnxdisp.c": "e420497a0d724eab08105a1dba080e6cd406ac370a88fe0d3b02e0e8499bb51d",
+    "source-capture/pmars-0.9.4/.pc/printf.patch/src/pmars.c": "69fd9115de7d3375d3e2ddd01b40d17a58a1f7bafbc55d8c5dcb90b0cc1d2032",
+    "source-capture/pmars-0.9.4/.pc/printf.patch/src/xwindisp.c": "bb043478f1d4e8fb97fdba57261da46d7205e4f093ee3637b671f99e68238278",
+    "source-capture/pmars-0.9.4/AUTHORS": "f16179a501456d55ba2483deb9afd9c3b6ec4a7652d242c518ab5c537e17b8b5",
+    "source-capture/pmars-0.9.4/CONTRIB": "9f9efbf8ad20087bfe9cc3ab4f844883464ff5c996aa84878c6c32b9700dcb72",
+    "source-capture/pmars-0.9.4/COPYING": "58530d09b6fcb91ae27071be0081af90e6c2d7fdf991d34a29e234a2a5e75455",
+    "source-capture/pmars-0.9.4/ChangeLog": "96bab54f8ce23dae14b6e43d4c44a3cd5d83b6902ab8cb588d9e9d4748bf73a5",
+    "source-capture/pmars-0.9.4/README": "b799302cc147bf63e25300fb3a26ada6e89c9ae9861b84f1881d1b4e34b3771d",
+    "source-capture/pmars-0.9.4/config/88.opt": "6051548ee642b76dea8479b8ec7d7b24103246d3a50a65bac084d00bb7964a9b",
+    "source-capture/pmars-0.9.4/config/94.opt": "eca7e384b43a492a1d3bc201e3ef194e973226180e23cd8a98228f0980dde61b",
+    "source-capture/pmars-0.9.4/config/94b.opt": "345db4433956e78d078496e513357941e5fe743d14e031a3896162006ef24c40",
+    "source-capture/pmars-0.9.4/config/94m.opt": "66ae4ffc293c3b378889b0210a5dcd4404efd53977af7246121f5040b51c5977",
+    "source-capture/pmars-0.9.4/config/94nop.opt": "0980ccb08345048409f643d5517b6ae41267d6305582f4f6e34114c03bc41777",
+    "source-capture/pmars-0.9.4/config/94t.opt": "2f1583aca49be8f19895bca6620c6d8baf3cea50b637d4fd0ff138e97bc9eed1",
+    "source-capture/pmars-0.9.4/config/94x.opt": "989941ad410d546e5ff102645b0387cb8ae60fd767beb335258b7b892afd3a2b",
+    "source-capture/pmars-0.9.4/config/94xm.opt": "1d16c87301de3cf37a5ad125dbbec4f1f84b6bb8b1179418060bc3ca593d2d46",
+    "source-capture/pmars-0.9.4/config/icws.opt": "5690fa04ee10f13d2af075d8f5f6b5ae99964ec533769cd2362b5edd59439e60",
+    "source-capture/pmars-0.9.4/config/lp.opt": "4dc59504909980dc0c824c65c21ee5f2f9df1fda20c4af9010a1b6a6878a88c5",
+    "source-capture/pmars-0.9.4/config/mp.opt": "eda27a1846a34a887e23a883aa4682ed124397bfce81672a80ec4ad01bda90bb",
+    "source-capture/pmars-0.9.4/config/mw.mac": "1163c2a3fb8607ecfc873e2c85be52a2d0e20f9d97d5c695a3c985d97d31d78a",
+    "source-capture/pmars-0.9.4/config/nano.opt": "324d28adb5913bfd32b77bf8fd331e32d6aba029ed9f474d480c14e6087dce08",
+    "source-capture/pmars-0.9.4/config/pmars.mac": "bcd9fea9974f0b97e9c00d43d124a6bd7958b2fd331a1a0447c08d7a518b6527",
+    "source-capture/pmars-0.9.4/config/tiny.opt": "e367d0683a6fcc65fd12a07204ed78133a8d819fe8a53d14d2574652a9e721b7",
+    "source-capture/pmars-0.9.4/config/tinylp.opt": "110a9cb9c0dad38aaffed9834f26a859de4115a0f1073ca1c271d141bcd79847",
+    "source-capture/pmars-0.9.4/debian/changelog": "b0b743666634b6a66fd23ab15fd28c6afbdbfed521878693431b9c2458ec76e6",
+    "source-capture/pmars-0.9.4/debian/compat": "a1fb50e6c86fae1679ef3351296fd6713411a08cf8dd1790a4fd05fae8688164",
+    "source-capture/pmars-0.9.4/debian/control": "2c5a0d09c49fd8914bd1df7617ef219cdaa4fd7fab8e62c8a0e2427c9be9419f",
+    "source-capture/pmars-0.9.4/debian/copyright": "6e0c9e571b318c09e90876f1b043d827bdb2317b79ccafb1e8a80ae2cc80b5fe",
+    "source-capture/pmars-0.9.4/debian/manpages": "f152ea9d7a329a620b3f554bd0b10884da2d4f235c23c860dc5e32f69ab5bc50",
+    "source-capture/pmars-0.9.4/debian/patches/buildflags.patch": "caf4a47f39cd3d1b3db372f94d7a7cb6815f0907fd6565277d01fe3b9880fa98",
+    "source-capture/pmars-0.9.4/debian/patches/fix-implicit-sighandler.patch": "475f7a6105f19083721e721f715eaf1fab9d796f9a83e0ea99c266bddf1b67d9",
+    "source-capture/pmars-0.9.4/debian/patches/manpage.patch": "eccd6f9150f2ac6f62b4397867691c376667c9046601ced0fdce099cadddbb73",
+    "source-capture/pmars-0.9.4/debian/patches/printf.patch": "8723818d2ee8f18bb33733ef7fa5eb260c057c62edb945e2ad1c017ec272e263",
+    "source-capture/pmars-0.9.4/debian/patches/series": "ebc93333eaeb2da0a9088dcfcc21aaedaa21184e0a0c082fb7f81574f4f18356",
+    "source-capture/pmars-0.9.4/debian/pmars.examples": "0a8fc23383041b144702b2d7ffb2940848fe41e62f10af52201e02ba0e6f9d8d",
+    "source-capture/pmars-0.9.4/debian/pmars.install": "39609f0fab6d8291405bb1fb2ce8ffede707fa8793a84fd0102ca1bc82e906e2",
+    "source-capture/pmars-0.9.4/debian/rules": "a11c74334eff2c20d52901016b94f14ad69229b992f82f99937196823562e252",
+    "source-capture/pmars-0.9.4/debian/source/format": "1be7080d72e6b566df3e236ce2c55efdfbbb8fa1c972d825e5b672ff8773be1a",
+    "source-capture/pmars-0.9.4/debian/watch": "fd30dc7bff5c8910b6fe3056d9eb53056927583ba182b8fa6d9a40633dbd93b7",
+    "source-capture/pmars-0.9.4/doc/Makefile": "406f72f2b03844d8a862e07d541be9b438a6172364c47b241d3915f377fbc145",
+    "source-capture/pmars-0.9.4/doc/corewar-faq.html": "51f3b9b76a74cd80d6dd5548a81841ed544bd86348f25e62429f4c0b7850b75b",
+    "source-capture/pmars-0.9.4/doc/corewar-glossary.html": "c35349469cb8d0b726c40cfcaeaf3047a54b8735ae3ec04ee28d09dbcf458dc4",
+    "source-capture/pmars-0.9.4/doc/makedoc.ex": "32a6e87cc044d20ce3a401627a60c45b7ab54b4dec685285edf40d3749ea11f1",
+    "source-capture/pmars-0.9.4/doc/pmars.6": "2249b305c31a92868f6774c760ba23a5b4a50969b03681f20a891a7fa0a7de54",
+    "source-capture/pmars-0.9.4/doc/pmars.txt": "e3e5988e315c50ec39995506844908667b211bab8b9b96d384c8d7056816ffb7",
+    "source-capture/pmars-0.9.4/doc/primer.94": "3e851a1fc42608075919e934218afe7d2b552d224ff8014cc8a68d9827cdcc4a",
+    "source-capture/pmars-0.9.4/doc/primer.cdb": "7eeb89db85ec89281a27cf8e7279fb52fddee4af9801382a82e26ddf7a5703c7",
+    "source-capture/pmars-0.9.4/doc/redcode.ref": "7626c0d021196d7fafa960479602923c7ee2c613467804626d4cad033d7f2e2f",
+    "source-capture/pmars-0.9.4/doc/whatsnew.080": "f8888c20638b2c4154fcdbe91fdc3710bce60856ea48a505dc355ac01b717c75",
+    "source-capture/pmars-0.9.4/src/Makefile": "6d9ec73118c074fb135e3da5ed5337a27aeebb0e2dd7e90b6dd20361b12d0a92",
+    "source-capture/pmars-0.9.4/src/Makefile.djg": "2b81f6cad73a74737781715c2399079f99fe7f517dcd9a24e0fa492e3faff624",
+    "source-capture/pmars-0.9.4/src/Makefile.wat": "df61ca37e30a6d6f06d0012198b824620dc1fccfcb5118b84679cc31a5beeeb4",
+    "source-capture/pmars-0.9.4/src/alldisp.c": "7f750b14e12fdf00980ae8db73dfe5a24d2278e5c51885efc6ac977c1da9484a",
+    "source-capture/pmars-0.9.4/src/asm.c": "f5078307c4bcb4f08f63391685353df9c9a1341793929254d9d7d7bb411f2523",
+    "source-capture/pmars-0.9.4/src/asm.h": "16198ab6f65580c133169a06b59daea1cf723a5104ce2b95ce26bba9af5a0f5b",
+    "source-capture/pmars-0.9.4/src/asm.o": "e59997f127bd21202a21cedd992ce819f1f0f42627b05f54e5c83a59a10955dc",
+    "source-capture/pmars-0.9.4/src/cdb.c": "ea3a3fc9368f599c1bc8be762385e6ed2d756e7e03a6a04daa94fc1e04341d1f",
+    "source-capture/pmars-0.9.4/src/cdb.o": "7e22d42d76995365aed863d5809e94aa9bae9dc1fadfd1963d21aec6288f12f9",
+    "source-capture/pmars-0.9.4/src/clparse.c": "f3489b7864ef9a5920a6b29f2a625173d5266e04faf6462c342021811549b029",
+    "source-capture/pmars-0.9.4/src/clparse.o": "e0af386405866e6226dea7bc63fe5076b2691b1fb60a0311f3df9bb0eb917018",
+    "source-capture/pmars-0.9.4/src/config.h": "beeb52c23a7bf6724fbf685de0e03b0767a261c940466b94a18b1fbfa6da890b",
+    "source-capture/pmars-0.9.4/src/curdisp.c": "e2a6b7705cf895627b9a5e6c310bdb1f9e78294154ac66e7cbcbd4004317aa62",
+    "source-capture/pmars-0.9.4/src/disasm.c": "861ca93214a143da7bf83bef6875888575d907dfa91ec4af105da6f0dddec068",
+    "source-capture/pmars-0.9.4/src/disasm.o": "b94d1847c3fdbaf03fbc48aa1dded01281d4c58a8feac1beec2b54827664111d",
+    "source-capture/pmars-0.9.4/src/eval.c": "2f6ff3a51aa1159d5053e7e92d4910564b288b6015ffcd435d32d60723d2dc2f",
+    "source-capture/pmars-0.9.4/src/eval.o": "613555897684bc189d8018fa9ddbae3f3e8cec8f8240849dd075844e53a76013",
+    "source-capture/pmars-0.9.4/src/global.c": "42f98e1c2807bc682d2866c6e950855e01b48e3d957ae5fc726aff08dd064e07",
+    "source-capture/pmars-0.9.4/src/global.h": "a38dc94841c8652144d571140f3f6e90cfda326bf23164deb0536bd54f9d2ff7",
+    "source-capture/pmars-0.9.4/src/global.o": "a461261a7e8b7feae1106a19bfaec108b15ce4b3c6f00a212fd5ae8d5ea6c42c",
+    "source-capture/pmars-0.9.4/src/grxdisp.c": "b286ef027b95accd7b9e9e2a08421812ff2856817130523a2eeca8eb052f7c7d",
+    "source-capture/pmars-0.9.4/src/gtdisp.c": "35af28519ee5d7bce74b397929e180938ead8504326d26b4f13183cf54ed3d51",
+    "source-capture/pmars-0.9.4/src/lnxdisp.c": "04f1ba5c32563b9e3f3b6a80aee18becafc32134237c365a91c17432c6eaebec",
+    "source-capture/pmars-0.9.4/src/lnxdisp.h": "bff60a7cd45caa49b54338258b9d6b85baecd7fb598e067f7549bc7ed18aa429",
+    "source-capture/pmars-0.9.4/src/pmars": "dd1db782eecc7c3b6f000df2bc833ae6439d2dd0867e0b812c57630f12cfa8d4",
+    "source-capture/pmars-0.9.4/src/pmars.c": "49f5f49b73d7f237e213949cd4367a441e333860790d3ab8c0f33c0d4e376c6b",
+    "source-capture/pmars-0.9.4/src/pmars.o": "653c417bc98769a3594c6dbbad05b3b33dc6d7a8bca21728b8f721271663365c",
+    "source-capture/pmars-0.9.4/src/pmarsicn.h": "da70c6dd76d5159aa8288792b919fc707ee2adaeb66a12750055d2c8ecc55ba8",
+    "source-capture/pmars-0.9.4/src/pos.c": "fd152d8c37bcdef1a33f32be1fc7fa55ee97e19f6777713c7a04dd0d7826b879",
+    "source-capture/pmars-0.9.4/src/pos.o": "652aa5a91fff9f7f76243169f945fb5bfb3227b845f17de782b740a8a5940b02",
+    "source-capture/pmars-0.9.4/src/sim.c": "68e1552eb7f2beb764f683cffca3280e96b6bd9b15bc8dfa9b6a961858a974a2",
+    "source-capture/pmars-0.9.4/src/sim.h": "d3f65b9074a7bd8a6e56c2b428c1fc9534c03e1a8d24f7488d4625731c5d093e",
+    "source-capture/pmars-0.9.4/src/sim.o": "cf273a6dba991122d421699cf76855bc281688ea3cecc4c863c540b073b0d279",
+    "source-capture/pmars-0.9.4/src/str_eng.c": "812fe6abf830521053fb14fd565e6a4c24297fc262da811df3385e9354507831",
+    "source-capture/pmars-0.9.4/src/str_eng.o": "315758ae2511543a6b2ff1497577e68726bffc669424541ba44b539343a2a78b",
+    "source-capture/pmars-0.9.4/src/token.c": "98e294f655d40ea68551a261270087f539ee7d861a89987733e5270c2aeb1521",
+    "source-capture/pmars-0.9.4/src/token.o": "aa40a20a3bf1a349e19621e2effd3014ea6ee7e0bba8699871ea2afc3af047a8",
+    "source-capture/pmars-0.9.4/src/uidisp.c": "d723ca79188a1aba61f4587715bce767fbabf8910a062172b88f7b11963f0827",
+    "source-capture/pmars-0.9.4/src/xgraphio.c": "e233c7427a30d35f003a76fb92617b872e8bc7d7a42b9f03a8979a24e623279c",
+    "source-capture/pmars-0.9.4/src/xwindisp.c": "21f0a5e5b50002f897b486c72895a470ffdbb44d47f8b27a6aa49da6a7f21f88",
+    "source-capture/pmars-0.9.4/src/xwindisp.h": "a1aa47092367b0016361a807bb46237c87890423c318784086cc0ed817567dfe",
+    "source-capture/pmars-0.9.4/warriors/aeka.red": "95d2c74611ea46740c9212a18c31b273302e95cc6f2b99a2485604321cead183",
+    "source-capture/pmars-0.9.4/warriors/flashpaper.red": "1a0da06e019a67664e29e0902f6844cea25f4f5580953d54b1cfb3c94a807b31",
+    "source-capture/pmars-0.9.4/warriors/pspace.red": "3bab43da3deb9d0528d8e68794e8b361e41b3136000f44b8808962dcbbdb72c9",
+    "source-capture/pmars-0.9.4/warriors/rave.red": "b4c8acf763957da9de0ec8568d765214ef9e8271aac9b51bb1ab09753e3afb66",
+    "source-capture/pmars-0.9.4/warriors/test_eval.red": "faf523be28867c42c11626303578d906f7761f14b162fce90301b4d2f24c4f1c",
+    "source-capture/pmars-0.9.4/warriors/validate.red": "7baee6f3ac9a8db93763e0112b83fe4aee511f681e50135febe438782bb4f217",
+    "source-capture-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

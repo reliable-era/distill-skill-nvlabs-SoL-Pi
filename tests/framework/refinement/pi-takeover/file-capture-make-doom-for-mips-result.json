@@ -1,0 +1,130 @@
+{
+  "task": "make-doom-for-mips",
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "plan_sha256": "0c207daf76fbfd050492c72750eb9b40831059e5284b3b92b02eebf2e006f90f",
+  "baseline": {
+    "verifier_exit": 0,
+    "reward": "0",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_vm_execution",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_frame_bmp_exists",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_frame_bmp_similar_to_reference",
+        "status": "failed"
+      }
+    ]
+  },
+  "protected_before": {
+    "/app/vm.js": {
+      "bytes": 64346,
+      "sha256": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+      "capture_complete": true
+    },
+    "/app/doom.wad": {
+      "bytes": 4196020,
+      "sha256": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+      "capture_complete": true
+    },
+    "/app/doomgeneric/doomgeneric/doomgeneric_img.c": {
+      "bytes": 7052,
+      "sha256": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26",
+      "capture_complete": true
+    }
+  },
+  "oracle_exit": 0,
+  "protected_after": {
+    "/app/vm.js": {
+      "bytes": 64346,
+      "sha256": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+      "capture_complete": true
+    },
+    "/app/doom.wad": {
+      "bytes": 4196020,
+      "sha256": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+      "capture_complete": true
+    },
+    "/app/doomgeneric/doomgeneric/doomgeneric_img.c": {
+      "bytes": 7052,
+      "sha256": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26",
+      "capture_complete": true
+    }
+  },
+  "protected_check": {
+    "unchanged": true,
+    "reason": null
+  },
+  "synthetic_tamper_check": {
+    "unchanged": false,
+    "reason": "changed_input",
+    "path": "/app/vm.js"
+  },
+  "capture": {
+    "bytes": 1543608,
+    "sha256": "d8a21c0f18cf4946907300ef1ef1bb86f8fe1a72c3150fce442c2d506cfc0c2d",
+    "capture_complete": true
+  },
+  "elf_witness": {
+    "magic": true,
+    "class": 1,
+    "byte_order": 1,
+    "machine": 8
+  },
+  "replay": {
+    "verifier_exit": 0,
+    "reward": "1",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_vm_execution",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_frame_bmp_exists",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_frame_bmp_similar_to_reference",
+        "status": "passed"
+      }
+    ]
+  },
+  "same_test_collection": true,
+  "valid_output_replay": true,
+  "cleanup_verified": true,
+  "source_unchanged": true,
+  "candidate_unchanged": true,
+  "artifact_hashes": {
+    "after-doom.wad": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+    "after-doom.wad-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after-doomgeneric_img.c": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26",
+    "after-doomgeneric_img.c-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after-vm.js": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+    "after-vm.js-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline/logs/verifier/ctrf.json": "f2b3d1868b6c9570872cd132ee17ba4c78fa7f80e82667bc285562a78c9fa514",
+    "baseline/logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "baseline/verifier.log": "7957adea111e33b01c11d4e37c7aa9faa19e005e142bafab6518edb1f9ad525f",
+    "baseline-apt-metadata.log": "df16ae09b20ac4bf74d2a99d8e179d5ebc92d62f848a2313731afc32b7597b76",
+    "before-doom.wad": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+    "before-doom.wad-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before-doomgeneric_img.c": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26",
+    "before-doomgeneric_img.c-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before-vm.js": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+    "before-vm.js-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "capture-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "captured-output": "d8a21c0f18cf4946907300ef1ef1bb86f8fe1a72c3150fce442c2d506cfc0c2d",
+    "oracle-apt-metadata.log": "7bf024d5a09d6815ea331a3874acd568eff95bd35abb14d4d1e8980cbd1bcac6",
+    "oracle.log": "3898b6babd668fb7456b5fafbf889e15f088993c180f799dc57c12ba59a90543",
+    "plan.json": "0c207daf76fbfd050492c72750eb9b40831059e5284b3b92b02eebf2e006f90f",
+    "replay/logs/verifier/ctrf.json": "1345227df2a65e2591817ddd7a2cf306aabd084fc297c8153c0fd34572e61978",
+    "replay/logs/verifier/reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "replay/verifier.log": "a8dfbdfd25a8f77bfffb79c51c91367170bad8edc61f61303a0fabcd03c3de63",
+    "replay-apt-metadata.log": "35c6e4b424717a0af54b29c36782f1862e2a3614d02b333e5ab25905aaf05e51",
+    "synthetic-tampered-vm.js": "12f509d9680586d55d06cd38075fe4f368adf50e8c6ab88a1da1fdbf8a930e55"
+  }
+}

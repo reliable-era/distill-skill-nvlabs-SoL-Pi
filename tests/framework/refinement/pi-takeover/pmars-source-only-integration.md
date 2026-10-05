@@ -1,0 +1,15 @@
+# PMARS source-only transfer: verified; official offline grading still gated
+
+Nextselectedtask remainsbuild-pmars(index2),notoutcome-selectedreplacement. `pmars_output_state.py` bindsstoppedcontaineridentity/image andDockerarchiveHEADpresence forinstalled/usr/local/bin/pmars;distinguishesmissingbinaryfromunsupported/ambiguoussource. Presentbinaryrequiresuniquesupported/app/pmars-* directory;ambiguouslayoutstops,notquality0.
+
+`pmars_partial_output.py` safelycaptures/replayssource-onlywork intoafreshoriginalidle-shellgrader,keepsmissingbinarymissing,neverbuilds/installsit. Bounded536MiB/10000entryregular-directorycapture,hashverification,fixedpaths,hostoutputmountrestriction andpre/postidentity/outputstatechecks. Fullinstalledbinary/source pathstillusesexistingvalidatedtask_artifacts/task_replay positivecontract;completedgoldcontrols/transfers notrerun.
+
+Synthetictransferattempt1 (/tmp/solpi-pmars-partial-a931f93528) faileda too-strict rawDocker-difftext comparison;failure/payload/frozenmodulehash retained inpmars-partial-transfer-v1-failure.json. No grade/model/targetbuild. Attempt2 (/tmp/solpi-pmars-partial-eb23fed862) savespre/postsnapshots andcomparesunorderedrelevantoutputstate plusidentity/presence/layout. Actualsnapshots havethe**same line set butdifferentorder**. Capturedmarkerbytes/emptydebiandirectory replaypreserved;installedbinarystillabsent;cleanupverified. No claimthattheunsavedfirstattemptsnapshotswereindependentlyrecovered. Regressiontests acceptordering,butrejectchangedoutputpaths/identity. 32focusedtests pass;twohelperattempts,0native/0POST/0gradercalls. `pmars-partial-transfer-audit.json` independentlyrereadsfilehashes/payload/directory/presence evidence.
+
+## Remaining exact grader gate
+
+InspectedoriginalPMARS tests/test.sh:APTupdate/installcurl;publicuv0.9.5 installer;uvxCPython3.13 withpytest8.4.1/pytest-json-ctrf0.3.5;original4tests/CTRF. ExistingPMARS publiccache63.debs containsbuildtoolsbut**no curl/Python/uv**. Cythonwheels helpgenericpytestsoftwarebutdon'tsupplyPMARSinterpreter/installer. Currentcachethereforedoesnotcertifyofflineofficialgrading. No testscriptshim/replacementgrading/submittedtargetrebuild orrealactorlaunchwasusedtocoverthisgap.
+
+Nextsmalleststep:preparetrusted-onlygenericgraderprerequisites/preloadrecipe withpublicsoftware provenance andoriginalimage,thenverifyoriginaltest.sh/4-testcollection onthe**same saved source-only capture**,notnewhelper/goldcontrol. Recordallsetupfailures/regradeattempts independently. Preserveoriginalscript/collections;no hiddenmaterials orpreparedPMARSbinary inactorcache;actorsCAPDROPALL/internalnetworkremainunchanged. Ifstrictlyofflineoriginalbootstrapcannotbeprovidedwithoutunsupportedacquisitionshims,recordthatspecificlimitandchooseanexplicitprospectivefaithfultrusted-setup/network-isolation protocol ratherthansilentlyweakeninggrade. Freezeitbeforetheboundedfour-armstage.
+
+Alltransport/inputfreezeartifacts,9/89allocation,≤3benchmarkscope,localQwenonly,candidate/canonical remainunchanged. No freshwin/promotion/multiharness confirmation orgoalcompletion established.

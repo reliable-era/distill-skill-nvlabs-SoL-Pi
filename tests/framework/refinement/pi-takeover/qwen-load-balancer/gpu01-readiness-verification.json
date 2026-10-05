@@ -1,0 +1,106 @@
+{
+  "checked_at": "2026-10-05T21:28:45+0800",
+  "model_POSTs": 2,
+  "checks": [
+    {
+      "backend": "http://10.193.104.97:18001",
+      "/health": {
+        "status": 200,
+        "body": ""
+      },
+      "/v1/models": {
+        "status": 200,
+        "body": {
+          "object": "list",
+          "data": [
+            {
+              "id": "Qwen3.8-27B-FP8",
+              "object": "model",
+              "created": 1791206925,
+              "owned_by": "sglang",
+              "root": "Qwen3.8-27B-FP8",
+              "parent": null,
+              "max_model_len": 262144
+            }
+          ]
+        }
+      },
+      "/get_load": {
+        "status": 200,
+        "body": [
+          {
+            "dp_rank": 0,
+            "num_reqs": 0,
+            "num_waiting_reqs": 0,
+            "num_tokens": 0,
+            "num_pending_tokens": 0,
+            "ts_tic": 10835981.415421598
+          }
+        ]
+      },
+      "generation_status": 200,
+      "generation": {
+        "content": "OK",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "stream_done": true,
+        "elapsed_seconds": 0.7090839631855488
+      }
+    },
+    {
+      "backend": "http://10.193.104.97:18002",
+      "/health": {
+        "status": 200,
+        "body": ""
+      },
+      "/v1/models": {
+        "status": 200,
+        "body": {
+          "object": "list",
+          "data": [
+            {
+              "id": "Qwen3.8-27B-FP8",
+              "object": "model",
+              "created": 1791206925,
+              "owned_by": "sglang",
+              "root": "Qwen3.8-27B-FP8",
+              "parent": null,
+              "max_model_len": 262144
+            }
+          ]
+        }
+      },
+      "/get_load": {
+        "status": 200,
+        "body": [
+          {
+            "dp_rank": 0,
+            "num_reqs": 0,
+            "num_waiting_reqs": 0,
+            "num_tokens": 0,
+            "num_pending_tokens": 0,
+            "ts_tic": 10835981.41452078
+          }
+        ]
+      },
+      "generation_status": 200,
+      "generation": {
+        "content": "OK",
+        "usage": {
+          "prompt_tokens": 17,
+          "total_tokens": 19,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "stream_done": true,
+        "elapsed_seconds": 0.7071429844945669
+      }
+    }
+  ]
+}

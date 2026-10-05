@@ -1,0 +1,16 @@
+{
+  "root": "/tmp/solpi-fasttext-software-b7da4cde01",
+  "model_POST": 0,
+  "scored_actor_starts": 0,
+  "models_trained": 0,
+  "official_test_runs": 0,
+  "gold_runs": 0,
+  "scope": "importABI/publicversions/originalcollectiononly;no model/dataset read",
+  "actor_public_dependencies_imported": true,
+  "passed": false,
+  "error": {
+    "type": "CalledProcessError",
+    "message": "Command '['docker', 'exec', '-e', 'UV_OFFLINE=1', '-e', 'UV_PYTHON_DOWNLOADS=never', '-e', 'UV_NO_INDEX=1', '-e', 'UV_FIND_LINKS=/opt/public-wheels', '-w', '/', 'solpi-fasttext-software-b7da4cde01-grader', '/bin/sh', '-c', 'set -eu; /root/.local/bin/uv --version; /root/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/bin/python3.11 --version; /root/.local/bin/uvx -p 3.11 -w pytest==8.4.1 -w pytest-json-ctrf==0.3.5 -w scikit-learn==1.7.0 -w fasttext-wheel==0.9.2 -w numpy==1.24.0 pytest --version']' returned non-zero exit status 1."
+  },
+  "cleanup_verified": true
+}

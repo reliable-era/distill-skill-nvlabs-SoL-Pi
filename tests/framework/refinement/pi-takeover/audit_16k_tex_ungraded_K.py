@@ -1,0 +1,28 @@
+"""Read-onlyfullcost/ungradedK audit after exhaustedtrustedgraderrecovery."""
+import hashlib,json,pathlib,subprocess
+from task_artifacts import descriptor,GUARDS
+from task_replay import verify_payload
+from protected_inputs import check_protected_inputs
+from audit_16k_tex import events,native_events,R,sha
+if __name__=='__main__':
+ plan=json.loads((R/'16k-tex-r2-plan.json').read_text());digest=sha(R/'16k-tex-r2-plan.json');root=pathlib.Path('/tmp/solpi-t16-'+digest[:18]);d=root/'K';base=json.loads((R/'16k-tex-audit.json').read_text());assert len(base['rows'])==3 and base['plan_sha256']==digest;repair=json.loads((R/'16k-tex-K-grade-repair.json').read_text());assert repair['plan_sha256']==digest and not repair['grade_available'] and repair['cleanup_verified'];assert repair['capture_hashes_before']==repair['capture_hashes_after'];assert not pathlib.Path('/proc/1462373').exists()
+ for n,h in repair['artifact_hashes'].items():assert sha(pathlib.Path(repair['private_root'])/n)==h
+ for n,h in repair['capture_hashes_before'].items():assert sha(d/'captured'/n)==h
+ cap=json.loads((d/'captured/capture.json').read_text());baseline=json.loads((d/'before/baseline.json').read_text());assert cap['protected_input_gate_passed'] and cap['stopped_actor_verified'] and cap['image_id']==plan['actor_image_id'];assert check_protected_inputs(plan['protected_inputs_original'],baseline['protected_baseline'],GUARDS['overfull-hbox'])['unchanged']
+ for i,item in enumerate(descriptor('overfull-hbox')):
+  rec=cap['artifacts'][item['path']];assert all(rec.get(k)==v for k,v in item.items()) and rec['local_payload']=='payload-'+str(i);verify_payload(d/'captured'/rec['local_payload'],rec)
+ assert check_protected_inputs(baseline['protected_baseline'],{p:cap['artifacts'][p] for p in GUARDS['overfull-hbox']},GUARDS['overfull-hbox'])['unchanged']
+ keys=plan['arm_recipe']['K'];actual={str(p.relative_to(d/'skills')):sha(p) for p in (d/'skills').rglob('*') if p.is_file()};assert actual=={n:h for n,h in plan['frozen_skills_manifest'].items() if n.split('/')[0] in keys};prompt=(d/'prompt.txt').read_text();D=R.parent/'development/pi-takeover-qwen-source-backed-16k';assert prompt.count((D/'frozen/karpathy/SKILL.md').read_text())==1
+ ledger=json.loads((root/'transport/ledger.json').read_text());views={v['request']:v for v in json.loads((root/'transport/prospective-ledger.json').read_text())['records']};costs=[];corrected=[]
+ for row in [r for r in ledger['records'] if r['actor']=='K']:
+  n=row['request'];v=views[n];av=v['accounting_view'];assert row['provider_status']==200 and row['error'] is None and row['stream_eof'] and row['provider_backend']=='127.0.0.1:18001' and row['payload_policy']['output_cap']==16384;assert av['framing_complete'] and av['derived_cost']['provider_cost_complete'] and av['derived_cost']['protocol_valid'];raw=root/'transport'/f'response-{n}.sse';derived=root/'transport'/f'derived-response-{n}.sse';assert sha(raw)==v['raw_sha256'] and sha(derived)==v['derived_sha256'];aa=events(raw);bb=events(derived);tr=next(e['response'] for e in aa if e['type']=='response.completed');assert tr['model']=='Qwen3.8-27B-FP8' and tr['max_output_tokens']==16384
+  if av['correction_applied']:
+   td=next(e['response'] for e in bb if e['type']=='response.completed');u=tr['usage'];after=td['usage']['output_tokens_details']['reasoning_tokens'];assert tr['status']=='incomplete' and tr['incomplete_details']=={'reason':'max_output_tokens'} and 16382<=after<=16384 and 1<=u['output_tokens_details']['reasoning_tokens']-after<=7 and after==u['output_tokens'];u['output_tokens_details']['reasoning_tokens']=after;assert aa==bb;corrected.append(n)
+  else:assert raw.read_bytes()==derived.read_bytes() and av['raw_provider_protocol_valid'] is True
+  costs.append(av['derived_cost'])
+ turns=[e for e in native_events(d/'native.jsonl') if e.get('type')=='turn.completed'];assert len(turns)==1
+ for nk,ck in [('input_tokens','input_tokens_inclusive'),('output_tokens','output_tokens_inclusive'),('reasoning_output_tokens','reasoning_tokens_reported')]:assert turns[0]['usage'][nk]==sum(c[ck] for c in costs)
+ cleanup={}
+ for kind,args in [('containers',['docker','ps','-a','--filter','name=solpi-t16','--format','{{.Names}}']),('networks',['docker','network','ls','--filter','name=solpi-t16','--format','{{.Name}}'])]:cleanup[kind]=subprocess.run(args,capture_output=True,text=True,check=True,timeout=10).stdout.splitlines()
+ assert cleanup=={'containers':[],'networks':[]};gross=sum(c['gross_tokens'] for c in costs);assert ledger['native_starts']==4 and ledger['provider_POST']==len(ledger['records'])==sum(r['POST'] for r in base['rows'])+len(costs)
+ out={'plan_sha256':digest,'closed_with_infrastructure_failure':True,'all_four_actor_costs_complete':True,'independently_graded_cells':3,'ungraded_arm':'K','K_POST':len(costs),'K_gross_tokens':gross,'K_native_usage_reconciled':True,'K_last_provider_status':tr['status'],'K_last_incomplete_details':tr.get('incomplete_details'),'K_corrected_requests':corrected,'K_grade':'unavailable after original+one repair setup timeouts;NOTquality0','K_output_matches_original_input_bytes':cap['artifacts']['/app/input.tex']['sha256']=='7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3','observed_unchanged_output_not_substitute_grade':True,'actor_wall_seconds_unavailable':True,'total_starts':4,'total_POST':ledger['provider_POST'],'total_receipts':len(ledger['records']),'total_gross_tokens':base['completed_cell_gross_tokens']+gross,'cleanup':cleanup,'grader_recovery_cap_exhausted':True,'additional_model_calls':0,'goal_complete':False};(R/'16k-tex-ungraded-K-audit.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))

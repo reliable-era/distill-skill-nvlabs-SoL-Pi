@@ -1,0 +1,86 @@
+{
+  "private_root": "/tmp/solpi-financial-grade-repair-003e46a712",
+  "reused_capture": "/tmp/solpi-financial-missing-b76bdfbac4/captured",
+  "native_starts": 0,
+  "provider_POST": 0,
+  "helper_reruns": 0,
+  "grader_calls": 1,
+  "capture_manifest_sha256": "211c2ec71757f73437c68f13ae73d967a300d9773f44d7843eb9d7d4ef74cbd2",
+  "test_script_sha256": "48abbda713ace5cee00dd28c7398959f28280062350eb88206a6697a28c72790",
+  "tests_sha256": "978f506ad5c1bfaf28f9bc774dfe4347d33d046ca009b8496eb513956b7f5a9a",
+  "replay": {
+    "replay_complete": true,
+    "restored_paths": [],
+    "absent_paths_preserved": [
+      "/app/documents",
+      "/app/invoices",
+      "/app/other"
+    ],
+    "rebuild_performed": false,
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "setup": {
+    "trusted_software_preload_complete": true,
+    "python": "3.13.7",
+    "uv": "0.9.5",
+    "pytest": "8.4.1",
+    "pandas": "2.3.2",
+    "pytest_json_ctrf": "0.3.5",
+    "setup_log_sha256": "fed50d680e526f1d5108b04f4bf25c9eb1b3ddf804ba00cfb816f578f4cbbdcb",
+    "seconds": 21.47914717718959,
+    "test_network_disconnected": true,
+    "target_builds": 0,
+    "target_installs": 0,
+    "original_test_script_unchanged": true,
+    "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+    "public_CA_mount": "/opt/trusted-ca.pem",
+    "system_CA_writeable": true
+  },
+  "verifier_exit": 0,
+  "reward": "0",
+  "test_results": [
+    {
+      "name": "test_outputs.py::test_directories_created",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_invoices_moved_correctly",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_other_documents_moved_correctly",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_summary_csv_exists",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_summary_csv_structure",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_summary_csv_content",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_original_documents_dir_empty",
+      "status": "failed"
+    }
+  ],
+  "all_missing_paths_preserved": true,
+  "passed": true,
+  "cleanup_verified": true,
+  "evidence_hashes": {
+    "verifier.log": "0addc51bac2fabd36efcd2fe9769c51a0e0d5a90245630986a5b26ff896d5f78",
+    "trusted-setup.log": "fed50d680e526f1d5108b04f4bf25c9eb1b3ddf804ba00cfb816f578f4cbbdcb",
+    "logs/verifier/ctrf.json": "881af319ccb2481430ee47d1d32651e8534da2e40deb31f548f4e87c752911a2",
+    "logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "module_hashes": {
+    "financial_output.py": "fcfdc3b1c70164aed64eef774189c3f9f205bfd01212ecbd2aa9b1c225209f32",
+    "financial_grader_setup.py": "ec5b75fd04e597c96acbcb8609d7a949c9a2ea14aad94bd3446cf0ee98bc92db",
+    "run_financial_grade_repair.py": "4710256c4c1a51a4d2e77d451f5e7342e8181312fc53dbcc6ec8a1270289e7ee"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+  "capture_manifest_sha256": "da1efd057688f246bcf15ff384486d70973f9ef7bf9596c9d6c222aa29acd8a6",
+  "test_script_sha256": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+  "test_assertions_sha256": "d9d2796ddc19cf8159670567e174ea377e2bce675bf3451d5951c045b01f4e85",
+  "setup_module_sha256": "610fc4bb718b8ed0dba2f49cbf5aad3264f873f2a2a8b4b96f1a2c9b05c8728a",
+  "target_builds": 0,
+  "target_installs": 0,
+  "native_starts": 0,
+  "provider_POST": 0,
+  "maximum_setup_seconds": 300,
+  "maximum_original_test_seconds": 600,
+  "scope": "trusted generic publicsoftware preload thennetwork-disconnected unchangedoriginalgrader;not actorretry/skillcomparison/goldcontrol",
+  "private_root": "/tmp/solpi-pmars-partial-grade-2dbbd633e4",
+  "reused_capture": "/tmp/solpi-pmars-partial-eb23fed862/captured",
+  "helper_reruns": 0,
+  "grader_calls": 1,
+  "replay": {
+    "replay_complete": true,
+    "restored_paths": [
+      "/app/pmars-0.9.4"
+    ],
+    "installed_binary_absence_preserved": true,
+    "rebuild_performed": false,
+    "trusted_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "setup": {
+    "trusted_software_preload_complete": true,
+    "python": "3.13.7",
+    "uv": "0.9.5",
+    "pytest": "8.4.1",
+    "pytest_json_ctrf": "0.3.5",
+    "sources_sha256": "66108d5e131d22e8868b813ecb3a588328bee608306737447ea364aacd6a1b2f",
+    "setup_log_sha256": "b8fd049315d4a5733d5516daf3c055cf41e8139dcff739d2999828bf132a4da4",
+    "seconds": 9.12144068069756,
+    "test_network_disconnected": true,
+    "target_builds": 0,
+    "target_installs": 0,
+    "original_test_script_unchanged": true
+  },
+  "verifier_exit": 0,
+  "reward": "0",
+  "test_results": [
+    {
+      "name": "test_outputs.py::test_pmars_works",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_headless_no_x11",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_debian_source_used",
+      "status": "passed"
+    },
+    {
+      "name": "test_outputs.py::test_built_from_source",
+      "status": "passed"
+    }
+  ],
+  "source_bytes_unchanged": true,
+  "target_absence_preserved": true,
+  "passed": true,
+  "cleanup_verified": true,
+  "evidence_hashes": {
+    "plan.json": "b98ce417c46a4eaa3da97848acf389243d28c475a7b20aed3ab45fbe4d9ba837",
+    "verifier.log": "bcf46e7da06fdb6e0575db40edb7fa2d7024b27fc96427040f942ff8efbb5f17",
+    "trusted-setup.log": "b8fd049315d4a5733d5516daf3c055cf41e8139dcff739d2999828bf132a4da4",
+    "logs/verifier/ctrf.json": "88b05d6f60184482612ab0cef8cb93b132cdeb3d39dae22c43b881e1454ef0e8",
+    "logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  }
+}

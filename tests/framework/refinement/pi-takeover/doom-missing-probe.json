@@ -1,0 +1,135 @@
+{
+  "private_root": "/tmp/solpi-doom-missing-a01248ce60",
+  "native_starts": 0,
+  "provider_POST": 0,
+  "grader_calls": 1,
+  "helper_attempts": 1,
+  "target_builds": 0,
+  "target_installs": 0,
+  "test_script_sha256": "25809a2ebcb714b1c4e55563b0db16add23e2fd9b68d03e51b1734f8dbb392e1",
+  "tests_sha256": "f1748ff20bfd670af1e1cb935647503eb176a4a14dd15f20935264ad7e4a98f6",
+  "scope": "newmissingELF pluschangedinputwitnessnotreplayed,notgoldcontrol/transferrepeat",
+  "actor_isolation": {
+    "verified": true,
+    "public_input_mounts": 0,
+    "original_grader_image_id": "sha256:c503768044b13ea799f26ee48c83c5885cd9697114bc3e320e1e5f926276188f",
+    "actor_image_id": "sha256:0396f5b4b3030f979bfde5db0ea083f819638139a6919c5a07890953562775ca"
+  },
+  "original_vm_sha256": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+  "capture": {
+    "task": "make-doom-for-mips",
+    "protocol": "doom-missing-target-v1",
+    "image_id": "sha256:0396f5b4b3030f979bfde5db0ea083f819638139a6919c5a07890953562775ca",
+    "capture_complete": true,
+    "stopped_actor_verified": true,
+    "absence_proof": {
+      "output_state": "absent",
+      "binary_absent_verified": true,
+      "container_id": "d1bcd473a7dedf6de808bc552a2241739068c092b332260454ac52d90cda3b91",
+      "image_id": "sha256:0396f5b4b3030f979bfde5db0ea083f819638139a6919c5a07890953562775ca",
+      "stopped_actor_verified": true,
+      "grading_verified": false,
+      "cost_eligibility": false
+    },
+    "artifacts": {
+      "/app/vm.js": {
+        "path": "/app/vm.js",
+        "kind": "file",
+        "max_bytes": 33554432,
+        "purpose": "input_witness",
+        "bytes": 39,
+        "sha256": "a8436473f50efbff9698c555e2d63c16c0ae0c5e75e3ee8a1f6d68825f1a24b2",
+        "capture_complete": true,
+        "local_payload": "witness-0"
+      },
+      "/app/doom.wad": {
+        "path": "/app/doom.wad",
+        "kind": "file",
+        "max_bytes": 33554432,
+        "purpose": "input_witness",
+        "bytes": 4196020,
+        "sha256": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+        "capture_complete": true,
+        "local_payload": "witness-1"
+      },
+      "/app/doomgeneric/doomgeneric/doomgeneric_img.c": {
+        "path": "/app/doomgeneric/doomgeneric/doomgeneric_img.c",
+        "kind": "file",
+        "max_bytes": 33554432,
+        "purpose": "input_witness",
+        "bytes": 7052,
+        "sha256": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26",
+        "capture_complete": true,
+        "local_payload": "witness-2"
+      }
+    },
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "replay": {
+    "replay_complete": true,
+    "installed_binary_absence_preserved": true,
+    "witness_paths_not_replayed": [
+      "/app/vm.js",
+      "/app/doom.wad",
+      "/app/doomgeneric/doomgeneric/doomgeneric_img.c"
+    ],
+    "original_vm_and_wad_retained": true,
+    "rebuild_performed": false,
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "trusted_vm_sha256": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+  "setup": {
+    "trusted_software_preload_complete": true,
+    "python": "3.13.7",
+    "uv": "0.9.5",
+    "pytest": "8.4.1",
+    "numpy": "2.3.1",
+    "pillow": "11.2.1",
+    "pytest_json_ctrf": "0.3.5",
+    "seconds": 16.101449128240347,
+    "setup_log_sha256": "b72c9882ef559b1130a9436ff5a444b6c79757e50379364d59120ac43c741080",
+    "test_network_disconnected": true,
+    "original_vm_and_wad_retained": true,
+    "target_builds": 0,
+    "target_installs": 0,
+    "original_test_script_unchanged": true,
+    "APT_policy": "originalsignedDebianBookwormrepositories,notUbuntu/Trixiesubstitution"
+  },
+  "verifier_exit": 0,
+  "reward": "0",
+  "test_results": [
+    {
+      "name": "test_outputs.py::test_vm_execution",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_frame_bmp_exists",
+      "status": "failed"
+    },
+    {
+      "name": "test_outputs.py::test_frame_bmp_similar_to_reference",
+      "status": "failed"
+    }
+  ],
+  "target_absence_preserved": true,
+  "passed": true,
+  "cleanup_verified": true,
+  "evidence_hashes": {
+    "verifier.log": "6b164d22a20284e2fb30b72789f815d55d06b5c8a55190e1705bf02852d86269",
+    "trusted-setup.log": "b72c9882ef559b1130a9436ff5a444b6c79757e50379364d59120ac43c741080",
+    "captured/witness-2": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26",
+    "captured/witness-0": "a8436473f50efbff9698c555e2d63c16c0ae0c5e75e3ee8a1f6d68825f1a24b2",
+    "captured/capture.json": "ce45cd9d0c02b2b962ee8b178217158b905a4dbfd88ce0bff8cb7f322aa41058",
+    "captured/witness-1": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+    "captured/presence-proof.json": "193a4189b70cf64dab5a9319946e12bf3b7003fc8953dca2da2829da29c3783e",
+    "logs/verifier/ctrf.json": "c80332dfbc78e6d2b7c02d40c4c5b4c1d62952a44f12b4a9afe1cdf717ad8958",
+    "logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "module_hashes": {
+    "doom_output.py": "4b68561836a96f54278cb1def625a71254b041b4b9f856411c4cd98797c17e1c",
+    "doom_grader_setup.py": "776ce188e99660be41162732ef5b4cf7cd5cb060c569306f49253cb60c198497",
+    "run_doom_missing_probe.py": "2bdda24b5b59be34dea2e23a15748b10099a8e31d968ae70f1d8a4d24fefaf17"
+  }
+}

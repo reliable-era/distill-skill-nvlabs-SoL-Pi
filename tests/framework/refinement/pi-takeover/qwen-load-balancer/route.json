@@ -1,0 +1,13 @@
+{
+  "base_url": "http://127.0.0.1:8000/v1",
+  "host": "127.0.0.1",
+  "port": 8000,
+  "model": "Qwen3.8-27B-FP8",
+  "backends": [
+    {"host": "127.0.0.1", "port": 18002, "gpus": [2, 3]},
+    {"host": "127.0.0.1", "port": 18001, "gpus": [0, 1]}
+  ],
+  "strategy": "least_conn",
+  "automatic_request_retries": false,
+  "scope": "User-authorized route for subsequent requests. Previous direct-route panel finished and audited before migration; new benchmark cohorts must freeze this config, collect backend headers, inspect both backend loads and stratify backend provenance."
+}

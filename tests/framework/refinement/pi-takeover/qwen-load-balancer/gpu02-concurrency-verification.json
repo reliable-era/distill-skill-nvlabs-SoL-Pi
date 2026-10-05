@@ -1,0 +1,158 @@
+{
+  "checked_at": "2026-10-05T21:40:04+0800",
+  "model_POSTs": 16,
+  "replicas": [
+    {
+      "backend": "http://127.0.0.1:18001",
+      "max_running_requests": 8,
+      "max_mamba_cache_size": 48,
+      "peak_running_requests": 9,
+      "memory_usage": {
+        "weight": 14.48,
+        "kvcache": 8.0,
+        "startup_available": 7.075,
+        "token_capacity": 262144,
+        "token_capacity_swa": null,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 0.588,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.375,
+          "draft_extend": 0.0
+        }
+      },
+      "model_POSTs": 8,
+      "checks": [
+        {
+          "index": 0,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.752631828188896
+        },
+        {
+          "index": 1,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.526770152151585
+        },
+        {
+          "index": 2,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 6.195699924603105
+        },
+        {
+          "index": 3,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.462921693921089
+        },
+        {
+          "index": 4,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 6.259648773819208
+        },
+        {
+          "index": 5,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.5793759394437075
+        },
+        {
+          "index": 6,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.5264402106404305
+        },
+        {
+          "index": 7,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.08261882327497
+        }
+      ],
+      "elapsed_seconds": 6.264021396636963,
+      "output_tokens_per_second": 163.47326025255384
+    },
+    {
+      "backend": "http://127.0.0.1:18002",
+      "max_running_requests": 8,
+      "max_mamba_cache_size": 48,
+      "peak_running_requests": 9,
+      "memory_usage": {
+        "weight": 14.465,
+        "kvcache": 8.0,
+        "startup_available": 7.143,
+        "token_capacity": 262144,
+        "token_capacity_swa": null,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 0.459,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.367,
+          "draft_extend": 0.0
+        }
+      },
+      "model_POSTs": 8,
+      "checks": [
+        {
+          "index": 0,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.180904507637024
+        },
+        {
+          "index": 1,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.535528294742107
+        },
+        {
+          "index": 2,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.438660120591521
+        },
+        {
+          "index": 3,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.270065274089575
+        },
+        {
+          "index": 4,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 3.1208395566791296
+        },
+        {
+          "index": 5,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.4383073803037405
+        },
+        {
+          "index": 6,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 4.1803741827607155
+        },
+        {
+          "index": 7,
+          "completion_tokens": 128,
+          "prompt_tokens": 597,
+          "elapsed_seconds": 5.464204292744398
+        }
+      ],
+      "elapsed_seconds": 5.467918315902352,
+      "output_tokens_per_second": 187.27419482875226
+    }
+  ],
+  "notes": [
+    "These short readiness checks ran alongside existing client traffic; timing is not an isolated or steady-state throughput benchmark.",
+    "peak_running_requests is the raw peak num_reqs reported by /get_load across all traffic, not only probe requests."
+  ]
+}

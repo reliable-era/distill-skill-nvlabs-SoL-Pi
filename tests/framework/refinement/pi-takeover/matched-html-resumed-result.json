@@ -1,0 +1,129 @@
+{
+  "plan_sha256": "50d394ccf87be90b1fc92035a93631e69316d51e4b5f97a3d0ff10e244e2d5c5",
+  "rows": [
+    {
+      "arm": "candidate",
+      "reward": "0",
+      "test_events": 1,
+      "solved": false,
+      "output_present": false,
+      "output_absence_evidence": "completed official missing-file failure;no captured payload;native only read command;frozen controller HEAD absence branch",
+      "capture": {
+        "capture_complete": false,
+        "output_absent_verified_by_controller": true
+      },
+      "provider_POST": 2,
+      "provider_tokens_lower_bound": 23394,
+      "cost_complete": true,
+      "unknown_cost_requests": [],
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "native_provider_reconciliation_complete": true,
+      "native_usage": {
+        "input_tokens": 15103,
+        "cached_input_tokens": 13056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8291,
+        "reasoning_output_tokens": 8216
+      },
+      "cleanup_verified": true,
+      "controller_cleanup_failed_after_valid_grade": true,
+      "harvest_scope": "Read-only recovery;no actor or grader rerun",
+      "task_provided_public_test_access": "Explicit public instruction authorizes /app/test_outputs.py;not trusted /tests mount or solutions"
+    },
+    {
+      "arm": "Both",
+      "native_exit": 0,
+      "actor_seconds": 92.76742192730308,
+      "output_present": false,
+      "capture": {
+        "capture_complete": false,
+        "output_absent_verified": true,
+        "not_unsupported_layout": true
+      },
+      "reward": "0",
+      "test_events": 1,
+      "solved": false,
+      "raw_invalid_requests": [
+        2
+      ],
+      "corrected_requests": [
+        2
+      ],
+      "provider_POST": 2,
+      "provider_tokens_lower_bound": 24491,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "none",
+      "native_exit": 0,
+      "actor_seconds": 241.8380600977689,
+      "output_present": false,
+      "capture": {
+        "capture_complete": false,
+        "output_absent_verified": true,
+        "not_unsupported_layout": true
+      },
+      "reward": "0",
+      "test_events": 1,
+      "solved": false,
+      "raw_invalid_requests": [
+        8
+      ],
+      "corrected_requests": [
+        8
+      ],
+      "provider_POST": 6,
+      "provider_tokens_lower_bound": 101489,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "K",
+      "native_exit": 0,
+      "actor_seconds": 90.52552841417491,
+      "output_present": false,
+      "capture": {
+        "capture_complete": false,
+        "output_absent_verified": true,
+        "not_unsupported_layout": true
+      },
+      "reward": "0",
+      "test_events": 1,
+      "solved": false,
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 2,
+      "provider_tokens_lower_bound": 23808,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    }
+  ],
+  "errors": [],
+  "starts": 4,
+  "POST": 12,
+  "cleanup_containers_absent": true,
+  "scope": "New four-arm first-fixed-task matched replica panel;not representative confirmation",
+  "scheduler_wait_seconds": 0.06135200895369053
+}

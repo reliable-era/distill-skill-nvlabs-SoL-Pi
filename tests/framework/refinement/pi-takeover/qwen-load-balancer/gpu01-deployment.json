@@ -1,0 +1,255 @@
+{
+  "checked_at": "2026-10-05T21:40:03+0800",
+  "status": "complete",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "compatibility_base_url": "http://127.0.0.1:18080/v1",
+  "remote_directory": "/data/a/wj/qwen38-load-balancer",
+  "model_directory": "/data/a/wj/models",
+  "nginx_config": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/qwen-load-balancer/nginx.conf",
+  "nginx_config_sha256": "17f111ba2ee17fce69549eb06c8ca1f5fdc6613d2d5df48b2ccee2c5b078e231",
+  "backup_directory": "/tmp/solpi-qwen-gpu01-20261005-211415",
+  "replicas": [
+    {
+      "backend": "127.0.0.1:18001",
+      "settings": {
+        "context_length": 262144,
+        "tp_size": 2,
+        "max_running_requests": 8,
+        "max_mamba_cache_size": 48,
+        "max_total_tokens": 262144,
+        "mem_fraction_static": 0.9,
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "disable_custom_all_reduce": true
+      },
+      "memory_usage": {
+        "weight": 14.48,
+        "kvcache": 8.0,
+        "startup_available": 7.075,
+        "token_capacity": 262144,
+        "token_capacity_swa": null,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 0.588,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.375,
+          "draft_extend": 0.0
+        }
+      }
+    },
+    {
+      "backend": "127.0.0.1:18002",
+      "settings": {
+        "context_length": 262144,
+        "tp_size": 2,
+        "max_running_requests": 8,
+        "max_mamba_cache_size": 48,
+        "max_total_tokens": 262144,
+        "mem_fraction_static": 0.9,
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "disable_custom_all_reduce": false
+      },
+      "memory_usage": {
+        "weight": 14.465,
+        "kvcache": 8.0,
+        "startup_available": 7.143,
+        "token_capacity": 262144,
+        "token_capacity_swa": null,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 0.459,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.367,
+          "draft_extend": 0.0
+        }
+      }
+    },
+    {
+      "backend": "10.193.104.97:18001",
+      "settings": {
+        "context_length": 262144,
+        "tp_size": 2,
+        "max_running_requests": 8,
+        "max_mamba_cache_size": 48,
+        "max_total_tokens": 262144,
+        "mem_fraction_static": 0.9,
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "disable_custom_all_reduce": true
+      },
+      "memory_usage": {
+        "weight": 14.48,
+        "kvcache": 8.0,
+        "startup_available": 7.206,
+        "token_capacity": 262144,
+        "token_capacity_swa": null,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 0.439,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.363,
+          "draft_extend": 0.0
+        }
+      }
+    },
+    {
+      "backend": "10.193.104.97:18002",
+      "settings": {
+        "context_length": 262144,
+        "tp_size": 2,
+        "max_running_requests": 8,
+        "max_mamba_cache_size": 48,
+        "max_total_tokens": 262144,
+        "mem_fraction_static": 0.9,
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "disable_custom_all_reduce": true
+      },
+      "memory_usage": {
+        "weight": 14.48,
+        "kvcache": 8.0,
+        "startup_available": 7.206,
+        "token_capacity": 262144,
+        "token_capacity_swa": null,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 0.439,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.363,
+          "draft_extend": 0.0
+        }
+      }
+    }
+  ],
+  "configured_concurrency_cap": 32,
+  "token_pool_is_shared_per_replica": true,
+  "routing_checks": [
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "10.193.104.97:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "10.193.104.97:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "10.193.104.97:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "10.193.104.97:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "10.193.104.97:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    },
+    {
+      "status": 200,
+      "backend": "10.193.104.97:18002",
+      "models": [
+        "Qwen3.8-27B-FP8"
+      ]
+    }
+  ],
+  "aggregate_load": [
+    {
+      "dp_rank": 0,
+      "num_reqs": 0,
+      "num_waiting_reqs": 0,
+      "num_tokens": 0,
+      "num_pending_tokens": 0,
+      "ts_tic": 12741913.145382188,
+      "backend": "127.0.0.1:18002"
+    },
+    {
+      "dp_rank": 0,
+      "num_reqs": 3,
+      "num_waiting_reqs": 0,
+      "num_tokens": 8911,
+      "num_pending_tokens": 0,
+      "ts_tic": 12741913.147405528,
+      "backend": "127.0.0.1:18001"
+    },
+    {
+      "dp_rank": 0,
+      "num_reqs": 0,
+      "num_waiting_reqs": 0,
+      "num_tokens": 0,
+      "num_pending_tokens": 0,
+      "ts_tic": 10836660.105795588,
+      "backend": "10.193.104.97:18002"
+    },
+    {
+      "dp_rank": 0,
+      "num_reqs": 1,
+      "num_waiting_reqs": 0,
+      "num_tokens": 5449,
+      "num_pending_tokens": 0,
+      "ts_tic": 10836660.107454251,
+      "backend": "10.193.104.97:18001"
+    }
+  ]
+}

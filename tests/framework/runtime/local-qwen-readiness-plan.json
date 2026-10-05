@@ -1,0 +1,71 @@
+{
+  "status": "prepared_only",
+  "backend": "shared local Qwen; separate from historical ChatGPT",
+  "server_container": "ykw-qwen38-dflash2-tp2",
+  "server_image_id": "sha256:6305caa4b7bb7159ae4f079e24fdf628fafa5c208fe048ddfb44a8652e7c8efd",
+  "model": "Qwen3.8-27B-FP8",
+  "advertised_context": 262144,
+  "advertised_routes": [
+    "POST /v1/responses",
+    "POST /v1/chat/completions",
+    "POST /v1/messages"
+  ],
+  "openapi_version": "FastAPI0.1.0 is schema app version, not independently verified SGLang package version",
+  "maximum_model_starts": 2,
+  "actor_timeout_seconds": 30,
+  "automatic_retries": 0,
+  "maximum_simultaneous_server_requests": 1,
+  "scheduling_gate": "Shared active inference cannot be established by models/openapi metadata; root must confirm no live actor and acquire existing shared inference lock before either start. Never modify server concurrency/configuration.",
+  "credential_policy": "Fresh empty private HOME, no hostauth/config mounts, dummy-local-only key only. Inference acceptance of dummy key remains unverified.",
+  "network_gate": "Native actors must use reviewed allowlisted proxy route to exactexisting hostserver; isolated bridge cannot use127.0.0.1 ashost. No generalhostgateway exposure. Route unprepared =>no starts.",
+  "controls": [
+    {
+      "harness": "pi",
+      "version": "1.0.0",
+      "native_config": {
+        "providers": {
+          "local-qwen": {
+            "baseUrl": "http://AUTHORIZED_ROUTE:8000/v1",
+            "api": "openai-completions",
+            "apiKey": "dummy-local-only",
+            "models": [
+              {
+                "id": "Qwen3.8-27B-FP8"
+              }
+            ]
+          }
+        }
+      },
+      "selection": [
+        "--provider",
+        "local-qwen",
+        "--model",
+        "Qwen3.8-27B-FP8",
+        "--mode",
+        "json"
+      ],
+      "expected": "One bounded trivial coding fixture, verify streamed tool result and provider usage; no qualitybenchmark."
+    },
+    {
+      "harness": "codex",
+      "version": "0.160.0",
+      "native_config": {
+        "model_provider": "local-qwen",
+        "model": "Qwen3.8-27B-FP8",
+        "model_providers.local-qwen.name": "local Qwen",
+        "model_providers.local-qwen.base_url": "http://AUTHORIZED_ROUTE:8000/v1",
+        "model_providers.local-qwen.wire_api": "responses",
+        "model_providers.local-qwen.env_key": "MOCK_KEY",
+        "model_providers.local-qwen.requires_openai_auth": false,
+        "model_providers.local-qwen.supports_websockets": false,
+        "model_providers.local-qwen.request_max_retries": 0
+      },
+      "expected": "One bounded identical fixture, verify native Responses streamed tool events and terminal usage; advertisedroute alone insufficient."
+    }
+  ],
+  "fixture": "Private synthetic calculator add(2,3)==5, no sealedtasks",
+  "accounting": "Pi normalized exclusive input/output/cacheRead/cacheWrite retained; validate raw provider cache<=inclusiveprompt and total arithmetic; missingproviderfields cannot be certifiedzero merely becauseadapterdefaults0. Codex terminalinclusiveinput+output, cache subset, helper/compaction scope separatelygated.",
+  "starts": 0,
+  "server_mutations": 0,
+  "full_goal": "Original five native harness objective unchanged; readinessisnotcomparison or certification"
+}

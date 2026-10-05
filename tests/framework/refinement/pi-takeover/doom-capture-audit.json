@@ -1,0 +1,23 @@
+{
+  "task": "make-doom-for-mips",
+  "source_artifact_worker_hashes_match": true,
+  "baseline_reward": "0",
+  "original_vm_elf_replay_reward": "1",
+  "elf_witness": {
+    "magic": true,
+    "class": 1,
+    "byte_order": 1,
+    "machine": 8
+  },
+  "vm_wad_render_source_unchanged_in_control": true,
+  "synthetic_vm_edit_detected": true,
+  "cleanup_verified": true,
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "verified_task_transfers_total": 7,
+  "remaining_tasks": [
+    "build-cython-ext",
+    "build-pmars"
+  ],
+  "scope": "ELF-only transfer into trusted original VM;input change witnesses are not new task prohibitions or skill-score evidence"
+}

@@ -1,0 +1,17 @@
+{
+  "replicas": [
+    {
+      "container": "jev-pi-qwen38-replica-20261004-nccl-only",
+      "peer": "127.0.0.1:18001",
+      "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa"
+    },
+    {
+      "container": "ykw-qwen38-dflash2-tp2",
+      "peer": "127.0.0.1:18002",
+      "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa"
+    }
+  ],
+  "source_changed": false,
+  "services_restarted": false,
+  "model_POSTs": 0
+}

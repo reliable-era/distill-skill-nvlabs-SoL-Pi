@@ -1,0 +1,86 @@
+{
+  "scope": "Diagnostic only on exposed development task;official grades unchanged;not alternate grading or confirmation evidence",
+  "grader_source_sha256": "57e4904177acac5807b51f7c32444bde1968ba0445855fa4333d9eb73865b59e",
+  "grade_coverage": "Removal scans3fixed files/5known strings;replacement compares3entirefiles byte-for-byte;other-file check usesGitdiff;does not enumerate Git objects/history or revoke credentials",
+  "task_contract_limitation": "Exact formatting preservation and historical-object scope are not explicitly specified;grader PASS certifies only its checked conditions",
+  "cells": [
+    {
+      "arm": "original",
+      "official_tests": [
+        [
+          "test_outputs.py::test_removal_of_secret_information",
+          "failed"
+        ],
+        [
+          "test_outputs.py::test_correct_replacement_of_secret_information",
+          "failed"
+        ],
+        [
+          "test_outputs.py::test_no_other_files_changed",
+          "passed"
+        ]
+      ],
+      "final_worktree_changed_files": 2,
+      "checked_files": [
+        {
+          "file_role": ".py",
+          "exact_reference_match": true,
+          "parsed_semantic_reference_match": true,
+          "known_secret_still_present": false
+        },
+        {
+          "file_role": ".yaml",
+          "exact_reference_match": true,
+          "parsed_semantic_reference_match": true,
+          "known_secret_still_present": false
+        },
+        {
+          "file_role": ".json",
+          "exact_reference_match": false,
+          "parsed_semantic_reference_match": false,
+          "known_secret_still_present": true
+        }
+      ]
+    },
+    {
+      "arm": "Both",
+      "official_tests": [
+        [
+          "test_outputs.py::test_removal_of_secret_information",
+          "passed"
+        ],
+        [
+          "test_outputs.py::test_correct_replacement_of_secret_information",
+          "passed"
+        ],
+        [
+          "test_outputs.py::test_no_other_files_changed",
+          "failed"
+        ]
+      ],
+      "final_worktree_changed_files": 3,
+      "checked_files": [
+        {
+          "file_role": ".py",
+          "exact_reference_match": true,
+          "parsed_semantic_reference_match": true,
+          "known_secret_still_present": false
+        },
+        {
+          "file_role": ".yaml",
+          "exact_reference_match": true,
+          "parsed_semantic_reference_match": true,
+          "known_secret_still_present": false
+        },
+        {
+          "file_role": ".json",
+          "exact_reference_match": true,
+          "parsed_semantic_reference_match": true,
+          "known_secret_still_present": false
+        }
+      ]
+    }
+  ],
+  "Both_original_verifier_anchor_commit_exists": false,
+  "interpretation": "Both matches all3reference files but fails other-files check;missing fixed original commit after history rewrite invalidates its Gitdiff precondition. Keep official fail unchanged;not a formatting-only failure or proof of unauthorized worktree edits."
+}

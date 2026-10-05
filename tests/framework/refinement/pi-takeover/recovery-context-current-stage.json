@@ -1,0 +1,120 @@
+{
+  "status": "TERMINAL_REJECTED_ZERO_VERIFIED_SOLVES_EXECUTION_PAUSED_FOR_REVIEW",
+  "checked_utc": "2026-10-05T12:29:49.263953+00:00",
+  "pid": 773601,
+  "worker_active": false,
+  "root": "/tmp/solpi-rc16-2bf91f1a6f8f4113a5",
+  "plan_sha256": "2bf91f1a6f8f4113a5221929f6c1453f8b715cf285a88f43057205ecd5faadaf",
+  "starts": 4,
+  "POST": 63,
+  "complete_provider_gross_tokens": 995896,
+  "unknown_cost_requests": [],
+  "rows": [
+    {
+      "arm": "candidate",
+      "POST": 15,
+      "known_gross_lower_bound": 201282,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 590.3814327400178,
+      "setup_seconds": 3.12324570864439,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 2.518482506275177e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12736551.597661912
+      }
+    },
+    {
+      "arm": "Both",
+      "POST": 16,
+      "known_gross_lower_bound": 287184,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 456.50207105465233,
+      "setup_seconds": 3.080970112234354,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 2.1491199731826782e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12737193.012311315
+      }
+    },
+    {
+      "arm": "none",
+      "POST": 16,
+      "known_gross_lower_bound": 332559,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 309.5883675124496,
+      "setup_seconds": 3.03794034011662,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 4.7732144594192505e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12737679.210239979
+      }
+    },
+    {
+      "arm": "K",
+      "POST": 16,
+      "known_gross_lower_bound": 174871,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 223.52973920479417,
+      "setup_seconds": 3.0000255443155766,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 1.1339783668518066e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12738013.187953029
+      }
+    }
+  ],
+  "matched_panel_complete": true,
+  "verified_solves": 0,
+  "ALL3_5percent_token_point_gate": null,
+  "cleanup": {
+    "containers": [],
+    "networks": []
+  },
+  "actual_current_candidate_Both_delivery_verified": true,
+  "candidate_payload_bytes": 80214354,
+  "next": "boundedread-only adherence/futilityreview before further defensible hypothesis; no automatic nextvariant/matrix",
+  "promotion": false,
+  "goal_complete": false
+}

@@ -1,0 +1,38 @@
+{
+  "plan_sha256": "0a6b2609513dcb494de624a242021f65bb46295ea701d07aa0f8209c68ef949c",
+  "started_cells": 1,
+  "provider_POST": 2,
+  "unstarted_arms": [
+    "none",
+    "K",
+    "Both"
+  ],
+  "candidate_reward": "0",
+  "official_test_events": 1,
+  "official_test_statuses": [
+    "failed"
+  ],
+  "verified_provider_tokens_lower_bound": 6961,
+  "provider_cost_complete": false,
+  "invalid_receipts": [
+    {
+      "request": 2,
+      "provider_status": 200,
+      "backend": "127.0.0.1:18001",
+      "normalization_error": "invalid_reasoning_subset"
+    }
+  ],
+  "raw_second_receipt_usage": {
+    "input_tokens": 8067,
+    "output_tokens": 8190,
+    "total_tokens": 16257,
+    "reasoning_tokens": 8193
+  },
+  "secondary_postprocessor_defect": "Summing a null invalid-receipt gross count caused TypeError before row persisted;private stopped outputs and grader result retained",
+  "action": "Stop at accounting/protocol gate;do not retry candidate or reinterpret invalid usage aszero;other3armsunstarted",
+  "prior_native_initialization_failure": {
+    "native_starts": 1,
+    "provider_POST": 0
+  },
+  "scope": "Interrupted first-selected-task pilot,not a matched comparison or representative estimate"
+}

@@ -1,0 +1,189 @@
+{
+  "status": "terminal_independently_audited",
+  "process": {
+    "pid": 1043259,
+    "log": "/tmp/solpi-source-backed-doom-v1.log",
+    "task": "make-doom-for-mips",
+    "selection_index": 4,
+    "candidate_sha256": "e4277c3220d831f9ea4f09826280077b22af0e070ebc1a0491f6f79ba27f3baa",
+    "model": "Qwen3.8-27B-FP8",
+    "backend": "127.0.0.1:18001",
+    "starts_cap": 4,
+    "effective_POST_cap": 64,
+    "runner_sha256": "1547d5217e9fe9906b06fae29d896fc4f087610602e87cec105111442a428c10",
+    "generated_code_sha256": "b97883dc280a4f3097c6421ae87bbe33c9238720aa9570bae0b682986212d30a",
+    "scope": "samecandidate nextfixedprimarytaskboundedgeneralization;notconfirmation/actorreretry"
+  },
+  "plan_sha256": "20572b2ceffdd555410ad0c946e538c16eec544fb261a451987c23d5abf781a5",
+  "root": "/tmp/solpi-sbd-20572b2ceffdd55541",
+  "starts_at_snapshot": 4,
+  "POST_at_snapshot": 56,
+  "receipts_at_snapshot": 56,
+  "next": "read-onlybudgetreviewcomplete;prospectivecohort/limit/accountingproposalneededbefore furtherinference",
+  "goal_complete": false,
+  "gross_tokens": 1766886,
+  "rows": [
+    {
+      "arm": "candidate",
+      "solved": false,
+      "official_reward": "0",
+      "passed_tests": 0,
+      "POST": 13,
+      "gross_tokens": 516874,
+      "provider_cost_complete": true,
+      "native_provider_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "provider_last_response_status": "incomplete",
+      "provider_last_incomplete_details": {
+        "reason": "max_output_tokens"
+      },
+      "provider_last_usage": {
+        "input_tokens": 60762,
+        "input_tokens_details": {
+          "cached_tokens": 59648,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 8190,
+        "output_tokens_details": {
+          "reasoning_tokens": 8190
+        },
+        "total_tokens": 68952
+      },
+      "output_present": false,
+      "original_vm_wad_verified": true,
+      "nonreplayed_input_witnesses": {
+        "/app/vm.js": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+        "/app/doom.wad": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+        "/app/doomgeneric/doomgeneric/doomgeneric_img.c": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26"
+      },
+      "corrections": [],
+      "actor_seconds": 382.5342313554138,
+      "setup_seconds": 13.180867543444037
+    },
+    {
+      "arm": "Both",
+      "solved": false,
+      "official_reward": "0",
+      "passed_tests": 0,
+      "POST": 16,
+      "gross_tokens": 494162,
+      "provider_cost_complete": true,
+      "native_provider_reconciled": false,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "provider_last_response_status": "completed",
+      "provider_last_incomplete_details": null,
+      "provider_last_usage": {
+        "input_tokens": 51181,
+        "input_tokens_details": {
+          "cached_tokens": 42880,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 683,
+        "output_tokens_details": {
+          "reasoning_tokens": 473
+        },
+        "total_tokens": 51864
+      },
+      "output_present": false,
+      "original_vm_wad_verified": true,
+      "nonreplayed_input_witnesses": {
+        "/app/vm.js": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+        "/app/doom.wad": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+        "/app/doomgeneric/doomgeneric/doomgeneric_img.c": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26"
+      },
+      "corrections": [],
+      "actor_seconds": 293.57896081730723,
+      "setup_seconds": 12.862294856458902
+    },
+    {
+      "arm": "none",
+      "solved": false,
+      "official_reward": "0",
+      "passed_tests": 0,
+      "POST": 11,
+      "gross_tokens": 229857,
+      "provider_cost_complete": true,
+      "native_provider_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "provider_last_response_status": "incomplete",
+      "provider_last_incomplete_details": {
+        "reason": "max_output_tokens"
+      },
+      "provider_last_usage": {
+        "input_tokens": 36267,
+        "input_tokens_details": {
+          "cached_tokens": 33024,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 8190,
+        "output_tokens_details": {
+          "reasoning_tokens": 8190
+        },
+        "total_tokens": 44457
+      },
+      "output_present": false,
+      "original_vm_wad_verified": true,
+      "nonreplayed_input_witnesses": {
+        "/app/vm.js": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+        "/app/doom.wad": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+        "/app/doomgeneric/doomgeneric/doomgeneric_img.c": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26"
+      },
+      "corrections": [],
+      "actor_seconds": 129.6630867626518,
+      "setup_seconds": 13.352306140586734
+    },
+    {
+      "arm": "K",
+      "solved": false,
+      "official_reward": "0",
+      "passed_tests": 0,
+      "POST": 16,
+      "gross_tokens": 525993,
+      "provider_cost_complete": true,
+      "native_provider_reconciled": false,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "provider_last_response_status": "completed",
+      "provider_last_incomplete_details": null,
+      "provider_last_usage": {
+        "input_tokens": 57530,
+        "input_tokens_details": {
+          "cached_tokens": 57088,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 411,
+        "output_tokens_details": {
+          "reasoning_tokens": 233
+        },
+        "total_tokens": 57941
+      },
+      "output_present": false,
+      "original_vm_wad_verified": true,
+      "nonreplayed_input_witnesses": {
+        "/app/vm.js": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+        "/app/doom.wad": "1d7d43be501e67d927e415e0b8f3e29c3bf33075e859721816f652a526cac771",
+        "/app/doomgeneric/doomgeneric/doomgeneric_img.c": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26"
+      },
+      "corrections": [],
+      "actor_seconds": 289.23000286333263,
+      "setup_seconds": 13.766256630420685
+    }
+  ],
+  "cleanup": {
+    "containers": [],
+    "networks": []
+  },
+  "candidate_decision": "hold_expansion_or_promotion;allfailed/no verifiedsolve economy",
+  "actual_Both": "currentcandidate+frozenKarpathy",
+  "goal_delivery_verified": true,
+  "frozen_comparator_declaration_consistent": false,
+  "delivery_audit": "source-backed-doom-delivery-audit.json",
+  "historical_descriptions_superseded": true
+}

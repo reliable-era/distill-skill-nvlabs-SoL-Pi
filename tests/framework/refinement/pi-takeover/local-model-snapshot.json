@@ -1,0 +1,53 @@
+{
+  "observed_utc": "2026-10-04T10:17:03.826153+00:00",
+  "endpoint": "http://127.0.0.1:8000",
+  "advertised_models": [
+    {
+      "id": "Qwen3.8-27B-FP8",
+      "object": "model",
+      "created": 1791109023,
+      "owned_by": "sglang",
+      "root": "Qwen3.8-27B-FP8",
+      "parent": null,
+      "max_model_len": 262144
+    }
+  ],
+  "containers_observed": [
+    {
+      "name": "ykw-qwen38-dflash2-tp2",
+      "container_id": "84fcf768f2cec62462b95ebf1a89c15609d455ad820057fd5cd2619db69bf645",
+      "image_id": "sha256:6305caa4b7bb7159ae4f079e24fdf628fafa5c208fe048ddfb44a8652e7c8efd",
+      "started_at": "2026-08-23T06:12:17.491466623Z",
+      "running": true,
+      "network_mode": "host",
+      "selected_launch_flags": {
+        "--model-path": "/models/Qwen3.8-27B-FP8",
+        "--port": "8000",
+        "--host": "127.0.0.1",
+        "--tp-size": "2",
+        "--max-running-requests": "1",
+        "--speculative-algorithm": "DFLASH"
+      }
+    },
+    {
+      "name": "jev-pi-qwen38-replica-20261004",
+      "container_id": "40ba9eb7f97199bb9050fde8b959519936b7dfb05174b2090f8c1186704462e6",
+      "image_id": "sha256:6305caa4b7bb7159ae4f079e24fdf628fafa5c208fe048ddfb44a8652e7c8efd",
+      "started_at": "2026-10-04T09:30:47.463380725Z",
+      "running": false,
+      "network_mode": "host",
+      "selected_launch_flags": {
+        "--model-path": "/models/Qwen3.8-27B-FP8",
+        "--port": "18001",
+        "--host": "127.0.0.1",
+        "--tp-size": "2",
+        "--max-running-requests": "1",
+        "--speculative-algorithm": "DFLASH"
+      }
+    }
+  ],
+  "metadata_GETs": 1,
+  "model_POSTs": 0,
+  "changed_server": false,
+  "scope": "Read-only advertised identity and container metadata; not weight digest verification. Only requested model is Qwen3.8-27B-FP8; no alternate model fallback."
+}

@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "task": "regex-log",
+  "synthetic_only": true,
+  "native_actor_starts": 0,
+  "model_POSTs": 0,
+  "official_grader_runs": 0,
+  "reused_capture": "/tmp/solpi-task-replay-v2-c635c251b7/captured",
+  "trusted_only_capabilities": [
+    "CHOWN",
+    "DAC_OVERRIDE"
+  ],
+  "prior_failures": [
+    "task-replay-docker-smoke-v1-failure.json",
+    "task-replay-docker-smoke-v2-failure.json"
+  ],
+  "replay": {
+    "task": "regex-log",
+    "replay_complete": true,
+    "restored_paths": [
+      "/app/regex.txt"
+    ],
+    "witness_paths_not_replayed": [],
+    "trusted_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+    "trusted_payload_owner": "0:0",
+    "rebuild_performed": false,
+    "official_grade_available": false,
+    "cost_eligibility": false
+  },
+  "byte_identical": true,
+  "sha256": "f757fa347cab85c5f2967fa157153903bd94b56039f91435af0232b5340e081a",
+  "cleanup_verified": true,
+  "passed": true,
+  "module_hashes": {
+    "task_replay.py": "f7d30a12f9ef60070495a4894e17c77699f12399d5589f71ea693e952701a671",
+    "task_artifacts.py": "47aef719bce350c399be5f6aa24b712ce700c2e3a55e34a57fb148057b781b46"
+  }
+}

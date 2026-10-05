@@ -1,0 +1,93 @@
+{
+  "backup_directory": "/tmp/solpi-qwen-nginx-weights-20261005-222038",
+  "previous_weights": "all 1",
+  "method": "least_conn",
+  "status": "verified",
+  "updated_at": "2026-10-05T22:22:29+0800",
+  "master_pid": 2493188,
+  "weights": {
+    "127.0.0.1:18002": 12,
+    "127.0.0.1:18001": 11,
+    "10.193.104.97:18002": 10,
+    "10.193.104.97:18001": 10
+  },
+  "capacity_output_tokens_per_second": {
+    "127.0.0.1:18002": 329.03096283856377,
+    "127.0.0.1:18001": 290.8794995844658,
+    "10.193.104.97:18002": 284.9313609012507,
+    "10.193.104.97:18001": 273.61346281129374
+  },
+  "weight_formula": "round(10 * measured_capacity / minimum_measured_capacity)",
+  "nominal_shares": {
+    "127.0.0.1:18002": 0.27906976744186046,
+    "127.0.0.1:18001": 0.2558139534883721,
+    "10.193.104.97:18002": 0.23255813953488372,
+    "10.193.104.97:18001": 0.23255813953488372
+  },
+  "note": "Weighted least_conn accounts for active connections; these are not guaranteed request percentages or hard concurrency caps.",
+  "verified_at": "2026-10-05T22:23:08+0800",
+  "verification": {
+    "models_requests": 43,
+    "models_routing_counts": {
+      "127.0.0.1:18002": 12,
+      "127.0.0.1:18001": 11,
+      "10.193.104.97:18002": 10,
+      "10.193.104.97:18001": 10
+    },
+    "streaming_requests": [
+      {
+        "backend": "127.0.0.1:18002",
+        "status": 200,
+        "content": "OK",
+        "stream_done": true,
+        "usage": {
+          "prompt_tokens": 16,
+          "total_tokens": 18,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        }
+      },
+      {
+        "backend": "127.0.0.1:18001",
+        "status": 200,
+        "content": "OK",
+        "stream_done": true,
+        "usage": {
+          "prompt_tokens": 16,
+          "total_tokens": 18,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        }
+      },
+      {
+        "backend": "10.193.104.97:18002",
+        "status": 200,
+        "content": "OK",
+        "stream_done": true,
+        "usage": {
+          "prompt_tokens": 16,
+          "total_tokens": 18,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        }
+      },
+      {
+        "backend": "10.193.104.97:18001",
+        "status": 200,
+        "content": "OK",
+        "stream_done": true,
+        "usage": {
+          "prompt_tokens": 16,
+          "total_tokens": 18,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        }
+      }
+    ],
+    "aggregate_load_rows": 4
+  }
+}

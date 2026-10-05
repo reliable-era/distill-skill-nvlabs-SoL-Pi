@@ -1,0 +1,108 @@
+{
+  "private_root": "/tmp/solpi-cython-partial-d7850752dd",
+  "native_starts": 0,
+  "provider_POST": 0,
+  "synthetic_helper_containers": 1,
+  "trusted_grader_calls": 1,
+  "protocol": "cython-source-only-probe-v1",
+  "scope": "new missing-installation/source transfer integration;not skill comparison or repeated gold control",
+  "actor_isolation": {
+    "verified": true,
+    "public_input_mounts": 4,
+    "original_grader_image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+    "actor_image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af"
+  },
+  "capture": {
+    "task": "build-cython-ext",
+    "protocol": "cython-source-only-v1",
+    "capture_complete": true,
+    "stopped_actor_verified": true,
+    "image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+    "container_id": "8798f363e09e279f2b68b336020d9765ba294e5ba47d7bc32dd4161b3cce7001",
+    "installation_absence": {
+      "output_state": "absent",
+      "installation_absent_verified": true,
+      "unsupported_layout": false,
+      "grading_verified": false,
+      "cost_eligibility": false,
+      "source_transfer_pending": true,
+      "stopped_actor_verified": true,
+      "image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+      "container_id": "8798f363e09e279f2b68b336020d9765ba294e5ba47d7bc32dd4161b3cce7001",
+      "presence": {
+        "/usr/local/lib/python3.13/site-packages/pyknotid-0.5.3.dist-info": false,
+        "/usr/local/lib/python3.13/site-packages/pyknotid": false,
+        "/usr/local/lib/python3.13/site-packages/__editable__.pyknotid-0.5.3.pth": false,
+        "/usr/local/lib/python3.13/site-packages/__editable___pyknotid_0_5_3_finder.py": false
+      },
+      "docker_diff": "C /app\nA /app/pyknotid\nA /app/pyknotid/README.synthetic\nC /opt\nA /opt/public-requirements.txt\nA /opt/public-sources\nA /opt/public-sources/clone.gitconfig\nA /opt/public-sources/pyknotid.git\nA /opt/public-wheels\n"
+    },
+    "source_present": true,
+    "artifacts": {
+      "/app/pyknotid": {
+        "path": "/app/pyknotid",
+        "kind": "directory",
+        "max_bytes": 536870912,
+        "purpose": "output",
+        "capture_complete": true,
+        "bytes": 51,
+        "entries": 2,
+        "files": {
+          "README.synthetic": {
+            "bytes": 51,
+            "sha256": "5da96b65f0291d4b90ac1fb898bad2daaecd588b250855f324af5f8b9219566b"
+          }
+        },
+        "local_payload": "payload-0"
+      }
+    },
+    "rebuild_performed": false,
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "replay": {
+    "replay_complete": true,
+    "source_present": true,
+    "missing_installation_preserved": true,
+    "restored_paths": [
+      "/app/pyknotid"
+    ],
+    "trusted_image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+    "rebuild_performed": false,
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "dependency_setup": {
+    "dependency_setup_complete": true,
+    "requirements_sha256": "93db22b462e56b7cc0274fba341645c9a19228beb97a8729926b642be5f8e865",
+    "witness": {
+      "numpy": "2.3.0",
+      "planarity": "0.6",
+      "target_metadata_present": false
+    },
+    "target_builds": 0,
+    "target_installs": 0,
+    "network_required": false
+  },
+  "source_readback_sha256": "5da96b65f0291d4b90ac1fb898bad2daaecd588b250855f324af5f8b9219566b",
+  "verifier_exit": 0,
+  "reward": "0",
+  "passed": false,
+  "error": {
+    "type": "FileNotFoundError",
+    "message": "[Errno 2] No such file or directory: '/tmp/solpi-cython-partial-d7850752dd/logs/verifier/ctrf.json'"
+  },
+  "cleanup_verified": true,
+  "module_hashes": {
+    "cython_partial_output.py": "ea5a41c90f73389651a000816a959959d42dbc25d20c13177cfa6e3f08417829",
+    "stopped_cython_output.py": "8f978d57e6276f6b075da868aef72fb86994c374c431c5dbb217318bf1010b35",
+    "cython_grader_inputs.py": "8c35b0f5700227c2b705f7198f40481cd94b7a50b1474f0e3bb1014308f38fb3",
+    "run_cython_partial_probe.py": "2e4088226de11e40aa2fab4188c3e4b00de98ef15a82a8f71426050311f08a59"
+  },
+  "evidence_hashes": {
+    "verifier.log": "cceb1fc44028895eadd728295165c6bbc8c883eff8026eb012fffbbed5c964ed",
+    "captured/capture.json": "2c5c9214188bccfe2d6a764071b3d3b2990778befa124e5eab2913cd59816362",
+    "logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "captured/payload-0/README.synthetic": "5da96b65f0291d4b90ac1fb898bad2daaecd588b250855f324af5f8b9219566b"
+  }
+}

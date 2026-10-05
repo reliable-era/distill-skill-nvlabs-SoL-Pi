@@ -1,0 +1,125 @@
+{
+  "verified_at": "2026-10-05T22:13:22+0800",
+  "gateway": "gpu02:8000",
+  "nginx_reloaded": true,
+  "requests": [
+    {
+      "status": 200,
+      "backend": "10.193.104.97:18001",
+      "content": "OK",
+      "stream_done": true,
+      "usage": {
+        "prompt_tokens": 16,
+        "total_tokens": 18,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      }
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002",
+      "content": "OK",
+      "stream_done": true,
+      "usage": {
+        "prompt_tokens": 16,
+        "total_tokens": 18,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      }
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001",
+      "content": "OK",
+      "stream_done": true,
+      "usage": {
+        "prompt_tokens": 16,
+        "total_tokens": 18,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      }
+    },
+    {
+      "status": 200,
+      "backend": "10.193.104.97:18002",
+      "content": "OK",
+      "stream_done": true,
+      "usage": {
+        "prompt_tokens": 16,
+        "total_tokens": 18,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      }
+    }
+  ],
+  "load": [
+    {
+      "dp_rank": 0,
+      "num_reqs": 0,
+      "num_waiting_reqs": 0,
+      "num_tokens": 0,
+      "num_pending_tokens": 0,
+      "ts_tic": 12743911.900081186,
+      "backend": "127.0.0.1:18002"
+    },
+    {
+      "dp_rank": 0,
+      "num_reqs": 0,
+      "num_waiting_reqs": 0,
+      "num_tokens": 0,
+      "num_pending_tokens": 0,
+      "ts_tic": 12743911.902230931,
+      "backend": "127.0.0.1:18001"
+    },
+    {
+      "dp_rank": 0,
+      "num_reqs": 1,
+      "num_waiting_reqs": 0,
+      "num_tokens": 32,
+      "num_pending_tokens": 0,
+      "ts_tic": 10838658.869802685,
+      "backend": "10.193.104.97:18002"
+    },
+    {
+      "dp_rank": 0,
+      "num_reqs": 0,
+      "num_waiting_reqs": 0,
+      "num_tokens": 0,
+      "num_pending_tokens": 0,
+      "ts_tic": 10838658.871762555,
+      "backend": "10.193.104.97:18001"
+    }
+  ],
+  "restored_gpu02_gpu01": {
+    "tp_size": 2,
+    "max_running_requests": 8,
+    "max_mamba_cache_size": 48,
+    "max_total_num_tokens": 262144
+  },
+  "local_containers": [
+    {
+      "name": "jev-pi-qwen38-replica-20261004-nccl-only",
+      "state": "running",
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "name": "ykw-qwen38-dflash2-tp2",
+      "state": "running",
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "name": "wj-qwen38-dflash2-tp1-gpu0",
+      "state": "exited",
+      "restart_policy": "no"
+    },
+    {
+      "name": "wj-qwen38-dflash2-tp1-gpu1",
+      "state": "exited",
+      "restart_policy": "no"
+    }
+  ]
+}

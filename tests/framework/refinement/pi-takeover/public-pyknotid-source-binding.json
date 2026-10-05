@@ -1,0 +1,26 @@
+{
+  "version": "public-pyknotid-source-binding-v2",
+  "task": "build-cython-ext",
+  "source_url": "https://github.com/SPOCKnots/pyknotid.git",
+  "tag": "0.5.3",
+  "commit": "441c807dbec2ee32e1da572e24e58d52a4eb7afa",
+  "tree": "b61d08b0cd91cd7a629c4ff14bf1b578e3648ade",
+  "cache_manifest_sha256": "56c715891eb3688ec4749f21d0e1ace90f05c630cd59ba6a674f6b424053cc8a",
+  "probe_sha256": "89e0c3a1625706f3178056fd918d6832f972bb5ca219fcea9083da7990ee41a0",
+  "mounts": [
+    "/tmp/solpi-public-pyknotid-3c5b161769/pyknotid.git:/opt/public-sources/pyknotid.git:ro",
+    "/tmp/solpi-public-pyknotid-3c5b161769/clone.gitconfig:/opt/public-sources/clone.gitconfig:ro"
+  ],
+  "environment": {
+    "GIT_CONFIG_GLOBAL": "/opt/public-sources/clone.gitconfig"
+  },
+  "git_config_sha256": "8b4c483046f0077d50b5e651ab99c7968a55dc18de993648f47c4a6e68d3dc50",
+  "all_arms_uniform_required": true,
+  "original_source_only": true,
+  "clone_under_network_none_verified": true,
+  "target_builds": 0,
+  "prepared_cache_env_fields_superseded": true,
+  "full_dependency_access_ready": false,
+  "scoring_ready": false,
+  "not_benchmark_hidden_tests": "package-owned publictests areexplicitlyauthorized bytaskinstruction;noTerminalverifier/solution/logmounts"
+}

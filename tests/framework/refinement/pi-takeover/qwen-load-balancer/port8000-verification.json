@@ -1,0 +1,78 @@
+{
+  "base_url": "http://127.0.0.1:8000/v1",
+  "config_sha256": "2958db8191fb3bbeb3b8b3f5658f3cad2f684e79ab660100ea2df2037527456a",
+  "model": "Qwen3.8-27B-FP8",
+  "metadata_checks": [
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002"
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001"
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002"
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001"
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002"
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001"
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18002"
+    },
+    {
+      "status": 200,
+      "backend": "127.0.0.1:18001"
+    }
+  ],
+  "load_checks_cover_both_backends": true,
+  "streaming_probes": [
+    {
+      "probe": 0,
+      "status": 200,
+      "backend": "127.0.0.1:18002",
+      "usage": {
+        "prompt_tokens": 16,
+        "total_tokens": 18,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "stream_complete": true,
+      "elapsed_seconds": 0.1399480625987053,
+      "model_POSTs": 1,
+      "scope": "standalone routing readiness;not benchmark data"
+    },
+    {
+      "probe": 1,
+      "status": 200,
+      "backend": "127.0.0.1:18001",
+      "usage": {
+        "prompt_tokens": 16,
+        "total_tokens": 18,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "stream_complete": true,
+      "elapsed_seconds": 0.1505066193640232,
+      "model_POSTs": 1,
+      "scope": "standalone routing readiness;not benchmark data"
+    }
+  ],
+  "readiness_model_POSTs": 2,
+  "readiness_reported_tokens": 36,
+  "benchmark_outcomes_changed": false,
+  "hardware_GPU_reset": false
+}

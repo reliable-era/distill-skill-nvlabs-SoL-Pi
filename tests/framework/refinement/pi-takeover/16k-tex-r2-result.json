@@ -1,0 +1,435 @@
+{
+  "plan_sha256": "08ec31b4dbff79165c2558f3727f3897380797921305a5954a42dc1766c0ad93",
+  "rows": [
+    {
+      "arm": "candidate",
+      "protected_before": {
+        "container_id": "43864cfb80f554254c3d11c8bc2b2b8e7289774613e77522fdac0b4a956aea95",
+        "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "before_actor_start_verified": true,
+        "protected_baseline": {
+          "/app/main.tex": {
+            "bytes": 328,
+            "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+            "capture_complete": true
+          },
+          "/app/synonyms.txt": {
+            "bytes": 6008,
+            "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+            "capture_complete": true
+          }
+        },
+        "grading_verified": false
+      },
+      "native_exit": 0,
+      "actor_seconds": 220.71022051014006,
+      "capture": {
+        "task": "overfull-hbox",
+        "capture_complete": true,
+        "artifacts": {
+          "/app/input.tex": {
+            "path": "/app/input.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "output",
+            "bytes": 5118,
+            "sha256": "82955300f221a9c7ac3f133436011d70754624bc2bb1bda90ccdfacc87bc169b",
+            "capture_complete": true,
+            "local_payload": "payload-0"
+          },
+          "/app/main.tex": {
+            "path": "/app/main.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 328,
+            "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+            "capture_complete": true,
+            "local_payload": "payload-1"
+          },
+          "/app/synonyms.txt": {
+            "path": "/app/synonyms.txt",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 6008,
+            "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+            "capture_complete": true,
+            "local_payload": "payload-2"
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false,
+        "unsupported_symlinks_are_not_quality_failures": true,
+        "input_witness": {
+          "unchanged": true,
+          "reason": null
+        },
+        "protected_baseline_available": true,
+        "protected_input_gate_passed": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76"
+      },
+      "replay": {
+        "task": "overfull-hbox",
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/input.tex"
+        ],
+        "witness_paths_not_replayed": [
+          "/app/main.tex",
+          "/app/synonyms.txt"
+        ],
+        "trusted_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "trusted_payload_owner": "0:0",
+        "rebuild_performed": false,
+        "official_grade_available": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "python": "3.13.7",
+        "uv": "0.9.5",
+        "pytest": "8.4.1",
+        "pytest_json_ctrf": "0.3.5",
+        "setup_log_sha256": "0130e9d03dcaee7a8bb2006300562e229d6b51063b8486e2d29da0934a56f4f9",
+        "seconds": 29.3562646843493,
+        "test_network_disconnected": true,
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+        "public_CA_mount": "/opt/trusted-ca.pem",
+        "system_CA_writeable": true
+      },
+      "reward": "1",
+      "test_events": 4,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 14,
+      "provider_tokens_lower_bound": 322679,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "Both",
+      "protected_before": {
+        "container_id": "4769d52833372ece4751ae33fd2395bcfda4621c1812b731c351c66f36eb1105",
+        "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "before_actor_start_verified": true,
+        "protected_baseline": {
+          "/app/main.tex": {
+            "bytes": 328,
+            "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+            "capture_complete": true
+          },
+          "/app/synonyms.txt": {
+            "bytes": 6008,
+            "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+            "capture_complete": true
+          }
+        },
+        "grading_verified": false
+      },
+      "native_exit": 1,
+      "actor_seconds": 453.02434121631086,
+      "capture": {
+        "task": "overfull-hbox",
+        "capture_complete": true,
+        "artifacts": {
+          "/app/input.tex": {
+            "path": "/app/input.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "output",
+            "bytes": 5176,
+            "sha256": "2871497434be4ee6d3a4356da171d7dc04ce325ec1656c0415d8b40fe845137e",
+            "capture_complete": true,
+            "local_payload": "payload-0"
+          },
+          "/app/main.tex": {
+            "path": "/app/main.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 328,
+            "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+            "capture_complete": true,
+            "local_payload": "payload-1"
+          },
+          "/app/synonyms.txt": {
+            "path": "/app/synonyms.txt",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 6008,
+            "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+            "capture_complete": true,
+            "local_payload": "payload-2"
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false,
+        "unsupported_symlinks_are_not_quality_failures": true,
+        "input_witness": {
+          "unchanged": true,
+          "reason": null
+        },
+        "protected_baseline_available": true,
+        "protected_input_gate_passed": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76"
+      },
+      "replay": {
+        "task": "overfull-hbox",
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/input.tex"
+        ],
+        "witness_paths_not_replayed": [
+          "/app/main.tex",
+          "/app/synonyms.txt"
+        ],
+        "trusted_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "trusted_payload_owner": "0:0",
+        "rebuild_performed": false,
+        "official_grade_available": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "python": "3.13.7",
+        "uv": "0.9.5",
+        "pytest": "8.4.1",
+        "pytest_json_ctrf": "0.3.5",
+        "setup_log_sha256": "d6e1e4b8442f930ff8917f91703f225ae2d27a51016f38c59e5fed08e59fd698",
+        "seconds": 18.254814717918634,
+        "test_network_disconnected": true,
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+        "public_CA_mount": "/opt/trusted-ca.pem",
+        "system_CA_writeable": true
+      },
+      "reward": "1",
+      "test_events": 4,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 16,
+      "provider_tokens_lower_bound": 502753,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "none",
+      "protected_before": {
+        "container_id": "0c75a3fb63b25c32098d604057d7144deedde6d6d1c0edac1641a5a594079acb",
+        "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "before_actor_start_verified": true,
+        "protected_baseline": {
+          "/app/main.tex": {
+            "bytes": 328,
+            "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+            "capture_complete": true
+          },
+          "/app/synonyms.txt": {
+            "bytes": 6008,
+            "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+            "capture_complete": true
+          }
+        },
+        "grading_verified": false
+      },
+      "native_exit": 1,
+      "actor_seconds": 450.1026017498225,
+      "capture": {
+        "task": "overfull-hbox",
+        "capture_complete": true,
+        "artifacts": {
+          "/app/input.tex": {
+            "path": "/app/input.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "output",
+            "bytes": 5195,
+            "sha256": "54846433cb4899951ea2d637f69dc4a25830a3a5e353f9bfd9b2489c6ee1adb8",
+            "capture_complete": true,
+            "local_payload": "payload-0"
+          },
+          "/app/main.tex": {
+            "path": "/app/main.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 328,
+            "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+            "capture_complete": true,
+            "local_payload": "payload-1"
+          },
+          "/app/synonyms.txt": {
+            "path": "/app/synonyms.txt",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 6008,
+            "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+            "capture_complete": true,
+            "local_payload": "payload-2"
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false,
+        "unsupported_symlinks_are_not_quality_failures": true,
+        "input_witness": {
+          "unchanged": true,
+          "reason": null
+        },
+        "protected_baseline_available": true,
+        "protected_input_gate_passed": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76"
+      },
+      "replay": {
+        "task": "overfull-hbox",
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/input.tex"
+        ],
+        "witness_paths_not_replayed": [
+          "/app/main.tex",
+          "/app/synonyms.txt"
+        ],
+        "trusted_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "trusted_payload_owner": "0:0",
+        "rebuild_performed": false,
+        "official_grade_available": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "python": "3.13.7",
+        "uv": "0.9.5",
+        "pytest": "8.4.1",
+        "pytest_json_ctrf": "0.3.5",
+        "setup_log_sha256": "2d128d403cb31d38d09b77f9e075e0336ddb42c4de913e3510658b520ad98e83",
+        "seconds": 22.67054688371718,
+        "test_network_disconnected": true,
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+        "public_CA_mount": "/opt/trusted-ca.pem",
+        "system_CA_writeable": true
+      },
+      "reward": "1",
+      "test_events": 4,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 16,
+      "provider_tokens_lower_bound": 518094,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "type": "TimeoutExpired",
+      "message": "Command '['docker', 'exec', '-w', '/', 'solpi-t16-8702de8d01-grade-K', '/bin/sh', '-c', 'set -eu\\ncd /\\nexport CURL_CA_BUNDLE=/opt/trusted-ca.pem SSL_CERT_FILE=/opt/trusted-ca.pem "
+    }
+  ],
+  "starts": 4,
+  "POST": 51,
+  "cleanup_containers_absent": true,
+  "scope": "Samecandidate nextfixedprimaryindex5TeX/newuniform16Kprotocol;freshfour-armdevelopment,notsealedconfirmation",
+  "proxy_journal": {
+    "journal_collected": true,
+    "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "records": [],
+    "provider_POST": 0,
+    "contains_request_payloads": false
+  },
+  "scheduler_wait_seconds": 0.04111465997993946
+}

@@ -1,0 +1,17 @@
+{
+  "backup_directory": "/tmp/solpi-qwen-tp1-20261005-215654",
+  "original_container": "jev-pi-qwen38-replica-20261004-nccl-only",
+  "backup_container": "jev-pi-qwen38-replica-20261004-nccl-only-tp2-before-tp1-20261005-215654",
+  "restoration_started_at": "2026-10-05T22:10:26+0800",
+  "decision": "Restore TP2: higher measured throughput at every tested concurrency and preserves 262K context.",
+  "restored": true,
+  "restored_at": "2026-10-05T22:12:06+0800",
+  "nginx_reloaded": true,
+  "main_backends": 4,
+  "current_container": "jev-pi-qwen38-replica-20261004-nccl-only",
+  "temporary_backup_name_renamed_to_original": true,
+  "experimental_containers_stopped_restart_disabled": [
+    "wj-qwen38-dflash2-tp1-gpu0",
+    "wj-qwen38-dflash2-tp1-gpu1"
+  ]
+}

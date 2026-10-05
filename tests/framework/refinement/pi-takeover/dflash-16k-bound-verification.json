@@ -1,0 +1,23 @@
+{
+  "source_hashes": {
+    "/tmp/solpi-dflash-bound-review/dflash_worker_v2.py": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+    "/tmp/solpi-dflash-bound-review/dflash_utils.py": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+    "/tmp/solpi-provider-receipt-review/schedule_batch.py": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c"
+  },
+  "exact_cpu_greedy_commit_cases": 128,
+  "exact_req_length_think_end_cases": 1056,
+  "maximum_committed_batch": 8,
+  "maximum_length_boundary_reasoning_overshoot": 7,
+  "derived_min_equals_emitted_reasoning_in_all_cases": true,
+  "cuda_initialized": false,
+  "model_POSTs": 0,
+  "server_changes": false,
+  "limits": "CPU eager greedy commit exhaustively tested;sampling/selector/Triton paths need code-bound review. Req tests isolate lengthfinish andsingle-token think-end,not tokenizer/model billing or SSE integration.",
+  "configured_request_output_cap": 16384,
+  "effective_length_caps_exercised": [
+    16382,
+    16383,
+    16384
+  ],
+  "proof_template_sha256": "a7daa91c725174a74c5a1d58184052b9bb2aa1e8f3827a829810e431d38c3712"
+}

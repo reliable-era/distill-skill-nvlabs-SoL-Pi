@@ -1,0 +1,27 @@
+{
+  "task": "regex-log",
+  "image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+  "source_hashes": {
+    ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+    "README.md": "29ffd98c55dbb6f4844f1b9d8c1769b2155c117ee475e0df6bbc5ef330d239b3",
+    "environment/Dockerfile": "5f264ff0bf62a49aee3c6398447de5108df141e7a2ad35c6de8ef39fa62049c6",
+    "instruction.md": "4f7ac05e70cf9220ea0f1e5a052c5f908cd0fa884e847d80b0bd51bae2e96f9c",
+    "solution/solve.sh": "7e670d4f2b4bccb1e4db38f2a173e085ceda028c38167912b466b0a84fcc0999",
+    "task.toml": "6bc98525852755caf1fe34c174c2f10f4328adb4ce6c1968dcafe1c877e4e160",
+    "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+    "tests/test_outputs.py": "345c3bd09ab6f6fe8c8361a58c0a47bf0a13b3fcb38a5ac7824e44ff855e8f72"
+  },
+  "candidate_sha256": "da92dbba09ecaa0af422bc8cfbb77fb811c8fcb39bc71a3f2f0251567301de71",
+  "controls": [
+    "baseline",
+    "gold"
+  ],
+  "cpus": 1,
+  "memory_mb": 2048,
+  "oracle_seconds": 300,
+  "verifier_seconds": 600,
+  "retry": 0,
+  "model_POSTs": 0,
+  "network": "Docker bridge for official dependency/source downloads;no host credentials/model config",
+  "candidate_changes_allowed": false
+}

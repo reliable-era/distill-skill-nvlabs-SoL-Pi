@@ -1,0 +1,55 @@
+{
+  "plan_sha256": "696a7f783127bdae63e58e060076f05df4fe49148fc9ee455188a827dcba2c7d",
+  "native_sha256": "5ead34eb148585f3d92b76d75c6d1e3bb33736b026a6aa049dc4494d01e8ed76",
+  "rows": [
+    {
+      "native_event_index": 20,
+      "operation_family": "pandas_parquet_read",
+      "command_environment_control_present": false,
+      "exit_code": 134,
+      "resource_unavailable_reported": true
+    },
+    {
+      "native_event_index": 24,
+      "operation_family": "pandas_parquet_read",
+      "command_environment_control_present": false,
+      "exit_code": 134,
+      "resource_unavailable_reported": true
+    },
+    {
+      "native_event_index": 32,
+      "operation_family": "pandas_parquet_read",
+      "command_environment_control_present": true,
+      "exit_code": 0,
+      "resource_unavailable_reported": false
+    },
+    {
+      "native_event_index": 40,
+      "operation_family": "pandas_parquet_read",
+      "command_environment_control_present": false,
+      "exit_code": 134,
+      "resource_unavailable_reported": true
+    },
+    {
+      "native_event_index": 48,
+      "operation_family": "pandas_parquet_read",
+      "command_environment_control_present": true,
+      "exit_code": 0,
+      "resource_unavailable_reported": false
+    }
+  ],
+  "observed_recovery_then_uncontrolled_followup_failure_then_recovery": true,
+  "scope": "explicit per-command conditions/similar parquet operations; not global env or controlled causal experiment",
+  "limitations": [
+    "Commands differ in selected data and requested observations.",
+    "A successful controlled-command condition is not proof that condition alone caused recovery.",
+    "Other resource/active-process conditions were not experimentally held constant.",
+    "No causal dollar/token saving, exact exhaustion cause, private accuracy or verified solve inferred.",
+    "Source declaration of an environment setting is not independent ambient-environment inspection."
+  ],
+  "training_parameter_values_exported": false,
+  "new_model_POST": 0,
+  "new_actor_training_grading": 0,
+  "promotion": false,
+  "goal_complete": false
+}

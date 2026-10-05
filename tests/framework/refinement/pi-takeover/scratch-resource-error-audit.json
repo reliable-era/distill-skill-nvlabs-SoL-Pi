@@ -1,0 +1,98 @@
+{
+  "rows": [
+    {
+      "arm": "candidate",
+      "native_sha256": "686cb4b0c5641ed1cd10b8d32355d35447ec436175e86da31472d59c82cd6e5d",
+      "completed_resource_symptoms": [
+        {
+          "command_event_index": 16,
+          "exit_code": 130,
+          "pthread_failure": true,
+          "resource_unavailable": true
+        },
+        {
+          "command_event_index": 22,
+          "exit_code": 134,
+          "pthread_failure": false,
+          "resource_unavailable": true
+        }
+      ],
+      "explicit_limit_read_indices": [
+        24
+      ],
+      "limit_read_precedes_first_observed_resource_symptom": false,
+      "original_grade": 0
+    },
+    {
+      "arm": "Both",
+      "native_sha256": "5ead34eb148585f3d92b76d75c6d1e3bb33736b026a6aa049dc4494d01e8ed76",
+      "completed_resource_symptoms": [
+        {
+          "command_event_index": 11,
+          "exit_code": 134,
+          "pthread_failure": false,
+          "resource_unavailable": true
+        },
+        {
+          "command_event_index": 13,
+          "exit_code": 134,
+          "pthread_failure": false,
+          "resource_unavailable": true
+        },
+        {
+          "command_event_index": 21,
+          "exit_code": 134,
+          "pthread_failure": false,
+          "resource_unavailable": true
+        }
+      ],
+      "explicit_limit_read_indices": [],
+      "limit_read_precedes_first_observed_resource_symptom": false,
+      "original_grade": 0
+    },
+    {
+      "arm": "none",
+      "native_sha256": "8f1c5b1df5f6b4b529ab1a37467683a99676d4ccdff082ef6521499b943f76b8",
+      "completed_resource_symptoms": [
+        {
+          "command_event_index": 7,
+          "exit_code": 2,
+          "pthread_failure": false,
+          "resource_unavailable": true
+        }
+      ],
+      "explicit_limit_read_indices": [],
+      "limit_read_precedes_first_observed_resource_symptom": false,
+      "original_grade": 0
+    },
+    {
+      "arm": "K",
+      "native_sha256": "b739873a3a0cf4a5e2fd66ad5fa0b11b704f5cb93f8db89aee80abebfd6d0809",
+      "completed_resource_symptoms": [
+        {
+          "command_event_index": 9,
+          "exit_code": 134,
+          "pthread_failure": false,
+          "resource_unavailable": true
+        }
+      ],
+      "explicit_limit_read_indices": [],
+      "limit_read_precedes_first_observed_resource_symptom": false,
+      "original_grade": 0
+    }
+  ],
+  "all4_have_observed_resource_symptoms": true,
+  "no_first_limit_read_precedes_symptom": true,
+  "limits": [
+    "Only nonzero completed commands counted; successful diagnostics and masked pipeline failures are excluded.",
+    "Matching symptoms can have multiple causes, not proof of exact PID/CPU limit exhaustion.",
+    "Explicit source patterns do not cover every implicit knowledge/read.",
+    "A later cgroup read is not proof no constraint knowledge existed earlier.",
+    "Better diagnosis/parallelism is not proven to yield correct classifier or lower complete tokens per solve.",
+    "Missing-package and API-attribute failures are separate symptoms, not resource failures."
+  ],
+  "new_model_POST": 0,
+  "new_actor_or_training_grading": 0,
+  "promotion": false,
+  "goal_complete": false
+}

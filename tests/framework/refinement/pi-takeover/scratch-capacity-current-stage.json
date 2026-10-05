@@ -1,0 +1,120 @@
+{
+  "status": "TERMINAL_REJECTED_ZERO_VERIFIED_SOLVES",
+  "checked_utc": "2026-10-05T11:40:24.158034+00:00",
+  "pid": 570785,
+  "worker_active": false,
+  "root": "/tmp/solpi-sc16-696a7f783127bdae63",
+  "plan_sha256": "696a7f783127bdae63e58e060076f05df4fe49148fc9ee455188a827dcba2c7d",
+  "starts": 4,
+  "POST": 64,
+  "complete_provider_gross_tokens": 913671,
+  "unknown_cost_requests": [],
+  "rows": [
+    {
+      "arm": "candidate",
+      "POST": 16,
+      "known_gross_lower_bound": 266266,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 415.5734048821032,
+      "setup_seconds": 3.0318587608635426,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 1.2967735528945923e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12733791.80217072
+      }
+    },
+    {
+      "arm": "Both",
+      "POST": 16,
+      "known_gross_lower_bound": 214969,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 204.02740199491382,
+      "setup_seconds": 2.9812715221196413,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 1.2191012501716614e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12734231.361062802
+      }
+    },
+    {
+      "arm": "none",
+      "POST": 16,
+      "known_gross_lower_bound": 239491,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 591.5883268173784,
+      "setup_seconds": 3.0679921563714743,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 8.944422006607056e-06,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12734459.738335984
+      }
+    },
+    {
+      "arm": "K",
+      "POST": 16,
+      "known_gross_lower_bound": 192945,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 209.4404627662152,
+      "setup_seconds": 3.0485115610063076,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 6.118789315223694e-06,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12735075.5014333
+      }
+    }
+  ],
+  "matched_panel_complete": true,
+  "verified_solves": 0,
+  "ALL3_5percent_token_point_gate": null,
+  "cleanup": {
+    "containers": [],
+    "networks": []
+  },
+  "actual_current_candidate_Both_delivery_verified": true,
+  "candidate_pretraining_actual_filesystem_check_verified": true,
+  "next": "read-only remainingfailure/request-allocation diagnosis, no old actor retry/automatic matrix/unchanged controls",
+  "promotion": false,
+  "goal_complete": false
+}

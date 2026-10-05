@@ -1,0 +1,17 @@
+{
+  "version": "prospective-direct-routing-draft-v1",
+  "connector_sha256": "725bddf9f2217412db936c0b38a822d2a361ae2826319b30cb75cac91ddf79dc",
+  "test_sha256": "07b28b9c67e357fff6601383f77e8ad0c8c7876a2bf1e8049dc1977796509edd",
+  "selected_peer": "127.0.0.1:18001",
+  "selection_rule": "lowest port;notactorresultsorperformance",
+  "matched_policy": "everyarm/everyPOST inpanel usesonefrozenpeer;do notpooldifferentpeercohorts",
+  "replica_name": "jev-pi-qwen38-replica-20261004-nccl-only",
+  "no_auto_failover": true,
+  "nginx_changed": false,
+  "no_services_changed": true,
+  "aggregate_idleness_required": "bothreplicas plusbothfrozenlocks beforeanyrealinference",
+  "source_and_container_provenance_revalidation_required_before_launch": true,
+  "deployed": false,
+  "real_connection_validated": false,
+  "tests_passed": 5
+}

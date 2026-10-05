@@ -1,0 +1,24 @@
+{
+  "actual_plan_building_prefix_executed": true,
+  "byte_for_byte_frozen_plan_match": true,
+  "plan_sha256": "b31df3be1b622238e08995f7b1a3af7430ed85f50d48b9a93a398a188348c39d",
+  "prefix_sha256": "04074e4cd25332105f9a37fc686954daefc6d1cdbdf0fb0da4802e0b56f82ab7",
+  "guarded_calls": [
+    "subprocess.run",
+    "subprocess.Popen",
+    "subprocess.check_output",
+    "subprocess.check_call",
+    "os.system",
+    "http.client.HTTPConnection.connect",
+    "http.client.HTTPConnection.request",
+    "socket.create_connection"
+  ],
+  "process_network_calls": 0,
+  "original_plan_result_resume_contract_unchanged": true,
+  "new_actor_model_POST": 0,
+  "new_grader_training_or_control_runs": 0,
+  "covers": "Previously unexecuted exact-plan regeneration branch only, NOT live resume/full actor workflow/quality/economy/majority confirmation",
+  "scheduler_wait_remaining": 0,
+  "no_renewed_wait_or_activation": true,
+  "goal_complete": false
+}

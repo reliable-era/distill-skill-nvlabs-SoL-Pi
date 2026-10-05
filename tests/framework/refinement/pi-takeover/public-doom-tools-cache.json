@@ -1,0 +1,105 @@
+{
+  "task": "make-doom-for-mips",
+  "image_id": "sha256:c503768044b13ea799f26ee48c83c5885cd9697114bc3e320e1e5f926276188f",
+  "private_root": "/tmp/solpi-public-doom-tools-95941a2779",
+  "requested_packages": [
+    "gcc-mipsel-linux-gnu"
+  ],
+  "selection_rule": "public task requires MIPS ELF;little-endian public VM input;generic crosscompiler,not target build flags",
+  "repository_policy": "unchanged original-image configured signed repositories;metadata refresh matches existing environment repair;freeze downloaded artifact versions/hashes",
+  "model_POSTs": 0,
+  "native_actor_starts": 0,
+  "target_builds": 0,
+  "scope": "public compiler prerequisites only;no Doom oracle/test/build",
+  "metadata_exit": 0,
+  "download_exit": 0,
+  "artifacts": {
+    "binutils-common_2.40-2_amd64.deb": {
+      "bytes": 2486664,
+      "sha256": "ab314134f43a0891a48f69a9bc33d825da748fa5e0ba2bebb7a5c491b026f1a0"
+    },
+    "binutils-mipsel-linux-gnu_2.40-2cross2_amd64.deb": {
+      "bytes": 2795020,
+      "sha256": "e803da3a36d96b7e16ae54a0e84c850a10e959d39f4a83efd02bcadc18db9e11"
+    },
+    "cpp-12-mipsel-linux-gnu_12.2.0-14cross5_amd64.deb": {
+      "bytes": 8082508,
+      "sha256": "b45d2f0ff2034b48a9afc01e7c9b8e745286213a7bf1b290d256a2e6ff757129"
+    },
+    "cpp-mipsel-linux-gnu_4%3a12.2.0-4_amd64.deb": {
+      "bytes": 3284,
+      "sha256": "c8b8a3085c21765684d757179ef9db7d2e4b1eed281adee4cbd78c3dfa2a1a3e"
+    },
+    "gcc-12-cross-base-mipsen_12.2.0-14cross5_all.deb": {
+      "bytes": 33272,
+      "sha256": "73dec5a7f4bb6ae1e80d3229e8f76286b46c08b68b0bf4e658a04469ebf330c2"
+    },
+    "gcc-12-mipsel-linux-gnu-base_12.2.0-14cross5_amd64.deb": {
+      "bytes": 37728,
+      "sha256": "ed4b0636efd5d14e403ff1a7a24a97edabc0e03dad110496382034729c560d39"
+    },
+    "gcc-12-mipsel-linux-gnu_12.2.0-14cross5_amd64.deb": {
+      "bytes": 15942208,
+      "sha256": "93f138d26854ad62d0f791ccef860df31d89e9f3f5049c30797a43ea5c4128f7"
+    },
+    "gcc-mipsel-linux-gnu_4%3a12.2.0-4_amd64.deb": {
+      "bytes": 1452,
+      "sha256": "5f112603f2a9728d03f80d3ce211e27cc18306600c0a0cb0bceac9912f111e98"
+    },
+    "libatomic1-mipsel-cross_12.2.0-14cross5_all.deb": {
+      "bytes": 6476,
+      "sha256": "40b39b862d2476972ce6bc9fedb351be739f2b9464980b98d7ea2e163a8757c7"
+    },
+    "libbinutils_2.40-2_amd64.deb": {
+      "bytes": 572104,
+      "sha256": "fcf55b99e5f8a78f3c8ce9b6957f1024f394cf20c196b100d308a57e43547710"
+    },
+    "libc6-dev-mipsel-cross_2.36-8cross2_all.deb": {
+      "bytes": 1417008,
+      "sha256": "49ec500c8dd2540f9615881c3a66d3b038c3808e47bd4f0bd97c51cdcda6ffa0"
+    },
+    "libc6-mipsel-cross_2.36-8cross2_all.deb": {
+      "bytes": 950396,
+      "sha256": "3d122fdb4c759f2ac31feefac76c2a0d957917568c0f7177e57f7ae627bb1c82"
+    },
+    "libcc1-0_12.2.0-14+deb12u1_amd64.deb": {
+      "bytes": 41736,
+      "sha256": "4ee6009633003f47de98333ea7f7d8835ec563ae2ac4f30251dbfee04d75d46b"
+    },
+    "libgcc-12-dev-mipsel-cross_12.2.0-14cross5_all.deb": {
+      "bytes": 266796,
+      "sha256": "a9fc26d0c98e17262cccd6389e6eb3ca5f70e185ce0e66505845b36315c55b74"
+    },
+    "libgcc-s1-mipsel-cross_12.2.0-14cross5_all.deb": {
+      "bytes": 46008,
+      "sha256": "0029200f1f3546649d5b239638770b429f20147bcdcef8cf241795ebe8605388"
+    },
+    "libgomp1-mipsel-cross_12.2.0-14cross5_all.deb": {
+      "bytes": 104748,
+      "sha256": "ff43a2da495a149ef20478ba6f54a85e70084bc3f312443b483c1838d30204f0"
+    },
+    "libisl23_0.25-1.1_amd64.deb": {
+      "bytes": 683060,
+      "sha256": "ebff0b2f8b220c74224197523019366e97ee4770d464bebc48e4865114e4da0e"
+    },
+    "libjansson4_2.14-2_amd64.deb": {
+      "bytes": 40788,
+      "sha256": "3fc9742f9f1a37bcb9931df6074b4d1483419ef832ad5349f47323e75fc27864"
+    },
+    "libmpc3_1.3.1-1_amd64.deb": {
+      "bytes": 51480,
+      "sha256": "d7f79544790e44f9b0c8cb9034a18c58d37f8702a15f32539050718679e52f80"
+    },
+    "libmpfr6_4.2.0-1_amd64.deb": {
+      "bytes": 700900,
+      "sha256": "37b7a2b4e78890b6a074777f27b96c84f58e81558ba08410c2b6c0ca4a4ad77b"
+    },
+    "linux-libc-dev-mipsel-cross_6.1.8-1cross2_all.deb": {
+      "bytes": 1837016,
+      "sha256": "915e546a5ac2e84220f0890ed5c2c3ce10f2e9ff78b2f4e0ca2a2293fdef6a00"
+    }
+  },
+  "prepared": true,
+  "cleanup_verified": true,
+  "runner_sha256": "e1dd36f6d7d830c0271d6b7adb5a2589a264519e23da098ebc14b426217bd46f"
+}

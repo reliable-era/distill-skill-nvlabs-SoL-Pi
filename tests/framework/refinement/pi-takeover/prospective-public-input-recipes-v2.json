@@ -1,0 +1,140 @@
+{
+  "protocol": "prospective-public-inputs-v2",
+  "source_hash": "44184281a7d051a47b6350d03fd21ba1bd4d70a8de6ff4e0f331db6fc4b3cead",
+  "pytest_cache_sha256": "3bb030cace3385376844ea518b46823733634d9c80b8a78d940271c8655349d2",
+  "pytest_probe_sha256": "2f5654823f1743b0750de469ff5ba457d9c32e369d3f9c94214ff4f86c591009",
+  "all_arms_uniform": true,
+  "task_selection_unchanged": true,
+  "historical_recipes_unchanged": true,
+  "recipes": [
+    {
+      "task": "break-filter-js-from-html",
+      "actor_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+      "grader_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": "",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    {
+      "task": "build-cython-ext",
+      "actor_image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+      "grader_image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [
+        "/tmp/solpi-public-pyknotid-3c5b161769/pyknotid.git:/opt/public-sources/pyknotid.git:ro",
+        "/tmp/solpi-public-pyknotid-3c5b161769/clone.gitconfig:/opt/public-sources/clone.gitconfig:ro",
+        "/tmp/solpi-public-cython-wheels-1ef8377ad8/wheels:/opt/public-wheels:ro",
+        "/tmp/solpi-public-cython-wheels-1ef8377ad8/requirements.txt:/opt/public-requirements.txt:ro",
+        "/tmp/solpi-public-cython-tests-725b28934d/wheels:/opt/public-test-wheels:ro"
+      ],
+      "environment": {
+        "GIT_CONFIG_GLOBAL": "/opt/public-sources/clone.gitconfig",
+        "PIP_NO_INDEX": "1",
+        "PIP_FIND_LINKS": "/opt/public-wheels /opt/public-test-wheels",
+        "PIP_CONSTRAINT": "/opt/public-requirements.txt"
+      },
+      "guidance": "Public task source is available through the exact instructed Git URL via a read-only local mirror. Python dependency artifacts are cached at /opt/public-wheels;index access is disabled and versions are constrained. Target source modification,compilation and installation remain your responsibility. Generic public repository test software is additionally cached at /opt/public-test-wheels.",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    {
+      "task": "build-pmars",
+      "actor_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+      "grader_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [
+        "/tmp/solpi-public-pmars-04d810d6c7/downloads:/opt/public-source:ro",
+        "/tmp/solpi-public-pmars-04d810d6c7/tool-archives:/opt/public-debs:ro"
+      ],
+      "environment": {},
+      "guidance": "Original public Debian source artifacts are cached at /opt/public-source and generic prerequisite packages at /opt/public-debs. External package access is disabled. Local APT installation can use sandbox=root and fresh temporary cache/list directories. No target binary or build recipe is provided.",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    {
+      "task": "financial-document-processor",
+      "actor_image_id": "sha256:d53ef35af0ce9ed2f68741a7175355c731bf170dbf35971166a906b61e4c647c",
+      "grader_image_id": "sha256:d53ef35af0ce9ed2f68741a7175355c731bf170dbf35971166a906b61e4c647c",
+      "cpus": 1,
+      "memory_mb": 4096,
+      "mounts": [],
+      "environment": {},
+      "guidance": "",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    {
+      "task": "make-doom-for-mips",
+      "actor_image_id": "sha256:0396f5b4b3030f979bfde5db0ea083f819638139a6919c5a07890953562775ca",
+      "grader_image_id": "sha256:c503768044b13ea799f26ee48c83c5885cd9697114bc3e320e1e5f926276188f",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": "A generic MIPS crosscompiler is preinstalled. Original task source/runtime inputs are unchanged;no target executable is supplied.",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    {
+      "task": "overfull-hbox",
+      "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+      "grader_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+      "cpus": 2,
+      "memory_mb": 4096,
+      "mounts": [],
+      "environment": {},
+      "guidance": "",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    {
+      "task": "regex-log",
+      "actor_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+      "grader_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": "",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    {
+      "task": "sparql-university",
+      "actor_image_id": "sha256:4b477a009da63f0cff40da8caa52e09a382bf4a0ce011cd371c09650e665ba9c",
+      "grader_image_id": "sha256:4b477a009da63f0cff40da8caa52e09a382bf4a0ce011cd371c09650e665ba9c",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": "",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    {
+      "task": "train-fasttext",
+      "actor_image_id": "sha256:ea991ff9add049c6956d2501b6f38fc612948cb30edaf8f6d61f63f90808272e",
+      "grader_image_id": "sha256:ea991ff9add049c6956d2501b6f38fc612948cb30edaf8f6d61f63f90808272e",
+      "cpus": 1,
+      "memory_mb": 4096,
+      "mounts": [
+        "/tmp/solpi-public-fasttext-39579ce22b/wheels:/opt/public-wheels:ro",
+        "/tmp/solpi-public-fasttext-39579ce22b/requirements.txt:/opt/public-requirements.txt:ro"
+      ],
+      "environment": {
+        "PIP_NO_INDEX": "1",
+        "PIP_FIND_LINKS": "/opt/public-wheels",
+        "PIP_CONSTRAINT": "/opt/public-requirements.txt"
+      },
+      "guidance": "Public training-software dependencies are cached at /opt/public-wheels;index access is disabled and versions are constrained. No trained model is provided.",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    }
+  ]
+}

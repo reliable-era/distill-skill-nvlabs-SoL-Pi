@@ -1,0 +1,49 @@
+{
+  "task": "regex-log",
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "plan_sha256": "31c54d3cf9c19cebd92d3441d0c0036305ec8b0bde9c4dd6e0f11b13e063d162",
+  "baseline": {
+    "verifier_exit": 0,
+    "reward": "0",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_regex_matches_dates",
+        "status": "failed"
+      }
+    ]
+  },
+  "oracle_exit": 0,
+  "capture": {
+    "bytes": 268,
+    "sha256": "319c325a828bb14a1c6d6c0d748c5cd52061b7241841a9405d59ef7dcc861d93",
+    "capture_complete": true
+  },
+  "replay": {
+    "verifier_exit": 0,
+    "reward": "1",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_regex_matches_dates",
+        "status": "passed"
+      }
+    ]
+  },
+  "same_test_collection": true,
+  "valid_output_replay": true,
+  "cleanup_verified": true,
+  "source_unchanged": true,
+  "candidate_unchanged": true,
+  "artifact_hashes": {
+    "baseline/logs/verifier/ctrf.json": "573c0bf1b88f27c236f594de6b2d0ba75a5ced61ad2481bba0b68c4ede5a26d7",
+    "baseline/logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "baseline/verifier.log": "9d123640172b5149ede3de3b118c1b538910c67aee0363c23ff3006273b3b71c",
+    "capture-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "captured-output": "319c325a828bb14a1c6d6c0d748c5cd52061b7241841a9405d59ef7dcc861d93",
+    "oracle.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan.json": "31c54d3cf9c19cebd92d3441d0c0036305ec8b0bde9c4dd6e0f11b13e063d162",
+    "replay/logs/verifier/ctrf.json": "92a2f1543de8ff71886a41b1887252977a24a3705bbac8db275bfcd2950507aa",
+    "replay/logs/verifier/reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "replay/verifier.log": "c858f4aad260a30289521fd17bb0341876fb5000dd0e0b75901d020776045627"
+  }
+}

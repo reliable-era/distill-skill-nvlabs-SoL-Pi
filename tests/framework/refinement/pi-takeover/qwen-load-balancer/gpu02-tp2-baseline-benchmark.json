@@ -1,0 +1,481 @@
+{
+  "label": "tp2-baseline",
+  "ports": [
+    18001
+  ],
+  "sampling": {
+    "temperature": 0,
+    "output_tokens": 256
+  },
+  "notes": [
+    "Short synthetic prompts; not a guarantee for other request lengths.",
+    "Layouts are isolated from nginx client traffic during measurement."
+  ],
+  "cases": [
+    {
+      "concurrency": 1,
+      "requests": 12,
+      "elapsed_seconds": 36.092422818765044,
+      "requests_per_second": 0.3324797578776286,
+      "output_tokens_per_second": 85.11481801667293,
+      "mean_request_seconds": 3.007332356957098,
+      "p95_request_seconds": 3.2531357035040855,
+      "request_details": [
+        {
+          "port": 18001,
+          "elapsed_seconds": 2.9534439146518707,
+          "prompt_tokens": 924,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.021357551217079,
+          "prompt_tokens": 931,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.022510387003422,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.2531357035040855,
+          "prompt_tokens": 932,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.085577465593815,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.1556489802896976,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 2.8208750132471323,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 2.7196288276463747,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 2.724604034796357,
+          "prompt_tokens": 935,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.3202352300286293,
+          "prompt_tokens": 924,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.1216243635863066,
+          "prompt_tokens": 931,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 2.8893468119204044,
+          "prompt_tokens": 927,
+          "completion_tokens": 256
+        }
+      ]
+    },
+    {
+      "concurrency": 4,
+      "requests": 20,
+      "elapsed_seconds": 21.700219199061394,
+      "requests_per_second": 0.9216496762790796,
+      "output_tokens_per_second": 235.94231712744437,
+      "mean_request_seconds": 4.1828209204599265,
+      "p95_request_seconds": 4.893345803022385,
+      "request_details": [
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.895972361788154,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.2839286252856255,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 2.2241070605814457,
+          "prompt_tokens": 919,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.893345803022385,
+          "prompt_tokens": 931,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.176424281671643,
+          "prompt_tokens": 931,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.086602687835693,
+          "prompt_tokens": 932,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.17433487996459,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.424245094880462,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.636206567287445,
+          "prompt_tokens": 930,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.849362278357148,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.9006955455988646,
+          "prompt_tokens": 927,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.215628240257502,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.470256347209215,
+          "prompt_tokens": 925,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.246068859472871,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.432103553786874,
+          "prompt_tokens": 927,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.553422285243869,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.9355644211173058,
+          "prompt_tokens": 925,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.9084255266934633,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.7410238906741142,
+          "prompt_tokens": 932,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.6087000984698534,
+          "prompt_tokens": 930,
+          "completion_tokens": 256
+        }
+      ]
+    },
+    {
+      "concurrency": 8,
+      "requests": 40,
+      "elapsed_seconds": 30.771557096391916,
+      "requests_per_second": 1.299901720107955,
+      "output_tokens_per_second": 332.7748403476365,
+      "mean_request_seconds": 5.764591759629548,
+      "p95_request_seconds": 7.08976517431438,
+      "request_details": [
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.004283702000976,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.870696110650897,
+          "prompt_tokens": 927,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.288118416443467,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 7.08976517431438,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.765547629445791,
+          "prompt_tokens": 924,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.001920135691762,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.4983321987092495,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 10.573427326977253,
+          "prompt_tokens": 931,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.418864827603102,
+          "prompt_tokens": 933,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 7.069579567760229,
+          "prompt_tokens": 924,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.612808069214225,
+          "prompt_tokens": 930,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.406182589009404,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.067289376631379,
+          "prompt_tokens": 927,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.469386143609881,
+          "prompt_tokens": 930,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 7.6377536952495575,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.268862774595618,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.806938871741295,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.2437684796750546,
+          "prompt_tokens": 930,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.096609216183424,
+          "prompt_tokens": 932,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.964618723839521,
+          "prompt_tokens": 930,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.952669782564044,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.832605876028538,
+          "prompt_tokens": 933,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.095610115677118,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.3967848643660545,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.39405607059598,
+          "prompt_tokens": 930,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.141916876658797,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.502072604373097,
+          "prompt_tokens": 930,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.02826289832592,
+          "prompt_tokens": 934,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.656044442206621,
+          "prompt_tokens": 932,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.673064844682813,
+          "prompt_tokens": 932,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.986704632639885,
+          "prompt_tokens": 924,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.529891483485699,
+          "prompt_tokens": 933,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.272702032700181,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 6.0127030070871115,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.821943413466215,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.293135046958923,
+          "prompt_tokens": 925,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 5.243531847372651,
+          "prompt_tokens": 926,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.800258511677384,
+          "prompt_tokens": 927,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 4.1136015467345715,
+          "prompt_tokens": 929,
+          "completion_tokens": 256
+        },
+        {
+          "port": 18001,
+          "elapsed_seconds": 3.6813574582338333,
+          "prompt_tokens": 928,
+          "completion_tokens": 256
+        }
+      ]
+    }
+  ]
+}

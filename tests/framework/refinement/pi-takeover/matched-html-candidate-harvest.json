@@ -1,0 +1,34 @@
+{
+  "arm": "candidate",
+  "reward": "0",
+  "test_events": 1,
+  "solved": false,
+  "output_present": false,
+  "output_absence_evidence": "completed official missing-file failure;no captured payload;native only read command;frozen controller HEAD absence branch",
+  "capture": {
+    "capture_complete": false,
+    "output_absent_verified_by_controller": true
+  },
+  "provider_POST": 2,
+  "provider_tokens_lower_bound": 23394,
+  "cost_complete": true,
+  "unknown_cost_requests": [],
+  "backends": [
+    "127.0.0.1:18001",
+    "127.0.0.1:18001"
+  ],
+  "raw_invalid_requests": [],
+  "corrected_requests": [],
+  "native_provider_reconciliation_complete": true,
+  "native_usage": {
+    "input_tokens": 15103,
+    "cached_input_tokens": 13056,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 8291,
+    "reasoning_output_tokens": 8216
+  },
+  "cleanup_verified": true,
+  "controller_cleanup_failed_after_valid_grade": true,
+  "harvest_scope": "Read-only recovery;no actor or grader rerun",
+  "task_provided_public_test_access": "Explicit public instruction authorizes /app/test_outputs.py;not trusted /tests mount or solutions"
+}

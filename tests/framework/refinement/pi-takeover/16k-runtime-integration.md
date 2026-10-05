@@ -1,0 +1,17 @@
+# Newprivate16Kruntime/nativegate — no model inference
+
+`prepare_16k_runtime.py` freezesdevelopment/pi-takeover-qwen-source-backed-16k,manifestSHA98a2e48bc686a91153cf597655d14882ac3d67fdc7b314e39b648ab50b553d1e. EXACTsamecandidatee4277.../frozenfiles/correctexplicitBothcurrentcandidate+Karpathy;onlyexistingruntimefileschangedoutput_policy.py/provider_cost.py. Fournewprivateaccounting/wiringmodulesreasoning_adapter.py/sse_bridge.py/broker_session.py/budget_panel.py preservepinnedraw/gross/content/status. Old8Kruntime/oldfrozenplans/oldmetadataerrors untouched. No cloud/fallback/effort/context/server/canonicalchanges. New16KcomponentsdeployedONLYtosyntheticgate,NOTQwensolver.
+
+`run_16k_native_probe.py` reusestheexistinglarge-bodySDKgatebutnewruntime/16Kterminal,sochangedbudget/accounting behavior—notanunchangedACKredo. /tmp/solpi-native-16k-1348714db4:1syntheticnativeCodexstart,1FAKEupstreamexchange,329533-bytebodyactuallyforwardedmax_output_tokens16384;allthree8MiBrequestguards tested. NativeACK/turn.completed/exit0;rawterminalincomplete/maxoutput/counterovershoot3 retained,metadata-onlyderivationcorrects16385reasoning->16382emittedoutput. Independentnativefakeusage8067input/16382output/16382reasoning/gross24449matchesderivedreceipt,NOTactualLLMtokenization/billing/performance. ExactfakeEOF/SSE/privatebroker/Session/nativecompatibilityproved;no modelrun,CUDA/serverchanges.
+
+8MiB+1rejected413withboundedmetadata-onlylocaljournal/provider_forwardedFalse/providerPOST0. OwnedDockercontainers/network/Unixworker independentlyabsent/exited. `16k-native-probe.json` passed plus `16k-runtime-native-review.json` bindsfreeze/runtimehashes. ThedeclaredfreezeintegrationFalsewasstateATfreeze;newreviewrecordschangedgatepasswithoutrewritingmanifest.
+
+## Not covered
+
+- RealQwen16384generation/runtimeconformance orproofthattruncation/taskcompletionwillimprove.
+- Nextfixedindex5overfull-hboxactorprotectedBEFOREsnapshot/AFTERcapture/replay integration.
+- TrustedTeXgraderpublic-softwarepreload/disconnectedoriginaltestscriptwiring.
+- Guaranteedfuture2MiBresponse/timeguardcompatibility;historicallinearforecastisnotabound.
+- Any verified-solve/cost/generalization/95%interval/majorityharness/promotioncriterion.
+
+TeXpublictask/instruction/originalDockerfile/test.sh inspected:Ubuntu24.04texlive-latex-base2023.20240207-1/sourceinputsoriginal;ONLYinput.texsynonym replacements permitted;main.tex/synonyms.txtprotected. Inputtargetexistsinitially;baseline/positive/guardedtransferalreadyverifiedmustbereused. Graderrequireduv0.9.5/Python3.13/pytest8.4.1/plugin0.3.5—notDoomnumpy/Pillow. Nextwirethosetask-specificassumptionsbeforebounded4freshsolvers;no endedDoomcontinuation orautomaticfullmatrix. Canonicalunchanged,goalnotcomplete.

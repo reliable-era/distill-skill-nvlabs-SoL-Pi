@@ -1,0 +1,53 @@
+{
+  "plan_sha256": "08ec31b4dbff79165c2558f3727f3897380797921305a5954a42dc1766c0ad93",
+  "saved_capture": "/tmp/solpi-t16-08ec31b4dbff79165c/K/captured",
+  "capture_hashes_before": {
+    "capture.json": "7ea650f92fe1f08d62a5ff5e03c47ed004b5609b01e9813f468aae670789d834",
+    "payload-1": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+    "payload-0": "7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3",
+    "payload-2": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6"
+  },
+  "private_root": "/tmp/solpi-tex-grade-repair-eaa07604d8",
+  "arm": "K",
+  "native_starts": 0,
+  "model_POST": 0,
+  "grader_repair_attempt": 1,
+  "source_unchanged": true,
+  "original_setup_failure_retained": true,
+  "original_setup_failure_log_sha256": "febe7c7ebb9255fb5664a2f396fbd5f37175703f4e682cb3d6766fe555946bf1",
+  "actor_wall_seconds": "unavailable:notdurablyrecordedbeforegraderfailure",
+  "grader_setup_seconds_cap": 300,
+  "grader_seconds_cap": 600,
+  "replay": {
+    "task": "overfull-hbox",
+    "replay_complete": true,
+    "restored_paths": [
+      "/app/input.tex"
+    ],
+    "witness_paths_not_replayed": [
+      "/app/main.tex",
+      "/app/synonyms.txt"
+    ],
+    "trusted_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+    "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+    "trusted_payload_owner": "0:0",
+    "rebuild_performed": false,
+    "official_grade_available": false,
+    "cost_eligibility": false
+  },
+  "grade_available": false,
+  "error": {
+    "type": "TimeoutExpired",
+    "message": "Command '['docker', 'exec', '-w', '/', 'solpi-tex-grade-repair-eaa07604d8', '/bin/sh', '-c', 'set -eu\\ncd /\\nexport CURL_CA_BUNDLE=/opt/trusted-ca.pem SSL_CERT_FILE=/opt/trusted-ca.pem UV_NATIVE_TLS=true\\napt-get -o Acquire::Retries=0 update\\napt-get -o Acquire::Retries=0 install -y curl\\ncurl --retry 0 --max-time 40 -LsSf https://astral.sh/uv/0.9.5/install.sh -o /tmp/uv-public-installer.sh\\nsha256sum /tmp/uv-public-installer.sh\\nsh /tmp/uv-public-installer.sh\\n/root/.local/bin/uv --version\\n/ro"
+  },
+  "cleanup_verified": true,
+  "capture_hashes_after": {
+    "capture.json": "7ea650f92fe1f08d62a5ff5e03c47ed004b5609b01e9813f468aae670789d834",
+    "payload-1": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+    "payload-0": "7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3",
+    "payload-2": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6"
+  },
+  "artifact_hashes": {
+    "trusted-setup.log": "015b5106d81431ad8763c3dbd96dd0c64c5021d736e2a51d8ccf76b25b23eed5"
+  }
+}

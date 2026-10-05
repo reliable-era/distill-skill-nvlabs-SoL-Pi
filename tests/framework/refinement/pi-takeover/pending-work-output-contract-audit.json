@@ -1,0 +1,107 @@
+{
+  "read_only": true,
+  "pending_work_review": {
+    "candidate": {
+      "completed_command_items": 9,
+      "overlapping_native_item_starts": [],
+      "exact_command_hash_restarts_while_pending": [],
+      "items_without_native_completion_at_stop": [
+        {
+          "id": "item_32",
+          "start_event": 45,
+          "command_sha256": "cf2ce38c3771c3c288fab6b715c8493dba97e973e3b2c12a98d6b6df0d31b580"
+        }
+      ],
+      "unmatched_item_NOT_proof_process_alive": true
+    },
+    "Both": {
+      "completed_command_items": 16,
+      "overlapping_native_item_starts": [],
+      "exact_command_hash_restarts_while_pending": [],
+      "items_without_native_completion_at_stop": [],
+      "unmatched_item_NOT_proof_process_alive": true
+    },
+    "none": {
+      "completed_command_items": 10,
+      "overlapping_native_item_starts": [
+        {
+          "event": 16,
+          "pending_item_ids": [
+            "item_9"
+          ],
+          "exact_duplicate": false
+        }
+      ],
+      "exact_command_hash_restarts_while_pending": [],
+      "items_without_native_completion_at_stop": [
+        {
+          "id": "item_31",
+          "start_event": 45,
+          "command_sha256": "96bacabc5d0a952fe049e631e51b916a6e7b71b55318ed82131412c2bbf65d7e"
+        }
+      ],
+      "unmatched_item_NOT_proof_process_alive": true
+    },
+    "K": {
+      "completed_command_items": 10,
+      "overlapping_native_item_starts": [],
+      "exact_command_hash_restarts_while_pending": [],
+      "items_without_native_completion_at_stop": [
+        {
+          "id": "item_35",
+          "start_event": 49,
+          "command_sha256": "1716ebec1b7e87d3e8b91300f2af36e3e1f10f84b63b4abf982e03298f627102"
+        }
+      ],
+      "unmatched_item_NOT_proof_process_alive": true
+    }
+  },
+  "pending_duplicate_hypothesis": "NOT_SUPPORTED by exact native command-hash overlap; modified/similar jobs or live CPU overlap not ruled out",
+  "output_contract_witnesses": [
+    {
+      "native_event": 54,
+      "kind": "unsupported_output_method",
+      "native_outer_exit": 0,
+      "actor_printed_inner_exit": 1,
+      "actual_exception_prevented_that_output_path": true,
+      "inner_exit_from_actor_echo_NOT_transport_patch": true,
+      "output_sha256": "dedb17e16814d30b88888c419eca1a15ba78c2f0d679f2536d2d45179d1c295b"
+    },
+    {
+      "native_event": 68,
+      "kind": "result_selection_arity",
+      "native_outer_exit": 0,
+      "actor_printed_inner_exit": 1,
+      "actual_exception_prevented_that_output_path": true,
+      "inner_exit_from_actor_echo_NOT_transport_patch": true,
+      "output_sha256": "ae29670ed72df5e0936435441e0159ffca7b3791c9d2fedd31321aa1971ef47f"
+    }
+  ],
+  "cheap_prior_training_trial_did_NOT_exercise_output_method": true,
+  "successful_counterexample": {
+    "historical_measured_Both_original_grade": 1,
+    "single_completed_training_command_also_saved_model": true,
+    "separate_preflight_NOT_necessary_for_every_success": true
+  },
+  "candidate_mechanism_to_review": "Conditional cheap disposable exercise of unverified downstream result-handling before expensive upstream work; distinct from resource feasibility/default choice/recovery conditions/poll duration",
+  "limits": [
+    "Original grades/costs unchanged; not a causal economy or quality proof",
+    "Echo can make outer status0 while explicit inner status1 remains visible; do not equate these",
+    "Printed inner status is actor evidence, not independently certified subcommand process status",
+    "Correcting observed interface failures does not guarantee private accuracy or a valid final artifact",
+    "No model call/probe/training/grade retry or task parameters exported"
+  ],
+  "source_pins": {
+    "/tmp/solpi-rc16-2bf91f1a6f8f4113a5/candidate/native.jsonl": "1eb2886abc19a8e62a2f77bb1a45a8c57727dce9be204187bef66104e79b7526",
+    "/tmp/solpi-rc16-2bf91f1a6f8f4113a5/Both/native.jsonl": "6193084d71302b3bc3ea5a7fdb3f1db406387b387b42cb38406b2dc12d87ca56",
+    "/tmp/solpi-rc16-2bf91f1a6f8f4113a5/none/native.jsonl": "915388aa9f0421d59f499f0f2eb96d150e2c2796a600854ec866b078cbc30d4f",
+    "/tmp/solpi-rc16-2bf91f1a6f8f4113a5/K/native.jsonl": "b730abb67342ed6f94c33519e74fd0f758d24ab266e0f4af5fe025661ea28fad",
+    "/tmp/solpi-mf16-7cd69b82b6a7aff8ad/Both/native.jsonl": "b01fc334e5577c5d5ac173429f9775740ead6e8492de4513ce9002b60a8172b7",
+    "measured-feasibility-fasttext-audit.json": "90b64cc89934b63c828c5e308f845eca59f032fe2390aba643c59bb42b156e96",
+    "recovery-context-fasttext-audit.json": "5c2141c64ead958df7830b121b74f8abf69a57d933997eca6534df2afbeb8978"
+  },
+  "new_actor_model_POST": 0,
+  "new_training_grading": 0,
+  "promotion": false,
+  "goal_complete": false
+}

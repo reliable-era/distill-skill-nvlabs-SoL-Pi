@@ -1,0 +1,23 @@
+{
+  "module_hashes": {
+    "task_artifacts.py": "47aef719bce350c399be5f6aa24b712ce700c2e3a55e34a57fb148057b781b46",
+    "test_task_artifacts.py": "a7b34cd9cd5088c5eb23a0540dbba8c002f5ca671e38bd779e0f39c81a8bfafe",
+    "artifact_capture.py": "81790d947b5f83a8d31cab97bc4c5645765bdbed8e3c1b2c7e29706c60ab319c",
+    "directory_capture.py": "5b8fd90b450d280a3a258b79aec20597e37a6ed0146a76b0d97581b274d2b4e8",
+    "executable_capture.py": "3282e1c6bbef368db4d725b57e4e2b0c29777db06f5e347c3c7bb43a24416c40",
+    "protected_inputs.py": "86484e53ff7fd4e851b1604baf21e8c94eaf9d1752b9875a71623d5753c8d420"
+  },
+  "offline_tests_passed": 40,
+  "all_nine_tasks_synthetic_dispatch_tested": true,
+  "stopped_container_io_smoke": "task-capture-api-smoke.json",
+  "scope": "Shared capture API integration only;synthetic tests and never-started container smoke;not native actor/model/grader integration",
+  "model_POSTs": 0,
+  "actor_starts": 0,
+  "confirmation_ready": false,
+  "remaining_gates": [
+    "Native actor-to-capture-to-trusted-grader integration",
+    "Per-task prospective environment/dependency recipe freeze",
+    "Provider accounting correction/authorization",
+    "Backend-matched comparison plan and representative scored evidence"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "raw_cost": {
+    "gross_usage_complete": false,
+    "gross_tokens": null,
+    "input_tokens_inclusive": null,
+    "output_tokens_inclusive": null,
+    "cache_read_tokens_reported": null,
+    "cache_write_tokens_reported": null,
+    "reasoning_tokens_reported": null,
+    "cache_components_complete": false,
+    "error": "invalid_reasoning_subset",
+    "generation_complete": false,
+    "provider_cost_complete": false,
+    "normalization_scope": "Pinned SGLang unique response.completed length-capped terminal; final usage+EOF; provider traffic only",
+    "protocol_valid": null,
+    "protocol_violations": []
+  },
+  "raw_provider_protocol_valid": false,
+  "correction_applied": true,
+  "derived_cost": {
+    "gross_usage_complete": true,
+    "gross_tokens": 16257,
+    "input_tokens_inclusive": 8067,
+    "output_tokens_inclusive": 8190,
+    "cache_read_tokens_reported": 0,
+    "cache_write_tokens_reported": 0,
+    "reasoning_tokens_reported": 8190,
+    "cache_components_complete": false,
+    "error": null,
+    "generation_complete": false,
+    "provider_cost_complete": true,
+    "normalization_scope": "Pinned SGLang unique response.completed length-capped terminal; final usage+EOF; provider traffic only",
+    "protocol_valid": true,
+    "protocol_violations": []
+  },
+  "deployment_approved": false,
+  "correction": {
+    "field": "output_tokens_details.reasoning_tokens",
+    "raw": 8193,
+    "derived": 8190,
+    "rule": "min(raw_reasoning,emitted_output);recognized source/length boundary only"
+  },
+  "scope": "Offline diagnostic on saved bytes;EOF/provenance assumptions fromexistingreceipt audit;not retrospective repricing or a newcohort launch",
+  "receipt_sha256": "15cecd838fd2f87b4ca6bc7c4482ed769555d94d669b358eb435e5b8b72148e3",
+  "model_POSTs": 0,
+  "historical_eligibility_changed": false,
+  "inference_authorized": false,
+  "tests_passed": 15,
+  "adapter_sha256": "32c5ea0cb8098e6635d1008a32d3132f6e2fd665567dcf85479f8d58ca1fe4a8",
+  "strict_validator_sha256": "bd6cc9ebd88848c893ca3f02c8a44be1acbdfd92ecd4edd6a721b13bba730688",
+  "broker_integration": false,
+  "maximum_allowed_overshoot": 7,
+  "source_pins": {
+    "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+    "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+    "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+    "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c"
+  },
+  "independent_bound_artifact": "dflash-reasoning-bound-verification.json"
+}

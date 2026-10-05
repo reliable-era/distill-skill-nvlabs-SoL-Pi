@@ -1,0 +1,11 @@
+# Prospective Codex Qwen profile evidence
+
+The actual pinned Codex0.160 binary has SHA25612eb3e81114588aca3b7998f4f19e8997b056aca08e57a7ca7c8a3ec8c652aad. Its embedded model catalog lacks Qwen3.8-27B-FP8; all four consumed arms emitted the fallback metadata warning. This does not establish a causal failure mechanism or numeric fallback defaults.
+
+The pinned binary's exported ConfigRead schema includes model_context_window. An isolated cached-image app-server config/read with empty HOME, no host mounts and networknone returned262144; see native-context-offline.json. No prompt/provider/auth call occurred and the helper was verified absent. Current [official configuration reference](https://developers.openai.com/codex/config-reference/) also documents this native key.
+
+Consumed35 requests omitted max_output_tokens and reasoning.effort, retaining reasoning.summary=auto. Prospective reasoning stays unchanged and disclosed. There is no asserted reasoning equivalence with Pi. The provider adapter adds exactly max_output_tokens8192, or accepts an identical already-present integer; conflicting values/types fail before provider forwarding. Native and forwarded bodies remain private with hashes and one-field policy evidence. This is a declared adapter transformation, not a native output configuration claim.
+
+Read-only actual installed SGLang serving_responses.py SHA fd0a230ba33186d514e95884cd20fd7d42956be148e39518f1db559135641517 lines364–385 computes the remaining-context default, and protocol.py SHA57bcb123838432d67f9a96a6cfe18dbe4a4f7dcfdfa2e58cae3c74485e755602 lines1773+ uses min(request.max_output_tokens,remaining-context default). Lines751–759 map length finish to status incomplete; lines2494–2530 still emit final response.completed with full usage. protocol.py1984 records reason max_output_tokens. This prospective cost rule permits that exact unique final capped terminal plus EOF and valid totals; generation remains incomplete. Missing EOF, usage, duplicates, wrong reasons/caps and invalid totals remain rejected. Original frozen normalizers and outcomes are unchanged.
+
+This600s seed131 cohort reuses exposed development tasks and cannot establish confirmation, savings, adoption or the five-harness goal before a complete reviewed comparison.

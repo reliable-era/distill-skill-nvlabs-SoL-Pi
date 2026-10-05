@@ -1,0 +1,16 @@
+"""Immutableper-snapshotALLfinishedrawreceipts;notterminal/grade/promotionaudit."""
+import pathlib,json,hashlib,datetime
+from audit_16k_tex import events
+from audit_16k_regex import validate_response
+from prospective_output_budget import module
+R=pathlib.Path(__file__).resolve().parent;sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+if __name__=='__main__':
+ planpath=R/'measured-feasibility-fasttext-plan.json';plan=json.loads(planpath.read_text());digest=sha(planpath);root=pathlib.Path('/tmp/solpi-mf16-'+digest[:18]);D=R.parent/'development/pi-takeover-qwen-measured-feasibility-admission-16k/runtime';assert all(sha(D/n)==h for n,h in plan['runtime_hashes'].items());strict=module('mf_snapshot_strict',(D/'usage_normalization.py').read_text());cost=module('mf_snapshot_cost',(D/'provider_cost.py').read_text().replace('from usage_normalization import normalize_request',''),{'normalize_request':strict.normalize_request});adapter=module('mf_snapshot_adapter',(D/'reasoning_adapter.py').read_text().replace('from provider_cost import normalize_cost',''),{'normalize_cost':cost.normalize_cost,'__file__':str(D/'reasoning_adapter.py')});ledger=json.loads((root/'transport/ledger.json').read_text());views={x['request']:x for x in json.loads((root/'transport/prospective-ledger.json').read_text())['records']};rows={};pins={}
+ for rec in ledger['records']:
+  n=rec['request'];row=rows.setdefault(rec['actor'],{'finished_requests':[],'known_gross_lower_bound':0,'unknown_finished_requests':[],'cost_complete_for_finished_receipts':True})
+  if n not in views:continue
+  raw=root/'transport'/f'response-{n}.sse';der=root/'transport'/f'derived-response-{n}.sse';view=views[n];rebuilt=adapter.derive(events(raw),rec['stream_eof'],view['provenance']);assert all(rebuilt[k]==view['accounting_view'][k] for k in ['raw_cost','derived_cost','raw_provider_protocol_valid','correction_applied']);c=rebuilt['derived_cost'];row['finished_requests'].append(n)
+  if c['gross_tokens'] is None:row['unknown_finished_requests'].append(n);row['cost_complete_for_finished_receipts']=False
+  else:c,_=validate_response(raw,der,rec,view,adapter.derive);row['known_gross_lower_bound']+=c['gross_tokens']
+  row['cost_complete_for_finished_receipts']&=rec['provider_status']==200 and not rec['error'];pins[str(raw.relative_to(root))]=sha(raw);pins[str(der.relative_to(root))]=sha(der)
+ count=sum(len(x['finished_requests']) for x in rows.values());now=datetime.datetime.now(datetime.timezone.utc);result={'checked_utc':now.isoformat(),'plan_sha256':digest,'live_snapshot_NOT_terminal':True,'starts':ledger['native_starts'],'POST_at_ledger_snapshot':ledger['provider_POST'],'finished_receipts_audited':count,'pending_or_not_yet_audited_POST':ledger['provider_POST']-count,'finished_known_gross_lower_bound':sum(x['known_gross_lower_bound'] for x in rows.values()),'rows':rows,'artifact_hashes':pins,'observer_model_POST':0,'goal_complete':False};folder=R/'measured-feasibility-live-audits';folder.mkdir(exist_ok=True);dest=folder/(now.strftime('%Y%m%dT%H%M%S%f')+'.json');dest.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k!='artifact_hashes'},indent=2));print('snapshot',dest)

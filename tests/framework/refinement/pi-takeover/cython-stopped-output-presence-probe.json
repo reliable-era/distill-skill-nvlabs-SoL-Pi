@@ -1,0 +1,34 @@
+{
+  "task": "build-cython-ext",
+  "probe": "new stopped-output absence gate;not repetition of grader controls",
+  "passed": true,
+  "actor_isolation": {
+    "verified": true,
+    "public_input_mounts": 4,
+    "original_grader_image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+    "actor_image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af"
+  },
+  "output_classification": {
+    "output_state": "absent",
+    "installation_absent_verified": true,
+    "unsupported_layout": false,
+    "grading_verified": false,
+    "cost_eligibility": false,
+    "source_transfer_pending": true,
+    "stopped_actor_verified": true,
+    "image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+    "container_id": "6b3a6d8a3336fe8374d2229e7b58aef7ec46536e0d1457daea7645dc32d568ef",
+    "presence": {
+      "/usr/local/lib/python3.13/site-packages/pyknotid-0.5.3.dist-info": false,
+      "/usr/local/lib/python3.13/site-packages/pyknotid": false,
+      "/usr/local/lib/python3.13/site-packages/__editable__.pyknotid-0.5.3.pth": false,
+      "/usr/local/lib/python3.13/site-packages/__editable___pyknotid_0_5_3_finder.py": false
+    },
+    "docker_diff": ""
+  },
+  "native_starts": 0,
+  "provider_POST": 0,
+  "grader_calls": 0,
+  "module_sha256": "8f978d57e6276f6b075da868aef72fb86994c374c431c5dbb217318bf1010b35",
+  "cleanup_verified": true
+}

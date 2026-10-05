@@ -1,0 +1,18 @@
+{
+  "basis": "Public instruction.md only;not hidden tests or gold answers",
+  "scope": "Prospective capture contract draft;not authorization or whole-task certification",
+  "candidate_changed": false,
+  "model_POSTs": 0,
+  "single_file_transport": "artifact_capture.capture_file;bounded regular-file-only Docker tar;missing outputs remain explicit failed/incomplete task state",
+  "task_contracts": {
+    "break-filter-js-from-html": {"outputs": ["/app/out.html"], "max_file_bytes": 33554432, "file_only_sufficient": true, "trusted_original_inputs": ["original filter and runtime"], "existing_roundtrip_validated": true},
+    "build-cython-ext": {"outputs": ["/app/pyknotid", "global pyknotid install including compiled extensions"], "file_only_sufficient": false, "remaining_gate": "Capture source directory plus global-install witness/package state without replacing trusted grader interpreter or dependencies", "dependency_constraint": "planarity==0.6 uniformly;task image date20251031;original NumPy2.3.0 preserved"},
+    "build-pmars": {"outputs": ["/usr/local/bin/pmars", "Debian-extracted source tree under /app"], "file_only_sufficient": false, "remaining_gate": "Directory/provenance capture and binary replay;preserve original warrior inputs", "environment_recipe": "Signed Debian snapshot20251031,preserved debian.sources layout"},
+    "financial-document-processor": {"outputs": ["/app/invoices", "/app/other", "/app/documents remaining state"], "file_only_sufficient": false, "remaining_gate": "Complete directory/tombstone capture and original-document identity accounting;must not restore moved documents and erase task deletion state"},
+    "make-doom-for-mips": {"outputs": ["doomgeneric_mips ELF at actual task working-directory path"], "file_only_sufficient": false, "trusted_original_inputs": ["vm.js", "doomgeneric_img.c and provided assets"], "remaining_gate": "Resolve binary path in original image;replay with trusted VM generating frame.bmp;do not silently ignore actor changes to supplied runtime", "environment_recipe": "Identical bounded apt metadata refresh before each actor/control"},
+    "overfull-hbox": {"outputs": ["input.tex at original task working-directory path"], "max_file_bytes": 33554432, "file_only_sufficient": false, "unchanged_inputs": ["main.tex", "synonyms.txt"], "remaining_gate": "Resolve paths and compare protected-input hashes before original compiler replay;file capture alone must not hide forbidden edits"},
+    "regex-log": {"outputs": ["/app/regex.txt"], "max_file_bytes": 33554432, "file_only_sufficient": true, "existing_roundtrip_validated": false},
+    "sparql-university": {"outputs": ["/app/solution.sparql"], "max_file_bytes": 33554432, "file_only_sufficient": true, "trusted_original_inputs": ["/app/university_graph.ttl"], "existing_roundtrip_validated": false},
+    "train-fasttext": {"outputs": ["/app/model.bin"], "max_file_bytes": 167772160, "file_only_sufficient": true, "note": "Transport bound is not a new size acceptance criterion;unchanged official verifier determines model-size/accuracy result", "environment_recipe": "Fresh private writable trusted test copy;never mount tests into actor", "existing_roundtrip_validated": false}
+  }
+}

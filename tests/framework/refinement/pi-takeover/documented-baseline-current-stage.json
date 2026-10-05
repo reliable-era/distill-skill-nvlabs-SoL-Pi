@@ -1,0 +1,118 @@
+{
+  "status": "TERMINAL_REJECTED_ZERO_VERIFIED_SOLVES",
+  "checked_utc": "2026-10-05T10:56:21.663320+00:00",
+  "pid": 459132,
+  "worker_active": false,
+  "root": "/tmp/solpi-db16-703569da7d9b953094",
+  "plan_sha256": "703569da7d9b95309423fab8f308aeec0cee9c0041209f884d8ed0373ef2da16",
+  "starts": 4,
+  "POST": 63,
+  "complete_provider_gross_tokens": 936187,
+  "unknown_cost_requests": [],
+  "rows": [
+    {
+      "arm": "candidate",
+      "POST": 15,
+      "known_gross_lower_bound": 186700,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 590.6175058409572,
+      "setup_seconds": 2.9974696338176727,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 1.7464160919189453e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12730568.86657986
+      }
+    },
+    {
+      "arm": "Both",
+      "POST": 16,
+      "known_gross_lower_bound": 232528,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 472.88482632115483,
+      "setup_seconds": 3.0072262920439243,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 2.6537105441093445e-05,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12731183.778408848
+      }
+    },
+    {
+      "arm": "none",
+      "POST": 16,
+      "known_gross_lower_bound": 273427,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 590.5348215792328,
+      "setup_seconds": 3.0314999856054783,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 5.487352609634399e-06,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12731681.085110176
+      }
+    },
+    {
+      "arm": "K",
+      "POST": 16,
+      "known_gross_lower_bound": 243532,
+      "unknown_cost_requests": [],
+      "complete_provider_cost": true,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "native_completed_usage": null,
+      "official_grade": 0,
+      "actor_seconds": 315.21067237108946,
+      "setup_seconds": 3.0398394651710987,
+      "partial_failure": null,
+      "capture_rejections": [],
+      "completion_drain": {
+        "drained": true,
+        "wait_seconds": 6.888061761856079e-06,
+        "deadline_unchanged": true,
+        "actor_continued": false,
+        "extra_POST": 0,
+        "completion_limit": 12732298.239809824
+      }
+    }
+  ],
+  "matched_panel_complete": true,
+  "verified_solves": 0,
+  "ALL3_5percent_token_point_gate": null,
+  "cleanup": {
+    "containers": [],
+    "networks": []
+  },
+  "actual_current_candidate_Both_delivery_verified": true,
+  "actual_owned_namespace": "inherited_randomized_solpi-ff16_UUID/audited_both_namespaces",
+  "next": "read-only mechanism/adherence/priority review; no old actor retry/automaticmatrix/unchangedcontrols",
+  "promotion": false,
+  "goal_complete": false
+}

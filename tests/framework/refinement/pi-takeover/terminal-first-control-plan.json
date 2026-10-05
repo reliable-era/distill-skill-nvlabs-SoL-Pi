@@ -1,0 +1,31 @@
+{
+  "task": "break-filter-js-from-html",
+  "image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+  "source_hashes": {
+    ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+    "README.md": "6b8b019e58881e2a05eb2c62260f6fed2ea8a6bf567cd364d9293dcf7bba42bd",
+    "environment/Dockerfile": "456f7dbf9eb988d24598e46fd371f8f732061bcdc55031dff2f8fc79030be5c4",
+    "environment/filter.py": "9b04d17c5111dfaf8672b6cec09ae773327848c41b509f3ab4618766eba580f4",
+    "environment/tests/filter.py": "9b04d17c5111dfaf8672b6cec09ae773327848c41b509f3ab4618766eba580f4",
+    "environment/tests/test_outputs.py": "31ba6a0baac550de110680ff32a16bbc4fa858e1bfe41f2a63516f90073729bc",
+    "instruction.md": "ad42558111b2a8e8534bdf52b584b804348e1a8d68d756f812a31d5147e65be5",
+    "solution/solve.sh": "1d77103dc3f10e94d00f3714a773e659211770d9197649e2473227a0ac60f2a5",
+    "task.toml": "f820eb1b47e4ccc548b87d9a418fef519137dcf975ad73d0fb5246df00a9669b",
+    "tests/filter.py": "9b04d17c5111dfaf8672b6cec09ae773327848c41b509f3ab4618766eba580f4",
+    "tests/test.sh": "09386b7e4929216fe490deb7d32c99841c03be2471897181dda2bd11f8922c00",
+    "tests/test_outputs.py": "31ba6a0baac550de110680ff32a16bbc4fa858e1bfe41f2a63516f90073729bc"
+  },
+  "candidate_sha256": "da92dbba09ecaa0af422bc8cfbb77fb811c8fcb39bc71a3f2f0251567301de71",
+  "controls": [
+    "baseline",
+    "gold"
+  ],
+  "cpus": 1,
+  "memory_mb": 2048,
+  "oracle_seconds": 300,
+  "verifier_seconds": 600,
+  "retry": 0,
+  "model_POSTs": 0,
+  "network": "Docker bridge for official dependency/source downloads;no host credentials/model config",
+  "candidate_changes_allowed": false
+}

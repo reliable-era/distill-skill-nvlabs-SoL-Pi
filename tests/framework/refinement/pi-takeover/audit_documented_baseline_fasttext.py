@@ -1,0 +1,40 @@
+"""TerminalindependentALLstartedreceipts/partialrows/grades/delivery/cleanup audit."""
+import pathlib,json,hashlib,subprocess
+from audit_16k_tex import events,native_events
+from audit_16k_regex import validate_response
+from prospective_output_budget import module
+R=pathlib.Path(__file__).resolve().parent;sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+if __name__=='__main__':
+ p=R/'documented-baseline-fasttext-plan.json';plan=json.loads(p.read_text());digest=sha(p);result=json.loads((R/'documented-baseline-fasttext-result.json').read_text());assert result['plan_sha256']==digest;root=pathlib.Path('/tmp/solpi-db16-'+digest[:18]);D=R.parent/'development/pi-takeover-qwen-documented-baseline-admission-16k';assert all(sha(D/'runtime'/n)==h for n,h in plan['runtime_hashes'].items());assert all(sha(R/n)==h for n,h in plan['prospective_module_hashes'].items());strict=module('bb_strict',(D/'runtime/usage_normalization.py').read_text());costs=module('bb_cost',(D/'runtime/provider_cost.py').read_text().replace('from usage_normalization import normalize_request',''),{'normalize_request':strict.normalize_request});adapter=module('bb_adapter',(D/'runtime/reasoning_adapter.py').read_text().replace('from provider_cost import normalize_cost',''),{'normalize_cost':costs.normalize_cost,'__file__':str(D/'runtime/reasoning_adapter.py')});ledger=json.loads((root/'transport/ledger.json').read_text());views={x['request']:x for x in json.loads((root/'transport/prospective-ledger.json').read_text())['records']};assert ledger['native_starts']==result['starts']<=4 and ledger['provider_POST']==result['POST']==len(ledger['records'])==len(views)<=64;rows=[];pins={};source=pathlib.Path('/tmp/solpi-refinement-terminal-bench-2/train-fasttext');unknown=[]
+ for row in result['rows']:
+  arm=row['arm'];d=root/arm;records=[x for x in ledger['records'] if x['actor']==arm];known=0;missing=[]
+  for request in records:
+   n=request['request'];raw=root/'transport'/f'response-{n}.sse';derived=root/'transport'/f'derived-response-{n}.sse';view=views[n];av=view['accounting_view'];assert sha(raw)==view['raw_sha256'] and sha(derived)==view['derived_sha256'];rebuilt=adapter.derive(events(raw),request['stream_eof'],view['provenance']);assert all(rebuilt[k]==av[k] for k in ['raw_cost','derived_cost','raw_provider_protocol_valid','correction_applied']);c=rebuilt['derived_cost']
+   if c['gross_tokens'] is None:missing.append(n);unknown.append(n);assert not c['provider_cost_complete']
+   else:c,_=validate_response(raw,derived,request,view,adapter.derive);known+=c['gross_tokens']
+   pins[str(raw.relative_to(root))]=sha(raw);pins[str(derived.relative_to(root))]=sha(derived)
+  keys=plan['arm_recipe'][arm];inventory={str(x.relative_to(d/'skills')):sha(x) for x in (d/'skills').rglob('*') if x.is_file()};assert inventory=={n:h for n,h in plan['frozen_skills_manifest'].items() if n.split('/')[0] in keys};assert all((d/'prompt.txt').read_text().count((D/'frozen'/k/'SKILL.md').read_text())==1 for k in keys)
+  native=native_events(d/'native.jsonl') if (d/'native.jsonl').exists() else [];terms=[e for e in native if e.get('type') in ['turn.failed','turn.completed']];quality=None;cap=d/'captured/capture.json'
+  if cap.exists():
+   capture=json.loads(cap.read_text());pins[str(cap.relative_to(root))]=sha(cap)
+   if capture['capture_complete']:
+    item=capture['artifacts']['/app/model.bin'];target=cap.parent/item['local_payload'];assert target.stat().st_size==item['bytes']<=167772160 and sha(target)==item['sha256'];pins[str(target.relative_to(root))]=sha(target)
+   else:assert capture.get('error') and not row.get('official_grade_available',False)
+  rejection_path=d/'capture-rejections.json';rejections=json.loads(rejection_path.read_text()) if rejection_path.exists() else []
+  if rejections:
+   pins[str(rejection_path.relative_to(root))]=sha(rejection_path)
+   for reason in rejections:
+    assert reason['payload_read'] is False and reason['official_grade']=='unavailable_not_inferred_zero' and not row.get('official_grade_available',False)
+    if reason['reason']=='size_cap':assert reason['declared_size']>reason['max_bytes']==167772160 and reason['regular_file'] and reason['member_index']==1
+  if row.get('official_grade_available'):
+   tests=json.loads((d/'logs/verifier/ctrf.json').read_text())['results']['tests'];reward=(d/'logs/verifier/reward.txt').read_text().strip();assert len(tests)==row['test_events']==2 and reward==row['reward'] in ['0','1'];quality=int(reward=='1' and all(x['status']=='passed' for x in tests));assert bool(quality)==row['solved'];assert row['private_trusted_tests_copy_verified'] and row['original_test_files_unchanged_after_grading'];assert all(sha(d/'trusted-tests-copy'/n)==h and sha(source/'tests'/n)==h for n,h in row['original_test_manifest_before'].items());assert row['dependency_setup']['trusted_software_preload_complete'] and row['dependency_setup']['test_network_disconnected'] and row['dependency_setup']['target_builds']==row['dependency_setup']['target_installs']==0 and row['dependency_setup']['seconds']<=90
+  completed=[e for e in terms if e['type']=='turn.completed'];rows.append({'arm':arm,'POST':len(records),'known_gross_lower_bound':known,'unknown_cost_requests':missing,'complete_provider_cost':bool(records) and not missing and all(x['provider_status']==200 and not x['error'] and x['provider_backend']=='127.0.0.1:18001' for x in records),'native_terminal':[e['type'] for e in terms],'native_completed_usage':completed[-1].get('usage') if completed else None,'official_grade':quality,'actor_seconds':row.get('actor_seconds'),'setup_seconds':row.get('dependency_setup',{}).get('seconds'),'partial_failure':row.get('failure'),'capture_rejections':rejections,'completion_drain':row.get('completion_drain')})
+ assert sum(x['POST'] for x in rows)==len(ledger['records']);cleanup={}
+ for name,args in [('containers',['docker','ps','-a','--filter','name=solpi-db16','--format','{{.Names}}']),('networks',['docker','network','ls','--filter','name=solpi-db16','--format','{{.Name}}'])]:cleanup[name]=subprocess.check_output(args,text=True,timeout=10).splitlines()
+ # The frozen generated controller retains its inherited randomized ff16 owned namespace.
+ # Check that namespace too; db16 is only the new artifact-root namespace.
+ for key,args in [('containers',['docker','ps','-a','--filter','name=solpi-ff16','--format','{{.Names}}']),('networks',['docker','network','ls','--filter','name=solpi-ff16','--format','{{.Name}}'])]:cleanup[key]+=subprocess.check_output(args,text=True,timeout=10).splitlines()
+ assert cleanup=={'containers':[],'networks':[]} and result['cleanup_containers_absent'];whole=len(rows)==4 and all(x['official_grade'] is not None and x['complete_provider_cost'] for x in rows);win=None
+ if whole and all(x['official_grade']==1 for x in rows):
+  by={x['arm']:x for x in rows};win=all(by['candidate']['known_gross_lower_bound']<=.95*by[a]['known_gross_lower_bound'] for a in ['Both','none','K'])
+ output={'plan_sha256':digest,'terminal':True,'started':ledger['native_starts'],'POST':ledger['provider_POST'],'all_started_receipts_rebuilt':True,'known_gross_lower_bound':sum(x['known_gross_lower_bound'] for x in rows),'complete_gross_tokens':sum(x['known_gross_lower_bound'] for x in rows) if not unknown and all(x['complete_provider_cost'] for x in rows) else None,'unknown_cost_requests':unknown,'rows':rows,'unstarted':[a for a in plan['schedule'] if a not in [x['arm'] for x in rows]],'started_arm_skill_delivery_verified':True,'actual_current_candidate_Both_delivery_verified':any(x['arm']=='Both' for x in rows),'matched_panel_complete':whole,'ALL3_5percent_token_point_gate':win,'USD':'UNVERIFIED','paired95percent_confirmation':'NOT_COVERED','exposed_development':True,'cleanup':cleanup,'promotion':False,'goal_complete':False,'artifact_hashes':pins};(R/'documented-baseline-fasttext-audit.json').write_text(json.dumps(output,indent=2)+'\n');print(json.dumps({k:v for k,v in output.items() if k!='artifact_hashes'},indent=2))

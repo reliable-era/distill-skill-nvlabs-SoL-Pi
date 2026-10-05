@@ -1,0 +1,15 @@
+{
+  "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+  "resolved_url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+  "status": 200,
+  "bytes": 1879901,
+  "sha256": "ab443ff4cc5e01fe2638c5895f8336829946c1c2b2afda6f8197c7835b34189a",
+  "retrieved_utc": "2026-10-05T14:39:47.270985+00:00",
+  "retry_text_matches": [
+    "On Windows hosts whose sandbox policy supports denial capture, a blocked interactive shell command escalates in a single step instead of jumping straight to a full bypass. Approving re-runs the command with file and process restrictions set to record instead of block (the network policy still applies), then falls back to the disclosed full bypass only if the command is still blocked. Only one prompt is shown for the entire escalation. A denied loopback or local-network socket (for example, binding or connecting to 127.0.0.1) also reaches this same escalation instead of failing silently. The retry result is labeled \"sandbox relaxed\" when network policy is still enforced, or \"sandbox bypassed\" when fully unsandboxed. If the retry still fails, the message explains that host-level permissions still apply.",
+    "When sandboxing is enabled, requests are checked against the sandbox network policy (outbound access, local and private hosts) before the permission prompt, so a target blocked by policy fails fast instead of prompting. If the Allow sandbox bypass setting is on and the sandbox network proxy can't reach a URL\u2014as opposed to the URL being denied by policy\u2014web_fetch prompts you to retry the request outside the sandbox. Approving makes one more attempt at the fetch and returns its outcome."
+  ],
+  "no_version_pinned_control_assumed": true,
+  "native_starts": 0,
+  "model_calls": 0
+}

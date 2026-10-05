@@ -1,0 +1,32 @@
+{
+  "version": "public-cython-wheels-v1",
+  "task": "build-cython-ext",
+  "cache_sha256": "40b501050989c1729373577eb3491ce683b20284fe64e28f2212e83d048e4495",
+  "probe_sha256": "cbf3df74f5be52fa5635dff6730ec78205737be1ccff5000651c99e2792332b4",
+  "public_metadata_sha256": {
+    "setuptools-metadata.json": "b17d794d3d3176216e3aabb872735d5e2d7aa16f62b374694af32ee6287ca73f",
+    "Cython-metadata.json": "1eebe39b32623b47170a4c59c536475fe43894375ce995065b54785a393571d8",
+    "wheel-metadata.json": "113f8abc907676e530c9dca238f3b2bd26e2b142747d16d7d4775810e1155980"
+  },
+  "requirements_sha256": "93db22b462e56b7cc0274fba341645c9a19228beb97a8729926b642be5f8e865",
+  "artifacts": 23,
+  "artifact_bytes": 74429854,
+  "mounts": [
+    "/tmp/solpi-public-cython-wheels-1ef8377ad8/wheels:/opt/public-wheels:ro",
+    "/tmp/solpi-public-cython-wheels-1ef8377ad8/requirements.txt:/opt/public-requirements.txt:ro"
+  ],
+  "environment": {
+    "PIP_NO_INDEX": "1",
+    "PIP_FIND_LINKS": "/opt/public-wheels",
+    "PIP_CONSTRAINT": "/opt/public-requirements.txt"
+  },
+  "offline_install_verified": true,
+  "original_abi": "CPython3.13;originaltaskimage",
+  "numpy": "2.3.0",
+  "target_pyknotid_absent_verified": true,
+  "target_builds": 0,
+  "target_installs": 0,
+  "all_arms_uniform_required": true,
+  "full_native_actor_grading_verified": false,
+  "scoring_ready": false
+}

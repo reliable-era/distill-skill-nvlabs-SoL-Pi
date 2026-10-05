@@ -1,0 +1,145 @@
+{
+  "native_sha256": "650117f77c041e8466219019c711358d2343e3a6603522c546ff3f6573cd9900",
+  "completed_command_count": 12,
+  "completed_commands": [
+    {
+      "ordinal": 1,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 1233,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": false,
+      "byte_cap_on_output": null,
+      "uses_line_tail": false,
+      "writes_alternate_model_name": false
+    },
+    {
+      "ordinal": 2,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 485,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": false,
+      "byte_cap_on_output": null,
+      "uses_line_tail": false,
+      "writes_alternate_model_name": false
+    },
+    {
+      "ordinal": 3,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 3558,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": false,
+      "byte_cap_on_output": false,
+      "uses_line_tail": true,
+      "writes_alternate_model_name": false
+    },
+    {
+      "ordinal": 4,
+      "native_exit_code": 134,
+      "aggregated_output_bytes": 111,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": false,
+      "byte_cap_on_output": null,
+      "uses_line_tail": false,
+      "writes_alternate_model_name": false
+    },
+    {
+      "ordinal": 5,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 2066,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": false,
+      "byte_cap_on_output": null,
+      "uses_line_tail": false,
+      "writes_alternate_model_name": false
+    },
+    {
+      "ordinal": 6,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 246,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": false,
+      "byte_cap_on_output": null,
+      "uses_line_tail": false,
+      "writes_alternate_model_name": false
+    },
+    {
+      "ordinal": 7,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 44,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": false,
+      "byte_cap_on_output": null,
+      "uses_line_tail": false,
+      "writes_alternate_model_name": false
+    },
+    {
+      "ordinal": 8,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 112,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": true,
+      "byte_cap_on_output": null,
+      "uses_line_tail": false,
+      "writes_alternate_model_name": false
+    },
+    {
+      "ordinal": 9,
+      "native_exit_code": 2,
+      "aggregated_output_bytes": 148,
+      "explicit_thread_16_or_32": true,
+      "host_resource_query": false,
+      "byte_cap_on_output": false,
+      "uses_line_tail": true,
+      "writes_alternate_model_name": true
+    },
+    {
+      "ordinal": 10,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 222943,
+      "explicit_thread_16_or_32": true,
+      "host_resource_query": false,
+      "byte_cap_on_output": false,
+      "uses_line_tail": true,
+      "writes_alternate_model_name": true
+    },
+    {
+      "ordinal": 11,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 71,
+      "explicit_thread_16_or_32": false,
+      "host_resource_query": false,
+      "byte_cap_on_output": null,
+      "uses_line_tail": false,
+      "writes_alternate_model_name": true
+    },
+    {
+      "ordinal": 12,
+      "native_exit_code": 0,
+      "aggregated_output_bytes": 198,
+      "explicit_thread_16_or_32": true,
+      "host_resource_query": false,
+      "byte_cap_on_output": false,
+      "uses_line_tail": true,
+      "writes_alternate_model_name": true
+    }
+  ],
+  "max_aggregated_output_bytes": 222943,
+  "allocation_from_frozen_plan": {
+    "cpus": 1,
+    "memory_mib": 4096
+  },
+  "candidate_required_target_absent_and_original_grade": "0of2",
+  "observations": [
+    "hostCPUprobe_not_quota",
+    "explicit16/32threadtraining_under1CPUquota",
+    "line_tail_did_not_bound_one222943byte_progress_output",
+    "multiplealternatetargetmodels_butrequiredtargetabsent_atstop"
+  ],
+  "limits": [
+    "nativeoutputnotnecessarilyequalprovider-visibleinput;CLItruncationnotyetquantified",
+    "threadoverheadnotcausallymeasured",
+    "nohistoricalBothcapture-sizeinference",
+    "norecovery/retraining/actorretry/newmodelcalls"
+  ],
+  "promotion": false
+}

@@ -1,0 +1,166 @@
+{
+  "benchmark": "terminal-bench-2",
+  "category_population": {
+    "data-processing": 4,
+    "data-querying": 1,
+    "data-science": 8,
+    "debugging": 5,
+    "file-operations": 5,
+    "games": 1,
+    "machine-learning": 3,
+    "mathematics": 4,
+    "model-training": 4,
+    "optimization": 1,
+    "personal-assistant": 1,
+    "scientific-computing": 8,
+    "security": 7,
+    "software-engineering": 25,
+    "system-administration": 9,
+    "video-processing": 1
+  },
+  "category_sample": {
+    "data-processing": 2,
+    "data-querying": 1,
+    "debugging": 2,
+    "model-training": 1,
+    "security": 1,
+    "software-engineering": 2
+  },
+  "eligible_population": 87,
+  "excluded_previously_exposed": [
+    "code-from-image",
+    "sanitize-git-repo"
+  ],
+  "fraction_of_eligible_population": 0.10344827586206896,
+  "fraction_of_full_population": 0.10112359550561797,
+  "fraction_rule": "ceil(0.10 * full release population)",
+  "full_population": 89,
+  "harness": "Codex primary; other harnesses require separate matched stages",
+  "limits": [
+    "Metadata-stratified sample, not a guarantee of performance representativeness. Nine tasks cannot cover every category.",
+    "Excluded exposed tasks change inference target to the eligible release population.",
+    "Difficulty is stratified; categories and runtime distributions are descriptive, not balanced by outcome-selected resampling.",
+    "Unweighted task averages describe this panel; use declared stratum design weights for an eligible-population estimate and report uncertainty.",
+    "No task may be replaced due to model failure, environment cost, or unavailability. Blocked tasks remain planned/unrun."
+  ],
+  "metadata_population_sha256": "2f34e9780f75497b1d6aac73ae84daf64cd55235e0786f54687ef9b021e67c67",
+  "model": "Qwen3.8-27B-FP8",
+  "read_surface": "task.toml metadata only, pinned Git metadata blobs; no task instructions, verifier assertions or solutions read",
+  "schema_version": 1,
+  "seed": 20261004,
+  "selected_size": 9,
+  "selected_tasks": [
+    {
+      "category": "security",
+      "design_weight": 10.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 20.0,
+      "id": "break-filter-js-from-html",
+      "metadata_sha256": "f820eb1b47e4ccc548b87d9a418fef519137dcf975ad73d0fb5246df00a9669b",
+      "previously_exposed": false,
+      "stratum_population": 53,
+      "stratum_sample": 5
+    },
+    {
+      "category": "debugging",
+      "design_weight": 10.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 60.0,
+      "id": "build-cython-ext",
+      "metadata_sha256": "c472f0e7522c128fb7f03e00b50c8cdf2e5e6474daa1e094e7441f4b54e770b2",
+      "previously_exposed": false,
+      "stratum_population": 53,
+      "stratum_sample": 5
+    },
+    {
+      "category": "software-engineering",
+      "design_weight": 10.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 90.0,
+      "id": "build-pmars",
+      "metadata_sha256": "7ee2eac27b99fd462e0760552a430454db693f86608af5bb570b020270e4c9cd",
+      "previously_exposed": false,
+      "stratum_population": 53,
+      "stratum_sample": 5
+    },
+    {
+      "category": "data-processing",
+      "design_weight": 10.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 30.0,
+      "id": "financial-document-processor",
+      "metadata_sha256": "163ee252895c05d36ca37137dba4d6c24b46be28d56ce84ef8bb35bb5b894bda",
+      "previously_exposed": false,
+      "stratum_population": 53,
+      "stratum_sample": 5
+    },
+    {
+      "category": "software-engineering",
+      "design_weight": 10.0,
+      "difficulty": "hard",
+      "expert_time_estimate_min": 480.0,
+      "id": "make-doom-for-mips",
+      "metadata_sha256": "a7d7a498f0d3a992b384e5086ba2b411767c1c1a013d1b41f6a25cdaf6d05acc",
+      "previously_exposed": false,
+      "stratum_population": 30,
+      "stratum_sample": 3
+    },
+    {
+      "category": "debugging",
+      "design_weight": 4.0,
+      "difficulty": "easy",
+      "expert_time_estimate_min": 60.0,
+      "id": "overfull-hbox",
+      "metadata_sha256": "76dea2071850fd5c83a6e98b692f3e05c246629e7832a07181f7700784562922",
+      "previously_exposed": false,
+      "stratum_population": 4,
+      "stratum_sample": 1
+    },
+    {
+      "category": "data-processing",
+      "design_weight": 10.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 45.0,
+      "id": "regex-log",
+      "metadata_sha256": "6bc98525852755caf1fe34c174c2f10f4328adb4ce6c1968dcafe1c877e4e160",
+      "previously_exposed": false,
+      "stratum_population": 53,
+      "stratum_sample": 5
+    },
+    {
+      "category": "data-querying",
+      "design_weight": 10.0,
+      "difficulty": "hard",
+      "expert_time_estimate_min": 800.0,
+      "id": "sparql-university",
+      "metadata_sha256": "47a6f6dd9ce0fc7631ef607e900fcd039b2d064ea90545645b49c678cddc9585",
+      "previously_exposed": false,
+      "stratum_population": 30,
+      "stratum_sample": 3
+    },
+    {
+      "category": "model-training",
+      "design_weight": 10.0,
+      "difficulty": "hard",
+      "expert_time_estimate_min": 30,
+      "id": "train-fasttext",
+      "metadata_sha256": "994fda7c3081bbdd9f6d05d6279ef64faefa94c214d1e08fbcea656540e4fe91",
+      "previously_exposed": false,
+      "stratum_population": 30,
+      "stratum_sample": 3
+    }
+  ],
+  "selection_rule": "minimum-one difficulty coverage + proportional largest-remainder remaining allocation + seeded SHA256 ranking within difficulty",
+  "source_revision": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "status": "metadata allocation only; environment controls, candidate freeze, accounting and bounded inference authorization required",
+  "stratum_counts": {
+    "easy": 4,
+    "hard": 30,
+    "medium": 53
+  },
+  "stratum_quotas": {
+    "easy": 1,
+    "hard": 3,
+    "medium": 5
+  }
+}

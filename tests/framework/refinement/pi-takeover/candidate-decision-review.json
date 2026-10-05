@@ -1,0 +1,155 @@
+{
+  "checked_utc": "2026-10-05T12:42:55.180065+00:00",
+  "scope": "evidence review; no statistical/cohort pooling/regrading",
+  "objective": "portable canonical skill >=3/5 harness wins across3families/3rounds/ALL3paired95percent+5percent complete tokens per verified solve/noqualityloss within user local-Qwen/about10percent/<=3 source limits",
+  "separate_negative_cohorts": [
+    {
+      "candidate": "feasible-first",
+      "plan_sha256": "cecf19ddfc86fa6902a31ebd931684cf78994adc7d12e15dd53080ee4e9ad2df",
+      "starts": 4,
+      "POST": 62,
+      "complete_gross_tokens_THIS_COHORT_ONLY": 866278,
+      "original_grades": {
+        "candidate": 0,
+        "Both": 0,
+        "none": 0,
+        "K": 0
+      },
+      "verified_solves": "0/4 in this cohort",
+      "ALL3_gate": null,
+      "decision": "reject/no finite solve-economy ratio"
+    },
+    {
+      "candidate": "documented-baseline",
+      "plan_sha256": "703569da7d9b95309423fab8f308aeec0cee9c0041209f884d8ed0373ef2da16",
+      "starts": 4,
+      "POST": 63,
+      "complete_gross_tokens_THIS_COHORT_ONLY": 936187,
+      "original_grades": {
+        "candidate": 0,
+        "Both": 0,
+        "none": 0,
+        "K": 0
+      },
+      "verified_solves": "0/4 in this cohort",
+      "ALL3_gate": null,
+      "decision": "reject/no finite solve-economy ratio"
+    },
+    {
+      "candidate": "scratch-capacity",
+      "plan_sha256": "696a7f783127bdae63e58e060076f05df4fe49148fc9ee455188a827dcba2c7d",
+      "starts": 4,
+      "POST": 64,
+      "complete_gross_tokens_THIS_COHORT_ONLY": 913671,
+      "original_grades": {
+        "candidate": 0,
+        "Both": 0,
+        "none": 0,
+        "K": 0
+      },
+      "verified_solves": "0/4 in this cohort",
+      "ALL3_gate": null,
+      "decision": "reject/no finite solve-economy ratio"
+    },
+    {
+      "candidate": "recovery-context",
+      "plan_sha256": "2bf91f1a6f8f4113a5221929f6c1453f8b715cf285a88f43057205ecd5faadaf",
+      "starts": 4,
+      "POST": 63,
+      "complete_gross_tokens_THIS_COHORT_ONLY": 995896,
+      "original_grades": {
+        "candidate": 0,
+        "Both": 0,
+        "none": 0,
+        "K": 0
+      },
+      "verified_solves": "0/4 in this cohort",
+      "ALL3_gate": null,
+      "decision": "reject/no finite solve-economy ratio"
+    }
+  ],
+  "requirement_checklist": [
+    {
+      "requirement": "Apply optimization/reuse controls/retain negatives",
+      "status": "supported workflow, not performance",
+      "evidence_or_gap": "optmization.md; latest four independent stage audits/results"
+    },
+    {
+      "requirement": "About10% representative metadata-selected subset <=3 sources",
+      "status": "scope supported; inference limitations remain",
+      "evidence_or_gap": "terminal-10pct-selection.json:9/89; takeover source scope two sources, third deferred"
+    },
+    {
+      "requirement": "Only local Qwen3.8-27B for new actors",
+      "status": "supported latest cohorts; historical heterogeneous campaigns not pooled",
+      "evidence_or_gap": "four phase plans and raw receipt backend audits"
+    },
+    {
+      "requirement": "Five-harness panel, >=3/5 winning",
+      "status": "UNVERIFIED",
+      "evidence_or_gap": "latest scored cohorts only Codex; no current candidate confirmation in other harnesses"
+    },
+    {
+      "requirement": "At least3 benchmark families",
+      "status": "UNVERIFIED/deferred",
+      "evidence_or_gap": "current two source selection; no frozen-candidate three-family confirmation"
+    },
+    {
+      "requirement": ">=5% fewer COMPLETE tokens per VERIFIED solve vsALL3/no solved-rate loss",
+      "status": "NOT ACHIEVED",
+      "evidence_or_gap": "four recent cohorts0/4; sourcefinancial point-only and sourceRegex quality loss; behaviorSPARQL more tokens vsBoth/None; measuredcandidate0/Both1"
+    },
+    {
+      "requirement": "Three independently scheduled confirmation rounds",
+      "status": "UNVERIFIED",
+      "evidence_or_gap": "these are separate development hypotheses, not repetitions of frozen candidate confirmation"
+    },
+    {
+      "requirement": "Paired task-cluster95% ratios below1 ALL3 and quality uncertainty",
+      "status": "UNVERIFIED",
+      "evidence_or_gap": "no eligible matched solved confirmation; repeated exposed task is not independent task coverage"
+    },
+    {
+      "requirement": "Actual current Both/frozen controls/equal resource/backend/usage/failure-inclusive costs",
+      "status": "supported for recent completed panels, not promotion",
+      "evidence_or_gap": "four phase plans/current inventories/exact prompts/raw-derived cost audits; missing native usage separate"
+    },
+    {
+      "requirement": "Exposed development vs sealed confirmation/network prevention",
+      "status": "development explicitly exposed; clean confirmation eligibility UNVERIFIED",
+      "evidence_or_gap": "current exposed fastText cohorts; historical exposure exclusions preserved; no solution/test retrieval attribution borrowed"
+    },
+    {
+      "requirement": "USD/solve and wall/solve separately",
+      "status": "USD UNVERIFIED; actor/setup time recorded, wall/solve undefined with zero solves",
+      "evidence_or_gap": "phase results/token components; cache completeness missing, no pricing assumptions"
+    },
+    {
+      "requirement": "Canonical promotion/report supported by confirmations",
+      "status": "NOT ACHIEVED",
+      "evidence_or_gap": "canonical diff empty; per-phase negative reports published, not final performance report"
+    }
+  ],
+  "selection_decision": "No promotable candidate. Stop automatic variations of the same coalesced fastText lineage; association-only diagnostics are insufficient justification for another scored panel.",
+  "next_work": "Read-only original-versus-candidate instruction overhead/adherence review across existing successful and failed tasks, with task-answer-free portable mechanism and explicit decision gate before further execution. No easier substitution, blanket budget change, or old actor retry.",
+  "missing_input_if_no_defensible_mechanism": "A materially different evidence-backed portable mechanism or explicitly approved revised experiment contract; not relaxed acceptance or borrowed grades.",
+  "no_new_model_POST": true,
+  "new_actor_training_grading": 0,
+  "canonical_unchanged": true,
+  "artifact_hashes": {
+    "feasible-first-fasttext-audit.json": "0d54f1a693e4fb2c26bed02e8435c908c70739065b3de3e33d16452260063d1c",
+    "documented-baseline-fasttext-audit.json": "587c06630155f83a9bf11b3910eac1a8aadac79a15b82409ec188a593c4823ba",
+    "scratch-capacity-fasttext-audit.json": "980258f6fde198ec1b2f1a1a609a3d057b5b4821da718745d70f4048782c3429",
+    "recovery-context-fasttext-audit.json": "5c2141c64ead958df7830b121b74f8abf69a57d933997eca6534df2afbeb8978",
+    "source-backed-financial-audit.json": "9d0241871fe154eb51b96fe301def7a4ff95dc6ba434010ccdd82a437abca884",
+    "16k-regex-audit.json": "697341a24ea2faa835628d223de56ec43f0013b8639e081e9a4ccac59bd2c9db",
+    "behavior-first-sparql-audit.json": "a8f45577d30e2f3dbcd2a8508f17d46a55d1148e0a151351c3dad8f3866c5bc7",
+    "measured-feasibility-fasttext-audit.json": "90b64cc89934b63c828c5e308f845eca59f032fe2390aba643c59bb42b156e96",
+    "terminal-10pct-selection.json": "4cd849012b0d5f6dca63720b48f8d19accd8b978ed8f05e06899fa8c0a3b5bb3",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/goal.md": "f3cb8d64dead77ae4df7b4db9a3df19444e72a1c319d6d0f349eb4d43f56bc1c",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/optmization.md": "58f90f37750b7bace8ea7e407c592f5fa36dbad38908509d53f392cfa776bd5e",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef"
+  },
+  "promotion": false,
+  "goal_complete": false
+}

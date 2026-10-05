@@ -1,0 +1,36 @@
+{
+  "scope": "Descriptive public-task/native event metadata only; no verifier assertions, expected secrets, gold patches or raw commands published",
+  "plan_sha256": "566371965b91c3966be683997917ffff47a1b23dcb5b62bce5f2e071646aa0f3",
+  "original_tests": {
+    "test_removal_of_secret_information": "failed all four",
+    "test_correct_replacement_of_secret_information": "failed all four",
+    "test_no_other_files_changed": "passed all four"
+  },
+  "baseline_delivery": "All four initial manifests equal frozen baseline; exact original instruction present in each private prompt",
+  "observed_delivery_errors": [],
+  "arms": {
+    "K": {
+      "completed_commands": 11,
+      "failed_commands": 1,
+      "changed_task_files": 2
+    },
+    "Both": {
+      "completed_commands": 12,
+      "failed_commands": 0,
+      "changed_task_files": 0
+    },
+    "candidate": {
+      "completed_commands": 10,
+      "failed_commands": 0,
+      "completed_file_change_events": 2,
+      "changed_task_files": 2
+    },
+    "none": {
+      "completed_commands": 11,
+      "failed_commands": 1,
+      "changed_task_files": 0
+    }
+  },
+  "interpretation": "No demonstrated delivery/UID/grader flaw; delayed or incomplete repairs and candidate complete incorrect repair. No causal skill attribution. Budget-limited cohort is incomplete.",
+  "shared_warning": "Qwen model absent from native catalog; fallback metadata warning present in every arm, not fatal and not demonstrated failure cause"
+}

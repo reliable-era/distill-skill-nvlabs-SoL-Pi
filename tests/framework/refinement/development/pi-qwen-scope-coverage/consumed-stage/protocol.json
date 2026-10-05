@@ -1,0 +1,164 @@
+{
+  "status": "PROTOCOL_PREPARED_NOT_EXECUTABLE",
+  "candidate_sha256": "603e81e6eba2c34de42ea3d0f4b8c039e01b2aa64ac962ef4a407a5caa9e715b",
+  "candidate_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/candidates/scope-coverage/efficient-coding/SKILL.md",
+  "tasks": {
+    "terminal": {
+      "family": "terminal",
+      "task": "sanitize-git-repo",
+      "baseline": "/tmp/solpi-terminal-locate-first-baseline",
+      "prompt": "/tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/instruction.md",
+      "tests": "/tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/tests",
+      "image_id": "sha256:575d33f0522d38aa9978013294f4b03629fea2bd11ea82a32306197968b8e8ac",
+      "actor_workdir": "/app/dclm",
+      "expected_test_events": 3
+    },
+    "go": {
+      "family": "go",
+      "task": "go/food-chain",
+      "baseline": "/tmp/solpi-polyglot-go-smoke-v2/workspace",
+      "prompt": "/tmp/solpi-polyglot-go-smoke-v2/prompt.txt",
+      "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "actor_workdir": "/work"
+    },
+    "swe": {
+      "family": "swe",
+      "task": "pallets__flask-5014",
+      "baseline": "/tmp/solpi-refinement-flask-native-task-v2/workspace",
+      "prompt": "/tmp/solpi-refinement-flask-native-task-v2/prompt.txt",
+      "image_id": "sha256:10a67635ce037886b760a72f6eef8459beb6a0c6e070c0748a037839135acc45",
+      "actor_workdir": "/work",
+      "grader_image_id": "sha256:bf8242431f5c177d67996b3c888a0f51e4bb7bd0b67009bee6c70842baca1241",
+      "dataset": "/tmp/solpi-refinement-swe-data.json",
+      "python": "/tmp/solpi-refinement-harbor-venv/bin/python"
+    }
+  },
+  "schedule": [
+    {
+      "id": "terminal-Both",
+      "family": "terminal",
+      "arm": "Both",
+      "round": 1
+    },
+    {
+      "id": "terminal-none",
+      "family": "terminal",
+      "arm": "none",
+      "round": 1
+    },
+    {
+      "id": "terminal-K",
+      "family": "terminal",
+      "arm": "K",
+      "round": 1
+    },
+    {
+      "id": "terminal-candidate",
+      "family": "terminal",
+      "arm": "candidate",
+      "round": 1
+    },
+    {
+      "id": "go-candidate",
+      "family": "go",
+      "arm": "candidate",
+      "round": 1
+    },
+    {
+      "id": "go-none",
+      "family": "go",
+      "arm": "none",
+      "round": 1
+    },
+    {
+      "id": "go-K",
+      "family": "go",
+      "arm": "K",
+      "round": 1
+    },
+    {
+      "id": "go-Both",
+      "family": "go",
+      "arm": "Both",
+      "round": 1
+    },
+    {
+      "id": "swe-candidate",
+      "family": "swe",
+      "arm": "candidate",
+      "round": 1
+    },
+    {
+      "id": "swe-K",
+      "family": "swe",
+      "arm": "K",
+      "round": 1
+    },
+    {
+      "id": "swe-none",
+      "family": "swe",
+      "arm": "none",
+      "round": 1
+    },
+    {
+      "id": "swe-Both",
+      "family": "swe",
+      "arm": "Both",
+      "round": 1
+    }
+  ],
+  "seed": 131,
+  "rounds": 1,
+  "maximum_starts": 12,
+  "actor_seconds": 600,
+  "cleanup_reserve_seconds": 10,
+  "request_deadline": "remaining actor budget minus10; max590s",
+  "POST_per_actor": 16,
+  "POST_total": 192,
+  "native_seconds_total": 7200,
+  "idle_grace": {
+    "seconds": 300,
+    "GET_max": 61,
+    "spacing_seconds": 5,
+    "request_seconds": 2,
+    "both_initial_and_each_actor": true,
+    "save_raw_before_assert": true,
+    "both_locks_held": true
+  },
+  "idle_seconds_total_max": 3900,
+  "actor_plus_idle_total_max": 11100,
+  "retries": 0,
+  "backend_parameters": {
+    "provider": "local-development",
+    "model": "Qwen3.8-27B-FP8",
+    "api": "openai-completions",
+    "maxTokens": 8192,
+    "reasoning": false,
+    "thinking": "off",
+    "pooling": false,
+    "contextWindow": 262144,
+    "provider_timeoutMs": 180000
+  },
+  "reused_grader": {
+    "certificate_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/local-qwen-independent-reads/grading-control-certificate.json",
+    "certificate_sha256": "64a898ab279b227366b1928b6e5247ed6ea1a25dc7c136e720d8c953ad9188af",
+    "grading_plan_path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/local-qwen-independent-reads/grading-plan.json",
+    "grading_plan_sha256": "c89a26ca67ed75a4e11c418f95359156e943bf1b446198dff0129843d0e42a17",
+    "screen_plan_sha256": "c71b9ca2f36dbb0536d65cc8c39c175fc355bbddc2b1d564cf3ec0fc10878b53",
+    "adapter_grade_function_sha256": "b5b8707169ccc37172f32ee70dea46e924f84689dd53293bbdbc10b433614d01",
+    "shared_adapter_files": {
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/local-qwen-independent-reads/runtime/wrapper.py": "5c5824ecaac6b2d329bd2c2164fdb65dcd7c8cfd2863bfda40305c7a54b5b434",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/local-qwen-independent-reads/runtime/grade_validation.py": "96c6b714bf58ae18c7d162622aeae964bdf0657f9d6fba29148d4cb1853113aa",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/local-qwen-independent-reads/runtime/swe_grade.py": "afb30693449286c4b1a4f98d10716b5d92ca946f7ef32ec07197e66c158b4738",
+      "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/local-qwen-independent-reads/runtime/swe_patch.py": "231caeaf1b11735e80c1a221c90c37cc4129230495fda83185add1de97b9d0b3"
+    }
+  },
+  "stop_policy": {
+    "actor_cutoff": "independently grade captured partial filesystem; continue only with known observability and cleanup; partial cost TBD",
+    "quality_fail": "retain/continue",
+    "genuine_provider_error_infra_uncertain_cleanup": "stop"
+  },
+  "scope": "3 reused exposed tasks x4arms; held-out untouched",
+  "implementation_status": "pending source adaptations, tests and executable hash freeze; no models authorized",
+  "prior_plan_sha256": "b037a6a0f2a474a739d99b9d88208a811947e6bf343f926a41843723629bcca3"
+}

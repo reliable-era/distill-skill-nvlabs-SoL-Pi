@@ -1,0 +1,40 @@
+{
+  "version": "qwen-dflash-derived-receipts-draft-v1",
+  "implementation_pins": {
+    "prospective_reasoning_adapter.py": "32c5ea0cb8098e6635d1008a32d3132f6e2fd665567dcf85479f8d58ca1fe4a8",
+    "prospective_sse_bridge.py": "5fcf2a59e5e5ccbb80a15f507a7cccc6b739563ba49b16d53227867fb1daa2e0",
+    "prospective_broker_session.py": "8861c3e57a5a21ef5d5f8e9e6f0fa79c093baad0be104110a9a1a5a3923d4449",
+    "test_prospective_reasoning_adapter.py": "7149289fab1107ec222bb25875a3e3a5aeb5bacab67fa4e8c5e25f97cb5a97a1",
+    "test_prospective_sse_bridge.py": "7d7c6605af513db924581cfb536455394539b8417f9f6ad493c0d7d42c0b480b",
+    "test_prospective_broker_session.py": "cd6db88fe33cb953b0021858e8d181521e325af75647e9e9468dc03c404dff59"
+  },
+  "model": "Qwen3.8-27B-FP8",
+  "prospective_only": true,
+  "historical_repricing": false,
+  "raw_receipt_preserved": true,
+  "raw_provider_protocol_valid_separate": true,
+  "only_wire_change": "terminal output_tokens_details.reasoning_tokens;JSON formatting maychange onthatframe",
+  "content_status_gross_budget_changes": false,
+  "terminal_delivery_gate": "literal HTTP EOF andcomplete validSSE framing;unique recognizedterminal/source/config/peer",
+  "gross_cost_includes_detached_output": true,
+  "derived_bytes_prove_consumption": false,
+  "response_byte_cap": 2097152,
+  "actor_seconds": 600,
+  "reserve_seconds": 10,
+  "completion_only_grace_seconds": 240,
+  "per_actor_POST_cap": 16,
+  "global_POST_cap": 80,
+  "POST_serialization": "same prospectivewrapper forallarms;waiting doesnot extendactor deadline",
+  "retries": false,
+  "fallback_models": false,
+  "native_continuation": false,
+  "deployed": false,
+  "inference_launch_authorized": false,
+  "unmet_gates": [
+    "native SDK conformance",
+    "backend matched routing freeze",
+    "fresh immutable task environment/grading recipe integration",
+    "charged realprovider conformance",
+    "representative comparisons/repetition/cross-family/harness confirmation"
+  ]
+}

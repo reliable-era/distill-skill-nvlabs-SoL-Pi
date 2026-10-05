@@ -1,0 +1,31 @@
+{
+  "plan_sha256": "30b75a06a8ae07a2ffb7af2c1d3fea1ca04dc486a7fabc33994d8fcf004a9d4b",
+  "controls": [
+    {
+      "control": "gold",
+      "started_utc": "2026-10-04T18:18:32.438260+00:00",
+      "oracle_exit": 0,
+      "verifier_exit": 0,
+      "verifier_seconds": 5.574938310310245,
+      "reward": "0",
+      "ctrf_present": true,
+      "test_status_counts": {
+        "failed": 1,
+        "passed": 10
+      },
+      "test_events": 11,
+      "artifacts_sha256": {
+        "logs/verifier/ctrf.json": "e08ade69076ed858f5b291b2fac2ad72904dd2c53cd5fba37178251dfa98b2ca",
+        "logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "oracle.log": "e53ebef05c6d338ef1775f2b34971a1f543c7004fd6218aaaaa3f6f19addfb1b",
+        "verifier.log": "ac5711b97313559d9f91b7278f45e1aef531729738f3455779393347dbb7cdcb"
+      },
+      "owned_container_absent": true
+    }
+  ],
+  "valid_baseline_gold_pair": false,
+  "model_POSTs": 0,
+  "candidate_changed": false,
+  "selection_changed": false,
+  "scope": "First selected task official controls only;not representative scored inference or full9task certification"
+}

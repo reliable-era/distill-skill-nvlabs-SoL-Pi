@@ -1,0 +1,39 @@
+{
+  "model": "Qwen3.8-27B-FP8",
+  "peer": "127.0.0.1:18001",
+  "native_starts_cap": 1,
+  "provider_POST_cap": 1,
+  "actor_seconds": 60,
+  "completion_only_grace_seconds": 240,
+  "retries": 0,
+  "continuations": 0,
+  "service_changes": false,
+  "scope": "ancillary native/provider accounting conformance only;not skill performance",
+  "shared_inference_locks": [
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206852991
+    },
+    {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/model.lock",
+      "device": 2049,
+      "inode": 206919231
+    }
+  ],
+  "source_pins": {
+    "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+    "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+    "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+    "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+    "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa"
+  },
+  "runtime_pins": {
+    "run_prospective_native_probe.py": "fdd3524289452e63a5c0a6eadf54f5b7925ee07d3e73f33dd0a4f3bedde6f131",
+    "prospective_broker_session.py": "8861c3e57a5a21ef5d5f8e9e6f0fa79c093baad0be104110a9a1a5a3923d4449",
+    "prospective_sse_bridge.py": "5fcf2a59e5e5ccbb80a15f507a7cccc6b739563ba49b16d53227867fb1daa2e0",
+    "prospective_reasoning_adapter.py": "32c5ea0cb8098e6635d1008a32d3132f6e2fd665567dcf85479f8d58ca1fe4a8",
+    "pinned_backend_connection.py": "725bddf9f2217412db936c0b38a822d2a361ae2826319b30cb75cac91ddf79dc"
+  },
+  "runner_sha256": "e0ee7b32a0ef7431f486bbd4d5e984fe4aca807940d9077fe46eac4dffc52cff"
+}

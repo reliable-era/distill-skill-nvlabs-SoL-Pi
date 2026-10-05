@@ -1,0 +1,381 @@
+{
+  "version": "selected-environment-recipes-draft-v1",
+  "inputs_sha256": {
+    "cython-trusted-dependencies.txt": "657b9faec1748c8f39cec5e6e7e9f8b9c01436fd93b28f550ca895e72dc3c2a8",
+    "planarity-epoch.txt": "1f57edfe809104aec73265436ff7d501c3a74b2a48cfeb38e846492b31f1fdf3",
+    "pmars-debian.sources": "66108d5e131d22e8868b813ecb3a588328bee608306737447ea364aacd6a1b2f",
+    "public-ca.crt": "6d84ab71cb726c0641b0af84303c316e3fa50db941dc8507d09045eb2fa5d238"
+  },
+  "bindings_sha256": "846d2b53b36d9abed0291ce6d03996e8cc3828c07ec3c456a662bd8666d941b0",
+  "tasks": [
+    {
+      "task": "break-filter-js-from-html",
+      "image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "6b8b019e58881e2a05eb2c62260f6fed2ea8a6bf567cd364d9293dcf7bba42bd",
+        "environment/Dockerfile": "456f7dbf9eb988d24598e46fd371f8f732061bcdc55031dff2f8fc79030be5c4",
+        "environment/filter.py": "9b04d17c5111dfaf8672b6cec09ae773327848c41b509f3ab4618766eba580f4",
+        "environment/tests/filter.py": "9b04d17c5111dfaf8672b6cec09ae773327848c41b509f3ab4618766eba580f4",
+        "environment/tests/test_outputs.py": "31ba6a0baac550de110680ff32a16bbc4fa858e1bfe41f2a63516f90073729bc",
+        "instruction.md": "ad42558111b2a8e8534bdf52b584b804348e1a8d68d756f812a31d5147e65be5",
+        "solution/solve.sh": "1d77103dc3f10e94d00f3714a773e659211770d9197649e2473227a0ac60f2a5",
+        "task.toml": "f820eb1b47e4ccc548b87d9a418fef519137dcf975ad73d0fb5246df00a9669b",
+        "tests/filter.py": "9b04d17c5111dfaf8672b6cec09ae773327848c41b509f3ab4618766eba580f4",
+        "tests/test.sh": "09386b7e4929216fe490deb7d32c99841c03be2471897181dda2bd11f8922c00",
+        "tests/test_outputs.py": "31ba6a0baac550de110680ff32a16bbc4fa858e1bfe41f2a63516f90073729bc"
+      },
+      "passing_control_binding": "terminal-first-controls.json",
+      "passing_control_sha256": "c928b059d1681cc71942a1cbcdc1e9afc70f9cc0494ad9a1424787bafee46483",
+      "tests_mount_mode": "read-only",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    },
+    {
+      "task": "build-cython-ext",
+      "image_id": "sha256:b2a41c10dde020d36fbea4643794d8791118afb77db125e61837f21a02c1a3af",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "d5f5113941c3963292bae396baa9369571026f46e59437f98ddcc93475dd7729",
+        "environment/Dockerfile": "cb6cf421cb9b69d43bd25cd491e49bda982fbb865d47515178d017eda727194e",
+        "instruction.md": "7e52874e45f88505bd21540229719de6639a401477557d814489981d472f0e34",
+        "solution/solve.sh": "41bbdde88617070366a70e518eedca466a4ea1acd7e96899b2fb7da988e40abc",
+        "task.toml": "c472f0e7522c128fb7f03e00b50c8cdf2e5e6474daa1e094e7441f4b54e770b2",
+        "tests/test.sh": "0156c9c4085258b696ce424cf1ce96cba44d1263c5d73bdf54083fd80237f915",
+        "tests/test_outputs.py": "6549f1a8e04b6163ec08877e6f6b9868bf94563f3a3c72ac1fba9c512c31689e"
+      },
+      "passing_control_binding": "epoch-control-build-cython-ext-result.json",
+      "passing_control_sha256": "a51252f466a7e79674a1a9e6e2243ff8b13f042128070ac7ff5b131dc743f4a5",
+      "tests_mount_mode": "read-only",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [
+        {
+          "op": "constraint",
+          "input": "planarity-epoch.txt",
+          "both_actor_and_grader": true
+        },
+        {
+          "op": "trusted-dependencies-only",
+          "input": "cython-trusted-dependencies.txt",
+          "seconds": 300,
+          "never_install_target_package": true
+        }
+      ],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "public_source_binding": {
+        "path": "public-pyknotid-source-binding.json",
+        "sha256": "87326cd8415e4edc75403e5a34c1c7d3d39caaa0451ff3ac762de699163ae89c",
+        "source_clone_verified": true,
+        "dependencies_ready": false
+      },
+      "public_wheels_binding": {
+        "path": "public-cython-wheels-binding.json",
+        "sha256": "c52763f11ae31e22fa84c7486266991adf185d832150c8c83b90e52842d4962a",
+        "dependency_install_verified": true,
+        "target_installed": false
+      },
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    },
+    {
+      "task": "build-pmars",
+      "image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "faf19658ef0ea11f1a6208ea0d561d2a0dbc4be19c653c7f4ed9b6255dac12f0",
+        "environment/Dockerfile": "ff0a9f766151b6304a33b8fe8787dc27d75f6ea679eec4e9a4f2c8876fe08b25",
+        "environment/warriors/flashpaper.red": "ad965bf840c3f3849abc18adc89d58f3fe51209e43ae3f7b9a9cb48452374fe9",
+        "environment/warriors/rave.red": "b4c8acf763957da9de0ec8568d765214ef9e8271aac9b51bb1ab09753e3afb66",
+        "instruction.md": "1606850579342a8b8f2189de0e499fae6be21198150d8dd1e4d18c2efbcf3b82",
+        "solution/solve.sh": "105292ca0e8bc399831550fc54c451002bd300644eb9beef1760dbfa7f8b7543",
+        "task.toml": "7ee2eac27b99fd462e0760552a430454db693f86608af5bb570b020270e4c9cd",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "d9d2796ddc19cf8159670567e174ea377e2bce675bf3451d5951c045b01f4e85"
+      },
+      "passing_control_binding": "repaired-control-build-pmars-result.json",
+      "passing_control_sha256": "897d86bdf52159dad54601810603690282007b81aa040976132f42796fe7b7fe",
+      "tests_mount_mode": "read-only",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [
+        {
+          "op": "copy",
+          "input": "pmars-debian.sources",
+          "destination": "/etc/apt/sources.list.d/debian.sources"
+        },
+        {
+          "op": "public-ca",
+          "input": "public-ca.crt",
+          "destination": "/etc/ssl/certs/ca-certificates.crt"
+        },
+        {
+          "op": "apt-metadata-only",
+          "seconds": 120,
+          "retries": 0
+        }
+      ],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "public_source_binding": {
+        "path": "public-pmars-source-binding.json",
+        "sha256": "e52606332f1e6e7368763ef65dee80fa2c5a5f37fc3622a9e153566faec9ad3a",
+        "offline_sources_and_tools_verified": true,
+        "full_actor_integration_verified": false
+      },
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    },
+    {
+      "task": "financial-document-processor",
+      "image_id": "sha256:d53ef35af0ce9ed2f68741a7175355c731bf170dbf35971166a906b61e4c647c",
+      "cpus": 1,
+      "memory_mb": 4096,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "32438e7780d235dd609f4740e36512c4cd2f34ef26842ea52c5bbde46fcf5e86",
+        "environment/Dockerfile": "2ea485aead008998d7a551e8c80b6bd354a74cbffc310a1f4b88d0b7c53d23ff",
+        "environment/documents/1t2tala7.jpg": "d5fc89cdc92240baa7fc6506237e3841af88880a6f57fa6e3f60b925e605fd22",
+        "environment/documents/41ibljh7.pdf": "bc95a144939b7f21abd832019625a3f2c182a7abe8d57f9bd25e7c6f5d6b3ba5",
+        "environment/documents/53lc58dr.jpg": "2c8607b9c75907077e23f45ce7bc75335a4a46e9f9aab5ee0d901b86b63e7a8e",
+        "environment/documents/5lxo6qji.pdf": "0b3873d45510867d3063637d01f8e9255c4be96586b1f6b06682a208877d441c",
+        "environment/documents/8mdd4v30.jpg": "56238d4d934c433c24e53d0674f0530e11024f284e8ffcb3bb0bcc0d58850740",
+        "environment/documents/9t84azyt.pdf": "d46a7397df8e7903ddef31b76c1633c4989f09b8c301e0cf87dab00cd08a4663",
+        "environment/documents/c11ertj5.pdf": "570adcb1be1800cca727420b543e9c68bb7607ebaddf80524c7380560e549434",
+        "environment/documents/dbdw2pcn.pdf": "ad8f14ad77a98d0926a68d17e5ce822c2f9d3a355ccf4a6b1ded5327c31cbb87",
+        "environment/documents/g0fn9xuy.jpg": "807a6b0b942eb2ce406db3c57a833bba539e165017c81e2b1a0a98104d213677",
+        "environment/documents/hv3a3zmf.jpg": "c212aa5440b23e4b5e97af3c271685769b1050edd73a1ee461acce2c5998eb3c",
+        "environment/documents/jxepq85j.jpg": "a51b4a78c278c1b755e674511729d8514681b94094a4130c457ed71c533a0083",
+        "environment/documents/pbhsahxt.jpg": "badb1930a086c35b1484463098cbfb7823beb21abae71a9fe95bf90807fa9e41",
+        "environment/documents/sg65kxvf.jpg": "53d8335a156bd0b18bd1808693cc805c39e013d9768fd7eb7497f22e18b1c5cb",
+        "environment/documents/ujv6oh9s.jpg": "ad3359faf1126b33fc587098ed3f5b722734eeb4364794eea66e10112014f25a",
+        "environment/documents/wnnhj7xv.pdf": "5ee01b997176b9124302899471651ce4d4b160f292caf79f2250e2e8324e3480",
+        "environment/documents/xaji0y6d.jpg": "e0b8a2c7078efe82d7657f5023f01ff5498d59cca54a74ef2b6983bc979a1c54",
+        "environment/documents/zbikcidk.jpg": "862f7d313f1233f3e44a89610a4015d861dc771ad2ba8028ad56e2d4fd37ac71",
+        "environment/randomize_filenames.py": "09828ee53e8f2165a9888c5de84e40fcb057bb889d93bfc90d9aeca8c4e23be4",
+        "instruction.md": "b21cf2af1891922732327bf586d14b250d36d96de7867479c15bd1c58ef0db58",
+        "solution/solve.sh": "90861b79c4bd7733909616ffa058151847eb67a4d43395a964c449cf7e24c4fb",
+        "task.toml": "163ee252895c05d36ca37137dba4d6c24b46be28d56ce84ef8bb35bb5b894bda",
+        "tests/test.sh": "48abbda713ace5cee00dd28c7398959f28280062350eb88206a6697a28c72790",
+        "tests/test_outputs.py": "978f506ad5c1bfaf28f9bc774dfe4347d33d046ca009b8496eb513956b7f5a9a"
+      },
+      "passing_control_binding": "control-financial-document-processor-result.json",
+      "passing_control_sha256": "c0e57968e892f0891b86682db70f0f280b6bfbf6d461179334dc337689ec4bb3",
+      "tests_mount_mode": "read-only",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    },
+    {
+      "task": "make-doom-for-mips",
+      "image_id": "sha256:c503768044b13ea799f26ee48c83c5885cd9697114bc3e320e1e5f926276188f",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "b1fcf8c6f2300038a15afdfaf2d80a25e490dee5a047912c911fce28785bc7be",
+        "environment/Dockerfile": "1da0fdafc36e59fcf685a8dbed9717b291195e251fe0e1247267bc5a0a9980ed",
+        "environment/task-deps/doomgeneric_img.c": "97bd88089d3f1cbe182b9929538190ee59f31d496f0cbcc6300213d09f195a26",
+        "environment/task-deps/vm.js": "ea8238f11af2368b108fbb392a57ee04fb7efc40c44222aa0d8bfe1175bcc747",
+        "instruction.md": "1903b660e4c64966ff257f828c932adff2b289de589bd6aee22b933bb4fef429",
+        "solution/solve.sh": "a9cd034a5e76fa2b22481717a9669869214f43fec5b4fedc957d83dd2ef6a84a",
+        "task.toml": "a7d7a498f0d3a992b384e5086ba2b411767c1c1a013d1b41f6a25cdaf6d05acc",
+        "tests/reference.jpg": "d1909be8f3266a72686c3945029a553b82e5b46acd624eda65f3fdd5eb339574",
+        "tests/test.sh": "25809a2ebcb714b1c4e55563b0db16add23e2fd9b68d03e51b1734f8dbb392e1",
+        "tests/test_outputs.py": "f1748ff20bfd670af1e1cb935647503eb176a4a14dd15f20935264ad7e4a98f6"
+      },
+      "passing_control_binding": "repaired-control-make-doom-for-mips-result.json",
+      "passing_control_sha256": "b628de5fa0f12e754d7e5f0eb20d997aff58048af05c119d1d9635d002546258",
+      "tests_mount_mode": "read-only",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [
+        {
+          "op": "apt-metadata-only",
+          "seconds": 120,
+          "retries": 0
+        }
+      ],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "additional_public_input_binding": {
+        "prepared_actor_image_id": "sha256:0396f5b4b3030f979bfde5db0ea083f819638139a6919c5a07890953562775ca",
+        "base_image_id": "sha256:c503768044b13ea799f26ee48c83c5885cd9697114bc3e320e1e5f926276188f",
+        "image_preparation_sha256": "6cbb3f902c1975709af1ec61710664dbc17126b98bb2d98b686349e4ef517b60",
+        "probe_sha256": "a93c88f209628e5960198d1915cf6c99ce25c49109723e1b93c4cb7a98282295",
+        "all_arms_use_same_prepared_image": true,
+        "actor_cap_drop": "ALL",
+        "original_grader_image_preserved": true,
+        "app_source_unchanged": true,
+        "target_built": false,
+        "new_protocol_required": true
+      },
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    },
+    {
+      "task": "overfull-hbox",
+      "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+      "cpus": 2,
+      "memory_mb": 4096,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "15dd9a788fbec54d66b97d82d1fefefd6852004c835dcd11aa83319dbfe4b779",
+        "environment/Dockerfile": "f73659a7e258641b2b93affb1d854dbba93239478707255767003e59cf1d1477",
+        "environment/tests/input.tex": "7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3",
+        "environment/tests/main.tex": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+        "environment/tests/synonyms.txt": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+        "environment/tests/test_outputs.py": "09756f87d1a29df533e86c5c7d5fd14f64acb17b03cabb55921bb2890d368e5d",
+        "instruction.md": "91381d7490afbbf11255e22471d3ed76317353d8e1da372fbc91887e65c57f47",
+        "solution/solve.sh": "e0e6d40406b33ed41cebe14636f173374ed2b2d4e2ae6cf734ac7a87a42b84ba",
+        "task.toml": "76dea2071850fd5c83a6e98b692f3e05c246629e7832a07181f7700784562922",
+        "tests/input.tex": "7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3",
+        "tests/main.tex": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+        "tests/synonyms.txt": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+        "tests/test.sh": "ab4ef5988c8694f6049eac703b7683a7f846c4714a61b764bd8e66e116abe16f",
+        "tests/test_outputs.py": "09756f87d1a29df533e86c5c7d5fd14f64acb17b03cabb55921bb2890d368e5d"
+      },
+      "passing_control_binding": "control-overfull-hbox-result.json",
+      "passing_control_sha256": "ae427d0dd9461ec7459b167b716045859e6634faf807774a1f0453d8c08b96de",
+      "tests_mount_mode": "read-only",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    },
+    {
+      "task": "regex-log",
+      "image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "29ffd98c55dbb6f4844f1b9d8c1769b2155c117ee475e0df6bbc5ef330d239b3",
+        "environment/Dockerfile": "5f264ff0bf62a49aee3c6398447de5108df141e7a2ad35c6de8ef39fa62049c6",
+        "instruction.md": "4f7ac05e70cf9220ea0f1e5a052c5f908cd0fa884e847d80b0bd51bae2e96f9c",
+        "solution/solve.sh": "7e670d4f2b4bccb1e4db38f2a173e085ceda028c38167912b466b0a84fcc0999",
+        "task.toml": "6bc98525852755caf1fe34c174c2f10f4328adb4ce6c1968dcafe1c877e4e160",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "345c3bd09ab6f6fe8c8361a58c0a47bf0a13b3fcb38a5ac7824e44ff855e8f72"
+      },
+      "passing_control_binding": "control-regex-log-result.json",
+      "passing_control_sha256": "52622ad968e818bbfb76c7ca1a387699aa77312a2659671bc3e678e646167116",
+      "tests_mount_mode": "read-only",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    },
+    {
+      "task": "sparql-university",
+      "image_id": "sha256:4b477a009da63f0cff40da8caa52e09a382bf4a0ce011cd371c09650e665ba9c",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "947086de0f27f93c2d8700dcba8c3bfc96b289fc62dec6f956d86388dc908d05",
+        "environment/Dockerfile": "dd0abcd64e90ab16141169bcbf88a8e5f52732f207cb37765d351cc7a48916a9",
+        "environment/university_graph.ttl": "0b0b1f2c0ee7ea7ddc9382f94ff8181996ffa7be60a1651111c1f57b49e09a85",
+        "instruction.md": "22eeab47d3b27b06df2627b3c21cfbd579ed7dcc85ebcb7c4b3a241c3c35f449",
+        "solution/solve.sh": "d17995a8f29c6d656c749271fd28e10d31afee6aa75f40ad28fea1c907f2a791",
+        "task.toml": "47a6f6dd9ce0fc7631ef607e900fcd039b2d064ea90545645b49c678cddc9585",
+        "tests/test.sh": "45902b57bd0f1dd6959216bc9943ab27bb349edc7ff557035a1ecc8732e4cc6b",
+        "tests/test_outputs.py": "ecf15840fc14f1eeff2f3b6317d7f0febc8fa81f688d24e3054205ba13207b39",
+        "tests/university_graph_test.ttl": "368ce01d32513ee04dfe592784b0c976086e514c1eab9b3165a016ca7b0192cb"
+      },
+      "passing_control_binding": "control-sparql-university-result.json",
+      "passing_control_sha256": "a6a4fa8ccb3b13827d1962b173847f77b0f5b23ec119959b50f890df679b0393",
+      "tests_mount_mode": "read-only",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    },
+    {
+      "task": "train-fasttext",
+      "image_id": "sha256:ea991ff9add049c6956d2501b6f38fc612948cb30edaf8f6d61f63f90808272e",
+      "cpus": 1,
+      "memory_mb": 4096,
+      "source_hashes": {
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "README.md": "aa0cf1639861ad35b9def59aa32fcec36463e795435161a68d576595769131e4",
+        "environment/Dockerfile": "330e419b0c5cc46cbf749a9f4110cfc92dc55ddfabde36ffa39b0a9c49bb82e5",
+        "environment/reformat_data.py": "aeecff97fbee11c1fea50e3123bcf678a05326be0fa517545e6863a4c704b12f",
+        "instruction.md": "b701c31f4c5eb6f7e9a6b74d62a52eb696dcae9548a8252c78c0fa850714f998",
+        "solution/solve.sh": "431b8fce223717cde4b934aeb565823acdeb2f9fba8be662ea2dd3fe716e3779",
+        "task.toml": "994fda7c3081bbdd9f6d05d6279ef64faefa94c214d1e08fbcea656540e4fe91",
+        "tests/private_test.tar.gz": "8397bce0c447bca9b73ea66a0f258143701817c4b850fd905166c30a61d2d0e4",
+        "tests/test.sh": "f7895d4dabe0cf224e5d3b0fb70331467081508b27b499ead031cc9c3db6a398",
+        "tests/test_outputs.py": "ca645971f6b4ac2fc0b5ce83eac18df0bb936d7891ec73b1fcb6fc8d2fbe0884"
+      },
+      "passing_control_binding": "repaired-control-train-fasttext-result.json",
+      "passing_control_sha256": "190440f6d7127c72b7165d5a3b298f92d913f140b49f9d5aa2e355724a16124a",
+      "tests_mount_mode": "private-writable-copy",
+      "trusted_only_capabilities": [
+        "original_control_default_Docker_capabilities"
+      ],
+      "actor_capabilities_unchanged": true,
+      "preparation": [],
+      "actor_dependency_access_verified": false,
+      "scoring_ready": false,
+      "additional_public_input_binding": {
+        "cache_sha256": "43ebb55893e7541ea788e1673fa479854698872be15dc1e7afb0cdb8c332e410",
+        "probe_sha256": "c59df74ec14ccdb5d7f7aea9a54855364f5a9dd10f81fd1fa0a85635dd38433e",
+        "mounts": [
+          "/tmp/solpi-public-fasttext-39579ce22b/wheels:/opt/public-wheels:ro",
+          "/tmp/solpi-public-fasttext-39579ce22b/requirements.txt:/opt/public-requirements.txt:ro"
+        ],
+        "environment": {
+          "PIP_NO_INDEX": "1",
+          "PIP_FIND_LINKS": "/opt/public-wheels",
+          "PIP_CONSTRAINT": "/opt/public-requirements.txt"
+        },
+        "numpy_preserved": "2.3.3",
+        "all_arms_uniform": true,
+        "models_trained": 0,
+        "native_integration_verified": false
+      },
+      "trusted_capability_reason": "Official verifier installs/setup may require SETUID/SETGID beyond payload CHOWN/DAC_OVERRIDE;preserve original controls;actors remain CAP_DROPALL"
+    }
+  ],
+  "fixed_task_ids_preserved": true,
+  "grader_seconds": 600,
+  "retries": 0,
+  "actor_external_dependency_access": "UNIMPLEMENTED:isolated actor proxy only accepts model endpoint;public instructions require source/package retrieval;must provide uniform content-scoped public cache/mirror before affected starts",
+  "target_package_build_or_install_by_grader": false,
+  "all_nine_generic_grading_integration_verified": false,
+  "launch_ready": false
+}

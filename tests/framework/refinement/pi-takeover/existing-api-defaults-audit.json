@@ -1,0 +1,122 @@
+{
+  "public_wheel_sha256": "7b758d35196975aac00e42f202c07635c009d637fdbc09afa781054d6cf29aa4",
+  "original_software_source_sha256": "ef3485b58e1f9d7e313ebab910ea618db90de11c06c82c7104c9045491c4170e",
+  "source_member": "fasttext/FastText.py",
+  "rows": [
+    {
+      "stage": "feasible-first",
+      "arm": "candidate",
+      "native_sha256": "80949fa45a8d54619fc33350858694deaf1a518f8f0d65093da7213926897ec0",
+      "original_grade": 0,
+      "explicit_source_help_patterns_started_command_indices": [],
+      "training_source_numeric_learning_rate_declaration_metadata": [
+        {
+          "started_command_index": 6,
+          "explicit_declarations": 1,
+          "all_match_public_api_default": false,
+          "any_match_public_api_default": false
+        },
+        {
+          "started_command_index": 7,
+          "explicit_declarations": 2,
+          "all_match_public_api_default": false,
+          "any_match_public_api_default": false
+        }
+      ],
+      "nonJSON_native_lines_skipped": 1
+    },
+    {
+      "stage": "feasible-first",
+      "arm": "Both",
+      "native_sha256": "f79e85cb8bf66f52ee0a4941137542f806b4f395fa151e29865d40e34311532c",
+      "original_grade": 0,
+      "explicit_source_help_patterns_started_command_indices": [],
+      "training_source_numeric_learning_rate_declaration_metadata": [
+        {
+          "started_command_index": 7,
+          "explicit_declarations": 1,
+          "all_match_public_api_default": false,
+          "any_match_public_api_default": false
+        }
+      ],
+      "nonJSON_native_lines_skipped": 1
+    },
+    {
+      "stage": "feasible-first",
+      "arm": "none",
+      "native_sha256": "0a7f92d2d3063e4be6e8f90a19cff445a5f67a5eebf9cb1cca21d603111e88f5",
+      "original_grade": 0,
+      "explicit_source_help_patterns_started_command_indices": [],
+      "training_source_numeric_learning_rate_declaration_metadata": [
+        {
+          "started_command_index": 11,
+          "explicit_declarations": 1,
+          "all_match_public_api_default": false,
+          "any_match_public_api_default": false
+        }
+      ],
+      "nonJSON_native_lines_skipped": 2
+    },
+    {
+      "stage": "feasible-first",
+      "arm": "K",
+      "native_sha256": "9db4251cde7a99be65baaa13edb2ffd67c3967edf807ec84a4eebe5401358d11",
+      "original_grade": 0,
+      "explicit_source_help_patterns_started_command_indices": [],
+      "training_source_numeric_learning_rate_declaration_metadata": [
+        {
+          "started_command_index": 11,
+          "explicit_declarations": 3,
+          "all_match_public_api_default": false,
+          "any_match_public_api_default": true
+        }
+      ],
+      "nonJSON_native_lines_skipped": 1
+    },
+    {
+      "stage": "measured-feasibility",
+      "arm": "candidate",
+      "native_sha256": "90f569fdb710e9a1fc9b8078ee6d45dcf4d28723d00c60e4596d5518090aea77",
+      "original_grade": 0,
+      "explicit_source_help_patterns_started_command_indices": [],
+      "training_source_numeric_learning_rate_declaration_metadata": [
+        {
+          "started_command_index": 11,
+          "explicit_declarations": 1,
+          "all_match_public_api_default": false,
+          "any_match_public_api_default": false
+        }
+      ],
+      "nonJSON_native_lines_skipped": 1
+    },
+    {
+      "stage": "measured-feasibility",
+      "arm": "Both",
+      "native_sha256": "b01fc334e5577c5d5ac173429f9775740ead6e8492de4513ce9002b60a8172b7",
+      "original_grade": 1,
+      "explicit_source_help_patterns_started_command_indices": [],
+      "training_source_numeric_learning_rate_declaration_metadata": [
+        {
+          "started_command_index": 8,
+          "explicit_declarations": 1,
+          "all_match_public_api_default": true,
+          "any_match_public_api_default": true
+        }
+      ],
+      "nonJSON_native_lines_skipped": 2
+    }
+  ],
+  "coverage": "lexical explicit command/source declarations only; NOT every implicit doc read, executed config, reason for override, or hidden test accuracy",
+  "limitations": [
+    "Defaults may violate hard constraints and are not automatically safe.",
+    "Overrides may be justified; absence of matched help pattern does not establish absence of knowledge.",
+    "Source declarations do not establish all configs executed or submitted.",
+    "Historical successful Both is separate evidence, not a current control or reusable grade.",
+    "Observed default alignment and grades are association, not causal proof or a task parameter recommendation."
+  ],
+  "numeric_training_values_exported": false,
+  "new_model_POST": 0,
+  "actor_training_grading_runs": 0,
+  "promotion": false,
+  "goal_complete": false
+}

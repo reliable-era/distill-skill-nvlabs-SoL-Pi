@@ -1,0 +1,93 @@
+{
+  "task": "sparql-university",
+  "root": "/tmp/solpi-sparql-readiness-7034f798ca",
+  "official_test_runs": 0,
+  "gold_runs": 0,
+  "scored_actor_starts": 0,
+  "model_POST": 0,
+  "positive_controls_and_transfer_reused_not_run": true,
+  "public_recipe": {
+    "task": "sparql-university",
+    "actor_image_id": "sha256:4b477a009da63f0cff40da8caa52e09a382bf4a0ce011cd371c09650e665ba9c",
+    "grader_image_id": "sha256:4b477a009da63f0cff40da8caa52e09a382bf4a0ce011cd371c09650e665ba9c",
+    "cpus": 1,
+    "memory_mb": 2048,
+    "mounts": [
+      "/tmp/solpi-tex-public-runtime-expanded/cpython/python:/opt/public-python:ro",
+      "/tmp/solpi-public-sparql-cd2b693465/packages:/opt/public-rdf:ro"
+    ],
+    "environment": {
+      "PATH": "/opt/public-python/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "PYTHONPATH": "/opt/public-rdf",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "guidance": "Generic public Python 3.13.7 and rdflib 7.1.4 are available through read-only software caches. Original task data is supplied by the image; no query, tests or solution are provided.",
+    "all_arms_uniform_required": true,
+    "inference_authorized": false
+  },
+  "real_stopped_absence_verified": true,
+  "unsupported_directory_not_quality_zero": true,
+  "generic_regular_capture_verified": true,
+  "public_python_RDF_software_verified": true,
+  "public_software_only_graph_fixture_not_task_query": true,
+  "original_graph_sha256": "0b0b1f2c0ee7ea7ddc9382f94ff8181996ffa7be60a1651111c1f57b49e09a85",
+  "software_setup": {
+    "trusted_software_preload_complete": true,
+    "test_network_disconnected": true,
+    "network": "none",
+    "seconds": 2.2551829777657986,
+    "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+    "target_builds": 0,
+    "target_installs": 0,
+    "original_test_script_unchanged": true,
+    "cache_inputs": {
+      "software_scope": "genericuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5/rdflib7.1.4/pyparsing3.2.5;no targets/testanswers",
+      "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+      "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+      "mounts": [
+        "/tmp/solpi-public-sparql-cd2b693465/wheels:/opt/public-wheels:ro"
+      ],
+      "wheel_hashes": {
+        "rdflib-7.1.4-py3-none-any.whl": "72f4adb1990fa5241abd22ddaf36d7cafa5d91d9ff2ba13f3086d339b213d997",
+        "pyparsing-3.2.5-py3-none-any.whl": "e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e",
+        "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+        "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+        "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+        "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+        "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+        "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      },
+      "setup_module_sha256": "eaf1cab5e5d4f6af936db68f8efb2c9b2a9d8c98696a618a1a515da8e4878dbf",
+      "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060",
+      "public_RDF_cache_manifest_sha256": "966d095d462763c7cf1586e70988626fc2620e994af311ac325945bb6097549b"
+    }
+  },
+  "collected_original_tests": [
+    "test_outputs.py::test_sparql_file_exists",
+    "test_outputs.py::test_sparql_runs_without_error",
+    "test_outputs.py::test_sparql_query_results"
+  ],
+  "trusted_original_graph_verified": true,
+  "passed": true,
+  "cleanup_verified": true,
+  "source_manifest": {
+    "instruction.md": "22eeab47d3b27b06df2627b3c21cfbd579ed7dcc85ebcb7c4b3a241c3c35f449",
+    "README.md": "947086de0f27f93c2d8700dcba8c3bfc96b289fc62dec6f956d86388dc908d05",
+    "task.toml": "47a6f6dd9ce0fc7631ef607e900fcd039b2d064ea90545645b49c678cddc9585",
+    ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+    "environment/university_graph.ttl": "0b0b1f2c0ee7ea7ddc9382f94ff8181996ffa7be60a1651111c1f57b49e09a85",
+    "environment/Dockerfile": "dd0abcd64e90ab16141169bcbf88a8e5f52732f207cb37765d351cc7a48916a9",
+    "tests/test.sh": "45902b57bd0f1dd6959216bc9943ab27bb349edc7ff557035a1ecc8732e4cc6b",
+    "tests/university_graph_test.ttl": "368ce01d32513ee04dfe592784b0c976086e514c1eab9b3165a016ca7b0192cb",
+    "tests/test_outputs.py": "ecf15840fc14f1eeff2f3b6317d7f0febc8fa81f688d24e3054205ba13207b39",
+    "solution/solve.sh": "d17995a8f29c6d656c749271fd28e10d31afee6aa75f40ad28fea1c907f2a791"
+  },
+  "artifact_hashes": {
+    "collection.log": "2b32038d0001a939b3e35abe8d194a0a0f8804ca286ffe36edd3098085ba7a38",
+    "trusted-setup.log": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+    "generic-sentinel": "72500cf2b0473e89d10a7844f74f25aa3dc8765426313631e71e6e15cbf08c85",
+    "unsupported/capture.json": "1c49de59260f7f3b0549adc32eb7a05fea697c76f421943b6014d0664df433e5",
+    "captured/capture.json": "b4320fc6be8c11e1a28e2be87cd40728674a7778cbfcf077ce23978e33ad39e3",
+    "captured/payload-0": "72500cf2b0473e89d10a7844f74f25aa3dc8765426313631e71e6e15cbf08c85"
+  }
+}

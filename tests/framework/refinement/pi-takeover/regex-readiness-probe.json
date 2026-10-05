@@ -1,0 +1,75 @@
+{
+  "task": "regex-log",
+  "root": "/tmp/solpi-regex-readiness-c49b9b6eb9",
+  "recipe": {
+    "task": "regex-log",
+    "actor_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+    "grader_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+    "cpus": 1,
+    "memory_mb": 2048,
+    "mounts": [],
+    "environment": {},
+    "guidance": "",
+    "all_arms_uniform_required": true,
+    "inference_authorized": false
+  },
+  "original_positive_controls_reused_not_executed": true,
+  "official_test_runs": 0,
+  "model_POST": 0,
+  "scored_actor_starts": 0,
+  "gold_runs": 0,
+  "real_stopped_absence_verified": true,
+  "directory_not_quality_zero": true,
+  "generic_regular_file_capture_verified": true,
+  "software_setup": {
+    "trusted_software_preload_complete": true,
+    "test_network_disconnected": true,
+    "network": "none",
+    "seconds": 2.2752473317086697,
+    "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+    "target_builds": 0,
+    "target_installs": 0,
+    "original_test_script_unchanged": true,
+    "cache_inputs": {
+      "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+      "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+      "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+      "mounts": [
+        "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+      ],
+      "wheel_hashes": {
+        "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+        "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+        "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+        "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+        "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+        "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      },
+      "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+      "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+    }
+  },
+  "collected_original_tests": [
+    "test_outputs.py::test_regex_matches_dates"
+  ],
+  "passed": true,
+  "cleanup_verified": true,
+  "source_manifest": {
+    "instruction.md": "4f7ac05e70cf9220ea0f1e5a052c5f908cd0fa884e847d80b0bd51bae2e96f9c",
+    "README.md": "29ffd98c55dbb6f4844f1b9d8c1769b2155c117ee475e0df6bbc5ef330d239b3",
+    "task.toml": "6bc98525852755caf1fe34c174c2f10f4328adb4ce6c1968dcafe1c877e4e160",
+    ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+    "environment/Dockerfile": "5f264ff0bf62a49aee3c6398447de5108df141e7a2ad35c6de8ef39fa62049c6",
+    "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+    "tests/test_outputs.py": "345c3bd09ab6f6fe8c8361a58c0a47bf0a13b3fcb38a5ac7824e44ff855e8f72",
+    "solution/solve.sh": "7e670d4f2b4bccb1e4db38f2a173e085ceda028c38167912b466b0a84fcc0999"
+  },
+  "artifact_hashes": {
+    "collection.log": "304524fdf971f55592e15a30dd1b1ec6283a5fb864b4b94fc7a0938ceed65ee6",
+    "trusted-setup.log": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+    "generic-sentinel": "fbeaa7b6d884e780a9519eab98fa213c72532bdde5e19980648edd4ec0231ffb",
+    "unsupported/capture.json": "e543678895cad8b9566b4bef560612706c460dda780c284438a622609a951eb6",
+    "captured/capture.json": "ac3bd3d138779aefbb48dd0a59f9a130688c73c5edc6dd129e48c8a37d10fb6d",
+    "captured/payload-0": "fbeaa7b6d884e780a9519eab98fa213c72532bdde5e19980648edd4ec0231ffb"
+  }
+}

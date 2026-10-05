@@ -1,0 +1,316 @@
+{
+  "plan_sha256": "696a7f783127bdae63e58e060076f05df4fe49148fc9ee455188a827dcba2c7d",
+  "POST": 64,
+  "tool_wait_schema": {
+    "exec_command": "Wait before yielding output. Defaults to 10000 ms; effective range is 250-30000 ms.",
+    "write_stdin": "Wait before yielding output. Non-empty writes default to 250 ms and cap at 30000 ms; empty polls wait 5000-300000 ms by default."
+  },
+  "rows": [
+    {
+      "arm": "candidate",
+      "POST": 16,
+      "emitted_unique_function_call_names": {
+        "exec_command": 14,
+        "write_stdin": 3
+      },
+      "write_stdin_declarations": [
+        {
+          "emitted_request": 5,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 6,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 13,
+          "empty_poll": true,
+          "requested_yield_ms": 20000,
+          "max_output_tokens": null
+        }
+      ],
+      "native_completed_commands": 11,
+      "native_exit_status_histogram": {
+        "0": 8,
+        "2": 1,
+        "130": 1,
+        "134": 1
+      },
+      "nonzero_completed_commands": 3,
+      "later_PID_limit_read": true,
+      "original_grade": 0
+    },
+    {
+      "arm": "Both",
+      "POST": 16,
+      "emitted_unique_function_call_names": {
+        "exec_command": 15,
+        "write_stdin": 4
+      },
+      "write_stdin_declarations": [
+        {
+          "emitted_request": 29,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 30,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 31,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 32,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        }
+      ],
+      "native_completed_commands": 14,
+      "native_exit_status_histogram": {
+        "0": 10,
+        "1": 1,
+        "134": 3
+      },
+      "nonzero_completed_commands": 4,
+      "later_PID_limit_read": false,
+      "original_grade": 0
+    },
+    {
+      "arm": "none",
+      "POST": 16,
+      "emitted_unique_function_call_names": {
+        "exec_command": 13,
+        "write_stdin": 3
+      },
+      "write_stdin_declarations": [
+        {
+          "emitted_request": 45,
+          "empty_poll": true,
+          "requested_yield_ms": 120000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 47,
+          "empty_poll": true,
+          "requested_yield_ms": 180000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 48,
+          "empty_poll": true,
+          "requested_yield_ms": 240000,
+          "max_output_tokens": null
+        }
+      ],
+      "native_completed_commands": 12,
+      "native_exit_status_histogram": {
+        "0": 9,
+        "1": 2,
+        "2": 1
+      },
+      "nonzero_completed_commands": 3,
+      "later_PID_limit_read": false,
+      "original_grade": 0
+    },
+    {
+      "arm": "K",
+      "POST": 16,
+      "emitted_unique_function_call_names": {
+        "exec_command": 13,
+        "write_stdin": 4
+      },
+      "write_stdin_declarations": [
+        {
+          "emitted_request": 55,
+          "empty_poll": true,
+          "requested_yield_ms": 20000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 61,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 62,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        },
+        {
+          "emitted_request": 63,
+          "empty_poll": true,
+          "requested_yield_ms": 30000,
+          "max_output_tokens": null
+        }
+      ],
+      "native_completed_commands": 12,
+      "native_exit_status_histogram": {
+        "0": 11,
+        "134": 1
+      },
+      "nonzero_completed_commands": 1,
+      "later_PID_limit_read": false,
+      "original_grade": 0
+    }
+  ],
+  "interpretation": "Shorter wait declarations coexist with early request-cap stops; no proof polling is dominant or longer waits ensure artifacts. No skill already used longer waits and still failed.",
+  "limits": [
+    "Counts include response declarations; not all emitted calls were executed or completed.",
+    "Tool call counts need not equal provider requests; one response may emit multiple calls.",
+    "Requested yield is not measured tool wait, wall duration or CPU time.",
+    "Request-associated costs are not marginal causal polling costs.",
+    "Exit status alone does not establish failure cause; grade is independent."
+  ],
+  "artifact_hashes": {
+    "transport/request-1.json": "e8e58bb4285b57aff94ced0fd757c8eb078b753f94f7751a4f4931e60815aea6",
+    "transport/derived-response-1.sse": "17e9126d4a0aed98c6cc5811791fceaa362de0d04e5573a7afc64019a983bb9f",
+    "transport/request-2.json": "8891bdd5d8b9116c116e9b45bf28f2a396b68ce233eb83d8d39469ac30ae9837",
+    "transport/derived-response-2.sse": "5591caa54da4614320d03d0b211e4c60c8ccf818db0748986e3857793fa97f02",
+    "transport/request-3.json": "d4bdd26bbcd65329de7a69dd66ca2ea79e3afebdae108062a4b80b7c1a0de226",
+    "transport/derived-response-3.sse": "37717e6a0c6b2358ecc8531367cb8ee291d052b4932827daf72efbea303b32e3",
+    "transport/request-4.json": "d99bfa470fd798ac2e8d43e715e46125a424491e8bb3a76af335d1f46545b66d",
+    "transport/derived-response-4.sse": "1e497b34d191a8460732eaddff7b8e5fa5d17c8134e24e255feef3c1d47f5d3e",
+    "transport/request-5.json": "32da4c7a8482e2f4fa78ed7d875728c901b23cb910e331f1c6ff54ac3a20a43d",
+    "transport/derived-response-5.sse": "dc056eb641f34824235d9fa5df01284f5e6d19a3b9e8844af8de515827744341",
+    "transport/request-6.json": "bc8b409f7cc7b77b2397e405eb251208e6f115f7c2ef1c301fc3f6cb361eb4a3",
+    "transport/derived-response-6.sse": "31737701e4c88f307fb096543732f9aae0a7b5382cf873b05c4509ff0984b5ac",
+    "transport/request-7.json": "a96c5578dab0bc48cc87ddb0625fe258849061be327a989f1abcc91d86f733fa",
+    "transport/derived-response-7.sse": "975a5e11f05365a8ffb358714bb0d2b61c2011be0d6f3806ee0aa3ca76fdfdef",
+    "transport/request-8.json": "45135f211036dbdbe1565fd564ce7c0105aa3e8a388625f97e010b24066fa3e8",
+    "transport/derived-response-8.sse": "4dd2589e5c1399c372fcf8c432f913c0e8c24af84f99e818a8c6eb64750a1086",
+    "transport/request-9.json": "ba5576cc95ba953c9ff00de4f827be81eae15cc911fcf3bb22708ce7dd2e472e",
+    "transport/derived-response-9.sse": "aedc5d2a613024b64eee787aba7ce9f5ce87a260b001dd90e4aa93ecd988bbf2",
+    "transport/request-10.json": "cb8879d5cc89bbea90a684e3c0d11f77defcccbf9e87fcca728a5926676130ac",
+    "transport/derived-response-10.sse": "3f537794c9d2f50fdfc0811440474298cd4e824517a0cb8b30859eed2c6a23d6",
+    "transport/request-11.json": "474ec7a6babb42a9ebfb753e8ddcf1249c8b93cb600bcfd70be6d5bc4982ede7",
+    "transport/derived-response-11.sse": "9f60b2f85c2aa04f63d01187d6a13775920b9b5c1226b2919fbf99dcf7b35f1f",
+    "transport/request-12.json": "0e022d0a8d3dd7693f2b1074f99b596aa9a46b38111944c58cfe8f858490ac14",
+    "transport/derived-response-12.sse": "f1a91199e2cf89bf0b183eb433137cfbbd227c36761a9e45e0c80026b8636a72",
+    "transport/request-13.json": "4531867540831a83d26ee304b73f8c27329c45ac06b46e6a4b85a041f603ad9f",
+    "transport/derived-response-13.sse": "27267b9b6915b01540b9ad354b805ce6c82f5ad130a9f24cff6c7f9fe44d1734",
+    "transport/request-14.json": "c6223c516f75caca7755a3fb37b0183cd1dd7f8413ad4cfa1018d3b8e3f7a105",
+    "transport/derived-response-14.sse": "78d75243596206d76bd397a6cb11f16e595a0e3286a8934010c316ca2c5ec698",
+    "transport/request-15.json": "ce47e834cb47eca40e65d00ae24f0903e139a694b922c8820d5fad1d688a3edd",
+    "transport/derived-response-15.sse": "dbb2e3e39d964c1ce93f49a03c3402791309ce8ad0f50479574eb621b8c42ca3",
+    "transport/request-16.json": "a262400a296147377c50ddaa9f4cb32926fcac372231f9ab6289b75ec5543c8d",
+    "transport/derived-response-16.sse": "27129375aac41ae8f9e5f2c15af56cdff70ad9e0c8d69baa50697c5ecf67945f",
+    "candidate/native.jsonl": "686cb4b0c5641ed1cd10b8d32355d35447ec436175e86da31472d59c82cd6e5d",
+    "transport/request-17.json": "730ed27de3af857ba267819f0c139d1771dc103760fc710c54c73668f4f3a826",
+    "transport/derived-response-17.sse": "7694f00cde9242b467246a4d349f8f415309e5362f621cb1bee82200e5eb6950",
+    "transport/request-18.json": "6f7ba7e92c99b1a9bd91f73d01333252e078a3215108463a404d7019b4e68bbe",
+    "transport/derived-response-18.sse": "5b5aec2ae8e034a2c689e2a9fc55886b2da47c7aa89ea6deaa1390a676bd9914",
+    "transport/request-19.json": "029d1a6e9842b4d14cb9149213bf934f208a12ccdc2cf4e2661920b5fa011492",
+    "transport/derived-response-19.sse": "f95e610de7fc103d8128cfa9fa96a5c8aaf8967729ba1bda01afdd0cc9137ab2",
+    "transport/request-20.json": "45798cfbabe868b836706e2dfcd7386e20251fedd43f6cd17241da9a943d2538",
+    "transport/derived-response-20.sse": "41f02bad4f82b34677fb36774cbd2592dd5c1f86d1a82d2e58ceea5bde3a42a7",
+    "transport/request-21.json": "db42e80d39473fa0e77530b7846a88ccc274fdaad1a7c1a938032a6321eff18c",
+    "transport/derived-response-21.sse": "212845ed493a1d62724b750b72fe8d29a0e2e1001df5fb28d8204b67df150685",
+    "transport/request-22.json": "0d1c5e7ad949dc43eb4fa576580bde8a32d1107d031afbd94910e3a240e9e038",
+    "transport/derived-response-22.sse": "94a5062792bf3c119587c4fa231498540c193af22fd2c73033ce90a0f41724d3",
+    "transport/request-23.json": "f12ad285eb85e6ab02a040fd58ac37a1b3f91f4a1c1e9bd1471f365d8fd0261f",
+    "transport/derived-response-23.sse": "2413bebd34ba71d8eea1608f5df3e596171a19a8af5e52fa54c7c54b596d26e9",
+    "transport/request-24.json": "94dbf6230323c7509f8d320187ec149fa85b173b24f868454d1af0e986eeaaf1",
+    "transport/derived-response-24.sse": "220e05af6a47df52103fdf373a979281c598e4a0a3ef183d03bda80d3d569b82",
+    "transport/request-25.json": "19df6d8d661f16ba198841cc12a342e26add62431ec5a27c47f10cdc96694fa3",
+    "transport/derived-response-25.sse": "725c884f522718f4789f043640fcc87fba6c3a64f44992cf0dfab441a02ce9c5",
+    "transport/request-26.json": "b0ea1f67b6b92e0df0a21fabca1d9812ee4817e6a95f31b904cd9a41847f43d3",
+    "transport/derived-response-26.sse": "ec608ff7f899a1f7dffb83c50b88d56a7d76db26b34b60046fa5c06678ac4c87",
+    "transport/request-27.json": "cb7c7b695b8e459c69edde92aa53f1df6e86024e3c26de116f34cac6fb1426f1",
+    "transport/derived-response-27.sse": "c0a7f5efa1d2e57c9fd30c5da9ff4212e48f533f7e48035e4c4da547489ed748",
+    "transport/request-28.json": "3121c60e9e83fab494da00a169d0c217dd0afd01c0484214a6dff2285e3f96b3",
+    "transport/derived-response-28.sse": "3b71011335ca6edd08fbdc1813c7f0681f45a85b460f8fcab7d405a182df33b8",
+    "transport/request-29.json": "8161a7cb915bab3eb36233147671f40ad47f99850e72e0a19bdf3dae171c64cb",
+    "transport/derived-response-29.sse": "9fe9332c54bf4023a005569103be27c44fe4fec9a1e52a768d6cb5a9a0936336",
+    "transport/request-30.json": "151d3017e8b9673f9f8327fce73c78325b22453a2305595b6b706a8ae23cf942",
+    "transport/derived-response-30.sse": "d1dc5724b90781f8b66fcade5661b38c16c4947a11a6f6e30ca0f3f291c0a735",
+    "transport/request-31.json": "0b851d890cc72645192568afa7de61f3e5a9614e0cf7bfa51d6e9feb566cb115",
+    "transport/derived-response-31.sse": "0234f1c0b195935504e405700ef7b7b40503b73e5189a59e65b4cfd459ce8977",
+    "transport/request-32.json": "f1cda55cd43f19f0c1f2d12082a80627f363661ffda792f10e9cd43e2659a12d",
+    "transport/derived-response-32.sse": "3dbc24aa4d92fd3c7b051dfba730be3e29d2d0e97913dede56722223b08f57c2",
+    "Both/native.jsonl": "5ead34eb148585f3d92b76d75c6d1e3bb33736b026a6aa049dc4494d01e8ed76",
+    "transport/request-33.json": "f672938237d14d4dda6253ce83e54705ddabfddd71a8c7f0d95f91d5157187e0",
+    "transport/derived-response-33.sse": "3181db1d6af6c98ec558c65cc31b525421eb29a5f167c2e2403babb40dc14d5c",
+    "transport/request-34.json": "1744f888c8fd2007550090391819e4a509257f70ebd7f284d03811a07e4dd5bf",
+    "transport/derived-response-34.sse": "737f081723637b54ad1dc25b3fa61fa6c0c514affc1229322af99fb7b9c0fe5e",
+    "transport/request-35.json": "25a5187c33e66310aedf4d8df7dc9e2da681e89fdfb53b638a85e0cf089d1dbf",
+    "transport/derived-response-35.sse": "cc65d7cc20965798c256af7f9bbd2b5aaab2f6c0bc0c5faa3fdc26bdefe8b8b0",
+    "transport/request-36.json": "b31124c03068b69a5ae001adb65463bd736025a13b2094c23525591dafe83c9e",
+    "transport/derived-response-36.sse": "580b66fce555d3da059398cc9dcbe54c12dfad64a88741e80ee36c92e414d79f",
+    "transport/request-37.json": "7d06f51e49bf582a7bafe2c95f63688d6d32a8f3677ecda1b7c29996df3c46e3",
+    "transport/derived-response-37.sse": "95e3fc4e063bbf6239f7ba3cd8a650503c678a8628cc300ee8796d54b089f872",
+    "transport/request-38.json": "ec5f3bd2dede79aba985747ab2fc745b51ea056459940478d1dca92b0b66873b",
+    "transport/derived-response-38.sse": "581cbd9756e5faba6c7beb87fc3be322877bfdcfaf2473fbb950d5d6100518e1",
+    "transport/request-39.json": "49a8e2f5f5ccb713ed069236304d0f7b0a55d0075d1828fa95eb39451792f2fc",
+    "transport/derived-response-39.sse": "3850201834e35255de0ac48a101ba8ab5dfc538bee5cdbb4aab7281fa700dd14",
+    "transport/request-40.json": "cebe00413e35d39b7d6142cb00c02e5ec2c9c181482303df154644f18aec6cbc",
+    "transport/derived-response-40.sse": "d871a1d41b0d6a0ee155c36d4d6e83f4dcd7c4bc0c78b12546f3dca129676759",
+    "transport/request-41.json": "16d303363d318cb24f20d4cae9d452ddb44bc8b5251c093620682f5e7a8e4887",
+    "transport/derived-response-41.sse": "c17ea494066c61c782bc2c95f14c752c104e05545da32a10eb35c01f9f204245",
+    "transport/request-42.json": "826f37087fb8e5c19dc3f9e5461fd2c8ab8910bf4541d273c399f6d19a4441d9",
+    "transport/derived-response-42.sse": "43a78e1977d66212c173d3f80c0bf8f36bdc6695e9947d86bb4838db2b671f1d",
+    "transport/request-43.json": "642bd9b5ed3110260623cac3b576947c6d42e81bfc4669448e6d435d234c90bc",
+    "transport/derived-response-43.sse": "7d3a7773160c95779a54274cb0ffe48fa296bf40845bbfefbf0510cfa02950d3",
+    "transport/request-44.json": "9709c74d77f27a3b1477fc6c39bd8d93b2b29b9cb758dad98ee5d47d1174358c",
+    "transport/derived-response-44.sse": "14abbd2a85a8edfcb3e55add8a37c618ac75eb711de46f6e800d85ac4ef9e8eb",
+    "transport/request-45.json": "1aeac2a9ccefaab128f21e97943b904fb207ce404979230200bb58c580dad2d9",
+    "transport/derived-response-45.sse": "30acfe18be3c52a41dd95c02cfa071c1ee9d27d6a71a3749bc218045adcdd0cd",
+    "transport/request-46.json": "4b818cd2085373464e994b267661fec7321f620cc4217eca5abb16d23b9e870e",
+    "transport/derived-response-46.sse": "f715bd888455f1cc2fcbf4dc70fed4dd8612053ee37f5083fb9cdcb1efef5194",
+    "transport/request-47.json": "4035547efd5a52e691b2150f322eeeb2334e72009d6ffe67cc98b26b6ac38163",
+    "transport/derived-response-47.sse": "6a9dde559d22f7c8b817ad922c50633d2e3c1f2d8775d80b5c7ea42163070f9d",
+    "transport/request-48.json": "3990e5c0144c036ae5b2783bcde809952a3184408e679551d28d93ebd4ee9088",
+    "transport/derived-response-48.sse": "20f543d12285f6679b09cc1bf41c667ee41f9832c3b8b9f5c9a1f2293de079df",
+    "none/native.jsonl": "8f1c5b1df5f6b4b529ab1a37467683a99676d4ccdff082ef6521499b943f76b8",
+    "transport/request-49.json": "810403bfb2a0f169130358bc6d40ccbc1ce9b378b7cace45abb5a1e0f5714625",
+    "transport/derived-response-49.sse": "c3b58a3c93b0c9c91b1e1b2b0423c8ee24fd7af3da8f613475eec0d4fc0ba5e8",
+    "transport/request-50.json": "b25d6033ae00f2ecf475b64b110e9a2dab0265e820e8bde3f5c9e64a97778cb0",
+    "transport/derived-response-50.sse": "d7c8d1ef92fa4c58a07087d629cd6534125d5ab68b800a7d465073703cba3e4f",
+    "transport/request-51.json": "151eab6c5f9be30b69fb695d38a8f02de0a15b94a3583b8f15920e8a3174c28a",
+    "transport/derived-response-51.sse": "62359e037e2864e45861b548cde6cc3ba871c820c35945855a5b2fb70daa5b19",
+    "transport/request-52.json": "e823eae3c2ffd7658a4d8153c2e9df0b46fd60ef8e41568342f56fd0d07bbb97",
+    "transport/derived-response-52.sse": "9f117921969701ecb520aa07b847f3392b6f95ec19e3748e8d7ecd949ca240d8",
+    "transport/request-53.json": "2e4a00aa9a484b772ea4c5e3e43fb17a938488f7b3c688312022453c227a4350",
+    "transport/derived-response-53.sse": "72f83d44e93b2d128cca4ca2d32a0eeccb9abb20acd57158baf3a72dc1dfe91b",
+    "transport/request-54.json": "7de6dd62670da5fd98de304a1d8023551297e0c9c6f34281d64ef5f33118f50d",
+    "transport/derived-response-54.sse": "084ee2e3431abb695c9e4059bd56e4909679366b3b9a31f8a36b239370f6f9b4",
+    "transport/request-55.json": "2ab637c3a233f915900902bc356d6e344a6d5986a3f94710be43590a74308287",
+    "transport/derived-response-55.sse": "b92556b29ec0a604ef655a5e3ec118fa781d670f727a46d17ed6154687fb8881",
+    "transport/request-56.json": "ef2f292523948afd606d0320ab32052ae349b256faedbb5cee12c9143b0446b4",
+    "transport/derived-response-56.sse": "cedf4ae502619a3a85c639979d94c94ef50dc939a1fdfa95afd254f70ee42c14",
+    "transport/request-57.json": "a6a23ccf61ac03191754e5f8f7d11ecfed4daa12c53bac766117a0ed88774741",
+    "transport/derived-response-57.sse": "3f1f7c7cfbbd55330a205b847ff92b3cee32f22d42a654ffc9fb48ec21352d6d",
+    "transport/request-58.json": "fe9fddf0cd52eafc04f5f888c61fde452da4bfe0dcbef3b2a2593701602f2f59",
+    "transport/derived-response-58.sse": "bfbb31bf45f7d2720496a75e2a17f4087dc2b1dd1f24c474a7f56f4e32a4c6a6",
+    "transport/request-59.json": "bb52ba0ee83e5be7d954c24ce681ca2c1395c0266e693c0a757af4dece63290d",
+    "transport/derived-response-59.sse": "fd642402774b0b3c6ca21a4d9e3257f1127fb0a25664712507b672d61b79ecf7",
+    "transport/request-60.json": "57eecdef9482ed2de2ded2fbc350c1800c071a00434a9af08e7a260c0cd2be0b",
+    "transport/derived-response-60.sse": "30dad7f75b1dc6f28301ed9455890fbbd6e8a4b065d8337ffee5e700518378d4",
+    "transport/request-61.json": "e7d6bb855d9e4cdd2e8e378d68fa6eaf3dafaab2efe6ffba72f3379de0bbee7c",
+    "transport/derived-response-61.sse": "3f753f4de2983fb97cd0b383dc1a429a6bfed6df0984b3e895a785dc5651f115",
+    "transport/request-62.json": "35ae8f8d9ac28e0023966fc03b65c1f01af96b51596d95091c28b33e45fa4214",
+    "transport/derived-response-62.sse": "397f17b2eb737133d6864c9def5fb8569a3edf6715fda4799fd915533453f3e0",
+    "transport/request-63.json": "3d20a921999cdf4639ab2f3cd89bf0b550e4037213b35bf7153192a16854c5e9",
+    "transport/derived-response-63.sse": "01f33690f100049ef2b90db0fc3b26139de3b7e82979244124b994928d3a4e0b",
+    "transport/request-64.json": "5a4cf80db088d0376e137e64cda40f736a2c0a9e58e7da606a436657f1c8cb5c",
+    "transport/derived-response-64.sse": "532641173f11109b75177c96f2c11f788fa86aead4c00c2f2b0bfe39694ef2dc",
+    "K/native.jsonl": "b739873a3a0cf4a5e2fd66ad5fa0b11b704f5cb93f8db89aee80abebfd6d0809"
+  },
+  "new_model_POST": 0,
+  "new_actor_or_training_grading": 0,
+  "promotion": false,
+  "goal_complete": false
+}

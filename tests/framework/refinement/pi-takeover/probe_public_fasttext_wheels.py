@@ -1,0 +1,17 @@
+"""Offline training software import only;no training/prediction/dataset reads."""
+import json,pathlib,subprocess,uuid,shlex
+from prepare_public_pmars_source import R,sha,docker
+from public_artifact_cache import verify_artifact_directory
+if __name__=='__main__':
+ cache=json.loads((R/'public-fasttext-wheels-cache.json').read_text());assert cache['prepared'];root=pathlib.Path(cache['private_root']);verified=verify_artifact_directory(root/'wheels',cache['artifacts']);name='solpi-public-fasttext-probe-'+uuid.uuid4().hex[:10];report={'network':'none','cap_drop':'ALL','image_id':cache['image_id'],'model_POSTs':0,'native_actor_starts':0,'models_trained':0,'dataset_read':False,'verified_cache':verified,'scope':'offline software import;no target model/performance claim'}
+ try:
+  program="import fasttext,numpy,importlib.metadata as m,pathlib,json;assert callable(fasttext.train_supervised);assert numpy.__version__=="+repr(cache['versions']['numpy'])+";assert not pathlib.Path('/app/model.bin').exists();print(json.dumps({'fasttext':m.version('fasttext'),'numpy':numpy.__version__,'target_model_absent':True}))"
+  command='pip install --disable-pip-version-check --no-index --find-links=/public-wheels -r /opt/public-requirements.txt && python -I -c '+shlex.quote(program)
+  docker('create','--name',name,'--pull=never','--network','none','--cpus','1','--memory','2048m','--pids-limit','128','--cap-drop','ALL','--security-opt','no-new-privileges','-v',str(root/'wheels')+':/public-wheels:ro','-v',str(root/'requirements.txt')+':/opt/public-requirements.txt:ro','--entrypoint','/bin/sh',cache['image_id'],'-c',command)
+  with (root/'offline-probe.log').open('wb') as out:p=subprocess.run(['docker','start','-a',name],stdout=out,stderr=subprocess.STDOUT,timeout=180)
+  report['exit']=p.returncode
+  for line in (root/'offline-probe.log').read_text().splitlines():
+   if line.startswith('{'):report['import_witness']=json.loads(line)
+ except Exception as e:report['error']={'type':type(e).__name__,'message':str(e)[:200]}
+ finally:
+  subprocess.run(['docker','rm','-f',name],capture_output=True,timeout=20);p=subprocess.run(['docker','inspect',name],capture_output=True,text=True,timeout=10);report['cleanup_verified']=p.returncode!=0 and 'No such' in p.stderr;report['cache_unchanged']=verify_artifact_directory(root/'wheels',cache['artifacts'])==verified;report['log_sha256']=sha(root/'offline-probe.log') if (root/'offline-probe.log').exists() else None;report['runner_sha256']=sha(pathlib.Path(__file__));report['passed']=report.get('exit')==0 and report.get('import_witness',{}).get('target_model_absent') is True and report['cleanup_verified'] and report['cache_unchanged'];(R/'public-fasttext-wheels-probe.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

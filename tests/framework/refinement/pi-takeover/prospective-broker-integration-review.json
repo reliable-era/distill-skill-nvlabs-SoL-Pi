@@ -1,0 +1,33 @@
+{
+  "protocol": "prospective-broker-protocol-draft.json",
+  "implementation_pins": {
+    "prospective_reasoning_adapter.py": "32c5ea0cb8098e6635d1008a32d3132f6e2fd665567dcf85479f8d58ca1fe4a8",
+    "prospective_sse_bridge.py": "5fcf2a59e5e5ccbb80a15f507a7cccc6b739563ba49b16d53227867fb1daa2e0",
+    "prospective_broker_session.py": "8861c3e57a5a21ef5d5f8e9e6f0fa79c093baad0be104110a9a1a5a3923d4449",
+    "test_prospective_reasoning_adapter.py": "7149289fab1107ec222bb25875a3e3a5aeb5bacab67fa4e8c5e25f97cb5a97a1",
+    "test_prospective_sse_bridge.py": "7d7c6605af513db924581cfb536455394539b8417f9f6ad493c0d7d42c0b480b",
+    "test_prospective_broker_session.py": "cd6db88fe33cb953b0021858e8d181521e325af75647e9e9468dc03c404dff59"
+  },
+  "offline_tests_passed": 33,
+  "synthetic_upstream_exchanges": 4,
+  "real_provider_POSTs": 0,
+  "native_actor_starts": 0,
+  "live_service_changes": false,
+  "legacy_session_changed": false,
+  "raw_invalid_receipts_stay_invalid": true,
+  "covered": [
+    "bytewise UTF8/LF/CRLF fragmentation",
+    "metadata-only transformation",
+    "missingEOF/partial/malformed/multilinedata/duplicate-terminal rejection",
+    "unknownbackend/overshoot8 rejection",
+    "consumerdisconnect withpassive receiptcapture",
+    "frozenSession budgetdenial zeroforwards",
+    "dual raw+derived privatejournals"
+  ],
+  "not_covered": [
+    "native SDK",
+    "real provider",
+    "native actor capture/grader",
+    "skill performance"
+  ]
+}

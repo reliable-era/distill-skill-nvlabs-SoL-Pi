@@ -1,0 +1,15 @@
+"""New PMARS source-only stopped transfer gate;no model or grader calls."""
+import hashlib,json,pathlib,subprocess,uuid
+from actor_public_inputs import recipe,docker_options,verify_actor_inspect
+from pmars_partial_output import capture_partial,replay_partial,verify_partial
+R=pathlib.Path(__file__).resolve().parent
+def docker(*args):return subprocess.run(['docker',*args],capture_output=True,text=True,check=True,timeout=60)
+if __name__=='__main__':
+ root=pathlib.Path('/tmp/solpi-pmars-partial-'+uuid.uuid4().hex[:10]);root.mkdir(mode=0o700);actor=root.name+'-actor';grader=root.name+'-replay';spec=recipe('build-pmars');owned=[];result={'private_root':str(root),'native_starts':0,'provider_POST':0,'grader_calls':0,'target_builds':0,'target_installs':0,'scope':'new source-only transfer gate;not repeat of completed baseline/gold controls or executable transfer'}
+ try:
+  docker('create','--name',actor,'--network','none','--cpus',str(spec['cpus']),'--memory',str(spec['memory_mb'])+'m','--pids-limit','128','--cap-drop','ALL','--security-opt','no-new-privileges',*docker_options(spec),'--entrypoint','/bin/sh',spec['actor_image_id'],'-c','sleep infinity');owned.append(actor);x=json.loads(docker('inspect',actor).stdout)[0];result['actor_isolation']=verify_actor_inspect(x,spec,'none',{});docker('start',actor);docker('exec',actor,'/bin/sh','-c','mkdir -p /app/pmars-0.9.4/debian /app/pmars-0.9.4/src; printf "%s" "synthetic unbuilt source" > /app/pmars-0.9.4/src/marker.c');docker('stop','-t','0',actor);result['capture']=capture_partial(actor,spec['actor_image_id'],root/'captured');docker('rm',actor);owned.remove(actor)
+  docker('create','--name',grader,'--network','none','--cpus',str(spec['cpus']),'--memory',str(spec['memory_mb'])+'m','--pids-limit','128','--entrypoint','/bin/sh',spec['grader_image_id'],'-c','sleep infinity');owned.append(grader);result['replay']=replay_partial(root/'captured',grader,spec['grader_image_id']);readback=docker('exec',grader,'cat','/app/pmars-0.9.4/src/marker.c').stdout;expected=(root/'captured/payload-0/src/marker.c').read_text();assert readback==expected;docker('exec',grader,'test','!','-e','/usr/local/bin/pmars');result['source_readback_sha256']=hashlib.sha256(readback.encode()).hexdigest();result['target_absence_preserved']=True;result['passed']=True
+ except Exception as e:result['passed']=False;result['error']={'type':type(e).__name__,'message':str(e)}
+ finally:
+  for name in owned:subprocess.run(['docker','rm','-f',name],capture_output=True,timeout=30)
+  result['cleanup_verified']=all(subprocess.run(['docker','inspect',n],capture_output=True,text=True,timeout=10).returncode!=0 for n in [actor,grader]);result['evidence_hashes']={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob('*') if p.is_file()};result['module_hashes']={n:hashlib.sha256((R/n).read_bytes()).hexdigest() for n in ['pmars_output_state.py','pmars_partial_output.py','run_pmars_partial_transfer_probe.py']};(R/'pmars-partial-transfer-probe.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

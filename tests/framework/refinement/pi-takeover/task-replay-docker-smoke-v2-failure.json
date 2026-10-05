@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "task": "regex-log",
+  "synthetic_only": true,
+  "native_actor_starts": 0,
+  "model_POSTs": 0,
+  "official_grader_runs": 0,
+  "private_root": "/tmp/solpi-task-replay-v2-c635c251b7",
+  "prior_failure": "task-replay-docker-smoke-v1-failure.json",
+  "capture_complete": true,
+  "error": {
+    "type": "CalledProcessError",
+    "message": "Command '['docker', 'exec', '--user', '0:0', 'solpi-task-replay-v2-c635c251b7-trusted', 'chown', '-R', '--', '0:0', '/app/regex.txt']' returned non-zero exit status 1."
+  },
+  "cleanup_verified": true,
+  "passed": false,
+  "module_hashes": {
+    "task_replay.py": "f7d30a12f9ef60070495a4894e17c77699f12399d5589f71ea693e952701a671",
+    "task_artifacts.py": "47aef719bce350c399be5f6aa24b712ce700c2e3a55e34a57fb148057b781b46"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "status": "BOUNDED_ZERO_START_RESUMPTION_BLOCKED_SCHEDULER_WINDOW_EXHAUSTED",
+  "checked_utc": "2026-10-05T13:24:55.370665+00:00",
+  "pid": 1526809,
+  "log": "/tmp/solpi-output-contract-preflight-resume.log",
+  "root": "/tmp/solpi-oc16-b31df3be1b622238e0",
+  "plan_sha256": "b31df3be1b622238e08995f7b1a3af7430ed85f50d48b9a93a398a188348c39d",
+  "schedule": [
+    "candidate",
+    "Both",
+    "none",
+    "K"
+  ],
+  "candidate_sha256": "03f47302defb5548ff05f246da9187a6faa925a733d095c2bffbfbe96204049b",
+  "model": "onlylocalQwen3.8-27B-FP8",
+  "runtime_delta": "NONE",
+  "promotion": false,
+  "goal_complete": false,
+  "next": "verified bothreplica-idle/source/lock/reservedwindow or changedavailability evidence; only unstarted resumption with unchangedplan/limits/history; no blind rerun/guardbypass/budgetraise/unknownworkloadcancel",
+  "worker_active": false,
+  "starts": 0,
+  "POST": 0,
+  "rows": [],
+  "all_four_arms": "UNSTARTED/notfailed/notgraded",
+  "error": "scheduler busy or ambiguous",
+  "audit": "output-contract-preflight-resume-blocked-audit.json",
+  "original_plan_result_hashes_preserved": true,
+  "resume_source_hash_verified": true,
+  "wait_ceiling_seconds": 300,
+  "measured_wait_seconds": 300.0007701087743,
+  "metadata_observations": 30,
+  "last_counts": [
+    {
+      "num_reqs": 0,
+      "num_waiting_reqs": 0
+    },
+    {
+      "num_reqs": 1,
+      "num_waiting_reqs": 0
+    }
+  ],
+  "not_continuous_load_or_original_cause_proof": true,
+  "native_starts": 0,
+  "actor_model_POST": 0,
+  "all_arms": "UNSTARTED/notgraded/notfailed",
+  "transport_or_actor_state_created": false,
+  "cleanup": {
+    "containers": [],
+    "networks": []
+  },
+  "no_unknown_workload_cancelled": true,
+  "no_server_model_route_resource_or_budget_change": true,
+  "remaining_scheduler_wait_seconds": 0,
+  "remaining_native_starts": 4,
+  "remaining_POST": 64,
+  "next_input": "verifiedreservedbothreplicaidleavailability/explicit remaining-budget-safe activation contract; no renewed wait bydefault",
+  "offline_plan_regeneration_verified": "output-contract-preflight-plan-reconstruction-audit.json",
+  "no_further_unchanged_readiness_checks_needed": true
+}

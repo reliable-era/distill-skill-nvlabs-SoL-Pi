@@ -1,0 +1,65 @@
+{
+  "task": "sparql-university",
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "plan_sha256": "ce945f3ae2cf155e27f2f6897c6f8d8a62ba4ca54e587ebef6d45c4ba63d402d",
+  "baseline": {
+    "verifier_exit": 0,
+    "reward": "0",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_sparql_file_exists",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_sparql_runs_without_error",
+        "status": "failed"
+      },
+      {
+        "name": "test_outputs.py::test_sparql_query_results",
+        "status": "failed"
+      }
+    ]
+  },
+  "oracle_exit": 0,
+  "capture": {
+    "bytes": 1329,
+    "sha256": "3fc04bf6c74068eebcc26181c6e0e0f0dffa22876b86b8690e240c2782809f5d",
+    "capture_complete": true
+  },
+  "replay": {
+    "verifier_exit": 0,
+    "reward": "1",
+    "tests": [
+      {
+        "name": "test_outputs.py::test_sparql_file_exists",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_sparql_runs_without_error",
+        "status": "passed"
+      },
+      {
+        "name": "test_outputs.py::test_sparql_query_results",
+        "status": "passed"
+      }
+    ]
+  },
+  "same_test_collection": true,
+  "valid_output_replay": true,
+  "cleanup_verified": true,
+  "source_unchanged": true,
+  "candidate_unchanged": true,
+  "artifact_hashes": {
+    "baseline/logs/verifier/ctrf.json": "3a60923a5315c4cc6ded0ddb69abdfef0a561bbee8e3e72ce9db90bb4156ada0",
+    "baseline/logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "baseline/verifier.log": "591e236771d6e03f10f52748edcadd17a3ab3aacda0316e6e86265f84d2169b2",
+    "capture-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "captured-output": "3fc04bf6c74068eebcc26181c6e0e0f0dffa22876b86b8690e240c2782809f5d",
+    "oracle.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan.json": "ce945f3ae2cf155e27f2f6897c6f8d8a62ba4ca54e587ebef6d45c4ba63d402d",
+    "replay/logs/verifier/ctrf.json": "c4a2301c9bb556dd26850023c03e12815bbbf94a6dcffca61bd4050217b51ec0",
+    "replay/logs/verifier/reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "replay/verifier.log": "ca17caadc3fb24c7eb90def86bb4ae3eaf51dfbc679eb99053b34c3518460375"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "private_root": "/tmp/solpi-proxy-journal-4410de8a62",
+  "native_starts": 0,
+  "real_provider_POST": 0,
+  "real_generated_tokens": 0,
+  "scope": "new ownedproxy lifecycle/mount/journal gate;syntheticHTTP only,not repetition of nativeSDKprobe",
+  "bundle": {
+    "bundle": "/tmp/solpi-proxy-journal-4410de8a62/bundle/runtime",
+    "journal": "/tmp/solpi-proxy-journal-4410de8a62/bundle/journal",
+    "files_sha256": {
+      "pins.json": "784dbde4bc16ac7ddbfb8844a65d653b3f84aad3c9227bafc5d3ecd9414b1afa",
+      "launcher.py": "a8c1783d814a046bd269042220c1cf8e564cd80135560390eb0a73471eb1fba6",
+      "private_rejection_journal.py": "31e4537de8d25e0367654c489bd8445f7446f477b480d2cb72835e88f9a21c0e",
+      "prospective_body_capacity.py": "ed5f26b08d992e7b6920cf752d6f23d8a93034c1f4e6c86643dd0bd3d1ae22d4",
+      "stream_proxy.py": "1b28e4025ff14e71c3c01dacb650d3fb5eb1c0a50330d18bd47e1872c44813c9",
+      "server.py": "120e08b2e32c4803ee8e71636ea7cfefb82742933e8041c6ad397581e07ede0b"
+    },
+    "max_body_bytes": 8388608,
+    "authority": "provider.example:8000",
+    "broker_path": "/broker/broker.sock",
+    "journal_path": "/private-journal/proxy.json"
+  },
+  "before_stop_collection": {
+    "journal_collected": true,
+    "sha256": "a7ced93908eb9ecd965cff9f63d5d5c49d9d1bcf5c6382b0c24aa9a41a427375",
+    "records": [
+      {
+        "reason": "body_byte_cap",
+        "declared_body_bytes": 8388609,
+        "body_byte_cap": 8388608,
+        "status": 413,
+        "provider_forwarded": false,
+        "provider_POST": 0
+      }
+    ],
+    "provider_POST": 0,
+    "contains_request_payloads": false
+  },
+  "after_stop_collection": {
+    "journal_collected": true,
+    "sha256": "a7ced93908eb9ecd965cff9f63d5d5c49d9d1bcf5c6382b0c24aa9a41a427375",
+    "records": [
+      {
+        "reason": "body_byte_cap",
+        "declared_body_bytes": 8388609,
+        "body_byte_cap": 8388608,
+        "status": 413,
+        "provider_forwarded": false,
+        "provider_POST": 0
+      }
+    ],
+    "provider_POST": 0,
+    "contains_request_payloads": false
+  },
+  "accepted_body_bytes": 329291,
+  "synthetic_broker_exchanges": 1,
+  "proxy_ready": true,
+  "mounted_private_journal_verified": true,
+  "passed": true,
+  "container_absent": true,
+  "network_absent": true,
+  "workers_exited": true,
+  "module_hashes": {
+    "owned_capacity_proxy.py": "5244e9e745db6cdbdb840152068b18fecaf9337816406df8a5320d28de26fe9e",
+    "prospective_body_capacity.py": "ed5f26b08d992e7b6920cf752d6f23d8a93034c1f4e6c86643dd0bd3d1ae22d4",
+    "private_rejection_journal.py": "31e4537de8d25e0367654c489bd8445f7446f477b480d2cb72835e88f9a21c0e",
+    "run_owned_proxy_journal_probe.py": "6e8963f8d43b6fcdc7e00543de14890289e0c28ddb7e81369733525b8cd83f8d"
+  },
+  "evidence_hashes": {
+    "broker-rejections.json": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "bundle/bundle.json": "95301337f5c266b384ee4e6a8394227d2465430619f4e90309dc7f3f5a70a64e",
+    "bundle/journal/proxy.json": "a7ced93908eb9ecd965cff9f63d5d5c49d9d1bcf5c6382b0c24aa9a41a427375",
+    "bundle/runtime/pins.json": "784dbde4bc16ac7ddbfb8844a65d653b3f84aad3c9227bafc5d3ecd9414b1afa",
+    "bundle/runtime/launcher.py": "a8c1783d814a046bd269042220c1cf8e564cd80135560390eb0a73471eb1fba6",
+    "bundle/runtime/private_rejection_journal.py": "31e4537de8d25e0367654c489bd8445f7446f477b480d2cb72835e88f9a21c0e",
+    "bundle/runtime/prospective_body_capacity.py": "ed5f26b08d992e7b6920cf752d6f23d8a93034c1f4e6c86643dd0bd3d1ae22d4",
+    "bundle/runtime/stream_proxy.py": "1b28e4025ff14e71c3c01dacb650d3fb5eb1c0a50330d18bd47e1872c44813c9",
+    "bundle/runtime/server.py": "120e08b2e32c4803ee8e71636ea7cfefb82742933e8041c6ad397581e07ede0b"
+  }
+}

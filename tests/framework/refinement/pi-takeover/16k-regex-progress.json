@@ -1,0 +1,323 @@
+{
+  "plan_sha256": "38da434a7dfc8ef45d0546ac96eacf987d03859a46e9686c24e044ba1d04fe3e",
+  "rows": [
+    {
+      "arm": "candidate",
+      "native_exit": 0,
+      "actor_seconds": 135.92594015970826,
+      "output_present": false,
+      "capture": {
+        "capture_complete": false,
+        "output_absent_verified": true,
+        "not_unsupported_layout": true,
+        "path": "/app/regex.txt",
+        "actor_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750"
+      },
+      "replay": {
+        "verified_original_output_absence": true,
+        "rebuild_performed": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 2.0960877519100904,
+        "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+          "mounts": [
+            "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          },
+          "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+          "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+        }
+      },
+      "reward": "0",
+      "test_events": 1,
+      "solved": false,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [
+        1
+      ],
+      "corrected_requests": [
+        1
+      ],
+      "provider_POST": 1,
+      "provider_tokens_lower_bound": 23529,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "Both",
+      "native_exit": 1,
+      "actor_seconds": 118.27929155156016,
+      "output_present": true,
+      "capture": {
+        "task": "regex-log",
+        "capture_complete": true,
+        "artifacts": {
+          "/app/regex.txt": {
+            "path": "/app/regex.txt",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "output",
+            "bytes": 310,
+            "sha256": "979577b17a857eaa71a6629f9768c15c1c8e631ac217c6581a0d3f83cff0c9a2",
+            "capture_complete": true,
+            "local_payload": "payload-0"
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false,
+        "unsupported_symlinks_are_not_quality_failures": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750"
+      },
+      "replay": {
+        "task": "regex-log",
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/regex.txt"
+        ],
+        "witness_paths_not_replayed": [],
+        "trusted_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+        "actor_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+        "trusted_payload_owner": "0:0",
+        "rebuild_performed": false,
+        "official_grade_available": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 2.056603007018566,
+        "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+          "mounts": [
+            "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          },
+          "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+          "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+        }
+      },
+      "reward": "1",
+      "test_events": 1,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 1,
+      "provider_tokens_lower_bound": 22018,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "none",
+      "native_exit": 0,
+      "actor_seconds": 141.9123449474573,
+      "output_present": false,
+      "capture": {
+        "capture_complete": false,
+        "output_absent_verified": true,
+        "not_unsupported_layout": true,
+        "path": "/app/regex.txt",
+        "actor_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750"
+      },
+      "replay": {
+        "verified_original_output_absence": true,
+        "rebuild_performed": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 2.1247382145375013,
+        "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+          "mounts": [
+            "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          },
+          "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+          "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+        }
+      },
+      "reward": "0",
+      "test_events": 1,
+      "solved": false,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [
+        3
+      ],
+      "corrected_requests": [
+        3
+      ],
+      "provider_POST": 1,
+      "provider_tokens_lower_bound": 23117,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "K",
+      "native_exit": 1,
+      "actor_seconds": 100.44819957576692,
+      "output_present": true,
+      "capture": {
+        "task": "regex-log",
+        "capture_complete": true,
+        "artifacts": {
+          "/app/regex.txt": {
+            "path": "/app/regex.txt",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "output",
+            "bytes": 352,
+            "sha256": "f487786c551447453b3ee519050773671447041720b4e9afc5dff7e1da0503e9",
+            "capture_complete": true,
+            "local_payload": "payload-0"
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false,
+        "unsupported_symlinks_are_not_quality_failures": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750"
+      },
+      "replay": {
+        "task": "regex-log",
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/regex.txt"
+        ],
+        "witness_paths_not_replayed": [],
+        "trusted_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+        "actor_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+        "trusted_payload_owner": "0:0",
+        "rebuild_performed": false,
+        "official_grade_available": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 2.07254128344357,
+        "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+          "mounts": [
+            "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          },
+          "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+          "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+        }
+      },
+      "reward": "1",
+      "test_events": 1,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 1,
+      "provider_tokens_lower_bound": 21090,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001"
+      ]
+    }
+  ],
+  "POST": 4,
+  "starts": 4
+}

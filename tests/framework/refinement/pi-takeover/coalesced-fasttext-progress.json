@@ -1,0 +1,103 @@
+{
+  "plan_sha256": "c4e1e28571c30f552d85cf666a5d24770f49b22a91185521846e21f0ae3b61f6",
+  "rows": [
+    {
+      "arm": "candidate",
+      "native_exit": 1,
+      "actor_seconds": 398.7218009997159,
+      "output_present": false,
+      "capture": {
+        "capture_complete": false,
+        "output_absent_verified": true,
+        "not_unsupported_layout": true,
+        "path": "/app/model.bin",
+        "actor_image_id": "sha256:ea991ff9add049c6956d2501b6f38fc612948cb30edaf8f6d61f63f90808272e"
+      },
+      "private_trusted_tests_copy_verified": true,
+      "replay": {
+        "verified_original_output_absence": true,
+        "rebuild_performed": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 3.070686209946871,
+        "setup_log_sha256": "a0fd03d771f74734c6a61502c2cb00ed4b5d43b73df3b7a954338fb4254437e4",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicPython3.11.14+original-scriptsoftwareversions+explicitpublictransitivepins;NOTclaimmatchingalloldtransitives",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-fasttext-public-grader-e95a152b7b/runtime/python",
+          "mounts": [
+            "/tmp/solpi-fasttext-public-grader-closure-6d8e04897c/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "numpy-1.24.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "ada6c1e9608ceadaf7020e1deea508b73ace85560a16f51bef26aecb93626a72",
+            "scikit_learn-1.7.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "9dbe48d69aa38ecfc5a6cda6c5df5abef0c0ebdb2468e92437e2053f84abb8bc",
+            "fasttext_wheel-0.9.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "1ec13d485e0202e729b3bcb7283dda9c499581f691fa8e835e237ee5cf69a2b5",
+            "scipy-1.15.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "39cb9c62e471b1bb3750066ecc3a3f3052b37751c7c3dfd0fd7e48900ed52982",
+            "joblib-1.5.2-py3-none-any.whl": "4e1f0bdbb987e6d843c70cf43714cb276623def372df3c22fe5266b2670bc241",
+            "threadpoolctl-3.6.0-py3-none-any.whl": "43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+            "pybind11-3.0.1-py3-none-any.whl": "aa8f0aa6e0a94d3b64adfc38f560f33f15e589be2175e103c0a33c6bce55ee89",
+            "setuptools-80.9.0-py3-none-any.whl": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"
+          },
+          "setup_module_sha256": "7f067e889702b9de9a392ad04727a3783ca3340cfe3490d01bb7f52e00ee42bd",
+          "public_software_manifest_sha256": "82f704c6103e64da72eb305408041adfeb8d138ee8f4fe05581b5948db9985ab"
+        }
+      },
+      "original_test_manifest_before": {
+        "private_test.tar.gz": "8397bce0c447bca9b73ea66a0f258143701817c4b850fd905166c30a61d2d0e4",
+        "test.sh": "f7895d4dabe0cf224e5d3b0fb70331467081508b27b499ead031cc9c3db6a398",
+        "test_outputs.py": "ca645971f6b4ac2fc0b5ce83eac18df0bb936d7891ec73b1fcb6fc8d2fbe0884"
+      },
+      "admission_rejections": [],
+      "original_test_files_unchanged_after_grading": true,
+      "reward": "0",
+      "test_events": 2,
+      "solved": false,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 16,
+      "provider_tokens_lower_bound": 249808,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    }
+  ],
+  "POST": 16,
+  "starts": 1
+}

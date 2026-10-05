@@ -1,0 +1,38 @@
+{
+  "status": "offline_components_passed_not_deployed",
+  "configured_output_cap": 16384,
+  "CPU_tests_passed": 21,
+  "commit_cases": 128,
+  "Req_cases": 1056,
+  "max_reasoning_overshoot": 7,
+  "live_model_calls": 0,
+  "CUDA_execution": false,
+  "new_private_runtime_frozen": false,
+  "new_broker_native_integration_verified": false,
+  "TeX_protected_baseline_integration_verified": false,
+  "old_runtime_hashes_unchanged": true,
+  "module_hashes": {
+    "prospective_output_budget.py": "0173c07d4ec82f4783e648d5ea2448a671660b5366246da385d7e97e23745d47",
+    "test_prospective_output_budget.py": "4f9f69182611551b0aca325f411b6b982591d45e2fadf4b6137eaf0087b18763",
+    "verify_dflash_16k_bound.py": "0dc92cae0a4db9e90c7ec73bf35a81f081000f2b2868c98d1b5565d375f59978",
+    "audit_skill_delivery.py": "9e5069ae8eb45923ab3bcc5bcee1c22f295ff446304e85e018193d9faf442dfc"
+  },
+  "derived_component_hashes": {
+    "policy": "f0a820740967beb83b0f8aa22db1a4a1bb2675e8d239bce0393cb2cdf996123c",
+    "cost": "48630d57b53fdca9c47a62ea60fe193632ed8d40af93b7cbe98decb43b21ee17",
+    "adapter": "6a34c69682a2af58d1100a95e042c38cf9bd498ca6a3f68ef6f187247ea88589",
+    "strict": "bd6cc9ebd88848c893ca3f02c8a44be1acbdfd92ecd4edd6a721b13bba730688",
+    "bridge": "e1d3f89df49d45329f58b67a14c20b5f474787ccc42d896fe86c7f17e067944c"
+  },
+  "historical_largest_Doom_raw_response_bytes": 898714,
+  "linear_double_size": 1797428,
+  "existing_response_byte_guard": 2097152,
+  "response_size_forecast_is_not_future_bound": true,
+  "remaining_gates": [
+    "new frozen runtime/arm declaration",
+    "private broker/Session/native synthetic integration",
+    "TeX protected-input baseline and unchanged grader wiring",
+    "time/response guard compatibility review"
+  ],
+  "goal_complete": false
+}

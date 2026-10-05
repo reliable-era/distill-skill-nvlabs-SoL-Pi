@@ -1,0 +1,25 @@
+{
+  "task": "build-pmars",
+  "version": "public-pmars-source-and-tools-v2",
+  "snapshot": "20251031T000000Z",
+  "source_cache_sha256": "f5cf7461db355abeca18feb8097e50f723406764a94e5b5aa7c29184ed6aeb1c",
+  "tools_cache_sha256": "fdd399529ba60b1ab6c9680613c0867f06fc1aae7b5453d21351d952de35684c",
+  "probe_sha256": "8f9856188cd1c483a29780e2a580a2896e0fa2a36af5433396066d8c2d2923cd",
+  "artifact_verifier_sha256": "d263420d5bf0f2d3403f1cd7039929b820df9ca55e7164fedef1279e9b4e86f4",
+  "mounts": [
+    "/tmp/solpi-public-pmars-04d810d6c7/downloads:/opt/public-source:ro",
+    "/tmp/solpi-public-pmars-04d810d6c7/tool-archives:/opt/public-debs:ro"
+  ],
+  "sources": 3,
+  "deb_artifacts": 63,
+  "offline_actor_like_install_and_extract_verified": true,
+  "cap_drop": "ALL",
+  "network": "none",
+  "all_arms_uniform_required": true,
+  "target_builds": 0,
+  "target_binary_package_cached": false,
+  "dsc_inline_signature_verified_in_probe": false,
+  "provenance": "Downloaded through APT signed snapshot metadata/default hash verification;tar SHA256s also match DSC;do not claim separate DSC GPG validation",
+  "actor_guidance": "Public prerequisites are under /opt/public-debs;APT local-file install uses sandbox=root and fresh /tmp/public-apt-cache/lists;Debian source DSC is under /opt/public-source. No target build flags/solution supplied.",
+  "scoring_ready": false
+}

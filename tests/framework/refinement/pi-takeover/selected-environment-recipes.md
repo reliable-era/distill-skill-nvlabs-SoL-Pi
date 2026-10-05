@@ -1,0 +1,11 @@
+# Selected environment recipes — draft, not launch-ready
+
+Nine unchanged task IDs bind original images/resources/source hashes and the existing passing control-result hashes. `environment-inputs/` stores exact-byte copies of the demonstrated Debian snapshot, planarity constraint and trusted Cython dependency lock,plus public CA. No grader control rerun occurred. The lock excludes pyknotid: trusted grader preparation must never rebuild/install the target package as a fallback. Dependency versions are pinned, but package artifact hashes/offline wheels are not yet frozen.
+
+`discover_task_layout.py` discovers only supported PMARS source and Cython normal/editable installation layouts from stopped-actor Docker diff. Ambiguous,missing,deleted or unexpected metadata rejects explicitly rather than becoming a task failure or efficiency win. Ten discovery tests pass;57 combined capture/replay/discovery tests pass. Saved actual successful Cython control diff is recognized as editable,without rerunning that control. This is not validation of every future actor installation.
+
+## Newly confirmed launch blocker
+
+The existing isolated proxy rejects every GET and CONNECT,and accepts only model POSTs to provider.example. It cannot fetch the exact source/dependency artifacts required by public instructions: pMARS Debian sources and pyknotid Github0.5.3 clone. Existing gold controls ran with trusted network access,so their passing results do not establish actor dependency access. Do not score infrastructure-impossible actors or preinstall solved output to conceal this gap.
+
+Next concrete work: uniform content-scoped public input cache/mirror for affected tasks,using only public instructions/dependency metadata,with artifact hashes. Keep trusted Terminal tests/solutions/logs unavailable to actors; package repository tests explicitly permitted in its public instruction are distinct. Freeze access and setup uniformly before all arms. Do not broadly enable external browsing/TLS CONNECT to Github, which could expose benchmark solutions. Verify required commands against the cache in a bounded no-model diagnostic without compiling/installing the task's target artifact. Then integrate fresh native actor->shared capture->original trusted official grader;none of these gates is currently complete.

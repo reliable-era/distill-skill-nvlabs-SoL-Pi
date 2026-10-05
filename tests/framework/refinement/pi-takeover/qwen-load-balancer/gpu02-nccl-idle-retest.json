@@ -1,0 +1,15 @@
+{
+  "host": "gpu02",
+  "physical_gpus": [
+    0,
+    1
+  ],
+  "NCCL_P2P_DISABLE": 0,
+  "isolated_from_model_workload": true,
+  "gpu_memory_before_test": "0, 1, 0\n1, 1, 0\n2, 39297, 0\n3, 38775, 0\n",
+  "compute_processes_before_test": "GPU-454cde81-b850-56cb-8ca4-0267dd68e7f0, 1579830, 516 MiB\nGPU-454cde81-b850-56cb-8ca4-0267dd68e7f0, 1580613, 38766 MiB\nGPU-137e5a66-9459-2752-bdaa-3df432ab3cba, 1581096, 38766 MiB\n",
+  "status": "timeout_150_seconds",
+  "elapsed_seconds": 150.0052555464208,
+  "p2p_transport_observed": "P2P/CUMEM",
+  "model_service_restored": true
+}

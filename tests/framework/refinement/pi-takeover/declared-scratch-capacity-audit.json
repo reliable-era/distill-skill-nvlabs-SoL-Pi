@@ -1,0 +1,57 @@
+{
+  "generated_controller_sha256": "c32c97d495ef5181edb2ee9c92da0a01bc51886f9a8cb8e05434ee5f46aac2a9",
+  "declared_actor_scratch_mount": "tmpfs /tmp rw size=128m",
+  "declared_capacity_bytes": 134217728,
+  "selected_CPU": 1,
+  "selected_memory_MiB": 4096,
+  "resource_notice_does_not_disclose_scratch_capacity": true,
+  "rows": [
+    {
+      "arm": "candidate",
+      "native_sha256": "b7950330ba2ddc03972483100877056270792dcf8fee36ab178ddd9205e41f4f",
+      "model_save_to_tmp_declared": true,
+      "reported_128MiB_temporary_file": true,
+      "df_app_but_no_matched_df_tmp": true,
+      "explicit_cgroup_limit_reads": false,
+      "literal_no_space_error_retained": false
+    },
+    {
+      "arm": "Both",
+      "native_sha256": "86f9d6e47b1bc6df828ca763c6484860f5763e74f3a40c92eec01c2082cf841c",
+      "model_save_to_tmp_declared": false,
+      "reported_128MiB_temporary_file": false,
+      "df_app_but_no_matched_df_tmp": false,
+      "explicit_cgroup_limit_reads": false,
+      "literal_no_space_error_retained": false
+    },
+    {
+      "arm": "none",
+      "native_sha256": "c3a39112a8aca3deb3404aca1fe2e6b7fd607acef3b25a0c48b6ac62d9bd9482",
+      "model_save_to_tmp_declared": false,
+      "reported_128MiB_temporary_file": true,
+      "df_app_but_no_matched_df_tmp": false,
+      "explicit_cgroup_limit_reads": false,
+      "literal_no_space_error_retained": true
+    },
+    {
+      "arm": "K",
+      "native_sha256": "abfc5e310388e1c59b57ae1d5a6575432a671bd6c2865aeac17ba0e0f49aca73",
+      "model_save_to_tmp_declared": false,
+      "reported_128MiB_temporary_file": false,
+      "df_app_but_no_matched_df_tmp": false,
+      "explicit_cgroup_limit_reads": false,
+      "literal_no_space_error_retained": true
+    }
+  ],
+  "interpretation": "Different from RLIMIT_FSIZE: frozen create command declares bounded scratch mount. Size coincidence + destination is consistent with capacity pressure, not independent proof of exact errno or full causal chain.",
+  "limitations": [
+    "No actor recreation, training, filesystem probe or post-deletion target repair.",
+    "No live mount/df snapshot retained; source specifies creation configuration, not measured filesystem occupancy.",
+    "No inference that selecting another directory/concurrency ensures original accuracy or solve economy.",
+    "Task parameters/answers are not transferred into skill/cache."
+  ],
+  "new_model_POST": 0,
+  "new_actor_training_grading": 0,
+  "promotion": false,
+  "goal_complete": false
+}

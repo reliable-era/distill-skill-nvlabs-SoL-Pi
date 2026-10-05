@@ -1,0 +1,904 @@
+{
+  "plan_sha256": "4cea54e5b8829ceddcfb4cec5ee92c58b86738fbf9f944a1274e5fea01e70a91",
+  "rows": [
+    {
+      "arm": "candidate",
+      "native_exit": 0,
+      "actor_seconds": 98.12574749812484,
+      "output_classification": {
+        "container_id": "9220c8b8ed3ae6ae3c624ad2402119bb5c207e2c2a13e3fda3e8244e613dca3d",
+        "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+        "stopped_actor_verified": true,
+        "paths": {
+          "/app/documents": {
+            "state": "directory",
+            "archive_status": 200
+          },
+          "/app/invoices": {
+            "state": "directory",
+            "archive_status": 200
+          },
+          "/app/other": {
+            "state": "directory",
+            "archive_status": 200
+          }
+        }
+      },
+      "output_present": true,
+      "capture": {
+        "task": "financial-document-processor",
+        "protocol": "financial-directory-state-v1",
+        "capture_complete": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+        "presence_proof": {
+          "container_id": "9220c8b8ed3ae6ae3c624ad2402119bb5c207e2c2a13e3fda3e8244e613dca3d",
+          "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+          "stopped_actor_verified": true,
+          "paths": {
+            "/app/documents": {
+              "state": "directory",
+              "archive_status": 200
+            },
+            "/app/invoices": {
+              "state": "directory",
+              "archive_status": 200
+            },
+            "/app/other": {
+              "state": "directory",
+              "archive_status": 200
+            }
+          }
+        },
+        "artifacts": {
+          "/app/documents": {
+            "path": "/app/documents",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 0,
+            "entries": 1,
+            "files": {},
+            "local_payload": "payload-0",
+            "directories": []
+          },
+          "/app/invoices": {
+            "path": "/app/invoices",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 2504189,
+            "entries": 12,
+            "files": {
+              "2lgKzDuI4E4g.jpg": {
+                "bytes": 770021,
+                "sha256": "53d8335a156bd0b18bd1808693cc805c39e013d9768fd7eb7497f22e18b1c5cb"
+              },
+              "JOiylq2_7S18.jpg": {
+                "bytes": 220646,
+                "sha256": "862f7d313f1233f3e44a89610a4015d861dc771ad2ba8028ad56e2d4fd37ac71"
+              },
+              "KrJiw0OZx7jf.jpg": {
+                "bytes": 626863,
+                "sha256": "2c8607b9c75907077e23f45ce7bc75335a4a46e9f9aab5ee0d901b86b63e7a8e"
+              },
+              "T0r6Ou8zvqTA.pdf": {
+                "bytes": 2046,
+                "sha256": "d46a7397df8e7903ddef31b76c1633c4989f09b8c301e0cf87dab00cd08a4663"
+              },
+              "UsN9tVTKskms.pdf": {
+                "bytes": 2019,
+                "sha256": "570adcb1be1800cca727420b543e9c68bb7607ebaddf80524c7380560e549434"
+              },
+              "ivE2mt3HwvEO.jpg": {
+                "bytes": 221526,
+                "sha256": "badb1930a086c35b1484463098cbfb7823beb21abae71a9fe95bf90807fa9e41"
+              },
+              "lxtL9XrYRsVG.jpg": {
+                "bytes": 212125,
+                "sha256": "c212aa5440b23e4b5e97af3c271685769b1050edd73a1ee461acce2c5998eb3c"
+              },
+              "summary.csv": {
+                "bytes": 374,
+                "sha256": "b1f0decdfd2f3a6a2dbd23140c0d1c9c7da82bfc0829f164f5438827f942d34d"
+              },
+              "vvK89XK847m3.jpg": {
+                "bytes": 254400,
+                "sha256": "56238d4d934c433c24e53d0674f0530e11024f284e8ffcb3bb0bcc0d58850740"
+              },
+              "w0i40MJP2Dzm.jpg": {
+                "bytes": 192117,
+                "sha256": "807a6b0b942eb2ce406db3c57a833bba539e165017c81e2b1a0a98104d213677"
+              },
+              "wIQEB5nR79b2.pdf": {
+                "bytes": 2052,
+                "sha256": "bc95a144939b7f21abd832019625a3f2c182a7abe8d57f9bd25e7c6f5d6b3ba5"
+              }
+            },
+            "local_payload": "payload-1",
+            "directories": []
+          },
+          "/app/other": {
+            "path": "/app/other",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 1498835,
+            "entries": 8,
+            "files": {
+              "6NVuAIhTV4KB.jpg": {
+                "bytes": 287187,
+                "sha256": "ad3359faf1126b33fc587098ed3f5b722734eeb4364794eea66e10112014f25a"
+              },
+              "F0oZMhSUm2dO.jpg": {
+                "bytes": 110509,
+                "sha256": "e0b8a2c7078efe82d7657f5023f01ff5498d59cca54a74ef2b6983bc979a1c54"
+              },
+              "GFAlpKoFg81H.pdf": {
+                "bytes": 1629,
+                "sha256": "0b3873d45510867d3063637d01f8e9255c4be96586b1f6b06682a208877d441c"
+              },
+              "QOoA_j33PD_E.jpg": {
+                "bytes": 885857,
+                "sha256": "d5fc89cdc92240baa7fc6506237e3841af88880a6f57fa6e3f60b925e605fd22"
+              },
+              "WqWMArQQlSMv.jpg": {
+                "bytes": 202461,
+                "sha256": "a51b4a78c278c1b755e674511729d8514681b94094a4130c457ed71c533a0083"
+              },
+              "dvkRkFVFhHga.pdf": {
+                "bytes": 8412,
+                "sha256": "ad8f14ad77a98d0926a68d17e5ce822c2f9d3a355ccf4a6b1ded5327c31cbb87"
+              },
+              "dx0AWchV01ZJ.pdf": {
+                "bytes": 2780,
+                "sha256": "5ee01b997176b9124302899471651ce4d4b160f292caf79f2250e2e8324e3480"
+              }
+            },
+            "local_payload": "payload-2",
+            "directories": []
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false
+      },
+      "replay": {
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/documents",
+          "/app/invoices",
+          "/app/other"
+        ],
+        "absent_paths_preserved": [],
+        "rebuild_performed": false,
+        "grading_verified": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "python": "3.13.7",
+        "uv": "0.9.5",
+        "pytest": "8.4.1",
+        "pandas": "2.3.2",
+        "pytest_json_ctrf": "0.3.5",
+        "setup_log_sha256": "554741cfbf52738507b9ab1eaa94eee0cb22e30b1e3f88e995d512c9a37e400d",
+        "seconds": 95.1661197450012,
+        "test_network_disconnected": true,
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+        "public_CA_mount": "/opt/trusted-ca.pem",
+        "system_CA_writeable": true
+      },
+      "reward": "1",
+      "test_events": 7,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 5,
+      "provider_tokens_lower_bound": 69139,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "Both",
+      "native_exit": 0,
+      "actor_seconds": 150.07055734284222,
+      "output_classification": {
+        "container_id": "9af0e4ba5e541ed6cfc4f0dd69b8dce4f48fcd93f0e0b28bf6053a7d23900a54",
+        "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+        "stopped_actor_verified": true,
+        "paths": {
+          "/app/documents": {
+            "state": "directory",
+            "archive_status": 200
+          },
+          "/app/invoices": {
+            "state": "directory",
+            "archive_status": 200
+          },
+          "/app/other": {
+            "state": "directory",
+            "archive_status": 200
+          }
+        }
+      },
+      "output_present": true,
+      "capture": {
+        "task": "financial-document-processor",
+        "protocol": "financial-directory-state-v1",
+        "capture_complete": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+        "presence_proof": {
+          "container_id": "9af0e4ba5e541ed6cfc4f0dd69b8dce4f48fcd93f0e0b28bf6053a7d23900a54",
+          "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+          "stopped_actor_verified": true,
+          "paths": {
+            "/app/documents": {
+              "state": "directory",
+              "archive_status": 200
+            },
+            "/app/invoices": {
+              "state": "directory",
+              "archive_status": 200
+            },
+            "/app/other": {
+              "state": "directory",
+              "archive_status": 200
+            }
+          }
+        },
+        "artifacts": {
+          "/app/documents": {
+            "path": "/app/documents",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 0,
+            "entries": 1,
+            "files": {},
+            "local_payload": "payload-0",
+            "directories": []
+          },
+          "/app/invoices": {
+            "path": "/app/invoices",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 2504146,
+            "entries": 12,
+            "files": {
+              "2lgKzDuI4E4g.jpg": {
+                "bytes": 770021,
+                "sha256": "53d8335a156bd0b18bd1808693cc805c39e013d9768fd7eb7497f22e18b1c5cb"
+              },
+              "JOiylq2_7S18.jpg": {
+                "bytes": 220646,
+                "sha256": "862f7d313f1233f3e44a89610a4015d861dc771ad2ba8028ad56e2d4fd37ac71"
+              },
+              "KrJiw0OZx7jf.jpg": {
+                "bytes": 626863,
+                "sha256": "2c8607b9c75907077e23f45ce7bc75335a4a46e9f9aab5ee0d901b86b63e7a8e"
+              },
+              "T0r6Ou8zvqTA.pdf": {
+                "bytes": 2046,
+                "sha256": "d46a7397df8e7903ddef31b76c1633c4989f09b8c301e0cf87dab00cd08a4663"
+              },
+              "UsN9tVTKskms.pdf": {
+                "bytes": 2019,
+                "sha256": "570adcb1be1800cca727420b543e9c68bb7607ebaddf80524c7380560e549434"
+              },
+              "ivE2mt3HwvEO.jpg": {
+                "bytes": 221526,
+                "sha256": "badb1930a086c35b1484463098cbfb7823beb21abae71a9fe95bf90807fa9e41"
+              },
+              "lxtL9XrYRsVG.jpg": {
+                "bytes": 212125,
+                "sha256": "c212aa5440b23e4b5e97af3c271685769b1050edd73a1ee461acce2c5998eb3c"
+              },
+              "summary.csv": {
+                "bytes": 331,
+                "sha256": "c832b982af7b5abe61bacf2a294dfc952684074abb0a6299ec5836c49592d752"
+              },
+              "vvK89XK847m3.jpg": {
+                "bytes": 254400,
+                "sha256": "56238d4d934c433c24e53d0674f0530e11024f284e8ffcb3bb0bcc0d58850740"
+              },
+              "w0i40MJP2Dzm.jpg": {
+                "bytes": 192117,
+                "sha256": "807a6b0b942eb2ce406db3c57a833bba539e165017c81e2b1a0a98104d213677"
+              },
+              "wIQEB5nR79b2.pdf": {
+                "bytes": 2052,
+                "sha256": "bc95a144939b7f21abd832019625a3f2c182a7abe8d57f9bd25e7c6f5d6b3ba5"
+              }
+            },
+            "local_payload": "payload-1",
+            "directories": []
+          },
+          "/app/other": {
+            "path": "/app/other",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 1498835,
+            "entries": 8,
+            "files": {
+              "6NVuAIhTV4KB.jpg": {
+                "bytes": 287187,
+                "sha256": "ad3359faf1126b33fc587098ed3f5b722734eeb4364794eea66e10112014f25a"
+              },
+              "F0oZMhSUm2dO.jpg": {
+                "bytes": 110509,
+                "sha256": "e0b8a2c7078efe82d7657f5023f01ff5498d59cca54a74ef2b6983bc979a1c54"
+              },
+              "GFAlpKoFg81H.pdf": {
+                "bytes": 1629,
+                "sha256": "0b3873d45510867d3063637d01f8e9255c4be96586b1f6b06682a208877d441c"
+              },
+              "QOoA_j33PD_E.jpg": {
+                "bytes": 885857,
+                "sha256": "d5fc89cdc92240baa7fc6506237e3841af88880a6f57fa6e3f60b925e605fd22"
+              },
+              "WqWMArQQlSMv.jpg": {
+                "bytes": 202461,
+                "sha256": "a51b4a78c278c1b755e674511729d8514681b94094a4130c457ed71c533a0083"
+              },
+              "dvkRkFVFhHga.pdf": {
+                "bytes": 8412,
+                "sha256": "ad8f14ad77a98d0926a68d17e5ce822c2f9d3a355ccf4a6b1ded5327c31cbb87"
+              },
+              "dx0AWchV01ZJ.pdf": {
+                "bytes": 2780,
+                "sha256": "5ee01b997176b9124302899471651ce4d4b160f292caf79f2250e2e8324e3480"
+              }
+            },
+            "local_payload": "payload-2",
+            "directories": []
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false
+      },
+      "replay": {
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/documents",
+          "/app/invoices",
+          "/app/other"
+        ],
+        "absent_paths_preserved": [],
+        "rebuild_performed": false,
+        "grading_verified": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "python": "3.13.7",
+        "uv": "0.9.5",
+        "pytest": "8.4.1",
+        "pandas": "2.3.2",
+        "pytest_json_ctrf": "0.3.5",
+        "setup_log_sha256": "663f250464b37f55517d435ea23356567f0bd9cc6a553bab31f2f1090475a4fa",
+        "seconds": 21.853425225242972,
+        "test_network_disconnected": true,
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+        "public_CA_mount": "/opt/trusted-ca.pem",
+        "system_CA_writeable": true
+      },
+      "reward": "1",
+      "test_events": 7,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 5,
+      "provider_tokens_lower_bound": 95439,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "none",
+      "native_exit": 0,
+      "actor_seconds": 170.50030163675547,
+      "output_classification": {
+        "container_id": "7b44813a0f56f73ee69b45154820bcb99286843473603545c46bc66797670680",
+        "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+        "stopped_actor_verified": true,
+        "paths": {
+          "/app/documents": {
+            "state": "directory",
+            "archive_status": 200
+          },
+          "/app/invoices": {
+            "state": "directory",
+            "archive_status": 200
+          },
+          "/app/other": {
+            "state": "directory",
+            "archive_status": 200
+          }
+        }
+      },
+      "output_present": true,
+      "capture": {
+        "task": "financial-document-processor",
+        "protocol": "financial-directory-state-v1",
+        "capture_complete": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+        "presence_proof": {
+          "container_id": "7b44813a0f56f73ee69b45154820bcb99286843473603545c46bc66797670680",
+          "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+          "stopped_actor_verified": true,
+          "paths": {
+            "/app/documents": {
+              "state": "directory",
+              "archive_status": 200
+            },
+            "/app/invoices": {
+              "state": "directory",
+              "archive_status": 200
+            },
+            "/app/other": {
+              "state": "directory",
+              "archive_status": 200
+            }
+          }
+        },
+        "artifacts": {
+          "/app/documents": {
+            "path": "/app/documents",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 0,
+            "entries": 1,
+            "files": {},
+            "local_payload": "payload-0",
+            "directories": []
+          },
+          "/app/invoices": {
+            "path": "/app/invoices",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 2504165,
+            "entries": 12,
+            "files": {
+              "2lgKzDuI4E4g.jpg": {
+                "bytes": 770021,
+                "sha256": "53d8335a156bd0b18bd1808693cc805c39e013d9768fd7eb7497f22e18b1c5cb"
+              },
+              "JOiylq2_7S18.jpg": {
+                "bytes": 220646,
+                "sha256": "862f7d313f1233f3e44a89610a4015d861dc771ad2ba8028ad56e2d4fd37ac71"
+              },
+              "KrJiw0OZx7jf.jpg": {
+                "bytes": 626863,
+                "sha256": "2c8607b9c75907077e23f45ce7bc75335a4a46e9f9aab5ee0d901b86b63e7a8e"
+              },
+              "T0r6Ou8zvqTA.pdf": {
+                "bytes": 2046,
+                "sha256": "d46a7397df8e7903ddef31b76c1633c4989f09b8c301e0cf87dab00cd08a4663"
+              },
+              "UsN9tVTKskms.pdf": {
+                "bytes": 2019,
+                "sha256": "570adcb1be1800cca727420b543e9c68bb7607ebaddf80524c7380560e549434"
+              },
+              "ivE2mt3HwvEO.jpg": {
+                "bytes": 221526,
+                "sha256": "badb1930a086c35b1484463098cbfb7823beb21abae71a9fe95bf90807fa9e41"
+              },
+              "lxtL9XrYRsVG.jpg": {
+                "bytes": 212125,
+                "sha256": "c212aa5440b23e4b5e97af3c271685769b1050edd73a1ee461acce2c5998eb3c"
+              },
+              "summary.csv": {
+                "bytes": 350,
+                "sha256": "e8855005849626efece32c106b9b71e5ad84e8e2ebb31ee32e7b6e3de111f66d"
+              },
+              "vvK89XK847m3.jpg": {
+                "bytes": 254400,
+                "sha256": "56238d4d934c433c24e53d0674f0530e11024f284e8ffcb3bb0bcc0d58850740"
+              },
+              "w0i40MJP2Dzm.jpg": {
+                "bytes": 192117,
+                "sha256": "807a6b0b942eb2ce406db3c57a833bba539e165017c81e2b1a0a98104d213677"
+              },
+              "wIQEB5nR79b2.pdf": {
+                "bytes": 2052,
+                "sha256": "bc95a144939b7f21abd832019625a3f2c182a7abe8d57f9bd25e7c6f5d6b3ba5"
+              }
+            },
+            "local_payload": "payload-1",
+            "directories": []
+          },
+          "/app/other": {
+            "path": "/app/other",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 1498835,
+            "entries": 8,
+            "files": {
+              "6NVuAIhTV4KB.jpg": {
+                "bytes": 287187,
+                "sha256": "ad3359faf1126b33fc587098ed3f5b722734eeb4364794eea66e10112014f25a"
+              },
+              "F0oZMhSUm2dO.jpg": {
+                "bytes": 110509,
+                "sha256": "e0b8a2c7078efe82d7657f5023f01ff5498d59cca54a74ef2b6983bc979a1c54"
+              },
+              "GFAlpKoFg81H.pdf": {
+                "bytes": 1629,
+                "sha256": "0b3873d45510867d3063637d01f8e9255c4be96586b1f6b06682a208877d441c"
+              },
+              "QOoA_j33PD_E.jpg": {
+                "bytes": 885857,
+                "sha256": "d5fc89cdc92240baa7fc6506237e3841af88880a6f57fa6e3f60b925e605fd22"
+              },
+              "WqWMArQQlSMv.jpg": {
+                "bytes": 202461,
+                "sha256": "a51b4a78c278c1b755e674511729d8514681b94094a4130c457ed71c533a0083"
+              },
+              "dvkRkFVFhHga.pdf": {
+                "bytes": 8412,
+                "sha256": "ad8f14ad77a98d0926a68d17e5ce822c2f9d3a355ccf4a6b1ded5327c31cbb87"
+              },
+              "dx0AWchV01ZJ.pdf": {
+                "bytes": 2780,
+                "sha256": "5ee01b997176b9124302899471651ce4d4b160f292caf79f2250e2e8324e3480"
+              }
+            },
+            "local_payload": "payload-2",
+            "directories": []
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false
+      },
+      "replay": {
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/documents",
+          "/app/invoices",
+          "/app/other"
+        ],
+        "absent_paths_preserved": [],
+        "rebuild_performed": false,
+        "grading_verified": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "python": "3.13.7",
+        "uv": "0.9.5",
+        "pytest": "8.4.1",
+        "pandas": "2.3.2",
+        "pytest_json_ctrf": "0.3.5",
+        "setup_log_sha256": "c3b5e919e3244f0c9f0d6c16ba17fde51984a04905327bef4ef9a54532e58f2c",
+        "seconds": 24.228510772809386,
+        "test_network_disconnected": true,
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+        "public_CA_mount": "/opt/trusted-ca.pem",
+        "system_CA_writeable": true
+      },
+      "reward": "1",
+      "test_events": 7,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 10,
+      "provider_tokens_lower_bound": 171300,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    },
+    {
+      "arm": "K",
+      "native_exit": 0,
+      "actor_seconds": 186.77163309976459,
+      "output_classification": {
+        "container_id": "02f1c03d3df5a182a91f3e74fe196fa9a0b06f7f4380ac738396d4933b67cedc",
+        "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+        "stopped_actor_verified": true,
+        "paths": {
+          "/app/documents": {
+            "state": "directory",
+            "archive_status": 200
+          },
+          "/app/invoices": {
+            "state": "directory",
+            "archive_status": 200
+          },
+          "/app/other": {
+            "state": "directory",
+            "archive_status": 200
+          }
+        }
+      },
+      "output_present": true,
+      "capture": {
+        "task": "financial-document-processor",
+        "protocol": "financial-directory-state-v1",
+        "capture_complete": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+        "presence_proof": {
+          "container_id": "02f1c03d3df5a182a91f3e74fe196fa9a0b06f7f4380ac738396d4933b67cedc",
+          "image_id": "sha256:e2663a4e9950dada110ccdc01209261e83bc630e9915ce1f7f4d4ed11e07f162",
+          "stopped_actor_verified": true,
+          "paths": {
+            "/app/documents": {
+              "state": "directory",
+              "archive_status": 200
+            },
+            "/app/invoices": {
+              "state": "directory",
+              "archive_status": 200
+            },
+            "/app/other": {
+              "state": "directory",
+              "archive_status": 200
+            }
+          }
+        },
+        "artifacts": {
+          "/app/documents": {
+            "path": "/app/documents",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 0,
+            "entries": 1,
+            "files": {},
+            "local_payload": "payload-0",
+            "directories": []
+          },
+          "/app/invoices": {
+            "path": "/app/invoices",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 2504189,
+            "entries": 12,
+            "files": {
+              "2lgKzDuI4E4g.jpg": {
+                "bytes": 770021,
+                "sha256": "53d8335a156bd0b18bd1808693cc805c39e013d9768fd7eb7497f22e18b1c5cb"
+              },
+              "JOiylq2_7S18.jpg": {
+                "bytes": 220646,
+                "sha256": "862f7d313f1233f3e44a89610a4015d861dc771ad2ba8028ad56e2d4fd37ac71"
+              },
+              "KrJiw0OZx7jf.jpg": {
+                "bytes": 626863,
+                "sha256": "2c8607b9c75907077e23f45ce7bc75335a4a46e9f9aab5ee0d901b86b63e7a8e"
+              },
+              "T0r6Ou8zvqTA.pdf": {
+                "bytes": 2046,
+                "sha256": "d46a7397df8e7903ddef31b76c1633c4989f09b8c301e0cf87dab00cd08a4663"
+              },
+              "UsN9tVTKskms.pdf": {
+                "bytes": 2019,
+                "sha256": "570adcb1be1800cca727420b543e9c68bb7607ebaddf80524c7380560e549434"
+              },
+              "ivE2mt3HwvEO.jpg": {
+                "bytes": 221526,
+                "sha256": "badb1930a086c35b1484463098cbfb7823beb21abae71a9fe95bf90807fa9e41"
+              },
+              "lxtL9XrYRsVG.jpg": {
+                "bytes": 212125,
+                "sha256": "c212aa5440b23e4b5e97af3c271685769b1050edd73a1ee461acce2c5998eb3c"
+              },
+              "summary.csv": {
+                "bytes": 374,
+                "sha256": "713fec2f24b052d3e5da0a23f68d2ceb431eb63dd18b83b7dcc32eddb5681e35"
+              },
+              "vvK89XK847m3.jpg": {
+                "bytes": 254400,
+                "sha256": "56238d4d934c433c24e53d0674f0530e11024f284e8ffcb3bb0bcc0d58850740"
+              },
+              "w0i40MJP2Dzm.jpg": {
+                "bytes": 192117,
+                "sha256": "807a6b0b942eb2ce406db3c57a833bba539e165017c81e2b1a0a98104d213677"
+              },
+              "wIQEB5nR79b2.pdf": {
+                "bytes": 2052,
+                "sha256": "bc95a144939b7f21abd832019625a3f2c182a7abe8d57f9bd25e7c6f5d6b3ba5"
+              }
+            },
+            "local_payload": "payload-1",
+            "directories": []
+          },
+          "/app/other": {
+            "path": "/app/other",
+            "kind": "directory",
+            "max_bytes": 536870912,
+            "purpose": "output",
+            "state": "directory",
+            "capture_complete": true,
+            "bytes": 1498835,
+            "entries": 8,
+            "files": {
+              "6NVuAIhTV4KB.jpg": {
+                "bytes": 287187,
+                "sha256": "ad3359faf1126b33fc587098ed3f5b722734eeb4364794eea66e10112014f25a"
+              },
+              "F0oZMhSUm2dO.jpg": {
+                "bytes": 110509,
+                "sha256": "e0b8a2c7078efe82d7657f5023f01ff5498d59cca54a74ef2b6983bc979a1c54"
+              },
+              "GFAlpKoFg81H.pdf": {
+                "bytes": 1629,
+                "sha256": "0b3873d45510867d3063637d01f8e9255c4be96586b1f6b06682a208877d441c"
+              },
+              "QOoA_j33PD_E.jpg": {
+                "bytes": 885857,
+                "sha256": "d5fc89cdc92240baa7fc6506237e3841af88880a6f57fa6e3f60b925e605fd22"
+              },
+              "WqWMArQQlSMv.jpg": {
+                "bytes": 202461,
+                "sha256": "a51b4a78c278c1b755e674511729d8514681b94094a4130c457ed71c533a0083"
+              },
+              "dvkRkFVFhHga.pdf": {
+                "bytes": 8412,
+                "sha256": "ad8f14ad77a98d0926a68d17e5ce822c2f9d3a355ccf4a6b1ded5327c31cbb87"
+              },
+              "dx0AWchV01ZJ.pdf": {
+                "bytes": 2780,
+                "sha256": "5ee01b997176b9124302899471651ce4d4b160f292caf79f2250e2e8324e3480"
+              }
+            },
+            "local_payload": "payload-2",
+            "directories": []
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false
+      },
+      "replay": {
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/documents",
+          "/app/invoices",
+          "/app/other"
+        ],
+        "absent_paths_preserved": [],
+        "rebuild_performed": false,
+        "grading_verified": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "python": "3.13.7",
+        "uv": "0.9.5",
+        "pytest": "8.4.1",
+        "pandas": "2.3.2",
+        "pytest_json_ctrf": "0.3.5",
+        "setup_log_sha256": "a1ffa174aa4ff329ff6afa33b47c632bfb87759913a9fe2cbf9378cc62f5c898",
+        "seconds": 21.845543945208192,
+        "test_network_disconnected": true,
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+        "public_CA_mount": "/opt/trusted-ca.pem",
+        "system_CA_writeable": true
+      },
+      "reward": "1",
+      "test_events": 7,
+      "solved": true,
+      "proxy_rejections": {
+        "journal_collected": true,
+        "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+        "records": [],
+        "provider_POST": 0,
+        "contains_request_payloads": false
+      },
+      "broker_rejections": [],
+      "raw_invalid_requests": [],
+      "corrected_requests": [],
+      "provider_POST": 13,
+      "provider_tokens_lower_bound": 269975,
+      "unknown_cost_requests": [],
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ]
+    }
+  ],
+  "POST": 33,
+  "starts": 4
+}

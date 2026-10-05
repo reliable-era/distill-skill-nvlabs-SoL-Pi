@@ -1,0 +1,31 @@
+{
+  "task": "regex-log",
+  "synthetic_only": true,
+  "native_actor_starts": 0,
+  "model_POSTs": 0,
+  "official_grader_runs": 0,
+  "private_root": "/tmp/solpi-task-replay-07381ddb3f",
+  "capture_complete": true,
+  "replay": {
+    "task": "regex-log",
+    "replay_complete": true,
+    "restored_paths": [
+      "/app/regex.txt"
+    ],
+    "witness_paths_not_replayed": [],
+    "trusted_image_id": "sha256:0a15c19cc78685f8d322945e882ba702ef3d0265d1f621ee00991b8e64ddb750",
+    "rebuild_performed": false,
+    "official_grade_available": false,
+    "cost_eligibility": false
+  },
+  "error": {
+    "type": "CalledProcessError",
+    "message": "Command '['docker', 'exec', 'solpi-task-replay-07381ddb3f-trusted', 'cat', '/app/regex.txt']' returned non-zero exit status 1."
+  },
+  "cleanup_verified": true,
+  "passed": false,
+  "module_hashes": {
+    "task_replay.py": "bab391a4eb6a1873113c2b4cdf901b040413a468c1c9c82dcd6eea4ae9861f29",
+    "task_artifacts.py": "47aef719bce350c399be5f6aa24b712ce700c2e3a55e34a57fb148057b781b46"
+  }
+}

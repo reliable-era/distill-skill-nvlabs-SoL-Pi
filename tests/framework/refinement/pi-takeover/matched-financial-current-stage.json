@@ -1,0 +1,123 @@
+{
+  "status": "terminal_audited_rejected",
+  "process": {
+    "pid": 840939,
+    "log": "/tmp/solpi-matched-financial-v3-r2.log",
+    "task": "financial-document-processor",
+    "selected_task_index": 3,
+    "model": "Qwen3.8-27B-FP8",
+    "backend": "127.0.0.1:18001",
+    "native_starts_cap": 4,
+    "effective_provider_POST_cap": 64,
+    "runner_sha256": "8d54c212877a13b9ed90b6d24d261f5a623228c1c803c7f2c7051fa1cac65ae0",
+    "generated_code_sha256": "35eb9c6a8de0310f803ead6fead2a11afc396d1edd28a647c1a53f8aa690cf07",
+    "historical_preflight_reservation_starts": 1,
+    "historical_preflight_SDK_starts": 0,
+    "historical_preflight_POST": 0,
+    "scope": "separateprotocolr2 fixes4096MiB frozenrecipe resource/createargs only;no completedactor/modelretry"
+  },
+  "plan_sha256": "5382dff1cfe9757893faa2d3b75d194aa73d1e1249297701d8e1b59854572e81",
+  "root": "/tmp/solpi-mf-5382dff1cfe9757893fa",
+  "starts_at_snapshot": 2,
+  "POST_at_snapshot": 12,
+  "receipts_at_snapshot": 11,
+  "result_requires_plan_sha_match": true,
+  "next": "one separatelyfrozen source-backedverification hypothesis,notoldcandidateexpansion",
+  "goal_complete": false,
+  "completed_audited_cells": [
+    {
+      "arm": "candidate",
+      "solved": false,
+      "official_reward": "0",
+      "passed_tests": 3,
+      "POST": 11,
+      "gross_tokens": 186466,
+      "provider_cost_complete": true,
+      "native_provider_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "directory_states": {
+        "/app/documents": "directory",
+        "/app/invoices": "directory",
+        "/app/other": "directory"
+      },
+      "corrections": [],
+      "actor_seconds": 152.336419923231,
+      "setup_seconds": 23.298230232670903
+    },
+    {
+      "arm": "Both",
+      "solved": true,
+      "official_reward": "1",
+      "passed_tests": 7,
+      "POST": 8,
+      "gross_tokens": 121019,
+      "provider_cost_complete": true,
+      "native_provider_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "directory_states": {
+        "/app/documents": "directory",
+        "/app/invoices": "directory",
+        "/app/other": "directory"
+      },
+      "corrections": [],
+      "actor_seconds": 106.66156341694295,
+      "setup_seconds": 18.036800395697355
+    },
+    {
+      "arm": "none",
+      "solved": true,
+      "official_reward": "1",
+      "passed_tests": 7,
+      "POST": 10,
+      "gross_tokens": 188098,
+      "provider_cost_complete": true,
+      "native_provider_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "directory_states": {
+        "/app/documents": "directory",
+        "/app/invoices": "directory",
+        "/app/other": "directory"
+      },
+      "corrections": [],
+      "actor_seconds": 163.30702400021255,
+      "setup_seconds": 19.94598027318716
+    },
+    {
+      "arm": "K",
+      "solved": true,
+      "official_reward": "1",
+      "passed_tests": 7,
+      "POST": 9,
+      "gross_tokens": 133830,
+      "provider_cost_complete": true,
+      "native_provider_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "directory_states": {
+        "/app/documents": "directory",
+        "/app/invoices": "directory",
+        "/app/other": "directory"
+      },
+      "corrections": [],
+      "actor_seconds": 100.69258417375386,
+      "setup_seconds": 16.949168948456645
+    }
+  ],
+  "audited_cell_gross_tokens": 307485,
+  "provider_POST_at_audit": 21,
+  "starts_at_audit": 3,
+  "candidate_quality_loss_against_Both_observed": true,
+  "candidate_promotion_eligible": false,
+  "starts": 4,
+  "POST": 38,
+  "gross_tokens": 629413,
+  "cleanup_verified": true,
+  "candidate_decision": "rejectqualitylossagainstallthree"
+}

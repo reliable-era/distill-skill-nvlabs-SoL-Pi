@@ -1,0 +1,54 @@
+{
+  "model_POSTs": 0,
+  "service_changes": false,
+  "aggregate_idle": [
+    {
+      "dp_rank": 0,
+      "num_reqs": 0,
+      "num_waiting_reqs": 0,
+      "num_tokens": 0,
+      "num_pending_tokens": 0,
+      "ts_tic": 12685734.69847518,
+      "backend": "127.0.0.1:18002"
+    },
+    {
+      "dp_rank": 0,
+      "num_reqs": 0,
+      "num_waiting_reqs": 0,
+      "num_tokens": 0,
+      "num_pending_tokens": 0,
+      "ts_tic": 12685734.70316194,
+      "backend": "127.0.0.1:18001"
+    }
+  ],
+  "replicas": [
+    {
+      "name": "jev-pi-qwen38-replica-20261004-nccl-only",
+      "id": "71e60a00085d65d7f60864d7e15a299d9a01caee9d7c993ef410b8e777fb1e46",
+      "source_pins": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa"
+      },
+      "DFLASH8_verified": true,
+      "custom_all_reduce_disabled": true
+    },
+    {
+      "name": "ykw-qwen38-dflash2-tp2",
+      "id": "a55fc2b9dcc949c24ee13547529d71afeff5520e5c3bd67fb7593ad759e8dc2c",
+      "source_pins": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa"
+      },
+      "DFLASH8_verified": true,
+      "custom_all_reduce_disabled": false
+    }
+  ],
+  "model_id_verified": true,
+  "passed": true
+}

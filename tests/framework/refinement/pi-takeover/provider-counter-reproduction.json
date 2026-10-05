@@ -1,0 +1,40 @@
+{
+  "source_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+  "executed_exact_methods": [
+    "output_ids_through_stop",
+    "update_finish_state",
+    "update_reasoning_tokens"
+  ],
+  "mocked_dependencies": "No-think-end matcher and finish-reason container;no real model/tokenizer/server",
+  "cases": [
+    {
+      "before": 8188,
+      "accepted_batch": 5,
+      "length_cap": 8190,
+      "raw_reasoning_tokens": 8193,
+      "emitted_completion_tokens": 8190,
+      "subset_valid": false
+    },
+    {
+      "before": 8,
+      "accepted_batch": 2,
+      "length_cap": 10,
+      "raw_reasoning_tokens": 10,
+      "emitted_completion_tokens": 10,
+      "subset_valid": true
+    },
+    {
+      "before": 8,
+      "accepted_batch": 5,
+      "length_cap": 10,
+      "raw_reasoning_tokens": 13,
+      "emitted_completion_tokens": 10,
+      "subset_valid": false
+    }
+  ],
+  "checks_passed": 3,
+  "model_POSTs": 0,
+  "live_server_changes": false,
+  "historical_accounting_changed": false,
+  "interpretation": "Accepted speculative batch increments reasoning before finish clipping;streamer publishes raw reasoning and clipped completion,violating reasoning-subset invariant. This explains a reachable observed shape,not proof of actual accepted-token billing or safe historical cost repair."
+}

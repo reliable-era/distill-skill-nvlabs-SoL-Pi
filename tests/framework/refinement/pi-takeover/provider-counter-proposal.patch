@@ -1,0 +1,11 @@
+--- a/python/sglang/srt/managers/scheduler_components/output_streamer.py
++++ b/python/sglang/srt/managers/scheduler_components/output_streamer.py
+@@ -421,7 +421,7 @@
+                 req.sampling_params.spaces_between_special_tokens
+             )
+             self.no_stop_trim.append(req.sampling_params.no_stop_trim)
+-            self.reasoning_tokens.append(req.reasoning_tokens)
++            self.reasoning_tokens.append(min(req.reasoning_tokens, len(output_ids_)))
+             self.completion_tokens.append(len(output_ids_))
+             self.cached_tokens.append(req.cached_tokens)
+ 

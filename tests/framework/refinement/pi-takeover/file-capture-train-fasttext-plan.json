@@ -1,0 +1,27 @@
+{
+  "task": "train-fasttext",
+  "image_id": "sha256:ea991ff9add049c6956d2501b6f38fc612948cb30edaf8f6d61f63f90808272e",
+  "source_hashes": {
+    ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+    "README.md": "aa0cf1639861ad35b9def59aa32fcec36463e795435161a68d576595769131e4",
+    "environment/Dockerfile": "330e419b0c5cc46cbf749a9f4110cfc92dc55ddfabde36ffa39b0a9c49bb82e5",
+    "environment/reformat_data.py": "aeecff97fbee11c1fea50e3123bcf678a05326be0fa517545e6863a4c704b12f",
+    "instruction.md": "b701c31f4c5eb6f7e9a6b74d62a52eb696dcae9548a8252c78c0fa850714f998",
+    "solution/solve.sh": "431b8fce223717cde4b934aeb565823acdeb2f9fba8be662ea2dd3fe716e3779",
+    "task.toml": "994fda7c3081bbdd9f6d05d6279ef64faefa94c214d1e08fbcea656540e4fe91",
+    "tests/private_test.tar.gz": "8397bce0c447bca9b73ea66a0f258143701817c4b850fd905166c30a61d2d0e4",
+    "tests/test.sh": "f7895d4dabe0cf224e5d3b0fb70331467081508b27b499ead031cc9c3db6a398",
+    "tests/test_outputs.py": "ca645971f6b4ac2fc0b5ce83eac18df0bb936d7891ec73b1fcb6fc8d2fbe0884"
+  },
+  "candidate_sha256": "da92dbba09ecaa0af422bc8cfbb77fb811c8fcb39bc71a3f2f0251567301de71",
+  "capture_module_sha256": "81790d947b5f83a8d31cab97bc4c5645765bdbed8e3c1b2c7e29706c60ab319c",
+  "contract_sha256": "7226e017e4d596226a501a08e53fec17477721cb14894a117e034c78ce4541be",
+  "oracle_seconds": 300,
+  "verifier_seconds": 600,
+  "capture_seconds": 60,
+  "max_file_bytes": 167772160,
+  "retry": 0,
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "scope": "Negative original-image control plus stopped-oracle output-only replay;not skill scoring"
+}

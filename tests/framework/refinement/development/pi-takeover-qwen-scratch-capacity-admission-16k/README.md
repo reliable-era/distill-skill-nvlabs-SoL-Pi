@@ -1,0 +1,7 @@
+# Scratch-capacity runtime — terminal negative development
+
+Candidate fe06df173c330f56d0240f03ec0de0992411a331c7b7da6e378cbaea8f6fed91; freeze fe57f2c68b26132672865865700407dbffe90130e9eb7c5bcc903c98e1b1ceb9; candidate-only change from coalesced verification, runtime bytes identical. Same fixed exposed task/limits/resource mount/local Qwen route/original private-copy grader. Current candidate+K actually delivered for Both.
+
+Plan 696a7f783127bdae63e58e060076f05df4fe49148fc9ee455188a827dcba2c7d; root /tmp/solpi-sc16-696a7f783127bdae63. Worker 570785 terminal; four starts/64 POST/913671 COMPLETE provider tokens/no unknowns/all original grades 0/required model targets absent. Candidate's early actual-filesystem checks verified but not a quality/performance win. Native completed usage unavailable separately; no finite solve-economy ratio, ALL3 gate, USD/confirmation/promotion claim. Owned SC16 containers/networks absent; canonical unchanged.
+
+Read ../../pi-takeover/scratch-capacity-fasttext-results.md, -audit.json, -token-components.json and scratch-capacity-candidate-behavior-audit.json. Preserve immutable lower bounds and all prior negative/incomplete cohorts separately. No retries, repaired targets, borrowed grades, easier tasks, budget changes, automatic matrices or repeated unchanged controls/native/gold/software/Docker probes. Read-only remaining-failure/request-allocation diagnosis precedes any defensible portable single-mechanism successor. Goal incomplete.

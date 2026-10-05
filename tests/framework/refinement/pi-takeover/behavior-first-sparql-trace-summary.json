@@ -1,0 +1,45 @@
+{
+  "read_only_analysis": true,
+  "plan_sha256": "97c98798a00417f997de112c97910bfa73c035f735bde4e11bab6841d179154f",
+  "actor_model_grader_runs_added": 0,
+  "rows": [
+    {
+      "arm": "candidate",
+      "input_inclusive": 85915,
+      "output_inclusive": 10151,
+      "reasoning_reported": 8569,
+      "executed_tool_commands": 5,
+      "mentions_published_RDF_implementation": 0,
+      "total_skill_words": 394
+    },
+    {
+      "arm": "Both",
+      "input_inclusive": 83217,
+      "output_inclusive": 7013,
+      "reasoning_reported": 5649,
+      "executed_tool_commands": 5,
+      "mentions_published_RDF_implementation": 0,
+      "total_skill_words": 765
+    },
+    {
+      "arm": "none",
+      "input_inclusive": 71966,
+      "output_inclusive": 16097,
+      "reasoning_reported": 14721,
+      "executed_tool_commands": 4,
+      "mentions_published_RDF_implementation": 0,
+      "total_skill_words": 0
+    },
+    {
+      "arm": "K",
+      "input_inclusive": 437624,
+      "output_inclusive": 19420,
+      "reasoning_reported": 16059,
+      "executed_tool_commands": 16,
+      "mentions_published_RDF_implementation": 3,
+      "total_skill_words": 371
+    }
+  ],
+  "causal_claim": false,
+  "limits": "input includes task/publicdata/tools/skills/history;not isolate skill overhead or causality. Publishedlibrary inspection is legal publicsoftware, not hidden tests. Do not infer taskspecific advice or labelactorjudgmentsincorrectfromthis aggregate."
+}

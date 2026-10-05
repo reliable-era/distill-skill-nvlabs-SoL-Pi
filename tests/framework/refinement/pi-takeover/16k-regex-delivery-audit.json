@@ -1,0 +1,56 @@
+{
+  "plan_sha256": "38da434a7dfc8ef45d0546ac96eacf987d03859a46e9686c24e044ba1d04fe3e",
+  "root": "/tmp/solpi-r16-38da434a7dfc8ef45d",
+  "declared_Both": "currentcandidate+frozenKarpathy",
+  "actual_Both": "currentcandidate+frozenKarpathy",
+  "goal_definition_matches_actual_delivery": true,
+  "declaration_matches_actual_delivery": true,
+  "protocol_declaration_consistent": true,
+  "rows": [
+    {
+      "arm": "none",
+      "delivered_skill_keys": [],
+      "hashes": {},
+      "prompt_sha256": "d5effcfab4eb9ae6656b72449112ccc74487318aef1e383864bb01b4c732766e",
+      "goal_delivery_matches": true
+    },
+    {
+      "arm": "K",
+      "delivered_skill_keys": [
+        "karpathy"
+      ],
+      "hashes": {
+        "karpathy/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "prompt_sha256": "31050da85ac2d7148842a13ce1ae4a3354fbc49934b0a9f95ec58fdc5c7c2aa3",
+      "goal_delivery_matches": true
+    },
+    {
+      "arm": "candidate",
+      "delivered_skill_keys": [
+        "candidate"
+      ],
+      "hashes": {
+        "candidate/SKILL.md": "e4277c3220d831f9ea4f09826280077b22af0e070ebc1a0491f6f79ba27f3baa"
+      },
+      "prompt_sha256": "9967a09c158d2c3ab6d6fcdb75bf5d1e41e252e5aaa53b2fb57879dd81ab0e0a",
+      "goal_delivery_matches": true
+    },
+    {
+      "arm": "Both",
+      "delivered_skill_keys": [
+        "candidate",
+        "karpathy"
+      ],
+      "hashes": {
+        "candidate/SKILL.md": "e4277c3220d831f9ea4f09826280077b22af0e070ebc1a0491f6f79ba27f3baa",
+        "karpathy/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      },
+      "prompt_sha256": "6a78541f6f9508bcc988d30e61bfcb88ba7f11ab4bfc4a33e6a8c9dd62ac38dc",
+      "goal_delivery_matches": true
+    }
+  ],
+  "no_model_calls": true,
+  "historical_manifest_rewritten": false,
+  "goal_complete": false
+}

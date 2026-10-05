@@ -1,0 +1,81 @@
+{
+  "status": "prospectiverecoverycontextfreeze_NOTscored",
+  "parent_runtime": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/pi-takeover-qwen-coalesced-verification-admission-16k",
+  "parent_freeze_sha256": "b9c34d3d8a6c3266d456352c51bb19fbec7b690fdd2e04b6f1223c694c4c262d",
+  "candidate_sha256": "7a1ec1071675497a2ae7759fe16cad789b313cb4720334fa30db10f311b8830f",
+  "candidate_parent_sha256": "cff132600efdd10e64ec47283e164be66c0992ce1d610ce442f6715a705aad87",
+  "only_skill_change": "ONEverificationbulletrecoverycontextretention/net24words/safeguardsandfinalchecksverbatim",
+  "frozen_manifest": {
+    "candidate/SKILL.md": "7a1ec1071675497a2ae7759fe16cad789b313cb4720334fa30db10f311b8830f",
+    "original/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+    "go-grader/manifest.json": "b8a951d197ed82b81c7126a5a520136a3bd728c6c88238a671bdf77ce79a1554",
+    "go-grader/grade.py": "6a21b68df2273accd92512d3ae4e59b30cf357b1fd877ebcf45a8e3567949a1a",
+    "karpathy/SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+    "original/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+    "original/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4",
+    "original/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+    "original/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+    "original/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+    "original/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+    "original/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+    "original/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+    "original/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+    "original/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+    "original/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+    "go-grader/support/go.mod": "8432a6a8dc6dae520a36ef096e984d81781ccd9db6cb454a3d8d2f650ea0bf08",
+    "go-grader/support/food_chain.go": "fe9bd7bd1aa18c3abe43497f37dddda941a1294448158983d786cbe5a9d9faee",
+    "go-grader/tests/food_chain_test.go": "7a01f87699c582cf6b80e6920e97e6f886b77d4997a9335055022488ca545a8e"
+  },
+  "runtime_hashes": {
+    "stream_proxy.py": "1b28e4025ff14e71c3c01dacb650d3fb5eb1c0a50330d18bd47e1872c44813c9",
+    "server.py": "120e08b2e32c4803ee8e71636ea7cfefb82742933e8041c6ad397581e07ede0b",
+    "provider_cost.py": "7516b00d0183d4a1e5f67558f1dfb9f29fe61407ddc581084374353529286bb5",
+    "swe_patch.py": "231caeaf1b11735e80c1a221c90c37cc4129230495fda83185add1de97b9d0b3",
+    "swe_grade.py": "afb30693449286c4b1a4f98d10716b5d92ca946f7ef32ec07197e66c158b4738",
+    "sse_bridge.py": "8823a534579b2c6a0a9442e42a0f21ae76c9c9839ecfcb0b605c2f513c8ab980",
+    "session.py": "e83791779bdc825edcc81efd671744a10724bcd2fa3e4c9467bde0bfa22cc559",
+    "budget_panel.py": "3cbb939756adadf950eb94bb1ae3015a158955447dbf7ef39b8268b067707b63",
+    "usage_normalization.py": "bd6cc9ebd88848c893ca3f02c8a44be1acbdfd92ecd4edd6a721b13bba730688",
+    "wrapper.py": "5c5824ecaac6b2d329bd2c2164fdb65dcd7c8cfd2863bfda40305c7a54b5b434",
+    "output_policy.py": "f0a820740967beb83b0f8aa22db1a4a1bb2675e8d239bce0393cb2cdf996123c",
+    "grade_validation.py": "96c6b714bf58ae18c7d162622aeae964bdf0657f9d6fba29148d4cb1853113aa",
+    "reasoning_adapter.py": "81a1d1c91b1c0b8f1843aef5878a6a97b7a2d6a50fd5244c2287c1d3e88d941a",
+    "broker_session.py": "0061b83c95ee509b77d91dea4734bd58a811e1b344495f9c433e19690046fb99",
+    "broker_admission.py": "c39ec6ff3688915093eab20848014bac53b7500731903a4461c66b3ac3007769",
+    "actor_profile.py": "bf91ccf521cefa6f3c26e451ff45d0b6cf8dcaad64c15f9994e855d791094623"
+  },
+  "runtime_delta": "NONE/allruntimebytesidentical",
+  "admission_factory_sha256": "c39ec6ff3688915093eab20848014bac53b7500731903a4461c66b3ac3007769",
+  "admission_wait_seconds_cap": 2.0,
+  "no_actor_deadline_extension": true,
+  "body_byte_cap": 8388608,
+  "output_token_cap": 16384,
+  "comparator_Both_definition": "currentcandidate+frozenKarpathy",
+  "arm_recipe": {
+    "none": [],
+    "K": [
+      "karpathy"
+    ],
+    "candidate": [
+      "candidate"
+    ],
+    "Both": [
+      "karpathy",
+      "candidate"
+    ]
+  },
+  "native_synthetic_gate_audit_sha256": "4eb8ba459a61feaae6737fc47af439309ff70feee95361990ed9c2b88edf5c44",
+  "native_synthetic_gate_plan_sha256": "af4727dcb3e4da412bfc7ea359d7f13c3220185e3647d20764e58d59cb876c88",
+  "native_synthetic_gate_scope": "1fakeCLIjob/2fakeexchanges/0realmodel;testedfactorymatchesnewhelperbytes",
+  "IMPORTANT_default_server_still_original_nonblocking": true,
+  "controller_must_explicitly_use_new_factory_and_private_admission_journal": true,
+  "materialized_scored_runner_verified": false,
+  "benchmark_task_readiness_verified": true,
+  "new_model_or_scored_actor_runs": 0,
+  "old_candidate_rejection_unchanged": true,
+  "canonical_changed": false,
+  "goal_complete": false,
+  "fasttext_readiness_sha256": "d97b7a556fc9f289c52e8ca0023afb680594da963498e1a83517443f73e0cc44",
+  "exposure": "knownexposeddevelopmentfastText/notsealedconfirmation",
+  "failure_cleanup_protocol": "sameverifiedcell/ownedepochasbytephase/notoldcohortpooling"
+}

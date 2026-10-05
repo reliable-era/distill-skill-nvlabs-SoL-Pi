@@ -1,0 +1,95 @@
+{
+  "private_root": "/tmp/solpi-financial-missing-b76bdfbac4",
+  "native_starts": 0,
+  "provider_POST": 0,
+  "grader_calls": 0,
+  "helper_attempts": 1,
+  "test_script_sha256": "48abbda713ace5cee00dd28c7398959f28280062350eb88206a6697a28c72790",
+  "tests_sha256": "978f506ad5c1bfaf28f9bc774dfe4347d33d046ca009b8496eb513956b7f5a9a",
+  "scope": "new all-absent directory-state capture/replay negative;not repeat of originalbaseline/gold controls or completedpositive transfers",
+  "actor_isolation": {
+    "verified": true,
+    "public_input_mounts": 0,
+    "original_grader_image_id": "sha256:d53ef35af0ce9ed2f68741a7175355c731bf170dbf35971166a906b61e4c647c",
+    "actor_image_id": "sha256:d53ef35af0ce9ed2f68741a7175355c731bf170dbf35971166a906b61e4c647c"
+  },
+  "capture": {
+    "task": "financial-document-processor",
+    "protocol": "financial-directory-state-v1",
+    "capture_complete": true,
+    "stopped_actor_verified": true,
+    "image_id": "sha256:d53ef35af0ce9ed2f68741a7175355c731bf170dbf35971166a906b61e4c647c",
+    "presence_proof": {
+      "container_id": "47001ed3bcce807949cf5ef93a7c26cc441eaaa5202d24647623f09b96d83424",
+      "image_id": "sha256:d53ef35af0ce9ed2f68741a7175355c731bf170dbf35971166a906b61e4c647c",
+      "stopped_actor_verified": true,
+      "paths": {
+        "/app/documents": {
+          "state": "absent",
+          "archive_status": 404
+        },
+        "/app/invoices": {
+          "state": "absent",
+          "archive_status": 404
+        },
+        "/app/other": {
+          "state": "absent",
+          "archive_status": 404
+        }
+      }
+    },
+    "artifacts": {
+      "/app/documents": {
+        "path": "/app/documents",
+        "kind": "directory",
+        "max_bytes": 536870912,
+        "purpose": "output",
+        "state": "absent"
+      },
+      "/app/invoices": {
+        "path": "/app/invoices",
+        "kind": "directory",
+        "max_bytes": 536870912,
+        "purpose": "output",
+        "state": "absent"
+      },
+      "/app/other": {
+        "path": "/app/other",
+        "kind": "directory",
+        "max_bytes": 536870912,
+        "purpose": "output",
+        "state": "absent"
+      }
+    },
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "replay": {
+    "replay_complete": true,
+    "restored_paths": [],
+    "absent_paths_preserved": [
+      "/app/documents",
+      "/app/invoices",
+      "/app/other"
+    ],
+    "rebuild_performed": false,
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "passed": false,
+  "error": {
+    "type": "RuntimeError",
+    "message": "trusted financial runner setup failed;not qualitygrade"
+  },
+  "cleanup_verified": true,
+  "evidence_hashes": {
+    "trusted-setup.log": "f2dea83e4c6b4dbe1e8574b6d84213b8b1e7905987d786161c71227b0b4d9719",
+    "captured/capture.json": "211c2ec71757f73437c68f13ae73d967a300d9773f44d7843eb9d7d4ef74cbd2",
+    "captured/presence-proof.json": "f77884fd8c0bbe5dc89a4ce3882397fb0abdcad2ba3b6d7fb58fea2310a982a0"
+  },
+  "module_hashes": {
+    "financial_output.py": "fcfdc3b1c70164aed64eef774189c3f9f205bfd01212ecbd2aa9b1c225209f32",
+    "financial_grader_setup.py": "eca93169da0eb033c750757f494752f5d1ba761154193c31badff53816f9ff96",
+    "run_financial_missing_probe.py": "e42e0e32c3e034deea24b256710a6495df6986eef28387fb51d98e656c168d8a"
+  }
+}

@@ -1,0 +1,18 @@
+"""ONEnewclosed-cacheGRADERpreflight;reuseactorABI proof/not repeatgold/train."""
+import pathlib,json,uuid,subprocess,hashlib
+from actor_public_inputs import recipe
+from fasttext_grader_setup_r2 import inputs,prepare,ENV
+R=pathlib.Path(__file__).resolve().parent
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+if __name__=='__main__':
+ assert not (R/'fasttext-cached-software-probe-r2.json').exists();prior=json.loads((R/'fasttext-cached-software-probe.json').read_text());assert prior['actor_public_dependencies_imported'] and prior['cleanup_verified'];root=pathlib.Path('/tmp/solpi-fasttext-software-closed-'+uuid.uuid4().hex[:10]);root.mkdir(mode=0o700);name=root.name+'-grader';image=recipe('train-fasttext')['grader_image_id'];out={'root':str(root),'model_POST':0,'scored_actor_starts':0,'models_trained':0,'gold_runs':0,'official_test_runs':0,'prior_failed_probe_sha256':sha(R/'fasttext-cached-software-probe.json'),'actor_import_proof_reused_not_rerun':True,'scope':'closedpublicsoftware/3.11.14ABI+TWOtestcollectiononly'}
+ def docker(*args,timeout=30):return subprocess.check_output(['docker',*args],stderr=subprocess.STDOUT,text=True,timeout=timeout).strip()
+ try:
+  args=['create','--name',name,'--network','none','--cpus','1','--memory','4096m','--security-opt','no-new-privileges','-v','/tmp/solpi-refinement-terminal-bench-2/train-fasttext/tests:/tests:ro'];
+  for m in inputs()['mounts']:args+=['-v',m]
+  docker(*args,'--entrypoint','/bin/sh',image,'-c','sleep infinity');docker('start',name);out['setup']=prepare(name,image,root);text=docker('exec',*ENV,name,'/root/.local/bin/uvx','-p','3.11','-w','pytest==8.4.1','-w','scikit-learn==1.7.0','-w','fasttext-wheel==0.9.2','-w','numpy==1.24.0','-w','pytest-json-ctrf==0.3.5','python','-c','import fasttext,numpy,sklearn,importlib.metadata,sys; assert numpy.__version__=="1.24.0"; assert sklearn.__version__=="1.7.0"; assert importlib.metadata.version("fasttext-wheel")=="0.9.2"; assert sys.version.startswith("3.11.14"); print("PINNED_PUBLIC_IMPORTS_OK")');assert text=='PINNED_PUBLIC_IMPORTS_OK';out['grader_pinned_versions_imported']=True
+  text=docker('exec',*ENV,'-w','/app',name,'/root/.local/bin/uvx','-p','3.11','-w','pytest==8.4.1','-w','scikit-learn==1.7.0','-w','fasttext-wheel==0.9.2','-w','numpy==1.24.0','-w','pytest-json-ctrf==0.3.5','pytest','--collect-only','-q','/tests/test_outputs.py');(root/'collection.log').write_text(text+'\n');names=[l.strip() for l in text.splitlines() if '::test_' in l];transfer=json.loads((R/'file-capture-train-fasttext-result.json').read_text());assert transfer['valid_output_replay'] and transfer['cleanup_verified'];assert names==[x['name'] for x in transfer['replay']['tests']];out['collected_original_tests']=names;docker('exec',name,'/bin/sh','-c','test ! -e /app/model.bin');out['original_target_still_absent']=True;out['passed']=True
+ except Exception as e:
+  out.update(passed=False,error={'type':type(e).__name__,'message':str(e)[:1000]});details=getattr(e,'stdout','') or getattr(e,'output','') or '';details+=getattr(e,'stderr','') or '';(root/'failure-details.log').write_text(details if isinstance(details,str) else details.decode(errors='replace'))
+ finally:
+  subprocess.run(['docker','rm','-f',name],capture_output=True,timeout=30);out['cleanup_verified']=subprocess.run(['docker','inspect',name],capture_output=True,timeout=10).returncode!=0;out['helper_sha256']=sha(R/'fasttext_grader_setup_r2.py');out['artifact_hashes']={str(p.relative_to(root)):sha(p) for p in root.rglob('*') if p.is_file()};(R/'fasttext-cached-software-probe-r2.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))

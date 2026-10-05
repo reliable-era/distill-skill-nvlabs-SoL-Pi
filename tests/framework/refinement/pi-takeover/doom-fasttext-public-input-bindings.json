@@ -1,0 +1,31 @@
+{
+  "make-doom-for-mips": {
+    "prepared_actor_image_id": "sha256:0396f5b4b3030f979bfde5db0ea083f819638139a6919c5a07890953562775ca",
+    "base_image_id": "sha256:c503768044b13ea799f26ee48c83c5885cd9697114bc3e320e1e5f926276188f",
+    "image_preparation_sha256": "6cbb3f902c1975709af1ec61710664dbc17126b98bb2d98b686349e4ef517b60",
+    "probe_sha256": "a93c88f209628e5960198d1915cf6c99ce25c49109723e1b93c4cb7a98282295",
+    "all_arms_use_same_prepared_image": true,
+    "actor_cap_drop": "ALL",
+    "original_grader_image_preserved": true,
+    "app_source_unchanged": true,
+    "target_built": false,
+    "new_protocol_required": true
+  },
+  "train-fasttext": {
+    "cache_sha256": "43ebb55893e7541ea788e1673fa479854698872be15dc1e7afb0cdb8c332e410",
+    "probe_sha256": "c59df74ec14ccdb5d7f7aea9a54855364f5a9dd10f81fd1fa0a85635dd38433e",
+    "mounts": [
+      "/tmp/solpi-public-fasttext-39579ce22b/wheels:/opt/public-wheels:ro",
+      "/tmp/solpi-public-fasttext-39579ce22b/requirements.txt:/opt/public-requirements.txt:ro"
+    ],
+    "environment": {
+      "PIP_NO_INDEX": "1",
+      "PIP_FIND_LINKS": "/opt/public-wheels",
+      "PIP_CONSTRAINT": "/opt/public-requirements.txt"
+    },
+    "numpy_preserved": "2.3.3",
+    "all_arms_uniform": true,
+    "models_trained": 0,
+    "native_integration_verified": false
+  }
+}

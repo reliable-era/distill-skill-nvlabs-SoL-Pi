@@ -1,0 +1,80 @@
+{
+  "private_root": "/tmp/solpi-pmars-partial-eb23fed862",
+  "native_starts": 0,
+  "provider_POST": 0,
+  "grader_calls": 0,
+  "target_builds": 0,
+  "target_installs": 0,
+  "scope": "new source-only transfer gate;not repeat of completed baseline/gold controls or executable transfer",
+  "actor_isolation": {
+    "verified": true,
+    "public_input_mounts": 2,
+    "original_grader_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+    "actor_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee"
+  },
+  "capture": {
+    "task": "build-pmars",
+    "protocol": "pmars-source-only-v1",
+    "capture_complete": true,
+    "image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+    "stopped_actor_verified": true,
+    "absence_proof": {
+      "output_state": "absent",
+      "source_directory": "/app/pmars-0.9.4",
+      "binary_absent_verified": true,
+      "unsupported_layout": false,
+      "grading_verified": false,
+      "cost_eligibility": false,
+      "stopped_actor_verified": true,
+      "image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+      "container_id": "6e26515d0ebb0ced60fbdf3c6613468e3f1a37629f1256ddb1c667e1c3b1e095",
+      "docker_diff": "C /app\nA /app/pmars-0.9.4\nA /app/pmars-0.9.4/debian\nA /app/pmars-0.9.4/src\nA /app/pmars-0.9.4/src/marker.c\nC /opt\nA /opt/public-debs\nA /opt/public-source\n"
+    },
+    "artifacts": {
+      "/app/pmars-0.9.4": {
+        "path": "/app/pmars-0.9.4",
+        "kind": "directory",
+        "max_bytes": 536870912,
+        "purpose": "output",
+        "local_payload": "payload-0",
+        "capture_complete": true,
+        "bytes": 24,
+        "entries": 4,
+        "files": {
+          "src/marker.c": {
+            "bytes": 24,
+            "sha256": "c46e22b36953ccb1c13990340755c2e58566208d2b7a7340b729d78ebf6cf95d"
+          }
+        }
+      }
+    },
+    "rebuild_performed": false,
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "replay": {
+    "replay_complete": true,
+    "restored_paths": [
+      "/app/pmars-0.9.4"
+    ],
+    "installed_binary_absence_preserved": true,
+    "rebuild_performed": false,
+    "trusted_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+    "grading_verified": false,
+    "cost_eligibility": false
+  },
+  "source_readback_sha256": "c46e22b36953ccb1c13990340755c2e58566208d2b7a7340b729d78ebf6cf95d",
+  "target_absence_preserved": true,
+  "passed": true,
+  "cleanup_verified": true,
+  "evidence_hashes": {
+    "captured/capture.json": "da1efd057688f246bcf15ff384486d70973f9ef7bf9596c9d6c222aa29acd8a6",
+    "captured/pre-post-state.json": "93f30d171018d88a7b12846a47be1f781a10a7e49d168249a9175b64e6b6ec05",
+    "captured/payload-0/src/marker.c": "c46e22b36953ccb1c13990340755c2e58566208d2b7a7340b729d78ebf6cf95d"
+  },
+  "module_hashes": {
+    "pmars_output_state.py": "89910722e3d3aa18250758a5cf02b2d948b0db19b4917399ca444dde507e3feb",
+    "pmars_partial_output.py": "28d7e38a98b5ad976f8eca057f019d849430567ef29a3718d8f75b0d41cda2cc",
+    "run_pmars_partial_transfer_probe.py": "03916d8242b7796fef9f928ee56f6df52fbae26b219a54295f1fd797ebff63e0"
+  }
+}

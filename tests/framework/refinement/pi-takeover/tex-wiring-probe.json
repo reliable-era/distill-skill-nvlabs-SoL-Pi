@@ -1,0 +1,131 @@
+{
+  "private_root": "/tmp/solpi-tex-wiring-895b3b3919",
+  "native_starts": 0,
+  "model_POST": 0,
+  "gold_runs": 0,
+  "official_test_runs": 0,
+  "trusted_setup_attempts": 1,
+  "collection_only": true,
+  "before_baseline": {
+    "container_id": "2cfb225e928d029058522699d157d5ea14735625ceae97ad225c8d99d3181789",
+    "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+    "before_actor_start_verified": true,
+    "protected_baseline": {
+      "/app/main.tex": {
+        "bytes": 328,
+        "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+        "capture_complete": true
+      },
+      "/app/synonyms.txt": {
+        "bytes": 6008,
+        "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+        "capture_complete": true
+      }
+    },
+    "grading_verified": false
+  },
+  "original_inputs": {
+    "unchanged": true,
+    "reason": null
+  },
+  "capture": {
+    "task": "overfull-hbox",
+    "capture_complete": true,
+    "artifacts": {
+      "/app/input.tex": {
+        "path": "/app/input.tex",
+        "kind": "file",
+        "max_bytes": 33554432,
+        "purpose": "output",
+        "bytes": 5186,
+        "sha256": "7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3",
+        "capture_complete": true,
+        "local_payload": "payload-0"
+      },
+      "/app/main.tex": {
+        "path": "/app/main.tex",
+        "kind": "file",
+        "max_bytes": 33554432,
+        "purpose": "input_witness",
+        "bytes": 328,
+        "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+        "capture_complete": true,
+        "local_payload": "payload-1"
+      },
+      "/app/synonyms.txt": {
+        "path": "/app/synonyms.txt",
+        "kind": "file",
+        "max_bytes": 33554432,
+        "purpose": "input_witness",
+        "bytes": 6008,
+        "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+        "capture_complete": true,
+        "local_payload": "payload-2"
+      }
+    },
+    "grading_verified": false,
+    "cost_eligibility": false,
+    "unsupported_symlinks_are_not_quality_failures": true,
+    "input_witness": {
+      "unchanged": true,
+      "reason": null
+    },
+    "protected_baseline_available": true,
+    "protected_input_gate_passed": true,
+    "stopped_actor_verified": true,
+    "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76"
+  },
+  "replay": {
+    "task": "overfull-hbox",
+    "replay_complete": true,
+    "restored_paths": [
+      "/app/input.tex"
+    ],
+    "witness_paths_not_replayed": [
+      "/app/main.tex",
+      "/app/synonyms.txt"
+    ],
+    "trusted_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+    "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+    "trusted_payload_owner": "0:0",
+    "rebuild_performed": false,
+    "official_grade_available": false,
+    "cost_eligibility": false
+  },
+  "setup": {
+    "trusted_software_preload_complete": true,
+    "python": "3.13.7",
+    "uv": "0.9.5",
+    "pytest": "8.4.1",
+    "pytest_json_ctrf": "0.3.5",
+    "setup_log_sha256": "8ef885995c7deac50239aaf53dbe950b0fc26a58c6af8de0d594431661fd19f5",
+    "seconds": 31.564727317541838,
+    "test_network_disconnected": true,
+    "target_builds": 0,
+    "target_installs": 0,
+    "original_test_script_unchanged": true,
+    "APT_policy": "originalUbuntu24.04signedrepositories,noDebiansubstitution",
+    "public_CA_mount": "/opt/trusted-ca.pem",
+    "system_CA_writeable": true
+  },
+  "collected_original_tests": [
+    "test_outputs.py::test_main_synonyms_not_modified",
+    "test_outputs.py::test_compilation_successful",
+    "test_outputs.py::test_no_overfull_hboxes",
+    "test_outputs.py::test_input_file_matches"
+  ],
+  "unchanged_test_script_sha256": "ab4ef5988c8694f6049eac703b7683a7f846c4714a61b764bd8e66e116abe16f",
+  "passed": true,
+  "cleanup_verified": true,
+  "artifact_hashes": {
+    "collection.log": "62618e82197170942f87a4c7e22ae4251077aaad90243e15c97deefc4fd1b5a9",
+    "trusted-setup.log": "8ef885995c7deac50239aaf53dbe950b0fc26a58c6af8de0d594431661fd19f5",
+    "before/input-0": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+    "before/input-1": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+    "before/baseline.json": "9f660f409ea02b735ea2eaf5d4bf468c5114bf76dc50f896c17dbbd18bf4445b",
+    "captured/capture.json": "7ea650f92fe1f08d62a5ff5e03c47ed004b5609b01e9813f468aae670789d834",
+    "captured/payload-1": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+    "captured/payload-0": "7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3",
+    "captured/payload-2": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6"
+  }
+}

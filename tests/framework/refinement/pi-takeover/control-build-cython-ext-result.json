@@ -1,0 +1,50 @@
+{
+  "plan_sha256": "439b3a838da5d26e2015d9a2e7352a0a79c008b19fd32dacef27117c851ec31e",
+  "controls": [
+    {
+      "control": "baseline",
+      "started_utc": "2026-10-04T17:44:50.373140+00:00",
+      "verifier_exit": 0,
+      "verifier_seconds": 8.98131750151515,
+      "reward": "0",
+      "ctrf_present": true,
+      "test_status_counts": {
+        "failed": 10,
+        "passed": 1
+      },
+      "test_events": 11,
+      "artifacts_sha256": {
+        "logs/verifier/ctrf.json": "8e6960d068e79f4a6f21136824ec3f2a6b7734ce4df9ff46516c1840f292d9b1",
+        "logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "verifier.log": "ccb01c378ccf9a6c29a0f0a2bd19925ccb2346255a750c27ff65f23d3fa6ee05"
+      },
+      "owned_container_absent": true
+    },
+    {
+      "control": "gold",
+      "started_utc": "2026-10-04T17:44:59.999371+00:00",
+      "oracle_exit": 0,
+      "verifier_exit": 0,
+      "verifier_seconds": 7.578868502750993,
+      "reward": "0",
+      "ctrf_present": true,
+      "test_status_counts": {
+        "failed": 1,
+        "passed": 10
+      },
+      "test_events": 11,
+      "artifacts_sha256": {
+        "logs/verifier/ctrf.json": "396fb8cb9d9f4609af63cf6d66891e323a94388bb89530025e1d86d733b1df3f",
+        "logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "oracle.log": "8f4af3255ee11ea4eaa8cbb511fdcdb440cd2139f9217e65e93b056b002546eb",
+        "verifier.log": "02b8edf543a44ee2576e9f05575308b40f4a04bfb1c23e414fd5d80a375d3eae"
+      },
+      "owned_container_absent": true
+    }
+  ],
+  "valid_baseline_gold_pair": false,
+  "model_POSTs": 0,
+  "candidate_changed": false,
+  "selection_changed": false,
+  "scope": "First selected task official controls only;not representative scored inference or full9task certification"
+}

@@ -1,0 +1,9 @@
+Reviewed Pi development cohort launched once on owned handle `96108`, plan `38f86a743fdc6499f3e9612b370440fd9b6d23ec75239120b25df20bf7d7e204`. The process is terminal: one Terminal-Both start and 13 POSTs; 12 streams have complete usage totaling 307,840 gross tokens. The final forwarded request has unknown cost and no upstream HTTP status after the local deadline. Eleven cells were not started; the original result is ungraded. Cleanup is verified.
+
+The fixed cohort contains the same three exposed development tasks and four arms (12 cells), shuffled within each family with seed 131. The scope-coverage candidate is frozen at SHA256 `603e81e6eba2c34de42ea3d0f4b8c039e01b2aa64ac962ef4a407a5caa9e715b`. Held-out tasks are untouched.
+
+Each actor has 600 seconds including a 10-second cleanup reserve, at most 16 provider POSTs, and no retries. The whole cohort permits 12 starts and 192 POSTs. Both existing inference locks remain held; initial topology and each actor require logged, bounded idle grace (300 seconds, at most 61 metadata GETs). Unknown shared jobs are never canceled.
+
+An observed local actor-budget interruption receives an independent grade of its saved partial filesystem and retains incomplete costs. Continuation requires verified cleanup and observability. Provider errors, infrastructure failures, unknown auxiliary events, and uncertain cleanup stop the stage. The original 180-second partial run remains preserved; this preparation is a separate protocol, not a retry or confirmation.
+
+The six existing official grading controls are reused by exact certificate and adapter hashes. Native transport readiness, development quality, complete usage, and price accounting are separate scopes. Missing usage and actual dollars remain TBD. The reviewed source passed 23 offline tests before authorization. This running development cohort is separate from confirmation; no winner or promotion is claimed.

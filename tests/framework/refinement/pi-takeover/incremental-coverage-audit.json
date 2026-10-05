@@ -1,0 +1,2102 @@
+{
+  "status": "PASS",
+  "complete": true,
+  "plan_sha256": "f4ab05e10b3291c7e0a19860f4bfe2859bf4b7d3caeb10348878541ef728df53",
+  "checks": [
+    {
+      "check": "exact start authorization",
+      "pass": true
+    },
+    {
+      "check": "one task/model and matched arms",
+      "pass": true
+    },
+    {
+      "check": "historical Ours separate from Both",
+      "pass": true
+    },
+    {
+      "check": "external binding /tmp/solpi-refinement-terminal-bench-2/sanitize-git-repo/instruction.md",
+      "pass": true
+    },
+    {
+      "check": "external binding /tmp/solpi-polyglot-go-smoke-v2/prompt.txt",
+      "pass": true
+    },
+    {
+      "check": "external binding /tmp/solpi-refinement-flask-native-task-v2/prompt.txt",
+      "pass": true
+    },
+    {
+      "check": "external binding /tmp/solpi-refinement-swe-data.json",
+      "pass": true
+    },
+    {
+      "check": "external binding /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/qwen-load-balancer/nginx.conf",
+      "pass": true
+    },
+    {
+      "check": "external binding /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/qwen-load-balancer/route.json",
+      "pass": true
+    },
+    {
+      "check": "external binding /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/qwen-load-balancer/load_status.py",
+      "pass": true
+    },
+    {
+      "check": "external binding /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/qwen-load-balancer/migration.json",
+      "pass": true
+    },
+    {
+      "check": "external binding /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/qwen-load-balancer/port8000-verification.json",
+      "pass": true
+    },
+    {
+      "check": "source binding METADATA.md",
+      "pass": true
+    },
+    {
+      "check": "source binding QUEUED-REVIEW.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/candidate/SKILL.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/go-grader/grade.py",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/go-grader/manifest.json",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/go-grader/support/food_chain.go",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/go-grader/support/go.mod",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/go-grader/tests/food_chain_test.go",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/karpathy/SKILL.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/SKILL.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/agents/openai.yaml",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/assets/handoff.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/assets/icon.svg",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/assets/task-contract.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/references/coordination.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/references/execution.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/references/measurement.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/references/sol-pi-evidence.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/references/worked-examples.md",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/scripts/cost_audit.py",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen/original/scripts/evidence.py",
+      "pass": true
+    },
+    {
+      "check": "source binding frozen-prior-audit.json",
+      "pass": true
+    },
+    {
+      "check": "source binding grading-control-certificate.json",
+      "pass": true
+    },
+    {
+      "check": "source binding grading-plan.json",
+      "pass": true
+    },
+    {
+      "check": "source binding native-context-offline.json",
+      "pass": true
+    },
+    {
+      "check": "source binding old-rule-regression.json",
+      "pass": true
+    },
+    {
+      "check": "source binding prepare_plan.py",
+      "pass": true
+    },
+    {
+      "check": "source binding run_screen.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/actor_profile.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/grade_validation.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/output_policy.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/provider_cost.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/server.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/session.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/stream_proxy.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/swe_grade.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/swe_patch.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/usage_normalization.py",
+      "pass": true
+    },
+    {
+      "check": "source binding runtime/wrapper.py",
+      "pass": true
+    },
+    {
+      "check": "source binding test_guards.py",
+      "pass": true
+    },
+    {
+      "check": "source binding test_harvest.py",
+      "pass": true
+    },
+    {
+      "check": "source binding test_incremental.py",
+      "pass": true
+    },
+    {
+      "check": "source binding test_profile.py",
+      "pass": true
+    },
+    {
+      "check": "source binding test_takeover.py",
+      "pass": true
+    },
+    {
+      "check": "unchanged certified grader runtime/wrapper.py",
+      "pass": true
+    },
+    {
+      "check": "unchanged certified grader runtime/grade_validation.py",
+      "pass": true
+    },
+    {
+      "check": "unchanged certified grader runtime/swe_grade.py",
+      "pass": true
+    },
+    {
+      "check": "unchanged certified grader runtime/swe_patch.py",
+      "pass": true
+    },
+    {
+      "check": "lock identity /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/eval/pruned/model.lock",
+      "pass": true
+    },
+    {
+      "check": "lock identity /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/eval/pruned/model.lock",
+      "pass": true
+    },
+    {
+      "check": "final plan identity",
+      "pass": true
+    },
+    {
+      "check": "runner no infrastructure errors",
+      "pass": true
+    },
+    {
+      "check": "all matched cells captured",
+      "pass": true
+    },
+    {
+      "check": "all POST receipts covered within cap",
+      "pass": true
+    },
+    {
+      "check": "owned remaining lists empty",
+      "pass": true
+    },
+    {
+      "check": "broker worker/socket cleanup",
+      "pass": true
+    },
+    {
+      "check": "actual absence solpi-qwendev-251baf779b-terminal-original",
+      "pass": true
+    },
+    {
+      "check": "actual absence solpi-qwendev-251baf779b-terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "actual absence solpi-qwendev-251baf779b-terminal-K",
+      "pass": true
+    },
+    {
+      "check": "actual absence solpi-qwendev-251baf779b-terminal-none",
+      "pass": true
+    },
+    {
+      "check": "actual absence solpi-qwendev-251baf779b-terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "actual absence solpi-qwendev-251baf779b-proxy",
+      "pass": true
+    },
+    {
+      "check": "actual absence solpi-qwendev-251baf779b-actor",
+      "pass": true
+    },
+    {
+      "check": "recorded isolated topology",
+      "pass": true
+    },
+    {
+      "check": "prestart inspection coverage",
+      "pass": true
+    },
+    {
+      "check": "recorded uniform actor resource limits terminal-original",
+      "pass": true
+    },
+    {
+      "check": "recorded readonly skills and no verifier mount terminal-original",
+      "pass": true
+    },
+    {
+      "check": "recorded uniform actor resource limits terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "recorded readonly skills and no verifier mount terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "recorded uniform actor resource limits terminal-K",
+      "pass": true
+    },
+    {
+      "check": "recorded readonly skills and no verifier mount terminal-K",
+      "pass": true
+    },
+    {
+      "check": "recorded uniform actor resource limits terminal-none",
+      "pass": true
+    },
+    {
+      "check": "recorded readonly skills and no verifier mount terminal-none",
+      "pass": true
+    },
+    {
+      "check": "recorded uniform actor resource limits terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "recorded readonly skills and no verifier mount terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "declared arm/family terminal-original",
+      "pass": true
+    },
+    {
+      "check": "exact initial development workspace terminal-original",
+      "pass": true
+    },
+    {
+      "check": "actor prestart and stopped-state safety terminal-original",
+      "pass": true
+    },
+    {
+      "check": "bounded backend harvest terminal-original",
+      "pass": true
+    },
+    {
+      "check": "declared receipt grace terminal-original",
+      "pass": true
+    },
+    {
+      "check": "per-actor request coverage terminal-original",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 1",
+      "pass": true
+    },
+    {
+      "check": "request hash 1",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 1",
+      "pass": true
+    },
+    {
+      "check": "response hash 1",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 1",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 2",
+      "pass": true
+    },
+    {
+      "check": "request hash 2",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 2",
+      "pass": true
+    },
+    {
+      "check": "response hash 2",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 2",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 3",
+      "pass": true
+    },
+    {
+      "check": "request hash 3",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 3",
+      "pass": true
+    },
+    {
+      "check": "response hash 3",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 3",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 4",
+      "pass": true
+    },
+    {
+      "check": "request hash 4",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 4",
+      "pass": true
+    },
+    {
+      "check": "response hash 4",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 4",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 5",
+      "pass": true
+    },
+    {
+      "check": "request hash 5",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 5",
+      "pass": true
+    },
+    {
+      "check": "response hash 5",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 5",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 6",
+      "pass": true
+    },
+    {
+      "check": "request hash 6",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 6",
+      "pass": true
+    },
+    {
+      "check": "response hash 6",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 6",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 7",
+      "pass": true
+    },
+    {
+      "check": "request hash 7",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 7",
+      "pass": true
+    },
+    {
+      "check": "response hash 7",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 7",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 8",
+      "pass": true
+    },
+    {
+      "check": "request hash 8",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 8",
+      "pass": true
+    },
+    {
+      "check": "response hash 8",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 8",
+      "pass": true
+    },
+    {
+      "check": "independent actor token sum terminal-original",
+      "pass": true
+    },
+    {
+      "check": "cost completeness agrees terminal-original",
+      "pass": true
+    },
+    {
+      "check": "independent grading record terminal-original",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-original/ctrf.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-original/resource-inspect.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-original/stderr",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-original/stdout",
+      "pass": true
+    },
+    {
+      "check": "original Terminal tests collected without skips terminal-original",
+      "pass": true
+    },
+    {
+      "check": "Terminal solved matches actual test statuses terminal-original",
+      "pass": true
+    },
+    {
+      "check": "native transcript hash terminal-original",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/SKILL.md",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/scripts/cost_audit.py",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/scripts/evidence.py",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/assets/handoff.md",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/assets/icon.svg",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/assets/task-contract.md",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/agents/openai.yaml",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/references/execution.md",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/references/sol-pi-evidence.md",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/references/coordination.md",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/references/measurement.md",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-original/original/references/worked-examples.md",
+      "pass": true
+    },
+    {
+      "check": "declared arm/family terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "exact initial development workspace terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "actor prestart and stopped-state safety terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "bounded backend harvest terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "declared receipt grace terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "per-actor request coverage terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 9",
+      "pass": true
+    },
+    {
+      "check": "request hash 9",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 9",
+      "pass": true
+    },
+    {
+      "check": "response hash 9",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 9",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 10",
+      "pass": true
+    },
+    {
+      "check": "request hash 10",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 10",
+      "pass": true
+    },
+    {
+      "check": "response hash 10",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 10",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 11",
+      "pass": true
+    },
+    {
+      "check": "request hash 11",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 11",
+      "pass": true
+    },
+    {
+      "check": "response hash 11",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 11",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 12",
+      "pass": true
+    },
+    {
+      "check": "request hash 12",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 12",
+      "pass": true
+    },
+    {
+      "check": "response hash 12",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 12",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 13",
+      "pass": true
+    },
+    {
+      "check": "request hash 13",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 13",
+      "pass": true
+    },
+    {
+      "check": "response hash 13",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 13",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 14",
+      "pass": true
+    },
+    {
+      "check": "request hash 14",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 14",
+      "pass": true
+    },
+    {
+      "check": "response hash 14",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 14",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 15",
+      "pass": true
+    },
+    {
+      "check": "request hash 15",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 15",
+      "pass": true
+    },
+    {
+      "check": "response hash 15",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 15",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 16",
+      "pass": true
+    },
+    {
+      "check": "request hash 16",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 16",
+      "pass": true
+    },
+    {
+      "check": "response hash 16",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 16",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 17",
+      "pass": true
+    },
+    {
+      "check": "request hash 17",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 17",
+      "pass": true
+    },
+    {
+      "check": "response hash 17",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 17",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 18",
+      "pass": true
+    },
+    {
+      "check": "request hash 18",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 18",
+      "pass": true
+    },
+    {
+      "check": "response hash 18",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 18",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 19",
+      "pass": true
+    },
+    {
+      "check": "request hash 19",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 19",
+      "pass": true
+    },
+    {
+      "check": "response hash 19",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 19",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 20",
+      "pass": true
+    },
+    {
+      "check": "request hash 20",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 20",
+      "pass": true
+    },
+    {
+      "check": "response hash 20",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 20",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 21",
+      "pass": true
+    },
+    {
+      "check": "request hash 21",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 21",
+      "pass": true
+    },
+    {
+      "check": "response hash 21",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 21",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 22",
+      "pass": true
+    },
+    {
+      "check": "request hash 22",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 22",
+      "pass": true
+    },
+    {
+      "check": "response hash 22",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 22",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 23",
+      "pass": true
+    },
+    {
+      "check": "request hash 23",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 23",
+      "pass": true
+    },
+    {
+      "check": "response hash 23",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 23",
+      "pass": true
+    },
+    {
+      "check": "independent actor token sum terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "cost completeness agrees terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "independent grading record terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-Both/ctrf.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-Both/resource-inspect.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-Both/stderr",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-Both/stdout",
+      "pass": true
+    },
+    {
+      "check": "original Terminal tests collected without skips terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "Terminal solved matches actual test statuses terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "native transcript hash terminal-Both",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-Both/karpathy/SKILL.md",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-Both/candidate/SKILL.md",
+      "pass": true
+    },
+    {
+      "check": "declared arm/family terminal-K",
+      "pass": true
+    },
+    {
+      "check": "exact initial development workspace terminal-K",
+      "pass": true
+    },
+    {
+      "check": "actor prestart and stopped-state safety terminal-K",
+      "pass": true
+    },
+    {
+      "check": "bounded backend harvest terminal-K",
+      "pass": true
+    },
+    {
+      "check": "declared receipt grace terminal-K",
+      "pass": true
+    },
+    {
+      "check": "per-actor request coverage terminal-K",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 24",
+      "pass": true
+    },
+    {
+      "check": "request hash 24",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 24",
+      "pass": true
+    },
+    {
+      "check": "response hash 24",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 24",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 25",
+      "pass": true
+    },
+    {
+      "check": "request hash 25",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 25",
+      "pass": true
+    },
+    {
+      "check": "response hash 25",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 25",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 26",
+      "pass": true
+    },
+    {
+      "check": "request hash 26",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 26",
+      "pass": true
+    },
+    {
+      "check": "response hash 26",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 26",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 27",
+      "pass": true
+    },
+    {
+      "check": "request hash 27",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 27",
+      "pass": true
+    },
+    {
+      "check": "response hash 27",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 27",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 28",
+      "pass": true
+    },
+    {
+      "check": "request hash 28",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 28",
+      "pass": true
+    },
+    {
+      "check": "response hash 28",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 28",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 29",
+      "pass": true
+    },
+    {
+      "check": "request hash 29",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 29",
+      "pass": true
+    },
+    {
+      "check": "response hash 29",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 29",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 30",
+      "pass": true
+    },
+    {
+      "check": "request hash 30",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 30",
+      "pass": true
+    },
+    {
+      "check": "response hash 30",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 30",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 31",
+      "pass": true
+    },
+    {
+      "check": "request hash 31",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 31",
+      "pass": true
+    },
+    {
+      "check": "response hash 31",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 31",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 32",
+      "pass": true
+    },
+    {
+      "check": "request hash 32",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 32",
+      "pass": true
+    },
+    {
+      "check": "response hash 32",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 32",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 33",
+      "pass": true
+    },
+    {
+      "check": "request hash 33",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 33",
+      "pass": true
+    },
+    {
+      "check": "response hash 33",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 33",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 34",
+      "pass": true
+    },
+    {
+      "check": "request hash 34",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 34",
+      "pass": true
+    },
+    {
+      "check": "response hash 34",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 34",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 35",
+      "pass": true
+    },
+    {
+      "check": "request hash 35",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 35",
+      "pass": true
+    },
+    {
+      "check": "response hash 35",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 35",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 36",
+      "pass": true
+    },
+    {
+      "check": "request hash 36",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 36",
+      "pass": true
+    },
+    {
+      "check": "response hash 36",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 36",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 37",
+      "pass": true
+    },
+    {
+      "check": "request hash 37",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 37",
+      "pass": true
+    },
+    {
+      "check": "response hash 37",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 37",
+      "pass": true
+    },
+    {
+      "check": "independent actor token sum terminal-K",
+      "pass": true
+    },
+    {
+      "check": "cost completeness agrees terminal-K",
+      "pass": true
+    },
+    {
+      "check": "independent grading record terminal-K",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-K/ctrf.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-K/resource-inspect.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-K/stderr",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-K/stdout",
+      "pass": true
+    },
+    {
+      "check": "original Terminal tests collected without skips terminal-K",
+      "pass": true
+    },
+    {
+      "check": "Terminal solved matches actual test statuses terminal-K",
+      "pass": true
+    },
+    {
+      "check": "native transcript hash terminal-K",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-K/karpathy/SKILL.md",
+      "pass": true
+    },
+    {
+      "check": "declared arm/family terminal-none",
+      "pass": true
+    },
+    {
+      "check": "exact initial development workspace terminal-none",
+      "pass": true
+    },
+    {
+      "check": "actor prestart and stopped-state safety terminal-none",
+      "pass": true
+    },
+    {
+      "check": "bounded backend harvest terminal-none",
+      "pass": true
+    },
+    {
+      "check": "declared receipt grace terminal-none",
+      "pass": true
+    },
+    {
+      "check": "per-actor request coverage terminal-none",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 38",
+      "pass": true
+    },
+    {
+      "check": "request hash 38",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 38",
+      "pass": true
+    },
+    {
+      "check": "response hash 38",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 38",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 39",
+      "pass": true
+    },
+    {
+      "check": "request hash 39",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 39",
+      "pass": true
+    },
+    {
+      "check": "response hash 39",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 39",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 40",
+      "pass": true
+    },
+    {
+      "check": "request hash 40",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 40",
+      "pass": true
+    },
+    {
+      "check": "response hash 40",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 40",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 41",
+      "pass": true
+    },
+    {
+      "check": "request hash 41",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 41",
+      "pass": true
+    },
+    {
+      "check": "response hash 41",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 41",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 42",
+      "pass": true
+    },
+    {
+      "check": "request hash 42",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 42",
+      "pass": true
+    },
+    {
+      "check": "response hash 42",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 42",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 43",
+      "pass": true
+    },
+    {
+      "check": "request hash 43",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 43",
+      "pass": true
+    },
+    {
+      "check": "response hash 43",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 43",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 44",
+      "pass": true
+    },
+    {
+      "check": "request hash 44",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 44",
+      "pass": true
+    },
+    {
+      "check": "response hash 44",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 44",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 45",
+      "pass": true
+    },
+    {
+      "check": "request hash 45",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 45",
+      "pass": true
+    },
+    {
+      "check": "response hash 45",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 45",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 46",
+      "pass": true
+    },
+    {
+      "check": "request hash 46",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 46",
+      "pass": true
+    },
+    {
+      "check": "response hash 46",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 46",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 47",
+      "pass": true
+    },
+    {
+      "check": "request hash 47",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 47",
+      "pass": true
+    },
+    {
+      "check": "response hash 47",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 47",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 48",
+      "pass": true
+    },
+    {
+      "check": "request hash 48",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 48",
+      "pass": true
+    },
+    {
+      "check": "response hash 48",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 48",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 49",
+      "pass": true
+    },
+    {
+      "check": "request hash 49",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 49",
+      "pass": true
+    },
+    {
+      "check": "response hash 49",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 49",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 50",
+      "pass": true
+    },
+    {
+      "check": "request hash 50",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 50",
+      "pass": true
+    },
+    {
+      "check": "response hash 50",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 50",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 51",
+      "pass": true
+    },
+    {
+      "check": "request hash 51",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 51",
+      "pass": true
+    },
+    {
+      "check": "response hash 51",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 51",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 52",
+      "pass": true
+    },
+    {
+      "check": "request hash 52",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 52",
+      "pass": true
+    },
+    {
+      "check": "response hash 52",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 52",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 53",
+      "pass": true
+    },
+    {
+      "check": "request hash 53",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 53",
+      "pass": true
+    },
+    {
+      "check": "response hash 53",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 53",
+      "pass": true
+    },
+    {
+      "check": "independent actor token sum terminal-none",
+      "pass": true
+    },
+    {
+      "check": "cost completeness agrees terminal-none",
+      "pass": true
+    },
+    {
+      "check": "independent grading record terminal-none",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-none/ctrf.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-none/resource-inspect.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-none/stderr",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-none/stdout",
+      "pass": true
+    },
+    {
+      "check": "original Terminal tests collected without skips terminal-none",
+      "pass": true
+    },
+    {
+      "check": "Terminal solved matches actual test statuses terminal-none",
+      "pass": true
+    },
+    {
+      "check": "native transcript hash terminal-none",
+      "pass": true
+    },
+    {
+      "check": "declared arm/family terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "exact initial development workspace terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "actor prestart and stopped-state safety terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "bounded backend harvest terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "declared receipt grace terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "per-actor request coverage terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 54",
+      "pass": true
+    },
+    {
+      "check": "request hash 54",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 54",
+      "pass": true
+    },
+    {
+      "check": "response hash 54",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 54",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 55",
+      "pass": true
+    },
+    {
+      "check": "request hash 55",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 55",
+      "pass": true
+    },
+    {
+      "check": "response hash 55",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 55",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 56",
+      "pass": true
+    },
+    {
+      "check": "request hash 56",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 56",
+      "pass": true
+    },
+    {
+      "check": "response hash 56",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 56",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 57",
+      "pass": true
+    },
+    {
+      "check": "request hash 57",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 57",
+      "pass": true
+    },
+    {
+      "check": "response hash 57",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 57",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 58",
+      "pass": true
+    },
+    {
+      "check": "request hash 58",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 58",
+      "pass": true
+    },
+    {
+      "check": "response hash 58",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 58",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 59",
+      "pass": true
+    },
+    {
+      "check": "request hash 59",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 59",
+      "pass": true
+    },
+    {
+      "check": "response hash 59",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 59",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 60",
+      "pass": true
+    },
+    {
+      "check": "request hash 60",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 60",
+      "pass": true
+    },
+    {
+      "check": "response hash 60",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 60",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 61",
+      "pass": true
+    },
+    {
+      "check": "request hash 61",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 61",
+      "pass": true
+    },
+    {
+      "check": "response hash 61",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 61",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 62",
+      "pass": true
+    },
+    {
+      "check": "request hash 62",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 62",
+      "pass": true
+    },
+    {
+      "check": "response hash 62",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 62",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 63",
+      "pass": true
+    },
+    {
+      "check": "request hash 63",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 63",
+      "pass": true
+    },
+    {
+      "check": "response hash 63",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 63",
+      "pass": true
+    },
+    {
+      "check": "known load-balanced backend 64",
+      "pass": true
+    },
+    {
+      "check": "request hash 64",
+      "pass": true
+    },
+    {
+      "check": "single model and uniform one-field output policy 64",
+      "pass": true
+    },
+    {
+      "check": "response hash 64",
+      "pass": true
+    },
+    {
+      "check": "independent terminal cost 64",
+      "pass": true
+    },
+    {
+      "check": "independent actor token sum terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "cost completeness agrees terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "independent grading record terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-candidate/ctrf.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-candidate/resource-inspect.json",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-candidate/stderr",
+      "pass": true
+    },
+    {
+      "check": "grade artifact terminal-candidate/stdout",
+      "pass": true
+    },
+    {
+      "check": "original Terminal tests collected without skips terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "Terminal solved matches actual test statuses terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "native transcript hash terminal-candidate",
+      "pass": true
+    },
+    {
+      "check": "activated resource terminal-candidate/candidate/SKILL.md",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "panels": [
+    {
+      "arm": "original",
+      "solved": false,
+      "cost_complete": true,
+      "observed_tokens": 137870,
+      "protocol_valid": true,
+      "native_reconciled": true,
+      "budget_exhaustion": false,
+      "budget_exhaustion_reported": false,
+      "budget_denial_reasons": [],
+      "native_seconds": 52.096251390874386,
+      "backend_request_counts": {
+        "127.0.0.1:18001": 2,
+        "127.0.0.1:18002": 6
+      }
+    },
+    {
+      "arm": "Both",
+      "solved": false,
+      "cost_complete": true,
+      "observed_tokens": 470582,
+      "protocol_valid": true,
+      "native_reconciled": true,
+      "budget_exhaustion": false,
+      "budget_exhaustion_reported": false,
+      "budget_denial_reasons": [],
+      "native_seconds": 228.24351904913783,
+      "backend_request_counts": {
+        "127.0.0.1:18001": 14,
+        "127.0.0.1:18002": 1
+      }
+    },
+    {
+      "arm": "K",
+      "solved": true,
+      "cost_complete": true,
+      "observed_tokens": 421769,
+      "protocol_valid": true,
+      "native_reconciled": true,
+      "budget_exhaustion": false,
+      "budget_exhaustion_reported": false,
+      "budget_denial_reasons": [],
+      "native_seconds": 136.80247541703284,
+      "backend_request_counts": {
+        "127.0.0.1:18002": 14
+      }
+    },
+    {
+      "arm": "none",
+      "solved": false,
+      "cost_complete": true,
+      "observed_tokens": 493852,
+      "protocol_valid": true,
+      "native_reconciled": false,
+      "budget_exhaustion": false,
+      "budget_exhaustion_reported": false,
+      "budget_denial_reasons": [],
+      "native_seconds": 223.76394421607256,
+      "backend_request_counts": {
+        "127.0.0.1:18001": 11,
+        "127.0.0.1:18002": 5
+      }
+    },
+    {
+      "arm": "candidate",
+      "solved": true,
+      "cost_complete": true,
+      "observed_tokens": 292025,
+      "protocol_valid": true,
+      "native_reconciled": true,
+      "budget_exhaustion": false,
+      "budget_exhaustion_reported": false,
+      "budget_denial_reasons": [],
+      "native_seconds": 119.27519515156746,
+      "backend_request_counts": {
+        "127.0.0.1:18001": 11
+      }
+    }
+  ],
+  "economic_comparison_eligible": true,
+  "scope": "One reused terminal development fixture/one round; no confidence or majority-harness win. Provider-reported traffic only; no dollars. Historical cohorts excluded."
+}

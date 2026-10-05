@@ -1,0 +1,41 @@
+{
+  "roundtrip_controls": [
+    {
+      "task": "regex-log",
+      "baseline_reward": "0",
+      "captured_output_replay_reward": "1",
+      "bytes": 268,
+      "source_and_artifact_hashes_match": true,
+      "cleanup_verified": true
+    },
+    {
+      "task": "sparql-university",
+      "baseline_reward": "0",
+      "captured_output_replay_reward": "1",
+      "bytes": 1329,
+      "source_and_artifact_hashes_match": true,
+      "cleanup_verified": true
+    },
+    {
+      "task": "train-fasttext",
+      "baseline_reward": "0",
+      "captured_output_replay_reward": "1",
+      "bytes": 106785163,
+      "source_and_artifact_hashes_match": true,
+      "cleanup_verified": true
+    }
+  ],
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "offline_tests_passed": 9,
+  "simple_file_roundtrips_total_including_prior_html": 4,
+  "full_task_adapters_verified": false,
+  "remaining_tasks": [
+    "build-cython-ext",
+    "build-pmars",
+    "financial-document-processor",
+    "make-doom-for-mips",
+    "overfull-hbox"
+  ],
+  "scope": "Artifact transfer adapter evidence only;not skill performance or goal completion"
+}

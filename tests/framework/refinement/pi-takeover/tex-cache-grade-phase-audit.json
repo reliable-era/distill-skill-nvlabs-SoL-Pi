@@ -1,0 +1,97 @@
+{
+  "phase_plan_sha256": "45a04f2dc1164dd8b42a75103db402ee4434278c325e1444601972fc3e6fbd5a",
+  "grade_available": true,
+  "original_endpoint_still_ungraded": true,
+  "all_four_grades_available_across_separate_recovery_phase": true,
+  "rows": [
+    {
+      "arm": "candidate",
+      "solved": true,
+      "reward": "1",
+      "passed_tests": 4,
+      "POST": 14,
+      "gross_tokens": 322679,
+      "provider_cost_complete": true,
+      "native_usage_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "last_provider_status": "completed",
+      "last_incomplete_details": null,
+      "corrections": [],
+      "protected_before_after_verified": true,
+      "actual_skill_delivery_verified": true,
+      "actor_seconds": 220.71022051014006,
+      "setup_seconds": 29.3562646843493
+    },
+    {
+      "arm": "Both",
+      "solved": true,
+      "reward": "1",
+      "passed_tests": 4,
+      "POST": 16,
+      "gross_tokens": 502753,
+      "provider_cost_complete": true,
+      "native_usage_reconciled": false,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "last_provider_status": "completed",
+      "last_incomplete_details": null,
+      "corrections": [],
+      "protected_before_after_verified": true,
+      "actual_skill_delivery_verified": true,
+      "actor_seconds": 453.02434121631086,
+      "setup_seconds": 18.254814717918634
+    },
+    {
+      "arm": "none",
+      "solved": true,
+      "reward": "1",
+      "passed_tests": 4,
+      "POST": 16,
+      "gross_tokens": 518094,
+      "provider_cost_complete": true,
+      "native_usage_reconciled": false,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "last_provider_status": "completed",
+      "last_incomplete_details": null,
+      "corrections": [],
+      "protected_before_after_verified": true,
+      "actual_skill_delivery_verified": true,
+      "actor_seconds": 450.1026017498225,
+      "setup_seconds": 22.67054688371718
+    },
+    {
+      "arm": "K",
+      "solved": false,
+      "reward": "0",
+      "passed_tests": 3,
+      "POST": 5,
+      "gross_tokens": 66288,
+      "provider_cost_complete": true,
+      "native_usage_reconciled": true,
+      "grade_scope": "new separatelyfrozen cache-only recovery;originalendpointremainsungraded",
+      "actor_seconds": null,
+      "old_setup_failures": 2,
+      "cache_preparation_seconds": 2.622984629124403,
+      "grader_seconds": 7.577438583597541
+    }
+  ],
+  "starts": 4,
+  "POST": 51,
+  "gross_tokens": 1409814,
+  "point_ratios_against_solved_comparators": {
+    "Both": 0.6418241164150189,
+    "none": 0.6228194111493282
+  },
+  "K_verified_solve_cost_ratio": null,
+  "K_ratio_reason": "zero verifiedsolves\u2014notfinite orclaimedeconomywin",
+  "preparation_and_grading_recovery_failures_retained": true,
+  "no_extra_model_calls": true,
+  "candidate_promotion": false,
+  "representative_confirmation": false,
+  "goal_complete": false
+}

@@ -1,0 +1,170 @@
+{
+  "status": "closed_independently_audited_candidate_quality_loss",
+  "process": {
+    "pid": 2054841,
+    "log": "/tmp/solpi-16k-regex-screen.log",
+    "task": "regex-log",
+    "same_candidate": true,
+    "configured_output_cap": 16384,
+    "scope": "onefixedtaskfourarmdevelopment;notconfirmation",
+    "runner_sha256": "17b28efea60f9cac6ce1c2d3d2adcb1e76ec1c7693998c686024691655979df0",
+    "actor_retries": 0,
+    "goal_complete": false
+  },
+  "plan_sha256": "38da434a7dfc8ef45d0546ac96eacf987d03859a46e9686c24e044ba1d04fe3e",
+  "root": "/tmp/solpi-r16-38da434a7dfc8ef45d",
+  "worker_present_snapshot": false,
+  "readiness_tests_passed": 39,
+  "original_controls_and_gold_not_repeated": true,
+  "candidate_unchanged": true,
+  "caps": {
+    "actors": 4,
+    "POST": 64,
+    "POST_each": 16,
+    "actor_seconds": 600,
+    "output_tokens": 16384,
+    "grader_setup_seconds": 90,
+    "grader_seconds": 600,
+    "retries": 0
+  },
+  "decision": "rejectpromotion_on_observed_qualityloss_vsBothandK;stopcandidateexpansion",
+  "goal_complete": false,
+  "historical_launched_snapshot": true,
+  "worker_active": false,
+  "rows": [
+    {
+      "arm": "candidate",
+      "solved": false,
+      "reward": "0",
+      "passed_tests": 0,
+      "POST": 1,
+      "gross_tokens": 23529,
+      "provider_cost_complete": true,
+      "native_usage_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "statuses": [
+        {
+          "request": 1,
+          "status": "incomplete",
+          "incomplete_details": {
+            "reason": "max_output_tokens"
+          },
+          "output_tokens": 16382,
+          "reasoning_tokens": 16382,
+          "raw_reasoning_tokens": 16383,
+          "raw_protocol_valid": false
+        }
+      ],
+      "corrections": [
+        1
+      ],
+      "output_present": false,
+      "actual_skill_delivery_verified": true,
+      "actor_seconds": 135.92594015970826,
+      "setup_seconds": 2.0960877519100904
+    },
+    {
+      "arm": "Both",
+      "solved": true,
+      "reward": "1",
+      "passed_tests": 1,
+      "POST": 1,
+      "gross_tokens": 22018,
+      "provider_cost_complete": true,
+      "native_usage_reconciled": false,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "statuses": [
+        {
+          "request": 2,
+          "status": "completed",
+          "incomplete_details": null,
+          "output_tokens": 14243,
+          "reasoning_tokens": 13894,
+          "raw_reasoning_tokens": 13894,
+          "raw_protocol_valid": true
+        }
+      ],
+      "corrections": [],
+      "output_present": true,
+      "actual_skill_delivery_verified": true,
+      "actor_seconds": 118.27929155156016,
+      "setup_seconds": 2.056603007018566
+    },
+    {
+      "arm": "none",
+      "solved": false,
+      "reward": "0",
+      "passed_tests": 0,
+      "POST": 1,
+      "gross_tokens": 23117,
+      "provider_cost_complete": true,
+      "native_usage_reconciled": true,
+      "native_terminal": [
+        "turn.completed"
+      ],
+      "statuses": [
+        {
+          "request": 3,
+          "status": "incomplete",
+          "incomplete_details": {
+            "reason": "max_output_tokens"
+          },
+          "output_tokens": 16382,
+          "reasoning_tokens": 16382,
+          "raw_reasoning_tokens": 16384,
+          "raw_protocol_valid": false
+        }
+      ],
+      "corrections": [
+        3
+      ],
+      "output_present": false,
+      "actual_skill_delivery_verified": true,
+      "actor_seconds": 141.9123449474573,
+      "setup_seconds": 2.1247382145375013
+    },
+    {
+      "arm": "K",
+      "solved": true,
+      "reward": "1",
+      "passed_tests": 1,
+      "POST": 1,
+      "gross_tokens": 21090,
+      "provider_cost_complete": true,
+      "native_usage_reconciled": false,
+      "native_terminal": [
+        "turn.failed"
+      ],
+      "statuses": [
+        {
+          "request": 4,
+          "status": "completed",
+          "incomplete_details": null,
+          "output_tokens": 13727,
+          "reasoning_tokens": 13385,
+          "raw_reasoning_tokens": 13385,
+          "raw_protocol_valid": true
+        }
+      ],
+      "corrections": [],
+      "output_present": true,
+      "actual_skill_delivery_verified": true,
+      "actor_seconds": 100.44819957576692,
+      "setup_seconds": 2.07254128344357
+    }
+  ],
+  "starts": 4,
+  "POST": 4,
+  "receipts": 4,
+  "gross_tokens": 89754,
+  "cleanup": {
+    "containers": [],
+    "networks": []
+  },
+  "next": "read-onlynative429/reasoning-before-artifactdiagnosis;no actorretry/newtask/budgetraise",
+  "audit": "16k-regex-audit.json"
+}

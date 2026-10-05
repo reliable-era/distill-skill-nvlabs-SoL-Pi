@@ -1,0 +1,23 @@
+{
+  "task": "build-cython-ext",
+  "template_sha256": "f95310985e24be2084143e806138ae7a7d1739841143f11714eb0e1311638e23",
+  "worker_sha256": "942441ddd3beb2b8be70e5f121affb02004d79c3eafc8ab3e16072c35836c3c0",
+  "constraints_sha256": "92d61de167076cb3585ed6e5a864c01a92f8a063c038ae1800c95d10ba22ba7e",
+  "trusted_dependencies": [
+    "numpy==2.3.0",
+    "networkx",
+    "planarity",
+    "peewee",
+    "vispy",
+    "sympy",
+    "appdirs",
+    "requests",
+    "tqdm",
+    "scipy"
+  ],
+  "maximum_worker_seconds": 4200,
+  "retry": 0,
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "scope": "Captured source/global package and metadata;trusted dependency lock;no submitted-code rebuild or source-only import substitution"
+}

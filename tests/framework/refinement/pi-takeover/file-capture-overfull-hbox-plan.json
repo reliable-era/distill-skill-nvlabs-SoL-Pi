@@ -1,0 +1,38 @@
+{
+  "task": "overfull-hbox",
+  "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+  "source_hashes": {
+    ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+    "README.md": "15dd9a788fbec54d66b97d82d1fefefd6852004c835dcd11aa83319dbfe4b779",
+    "environment/Dockerfile": "f73659a7e258641b2b93affb1d854dbba93239478707255767003e59cf1d1477",
+    "environment/tests/input.tex": "7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3",
+    "environment/tests/main.tex": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+    "environment/tests/synonyms.txt": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+    "environment/tests/test_outputs.py": "09756f87d1a29df533e86c5c7d5fd14f64acb17b03cabb55921bb2890d368e5d",
+    "instruction.md": "91381d7490afbbf11255e22471d3ed76317353d8e1da372fbc91887e65c57f47",
+    "solution/solve.sh": "e0e6d40406b33ed41cebe14636f173374ed2b2d4e2ae6cf734ac7a87a42b84ba",
+    "task.toml": "76dea2071850fd5c83a6e98b692f3e05c246629e7832a07181f7700784562922",
+    "tests/input.tex": "7bf7dbe58dbbfb08b6a652c547daa09a57cdbccc0fd18141b4968756061326a3",
+    "tests/main.tex": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+    "tests/synonyms.txt": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+    "tests/test.sh": "ab4ef5988c8694f6049eac703b7683a7f846c4714a61b764bd8e66e116abe16f",
+    "tests/test_outputs.py": "09756f87d1a29df533e86c5c7d5fd14f64acb17b03cabb55921bb2890d368e5d"
+  },
+  "candidate_sha256": "da92dbba09ecaa0af422bc8cfbb77fb811c8fcb39bc71a3f2f0251567301de71",
+  "capture_module_sha256": "81790d947b5f83a8d31cab97bc4c5645765bdbed8e3c1b2c7e29706c60ab319c",
+  "contract_sha256": "7226e017e4d596226a501a08e53fec17477721cb14894a117e034c78ce4541be",
+  "oracle_seconds": 300,
+  "verifier_seconds": 600,
+  "capture_seconds": 60,
+  "max_file_bytes": 33554432,
+  "retry": 0,
+  "model_POSTs": 0,
+  "actor_runs": 0,
+  "protected_inputs": [
+    "/app/main.tex",
+    "/app/synonyms.txt"
+  ],
+  "guard_module_sha256": "86484e53ff7fd4e851b1604baf21e8c94eaf9d1752b9875a71623d5753c8d420",
+  "worker_sha256": "f91a48f9cf948ddd838c5142f1b2f6c5d9b9844a9c3ecbc288afae5a5218136e",
+  "scope": "Guarded TeX original-image control plus stopped-oracle output-only replay;not skill scoring"
+}

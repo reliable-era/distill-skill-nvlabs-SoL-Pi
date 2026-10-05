@@ -1,0 +1,1827 @@
+GitHub Copilot CLI command reference - GitHub DocsSkip to main content
+Skip to content
+GitHub Docs
+Search or ask Copilot/
+Menu
+Collapse sidebarExpand sidebar
+Scroll breadcrumbs leftHome
+GitHub Copilot
+Reference
+Copilot CLI reference
+CLI command reference
+Scroll breadcrumbs right
+GitHub Copilot
+Get started
+About Copilot
+Where to use Copilot
+Copilot on GitHub.com
+Copilot in your IDE
+Copilot CLI quickstart
+Copilot app quickstart
+Copilot SDK quickstart
+Plans
+Best practices
+Enterprise AI governance
+Concepts
+Completions
+Code suggestions
+Code referencing
+Chat
+Agents
+Cloud agent
+About cloud agent
+Agent management
+Custom agents
+About automations
+Rationale, confidence, and approvals
+MCP and cloud agent
+Copilot CLI
+About Copilot CLI
+Comparing CLI features
+Copilot CLI in Actions
+Cancel and roll back
+Context management
+About remote control
+Custom agents
+Autonomous task completion
+Parallel task execution
+Researching with Copilot
+About rubber duck
+LSP servers
+CLI extensions
+Tool search
+Understanding local sandboxing
+GitHub Copilot app
+Computer use
+Copilot in JetBrains
+Code review
+Agentic Workflows
+Copilot Memory
+Dynamic workflows
+Hooks
+Plugins
+Third-party coding agents
+Agent apps
+OpenAI Codex
+Anthropic Claude
+Agent skills
+Prompting
+Prompt engineering
+Response customization
+Context
+MCP
+Spaces
+Repository indexing
+Tools
+AI tools
+About Copilot integrations
+Models
+Overview
+Auto model selection
+Bring your own key
+Utility models
+Base and LTS models
+Billing and usage
+Organizations and enterprises
+Billing
+Seats and billing cycles
+Budgets
+Individuals
+Billing
+Usage limits
+Copilot usage metrics
+All articles
+Copilot usage metrics
+Security, governance, and network settings
+Content exclusion
+Session data
+Cloud and local sandboxes
+Risks and mitigations
+Network settings
+Enterprise
+Policies
+Default availability
+FedRAMP models
+New features and models
+Agent management
+MCP management
+Plugin standards
+OpenTelemetry
+Cloud agent access
+Copilot-only enterprises
+How-tos
+Copilot on GitHub
+Set up Copilot
+Enable Copilot
+Set up for self
+Set up for organization
+Set up for enterprise
+Set up Copilot Business only
+Set up for students
+Set up for teachers and OS maintainers
+Configure access to AI models
+Configure code review
+Configure runners
+Chat with Copilot
+Get started with chat
+Chat in GitHub
+Chat in Mobile
+Customize Copilot
+Customize Copilot overview
+Add custom instructions
+Add personal instructions
+Add repository instructions
+Add organization instructions
+Customize cloud agent
+Create custom agents
+Add agent skills
+Use hooks
+Customize the agent environment
+Configure secrets and variables
+Test custom agents
+Customize the firewall
+Configure MCP servers
+Spaces
+Create Copilot Spaces
+Collaborate with others
+Copilot for GitHub tasks
+Use Copilot to create or update issues
+Create a PR summary
+Use the GitHub MCP Server from Copilot Chat
+Use Copilot agents
+Get started
+Kick off a task
+Research, plan, iterate
+Manage agent sessions
+Copilot code review
+Review Copilot output
+Copilot in your IDE
+Set up Copilot
+Install Copilot extension
+Configure in IDE
+Configure network settings
+Authenticate to GHE.com
+Customize Copilot
+Configure custom instructions
+Add repository instructions in your IDE
+Extend Copilot with tools and context
+Extend Copilot Chat with MCP
+Set up the GitHub MCP Server
+Enterprise configuration
+Configure toolsets
+Change MCP registry
+Use Copilot Spaces
+Chat with Copilot
+Get started with Chat in your IDE
+Chat in IDE
+Change the chat model
+Chat in Windows Terminal
+Copilot for common tasks
+Get IDE code suggestions
+Find matching code
+Change the completion model
+Use the GitHub MCP Server
+Use Copilot agents
+Use agent mode
+Use plan mode
+Use subagents
+Use custom agents
+Use cloud agent in your IDE
+Copilot CLI
+All articles
+Copilot CLI best practices
+Set up Copilot CLI
+Install Copilot CLI
+Authenticate Copilot CLI
+Configure Copilot CLI
+Add LSP servers
+Troubleshoot Copilot CLI auth
+Use Copilot CLI
+Overview
+Allowing tools
+Voice input
+Computer use
+Connect to VS Code
+Delegate tasks to Copilot
+Browse issues, PRs, gists
+Ask a side question
+Roll back changes
+Work with multiple sessions
+Invoke custom agents
+Steer agents
+Steer a session remotely
+Set an AI credit limit
+Agentic code review
+Manage pull requests
+Speed up task completion
+Use session data
+Automate with Copilot CLI
+Quickstart
+Run the CLI programmatically
+Schedule prompts
+Automate with Actions
+Customize Copilot CLI
+Overview
+Add custom instructions
+Change settings
+Use hooks
+Add agent skills
+Add MCP servers
+Create custom agents
+Use your own model provider
+Plugins: Find and install
+Plugins: Create a plugin
+Plugins: Create a marketplace
+Administer for enterprise
+Copilot CLI in Actions
+Sandbox Copilot
+Enable or disable cloud sandboxes
+Use local sandboxing
+Configure local sandbox
+GitHub Copilot app
+All articles
+Customize the GitHub Copilot app
+Agent sessions
+Computer use
+Configure local sandboxing
+Canvas extensions
+Managing issues and pull requests
+Automations
+Use your own model provider
+Open with deep links
+Copilot SDK
+Authentication
+Authenticate
+BYOK
+Server-to-server tokens
+Features
+Agent Loop
+Citations
+Client info
+Cloud Sessions
+Context management
+Custom Agents
+Fleet Mode
+Hooks
+Image Input
+MCP
+Plugin Directories
+Remote Sessions
+Session limits
+Session Persistence
+Skills
+Steering And Queueing
+Streaming Events
+Usage and billing
+Use hooks
+Error Handling
+Hooks Overview
+Post Tool Use
+Pre Tool Use
+Session Lifecycle
+User Prompt Submitted
+User prompt transformed
+Integrations
+Microsoft Agent Framework
+Observability
+Opentelemetry
+Set up Copilot SDK
+Azure Managed Identity
+Backend Services
+Bundled CLI
+Choosing A Setup Path
+GitHub OAuth
+In-process runtime
+Local CLI
+Multi Tenancy
+Scaling
+Troubleshooting
+Compatibility
+Debugging
+MCP Debugging
+GitHub Agentic Workflows
+Quickstart
+Creating agentic workflows
+Use Copilot agents
+Copilot cloud agent
+Start Copilot sessions
+Create cloud automations
+Manage rationale, confidence, and approvals
+Changing the AI model
+Configuring agent settings
+Use cloud agent on GitHub
+Use cloud agent on GitHub Mobile
+Use agent apps
+Use cloud agent via the API
+Use cloud agent from the GitHub CLI
+Use cloud agent via GitHub MCP Server
+Use cloud agent from Raycast
+Troubleshoot cloud agent
+Copilot Memory
+Manage for yourself
+Manage as administrator
+Copilot code review
+Dynamic workflows
+Copilot integrations
+Integrate cloud agent with Slack
+Integrate cloud agent with Teams
+Integrate cloud agent with Jira
+Integrate cloud agent with Linear
+Integrate cloud agent with Azure Boards
+Configure content exclusion
+Exclude content from Copilot
+Review changes
+Manage and track spending
+Monitor AI credits usage
+Manage company spending
+Manage your account
+Get started with a Copilot plan
+View and change your Copilot plan
+Disable Copilot Free
+Manage policies
+Administer Copilot
+Manage for organization
+Manage plan
+Subscribe
+Cancel
+Manage access
+Grant access
+Manage requests for access
+Revoke access
+Manage network access
+Manage policies
+Add Copilot cloud agent
+Configure agent runners
+Prepare for custom agents
+Manage default models
+Review activity
+Review user activity data
+Enable custom models
+Manage for enterprise
+Manage plan
+Subscribe
+Cancel plan
+Upgrade plan
+Downgrade subscription
+Manage access
+Grant access
+Disable for organizations
+View license usage
+Manage network access
+Manage enterprise policies
+Use enterprise managed settings
+Get started
+Deploy managed settings
+Override settings for teams
+Copilot Business only
+Manage agents
+Prepare for custom agents
+Create github-private repository
+Monitor agentic activity
+Enable Copilot cloud agent
+Block agentic features
+Enable Copilot code review
+Manage model availability
+Enable custom models
+Review audit logs
+Manage budget requests
+Manage MCP usage
+Configure enterprise allowlist
+Configure MCP registry
+Restrict based on registry
+Download activity report
+View usage and adoption
+View code generation
+View impact dashboard
+Troubleshoot Copilot
+Troubleshoot common issues
+View logs
+Troubleshoot firewall settings
+Troubleshoot network errors
+Troubleshoot slow responses
+Reference
+Chat cheat sheet
+Customization cheat sheet
+AI models
+Supported models
+Model comparison
+Model hosting
+Copilot feature matrix
+Keyboard shortcuts
+Copilot CLI reference
+CLI command reference
+CLI plugin reference
+CLI programmatic reference
+ACP server
+CLI configuration directory
+GitHub Copilot app reference
+Repository configuration
+Slash commands
+Built-in skills
+Custom agents configuration
+Custom instructions support
+Hooks reference
+Supported surfaces for policies
+Copilot allowlist reference
+Metrics data
+Copilot billing
+Models and pricing
+Billing cycle
+Seat assignment
+License changes
+Azure billing
+Request-based billing (legacy)
+What changed with billing (legacy)
+Copilot requests (legacy)
+Billing overview (legacy)
+Monitor premium requests (legacy)
+Model multipliers for annual plans (legacy)
+Review excluded files
+Copilot usage metrics
+Copilot usage metrics data
+Interpret usage metrics
+Reconciling Copilot usage metrics
+Copilot LoC metrics
+Team-level metrics
+Example schema
+Enterprise administrators
+Agent session filters
+Agentic audit log events
+Enterprise managed settings
+MCP private registry enforcement
+Policy conflicts
+Tutorials
+All tutorials
+GitHub Copilot Cookbook
+All prompts
+Communicate effectively
+Create templates
+Summarize repository activity
+Synthesize research
+Create diagrams
+Debug errors
+Debug invalid JSON
+Handle API rate limits
+Diagnose CI test failures
+Analyze functionality
+Explore implementations
+Analyze feedback
+Generate code
+Implement a feature
+Refactor code
+Improve code readability
+Refactor for optimization
+Refactor design patterns
+Refactor data access layers
+Handle cross-cutting
+Simplify inheritance hierarchies
+Fix database deadlocks
+Translate code
+Testing code
+Generate unit tests
+Create mock objects
+Create end-to-end tests
+Analyze security
+Secure your repository
+Manage dependency updates
+Find vulnerabilities
+Customization library
+All customizations
+Custom instructions
+Your first custom instructions
+Concept explainer
+Debugging tutor
+Code reviewer
+GitHub Actions helper
+Pull request assistant
+Issue manager
+Accessibility auditor
+Testing automation
+Prompt files
+Your first prompt file
+Create README
+Onboarding plan
+Document API
+Review code
+Generate unit tests
+Custom agents
+Your first custom agent
+Implementation planner
+Bug fix teammate
+Cleanup specialist
+Cloud agent
+Get the best results
+Pilot cloud agent
+Improve a project
+Build guardrails
+Give access to resources
+Set up budgets
+Get started with budgets
+Optimize budget configuration
+Customize code review
+Pull request lifecycle
+Enhance agent mode with MCP
+Speed up development work
+Roll out at scale
+Assign licenses
+Choose enterprise plan
+Set up self-serve licenses
+Track usage and adoption
+Remind inactive users
+Govern at scale
+Resources for approval
+Establish AI managers
+Govern for adoption
+Pilot a feature or model
+Maintain codebase standards
+Enable developers
+Drive adoption
+Roll out the Copilot app
+Integrate AI agents
+Drive agentic adoption
+Drive downstream impact
+Achieve company goals
+Increase test coverage
+Accelerate pull requests
+Reduce security debt
+Copilot usage metrics
+Measure trial success
+Explore a codebase
+Explore issues and discussions
+Explore pull requests
+Write tests
+Optimize AI usage
+Optimize Chat usage
+Optimize code reviews
+Reduce technical debt
+Stack AI pull requests
+Review AI code
+Vibe coding
+Use hooks with Copilot CLI
+Use an AI SME
+Create CLI extensions
+Responsible use
+Chat
+Inline suggestions
+Agents
+In this article
+GitHub Copilot CLI command reference
+Find commands and keyboard shortcuts to help you use Copilot CLI effectively.
+Copy markdown
+In this article
+Command-line commands
+The sessions sidebar
+Global shortcuts in the interactive interface
+Timeline shortcuts in the interactive interface
+Tasks dialog shortcuts
+Restoring an interrupted session
+Session picker shortcuts
+Sidebar and sessions tab shortcuts
+Diff mode shortcuts
+Navigation shortcuts in the interactive interface
+Slash commands in the interactive interface
+Command-line options
+Supported models
+Tool availability values
+Tool permission patterns
+Environment variables
+Configuration file settings
+Project initialization for Copilot
+Hooks reference
+MCP server configuration
+Skills reference
+Custom agents reference
+Sidekick agents
+Permission approval responses
+Security
+OpenTelemetry monitoring
+Further reading
+Command-line commands
+CommandPurpose
+copilotLaunch the interactive user interface.
+copilot appOpen the GitHub Copilot app in the current directory, deep-linking straight to a new session. Falls back to opening the app's download page in a browser if the deep link can't be handled, or prints the URL to open manually if no browser is available.
+copilot completion SHELLPrint a shell script for the chosen shell that can be used to enable tab completion for Copilot CLI. Supported shells: bash, zsh, fish. See Using copilot completion.
+copilot help [TOPIC]Display help information. Help topics include: billing, config, commands, environment, logging, monitoring, permissions, providers, and sandbox.
+copilot initInitialize Copilot custom instructions for this repository.
+copilot login [OPTION]Authenticate with Copilot via OAuth. See copilot login options.
+copilot mcpManage MCP server configurations from the command line.
+copilot pluginManage plugins and plugin marketplaces, including listing, enabling, disabling, and uninstalling them. copilot plugins (plural) is a legacy alias. See GitHub Copilot CLI plugin reference.
+copilot instructionNon-interactively list custom instruction sources discovered for the current working directory. See Using copilot instruction.
+copilot lspNon-interactively list configured language servers. See Using copilot lsp.
+copilot sandbox caManage the sandbox's proxy certificate authority from outside an interactive session. See Using copilot sandbox ca.
+copilot skillManage agent skills from the command line (list, add, remove, enable, and disable skills). See Managing skills non-interactively.
+copilot updateDownload and install the latest version.
+copilot versionDisplay version information and check for updates.
+copilot workflow run WORKFLOW-NAMERun an existing dynamic workflow directly, without sending a chat prompt. Waits for the run to finish or stop. See Using copilot workflow run.
+copilot login options
+OptionPurpose
+--host HOSTGitHub host URL (default: https://github.com). Use this to authenticate with a GitHub Enterprise Cloud instance that uses data residency (for example, https://example.ghe.com).
+--web-flowForce the browser-based (web) authentication flow, which is the default on a local terminal.
+--device-codeForce the OAuth device code flow, which is the default on a remote terminal or in CI.
+--with-tokenRead an authentication token from standard input instead of starting an OAuth flow. Prompts without echoing input when standard input is a terminal. Conflicts with --web-flow and --device-code.
+On a local terminal, or a non-TTY local process that can still reach a browser (for example, a desktop OS, or Linux with a display or browser signal), the default authentication mode is a browser-based web flow: the CLI opens your browser to authorize, then captures the result on a local loopback callback. On a remote terminal (for example, SSH, GitHub Codespaces, or a dev container) or in CI, the CLI defaults to the OAuth device code flow instead, since the browser typically can't reach the loopback port. Use --web-flow or --device-code to override the automatically selected flow.
+After completion, an authentication token is stored securely in the system credential store. If a credential store is not found, the token is stored in a plain text configuration file under ~/.copilot/ (or the directory specified by COPILOT_HOME if set).
+Alternatively, Copilot CLI will use an authentication token found in environment variables. The following are checked in order of precedence: COPILOT_GITHUB_TOKEN, GH_TOKEN, GITHUB_TOKEN. This method is most suitable for headless use such as automation.
+Supported token types include fine-grained personal access tokens (v2 PATs) with the "Copilot Requests" permission, OAuth tokens from the Copilot CLI app, and OAuth tokens from the GitHub CLI (gh) app. Classic personal access tokens (ghp_) are not supported.
+Examples:
+# Authenticate with github.com
+copilot login
+# Authenticate with GitHub Enterprise Cloud (data residency)
+copilot login --host https://example.ghe.com
+# Force the device code flow, for example on a remote terminal
+copilot login --device-code
+# Force the browser (web) flow, for example on a local terminal
+copilot login --web-flow
+# Read a token from standard input, bypassing the OAuth flow entirely
+copilot login --with-token < mytoken.txt
+# Use a fine-grained PAT via environment variable
+COPILOT_GITHUB_TOKEN=github_pat_... copilot
+Using copilot completion
+The command copilot completion SHELL outputs a script for the specified shell (bash, zsh, or fish).
+By sourcing this script (or writing it to your shell's completion directory) you can enable tab completion in your terminal for copilot subcommands, command options, and known value choices for command options.
+Usage examples
+Bash (current session only):
+Bashsource <(copilot completion bash)
+source <(copilot completion bash)
+Bash (persistent, Linux):
+Bashcopilot completion bash | sudo tee /etc/bash_completion.d/copilot
+copilot completion bash | sudo tee /etc/bash_completion.d/copilot
+Zsh — write the output to a directory on your $fpath. Restart the shell after running this command:
+Shellcopilot completion zsh > "${fpath[1]}/_copilot"
+copilot completion zsh > "${fpath[1]}/_copilot"
+Fish:
+Shellcopilot completion fish > ~/.config/fish/completions/copilot.fish
+copilot completion fish > ~/.config/fish/completions/copilot.fish
+Managing plugins non-interactively
+Use copilot plugin to install, list, update, enable, disable, and uninstall plugins from the command line, without opening an interactive session. copilot plugins (plural) is a legacy alias for the same command. For the full command and option reference, see GitHub Copilot CLI plugin reference.
+Using copilot instruction
+Run copilot instruction list to non-interactively list custom instruction sources discovered for the current working directory. This replaces the retired copilot plugins list --kind instruction.
+copilot instruction list
+copilot instruction list --json
+OptionDescription
+--jsonEmit JSON instead of text.
+--config-dir=DIRECTORYPath to the configuration directory. This option is deprecated. Use COPILOT_HOME instead.
+Each --json entry has the shape { id, label, description?, location, type, sourcePath, defaultDisabled, applyTo? }. This listing resolves plugin-contributed instructions against your global user settings only—an instruction enabled by a trusted repository or by managed settings might not appear here even though a live session applies it.
+Using copilot lsp
+Run copilot lsp list to non-interactively list configured language servers. This replaces the retired copilot plugins list --kind lsp. This command is inspect-only; use the /lsp slash command in an interactive session to start, stop, or reload a language server.
+copilot lsp list
+copilot lsp list --json
+OptionDescription
+--jsonEmit JSON instead of text.
+--config-dir=DIRECTORYPath to the configuration directory. This option is deprecated. Use COPILOT_HOME instead.
+Each --json entry has the shape { id, fileExtensions?, sourcePlugin? }.
+Custom agents and session-scoped hooks aren't covered by copilot instruction, copilot lsp, copilot plugin, copilot mcp, or copilot skill. All require a live session.
+Using copilot workflow run
+Run a dynamic workflow provided by an extension, without opening an interactive session:
+Shellcopilot workflow run WORKFLOW-NAME [OPTIONS]
+copilot workflow run WORKFLOW-NAME [OPTIONS]
+WORKFLOW-NAME is the name registered by the extension, not a path to an extension file. The command starts a run and waits for it to finish, pause, or otherwise stop.
+OptionDescription
+--args JSON or --args @PATHSupply the workflow's inputs. Replace "JSON" here with inline JSON, or replace "PATH" with the path to a UTF-8 JSON file. Defaults to {} when omitted. The accepted inputs depend on the workflow.
+--result-file PATHWrite the returned value as JSON to a file instead of including it in standard output. Written only when the workflow completes and returns a result. An existing file is replaced only after the new result has been written successfully.
+-s, --silentSuppress progress output. The final result is still emitted unless directed to a file. Error and status diagnostics may still appear on standard error.
+--output-format FORMATSet the standard output format to text (default) or json (JSONL, one JSON record per line). Combine json with --silent to receive only the final workflow record. Does not change the JSON format of --result-file.
+Relative argument-file and result-file paths are resolved from the working directory. Without --silent, output includes phases and progress messages reported by the workflow.
+The command uses the CLI's authentication, model, permission, and sandbox settings. Permission options such as --allow-tool and --allow-url apply to the workflow's agents. It does not display permission approval prompts.
+Prompt and session-mode options cannot be combined with this command. Examples include -p, -i, --agent, --fleet, --autopilot, --resume, and --continue. Piped standard input is not used as a prompt or as workflow arguments.
+For more information, see Using dynamic workflows and GitHub Copilot CLI programmatic reference.
+Using copilot sandbox ca
+Run copilot sandbox ca to manage the sandbox's proxy certificate authority from outside an interactive session—for example, when provisioning managed devices without a TTY. This mirrors the /sandbox ca slash commands (create, trust, rotate, remove), plus a status check.
+copilot sandbox ca status
+copilot sandbox ca create
+copilot sandbox ca trust
+copilot sandbox ca rotate
+copilot sandbox ca remove
+SubcommandDescription
+copilot sandbox ca statusReport trust state without changing anything.
+copilot sandbox ca createCreate the certificate authority if needed, without trusting it.
+copilot sandbox ca trust [CA.PEM]Add the authority (default: your own) to OS trust.
+copilot sandbox ca rotateReplace the authority, preserving its current trust state.
+copilot sandbox ca removeRemove the authority from OS trust; the bundle-based path keeps working.
+Run these commands as the user who runs Copilot CLI, not elevated, as SYSTEM, or as root, because the certificate authority is stored in that user's Copilot CLI home directory. Run copilot sandbox ca trust --help for unattended setup guidance. copilot sandbox ca does not accept --config-dir; set COPILOT_HOME instead to target a non-default Copilot CLI home.
+The sessions sidebar
+The sessions sidebar is a panel docked beside your current conversation that provides a quick way of working with your local GitHub Copilot CLI sessions.
+When the sidebar has focus, the following keyboard shortcuts are available.
+ShortcutPurpose
+←From the conversation, open the sidebar and move focus into it (Vim: h).
+→Move focus back to the conversation; press again to close the sidebar (Vim: l).
+↑/↓Move between sessions in the sidebar (also k/j).
+EnterOpen the selected session and return focus to the conversation.
+nStart a new session.
+x twiceClose the selected session.
+↑ then TabFrom the top of the sessions list, ↑ moves onto the header buttons (← close sidebar, + new session). Tab switches between them.
+?Show the sidebar help.
+The sidebar also responds to the mouse.
+GesturePurpose
+Click a sessionSwitch to that session and return to the conversation.
+Double-click a sessionSwitch to that session and stay in the sidebar.
+Drag the dividerResize the sidebar.
+Hover the sidebar and scrollScroll the session list.
+Click a header button← to close the sidebar, + to start a new session.
+Hover over the right side of a sessionShow the close button (requires sidebar.showCloseButton).
+Session status indicators
+Each session in the sidebar shows an indicator of its current state.
+IndicatorMeaning
+Green ● (steady)The session is idle. It is waiting for your next prompt.
+Purple ● (pulsing)A turn is in flight. The agent is actively working.
+Blue ● (steady)The agent finished a turn while you were in another session, and you have not opened it since. Opening the session clears this unread state.
+Yellow ● (steady)The agent stopped on an error, or otherwise needs your attention.
+Gray ○ (steady)A resumable session. It is saved, but not currently running.
+Yellow !The session needs permission to continue.
+Yellow ?The session is waiting for you to answer a question or make a choice.
+The color names above are a guide. The exact shades depend on your terminal's color scheme and the theme you have set with /theme. For example, the github theme uses its own fixed colors, and the colorblind theme uses blue and yellow in place of green and red. On terminals without full color support, the dots use your terminal's own green, blue, and yellow.
+The colors named above relate to the default chat mode. Plan mode and autopilot mode tint some dots differently. The session name's text color also changes in those modes. Because color can shift with your terminal, theme, and mode, the steady or pulsing shape and the !, ?, and ○ markers are the most reliable cues.
+Sessions sidebar settings
+Use the /settings sidebar slash command in an interactive CLI session to adjust these settings for the sessions sidebar.
+SettingDescriptionDefault
+sidebar.enabledAllow the sessions sidebar to be displayed.On
+sidebar.showResumableSessionsThe sidebar includes previous sessions that you can resume. When set to off, only active sessions are listed. Changes to this setting take effect the next time Copilot CLI is started.On
+sidebar.showHeaderButtonsShow the row of buttons at the top of the sidebar for collapsing it (←) and starting a new session (+).On
+sidebar.showCloseButtonAs an alternative to clicking X, hovering the mouse towards the right of a session in the sidebar displays a close session button. Click this, then click again to confirm. Sessions that are running are ended, saved, and removed from the sidebar. Sessions that are not running are simply removed from the sidebar. Sessions you remove in this way are not displayed in the sidebar in future sessions unless you resume the session—for example, from the >/resume session picker.Off
+sidebar.hoverFocusThe focus changes from the main CLI tab to the sidebar depending on where the mouse pointer is.Off
+sidebar.coloredHintsWhile the sidebar is open and your conversation is focused, show the use sidebar hint in the sidebar's accent color to call attention to it. When off, the same color as other hints is used. While the sidebar is closed, the same color as other hints is always used.On
+sidebar.accentActiveSessionChange the session selection highlighting in the sidebar. When on, the session currently open in your conversation gets the main highlighting. When off the session selected with the keyboard up and down arrows (or with the mouse) gets the main highlighting.On
+For more information about the sessions sidebar, see Working with multiple GitHub Copilot CLI sessions.
+Global shortcuts in the interactive interface
+ShortcutPurpose
+@ FILENAMEInclude file contents in the context.
+# NUMBERInclude a GitHub issue or pull request in the context.
+! COMMANDExecute a command in your local shell, bypassing Copilot. Enter ! alone on an empty prompt to enter shell mode for running multiple shell commands in sequence. Press Esc or Ctrl+C on an empty prompt to exit shell mode.
+$Type a lone $ at the prompt and press Enter to hand the terminal over to a real interactive shell ($SHELL on Unix, %COMSPEC% on Windows) rooted at the session's working directory. Unlike ! shell mode, this suspends the CLI UI entirely, so job control, full-screen apps, tab completion, and colors all work natively. Exit the shell (exit, or Ctrl+D on Unix) to return to the CLI. Only activates for a local, trusted, idle session on a real TTY. Can be disabled in enterprise managed settings. Enabled by default. Disable it with the shellShortcut setting—see GitHub Copilot CLI configuration directory.
+?Open quick help (on an empty prompt). Press again to dismiss and insert a literal ?.
+EscCancel the current operation. Press twice to interrupt the running turn, or to stop background agents when the main agent is idle. In a local session, if the model hasn't started answering the turn yet, the second press displays your prompt in the prompt box again for editing.
+Ctrl+CCancel operation / clear input. Press twice to exit.
+Ctrl+DShutdown.
+Ctrl+GEdit the prompt in an external editor ($EDITOR).
+Ctrl+LClear the screen.
+Ctrl+Enter or Ctrl+QQueue a message to send while the agent is busy.
+Ctrl+RReverse search through command history.
+Ctrl+SpaceToggle voice dictation on or off (alias for Ctrl+X then v). This only works if your terminal and OS pass it through. You may need to free this in your OS or terminal key bindings. Use Ctrl+X then v as an alternative.
+Ctrl+VPaste from clipboard as an attachment.
+Alt+VPaste image from clipboard as an attachment.
+Ctrl+X then /After you have started typing a prompt, this allows you to run a slash command—for example, if you want to change the model without having to retype your prompt.
+Ctrl+X then eEdit the prompt in an external editor ($EDITOR).
+Ctrl+X then bPromote the running task or shell command to the background.
+Ctrl+X then gCollapse or expand the autopilot goal panel.
+Ctrl+X then hHide the current-session sidebar.
+Ctrl+X then oOpen the most recent link from the timeline.
+Ctrl+X then vToggle voice dictation on or off.
+Ctrl+X then xClose the current session.
+Ctrl+ZSuspend the process to the background (Unix).
+Shift+Enter or Option+Enter (Mac) / Alt+Enter (Windows/Linux)Insert a newline in the input.
+Shift+TabCycle between standard, plan, and autopilot mode.
+In local sessions, you can queue prompts, shell commands, and supported slash commands to run in order after the current task finishes. Press Ctrl+Q to queue the current input while the agent is running. Queued entries display a "pending" label and can be canceled individually before they run.
+With an empty prompt box, press ↑ to recall the most recently queued or steering prompt back into the prompt box for editing before it's resubmitted. A "recall" hint appears next to the queue when this is available. Use Ctrl+P instead for nondestructive navigation through submitted command history.
+In a local session, pressing Esc twice on a submitted prompt whose turn the model hasn't started answering puts your prompt back in the prompt box and removes it from the conversation. If the model has already started answering, the same second Esc press instead interrupts the running turn. Afterward, with an empty prompt box, pressing ↑ restores the prompt to the prompt box.
+Timeline shortcuts in the interactive interface
+ShortcutPurpose
+Ctrl+FOpen timeline search.
+Ctrl+OWhile there is nothing in the prompt input, this expands recent items in Copilot's response timeline to show more details.
+Ctrl+EWhile there is nothing in the prompt input, this expands all items in Copilot's response timeline.
+Ctrl+TExpand/collapse display of reasoning in responses.
+Page Up/Page DownScroll the timeline up or down by one page.
+Tasks dialog shortcuts
+When the tasks dialog is open (opened via /tasks):
+ShortcutPurpose
+↑/KMove selection up.
+↓/JMove selection down.
+EnterView task details, or teleport into the selected subagent's own session view.
+aToggle showing all nested subagent levels vs. this level's tasks only.
+fToggle showing finished subagents and shells, not just active ones.
+XKill the selected active task.
+RRemove the selected finished task.
+BPromote the selected sync task to background.
+EscClose the dialog (or go back to the list).
+Subagents that spawn their own nested subagents appear as an indented tree; the row you're teleported into is highlighted as "current." While drilled into a subagent's view, you can send it a steering message from the prompt box the same way you would the main session.
+Restoring an interrupted session
+If a session was still open when its CLI process went away—for example, due to a crash or a machine restart—the next copilot startup can offer to restore it, letting you choose which sessions to bring back or start fresh instead. A session whose agent was mid-turn automatically resumes that work once restored.
+This restore behavior is temporarily opt-in while its startup dialog is reworked. Set the COPILOT_ENABLE_INTERRUPTED_SESSION_RESTORE environment variable to 1 to enable it. See Environment variables.
+Session picker shortcuts
+When the session picker is open (opened via /resume or --continue):
+ShortcutPurpose
+↑/↓Move selection up or down.
+EnterOpen the selected session.
+sCycle the sort order: relevance → created → name → last used.
+TabSwitch between the local and remote tabs.
+xDelete the selected session.
+EscClose the picker.
+Sessions sort by the following modes:
+ModeDescription
+relevanceScores sessions by match to the current working directory (default).
+last usedMost recently modified sessions first.
+createdMost recently created sessions first.
+nameAlphabetical by session name; unnamed sessions sort to the end.
+Sessions already open in another window float to the top in all non-relevance sort modes. When no working-directory context is available, the relevance mode is skipped.
+Sidebar and sessions tab shortcuts
+The current-session sidebar lets you browse and switch between sessions without leaving the one you're in. With an empty prompt box, ←/→ walk a three-state focus cycle: closed, timeline-focused, and sidebar-focused. Disable the sidebar entirely with the sidebar setting—see GitHub Copilot CLI configuration directory.
+ShortcutPurpose
+← (Current tab, closed)Open the sidebar; the timeline keeps focus.
+← (timeline-focused)Move focus into the sidebar.
+→ (sidebar-focused)Return focus to the timeline.
+→ (timeline-focused)Close the sidebar.
+Tab/Shift+TabSwitch tabs (Current, Sessions, and so on).
+↑/↓ (sidebar-focused)Move the selection cursor; j/k are aliases.
+Enter (sidebar-focused)Switch the foreground session to the selected card.
+n (sidebar-focused)Spawn a new background session and bring it to the foreground.
+s (sidebar-focused)Cycle the sort order: recent → created → name → none.
+x, x (sidebar-focused)Close the selected card (armed for one keystroke, shown in red, before closing).
+The sidebar's divider can be dragged to resize it, and it auto-collapses below a minimum usable width. Each card shows a status dot, the session name, and its Git branch (or working directory when there is no branch). The foreground session's title is highlighted in accent color, and its card carries a persistent subtle fill.
+Dots indicate a session's status. For what each dot means, see Session status indicators.
+The active sort order (recent, created, name, or none for insertion order) persists across restarts.
+Mouse actions mirror the keyboard: click a card to switch the foreground session, double-click a card or empty rail space to focus the sidebar, and click the timeline pane while the sidebar is focused to return focus to it.
+The Sessions tab lists the current session plus your full resumable session history under a "Resumable" divider:
+ShortcutPurpose
+↑/↓Navigate rows.
+Shift+↑/↓Page up or down.
+EnterResume the selected session.
+nStart a new session.
+aCycle the filter scope: all → local → remote (cloud).
+/Search live across name, branch or working directory, repository, and session ID.
+x, xClose or delete the selected row (armed for one keystroke, shown in red, before acting); Ctrl+X then x still works as a two-key alias.
+←/→Switch tabs.
+Remote (cloud) rows in the Sessions tab also show online or offline status and the repository.
+Pressing x twice on a row closes a running session or, for a local resumable row, permanently deletes that session's stored history. Pressing Esc, pressing any other key, moving the highlight, or a timeout cancels the pending confirmation.
+Diff mode shortcuts
+When diff mode is open (entered via /diff):
+ShortcutPurpose
+↑ / kMove selection up one line.
+↓ / jMove selection down one line.
+← / hJump to the previous file.
+→ / lJump to the next file.
+Home / gJump to the first line.
+End / GJump to the last line.
+Page UpScroll up one page.
+Page DownScroll down one page.
+Ctrl+UScroll up half a page.
+Ctrl+DScroll down half a page.
+ClickSelect the clicked diff line (requires mouse support).
+Mouse scrollScroll up or down.
+Alt/Option+scrollScroll one line at a time for fine-grained control.
+cAdd or edit a comment on the selected line.
+sShow comments summary (when comments exist).
+bToggle between unstaged changes and branch diff.
+wToggle hiding whitespace-only changes.
+EnterSubmit all comments (when comments exist).
+rRefresh the diff (remote sessions only).
+Esc / Ctrl+CExit diff mode.
+Navigation shortcuts in the interactive interface
+ShortcutPurpose
+Ctrl+AMove to beginning of the line (when typing).
+Ctrl+BMove to the previous character.
+Ctrl+EMove to end of the line (when typing).
+Ctrl+FMove to the next character.
+Ctrl+HDelete the previous character.
+Ctrl+KDelete from cursor to end of the line. If the cursor is at the end of the line, delete the line break.
+Ctrl+UDelete from cursor to beginning of the line.
+Ctrl+WDelete the previous word.
+HomeMove to the start of the current visual line.
+EndMove to the end of the current visual line.
+Ctrl+HomeMove to the start of the text.
+Ctrl+EndMove to the end of the text.
+Alt+←/→ (Windows/Linux)Option+←/→ (Mac)Move the cursor by a word.
+↑/↓Navigate the command history. With an empty prompt box, ↑ recalls the most recently queued or steering prompt instead, if one is available.
+Ctrl+PNavigate submitted command history nondestructively, without triggering the queued-prompt recall behavior.
+Tab / Ctrl+YAccept the current inline completion suggestion.
+Slash commands in the interactive interface
+These are the slash commands you can use from within an interactive CLI session. A subset of these slash commands is available to clients that use the CLI via its ACP server. For more information, see Copilot CLI ACP server.
+CommandPurpose
+/add-dir PATHAllow file access to a directory and load its .github/skills and .github/agents as trusted configurations.
+/after [DELAY PROMPT], /afterSchedule a non-recurring prompt, skill, or schedulable slash command for the current session (for example, /after 30m remind me the time or /after 1h /chronicle standup). With no arguments the schedule manager is displayed. Only available in experimental mode.
+/agentBrowse and select from available agents (if any). See About custom agents.
+/appOpen the current session in the GitHub Copilot app (requires version 1.1.3 or later), or show the download URL if the app is not installed.
+/ask QUESTION, /btw QUESTIONAsk a quick side question without adding to the conversation history. See Asking a side question in GitHub Copilot CLI.
+/allow-all [off|auto|show], /yolo [off|auto|show]Enable all permissions (tools, paths, and URLs). This is an alias for /permissions allow-all; see the /permissions row for the canonical command and its subcommands.
+/autopilot [OBJECTIVE], /goal [OBJECTIVE]Start or refocus autopilot mode, optionally with an explicit objective (for example, /goal Refactor the auth module). Without an objective, autopilot infers intent from context, and the status panel shows your last prompt as the inferred objective. You can cap AI-credit spend for the objective by using --max-ai-credits N (for example, /goal Refactor the auth module --max-ai-credits 5). When the cap is reached, autopilot pauses and opens a panel reporting credits used against the cap. Enter a new amount to resume with a fresh credit window, or dismiss the panel to stay paused. You can also resume a paused objective yourself, without the panel, by running the option on its own with no objective text—for example, /goal --max-ai-credits 5. This is the same action the panel performs: it opens a fresh window of the credits you specify (the full new cap, not an increment) and continues the objective. /goal on and /goal off toggle autopilot mode without setting an objective and don't accept --max-ai-credits. An active goal renders as a pinned panel above the prompt box, showing the objective, credits used, and todo progress. The panel auto-collapses to a single identity row on short terminals (below 30 rows) and expands above that threshold; press Ctrl+X then g to override the automatic sizing by hand.
+/changelog [summarize] [VERSION|last N|since VERSION], /release-notes [summarize] [VERSION|last N|since VERSION]Display the CLI changelog. Optionally specify a version, a count of recent releases, or a starting version. Add the keyword summarize for an AI-generated summary.
+/chronicle <standup|tips|improve|reindex|skills create|skills review|skills status>Session history tools and insights. The skills subcommands draft, review, and track the status of repository skill proposals generated from observed usage. See Using GitHub Copilot CLI session data.
+/clear [PROMPT], /new [PROMPT], /reset [PROMPT]Start a new conversation. /new worktree starts an empty session in a new Git worktree instead of clearing the current one, leaving the current conversation and its working directory unchanged.
+/clikit [COMPONENT]Preview CLI business components (for example, quota info).
+/compact [FOCUS-INSTRUCTIONS]Summarize the conversation history to reduce context window usage. Optionally provide focus instructions to steer the summary—for example, /compact focus on the auth module. See Managing context in GitHub Copilot CLI.
+/contextShow the context window token usage and visualization. See Managing context in GitHub Copilot CLI.
+/copyCopy the last response to the clipboard.
+/cwd, /cd [PATH]Change the working directory or display the current directory.
+/delegate [PROMPT]Delegate changes to a remote repository with an AI-generated pull request. See Delegating tasks to Copilot.
+/diagnose [PROMPT], /diagnoseAnalyze the current session log for errors, unexpected behavior, and other issues. Optionally include a custom prompt to focus the diagnosis on a specific problem.
+/diffReview changes in the current directory; auto-switches to branch diff when the working tree is clean (experimental).
+/downgrade VERSIONDownload and restart into a specific CLI version. Available for team accounts.
+/envShow loaded environment details (instructions, MCP servers, skills, agents, hooks, plugins, LSPs, extensions).
+/every [INTERVAL] PROMPT, /everySchedule a recurring prompt, skill, or schedulable slash command for the current session (for example, /every 1h run tests or /every 1d /chronicle standup). With no arguments the schedule manager is displayed. Only available in experimental mode.
+/exit, /quitClose the current session. If other sessions are running, this foregrounds the newest remaining one instead of quitting. Quits the CLI only when it is the last open session. /exit print always tears down the CLI and offers to dump the transcript. /exit and /quit (including their print variant) can also be queued with Ctrl+Q while the agent is running—the CLI closes the session once the current turn, and any queued shell command ahead of it, finishes.
+/extensions [manage|mode], /extensionManage CLI extensions. Only available in experimental mode.
+/experimental [on|off|show]Toggle, set, or show experimental features.
+/feedback, /bugProvide feedback about the CLI.
+/fleet [PROMPT]Enable parallel subagent execution of parts of a task. See Running tasks in parallel with the /fleet command.
+/helpShow the help for interactive commands.
+/ideConnect to an IDE workspace. See Connecting GitHub Copilot CLI to VS Code.
+/initInitialize Copilot custom instructions and agentic features for this repository. See Project initialization for Copilot.
+/instructionsView and toggle custom instruction files.
+/keep-alive [on|off|busy|DURATION], /caffeinate [on|off|busy|DURATION]Prevent the machine from going to sleep: while a CLI session is active, while the agent is busy, or for a defined length of time. Accepts durations like 30, 30m, 2h, 1d (bare numbers default to minutes).
+/limitsOpen the interactive response limits dialog.
+/limits set max-ai-credits VALUESet a soft maximum for AI Credits allowed per response. Response limits are soft limits that reset for each user message. See Setting an AI credit session limit in GitHub Copilot CLI.
+/limits unset [max-ai-credits|all]Remove a specific response limit, or all response limits.
+/list-dirsDisplay all of the directories for which file access has been allowed.
+/loginLog in to Copilot.
+/logoutLog out of Copilot.
+/lsp [show|test|reload|logs|help] [SERVER-NAME]Manage the language server configuration. The logs subcommand opens the live LSP services log panel.
+/mcp [config|list|show|add|edit|delete|disable|enable|auth|reload|search] [SERVER-NAME]Manage the MCP server configuration. With no subcommand, or with config, the plugins dashboard opens pinned to the MCP server list; the add, edit, and authenticate forms open inside that dashboard too, so closing a form returns you to the server list. Use show or show SERVER-NAME to display all configured servers or open one server's details directly, including its available tools, and to enable or disable it. For a plugin-provided server, show SERVER-NAME also displays the source attribution (for example, Source: Plugin my-plugin (1.2.0)). list (alias ls) prints a plain-text list of configured servers with connection status and live state. Bare /mcp, config, show, and list (alias ls) are read-only or open the dashboard, so they can run while the agent is busy processing a turn. The mutating subcommands (add, edit, delete, disable, enable, auth, reload, and search) are blocked until the turn finishes. edit <name> rejects a workspace-sourced server (one defined in a repository's .mcp.json) instead of opening the user-tier wizard, since saving would silently create a same-name user entry that the workspace one still shadows. The error names the file to edit directly. delete <name> reports the same file when asked to remove a workspace-sourced server. Sandboxed local servers show a connected (sandboxed) status. See Adding MCP servers for GitHub Copilot CLI.
+/model [--session|--global|--repo|--local] [MODEL|auto TIER], /modelsSelect the AI model you want to use, or choose Auto. By default (or with --session, alias -s), changes the model, reasoning effort, or context window for the current session only, without touching saved settings. --repo/--local pins the default model in repository settings instead; --global (or /config model) sets the default for future sessions. Press Tab on a model with a long-context variant to toggle its Context column between the default and long-context window. The picker groups models into sections—press Shift+Tab to cycle grouping between recommended (Recent, Recommended, New, and other models), vendor, and category. A model with vendor-specific data retention terms shows a data retention warning banner with a link to the vendor's policy. Usable mid-turn: a change requested while the agent is running is queued as a cancellable (Ctrl+C) command and applied once the current turn finishes, instead of switching the live model mid-request. Use /model auto TIER (efficiency, balance, or intelligence) to select a specific Auto routing tier directly, including from the "switch" action on an Auto tier recommendation hint. See About Copilot auto model selection.
+/permissions [default|assisted|allow-all|show]Switch between permission modes (default, assisted, allow-all), or show the current mode (show). This is the canonical command for permission mode changes; /allow-all and /yolo remain supported as aliases.
+/permissions resetReset all in-memory tool and path approvals for the current session (re-prompt on next use).
+/plan [PROMPT]Create an implementation plan before coding.
+/pluginOpen the plugins dashboard showing your installed plugins. Select a plugin and press Enter for its details and for actions such as enabling, disabling, updating, or uninstalling it. Use the ← and → keys to switch between the Installed, Online, and Marketplace views. The dashboard shows only plugins—use /mcp for MCP servers and /skills for skills. See About GitHub Copilot plugins.
+/plugin install SOURCEInstall a plugin from a marketplace spec, GitHub repository, git URL, or local path.
+/plugin update PLUGIN[@MARKETPLACE]Update an installed plugin.
+/plugin uninstall PLUGIN[@MARKETPLACE] (aliases remove, rm)Uninstall a plugin.
+/plugin list (alias ls)List installed plugins.
+/plugin marketplace add SOURCEAdd a marketplace.
+/plugin marketplace remove NAMERemove a marketplace.
+/plugin marketplace listList registered marketplaces.
+/plugin marketplace browse NAMEBrowse plugins in a marketplace.
+/plugin marketplace update [NAME] (alias refresh)Re-fetch a marketplace's plugin catalog, or every registered marketplace when no name is given.
+/pr [view|create|fix|auto|automerge]Manage pull requests for the current branch. auto drives the pull request to green and stops; automerge (alias: agentmerge) drives the pull request to green and merges it. When the repository has a pull request template (.github/pull_request_template.md or a file under .github/PULL_REQUEST_TEMPLATE/), create follows it by default—preserving headings, comments, and checklist items, and filling in accurate details instead of writing a generic body. Ask Copilot to skip the template if you don't want it applied. See Managing pull requests with the /pr command.
+/refine TEXTRewrite a roughly composed prompt into a clear one for review. Run with no arguments (via Ctrl+X then /refine) to clean up the current input box. Can be particularly useful for prompts entered by speaking.
+/remote [on|off]Show the remote control status (if no argument provided), enable remote steering (on), or end the remote connection (off). See Steering a GitHub Copilot CLI session from another device.
+/rename [NAME]Rename the current session (auto-generates a name if omitted; alias for /session rename).
+/research TOPICRun a deep research investigation using GitHub search and web sources. See Researching with GitHub Copilot CLI.
+/reset-allowed-toolsReset the list of allowed tools.
+/restartRestart the CLI, restoring all of the current process's live sessions, not only the foreground one. If the target CLI version can't restore multiple sessions, you're prompted to continue with only the foreground session or cancel.
+/resume [SESSION-ID], /continue [SESSION-ID]Switch to a different session by choosing from a list (optionally specify a session ID).
+/review [PROMPT]Run the code review agent to analyze changes. See Requesting a code review with GitHub Copilot CLI.
+/rubber-duck [PROMPT]Consult the rubber duck agent for a second opinion on plans, code, and tests. See About the rubber duck agent.
+/sandbox [config|status|policy|enable|disable]Manage OS-level sandboxing that restricts filesystem and network access for shell commands, MCP/LSP servers, and built-in file/web tools. config (or bare /sandbox) opens the sandbox settings dialog. status shows whether sandboxing is enabled. policy shows the effective policy, with path grants grouped by source (user-configured, system, working directory, current session, and ~/.copilot) and access type, plus the network stance and any detected developer tools. enable/disable turn sandboxing on or off directly. status and policy are read-only and can run while the agent is busy processing a turn. config, enable, and disable are queued until the turn finishes. Only available in experimental mode.
+/sandbox ca [create|trust|rotate|remove]Manage the sandbox's proxy certificate authority. create writes it without trusting it. trust adds it to OS trust. rotate replaces it while preserving its trust state. remove drops OS trust. See Using copilot sandbox ca to run the same operations outside a session, for example on managed devices.
+/search [QUERY], /find [QUERY]Search the conversation timeline.
+/security-review [PROMPT]Run a focused security review of active local code changes and return prioritized vulnerability findings with remediation suggestions. This command is not a full repository security audit.
+/session [info|checkpoints [n]|files|plan|rename [NAME]|cleanup|prune|delete [ID]|delete-all], /sessions [info|checkpoints [n]|files|plan|rename [NAME]|cleanup|prune|delete [ID]|delete-all]Show session information and manage sessions. The info subcommand shows session details including the session link (when available). Subcommands: info, checkpoints, files, plan, rename, cleanup, prune, delete, delete-all.
+/settings [--repo|--local] [show KEY|KEY|KEY VALUE],/config [--repo|--local] [show KEY|KEY|KEY VALUE]Open the settings dialog, open it focused on a specific setting (KEY), set a setting inline (KEY VALUE), or display a setting's current value (show KEY). show masks secret-named values (for example, tokens or API keys nested under a setting) instead of printing them in clear text. The dialog shows User, Repo, Repo (local), and Problems tabs—switch with Tab/Shift+Tab; a setting overridden in another scope shows a badge naming which scope wins. The Problems tab is a cross-scope view of settings that need attention (for example, unknown or invalid keys); its label shows a count, such as Problems (2), when any scope has an issue, and otherwise just reads Problems. Add --repo or --local to target .github/copilot/settings.json or .github/copilot/settings.local.json instead of the user settings file—for example, /settings --repo model gpt-6-astra. Only repo-overridable keys can be set this way. Rows governed by an active organization or MDM managed policy render read-only with a (managed) tag. See Changing settings with the /settings command.
+/share [link|off|file|html|gist|research] [...], /export [...]Share the current session. With no subcommand, generates a shareable GitHub link when you're logged in and synced (falls back to Markdown file export otherwise). off stops sharing. link is an explicit alias for the default link flow; link off stops link sharing. file [session|research] [PATH] exports to a Markdown file. html [session|research] [PATH] exports to an HTML file. gist [session|research] creates a GitHub gist. research [PATH] exports the research report.
+/skillsOpen the plugins dashboard on the Skills tab.
+/skills listList all available skills.
+/skills info NAMEShow details of a specific skill.
+/skills add [--project] <FILE|URL|DIRECTORY>Add a skill from a file, URL, or directory; --project scopes a file or URL install to this repository instead of your user account.
+/skills remove <NAME|DIRECTORY>Remove a skill by name, or unregister a custom skill directory.
+/skills reloadReload skills from all directories. See Adding agent skills for GitHub Copilot CLI.
+/statusline, /footerConfigure which items appear in the status line.
+/subagents, /agentsConfigure default and per-agent subagent models. For an agent with modelPolicy: "required"—whether set in the agent's own definition or in the subagents settings override—the picker shows a locked Model entry and a Model enforcement row reading "required - cannot be overridden" (or "required by agent definition" when the agent definition itself sets the policy). Switch the policy back to "preferred" from the picker to allow overrides again, unless the agent definition requires it. See GitHub Copilot CLI configuration directory.
+/tasksView and manage tasks (subagents and shell commands).
+/terminal-setupConfigure the terminal for multiline input support (Shift+Enter and Ctrl+Enter).
+/theme [default|github|dim|high-contrast|colorblind]View or set the color mode.
+/tuikit [colors|icons|select|tabbar]Preview TUIkit design-system components and color tokens.
+/undo, /rewindOpen the rewind picker to roll the session back to an earlier user turn. Choose between: Conversation only (roll back the conversation, leaving files as they are) or Conversation + files (also restore the files Copilot changed in that turn, and later discarded turns, to their pre-change contents, skipping any you have since edited yourself). File changes are tracked per turn across editing tools, shell commands, and sub-agents, so Git is not required.
+/update, /upgradeUpdate the CLI to the latest version.
+/usageDisplay session usage metrics and statistics, including per-model token totals. For token-based-billing accounts, each model's row also shows its own AI credit consumption (for example, 1 AIC). Billed models with no token counts show credits only.
+/user [show|list|switch]Manage the current GitHub user.
+/versionDisplay version information and check for updates.
+/vimToggle Vim mode for the prompt box, enabling Vim-style modal editing: motions (for example, hjkl, w, b, e, 0, $, gg, G), character search (f/F/t/T/;/,), insert commands (i/a/o), edit commands (r/~/J/x/D/C), operators (d/c/y), yank and put (y/p/P), repeat (.), undo and redo (u/Ctrl+R), counts, and Esc to return to normal mode. Also configurable with the editorMode setting. See GitHub Copilot CLI configuration directory.
+/voice [on|off|models|devices]Toggle voice mode, browse available voice models, or choose the input device (microphone).
+/workflowsObserve workflow runs, phases, agents, and progress. Requires a token-based-billing plan. See Using copilot workflow run to run a registered workflow directly.
+/fork [NAME], /branch [NAME]Fork the current session into a new session, optionally with a name. Usable while the agent is running—the source session keeps working in the background. /fork worktree forks the current session, preserving its conversation context, into a new Git worktree branched off HEAD.
+/worktree [branch|task]Create a new Git worktree and switch to it, leaving uncommitted changes behind in the current worktree. Pass a branch name, a task description (multiline supported, used as the opening prompt in the new worktree), or omit the argument to auto-generate a branch name from the conversation. By default, branches off the current checkout (HEAD); set the worktreeBaseRef setting to "defaultBranch" to branch off the remote default branch instead. See GitHub Copilot CLI configuration directory. Requires a Git repository.
+/worktree new [PROMPT]Deprecated—use /new worktree instead. Starts a new conversation in a new Git worktree, leaving the current conversation and its working directory unchanged. Optionally provide the first prompt. new is reserved as the subcommand keyword and can't be used as a literal branch name. Follows the same worktreeBaseRef setting as /worktree.
+/move [branch|task]Move uncommitted changes into a new Git worktree and switch to it. Pass a branch name, a task description (multiline supported, used as the opening prompt in the new worktree), or omit the argument to auto-generate a branch name from the conversation. Requires a Git repository.
+For a complete list of available slash commands enter /help in the CLI's interactive interface.
+In the schedule manager opened by a bare /every or /after, use ↑/↓ to select an entry and x to remove it. Schedules can only be added from the prompt input using /every or /after with arguments—the dialog itself is read-and-remove only.
+The footer shows an "N scheduled" indicator by default whenever the session has active schedules, even if /every and /after are not enabled for you.
+/plugin flags an installed plugin or marketplace when a newer version is available upstream, and offers an Update action from the dashboard.
+/mcp list/ls and /plugin list/ls (including bare /plugin) are read-only and can run while the agent is busy processing a turn. All other /mcp and /plugin subcommands are blocked until the turn finishes.
+Note
+The experimental /plugins command was removed. Its resources have been moved to /plugin, /mcp, and /skills. Use /subagents and /instructions for agents and instructions.
+Command-line options
+OptionPurpose
+--add-dir=PATHAllow file access to a directory and load its .github/skills and .github/agents as trusted configurations (can be used multiple times). A relative path resolves against the session working directory (the --resume, --worktree, or -C directory), regardless of option order. The path must be an existing directory—a missing path or a regular file fails startup immediately with a flag-specific error, the same way in every mode.
+--add-github-mcp-tool=TOOLAdd a tool to enable for the GitHub MCP server, instead of the default CLI subset (can be used multiple times). Use * for all tools.
+--add-github-mcp-toolset=TOOLSETAdd a toolset to enable for the GitHub MCP server, instead of the default CLI subset (can be used multiple times). Use all for all toolsets.
+--additional-mcp-config=JSONAdd an MCP server for this session only. The server configuration can be supplied as a JSON string or a file path (prefix with @). A relative @file path resolves against the session working directory (the --resume, --worktree, or -C directory), regardless of option order. Augments the configuration from ~/.copilot/mcp-config.json. Overrides any installed MCP server configuration with the same name. See Adding MCP servers for GitHub Copilot CLI.
+--agent=AGENTSpecify a custom agent to use. See About custom agents.
+--allow-allEnable all permissions (equivalent to --allow-all-tools --allow-all-paths --allow-all-urls).
+--allow-all-mcp-server-instructionsInclude initialization instructions from all MCP servers in the system prompt. By default, only allowlisted server instructions are included up front; other servers' instructions are retrieved on demand.
+--allow-all-pathsDisable file path verification and allow access to any path.
+--allow-all-toolsAllow all tools to run automatically without confirmation. Required when using the CLI programmatically (env: COPILOT_ALLOW_ALL).
+--allow-all-urlsAllow access to all URLs without confirmation.
+--allow-tool=TOOL ...Tools the CLI has permission to use. Will not prompt for permission. For multiple tools, use a quoted, comma-separated list. See Allowing and denying tool use.
+--allow-url=URL ...Allow access to specific URLs or domains. For multiple URLs, use a quoted, comma-separated list.
+--acpStart as Agent Client Protocol server.
+--attachment PATHAttach a file to the initial prompt (can be used multiple times). Image files are accepted, but sending them successfully requires the selected model and organization policy to allow vision input.
+--autopilotEnable autopilot continuation—the agent keeps working until task_complete is called, then returns to interactive mode. See Allowing GitHub Copilot CLI to work autonomously.
+--available-tools=TOOL ...Only these tools will be available to the model. For multiple tools, use a quoted, comma-separated list. See Allowing and denying tool use.
+--banner, --no-bannerShow or hide the startup banner.
+--bash-envEnable BASH_ENV support for bash shells.
+-C DIRECTORYChange working directory before doing anything else.
+--connect[=SESSION-ID]Connect directly to a remote session (optionally specify a session ID or task ID). Conflicts with --resume and --continue.
+--context TIER.Set the context window tier for tiered-pricing models (overrides the persisted setting and is honored in fresh interactive sessions). Choices: "default", "long_context".
+--config-dir=DIRECTORYThis option for setting the configuration directory is deprecated. Use the COPILOT_HOME environment variable instead.
+--continueResume the most recent session in the current working directory, falling back to the globally most recent session. Conflicts with --resume.
+--deny-tool=TOOL ...Tools the CLI does not have permission to use. Will not prompt for permission. For multiple tools, use a quoted, comma-separated list.
+--deny-url=URL ...Deny access to specific URLs or domains, takes precedence over --allow-url. For multiple URLs, use a quoted, comma-separated list.
+--disable-builtin-mcpsDisable all built-in MCP servers (currently: github-mcp-server).
+--disable-mcp-server=SERVER-NAMEDisable a specific MCP server (can be used multiple times).
+--disallow-temp-dirPrevent automatic access to the system temporary directory.
+--effort=LEVEL, --reasoning-effort=LEVELSet the reasoning effort level (low, medium, high, xhigh, max). max is the highest-depth tier for Anthropic models.
+--enable-all-github-mcp-toolsEnable all GitHub MCP server tools, instead of the default CLI subset. Overrides the --add-github-mcp-toolset and --add-github-mcp-tool options.
+--enable-mcp-server=SERVER-NAMERe-enable an MCP server that's disabled in your settings, for this session only (can be used multiple times). The change is not persisted to your configuration.
+--enable-memoryEnable memory in prompt mode (disabled by default).
+--enable-reasoning-summariesDeprecated compatibility option (accepted but ignored). Detailed reasoning summaries for supporting OpenAI models are shown by default. Toggle them with Ctrl+T.
+--excluded-tools=TOOL ...These tools will not be available to the model. For multiple tools, use a quoted, comma-separated list.
+--experimentalEnable experimental features (use --no-experimental to disable).
+--extension-sdk-path DIRECTORYOverride the bundled @github/copilot-sdk injected into extension subprocesses with a local copilot-sdk/ folder. Invalid paths fall back to the bundled SDK.
+--fleetRun the prompt in fleet mode (parallel subagent orchestration). Combine with -i, -p, or piped standard input. This requires a prompt from one of those sources, and has no effect on its own. This is equivalent to prefixing an interactive prompt with the /fleet slash command. With -p or piped input it dispatches the same fleet orchestration non-interactively. See Running tasks in parallel with the /fleet command.
+-h, --helpDisplay help.
+-i PROMPT, --interactive=PROMPTStart an interactive session and automatically execute this prompt.
+--log-dir=DIRECTORYSet the log file directory (default: ~/.copilot/logs/).
+--log-level=LEVELSet the log level (choices: none, error, warning, info, debug, all, default).
+--max-ai-credits=CREDITSSet a soft maximum for AI Credits allowed for each response. The limit resets per user message and can be adjusted mid-session with /limits. See Setting an AI credit session limit in GitHub Copilot CLI.
+--max-autopilot-continues=COUNTMaximum number of continuation messages in autopilot mode (default: unlimited). Must be a non-negative integer. Malformed values (NaN, negative, fractional, or scientific notation) are rejected. See Allowing GitHub Copilot CLI to work autonomously.
+--mode=MODESet the initial agent mode (choices: interactive, plan, autopilot). Combine with --plan (as --plan --mode autopilot) for plan-then-autopilot: the session starts in plan mode and automatically progresses to autopilot mode once the plan is ready, instead of waiting for a human to approve it. Any other --plan --mode MODE pairing is rejected.
+--model=MODELSet the AI model you want to use. Pass auto as the value to let Copilot pick the best available model automatically. See About Copilot auto model selection.
+--mouse[=VALUE]Enable or disable mouse support in the interactive interface. VALUE can be on (default) or off. When enabled, the CLI captures mouse events—scroll wheel, clicks, and so on—to navigate its own interface, such as scrolling the timeline or clicking tabs. When disabled, the terminal's native mouse behavior, such as text selection and scrollback, is preserved. When you set this option explicitly, the value is persisted to your configuration file.
+-n NAME, --name=NAMESet a name for the new session. Used by --resume and /resume to find sessions by name.
+--no-ask-userDisable the ask_user tool (the agent works autonomously without asking questions).
+--no-auto-updateDisable downloading CLI updates automatically.
+--no-bash-envDisable BASH_ENV support for bash shells.
+--no-colorDisable all color output.
+--no-custom-instructionsDisable loading of custom instructions from AGENTS.md and related files.
+--no-experimentalDisable experimental features.
+--no-mouseDisable mouse support.
+--no-remoteDisable remote access for this session.
+--no-remote-exportDisable exporting your session to GitHub.com and GitHub Mobile (also disables remote control).
+--output-format=FORMATFORMAT can be text (default) or json (outputs JSONL: one JSON object per line).
+-p PROMPT, --prompt=PROMPTExecute a prompt programmatically (exits after completion). The exit summary includes a copilot --resume=SESSION-ID hint for continuing the session. See Running GitHub Copilot CLI programmatically.
+--planStart in plan mode. Shorthand for --mode plan. Cannot be combined with --autopilot. Can be combined with --mode autopilot for plan-then-autopilot; any other --mode value is rejected.
+--plain-diffDisable rich diff rendering (syntax highlighting via the diff tool specified by your Git config).
+--plugin-dir=DIRECTORYLoad a plugin from a local directory (can be used multiple times). A relative path resolves against the session working directory (the --resume, --worktree, or -C directory), regardless of option order. Agents contributed by a --plugin-dir plugin are available in server-mode (--server) sessions as well as interactive and -p sessions.
+--remoteEnable remote access to this session from GitHub.com and GitHub Mobile. See Steering a GitHub Copilot CLI session from another device.
+--remote-exportExport your session to GitHub.com and GitHub Mobile (read-only; does not enable remote control).
+-r, --resume[=VALUE]Resume a previous interactive session by choosing from a list. Optionally specify a session ID, ID prefix, or session name. Name matching is exact and case-insensitive; falls back to the auto-generated summary when no explicit name matches. Conflicts with --continue. Bare --resume (no value) shows an interactive session picker, which requires a TTY. If multiple sessions exist and the picker can't be shown (for example under -p, a non-TTY -i, or piped stdin), the CLI exits with an error instead of silently starting a new session—pass an explicit --resume=SESSION-ID or use --continue.
+-s, --silentOutput only the agent response (without usage statistics), useful for scripting with -p.
+--screen-readerEnable screen reader optimizations.
+--secret-env-vars=VAR ...Redact an environment variable from shell and MCP server environments (can be used multiple times). For multiple variables, use a quoted, comma-separated list. The values in the GITHUB_TOKEN and COPILOT_GITHUB_TOKEN environment variables are redacted from output by default.
+--session-id IDUse an exact session or task ID when you do not want --resume's broader matching by ID prefix or session name. If the ID matches an existing session or task, that session or task is resumed. If nothing matches, a new session is created only when the value is a valid UUID. Names and ID prefixes do not create new sessions. Do not combine this option with other session-selection or session-starting options such as --resume, --continue, or --connect, because they compete to decide which session to open or create.
+--sandboxEnable the OS-level shell sandbox for this session only, without changing your saved sandbox setting. Useful with -p. Only available in experimental mode.
+--no-sandboxDisable local sandboxing for this session only, without changing your saved sandbox setting. This option is ignored if an enterprise-managed policy has been configured to enforce sandboxing. Only available in experimental mode.
+--share=PATHShare a session to a Markdown file after completion of a programmatic session (default path: ./copilot-session-<ID>.md).
+--share-gistShare a session to a secret GitHub gist after completion of a programmatic session.
+--stream=MODEEnable or disable streaming mode, which displays Copilot's response progressively as it is generated rather than waiting for the full response to arrive (mode choices: on or off, default: on).
+-v, --versionShow version information.
+-w, --worktree[=NAME]Create or reuse an isolated Git worktree under <repo>.worktrees/ by default and start the session inside it. Use the worktreePathTemplate setting to configure the location. NAME is optional—omit it to auto-generate a branch name. By default, branches off the current checkout (HEAD); set the worktreeBaseRef setting to "defaultBranch" to branch off the remote default branch instead. Conflicts with --resume, --continue, and --connect.
+--yoloEnable all permissions (equivalent to --allow-all).
+For a complete list of commands and options, run copilot help.
+Note
+The --remote, --no-remote, --remote-export, --no-remote-export, and --connect options require the remote sessions feature to be available on your account.
+You can use --remote with --resume <TASK-ID> to resume a remote task locally. This works even when the task was originally created outside a Git repository.
+If a session was still open when its CLI process went away, for example due to a crash or a machine restart, the next time you start copilot you're offered the option to restore it. You can review the sessions available to restore or start a fresh session instead. A restored session whose agent was mid-turn automatically resumes that work.
+Plan-then-autopilot
+Plan-then-autopilot lets a session start in plan mode and automatically continue into autopilot mode once the plan is ready, without waiting for a human to approve the transition. Enable it with --plan --mode autopilot, or with the COPILOT_PLAN_THEN_AUTOPILOT environment variable for harnesses that can only inject environment variables and not command-line options. If both are set, the explicit options take precedence and the CLI displays a warning that the environment variable was ignored.
+Enterprise-managed sandbox floor
+An enterprise-managed policy can enforce OS-level shell sandboxing as a minimum floor. In other words, even if you pass --no-sandbox, the policy can still force sandboxing on. This is a policy override, not a failure of the flag itself. By contrast, --sandbox is unaffected because it only turns sandboxing on and never removes it. If the effective policy permits sandbox bypass, you can explicitly disable sandboxing for the rest of the current session while responding to an active bypass permission prompt.
+When a managed floor forces sandboxing on with an effective sandbox.allowBypass of true (the default when a policy sets only sandbox.enabled to true), run /sandbox disable to opt out of the sandbox for the rest of the current session—no bypass prompt is required first. The opt-out is session-only: nothing is saved to settings.json, a new session starts sandboxed again, and /sandbox enable restores sandboxing immediately without waiting for a new session. If allowBypass is false, /sandbox disable refuses with a message that sandboxing is enforced by the managed policy and can't be disabled.
+When a managed policy overrides your setting, the CLI shows a warning in the interactive timeline (or on stderr when using -p) so it is clear that the behavior comes from policy enforcement rather than the option failing to work. Contact your administrator if you need the policy changed. The /sandbox command is also registered whenever a managed policy forces sandboxing on, even without experimental features enabled, so you can still inspect the effective policy and status while the floor applies. Only available in experimental mode.
+Adding the managed sandbox.failIfUnavailable setting set to true, alongside sandbox.enabled set to true, makes the sandbox mandatory when it cannot be established. Instead of falling back to running commands unsandboxed, Copilot blocks model and tool execution if the policy can't be validated, compiled, or enforced by a usable sandbox backend. See Enterprise managed settings.
+The CLI also warns when a managed policy enables sandboxing in a session that you did not request, not only when it overrides --no-sandbox. This includes sessions where the policy arrives after startup, because server-managed settings are only available after login. The warning is omitted if your own settings or the --sandbox option already requested sandboxing, since the session state would then be expected.
+If a device has a managed policy that could not be read, the CLI fails closed and enforces sandboxing at its most restrictive level. The notice explains that the policy couldn't be determined and tells you to wait for it to resolve. The startup warning for an unsupported host uses the same wording.
+Restricting the --allow-all options
+When permissions.disableBypassPermissionsMode is set to "disable", all of the command line options that allow all permissions (--allow-all-tools, --allow-all-paths, --allow-all-urls, --allow-all, --yolo) are suppressed at startup and cannot be used to grant elevated permissions. The /permissions allow-all slash command, and its aliases /allow-all and /yolo, are also suppressed.
+Set permissions.disableBypassPermissionsMode to "allow-auto-only" to block full allow-all permissions but permit /permissions assisted (LLM-assisted permission approval). Assisted approval still prompts for each request, but attaches an LLM safety recommendation so the CLI can auto-approve requests the model evaluates as acceptable.
+If permissions.disableBypassPermissionsMode is set to an unrecognized value, the CLI no longer rejects it outright. Instead, the CLI logs the issue and enforces "disable" as a fail-closed default, so a malformed managed policy still restricts the allow-all options instead of silently allowing them.
+Three sources can set this restriction, in increasing order of permanence:
+SourceScopeCleared by account switch?
+User settings (~/.copilot/settings.json)MachineNo — applies to all accounts
+Managed settings (server-fetched per account)AccountYes — cleared when switching to a different account that does not disable the allow-all options
+MDM policy (plist/registry/file)DeviceNever — device-level policy that cannot be overridden by account switches
+For MDM configuration details, see GitHub Copilot CLI configuration directory.
+Supported models
+Use --model=MODEL or the COPILOT_MODEL environment variable to select the AI model. Pass auto to let Copilot pick the best available model automatically.
+ModelBest for
+claude-sonnet-4.6General-purpose coding (default)
+gpt-5.4Complex reasoning tasks
+gpt-6-astraNew model, opt-in (not the automatic default)
+gpt-6-solNew model, opt-in (not the automatic default)
+gpt-6-lunaNew model, opt-in (not the automatic default)
+claude-opus-5.5New model, high-capability complex tasks
+claude-haiku-4.5Fast, lightweight operations
+gpt-5.3-codexCode-focused tasks
+gemini-3.7-flashFast Google Gemini responses
+You can also switch models during an interactive session using the /model slash command.
+Tool availability values
+The --available-tools and --excluded-tools options support these values:
+Shell tools
+Tool nameDescription
+bash / powershellExecute commands
+list_bash / list_powershellList active shell sessions
+read_bash / read_powershellRead output from a shell session
+stop_bash / stop_powershellTerminate a shell session
+write_bash / write_powershellSend input to a shell session
+File operation tools
+Tool nameDescription
+apply_patchApply patches (used by some models instead of edit/create)
+createCreate new files
+editEdit files via string replacement
+viewRead files or directories
+Agent and task delegation tools
+Tool nameDescription
+list_agentsList available agents
+read_agentCheck background agent status
+taskRun subagents
+write_agentSend a message to a running agent
+Other tools
+Tool nameDescription
+ask_userAsk the user a question
+globFind files matching patterns
+grep (or rg)Search for text in files
+skillInvoke custom skills
+web_fetchFetch and parse web content
+Tool permission patterns
+The --allow-tool and --deny-tool options accept permission patterns in the format Kind(argument). The argument is optional—omitting it matches all tools of that kind.
+KindDescriptionExample patterns
+memoryStoring facts to agent memorymemory
+readFile or directory readsread, read(.env)
+shellShell command executionshell(git push), shell(git:*), shell
+urlURL access via web-fetch or shellurl(github.com), url(https://*.api.com)
+writeFile creation or modificationwrite, write(src/*.ts)
+SERVER-NAMEMCP server tool invocationMyMCP(create_issue), MyMCP
+For shell rules, the :* suffix matches the command stem followed by a space, preventing partial matches. For example, shell(git:*) matches git push and git pull but does not match gitea.
+Deny rules always take precedence over allow rules, even when --allow-all is set.
+# Allow all git commands except git push
+copilot --allow-tool='shell(git:*)' --deny-tool='shell(git push)'
+# Allow a specific MCP server tool
+copilot --allow-tool='MyMCP(create_issue)'
+# Allow all tools from a server
+copilot --allow-tool='MyMCP'
+# Deny writes to a specific path (exact or trailing-path-segment match; no glob support yet)
+copilot --deny-tool='write(secret.txt)'
+--deny-tool='write(PATH)' scopes the denial to that path—other writes are unaffected. The match resolves symlinks and ./.. segments, and is case-insensitive on macOS and Windows.
+Environment variables
+VariableDescription
+COPILOT_ALLOW_ALLAllow all permissions automatically (equivalent to --allow-all). Accepts true, 1, yes, on, or y (case-insensitive, surrounding whitespace ignored) to turn it on; false, 0, no, off, n, or an empty value to turn it off. Setting it to exactly true also trusts the working directory without prompting, loading that directory's skills, plugins, MCP servers, and hooks (including hooks that run shell commands). The other truthy spellings only auto-approve tools.
+COPILOT_AUTO_UPDATESet to false to disable automatic updates of the CLI and first-party plugins.
+COPILOT_CACHE_HOMEOverride the cache directory (used for marketplace caches, auto-update packages, and other ephemeral data). See GitHub Copilot CLI configuration directory for platform defaults.
+COPILOT_CHILD_OOM_SCORE_ADJLinux only. Overrides the oom_score_adj bias applied to shell command process trees spawned by the CLI, so the kernel's out-of-memory (OOM) killer reclaims a runaway child process tree (for example, a build) before the CLI itself. Default: 300. Range: -1000–1000. Set to off to disable the bias.
+COPILOT_CUSTOM_INSTRUCTIONS_DIRSComma-separated list of additional directories for custom instructions.
+COPILOT_EDITOREditor command for interactive editing (checked after $VISUAL and $EDITOR). Defaults to vi if none are set.
+COPILOT_ENABLE_HTTP2Set to 1 or true to opt into HTTP/2 transport. HTTP/1.1 is the default.
+COPILOT_ENABLE_INTERRUPTED_SESSION_RESTORESet to 1 to enable restoring a session that was still open when the CLI process went away, for example due to a crash or a machine restart. This restore behavior is temporarily opt-in while its startup dialog is reworked. See Restoring an interrupted session.
+COPILOT_GH_HOSTGitHub hostname for Copilot CLI only, overriding GH_HOST. Use when GH_HOST targets GitHub Enterprise Server but Copilot needs to authenticate against GitHub.com or a GitHub Enterprise Cloud hostname.
+COPILOT_GITHUB_TOKENAuthentication token. Takes precedence over GH_TOKEN and GITHUB_TOKEN.
+COPILOT_HOMEOverride the configuration and state directory. Default: $HOME/.copilot.
+COPILOT_LARGE_OUTPUT_THRESHOLD_BYTESMaximum UTF-8 byte size for tool output returned directly to the model. Default: 20480 (20 KiB). See Managing context in GitHub Copilot CLI.
+COPILOT_MCP_TOOL_CACHESet to false to disable loading and persisting local MCP server tool snapshots for the entire process. See Tool snapshot caching.
+COPILOT_MODELSet the AI model.
+COPILOT_PLAN_THEN_AUTOPILOTSet to 1, true, yes, or on to request plan-then-autopilot (equivalent to --plan --mode autopilot) for harnesses that can only inject environment variables. Ignored, with a warning, when an explicit --mode, --autopilot, or --plan option is passed. See Plan-then-autopilot.
+COPILOT_PROMPT_FRAMESet to 1 to enable the decorative UI frame around the input prompt, or 0 to disable it. Overrides the PROMPT_FRAME experimental feature flag for the current session.
+COPILOT_PROVIDER_API_KEY_COMMANDShell command that prints a fresh bring-your-own-key (BYOK) API key before each provider request. Takes precedence over the COPILOT_PROVIDER_API_KEY environment variable. Its output replaces the matching credential header even if a custom header set via COPILOT_PROVIDER_HEADERS would otherwise collide.
+COPILOT_PROVIDERS_CONFIGPath to a JSON file that defines a bring-your-own-key (BYOK) provider and model registry, as an object with providers and models keys. Default: <COPILOT_HOME>/providers.json. When this file declares any provider or model, it takes precedence over the legacy COPILOT_PROVIDER_* environment variables. See providers.json.
+COPILOT_SKILLS_DIRSComma-separated list of additional directories for skills.
+PLUGINS_DASHBOARDSet to false to disable the plugins dashboard opened by bare /plugin, /mcp, and /skills, and to disable the non-interactive copilot plugin/copilot plugins commands.
+COPILOT_STRIP_REASONING_ON_RESUMESet to 0 or false to keep BYOK reasoning tokens across a session resume instead of stripping them. Defaults to stripping them.
+COPILOT_SUBAGENT_MAX_CONCURRENTMaximum concurrent subagents per session (default: 32, range: 1–256).
+COPILOT_SUBAGENT_MAX_DEPTHMaximum subagent nesting depth (default: 4, range: 1–128).
+COPILOT_TASK_WAIT_TIMEOUT_SECONDSMaximum seconds -p (and -p --autopilot) waits for pending background agents or shell commands to finish before exiting (default: 600; 0 exits immediately without waiting).
+GH_HOSTGitHub hostname for both GitHub CLI and Copilot CLI (default: github.com). Set to your GitHub Enterprise Cloud with data residency hostname. Override with COPILOT_GH_HOST for Copilot CLI only.
+GH_TOKENAuthentication token. Takes precedence over GITHUB_TOKEN.
+GITHUB_COPILOT_PROMPT_MODE_EXTENSIONSSet to true to load project extensions and allow extension management tools in prompt mode (-p). Disabled by default to prevent running repository-controlled extension code without interactive trust.
+GITHUB_COPILOT_PROMPT_MODE_REPO_HOOKSSet to true to load repository hooks in prompt mode (-p). Repository hooks also load automatically when the folder is already trusted or COPILOT_ALLOW_ALL is set.
+GITHUB_COPILOT_PROMPT_MODE_WORKSPACE_MCPSet to true to load workspace MCP sources in prompt mode (-p). Disabled by default to prevent starting repository-controlled MCP servers without interactive trust.
+GITHUB_TOKENAuthentication token.
+PLAIN_DIFFSet to true to disable rich diff rendering.
+USE_BUILTIN_RIPGREPSet to false to use the system ripgrep instead of the bundled version.
+USE_TGREPSet to true to always use tgrep, a trigram-indexed search engine, even outside a Git repository or on a virtualized or network filesystem (for example, a VFS for Git checkout, or an SMB/9p mount), or false to always use ripgrep. When forced outside a Git repository, tgrep indexes the working directory itself, so avoid forcing it somewhere large such as your home directory. Windows cloud-sync folders (for example, OneDrive) always use ripgrep, even when this is set to true. When unset, Copilot CLI automatically switches from ripgrep to tgrep only inside a Git repository, on a non-virtualized filesystem, and once it reaches the file-count threshold set by TGREP_FILE_COUNT_THRESHOLD. Setting USE_TGREP=true bypasses this threshold entirely. USE_TGREP=false still disables tgrep.
+TGREP_FILE_COUNT_THRESHOLDMinimum file count for automatic tgrep indexed search (non-negative integer; default: 10000 on Windows, 50000 elsewhere). Invalid values fall back to the platform default. 0 removes only the file-count requirement—other automatic-start checks still apply.
+Configuration file settings
+For detailed information about configuration file settings—including the full list of user settings, repository settings, local settings, and how they cascade—see GitHub Copilot CLI configuration directory.
+Note
+User settings were previously stored in ~/.copilot/config.json. Existing user-editable settings in that location are automatically migrated to ~/.copilot/settings.json on startup.
+Project initialization for Copilot
+When you use the command copilot init, or the slash command /init within an interactive session, Copilot analyzes your codebase and writes or updates a .github/copilot-instructions.md file in the repository. This custom instructions file contains project-specific guidance that will improve future CLI sessions.
+You will typically use copilot init, or /init, when you start a new project, or when you start using Copilot CLI in an existing repository.
+The copilot-instructions.md file that's created or updated typically documents:
+Build, test, and lint commands.
+High-level architecture.
+Codebase-specific conventions.
+If the file already exists, Copilot suggests improvements which you can choose to apply or reject.
+The CLI looks for the copilot-instructions.md file on startup, and if it's missing, it displays the message:
+💡 No copilot instructions found. Run /init to generate a copilot-instructions.md file for this project.
+If you don't want to create this file, you can permanently hide this startup message for the current repository by using the /init suppress slash command.
+For more information, see Adding repository custom instructions for GitHub Copilot.
+Use --sandbox or --no-sandbox with copilot init to enable or disable the OS-level shell sandbox for the initialization session only, without changing your saved sandbox setting. These options are subject to the same enterprise-managed sandbox floor as other entry points—see Enterprise-managed sandbox floor.
+Custom instructions locations
+Copilot CLI loads custom instructions from these locations simultaneously (all are merged):
+LocationNotes
+CLAUDE.mdIn Git root and cwd
+GEMINI.mdIn Git root and cwd
+AGENTS.mdIn Git root and cwd
+.github/instructions/**/*.instructions.mdIn Git root and cwd
+.claude/rules/**/*.mdIn Git root and cwd
+.github/copilot-instructions.mdIn Git root and cwd
+$HOME/.copilot/copilot-instructions.md—
+$HOME/.copilot/instructions/**/*.instructions.md—
+COPILOT_CUSTOM_INSTRUCTIONS_DIRSAdditional directories via environment variable.
+Copilot CLI reads Claude Code rule files from .claude/rules/**/*.md the same way it reads .github/instructions/**/*.instructions.md files. Scope a rule to matching files with a paths (or applyTo) frontmatter key:
+---
+paths: "src/api/**/*.ts"
+description: API layer conventions
+---
+Use the shared `ApiError` type for all thrown errors in this directory.
+Custom instructions imports
+Instruction files support @path imports. Prefix a line with @ followed by a path to inline the contents of another file. Paths can be relative to the instruction file's directory or absolute. Imports are resolved recursively, up to a depth limit, with cycle and size guards. This is supported in AGENTS.md, CLAUDE.md, and .github/copilot-instructions.md.
+Hooks reference
+For detailed information about hooks—including hook configuration formats, hook events, input payloads, and decision control—see GitHub Copilot hooks reference.
+MCP server configuration
+MCP servers provide additional tools to the CLI agent. Configure persistent servers in ~/.copilot/mcp-config.json. Use --additional-mcp-config to add servers for a single session.
+Local (stdio) servers that spawn inside the sandbox (see the /sandbox slash command) show a connected (sandboxed) status in copilot mcp list and /mcp list, since remote (HTTP/SSE) servers are never sandboxed. Only available in experimental mode.
+copilot mcp list and /mcp list mark a disabled server with a (disabled) suffix in text output, or "enabled": false per server in --json output. copilot mcp get shows a Status: Enabled/Disabled line.
+Toggling /sandbox restarts only local (stdio) MCP servers, since they spawn inside the sandbox. Remote (HTTP/SSE) servers stay connected.
+/mcp edit <name> rejects a workspace-sourced server—one defined in a repository's .mcp.json—instead of opening the user-tier wizard, since saving would silently create a same-name user entry that the workspace one still shadows. The error names the file to edit directly. /mcp delete <name> reports the same file when asked to remove a workspace-sourced server.
+copilot mcp subcommand
+Use copilot mcp to manage MCP server configurations from the command line without starting an interactive session.
+SubcommandDescription
+list [--json]List all configured MCP servers grouped by source, including plugin-provided servers.
+get <name> [--json]Show configuration and tools for a specific server. For plugin-provided servers, also shows the source plugin name and version.
+add [options] <name> [url]Add a server to the user configuration. Writes to ~/.copilot/mcp-config.json.
+enable <name> / disable <name>Enable or disable a server by name. The change persists to the user configuration and applies to future sessions.
+remove <name>Remove a user-level server. Workspace servers must be edited in their configuration files directly.
+For local (stdio) servers, provide the command after --:
+Shellcopilot mcp add SERVER-NAME -- COMMAND [ARGS...]
+copilot mcp add SERVER-NAME -- COMMAND [ARGS...]
+For remote HTTP or SSE servers, specify the transport and provide the URL:
+Shellcopilot mcp add --transport http SERVER-NAME URL
+copilot mcp add --transport http SERVER-NAME URL
+copilot mcp add options:
+OptionDescription
+-- <command> [args...]Command and arguments for local (stdio) servers.
+<url>URL for remote servers.
+--transport <transport>Transport type: stdio, http, or sse. The default is stdio.
+--env KEY=VALUEEnvironment variable (repeatable).
+--header "HEADER: VALUE"HTTP header for remote servers (repeatable).
+--tools <tools>Tool filter: "*" for all, a comma-separated list, or "" for none.
+--timeout <ms>Timeout in milliseconds for tool discovery and tool calls. Default: 30000. Must be a positive integer with no fractional part, unit suffix, sign, or exponent, from 1 to 4294967295.
+--jsonOutput added configuration as JSON.
+--show-secretsShow full environment variable and header values.
+In the /mcp add//mcp edit interactive form, enter the env field as comma-separated KEY=VALUE pairs or as a JSON object (for example, {"API_KEY":"secret"}). $PATH is included by default and doesn't need to be listed.
+Caution
+--show-secrets can print sensitive environment variable and header values to your terminal or logs. Only use this option in trusted environments, and avoid copying, pasting, or otherwise capturing the output in shared logs or history.
+Transport types
+TypeDescriptionRequired fields
+local / stdioLocal process communicating via stdin/stdout.command, args
+httpRemote server using streamable HTTP transport. "streamable-http" is also accepted as an alias and is normalized to "http".url
+sseRemote server using Server-Sent Events transport.url
+Local server configuration fields
+FieldRequiredDescription
+commandYesCommand to start the server.
+argsYesCommand arguments (array).
+toolsYesTools to enable: ["*"] for all, or a list of specific tool names.
+envNoEnvironment variables. Supports $VAR, ${VAR}, and ${VAR:-default} expansion.
+cwdNoWorking directory for the server.
+timeoutNoTimeout in milliseconds for tool discovery and tool calls. Default: 30000.
+typeNo"local" or "stdio". Default: "local".
+deferToolsNo"auto" (default) or "never". Set to "never" to keep this server's tools always visible even when tool search is active.
+disableToolCacheNoSet to true to skip loading and persisting the tool snapshot for this server.
+slowConnectionThresholdMsNoMilliseconds before Copilot CLI warns that this server is taking longer than expected to connect. Default: 10000. This setting only affects when the warning is shown—it doesn't change the connection timeout. Must be a positive integer no greater than 2147483647.
+slowConnectionThresholdMs and timeout are independent: timeout sets the actual connection budget (floored at 60000 ms), while slowConnectionThresholdMs only controls when Copilot CLI prints a warning for a connection that's still in progress. Raise slowConnectionThresholdMs to quiet expected-slow handshakes, for example for servers behind an authentication flow, without extending how long tool calls are allowed to take.
+Tool snapshot caching
+Copilot CLI persists a snapshot of each local server's tool list so tools are available immediately on startup while live discovery completes in the background. Live discovery always runs and replaces the snapshot once it finishes.
+Set disableToolCache: true on a server to force live discovery for that server only, or set the COPILOT_MCP_TOOL_CACHE=false environment variable to disable snapshot loading and persistence for the entire process. Both opt-outs leave existing cache files untouched.
+Private npm registry
+Use --registry in the args array to pull a package from a private npm registry—for example, Artifactory or a GitHub Packages feed:
+{
+"mcpServers": {
+"my-internal-server": {
+"command": "npx",
+"args": [
+"--registry", "https://npm.pkg.github.com",
+"@my-org/internal-mcp-server"
+],
+"tools": ["*"]
+}
+}
+}
+The --registry option and other npm configuration options (--userconfig, --globalconfig, --prefix, --cache, --node-options, --workspace, -w) are treated as value-consuming arguments when computing the server's identity fingerprint. This ensures enterprise allowlist checks and registry verification work correctly when these options appear before the package name.
+Remote server configuration fields
+FieldRequiredDescription
+typeYes"http" or "sse" ("streamable-http" is also accepted as an alias for "http").
+urlYesServer URL.
+toolsYesTools to enable.
+headersNoHTTP headers. Supports variable expansion.
+oauthClientIdNoStatic OAuth client ID (skips dynamic registration).
+oauthScopesNoNon-empty array of OAuth scope tokens to request. Requires oauthClientId. A non-empty scope in the server's WWW-Authenticate challenge still takes precedence; otherwise this overrides the discovered scopes_supported metadata.
+oauthPublicClientNoWhether the OAuth client is public. Default: true. Set to false for confidential clients with a stored secret.
+oauthGrantTypeNoOAuth grant type: "authorization_code" (default, browser-based flow) or "client_credentials" (fully headless, no browser or callback).
+oidcNoEnable OIDC token injection. When true, the CLI injects OIDC tokens for any GITHUB_COPILOT_OIDC_MCP_TOKEN or GITHUB_COPILOT_OIDC_MCP_TOKEN_<SUFFIX> variable referenced in the server's env block (local servers), or sends the token as a Bearer Authorization header (remote servers). For local servers, prefer suffixed variants (for example, ${GITHUB_COPILOT_OIDC_MCP_TOKEN_MY_SVC}) to assign a unique variable name per server.
+timeoutNoTimeout in milliseconds for tool discovery and tool calls. Default: 30000.
+deferToolsNo"auto" (default) or "never". Set to "never" to keep this server's tools always visible even when tool search is active.
+slowConnectionThresholdMsNoMilliseconds before Copilot CLI warns that this server is taking longer than expected to connect. Default: 10000. This setting only affects when the warning is shown—it doesn't change the connection timeout. Must be a positive integer no greater than 2147483647.
+OAuth re-authentication
+Remote MCP servers that use OAuth may show a needs-auth status when a token expires or when a different account is required. Use /mcp auth <server-name> to trigger a fresh OAuth flow. This opens a browser authentication prompt, allowing you to sign in or switch accounts. After completing the flow, the server reconnects automatically.
+On Windows, remote MCP servers protected by Microsoft Entra ID authenticate through the OS authentication broker (Web Account Manager) instead, usually with no prompt. On other platforms, and on Windows machines without the broker library, sign-in falls back to the browser flow described above. Passing --device-code bypasses the broker and forces the OAuth device code flow rather than the browser flow.
+Headless OAuth (client_credentials grant)
+For CI or cron use cases where no browser is available, set oauthGrantType: "client_credentials". This requires:
+oauthClientId—the static client ID issued by the MCP provider.
+oauthPublicClient: false—the client is confidential.
+A client_secret stored in the system keychain (configured once via the /mcp UI or by writing to the OAuth credential store).
+When configured, the CLI skips the browser, callback server, PKCE, and dynamic client registration entirely. On every 401, it posts grant_type=client_credentials directly to the server's discovered token endpoint.
+{
+"mcpServers": {
+"headless-api": {
+"type": "http",
+"url": "https://api.example.com/mcp",
+"tools": ["*"],
+"oauthClientId": "YOUR-CLIENT-ID",
+"oauthPublicClient": false,
+"oauthGrantType": "client_credentials"
+}
+}
+}
+Filter mapping
+Control how MCP tool output is processed using the filterMapping field in a server's configuration.
+ModeDescription
+noneNo filtering.
+markdownFormat output as Markdown.
+hidden_charactersRemove hidden or control characters. Default.
+Built-in MCP servers
+The CLI includes built-in MCP servers that are available without additional setup.
+ServerDescription
+github-mcp-serverGitHub API integration: issues, pull requests, labels, commits, code search, and GitHub Actions.
+playwrightBrowser automation: navigate, click, type, screenshot, and form handling.
+fetchHTTP requests via the fetch tool.
+timeTime utilities: get_current_time and convert_time.
+Use --disable-builtin-mcps to disable all built-in servers, or --disable-mcp-server SERVER-NAME to disable a specific one.
+Built-in servers appear in copilot mcp list, copilot mcp get, and the interactive /mcp view alongside user, workspace, and plugin servers.
+GitHub MCP server tools
+The github-mcp-server provides the following tools.
+ToolsDescription
+get_file_contents, search_codeBrowse repository files.
+list_issues, issue_read, search_issuesIssue tracking.
+get_pull_request, list_pull_requests, get_pull_request_filesPull requests.
+list_commits, get_commitCommit history.
+list_workflow_runs, get_workflow_run_logsGitHub Actions.
+get_label, list_label, label_writeLabel management.
+Resource discovery
+Only available in experimental mode. When a local capability is missing, the agent can search a remote catalog for public MCP servers and skills to add, using a built-in discover-resources skill. The skill queries the catalog for relevance-ranked MCP servers and skills matching an abstract capability (for example, "database access" or "architecture diagrams"), then presents candidates for you to choose from. The skill itself never installs anything. The /plugin, /mcp, and /skills dashboards also include a typed catalog search that blends the same remote results into the local resource list.
+MCP server naming
+Server names can contain any printable characters, including spaces, Unicode characters, and punctuation. Control characters (U+0000–U+001F, U+007F) and the closing brace (}) are not allowed. Server names are used as prefixes for tool names—for example, a server named my-server produces tool names like my-server-fetch, and a server named My Server produces My Server-fetch.
+MCP tool name sanitization
+MCP server names and tool names are sanitized before being sent to the model. Characters that are invalid in tool names (anything other than a-z, A-Z, 0-9, -, _) are replaced with -. Unicode characters are Punycode-encoded. The @ symbol is also replaced with - to avoid conflicts with Punycode encoding.
+The combined name (serverName-toolName) is capped at 64 characters. When truncation would create a name collision, a numeric suffix is appended (for example, my-server-tool2, my-server-tool3) to ensure uniqueness.
+MCP server trust levels
+MCP servers are loaded from multiple sources, each with a different trust level.
+SourceTrust levelReview required
+Built-inHighNo
+Repository (.github/mcp.json)MediumRecommended
+Workspace (.mcp.json)MediumRecommended
+User config (~/.copilot/mcp-config.json)User-definedUser responsibility
+Remote serversLowAlways
+All MCP tool invocations require explicit permission. This applies even to read-only operations on external services.
+MCP server loading priority
+MCP servers from different sources are merged in priority order (highest first). When servers share a name, the higher-priority source takes precedence.
+--additional-mcp-config option (highest)
+Plugin-provided servers
+Workspace servers—.mcp.json and .github/mcp.json loaded from the working directory upward to the Git root; requires the folder to be trusted
+~/.copilot/mcp-config.json (lowest)
+Note
+Workspace MCP servers (.mcp.json and .github/mcp.json) are loaded in both interactive and SDK server-mode sessions, provided the working directory is trusted. For more information about folder trust, see Allowing and denying tool use.
+If a workspace configuration file contains an invalid server entry, the CLI skips only that entry and keeps loading its valid siblings, printing Warning: workspace MCP config "<path>": <message> for each skipped entry. A malformed or unreadable file (invalid JSON or an invalid top-level structure) is still skipped entirely.
+Enterprise MCP allowlist
+GitHub Enterprise organizations can enforce an allowlist of permitted MCP servers. When active, the CLI evaluates each non-default server against the enterprise policy before connecting.
+When a GitHub Enterprise registry policy is detected (or the MCP_ENTERPRISE_ALLOWLIST experimental feature flag is enabled), the CLI:
+Computes a fingerprint for each configured non-default server based on its command, arguments, and remote URL.
+Sends the fingerprints to the enterprise allowlist evaluate endpoint.
+Allows only servers whose fingerprints are approved; all others are blocked with a message naming the enterprise.
+This check is fail-closed: if the evaluate endpoint is unreachable or returns an error, non-default servers are blocked until the policy can be verified.
+When a server is blocked by an enterprise allowlist, the CLI displays:
+MCP server "SERVER-NAME" was blocked by your enterprise "ENTERPRISE-NAME".
+Contact your enterprise administrator to add this server to the allowlist.
+Built-in default servers are always exempt from allowlist enforcement.
+Migrating from .vscode/mcp.json
+If your project uses .vscode/mcp.json (VS Code's MCP configuration format), migrate to .mcp.json for GitHub Copilot CLI. The migration remaps the servers key to mcpServers.
+POSIX shells (bash, zsh, fish, and others):
+jq '{mcpServers: .servers}' .vscode/mcp.json > .mcp.json
+Requires jq.
+PowerShell:
+pwsh -NoProfile -Command "`$json = Get-Content '.vscode/mcp.json' -Raw | ConvertFrom-Json; `$content = ([pscustomobject]@{ mcpServers = `$json.servers } | ConvertTo-Json -Depth 100); [System.IO.File]::WriteAllText('.mcp.json', `$content, (New-Object System.Text.UTF8Encoding `$false))"
+On Windows, replace pwsh with powershell if you are using Windows PowerShell instead of PowerShell Core.
+Stdio server output
+The MCP stdio transport reserves stdout exclusively for newline-delimited JSON-RPC frames. The CLI automatically filters out any non-JSON lines—plain-text logs, exception stack traces, or whitespace-only lines—before passing output to the protocol parser.
+Write all diagnostic output to stderr, not stdout. A server that writes logs or error messages to stdout can trigger a parse-error feedback loop that stalls the initialization handshake; the filter prevents this by silently dropping non-JSON frames.
+Lines longer than 1 MB bypass the structural check and are forwarded as-is, to avoid splitting or dropping oversized but valid protocol frames (for example, a large tools/list response).
+Skills reference
+Skills are Markdown files that extend what the CLI can do. Each skill lives in its own directory containing a SKILL.md file. When invoked (via /SKILL-NAME or automatically by the agent), the skill's content is injected into the conversation.
+Skill frontmatter fields
+FieldTypeRequiredDescription
+namestringYesUnique identifier for the skill. Must start with a letter or number and contain only letters, numbers, hyphens, underscores, dots, colons, and spaces. Max 64 characters. Colons allow namespaced names (for example, my-plugin:search).
+descriptionstringYesWhat the skill does and when to use it. Max 1024 characters.
+argument-hintstringNoFreeform hint describing expected arguments, shown in the skill picker (for example, "[target] [mode]").
+allowed-toolsstring or string[]NoComma-separated list or YAML array of tools that are automatically allowed when the skill is active. Use "*" for all tools.
+user-invocablebooleanNoWhether users can invoke the skill with /SKILL-NAME. Default: true.
+disable-model-invocationbooleanNoPrevent the agent from automatically invoking this skill. Default: false.
+Skill locations
+Skills are loaded from these locations in priority order (first found wins for duplicate names).
+LocationScopeDescription
+.github/skills/ProjectProject-specific skills.
+.agents/skills/ProjectAlternative project location.
+.claude/skills/ProjectClaude-compatible location.
+Parent .github/skills/InheritedMonorepo parent directory support.
+~/.copilot/skills/PersonalPersonal skills for all projects.
+~/.agents/skills/PersonalAgent skills shared across all projects.
+Plugin directoriesPluginSkills from installed plugins.
+COPILOT_SKILLS_DIRSCustomAdditional directories (comma-separated).
+--add-dir <path>Added root.github/skills/ under directories added with --add-dir, /add-dir, or the SDK's additionalDirectories. This is a trust decision: added skills run with the same trust as project skills.
+(bundled with CLI)Built-inSkills shipped with the CLI. Lowest priority—overridable by any other source.
+(org/enterprise)RemoteSkills hosted by your organization or enterprise, projected via the AHP relay. Content is fetched on demand when the skill is invoked.
+Remote skills are projected alongside local skills and follow the same name-based priority when a local skill has the same name.
+Use the ignoredSkillsLocations setting to exclude specific directories (and their descendants) from discovery, regardless of which location above would otherwise surface them. See GitHub Copilot CLI configuration directory.
+When two plugins provide skills with the same name, both coexist using plugin-qualified invocation names such as /my-plugin/search and /other-plugin/search. The bare name routes to the higher-priority plugin. This applies to skills only; commands keep the standard tier-based deduplication, where the higher-priority source wins.
+Managing skills non-interactively
+Use copilot skill to manage skills from the command line without opening an interactive session.
+SubcommandDescription
+list [--json]List all discovered skills.
+add <source> [--project]Add a skill from a file path, URL, or directory.
+remove <name-or-directory>Remove a personal or project skill, or unregister a custom skill directory.
+enable <name> / disable <name>Enable or disable a skill by name.
+# Install a skill for your user account (default)
+copilot skill add ./my-skill/SKILL.md
+# Install a skill into the current project (.github/skills; file or URL skills only)
+copilot skill add --project ./my-skill/SKILL.md
+# Enable, disable, or remove a skill by name
+copilot skill enable my-skill
+copilot skill disable my-skill
+copilot skill remove my-skill
+Installing a directory registers it as a custom skill source rather than copying it. Installing a file or URL copies the skill's content into your personal or project skills directory. The equivalent interactive command is /skills add [--project] <FILE|URL|DIRECTORY>.
+copilot skill list --json rows have the shape { name, description, source, path, enabled }. With remove, pass either a skill name or the path to a custom skill directory you added—a skill name deletes that skill's files, while a custom directory path only unregisters the directory and leaves its files on disk. Only personal and project skills you added can be removed; skills provided by a plugin or the builtin set can't be removed this way (disable them instead). This replaces the retired copilot plugins install --skill [--scope project] and copilot plugins remove/enable/disable --skill.
+Commands (alternative skill format)
+Commands are an alternative to skills stored as individual .md files in .claude/commands/. The command name is derived from the filename. Command files use a simplified format (no name field required) and support argument-hint, description, allowed-tools, and disable-model-invocation. Commands have lower priority than skills with the same name.
+Custom agents reference
+Custom agents are specialized AI agents defined in Markdown files. For user, project, and added-root agents, the agent ID is derived from the file's path relative to the agents directory. The CLI removes the .agent.md or .md extension and replaces directory separators with --. For example, agents/team/reviewer.agent.md has the ID team--reviewer.
+Built-in agents
+AgentDefault modelDescription
+code-reviewclaude-sonnet-4.6High signal-to-noise code review. Analyzes diffs for bugs, security issues, and logic errors. Will not modify code.
+exploregpt-5.4-miniFast codebase exploration. Searches files, reads code, and answers questions. Returns focused answers under 300 words. Safe to run in parallel.
+general-purposeclaude-sonnet-4.6Full-capability agent for complex multi-step tasks. Runs in a separate context window.
+researchclaude-haiku-4.5Executes thorough searches based on instructions. Searches GitHub repositories, fetches files, verifies claims, and reports detailed findings with citations.
+rubber-duckcomplementary modelUse a complementary model to provide a constructive critique of proposals, designs, implementations, or tests. Identifies weak points and suggests improvements. See About the rubber duck agent.
+security-reviewclaude-sonnet-4.6Security-focused code review. Analyzes changes for high-confidence vulnerabilities across 11 categories. Only flags issues with >80% confidence of exploitability. Reports severity and confidence scores. Will not modify code.
+taskgpt-5.6-luna (falls back to gpt-5.4-mini, then claude-haiku-4.5)Command execution (tests, builds, lints). Returns brief summary on success, full output on failure.
+code-review and security-review never forward a full review to another review agent: launching one already fulfills a request to "use" or "call" a reviewer, so it performs the review itself instead of delegating the whole task to a nested code-review or security-review subagent, recursively, across the entire delegation chain. code-review still hands off to the dedicated security-review specialist for security-focused portions of a request, and both agents may delegate narrow, independently scoped fact-finding work to non-review agents such as explore.
+Only the root agent can call store_memory or vote_memory to save or vote on a memory. Subagents keep read access to stored memories through read_memories, but can't write or vote on them.
+Custom agent frontmatter fields
+FieldTypeRequiredDescription
+descriptionstringYesDescription shown in the agent list and task tool.
+include-custom-instructionsbooleanNoInclude repository instruction files (copilot-instructions.md, AGENTS.md, CLAUDE.md) when this agent runs as a subagent. Default: false. See Repository custom instructions for subagents.
+inferbooleanNoAllow auto-delegation by the main agent. Default: true.
+mcp-serversobjectNoMCP servers to connect. Uses the same schema as ~/.copilot/mcp-config.json.
+modelstringNoAI model for this agent. When unset, inherits the outer agent's model. When the session model is set to Auto (server-selected), subagents always inherit the resolved session model regardless of this field.
+modelsstring[]NoAuthored models in priority order. The runtime uses the first model the user's plan can access; if none resolve, dispatch falls back to the session's model. Overrides model when both are set.
+modelPolicystringNo"preferred" (default) lets model/models be overridden by a subagents override in ~/.copilot/settings.json or the /subagents picker. "required" locks dispatch to one of the authored models—overrides are rejected and the picker's Model entry is disabled.
+namestringNoDisplay name. You can also use this value to select the agent, for example with --agent. Defaults to the agent ID.
+reasoningEffortstringNoDefault reasoning effort for this agent (for example, "low", "medium", or "high"). When unset, inherits the outer agent's effort.
+toolsstring[]NoTools available to the agent. Default: ["*"] (all tools). Include * anywhere in the list to grant full tool access—for example, ["view", "*"] grants every tool, not just view.
+model, models, modelPolicy, and reasoningEffort apply whether the agent is dispatched through the task tool or started directly—for example, through the SDK's session.startSubagent. Model and effort are resolved with this precedence, highest first: an explicit per-call value, the subagents override in ~/.copilot/settings.json, the agent definition's model/models/reasoningEffort field, then the parent session's value. A declared model or effort that can't be honored falls back to the session's value instead of failing the dispatch—unless the agent declares modelPolicy: "required", in which case dispatch is refused rather than silently substituting an unauthored model.
+Custom agent locations
+The CLI loads custom agents in the following priority order. When agents have the same ID, the first agent loaded is used.
+PriorityScopeLocation
+1 (highest)User~/.copilot/agents/
+2Project.github/agents/, from the current working directory upward to the Git root
+3Project.claude/agents/, from the current working directory upward to the Git root
+4Added root.github/agents/ under a directory added with --add-dir, /add-dir, or the SDK's additionalDirectories. Adding the directory is a trust decision: its agents are loaded as trusted configuration.
+5Plugin<plugin>/agents/
+6 (lowest)RemoteOrganization or enterprise agents
+Within each project row, the CLI checks the current working directory first, then each parent directory up to the Git root, so the deepest directory has the highest priority. Every project .github/agents/ directory is loaded before any project .claude/agents/ directory. This means each package or subdirectory in a monorepo can contribute its own agents.
+The optional name frontmatter field does not control deduplication. Agents with the same name but different IDs both load. If the value passed to --agent matches more than one agent's ID or name, the CLI uses the first matching agent in the priority order above.
+Repository custom instructions for subagents
+A custom agent spawned as a subagent—through the task tool or the SDK's session.startSubagent—doesn't receive repository instruction files (copilot-instructions.md, AGENTS.md, CLAUDE.md) by default. Set include-custom-instructions: true in its frontmatter to opt in:
+---
+name: RepoAwareReviewer
+description: Reviews a change against this repository's conventions
+tools: ["*"]
+include-custom-instructions: true
+---
+Review the change and flag anything that violates the repository's conventions.
+AgentReceives repository instructions
+Session agent (the default agent, or a custom agent selected with --agent)Yes
+general-purpose subagentYes
+Built-in explore, task, and code-review subagentsNo
+Custom agent spawned as a subagentOnly with include-custom-instructions: true
+When a subagent has include-custom-instructions: true, it reads your repository's own instruction files (copilot-instructions.md, AGENTS.md, CLAUDE.md). It does not inherit any extra instruction directories you loaded only for the main session—for example, a personal directory you pointed the session at with COPILOT_CUSTOM_INSTRUCTIONS_DIRS. Starting a session with --no-custom-instructions always takes priority: when you use that option, no agent receives repository instructions, even one that sets include-custom-instructions: true. Only turn the setting on for agents that need to follow your repository's conventions, such as an agent that reviews or edits code. Repository instructions add to what an agent processes each time it runs, so leaving the setting off for agents that don't need them—for example, an agent that only searches for files or summarizes text—keeps those agents faster and cheaper to run.
+For more information, see Creating and using custom agents for GitHub Copilot CLI.
+Agent communication
+Use list_agents and write_agent inside custom agents to inspect nearby agents and coordinate work in a multi-agent session.
+Relation labels in list_agents
+Relation labels identify how visible agents relate to the current agent. Labels appear when a subagent runs inside a parent session with shared sibling communication enabled.
+LabelMeaningUse it to
+"self"The current agentConfirm which entry represents the active agent
+"sibling"An agent launched by the same parentCoordinate with peer agents through write_agent
+"child"An agent launched by the current agentTrack follow-up work delegated from the current agent
+Scoped listing
+Use scope on list_agents to narrow the list before choosing targets.
+scope valueReturnsUse it to
+omittedNearby agents in the current contextSee the default working set for the current workflow
+"siblings"Only sibling agentsFind peer agents launched by the same parent
+"children"Only child agents of the current agentReview work delegated from the current agent
+"all"All visible agentsInspect the full session tree without using it for coordination
+In single-agent sessions, the default view centers on child agents. In multi-agent sessions, the default view shows the immediate local context instead of the entire tree.
+list_agents(scope="siblings")
+list_agents(scope="children")
+list_agents(scope="all")
+Scoped messaging
+Use scope on write_agent to broadcast one message to multiple related agents.
+Use scoped messaging only from a subagent running inside a parent session with shared sibling communication enabled. In top-level sessions, target agents with explicit agent_id values instead.
+scope valueSends toUse it to
+"siblings"All visible sibling agentsCoordinate peer work in a shared session
+"children"All child agents of the current agentSend the same follow-up to delegated work
+If a scope matches too many agents, write_agent returns an error and asks for explicit agent_id values from list_agents instead.
+write_agent(scope="children", message="Re-check your findings against the updated schema.")
+write_agent(scope="siblings", message="Post status when your current check completes.")
+write_agent(agent_id="explore-auth", message="Focus on token refresh flow and report only confirmed issues.")
+Subagent limits
+The CLI enforces depth and concurrency limits to prevent runaway agent spawning.
+LimitDefaultMax
+Max depth6256
+Max concurrentplan-based32
+Depth counts how many agents are nested within one another. When the depth limit is reached, the innermost agent cannot spawn further subagents. Concurrency counts how many subagents are running simultaneously across the entire session tree. When the limit is reached, new subagent requests are rejected until an active agent completes.
+The default concurrency limit depends on your Copilot plan:
+PlanMax concurrent
+Free / Education2
+Pro / Pro+4
+Max8
+Business16
+Enterprise32
+Usage-based billing32
+Usage-based billing users can override these limits with the subagents.maxConcurrency and subagents.maxDepth settings:
+{
+"subagents": {
+"maxConcurrency": 16,
+"maxDepth": 10
+}
+}
+Values outside the valid range are clamped: maxConcurrency is capped at 32, and maxDepth is capped at 256. These settings are ignored for plans that don't use usage-based billing. See Configuration file settings.
+Sidekick agents
+Sidekick agents run automatically in the background and publish context into the session inbox. They respond to session events rather than being explicitly invoked.
+Add a sidekick: block to any agent definition to make it a sidekick agent:
+---
+name: Context Gatherer
+description: Gathers relevant context when the working directory changes
+sidekick:
+triggers:
+- session.context_changed
+- event: user.message
+limit: 1
+behavior: persistent
+maxSendsPerTurn: 2
+---
+Gather useful context about the current repository and working directory.
+Summarize recent changes and any relevant project structure.
+Sidekick triggers
+Each entry in triggers is either a bare event-name string, which fires an unlimited number of times, or an object with event and an optional limit.
+EventDescription
+user.messageFires on every user message.
+session.context_changedFires when the working directory, repository, or branch changes (for example, after cd or switching Git branches).
+Trigger fieldTypeDefaultDescription
+eventstringRequiredSession event type that launches this agent.
+limitnumberUnlimitedMaximum number of times this trigger may fire per session. Must be a positive integer when set.
+Sidekick configuration fields
+FieldTypeDefaultDescription
+triggersstring[] or object[]RequiredSession event types that launch this agent. At least one trigger is required.
+behaviorstring"restart""restart": cancel any prior run and start fresh on each trigger. "persistent": keep the same long-lived run alive and deliver new messages into the existing loop instead of relaunching.
+maxSendsPerTurnnumber1Maximum inbox sends allowed per trigger. In "persistent" mode, each delivered user message resets this budget.
+The "restart" behavior is suited to stateless context-gathering agents. The "persistent" behavior is suited to agents that accumulate state across turns.
+Permission approval responses
+When the CLI prompts for permission to execute an operation, you can respond with the following keys.
+KeyEffect
+yAllow this specific request once.
+nDeny this specific request once.
+!Allow all similar requests for the rest of the session.
+#Deny all similar requests for the rest of the session.
+?Show detailed information about the request.
+When the full dialog is shown, you can also choose from these options:
+OptionScopePersistence
+OnceSingle useNone
+This locationUntil manually clearedSaved to disk per location
+AlwaysPermanentConfig file
+The This location option appears when the CLI can determine a location key (Git root or current directory). It persists the approval to disk so the same permission is automatically granted the next time you work in that directory without prompting again.
+Use /permissions reset to clear in-memory approvals for the current session.
+Security
+Plan mode
+/plan starts a planning session where Copilot CLI can explore and analyze your codebase but is blocked from editing your project files. Specifically:
+Your project files are protected. Any attempt to edit, patch, or run a shell command that would change a file in your workspace is blocked automatically—this isn't just a suggestion to the model, it's enforced directly, so it doesn't depend on the model choosing to behave.
+The plan itself can still be written. Copilot needs somewhere to keep notes and draft the plan, so it's allowed to create and edit files in its own private planning workspace (including the plan file you'll review and approve).
+Delegated sub-tasks are protected too. If Copilot spins up a helper session to research part of your question, that helper inherits the same restrictions and can't edit your project either.
+It's a safety net, not a guarantee. This protection is designed to catch clear, direct attempts to change your files—it's not an airtight lockdown. Some things are intentionally allowed through so research isn't overly restricted: for example, shell commands whose effect can't be clearly determined in advance, and calls to external/MCP tools you've connected. In practice this is rarely an issue, but plan mode should be thought of as "changes require your review before applying," not an absolute guarantee that nothing on disk can change.
+Once you're happy with the plan, approve it to exit plan mode and let Copilot make the actual changes.
+Command safety analysis
+Shell commands are analyzed before execution to identify potentially dangerous patterns:
+File deletion (rm -rf)
+System modifications (sudo, chmod 777)
+Network exfiltration (curl with sensitive paths)
+Credential access (reading .env, SSH keys)
+Inline environment variable assignments that override dangerous variables (for example, PATH=..., LD_PRELOAD=...)
+High-risk commands display additional warnings and require explicit confirmation.
+When sandboxing is enabled and the Allow sandbox bypass setting is on (the default), a synchronous shell command that's blocked by the sandbox's filesystem or network policy prompts you to re-run it outside the sandbox—no model round-trip is required. Approving the prompt re-runs the command and returns its output. Declining keeps the sandboxed (blocked) result.
+A sandbox bypass prompt also offers a Yes, and disable the sandbox for the rest of this session option. Choosing it turns off sandboxing for every remaining command in the current session, not just the command being approved. This only applies to the current session—starting a new session with /new sandboxes commands again, and the option has no effect on the saved sandbox configuration setting or on other running sessions.
+A detached (backgrounded) command can't be sandboxed at all, since the sandbox can't wrap a process that outlives the tool call. When the Allow sandbox bypass setting is on, this prompts for approval before the command starts, instead of being refused outright. Approving runs the command unsandboxed from the start.
+On Windows hosts whose sandbox policy supports denial capture, a blocked interactive shell command escalates in a single step instead of jumping straight to a full bypass. Approving re-runs the command with file and process restrictions set to record instead of block (the network policy still applies), then falls back to the disclosed full bypass only if the command is still blocked. Only one prompt is shown for the entire escalation. A denied loopback or local-network socket (for example, binding or connecting to 127.0.0.1) also reaches this same escalation instead of failing silently. The retry result is labeled "sandbox relaxed" when network policy is still enforced, or "sandbox bypassed" when fully unsandboxed. If the retry still fails, the message explains that host-level permissions still apply.
+A command that fails with an EPERM or EACCES diagnostic naming a sandbox-blocked path now offers to run outside the sandbox, even when the command line itself never named that path.
+When a denial is caused by a symlink whose target escapes what the sandbox policy grants, the denial explains that the granted path's link points outside the grant and names the real target, so you know exactly which path to add to your sandbox policy.
+For more information, see Configuring local sandbox settings.
+Environment variable denylist
+The CLI blocks inline assignment of environment variables that can be exploited to execute arbitrary code even in otherwise read-only commands. Blocked categories include:
+CategoryExamples
+Dynamic-linker injectionLD_*, DYLD_* (all prefixes)
+Git indexed config overridesGIT_CONFIG_COUNT, GIT_CONFIG_KEY_*, GIT_CONFIG_VALUE_* (all GIT_CONFIG_ prefixes)
+Git external program hooksGIT_EXTERNAL_DIFF, GIT_PROXY_COMMAND
+Git config file overridesGIT_CONFIG, GIT_CONFIG_GLOBAL, GIT_CONFIG_SYSTEM
+Shell PATH and startup filesPATH, BASH_ENV, ENV
+Existing blocked varsPAGER, GIT_PAGER, GIT_EDITOR, VISUAL, EDITOR, GIT_SSH, GIT_SSH_COMMAND, GIT_ASKPASS, BROWSER, GH_BROWSER
+web_fetch SSRF protection
+The web_fetch tool enforces server-side request forgery (SSRF) protections before making any HTTP request:
+Protocol allowlist: Only http:// and https:// URLs are permitted. file:// and other schemes are rejected.
+IP blocklist: Requests to loopback addresses (127.x.x.x, ::1), RFC-1918 private ranges (10.x, 172.16–31.x, 192.168.x), and cloud metadata endpoints (for example, 169.254.169.254) are blocked by IP-literal check and DNS pre-resolution.
+Validated redirects: web_fetch follows 3xx redirects (up to 10 hops, within a 60-second network budget), re-validating each hop's target against the same IP blocklist before following it. A redirect to a different origin than the original URL requires permission approval, the same as any other cross-origin fetch; same-origin redirects are followed without an extra prompt. The final result notes when content was (redirected from <original URL>).
+When sandboxing is enabled, requests are checked against the sandbox network policy (outbound access, local and private hosts) before the permission prompt, so a target blocked by policy fails fast instead of prompting. If the Allow sandbox bypass setting is on and the sandbox network proxy can't reach a URL—as opposed to the URL being denied by policy—web_fetch prompts you to retry the request outside the sandbox. Approving makes one more attempt at the fetch and returns its outcome.
+To allow web_fetch to reach localhost during development—for example, for a local docs server—set the following environment variable:
+export COPILOT_WEB_FETCH_ALLOW_LOCALHOST=1
+Sandbox tool directory grants
+When local sandboxing is enabled, Copilot CLI discovers the tool directories a sandboxed command is likely to need and grants each one read-only access, so a command can run an installed toolchain without being able to modify it. Discovery runs for each command, before the process starts, and reads two kinds of source from the command's environment.
+PATH (Path on Windows). Every directory listed is a candidate grant.
+Named toolchain variables. The CLI inspects the variables in the table below on every operating system. A variable that holds a single directory grants that directory; a variable that holds a path list is split on the operating system's path separator (; on Windows, : elsewhere), and each entry becomes a candidate grant.
+A candidate is granted only when it is an absolute path that exists and resolves to a directory. Candidates are dropped—and the reason logged to the sandbox_spawn log target—when they are relative, do not exist, resolve to a filesystem root (such as / or C:\), or resolve under a system-critical location (%WINDIR% on Windows; /bin, /sbin, /usr/bin, /usr/sbin, /boot, /proc, /sys, and /dev on Linux and macOS). Symbolic links are resolved before these checks, and duplicate directories are removed (case-insensitively on Windows).
+VariableToolchainValueTypically set on
+PATH / PathExecutables (all)Path listAll
+PYTHONPATHPythonPath listAll
+PYTHONHOMEPythonSingle directoryAll
+VIRTUAL_ENVPython (venv)Single directoryAll
+PYENV_ROOTPython (pyenv)Single directoryAll
+CONDA_PREFIXCondaSingle directoryAll
+GOPATHGoPath listAll
+GOROOTGoSingle directoryAll
+CARGO_HOMERust (Cargo)Single directoryAll
+RUSTUP_HOMERust (rustup)Single directoryAll
+JAVA_HOMEJavaSingle directoryAll
+NODE_PATHNode.jsPath listAll
+NVM_HOMENode.js (nvm)Single directoryWindows
+NVM_SYMLINKNode.js (nvm)Single directoryWindows
+DOTNET_ROOT.NETSingle directoryAll
+PSModulePathPowerShellPath listAll
+VCINSTALLDIRVisual C++Single directoryWindows
+VSINSTALLDIRVisual StudioSingle directoryWindows
+VCPKG_ROOTvcpkgSingle directoryAll
+LD_LIBRARY_PATHShared librariesPath listLinux
+Every variable is read on every platform; the Typically set on column shows where each is normally populated, not a restriction the CLI enforces. A variable that is unset simply contributes nothing.
+These are not the only read-only grants. Copilot CLI also grants your user-profile application directories (~/.local/bin and ~/.local/lib on Linux and macOS; the immediate subdirectories of %LOCALAPPDATA%\Programs on Windows), standard system and profile locations, and the caches and registries used by common package managers and toolchains (shown as dev-tool access in the /sandbox policy report). To see the fully resolved policy for your current directory—read/write, read-only, and denied paths—run /sandbox policy in a session. For the concepts behind how the policy is assembled, see Understanding filesystem policies for local sandboxing in GitHub Copilot CLI.
+On Windows, /sandbox policy lists the directories on your PATH environment variable under System read-only grants; other developer-tool paths are grouped separately as detected project tool groups.
+OpenTelemetry monitoring
+Copilot CLI can export traces and metrics via OpenTelemetry (OTel), giving you visibility into agent interactions, LLM calls, tool executions, and token usage. All signal names and attributes follow the OTel GenAI Semantic Conventions.
+OTel is off by default with zero overhead. It activates when any of the following conditions are met:
+COPILOT_OTEL_ENABLED=true
+OTEL_EXPORTER_OTLP_ENDPOINT is set
+COPILOT_OTEL_FILE_EXPORTER_PATH is set
+OTel configuration can also be set in VS Code, or in an enterprise-wide managed-settings.json file. See Enable OTel monitoring in the VS Code documentation and Enterprise managed settings.
+OTel environment variables
+VariableDefaultDescription
+COPILOT_OTEL_ENABLEDfalseExplicitly enable OTel. Not required if OTEL_EXPORTER_OTLP_ENDPOINT is set.
+OTEL_EXPORTER_OTLP_ENDPOINT—OTLP endpoint URL. Setting this automatically enables OTel.
+COPILOT_OTEL_EXPORTER_TYPEotlp-httpExporter type: otlp-http or file. Auto-selects file when COPILOT_OTEL_FILE_EXPORTER_PATH is set.
+OTEL_EXPORTER_OTLP_PROTOCOLhttp/jsonOTLP HTTP wire protocol: http/json or http/protobuf. Only applies to the otlp-http exporter.
+OTEL_EXPORTER_OTLP_TRACES_PROTOCOL—Override OTEL_EXPORTER_OTLP_PROTOCOL for traces only.
+OTEL_EXPORTER_OTLP_METRICS_PROTOCOL—Override OTEL_EXPORTER_OTLP_PROTOCOL for metrics only.
+OTEL_SERVICE_NAMEgithub-copilotService name in resource attributes.
+OTEL_RESOURCE_ATTRIBUTES—Extra resource attributes as comma-separated key=value pairs. Use percent-encoding for special characters.
+OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENTfalseCapture full prompt and response content. See Content capture.
+OTEL_LOG_LEVEL—OTel diagnostic log level: NONE, ERROR, WARN, INFO, DEBUG, VERBOSE, ALL.
+COPILOT_OTEL_FILE_EXPORTER_PATH—Write all signals to this file as JSON-lines. Setting this automatically enables OTel.
+COPILOT_OTEL_SOURCE_NAMEgithub.copilotInstrumentation scope name for tracer and meter.
+OTEL_EXPORTER_OTLP_HEADERS—Auth headers for the OTLP exporter (for example, Authorization=Bearer token).
+Traces
+The runtime emits a hierarchical span tree for each agent interaction. Each tree contains an invoke_agent root span, with chat and execute_tool child spans.
+invoke_agent span attributes
+Wraps the entire agent invocation: all LLM calls and tool executions for one user message.
+Both top-level sessions and subagent invocations (for example, explore, task) use span kind INTERNAL (in-process); provider-facing inference is represented by child CLIENT chat spans.
+Top-level sessions additionally carry server.address and server.port; subagent invocations do not.
+AttributeDescriptionScope
+gen_ai.operation.nameinvoke_agentBoth
+gen_ai.provider.nameProvider (for example, github, anthropic)Both
+gen_ai.agent.idStable agent-definition identifier when known; top-level default uses github.copilot.defaultBoth
+gen_ai.agent.nameAgent name (when available)Both
+gen_ai.agent.descriptionAgent description (when available)Both
+gen_ai.agent.versionAgent definition version when known; otherwise runtime versionBoth
+gen_ai.conversation.idSession identifierBoth
+enduser.pseudo.idPseudonymous Copilot user identifier from analytics_tracking_id when availableBoth
+gen_ai.request.modelRequested modelBoth
+gen_ai.response.finish_reasons["stop"] or ["error"]Both
+gen_ai.usage.input_tokensTotal input tokens (all turns)Both
+gen_ai.usage.output_tokensTotal output tokens (all turns)Both
+gen_ai.usage.cache_read.input_tokensCached input tokens readBoth
+gen_ai.usage.cache_creation.input_tokensCached input tokens createdBoth
+github.copilot.turn_countNumber of LLM round-tripsBoth
+github.copilot.costPer-request model multiplier used for billing. Not a monetary value.Both
+github.copilot.nano_aiuAI units consumed, in nano AI units (1 AIU = 1,000,000,000 nano AIU)Both
+server.addressServer hostnameTop-level only
+server.portServer portTop-level only
+error.typeError class name (on error)Both
+gen_ai.input.messagesFull input messages as JSON (content capture only)Both
+gen_ai.output.messagesFull output messages as JSON (content capture only)Both
+gen_ai.system_instructionsSystem prompt content as JSON (content capture only)Both
+gen_ai.tool.definitionsTool schemas as JSON (content capture only)Both
+chat span attributes
+One span per LLM request. Span kind: CLIENT.
+AttributeDescription
+gen_ai.operation.namechat
+gen_ai.provider.nameProvider name
+gen_ai.request.modelRequested model
+gen_ai.request.streamWhether streaming mode was used (streaming only)
+gen_ai.conversation.idSession identifier
+gen_ai.response.finish_reasonsStop reasons
+gen_ai.response.idResponse ID
+gen_ai.response.modelResolved model
+gen_ai.response.time_to_first_chunkTime to first streaming chunk, in seconds (streaming only)
+gen_ai.usage.cache_creation.input_tokensCached tokens created
+gen_ai.usage.cache_read.input_tokensCached tokens read
+gen_ai.usage.input_tokensInput tokens this turn
+gen_ai.usage.output_tokensOutput tokens this turn
+github.copilot.costPer-request model multiplier used for billing. Not a monetary value.
+github.copilot.nano_aiuAI units consumed this turn, in nano AI units (1 AIU = 1,000,000,000 nano AIU)
+github.copilot.server_durationServer-side duration
+github.copilot.initiatorRequest initiator
+github.copilot.turn_idTurn identifier
+github.copilot.interaction_idInteraction identifier
+server.addressServer hostname
+server.portServer port
+error.typeError class name (on error)
+gen_ai.input.messagesFull prompt messages as JSON (content capture only)
+gen_ai.output.messagesFull response messages as JSON (content capture only)
+gen_ai.system_instructionsSystem prompt content as JSON (content capture only)
+execute_tool span attributes
+One span per tool call. Span kind: INTERNAL.
+AttributeDescription
+gen_ai.operation.nameexecute_tool
+gen_ai.provider.nameProvider name (when available)
+gen_ai.tool.nameTool name (for example, readFile)
+gen_ai.tool.typefunction
+gen_ai.tool.call.idTool call identifier
+gen_ai.tool.descriptionTool description
+error.typeError class name (on error)
+gen_ai.tool.call.argumentsTool input arguments as JSON (content capture only)
+gen_ai.tool.call.resultTool output as JSON (content capture only)
+Note
+To measure AI unit consumption, read github.copilot.nano_aiu from the root invoke_agent span only. The attribute is also stamped on the child chat spans, so summing it across every span double-counts. github.copilot.cost is a per-request model multiplier used for billing calculations—it is not a currency value and must not be interpreted as one.
+Metrics
+GenAI convention metrics
+MetricTypeUnitDescription
+gen_ai.client.operation.durationHistogramsLLM API call and agent invocation duration
+gen_ai.client.token.usageHistogramtokensToken counts by type (input/output)
+gen_ai.client.operation.time_to_first_chunkHistogramsTime to receive first streaming chunk
+gen_ai.client.operation.time_per_output_chunkHistogramsInter-chunk latency after first chunk
+gen_ai.invoke_agent.durationHistogramsEnd-to-end duration of one agent invocation
+gen_ai.invoke_agent.inference_callsHistogram{inference_call}Number of model calls made during one agent invocation, counted at provider dispatch (failed and partial calls included; requests blocked before dispatch excluded). Dimension: gen_ai.agent.name.
+gen_ai.invoke_agent.tool_callsHistogram{tool_call}Number of client-side tool calls made during one agent invocation (failed and partial calls included; synthetic CLI tool lifecycles and provider-executed server-side tools excluded). Dimension: gen_ai.agent.name.
+gen_ai.invoke_workflow.durationHistogramsEnd-to-end duration of a GenAI workflow (for example, a fleet mode run orchestrating parallel subagents).
+Vendor-specific metrics
+MetricTypeUnitDescription
+github.copilot.tool.call.countCountercallsTool invocations by gen_ai.tool.name and success
+github.copilot.tool.call.durationHistogramsTool execution latency by gen_ai.tool.name
+github.copilot.agent.turn.countHistogramturnsLLM round-trips per agent invocation
+github.copilot.mcp.server.connection.countCounterattemptsCompleted MCP server connection attempts by transport and outcome
+github.copilot.code.lines_addedCounterlinesLines added by file-editing tools, recorded in real time
+github.copilot.code.lines_removedCounterlinesLines removed by file-editing tools, recorded in real time
+Span events
+Lifecycle events recorded on the active chat or invoke_agent span.
+EventDescriptionKey attributes
+github.copilot.hook.startA hook began executinggithub.copilot.hook.type, github.copilot.hook.invocation_id
+github.copilot.hook.endA hook completed successfullygithub.copilot.hook.type, github.copilot.hook.invocation_id
+github.copilot.hook.errorA hook failedgithub.copilot.hook.type, github.copilot.hook.invocation_id, github.copilot.hook.error_message
+github.copilot.session.truncationConversation history was truncatedgithub.copilot.token_limit, github.copilot.pre_tokens, github.copilot.post_tokens, github.copilot.pre_messages, github.copilot.post_messages, github.copilot.tokens_removed, github.copilot.messages_removed, github.copilot.performed_by
+github.copilot.session.compaction_startHistory compaction beganNone
+github.copilot.session.compaction_completeHistory compaction completedgithub.copilot.success, github.copilot.pre_tokens, github.copilot.post_tokens, github.copilot.tokens_removed, github.copilot.messages_removed, github.copilot.message (content capture only)
+github.copilot.skill.invokedA skill was invokedgithub.copilot.skill.name, github.copilot.skill.path, github.copilot.skill.plugin_name, github.copilot.skill.plugin_version
+github.copilot.session.shutdownSession is shutting downgithub.copilot.shutdown_type, github.copilot.total_premium_requests, github.copilot.lines_added, github.copilot.lines_removed, github.copilot.files_modified_count
+github.copilot.session.abortUser cancelled the current operationgithub.copilot.abort_reason
+exceptionSession errorgithub.copilot.error_type, github.copilot.error_status_code, github.copilot.error_provider_call_id
+Resource attributes
+All signals carry these resource attributes.
+AttributeValue
+service.namegithub-copilot (configurable via OTEL_SERVICE_NAME)
+service.versionRuntime version
+Content capture
+By default, no prompt content, responses, or tool arguments are captured—only metadata like model names, token counts, and durations. To capture full content, set OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT=true.
+Warning
+Content capture may include sensitive information such as code, file contents, and user prompts. Only enable this in trusted environments.
+When content capture is enabled, the following attributes are populated.
+AttributeContent
+gen_ai.input.messagesFull prompt messages (JSON)
+gen_ai.output.messagesFull response messages (JSON)
+gen_ai.system_instructionsSystem prompt content (JSON)
+gen_ai.tool.definitionsTool schemas (JSON)
+gen_ai.tool.call.argumentsTool input arguments
+gen_ai.tool.call.resultTool output
+Further reading
+GitHub Copilot CLI
+GitHub Copilot hooks reference
+GitHub Copilot CLI plugin reference
+GitHub Copilot CLI programmatic reference
+GitHub Copilot CLI configuration directory
+Back to top
+Help and support
+Was this Doc helpful?
+YesNo
+Help us make GitHub Docs great!
+All Docs are open source. See something that's wrong or unclear? Submit a pull request.
+Make a contribution
+Still need help?
+Ask the GitHub communityContact supportExpert servicesBlog
+GitHub Inc. © 2026TermsPrivacyStatusPricing

@@ -1,0 +1,46 @@
+{
+  "task": "train-fasttext",
+  "image_id": "sha256:ea991ff9add049c6956d2501b6f38fc612948cb30edaf8f6d61f63f90808272e",
+  "private_root": "/tmp/solpi-public-fasttext-39579ce22b",
+  "model_POSTs": 0,
+  "native_actor_starts": 0,
+  "models_trained": 0,
+  "dataset_read": false,
+  "scope": "public training-software wheel only;not model training or grading",
+  "versions": {
+    "fasttext": "0.9.3",
+    "pybind11": "3.0.1",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1",
+    "numpy": "2.3.3"
+  },
+  "version_selection": "latest stable before image-date20251031;NumPy preserved from original image",
+  "metadata_exit": 0,
+  "compiler_exit": 0,
+  "wheels_exit": 0,
+  "artifacts": {
+    "fasttext-0.9.3-cp313-cp313-linux_x86_64.whl": {
+      "bytes": 4868291,
+      "sha256": "7b758d35196975aac00e42f202c07635c009d637fdbc09afa781054d6cf29aa4"
+    },
+    "numpy-2.3.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": {
+      "bytes": 16636301,
+      "sha256": "5b83648633d46f77039c29078751f80da65aa64d5622a3cd62aaef9d835b6c93"
+    },
+    "pybind11-3.0.1-py3-none-any.whl": {
+      "bytes": 293611,
+      "sha256": "aa8f0aa6e0a94d3b64adfc38f560f33f15e589be2175e103c0a33c6bce55ee89"
+    },
+    "setuptools-80.9.0-py3-none-any.whl": {
+      "bytes": 1201486,
+      "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"
+    },
+    "wheel-0.45.1-py3-none-any.whl": {
+      "bytes": 72494,
+      "sha256": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248"
+    }
+  },
+  "prepared": true,
+  "cleanup_verified": true,
+  "runner_sha256": "ad5133c92cabb16fa6344dacf379010872844ef18c76194f24ac9e03b29b05bc"
+}

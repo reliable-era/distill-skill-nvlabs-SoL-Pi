@@ -1,0 +1,9 @@
+CURRENT: Frozenprivate runtime01c4dc97…; measured-feasibility-fasttext stageTERMINAL3starts48POST894158completeprovidergross, candidateoriginal0/Bothoriginal1/No skillgradeUNAVAILABLE(size_cap)/KUNSTARTED. CandidateREJECTEDforpromotion(observedqualityloss vsBoth); see pi-takeover/measured-feasibility-fasttext-results.md. Initial draft notes below are historical.
+
+# Measured feasibility — separate unscored branch
+
+Parent: coalesced-verification, not byte-bounded-observations. Exactly one existing source-validation bullet gains a conditional pre-expensive-work measurement step; the original final-verification text and all other bytes remain. No log-byte rule, CPU parallelism rule, required-target-first directive, task paths, formulas, parameters, private tests, budgets, or extension.
+
+Evidence: exposed fastText actor knew the hard constraints and estimated size, but substituted guessed data-dependent cardinality; it explicitly skipped a cheap trial, ran full training (~300.895 seconds of reported tool waits, not CPU time), then measured the relevant quantity in 12.8424 reported tool seconds only after producing an oversized artifact. More generic reminders to check constraints are not the mechanism: that was already done. The hypothesis is to replace the cheap-to-measure uncertain input BEFORE expensive work. This adds prompt overhead and can add a call; only matched complete-token-per-verified-solve evidence could justify it. Public evaluation is not a private original grade.
+
+Not frozen/scored/promotable. No restarted actor, canonical change, matrix, sample substitution, original-grader repair, raised capture bound, or old-cohort pooling. Current controllers/gates may be reused unchanged where applicable; any later candidate freeze and model screen needs prospective same-candidate Both delivery, bounded costs and exact grading. All original failures and unknown costs remain.

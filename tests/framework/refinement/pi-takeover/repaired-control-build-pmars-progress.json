@@ -1,0 +1,42 @@
+[
+  {
+    "control": "baseline",
+    "started_utc": "2026-10-04T18:24:18.564759+00:00",
+    "verifier_exit": 0,
+    "verifier_seconds": 31.482527500018477,
+    "reward": "0",
+    "ctrf_present": true,
+    "test_status_counts": {
+      "failed": 4
+    },
+    "test_events": 4,
+    "artifacts_sha256": {
+      "archive-metadata-refresh.log": "bd7122eac9d3ecaf20718259dee9ce3baee9a64671c30934199f8cdeff64790d",
+      "logs/verifier/ctrf.json": "cf674cd3711bf4deff30da21c2dbe6917eeb0c23b7ef0cd5f05ebc80879d5acb",
+      "logs/verifier/reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "verifier.log": "fb7f793cc2cc80c4f930f2a7280ad6e5b3920d00c3959a46727fa03da0159fb0"
+    },
+    "owned_container_absent": true
+  },
+  {
+    "control": "gold",
+    "started_utc": "2026-10-04T18:24:56.129273+00:00",
+    "oracle_exit": 0,
+    "verifier_exit": 0,
+    "verifier_seconds": 5.325334772467613,
+    "reward": "1",
+    "ctrf_present": true,
+    "test_status_counts": {
+      "passed": 4
+    },
+    "test_events": 4,
+    "artifacts_sha256": {
+      "archive-metadata-refresh.log": "4f528a491f26901e6001be02a2ec4497639ca8e0c797e6a1f77ac2a6baec0f62",
+      "logs/verifier/ctrf.json": "e1fede0638c3ee888475457be585000c7c8958a528686939e12ddb2461969f20",
+      "logs/verifier/reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "oracle.log": "70b7c7a837218cab42518181b19fcbae8f94fd13ef7d9e3cc016f67004e825d6",
+      "verifier.log": "f873dc561b4574823579bf3f397293eba7d3382834c94635b73c80d1179081ac"
+    },
+    "owned_container_absent": true
+  }
+]

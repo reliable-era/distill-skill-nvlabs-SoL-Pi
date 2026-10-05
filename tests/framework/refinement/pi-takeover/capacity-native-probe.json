@@ -1,0 +1,42 @@
+{
+  "synthetic_only": true,
+  "real_provider_POSTs": 0,
+  "real_generated_tokens": 0,
+  "native_probe_starts": 1,
+  "scope": "SDK transport compatibility;not model accounting conformance or skill evaluation",
+  "overcap_status": 413,
+  "private_rejections": [
+    {
+      "reason": "body_byte_cap",
+      "declared_body_bytes": 8388609,
+      "body_byte_cap": 8388608,
+      "status": 413,
+      "provider_forwarded": false,
+      "provider_POST": 0
+    }
+  ],
+  "upstream_body_bytes": 329532,
+  "body_crossed_old_cap": true,
+  "capacity_source_sha256": "120e08b2e32c4803ee8e71636ea7cfefb82742933e8041c6ad397581e07ede0b",
+  "capacity_derived_sha256": "46f23abfda5d606b4641483b220b15fbd8be635576711dee25c63027fb98af63",
+  "native_exit": 0,
+  "native_event_types": [
+    "thread.started",
+    "item.completed",
+    "turn.started",
+    "item.completed",
+    "turn.completed"
+  ],
+  "native_turn_completed": true,
+  "assistant_ack": true,
+  "synthetic_requests": 1,
+  "raw_protocol_valid": null,
+  "correction_applied": true,
+  "raw_status_preserved": "incomplete",
+  "private_root": "/tmp/solpi-native-capacity-v3-00539ea3b6",
+  "cleanup_containers_absent": true,
+  "cleanup_network_absent": true,
+  "worker_exited": true,
+  "runner_sha256": "5b9cce20c945f19b505bc9be8ff2f1ce4d4fd812fbb1156be466150b4938af67",
+  "passed": true
+}
