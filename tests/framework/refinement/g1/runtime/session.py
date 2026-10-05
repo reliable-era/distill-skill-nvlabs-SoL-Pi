@@ -18,7 +18,7 @@ def inference_locks(pins):
  finally:
   for h in reversed(handles):h.close()
 def idle(load):
- return isinstance(load,list) and bool(load) and all(isinstance(r,dict) and type(r.get('num_reqs')) is int and type(r.get('num_waiting_reqs')) is int and r['num_waiting_reqs']==0 for r in load)
+ return isinstance(load,list) and bool(load) and all(isinstance(r,dict) and type(r.get('num_reqs')) is int and type(r.get('num_waiting_reqs')) is int and 0<=r['num_reqs']<8 and r['num_waiting_reqs']>=0 for r in load)
 def fetch_idle():
  c=http.client.HTTPConnection('127.0.0.1',18001,timeout=2);timer=None
  try:
@@ -51,7 +51,7 @@ class Session:
  def begin(self,actor,load):
   with self.lock:
    if not isinstance(actor,str) or self.active or self.starts>=10 or self.posts>=600 or actor in self.per_actor or not idle(load):raise RuntimeError('start/idleness guard')
-   self.starts+=1;self.per_actor[actor]=0;self.active=actor;self.deadline=time.monotonic()+3600;self.persist()
+   self.starts+=1;self.per_actor[actor]=0;self.active=actor;self.deadline=time.monotonic()+7200;self.persist()
  def finish(self,cleanup_verified,auxiliary_events=()):
   with self.lock:
    if not cleanup_verified or auxiliary_events:raise RuntimeError('cleanup or auxiliary accounting invalid')

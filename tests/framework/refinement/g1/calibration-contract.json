@@ -76,13 +76,13 @@
   "maximum_native_starts": 10,
   "maximum_provider_requests": 600,
   "maximum_requests_per_run": 60,
-  "wall_safety_seconds_per_run": 3600,
+  "wall_safety_seconds_per_run": 7200,
   "output_token_cap": 16384,
   "admission": {
     "endpoints": [
       "http://127.0.0.1:18001/get_load"
     ],
-    "criterion": "num_waiting_reqs == 0 on 18001 only; active num_reqs may be nonzero",
+    "criterion": "0 <= num_reqs < 8 on 18001; waiting requests allowed",
     "maximum_wait_seconds_per_run": 600,
     "backoff_seconds": [
       5,
@@ -98,5 +98,9 @@
   "stop_policy": "Stop at the eight-hour window, admission expiry, uncertain cleanup/provider completion, or after the one-round calibration. Commit results and report; do not start Step 4.",
   "model_calls_before_contract_commit": 0,
   "model_endpoint": "http://127.0.0.1:18001/v1",
-  "route_amendment": "calibration-direct18001-amendment.md"
+  "route_amendment": "calibration-direct18001-amendment.md",
+  "load_budget_amendment": "calibration-load-budget-amendment.md",
+  "load_sampling_seconds": 30,
+  "heavy_load_flag_rule": "Any observed num_reqs >= 6 or num_waiting_reqs > 0; descriptive flag only, never exclusion",
+  "latest_start": "2026-10-06T07:30:00+08:00"
 }

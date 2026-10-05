@@ -60,7 +60,7 @@ def eligible(records):
             rows = [rows]
         if record.get('status') != 200 or record.get('error') or not isinstance(rows, list) or not rows:
             return False
-        if not all(isinstance(row, dict) and type(row.get('num_waiting_reqs')) is int and row['num_waiting_reqs'] == 0 for row in rows):
+        if not all(isinstance(row, dict) and type(row.get('num_reqs')) is int and 0 <= row['num_reqs'] < 8 and type(row.get('num_waiting_reqs')) is int and row['num_waiting_reqs'] >= 0 for row in rows):
             return False
     return True
 

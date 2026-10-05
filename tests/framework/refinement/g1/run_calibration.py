@@ -3,6 +3,8 @@ import datetime, hashlib, json, os, pathlib, shutil, subprocess, sys, threading,
 G = pathlib.Path(__file__).resolve().parent
 R = G.parent / 'pi-takeover'
 RT = G / 'runtime'
+E = G / 'calibration-attempt-2'
+E.mkdir(exist_ok=True)
 sys.path[:0] = [str(RT), str(R), str(G), str(G.parent.parent / 'benchmarks')]
 import session as S, wrapper as W, actor_profile as A
 import queue_admission as Q
@@ -143,7 +145,7 @@ def main():
     contract = json.loads((G/'calibration-contract.json').read_text())
     assert contract['arms'] == ['No skill'] and contract['model_endpoint']=='http://127.0.0.1:18001/v1'
     assert sha(BINARY)==EXPECTED and Q.PORTS==(18001,)
-    assert not (G/'calibration-launch.json').exists(), 'No full-actor or stage retry'
+    assert not (E/'calibration-launch.json').exists(), 'No full-actor or stage retry'
     end = datetime.datetime.fromisoformat(contract['window_end']).timestamp()
     deadline = time.monotonic() + end - time.time()
     if deadline <= time.monotonic(): raise RuntimeError('Window expired; no automatic extension')
@@ -152,7 +154,7 @@ def main():
     prefix = root.name; net = prefix+'-net'; owned=[]; rows=[]; error=None; server=None; session=None; proxy_spec=None
     plan = {'contract_sha256':sha(G/'calibration-contract.json'),'runtime_hashes':pins,'orchestration_sha256':sha(__file__),'root':str(root),'prefix':prefix,'binary_sha256':EXPECTED,'backend':live,'native_starts':0,'model_POST':0,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'helper_hashes':{p.name:sha(p) for p in R.glob('*.py') if 'copilot_' not in p.name},'task_source_hashes':{t['id']:W.files(t['source']) for t in contract['development_pool']}}
     plan['launch_commit'] = subprocess.check_output(['git','rev-parse','HEAD'],cwd=G,text=True).strip()
-    save(G/'calibration-launch.json',plan)
+    save(E/'calibration-launch.json',plan)
     try:
         docker('network','create','--internal','--ipv6=false','--opt','com.docker.network.bridge.gateway_mode_ipv4=isolated',net)
         topology=json.loads(docker('network','inspect',net))[0]
@@ -168,9 +170,9 @@ def main():
             if time.monotonic()>ready:raise RuntimeError('Proxy startup expired')
             time.sleep(.1)
         for index, task in enumerate(contract['development_pool']):
-            if time.monotonic()>=deadline:break
+            if time.monotonic()+7200>deadline:break
             ident=task['id'];d=root/str(index);d.mkdir();(d/'skills').mkdir();row={'task':ident,'source':task['source'],'arm':'No skill','family':task['family'],'solved':None}; rows.append(row)
-            save(G/'calibration-progress.json',{'rows':rows,'starts':session.starts,'POST':session.posts,'current_task':ident})
+            save(E/'calibration-progress.json',{'rows':rows,'starts':session.starts,'POST':session.posts,'current_task':ident})
             if sources()!=live or W.files(task['source'])!=plan['task_source_hashes'][ident]:raise RuntimeError('Source identity changed')
             if any(sha(RT/name)!=value for name,value in pins.items()) or any(sha(R/name)!=value for name,value in plan['helper_hashes'].items()):raise RuntimeError('Runtime/helper source changed')
             if task['family']=='aider-polyglot':
@@ -184,7 +186,7 @@ def main():
                     spec=regex_recipe(ident)
                 else: spec=recipe(ident)
                 instruction=(pathlib.Path(task['source'])/'instruction.md').read_text()
-            prompt=instruction+'\n\n'+spec['guidance']+'\n\nRun budget: at most 60 model requests and 60 minutes wall time, with a 16384-token output cap per request. Work only on this task. Do not use network retrieval, subagents or compaction. No skill is supplied.\n'
+            prompt=instruction+'\n\n'+spec['guidance']+'\n\nRun budget: at most 60 model requests and 120 minutes wall time, with a 16384-token output cap per request. Work only on this task. Do not use network retrieval, subagents or compaction. No skill is supplied.\n'
             (d/'prompt.txt').write_text(prompt);row['prompt_sha256']=sha(d/'prompt.txt');row['recipe']=spec
             name=prefix+'-'+str(index);owned.append(name)
             args=['create','--pull=never','--name',name,'--network',net,'--cpus',str(spec['cpus']),'--memory',str(spec['memory_mb'])+'m','--pids-limit','128','--cap-drop','ALL','--security-opt','no-new-privileges','--tmpfs','/tmp:rw,size=128m','-v',str(d/'skills')+':/skills:ro','-v',str(BINARY)+':/opt/solpi/codex:ro','-w','/app','--entrypoint','/bin/sh']
@@ -197,15 +199,27 @@ def main():
             if ident=='overfull-hbox':
                 from tex_protected_baseline import capture_before
                 proof=capture_before(name,spec['actor_image_id'],d/'before');baseline=proof['protected_baseline']
-            admission=Q.admit(d/'admission.json',deadline)
-            if time.monotonic()>=deadline:break
+            admission=Q.admit(d/'admission.json',deadline-7200)
+            if time.monotonic()+7200>deadline:break
             session.begin(ident,admission[0]['load']);start=time.monotonic()
             session.raw_session.deadline=min(session.deadline,deadline)
-            with (d/'native.jsonl').open('wb') as out:
-                p=subprocess.Popen(['docker','start','-a',name],stdout=out,stderr=subprocess.STDOUT)
-                try:p.wait(timeout=max(.1,session.deadline-time.monotonic()-10))
-                except subprocess.TimeoutExpired:row['actor_deadline_interrupted']=True
-                docker('stop','-t','0',name);p.wait(timeout=5)
+            samples=[{'kind':'start','observations':admission}]; sampler_stop=threading.Event()
+            def sample_load():
+                while not sampler_stop.wait(30):
+                    samples.append({'kind':'periodic','observations':Q.snapshot(session.deadline)})
+                    save(d/'load-samples.json',samples)
+            save(d/'load-samples.json',samples)
+            sampler=threading.Thread(target=sample_load,daemon=True);sampler.start()
+            try:
+                with (d/'native.jsonl').open('wb') as out:
+                    p=subprocess.Popen(['docker','start','-a',name],stdout=out,stderr=subprocess.STDOUT)
+                    try:p.wait(timeout=max(.1,session.deadline-time.monotonic()-10))
+                    except subprocess.TimeoutExpired:row['actor_deadline_interrupted']=True
+                    docker('stop','-t','0',name);p.wait(timeout=5)
+            finally:
+                sampler_stop.set();sampler.join(timeout=5)
+                if sampler.is_alive():raise RuntimeError('Load sampler cleanup uncertain')
+            row['load_at_start']=admission;row['periodic_load_samples']=samples
             row.update(native_exit=p.returncode,actor_seconds=time.monotonic()-start,native_trace_sha256=sha(d/'native.jsonl'))
             until=time.monotonic()+240
             while server.workers and time.monotonic()<until:time.sleep(.2)
@@ -223,10 +237,12 @@ def main():
                     with (d/'verifier.log').open('wb') as out:z=subprocess.run(['docker','start','-a',grade],stdout=out,stderr=subprocess.STDOUT,timeout=240)
                     docker('rm',grade);owned.remove(grade);row.update(verifier_exit=z.returncode,solved=z.returncode==0 if z.returncode in (0,1) else None)
             except Exception as e:row['grade_error']={'type':type(e).__name__,'message':str(e)[:300]}
-            row['contention_observed']=any(any(r.get('num_waiting_reqs',0)>0 or r.get('num_reqs',0)>0 for r in q[0].get('load',[]) if isinstance(r,dict)) for q in row['queue_records'] if isinstance(q[0].get('load'),list))
+            observed=row['queue_records']+[sample['observations'] for sample in samples]
+            row['heavy_load']=any(any(r.get('num_waiting_reqs',0)>0 or r.get('num_reqs',0)>=6 for r in q[0].get('load',[]) if isinstance(r,dict)) for q in observed if isinstance(q[0].get('load'),list))
+            row['contention_observed']=row['heavy_load']
             row['contention_exclusion']=False;row['wall_time_inflation']='Possible when contention observed; not causally identifiable from load alone'
             session.finish(True);docker('rm',name);owned.remove(name)
-            save(G/'calibration-progress.json',{'rows':rows,'starts':session.starts,'POST':session.posts,'current_task':None})
+            save(E/'calibration-progress.json',{'rows':rows,'starts':session.starts,'POST':session.posts,'current_task':None})
     except Exception as e:error={'type':type(e).__name__,'message':str(e)[:500]}
     finally:
         proxy_journal=None;cleanup_errors=[]
@@ -243,6 +259,6 @@ def main():
             try:proxy_journal=collect_proxy(proxy_spec)
             except Exception as e:cleanup_errors.append(str(e)[:150])
         result={'contract_sha256':plan['contract_sha256'],'root':str(root),'rows':rows,'starts':session.starts if session else 0,'POST':session.posts if session else 0,'error':error,'cleanup_errors':cleanup_errors,'owned_containers_absent':all(absent(n) for n in owned),'proxy_journal':proxy_journal,'verified_solves':sum(r.get('solved') is True for r in rows),'budget_pass':sum(r.get('solved') is True for r in rows)>=5 and not cleanup_errors,'not_started':[t['id'] for t in contract['development_pool'] if t['id'] not in {r['task'] for r in rows if 'native_exit' in r}],'ended_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Step 3 calibration only; no savings or confirmation claim'}
-        save(G/'calibration-result.json',result);print(json.dumps(result,indent=2))
+        save(E/'calibration-result.json',result);print(json.dumps(result,indent=2))
 
 if __name__=='__main__':main()

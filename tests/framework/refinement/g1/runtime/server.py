@@ -6,7 +6,7 @@ class OwnedServer(http.server.ThreadingHTTPServer):
   self.sockets=set();self.workers=0;self.guard=threading.Lock();self.busy=threading.Semaphore(1);self.slots=threading.Semaphore(2)
   super().__init__(*a,**kw)
  def get_request(self):
-  s,a=super().get_request();s.settimeout(600)
+  s,a=super().get_request();s.settimeout(7200)
   with self.guard:self.sockets.add(s)
   return s,a
  def process_request(self,s,a):
@@ -43,7 +43,7 @@ class PostHandler(http.server.BaseHTTPRequestHandler):
   except ValueError:self.send_error(413);return
   if not 0<=n<=262144:self.send_error(413);return
   if not self.server.busy.acquire(False):self.send_error(429);return
-  timer=threading.Timer(600,lambda:self.cutoff(self.connection));timer.start();headers_sent=False
+  timer=threading.Timer(7200,lambda:self.cutoff(self.connection));timer.start();headers_sent=False
   try:
    body=self.rfile.read(n)
    if len(body)!=n:raise ValueError('incomplete body')
