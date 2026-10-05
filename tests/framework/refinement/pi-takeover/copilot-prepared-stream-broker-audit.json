@@ -1,0 +1,28 @@
+{
+  "status": "UNIX_BROKER_SYNTHETIC_INTEGRATION_PASS_NOT_NATIVE_COMPATIBILITY",
+  "tests_passed": 4,
+  "test_source_sha256": "c4ab1c3f46f46eb5f536f3678b22066386a173cebe10703ba9c08301f46efc02",
+  "prepared_plan_sha256": "7def27bf8adea945bb2bb87fbc30fb401cdb5dda6dd2f6ab1271b5b7db0cbad1",
+  "prepared_sources_unchanged": true,
+  "synthetic_local_Unix_HTTP_POSTs": 7,
+  "real_provider_Qwen_POSTs": 0,
+  "native_Docker_auth_install_calls": 0,
+  "covers": [
+    "tool-call and final SSE served over actual owned Unix broker",
+    "matching tool-result followup",
+    "reject third request with429",
+    "reject unknown schema or missing followup with422",
+    "wrong endpoint denied/no forwarding",
+    "test broker threads terminal"
+  ],
+  "not_covered": [
+    "nativeCopilot acceptance/tool execution/usage schema",
+    "genericproxy native integration",
+    "realQwen compatibility or full partial/auxiliary usage",
+    "skill grading/performance/confirmation"
+  ],
+  "authorization_unchanged_false": true,
+  "fixture_tokens_excluded_from_real_accounting": true,
+  "scheduler_wait_remaining": 0,
+  "goal_complete": false
+}

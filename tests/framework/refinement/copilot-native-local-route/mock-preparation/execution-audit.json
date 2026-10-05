@@ -1,0 +1,22 @@
+{
+  "status": "failed_before_container_create_and_native_start",
+  "plan_sha256": "e034e27cdcc4db86e83bb40406ccb261dbdfd11b4ece3971f6accbb0b71abacf",
+  "authorization_sha256": "41e29f17470c30496a4949a4064f73c66580ea8cf3fd90b1e24f92aea385f83d",
+  "error": [
+    "OSError: AF_UNIX path too long"
+  ],
+  "private_result_sha256": "d33577fda2e2791be870a3ea2391d51ed1615eab3614b1dcc14804e85ffae092",
+  "socket_path_bytes": 114,
+  "socket_absent": true,
+  "container_absence_verified": true,
+  "native_starts": 0,
+  "provider_POST": 0,
+  "model_calls": 0,
+  "auth_calls": 0,
+  "pulls": 0,
+  "installs": 0,
+  "retry": 0,
+  "broker_workers_started": 0,
+  "cause": "AF_UNIX address exceeded supported path length at Broker constructor; no worker thread started",
+  "proposed_repair": "new separately reviewed phase with short private Unix-socket path; preserve this consumed launch unchanged"
+}

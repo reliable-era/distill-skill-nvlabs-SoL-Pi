@@ -1,0 +1,287 @@
+{
+  "status": "PASS_OFFLINE_OBSERVED_INVENTORY_ONLY_NOT_NATIVE_READINESS",
+  "software_hashes": {
+    "copilot_request_inventory.py": "d3ec9ab729902d7eeb231132e8d61620773331146c909aa9c088a713e34f9b33",
+    "copilot_native_usage_reconciliation.py": "4748a0d0975466f82a54bd40f13bc11c831174e8d05f5bbf4482a1ebee732fb5",
+    "audit_copilot_full_attempt_inventory.py": "7f32abe5627a6814d2c08d95e2e9573b36a4f3d7539c1bf496a3bd243d7f6b02"
+  },
+  "independent_stages": [
+    {
+      "stage": "mock-successful-stream-prepared",
+      "plan_sha256": "7def27bf8adea945bb2bb87fbc30fb401cdb5dda6dd2f6ab1271b5b7db0cbad1",
+      "execution_audit_sha256": "63e0676190a822a2d548dc97f41d10820ddb756e6ec15b4c3ca5d4f2aaf12f9d",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "INCOMPLETE_OR_UNCOVERED",
+        "reasons": [
+          "provider_response_usage_unavailable",
+          "failed_or_unavailable_response",
+          "native_usage_schema_missing_or_invalid"
+        ],
+        "observed_attempt_inventory": {
+          "all_POST_headers": 1,
+          "accepted_body_POST": 1,
+          "denied_POST_headers": 0,
+          "auxiliary_denied_records": 0,
+          "total_recorded_attempts": 1,
+          "denied_connection_count": 0,
+          "accepted_ordinals": [
+            1
+          ],
+          "denied_ordinals": [],
+          "native_retry_count_NOT_inferred_from_generic_inventory": true,
+          "observed_inventory_membership_verified": true,
+          "unobserved_traffic_completeness_NOT_proven": true
+        },
+        "accepted_provider_POST": 1,
+        "native_model_request_count": null,
+        "native_user_turn_count": 0,
+        "observed_native_fixture_tokens": null,
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": null,
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    },
+    {
+      "stage": "mock-stream-guard-diagnostic",
+      "plan_sha256": "423f3462a75f6ff0835dfb86573d9497065d5d43ff0f4e2bbf5cb1e1b4d94c80",
+      "execution_audit_sha256": "6e225900c5b6307552e8c9542e141bca5c13d669ea3c494f675377344f244617",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "INCOMPLETE_OR_UNCOVERED",
+        "reasons": [
+          "provider_response_usage_unavailable",
+          "failed_or_unavailable_response",
+          "native_usage_schema_missing_or_invalid"
+        ],
+        "observed_attempt_inventory": {
+          "all_POST_headers": 1,
+          "accepted_body_POST": 1,
+          "denied_POST_headers": 0,
+          "auxiliary_denied_records": 0,
+          "total_recorded_attempts": 1,
+          "denied_connection_count": 0,
+          "accepted_ordinals": [
+            1
+          ],
+          "denied_ordinals": [],
+          "native_retry_count_NOT_inferred_from_generic_inventory": true,
+          "observed_inventory_membership_verified": true,
+          "unobserved_traffic_completeness_NOT_proven": true
+        },
+        "accepted_provider_POST": 1,
+        "native_model_request_count": null,
+        "native_user_turn_count": 0,
+        "observed_native_fixture_tokens": null,
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": null,
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    },
+    {
+      "stage": "mock-final-stream",
+      "plan_sha256": "1f4060fb5fae353bf26bd9ee5b7e411da423dff844db58851ef15828b65b770d",
+      "execution_audit_sha256": "98dae5e119853682ece0927c45bfedc50b56b7c84a59f4b23b9fca5c006a8d8e",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "MATCHED_FIXTURE_ONLY",
+        "reasons": [],
+        "observed_attempt_inventory": {
+          "all_POST_headers": 1,
+          "accepted_body_POST": 1,
+          "denied_POST_headers": 0,
+          "auxiliary_denied_records": 0,
+          "total_recorded_attempts": 1,
+          "denied_connection_count": 0,
+          "accepted_ordinals": [
+            1
+          ],
+          "denied_ordinals": [],
+          "native_retry_count_NOT_inferred_from_generic_inventory": true,
+          "observed_inventory_membership_verified": true,
+          "unobserved_traffic_completeness_NOT_proven": true
+        },
+        "accepted_provider_POST": 1,
+        "native_model_request_count": 1,
+        "native_user_turn_count": 1,
+        "observed_native_fixture_tokens": {
+          "inputTokens": 12,
+          "outputTokens": 6,
+          "cacheReadTokens": 4,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 2,
+          "inclusive_gross": 18
+        },
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": {
+          "inputTokens": 12,
+          "outputTokens": 6,
+          "cacheReadTokens": 4,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 2,
+          "inclusive_gross": 18
+        },
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    },
+    {
+      "stage": "mock-view-tool-stream",
+      "plan_sha256": "219fa8f89789d6e15257a7828276d3eec1f66248031d5c4de8a2626f8def58f4",
+      "execution_audit_sha256": "bb90f8af54c3f1bb26743058eeb03349c3d4623e4e1922e9b7f5cc47331eceb8",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "MATCHED_FIXTURE_ONLY",
+        "reasons": [],
+        "observed_attempt_inventory": {
+          "all_POST_headers": 2,
+          "accepted_body_POST": 2,
+          "denied_POST_headers": 0,
+          "auxiliary_denied_records": 0,
+          "total_recorded_attempts": 2,
+          "denied_connection_count": 0,
+          "accepted_ordinals": [
+            1,
+            2
+          ],
+          "denied_ordinals": [],
+          "native_retry_count_NOT_inferred_from_generic_inventory": true,
+          "observed_inventory_membership_verified": true,
+          "unobserved_traffic_completeness_NOT_proven": true
+        },
+        "accepted_provider_POST": 2,
+        "native_model_request_count": 2,
+        "native_user_turn_count": 1,
+        "observed_native_fixture_tokens": {
+          "inputTokens": 24,
+          "outputTokens": 12,
+          "cacheReadTokens": 8,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 4,
+          "inclusive_gross": 36
+        },
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": {
+          "inputTokens": 24,
+          "outputTokens": 12,
+          "cacheReadTokens": 8,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 4,
+          "inclusive_gross": 36
+        },
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    },
+    {
+      "stage": "mock-missing-final-usage",
+      "plan_sha256": "0c05b5c833343ec7c2b258905b87b939ab3e6fa31349acde137097a9229282ba",
+      "execution_audit_sha256": "788a0ed2415e5b8b27ede7ac19a482e46b3bfe08d98d84f0990d37b12a4d7a7f",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "INCOMPLETE_OR_UNCOVERED",
+        "reasons": [
+          "provider_response_usage_missing_or_incomplete"
+        ],
+        "observed_attempt_inventory": {
+          "all_POST_headers": 1,
+          "accepted_body_POST": 1,
+          "denied_POST_headers": 0,
+          "auxiliary_denied_records": 0,
+          "total_recorded_attempts": 1,
+          "denied_connection_count": 0,
+          "accepted_ordinals": [
+            1
+          ],
+          "denied_ordinals": [],
+          "native_retry_count_NOT_inferred_from_generic_inventory": true,
+          "observed_inventory_membership_verified": true,
+          "unobserved_traffic_completeness_NOT_proven": true
+        },
+        "accepted_provider_POST": 1,
+        "native_model_request_count": 1,
+        "native_user_turn_count": 1,
+        "observed_native_fixture_tokens": {
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 0,
+          "inclusive_gross": 0
+        },
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": null,
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    },
+    {
+      "stage": "mock-midstream-cutoff",
+      "plan_sha256": "f685b10be9016a85e75cf6ce6cb06d0c6a5b9aa9a98480c1d51f4ce9db2c07f8",
+      "execution_audit_sha256": "db3da6b302e335a2beecb7dec154cb68ac94dcfca8d4e1290c7bc2f6770ca029",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "INCOMPLETE_OR_UNCOVERED",
+        "reasons": [
+          "denied_or_auxiliary_attempts_retained_not_eligible",
+          "provider_response_usage_missing_or_incomplete",
+          "failed_or_unavailable_response",
+          "native_usage_schema_missing_or_invalid"
+        ],
+        "observed_attempt_inventory": {
+          "all_POST_headers": 4,
+          "accepted_body_POST": 1,
+          "denied_POST_headers": 3,
+          "auxiliary_denied_records": 0,
+          "total_recorded_attempts": 4,
+          "denied_connection_count": 0,
+          "accepted_ordinals": [
+            1
+          ],
+          "denied_ordinals": [
+            2,
+            3,
+            4
+          ],
+          "native_retry_count_NOT_inferred_from_generic_inventory": true,
+          "observed_inventory_membership_verified": true,
+          "unobserved_traffic_completeness_NOT_proven": true
+        },
+        "accepted_provider_POST": 1,
+        "native_model_request_count": null,
+        "native_user_turn_count": 0,
+        "observed_native_fixture_tokens": null,
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": null,
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    }
+  ],
+  "new_native_starts": 0,
+  "new_provider_POST": 0,
+  "real_inference": 0,
+  "historical_result_and_audit_files_changed": false,
+  "real_scored_eligible": false,
+  "goal_complete": false
+}

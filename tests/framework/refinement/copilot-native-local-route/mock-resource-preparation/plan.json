@@ -1,0 +1,77 @@
+{
+  "status": "prepared_unlaunched_requires_root_review",
+  "purpose": "native fake HTTP400 routing only; zero actual inference",
+  "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70",
+  "native_version": "1.0.91",
+  "native_starts_cap": 1,
+  "POST_cap": 2,
+  "POST_scope": "2 accepted/body-read POSTs; all POST headers including refused counted separately; 16 accepted broker connections maximum",
+  "native_seconds": 30,
+  "outer_seconds": 75,
+  "cleanup_seconds": 40,
+  "models": 0,
+  "retries": 0,
+  "acquisitions": 0,
+  "auth_calls": 0,
+  "worker_caps": {
+    "cpu": 1,
+    "memory_bytes": 2147483648,
+    "pids": 128,
+    "network": "none",
+    "rootfs": "readonly",
+    "cap_drop": [
+      "ALL"
+    ],
+    "security_opt": [
+      "no-new-privileges"
+    ]
+  },
+  "routing": "native documented HTTP_PROXY/HTTPS_PROXY; localhost exact-authority HTTP/CONNECT proxy relays only fixed Unix socket; no Node monkeypatch",
+  "bytes": {
+    "request": 262144,
+    "response": 2097152
+  },
+  "accounting": "broker accepted request count/body hashes/status + native usage JSON if emitted; HTTP400 cannot validate gross token coverage",
+  "primary_source_provenance": "../audit.json",
+  "source_hashes": {
+    "stream_proxy.py": "46303ddcf52006e674af50a13488a51e38bfb44aaa1b7f69c3e41fef84d5dc6e",
+    "server.py": "59a2d9da646a721768fe186b89a28811945b3cfaaf2640a17cebff5be7f13e32",
+    "tunnel_proxy.py": "cd58735e0b43e40909afcbe9b8b247fa82bd629f8596402e084ac2d849388cca",
+    "test_mock.py": "fe13a117e03af72eed211372aa52431915b982146c028ba8c690000846409a23",
+    "worker.py": "37a88ce1bf6987d18b30c987d913d96484144235f601cf7554cf797eeb8f90a6",
+    "run_mock.py": "2d41c9509754ae2ecc1afb9722e0d3201a2e0929dd33aecf1a0ce4ee21754e0b"
+  },
+  "reuse_scope": "Copied reviewed Pi generic Python proxy/server only; native transport compatibility remains untested",
+  "executable": "python3 run_mock.py --launch after exact authorizedTrue/hash authorization",
+  "remaining_gates": [
+    "Root review before execution",
+    "Actual native proxy compatibility untested",
+    "Negative mock cannot validate complete gross usage"
+  ],
+  "superseded_zero_call_plan_sha256": "bf696e7b6dc9d4b8e8b868709857a3bc9e8bb0eea1009dfebe3515805084323c",
+  "runtime_hashes": {
+    "loader_sha256": "0ea824a86be5757533fdb092eff7050871bd7a711a46babde0ffe0e44ac5ad88",
+    "native_binary_sha256": "5ba1d69542af6fd91702d4dbf4845f41c0a29efa3e9bc56fcc308347ff70ff3e"
+  },
+  "accepted_connections_cap": 16,
+  "active_broker_handlers_cap": 4,
+  "accepted_socket_timeout_seconds": 3,
+  "broker_UID": "explicit frozen host UID:GID owns private mode0700 dirs/0600 socket; no capabilities required",
+  "host_uid": 1003,
+  "host_gid": 1004,
+  "superseded_consumed_phase": "../mock-preparation",
+  "superseded_consumed_plan_sha256": "e034e27cdcc4db86e83bb40406ccb261dbdfd11b4ece3971f6accbb0b71abacf",
+  "private_path_template": "/tmp/solpi-cpm-{plan_sha256_first16}",
+  "socket_path_bytes_max": 100,
+  "full_plan_binding": "exclusive launch.json stores full plan SHA; short dirname not sole provenance",
+  "scratch_tmpfs_bytes": 536870912,
+  "native_output_capture": "concurrentpipe64KiBretain/fullstreamhash/totalbytes/drain; no globalRLIMIT",
+  "resource_readiness": {
+    "plan_sha256": "88de3a13be245d6507f07e215d6c1dff7d8fee72b77ca59f8ad8a458254f2938",
+    "audit_sha256": "1607f82624739431c9593c5fa343231435dd8947a41a7cf8bc54ff8e0a4a5c56"
+  },
+  "preserved_consumed_plan_sha256": "5c76ec71566fe4f7532b6d583be5a92864c52a9143d3e7449ef44a92bf1692e3",
+  "version_seconds": 30,
+  "version_stdout_expected": "GitHub Copilot CLI 1.0.91.\nRun 'copilot update' to check for updates.\n",
+  "superseded_prepared_plan_sha256": "d87c39450f97bd7d0f076e7d4e9a3d2e5a2c146f317964b30df5855a5a181166"
+}

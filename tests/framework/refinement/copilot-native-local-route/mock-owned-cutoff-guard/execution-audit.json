@@ -1,0 +1,65 @@
+{
+  "status": "PASS_NARROW_NATIVE_OWNED_STOP_BEFORE_EOF_NOT_ACCOUNTING_OR_SOLVE",
+  "plan_sha256": "ea39b7e0fccbb4cc241fa4969e72992b0f42ea246e8c0a6d2898a94683c2e853",
+  "native_starts": 1,
+  "all_observed_and_accepted_POST": 1,
+  "extra_attempts": 0,
+  "real_inference": 0,
+  "operator_actor_relaunches": 0,
+  "persisted_startup_runtime_witness": true,
+  "exact_container_stop_source_checked": true,
+  "container_exit": 137,
+  "native_exit_and_final_worker_usage": "UNAVAILABLE_not_inferred_from_container_exit",
+  "partial_response_bytes": 194,
+  "promised_HTTP_length": 322,
+  "stop_verified_before_EOF": true,
+  "raw_Docker_stop_inspects_not_separately_retained": true,
+  "no_global_retry_prevention_claim_from_one_fixture": true,
+  "reconciliation": {
+    "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+    "status": "INCOMPLETE_OR_UNCOVERED",
+    "reasons": [
+      "provider_response_usage_missing_or_incomplete",
+      "native_usage_file_unavailable"
+    ],
+    "observed_attempt_inventory": {
+      "all_POST_headers": 1,
+      "accepted_body_POST": 1,
+      "denied_POST_headers": 0,
+      "auxiliary_denied_records": 0,
+      "total_recorded_attempts": 1,
+      "denied_connection_count": 0,
+      "accepted_ordinals": [
+        1
+      ],
+      "denied_ordinals": [],
+      "native_retry_count_NOT_inferred_from_generic_inventory": true,
+      "observed_inventory_membership_verified": true,
+      "unobserved_traffic_completeness_NOT_proven": true
+    },
+    "accepted_provider_POST": 1,
+    "native_model_request_count": null,
+    "native_user_turn_count": null,
+    "observed_native_fixture_tokens": null,
+    "pinned_source_fixture_expectation_NOT_raw_provider_usage": null,
+    "provider_usage_receipts_complete": false,
+    "real_model_tokens": null,
+    "USD": null,
+    "native_agent_model_metrics_not_additive": true,
+    "lastCall_counters_not_run_total": true,
+    "real_scored_eligible": false
+  },
+  "cleanup_verified": true,
+  "original_cutoff_failure_retained": true,
+  "scored_wait_renewed": false,
+  "private_artifact_hashes": {
+    "result.json": "c4ea950af273e5e7ef57c18bcc19b9b779e2c9dd7813b77548218839fae4c620",
+    "broker-ledger.json": "567fa0968a8317072dc907c7e5ffff5338f3f30fb6c83b4244aa7014d2645735",
+    "guard-row.json": "6c62628c86912cfd446e54ff80db38dc9d7b09576b9fd7e0a4fd2a6a421d58ac",
+    "partial-response.sse": "ac0af0de638ea3e82f3615dcb1cdcf1925107ee520185409619158775f7a0f84",
+    "response-1.sse": "ac0af0de638ea3e82f3615dcb1cdcf1925107ee520185409619158775f7a0f84",
+    "output/worker-start.json": "1a17243caa0122e2ce96db2461b469ad6f3b0cb6342530ee225a0390311c5df9",
+    "container-before-start.json": "279d019da1f037c9b607b2aae9e146bfe975e83b42a2df4000a4531d9b3cf079"
+  },
+  "goal_complete": false
+}

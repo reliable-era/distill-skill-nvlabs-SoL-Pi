@@ -1,0 +1,38 @@
+{
+  "status": "DIAGNOSTIC_IDENTIFIED_MISSING_DECLARED_INTENT_TOOL",
+  "plan_sha256": "423f3462a75f6ff0835dfb86573d9497065d5d43ff0f4e2bbf5cb1e1b4d94c80",
+  "native_starts": 1,
+  "synthetic_POST": 1,
+  "native_exit": 1,
+  "fixture_status": 422,
+  "real_inference": 0,
+  "guard_code": "INTENT_DECLARATION_COUNT",
+  "shape_metadata": {
+    "object_dict": true,
+    "model_matches": true,
+    "stream_true": true,
+    "messages_list": true,
+    "tools_list": true,
+    "tool_count": 17,
+    "function_count": 17,
+    "intent_declaration_count": 0
+  },
+  "same_acceptance_limits_and_worker_as_predecessor": true,
+  "offline_tests_passed": 7,
+  "native_successful_stream": "UNEXERCISED",
+  "prior_exact_reason_recovered": false,
+  "fixture_tool_assumption_mismatch_NOT_Qwen_failure": true,
+  "no_request_payload_credentials_headers_retained": true,
+  "original_stages_unchanged": true,
+  "cleanup_verified": true,
+  "retries": 0,
+  "private_artifact_hashes": {
+    "result.json": "43ffe58acb672acae970fc9f4fcb0caf33d3a86474f76ce9f4af81d1ab367970",
+    "broker-ledger.json": "719582c576132530855213ea1e52d0d8bf92a65b7f629253a1402b4fb2952033",
+    "container-before-start.json": "5541b6ba64304c58a76464398b4e47a0c6ca01a858025c2dc0ed71a6439af882",
+    "output/worker-result.json": "412a2379db59615832ad86aa55ef3e50fc34bb5375a7a961af4fab00b9d1f018",
+    "output/private-usage.json": "73a0e43aade3809caf347bdf63c600d3721e26c178742b8660aeede8998e7f4d"
+  },
+  "next": "only separatelydeclared safe tool contract actuallysupported by native request; no blindshell/file fallback or stage retry; no realinference/scoringwaitrenewal",
+  "goal_complete": false
+}

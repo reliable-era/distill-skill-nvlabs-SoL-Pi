@@ -1,0 +1,36 @@
+{
+  "status": "metadata_startup_extraction_space_failure_timeout",
+  "plan_sha256": "94f713066f1a3457a027ea622f3d7e38fde41bf2766ab9beb80d0207f8edd306",
+  "native_version_result": {
+    "runtime_hashes": {
+      "loader_sha256": "0ea824a86be5757533fdb092eff7050871bd7a711a46babde0ffe0e44ac5ad88",
+      "native_binary_sha256": "5ba1d69542af6fd91702d4dbf4845f41c0a29efa3e9bc56fcc308347ff70ff3e"
+    },
+    "prompt_starts": 0,
+    "streams": {
+      "stdout": {
+        "total_bytes": 0,
+        "retained_bytes": 0,
+        "sha256_full_stream": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "total_bytes": 20041,
+        "retained_bytes": 20041,
+        "sha256_full_stream": "31576d5f4e0cfb2840fca2c15ba3e200b333e3c33686117e550088528cbf0db9"
+      }
+    },
+    "timeout": true,
+    "returncode": -15,
+    "owned_process_terminal": true,
+    "reader_threads_terminal": true
+  },
+  "runtime_hashes_match": true,
+  "observed_error": "Bundled package extraction TAR_ENTRY_ERROR(ENOSPC): no space left on device",
+  "actual_environment": "same128MiB /tmp tmpfs; freshHOME/readonlyrootfs/512MiBmemory/UID1003:1004/networknone/capdropALL/noNewPrivileges; no globalRLIMIT",
+  "causality_scope": "Direct observed ENOSPC during this metadata diagnostic. Reproduces startup failure under same original filesystem limits; original missing stdout/stderr cannot be retroactively restored or asserted identical.",
+  "container_absent": true,
+  "OOMKilled": false,
+  "model_prompt_POST_auth_pull_install_calls": 0,
+  "external_phase_retries": 0,
+  "proposal": "Separately reviewed bounded runtime cache/extraction capacity preparation; do not increase resources or rerun mock automatically. Source-level or cached-package inventory can determine finite required space before next launch."
+}

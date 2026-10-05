@@ -1,0 +1,47 @@
+{
+  "status": "prepared_unlaunched_requires_root_review",
+  "purpose": "native fake HTTP400 routing only; zero actual inference",
+  "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70",
+  "native_version": "1.0.91",
+  "native_starts_cap": 1,
+  "POST_cap": 2,
+  "POST_scope": "at most two accepted/body-read mock provider POSTs; later attempts refused before body/count",
+  "native_seconds": 30,
+  "outer_seconds": 45,
+  "cleanup_seconds": 40,
+  "models": 0,
+  "retries": 0,
+  "acquisitions": 0,
+  "auth_calls": 0,
+  "worker_caps": {
+    "cpu": 1,
+    "memory_bytes": 536870912,
+    "pids": 128,
+    "network": "none",
+    "rootfs": "readonly"
+  },
+  "routing": "native documented HTTP_PROXY/HTTPS_PROXY; localhost exact-authority HTTP/CONNECT proxy relays only fixed Unix socket; no Node monkeypatch",
+  "bytes": {
+    "request": 262144,
+    "response": 2097152
+  },
+  "accounting": "broker accepted request count/body hashes/status + native usage JSON if emitted; HTTP400 cannot validate gross token coverage",
+  "primary_source_provenance": "../audit.json",
+  "source_hashes": {
+    "stream_proxy.py": "372f412e818efa2090eae2d8987abf27ca6902019d8579d561f6392e375e1963",
+    "server.py": "59a2d9da646a721768fe186b89a28811945b3cfaaf2640a17cebff5be7f13e32",
+    "tunnel_proxy.py": "cd58735e0b43e40909afcbe9b8b247fa82bd629f8596402e084ac2d849388cca",
+    "test_mock.py": "b6be203b0f78e32537af8be1cc2bfe2a6c69b68ace6b3c33177778944e16595e",
+    "worker.py": "a95a260d393c1579ae352a657873a950ea22dccfd66cfcf793db520eb317fef5",
+    "run_mock.py": "340641c01d4bca1083b2d11af88f2fc49a985aeee7dbbe38ce5da75e8bba4469"
+  },
+  "reuse_scope": "Copied reviewed Pi generic Python proxy/server only; native transport compatibility remains untested",
+  "executable": "python3 run_mock.py --launch after exact authorizedTrue/hash authorization",
+  "native_output_file_cap_bytes": 1048576,
+  "remaining_gates": [
+    "Root review of accepted-POST versus attempted-connection cap scope",
+    "Actual native proxy compatibility untested",
+    "Native negative mock usage file may be absent; full gross coverage not validated"
+  ],
+  "superseded_zero_call_plan_sha256": "239a5fdc0885596a88eb378f350653defaaed4f3aa84bb55246bd0e928519271"
+}

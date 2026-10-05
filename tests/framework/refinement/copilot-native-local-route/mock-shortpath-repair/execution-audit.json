@@ -1,0 +1,45 @@
+{
+  "status": "failed_native_version_preflight_no_prompt",
+  "plan_sha256": "5c76ec71566fe4f7532b6d583be5a92864c52a9143d3e7449ef44a92bf1692e3",
+  "authorization_sha256": "b39486d77a07f49b8d403f27a16aec76e05079544b24bbc3d504edad49aa1f0b",
+  "private_result_sha256": "4933be8e7143010453f4a6a9edbe4143980ce0f58d90b91f628f67c658bd559c",
+  "worker_errors": [
+    "RuntimeError: native version mismatch"
+  ],
+  "actual_runtime_hashes": {
+    "loader_sha256": "0ea824a86be5757533fdb092eff7050871bd7a711a46babde0ffe0e44ac5ad88",
+    "native_binary_sha256": "5ba1d69542af6fd91702d4dbf4845f41c0a29efa3e9bc56fcc308347ff70ff3e"
+  },
+  "native_prompt_starts": 0,
+  "model_calls": 0,
+  "auth_calls": 0,
+  "accepted_POST": 0,
+  "all_POST_headers": 0,
+  "accepted_connections": 0,
+  "actual_security": {
+    "user": "1003:1004",
+    "network_mode": "none",
+    "nano_cpus": 1000000000,
+    "memory": 536870912,
+    "cap_drop": [
+      "ALL"
+    ],
+    "security_opt": [
+      "no-new-privileges"
+    ]
+  },
+  "cleanup": {
+    "container_absent": true,
+    "docker_client_terminal": true,
+    "broker_workers_remaining": 0,
+    "socket_absent": true
+  },
+  "runtime_calls": {
+    "native_version_command": 1,
+    "native_prompt": 0,
+    "container_start": 1
+  },
+  "limitation": "Version subprocess stdout/stderr/returncode were captured but not persisted by frozenworker; underlying cause unknown. Matching loader+ELF hashes do not support actual version-change inference.",
+  "retries": 0,
+  "public_scan": "Only synthetic static prompt and hash/security metadata published; private raw logs/bodies retained outside Git."
+}

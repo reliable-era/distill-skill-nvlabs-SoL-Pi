@@ -1,0 +1,43 @@
+{
+  "status": "FAIL_closed_fixture_guard_native_stream_unexercised",
+  "plan_sha256": "7def27bf8adea945bb2bb87fbc30fb401cdb5dda6dd2f6ab1271b5b7db0cbad1",
+  "authorization_sha256": "e64a4ddd1c8e1a21f3c96478912a98f28be5bb1fd824bb7c0f957f72ad85d8da",
+  "authorization_basis": "agentoperationalapproval under standingdelegation/NOTexplicitplan-specifichumanapproval",
+  "native_starts": 1,
+  "native_exit": 1,
+  "synthetic_provider_POST": 1,
+  "fixture_status": 422,
+  "fixture_error_type": "ValueError",
+  "exact_guard_reason": "UNAVAILABLE:notretained/no requestbody retained",
+  "real_model_inference": 0,
+  "no_native_version_probe_repeated": true,
+  "native_usage_empty_despite_failed_POST": true,
+  "successful_stream_tool_accounting": "UNEXERCISED",
+  "actual_caps": {
+    "NetworkMode": "none",
+    "NanoCpus": 1000000000,
+    "Memory": 2147483648,
+    "PidsLimit": 128,
+    "Tmpfs": {
+      "/tmp": "rw,exec,nosuid,size=512m"
+    },
+    "CapDrop": [
+      "ALL"
+    ],
+    "ReadonlyRootfs": true
+  },
+  "cleanup_verified": true,
+  "worker_proxy_reader_container_socket_remaining": 0,
+  "retries": 0,
+  "private_artifact_hashes": {
+    "result.json": "3f893c22316a71bde20e1b9e4c2eca18912e2abfdf37a02368ffb6ee189e70f5",
+    "broker-ledger.json": "afaaf5c35073e783d5ce443e60f7baf6a90d52235f8b4c1e1f236654dbd79e1d",
+    "container-before-start.json": "2a175189ba35f598b11890659eaec809dd849ed4479be81c7d1557ea20b3a5e6",
+    "output/worker-result.json": "cabe966453bf89f51bca87b0c09836c9eb81445e83e08d1b8684b70475f7b054",
+    "output/private-usage.json": "c0888226cb9d63fefe67f8bac9972a98d123b2f73fc092b08c2e00c9b6a935c8",
+    "output/private-native.stdout": "aa0dafa1d61469c16c09bd0a6ab92bde135e24b9727d76149ad2a7c67aa3a7e3"
+  },
+  "next": "metadata-only exact guard classification in separatelyfrozen prospective gate; preserve failedstart/no retry/guardrelaxation/streamsuccessclaim; no inference or scoringwaitrenewal",
+  "primary_denominator_changed": false,
+  "goal_complete": false
+}

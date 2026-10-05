@@ -1,0 +1,97 @@
+{
+  "status": "PASS_native_fake400_routing_only",
+  "plan_sha256": "93f04a9a44ddaae6d73a7fab9d56dc1e5941ad0312f384b2660f8f4d27130dda",
+  "authorization_sha256": "cfe6a810aec98a07fa518df49ad7bc2f7e67ed1872a5bca48bbd90bba749b116",
+  "source_hashes_match": true,
+  "private_result_sha256": "853c9dfaf3528ff33a2551f9231fa1f3244fb0e3a758216280c0e10ac6dc4ad1",
+  "private_usage_sha256": "8be72127b2aa941ec25e0a7c7b8bf7f595794174931c579ca424741651189be4",
+  "native_prompt_starts": 1,
+  "native_exit_code": 1,
+  "exit_interpretation": "expected fakeproviderHTTP400; no inference",
+  "version_returncode": 0,
+  "runtime_hashes": {
+    "loader_sha256": "0ea824a86be5757533fdb092eff7050871bd7a711a46babde0ffe0e44ac5ad88",
+    "native_binary_sha256": "5ba1d69542af6fd91702d4dbf4845f41c0a29efa3e9bc56fcc308347ff70ff3e"
+  },
+  "streams": {
+    "stderr": {
+      "total_bytes": 0,
+      "retained_bytes": 0,
+      "sha256_full_stream": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "total_bytes": 5128,
+      "retained_bytes": 5128,
+      "sha256_full_stream": "fac4c97064a325d1dfbc3e7d6b4f4cfa37a1fee64abd47b6383a4bb9723bf938"
+    }
+  },
+  "provider_ledger": {
+    "accepted_body_POST": 1,
+    "all_POST_headers": 1,
+    "accepted_connections": 1,
+    "denied_connections": 0,
+    "records": [
+      {
+        "verb": "POST",
+        "ordinal": 1,
+        "authority": "provider.example:8000",
+        "path": "/v1/chat/completions",
+        "accepted": true,
+        "body_bytes": 47656,
+        "body_sha256": "6d52cbabb0bd650227920702086fe79e06b05fea97e3eda1e42d0f94527f8f87",
+        "status": 400,
+        "inference_calls": 0
+      }
+    ],
+    "workers": 0
+  },
+  "native_usage_observation": {
+    "totalPremiumRequestCost": 0,
+    "totalUserRequests": 0,
+    "totalNanoAiu": 0,
+    "totalApiDurationMs": 0,
+    "sessionStartTime": "2026-10-04T08:56:59.792Z",
+    "codeChanges": {
+      "linesAdded": 0,
+      "linesRemoved": 0,
+      "filesModifiedCount": 0,
+      "filesModified": []
+    },
+    "modelMetrics": {},
+    "agentMetrics": {},
+    "lastCallInputTokens": 0,
+    "lastCallOutputTokens": 0
+  },
+  "gross_usage_gate": "TBD: native usage zero/empty modelMetrics despite1failed provider request; providerreceipt necessary to retain allattempts. Successful output/cache/reasoning mapping not exercised.",
+  "actual_caps": {
+    "NetworkMode": "none",
+    "NanoCpus": 1000000000,
+    "Memory": 2147483648,
+    "PidsLimit": 128,
+    "ReadonlyRootfs": true,
+    "CapDrop": [
+      "ALL"
+    ],
+    "SecurityOpt": [
+      "no-new-privileges"
+    ],
+    "Tmpfs": {
+      "/tmp": "rw,exec,nosuid,size=512m"
+    }
+  },
+  "actual_user": "1003:1004",
+  "cleanup": {
+    "container_absent": true,
+    "docker_client_terminal": true,
+    "broker_workers_remaining": 0,
+    "socket_absent": true
+  },
+  "native_readers_terminal": true,
+  "native_process_terminal": true,
+  "proxy_workers_remaining": 0,
+  "model_auth_pull_install_calls": 0,
+  "retries": 0,
+  "primary_denominator_changed": false,
+  "Qwen_actual_compatibility": "TBD: this stage fake400only",
+  "causality_scope": "Only scratch noexec\u2192exec changed versus preceding mock; addon startup no longerfailed andnative reachedprovider. Strong prospective evidence for mountcause within this image, not retroactiveoriginalmissinglogproof."
+}

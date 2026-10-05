@@ -1,0 +1,15 @@
+# Bounded chat drain binding — offline, caller transport enforcement required
+
+Added copilot_bounded_chat_drain.py/test_copilot_bounded_chat_drain.py;8new testsPASS/0native/Docker/process/network/realprovider/modelcalls. Combines existing chatcollector, ownedissuanceguard and privateatomicrowpersistence. No new model request, resend, actorcontinuation or deadlineincrease. read(remaining_seconds) callback must enforce transport/sockettimeout; function cannot make an arbitraryblocking reader safe.
+
+Consumer BrokenPipe/connectionreset/timeout invokes verifiedownedstop BEFOREexistingcollector detaches and reads further upstreamtail. Tests verify stop precedes nextread, tailusage/rawbytes retained, source/request/epoch snapshot staysstable before/afterread. Deadline argument finite and fixed; expiredbefore-read makes0read calls, late-readbytes are retained withoutdelivery and eligibleusage unavailable. Changedsource/epoch stopsdrain/no furtherread; do not attribute completecost to mixedsources.
+
+Readfailure/byteoverflow/incompleteEOF or missingusage invokes stickyguardstop/admissionclose and saves unavailableusage. Unverifiedstop remainsunsafe/error; never upgradedbyreceipt alone. Sourceidentitystring stability NOTauthentication; provider_source checks remaincaller scope. Capture counts/hashes all transportbytes read separately from boundedraw retainedbytes, so overflow-consumedbytes not silentlyreported0. Optionalcache/reasoningdetails stayunknown. Fakefixturegross18 not realmodeltokens or performance.
+
+Raw provider-stream.sse exclusivecreate/O_NOFOLLOW/0600, boundedcollectorrawhash/size and atomicdrain-row.json written beforecaller can teardown. Existingreceipt destinations rejected BEFOREread/nohistoricaloverwrite. No fsync/powerloss durability claim. PartialSSE framing/usage observations remain distinct from eligiblecompleteusage; any read/drainerror clearseligibleusage even if terminalcounts parsed. A bound error can leave only earlierrawprefix; allconsumed-bytehash/count explicitly separate, tokens unavailable.
+
+## Coverage boundary
+
+Controlled readers/clock/stopcallbacks, not nativeCLI or actualHTTPsocket deadline. Tests do not prove realreader honorsremainingtimeout, actualcontainerstop/realpassivecompletion, concurrentrequest scope, nativepartial/artifactcapture or allheaders withinlimits. Source identity independentlycheckedfalse/real_scored_eligible=false EVEN completefixture. These are not readiness/promotion proxies. Existing hostidentitychecks/socketguard/nativeguard evidence reused conceptually, not rerununchanged.
+
+Next a separatelyfrozen hosttransport integration must bind a deadline-enforced reader, exactowned stop/provenance/allattemptinventory and startup witnesses; preserve partialactor/cost/grades before teardown. Real provider completion unknown muststopandremain unavailable; no guessedbudgetrenewal or blindresend. Existing scoredcandidate entirelyunstarted/schedulerwait0, fixed9/89/twosources/localQwen unchanged, canonical unchanged/noactiveworker/goal incomplete.

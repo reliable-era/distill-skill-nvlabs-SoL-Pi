@@ -1,0 +1,5 @@
+# Copilot mock matching validated resources
+
+Executed once under root conditional authorization; routing failed before any provider request. Same native image/hash/UID/security/routing/request caps as preserved shortpath phase. Scratch512MiB/memory2GiB match validated version readiness. Native stdout/stderr use boundedpipe retention64KiBeach/fullstreamhash/counters/drain, no global RLIMIT. Version stdout/stderr/returncode retained before checking. Native reader terminalproof required before routingPASS. Root must review exact plan/source before sole mock execution.
+
+Exact version receipt/runtime hashes passed. One native prompt start exited1: extracted native addon failed to map a shared-object segment; fallback modules absent. Frozen scratch is noexec, a strong explanation requiring separate verification. Version-only readiness did not exercise the addon-loading path. All provider counts zero; process/readers/proxy/broker/container/client/socket terminal/absence verified. No retry or runtime mount change performed. Raw stderr/hash retained privately.

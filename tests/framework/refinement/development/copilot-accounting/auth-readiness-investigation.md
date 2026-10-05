@@ -1,0 +1,7 @@
+Pinned Copilot 1.0.91 documents `GH_TOKEN` followed by `GITHUB_TOKEN` for a fine-grained PAT with the Copilot Requests permission. The new accounting gate accepts precisely one of those entries in a private mode0600 env file. It does not require a new human login merely because the file has not been created.
+
+The original pilot declares that an OAuth token was imported from host configuration into such a file. The checked-in runner only accepts the supplied env file; the importer implementation was not found, so that provenance declaration does not prove a supported reusable cache format.
+
+Existing GitHub CLI authentication proves GitHub access, while Copilot entitlement and accepted token permissions remain TBD. Passing an existing credential through the documented environment variable is a supported transport; acceptance of this particular gh OAuth credential remains untested. Automatic `gh auth token` fallback and a direct native config-file mount remain TBD in the pinned documentation/help inspected. Binary string absence is not evidence that a capability is absent.
+
+The user already authorized credential mounts, so private staging of an existing supported credential can fall within that scope after root review. A genuinely new human login is needed only if no usable supported existing credential is available or accepted. No opaque Copilot configuration was extracted, no credential values were read, and no model, provider, or auth-refresh calls were made. The pending human question has not been answered or treated as approval.

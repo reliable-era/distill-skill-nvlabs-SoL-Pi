@@ -1,0 +1,43 @@
+{
+  "status": "PASS_NARROW_NATIVE_STOP_THEN_COMPLETE_SYNTHETIC_UPSTREAM_RECEIPT",
+  "plan_sha256": "5ec7ed4623d8ab0dff10b349f24a45847c1be1f0b5a6c4ba542af2c1ac3fc06f",
+  "native_starts": 1,
+  "native_POST_headers": 1,
+  "logical_synthetic_request": 1,
+  "additional_host_to_upstream_fixture_HTTP_hop": 1,
+  "total_two_hop_HTTP_POST": 2,
+  "same_request_body_sha256_binds_hops": true,
+  "real_inference": 0,
+  "operator_relaunches": 0,
+  "container_exit": 137,
+  "native_exit_final_usage": "UNAVAILABLE_notzero",
+  "raw_provider_receipt_bytes": 651,
+  "fixture_usage_NOT_real_tokens": {
+    "input_tokens": 12,
+    "output_tokens": 6,
+    "inclusive_gross_tokens": 18,
+    "cache_read_tokens": 4,
+    "reasoning_tokens": 2
+  },
+  "raw_stop_transition_exact_ID_image_running_to_stopped_verified": true,
+  "deadline_not_extended": true,
+  "complete_tail_read_after_owned_stop": true,
+  "cleanup_verified": true,
+  "source_provenance_real_Qwen_NOT_established": true,
+  "transitive_unused_normalizer_import_not_fully_launch_pinned": true,
+  "source_shared_provider_cost_current_sha256_NOT_historical_pin": "29b4d98f3fc22460fcc95e04aa4335e4b65477e99e040d4e49b840b6fc04f759",
+  "real_scored_eligible": false,
+  "private_artifact_hashes": {
+    "result.json": "6d589c2c39c3796a6d05b443d36471b46a06097427df69d5208a3347c5ece472",
+    "broker-ledger.json": "b4005b1201b31b34b2cae7fe0ce8de6c3a095024af6df6f9290adb6d53eddd5e",
+    "upstream-ledger.json": "e7af2c25481d35765d987d2559a50bb8be3c2223a986ea0c9414a2396fd560ff",
+    "drain/drain-row.json": "81f5307bce287895d500aad76e4bd672ee78b9ac90dd4c90fc64fb7126422a17",
+    "drain/provider-stream.sse": "e104056acd879ed7a0c7bb50b64432bb6dc9c783c71cb149c75d907d297b75d0",
+    "guard-row.json": "89cc367198fff78bf6550cd28351d8aa5c9fdd8448b7047af13909979373381b",
+    "partial-response.sse": "ac0af0de638ea3e82f3615dcb1cdcf1925107ee520185409619158775f7a0f84",
+    "owned-stop-docker-receipts.json": "73b056cb0536f39b5ecbdc4c3b200ed3b776af2c6e83afd5e5749d0bc21b92ed",
+    "output/worker-start.json": "1a17243caa0122e2ce96db2461b469ad6f3b0cb6342530ee225a0390311c5df9",
+    "container-before-start.json": "68befc98f9ff60c33d03ec75c4ad27061d6630d6d615cf6ba057c0018dc2abc5"
+  },
+  "goal_complete": false
+}

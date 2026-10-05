@@ -1,0 +1,50 @@
+{
+  "status": "failed_native_addon_startup_before_provider",
+  "plan_sha256": "a0d646560add542c048c33c0cc3a03e9bd31acd024ffbf46882fac8877fb675a",
+  "authorization_sha256": "d5dded21bd07222eb208089102f73d6f97e0d3c3b646cf0214bdfa6bffa4b4ed",
+  "private_result_sha256": "0541ec59114c26d580e0582a325e7b5c75739aa5dc07b397caa4a4ede6f88aed",
+  "native_prompt_starts": 1,
+  "native_exit_code": 1,
+  "runtime_hashes": {
+    "loader_sha256": "0ea824a86be5757533fdb092eff7050871bd7a711a46babde0ffe0e44ac5ad88",
+    "native_binary_sha256": "5ba1d69542af6fd91702d4dbf4845f41c0a29efa3e9bc56fcc308347ff70ff3e"
+  },
+  "version_returncode": 0,
+  "native_streams": {
+    "stdout": {
+      "total_bytes": 0,
+      "retained_bytes": 0,
+      "sha256_full_stream": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "total_bytes": 2447,
+      "retained_bytes": 2447,
+      "sha256_full_stream": "2373912d151a5db38f74e139a1e26174657e0de3ca52385a879108073c859ee4"
+    }
+  },
+  "provider_counts": {
+    "accepted_body_POST": 0,
+    "all_POST_headers": 0,
+    "accepted_connections": 0,
+    "denied_connections": 0
+  },
+  "CONNECT_counts": {
+    "CONNECT": 0,
+    "denied": 0,
+    "completed": 0,
+    "errors": 0
+  },
+  "observed_error": "Native addon runtime.node at extracted cache path failed to map segment from shared object; listed fallback modules not found",
+  "inference": "Frozen /tmp tmpfs noexec strongly fits shared-object mapping failure; not proven sole cause. Version-only readiness exercises a shallower startup path than prompt startup.",
+  "cleanup": {
+    "container_absent": true,
+    "docker_client_terminal": true,
+    "broker_workers_remaining": 0,
+    "socket_absent": true
+  },
+  "native_and_reader_terminal": true,
+  "proxy_workers_remaining": 0,
+  "model_auth_pull_install_calls": 0,
+  "retries": 0,
+  "next_proposal": "Separately reviewed narrow runtime-cache executable mapping preparation/diagnostic; preserve no external networking/UID/capability guards. No automatic repeat."
+}

@@ -1,0 +1,50 @@
+{
+  "status": "ACCOUNTING_NEGATIVE_NATIVE_SUCCESS_WITH_MISSING_USAGE",
+  "plan_sha256": "0c05b5c833343ec7c2b258905b87b939ab3e6fa31349acde137097a9229282ba",
+  "native_starts": 1,
+  "synthetic_POST": 1,
+  "real_inference": 0,
+  "native_exit": 0,
+  "routing_only_pass": true,
+  "retained_response_written_bytes": 370,
+  "terminal_and_DONE_seen": true,
+  "provider_usage_unavailable_NOT_zero": true,
+  "native_reports_zeros_despite_ACK": true,
+  "reconciliation": {
+    "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+    "status": "INCOMPLETE_OR_UNCOVERED",
+    "reasons": [
+      "provider_response_usage_missing_or_incomplete"
+    ],
+    "accepted_provider_POST": 1,
+    "native_model_request_count": 1,
+    "native_user_turn_count": 1,
+    "observed_native_fixture_tokens": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0,
+      "reasoningTokens": 0,
+      "inclusive_gross": 0
+    },
+    "pinned_source_fixture_expectation_NOT_raw_provider_usage": null,
+    "provider_usage_receipts_complete": false,
+    "real_model_tokens": null,
+    "USD": null,
+    "native_agent_model_metrics_not_additive": true,
+    "lastCall_counters_not_run_total": true,
+    "real_scored_eligible": false
+  },
+  "cleanup_verified": true,
+  "retries": 0,
+  "original_stages_unchanged": true,
+  "raw_private_artifact_hashes": {
+    "result.json": "77386c5d0d419891af2e36b6b6ff64103171dc389c8f48d2fd3c48cfee258ed0",
+    "broker-ledger.json": "db647170f4aea85e30b28dc1b1501986fea8a90ab572f6274a86c6bb545d090e",
+    "response-1.sse": "336320ece4b8753e27ebccb826279a7137b773e23b0e7dfce456bfb2b5aa7a13",
+    "output/private-usage.json": "2dfe5e22769559a33d7b31159e1779ce43121a2e027177b424a26ee04cef8ee4",
+    "output/private-native.stdout": "67c0e4f29596b6b34d4c430aa5436ae1234806a6b80102f4861d740b9b1067a2",
+    "container-before-start.json": "079e1925059f400e189c4abec5f263488e59b7b5e81fd94622587334fc88082c"
+  },
+  "goal_complete": false
+}

@@ -1,0 +1,15 @@
+# Accepted, denied and auxiliary inventory — offline verified, readiness incomplete
+
+Added copilot_request_inventory.py and test_copilot_request_inventory.py; extended saved-schema reconciler to preserve all observed POST records, not filter denied attempts. 15 combined tests pass. audit_copilot_full_attempt_inventory.py checks six independent saved stages against unchanged plan/source/private hashes and bounded response receipt hashes where present; pins new software hashes in copilot-full-attempt-inventory-audit.json. No native launch, model, provider/network/process calls or oldresult/audit rewrite.
+
+POST ordinals/counts reconcile against all_POST_headers, accepted body membership against accepted_body_POST. Explicit boolean acceptance and integer ordinals reject malformed metadata. Known deniedGET/CONNECT/PUT auxiliary records remain visible, never counted as accepted generation or silently discarded; unknown auxiliary layouts rejected. Any denied/auxiliary traffic, incomplete usage or native request-count mismatch remains INCOMPLETE_OR_UNCOVERED. This accounts observed records only, not unobserved traffic. Generic inventory does not label denied requests retries without stage-specific evidence.
+
+Saved cutoff result now returns structured inventory:4POST headers/1accepted/3denied/4total attempts. Native usage unavailable and missing responseusage remain unavailable, not zero; real_scored_eligible=false. Historical original cutoff audit's strict-reconciler rejection remains unchanged; this subsequent software supports its valid denied inventory without making that gate successful. Native-internal retry/no-retry requirement still FAILED; no operator relaunch occurred.
+
+Six saved cohorts remain separate: unsupportedintent1negative, guarddiagnostic1negative, finalstream1MATCHED_FIXTURE_ONLY, viewloop2MATCHED_FIXTURE_ONLY, missingusage1negative, cutoff4negative. These are attempt counts, NOTtokens or solves. Positive fixture counts are pinned-generator expectations, not retained original rawproviderusage; real/USD/performance inference forbidden. No pooling across stages.
+
+## Retry-control evidence boundary
+
+Read existing full environment-help.txt and providers-help.txt under ../copilot-native-local-route; neither documents a retry-disable flag/environment control. Existing customprovider/offline mode does not prove retries disabled; actual cutoff already contradicts that assumption. This is only absence in these retained help surfaces, NOTproof no control exists anywhere. Do not guess a COPILOT_* variable, modify CLI/server internals, borrow a catalog model identity, relax zero-retry or silently enlarge budgets. A documented/version-pinned client control or explicit goal-boundary decision is needed before a new native retry-control gate. No unchangedprobe repetition.
+
+Complete real native/provider accounting, actualQwen compatibility, candidate/K/Both delivery, original grader quality, >=3of5/ALL3economy/representative/family/independentconfirmation/USD/exposure/promotion remain missing. Current scoredwindow schedulerwait0/candidateunstarted; canonical unchanged/noactiveworker/goal incomplete.

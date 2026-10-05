@@ -1,0 +1,29 @@
+{
+  "status": "metadata_command_failed_observer_interference",
+  "plan_sha256": "74d94962dc6ab26f168c8a33e3b0aa4a3ea9161a83e7c23f539e6bd8127b83df",
+  "native_returncode": 1,
+  "timeout": false,
+  "native_hashes_match": true,
+  "output_metadata": [
+    {
+      "stream": ".stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stream": ".stderr",
+      "bytes": 6568,
+      "sha256": "bfc1747f5597db0eb201f31cc190c22f9c15d4a3c19388d81dd24d75460e53db"
+    }
+  ],
+  "observed_reason": "native bundled package extraction reports TAR_ENTRY_ERROR(EFBIG): file too large",
+  "diagnostic_interference": "Diagnostic applied RLIMIT_FSIZE64KiB to entire process tree, so bundled package extraction is also capped. Prior mock version preflight occurred before its RLIMIT. This diagnostic does not prove original failure cause.",
+  "native_internal_extraction_attempts": 3,
+  "external_phase_attempts": 1,
+  "prompt_POST_model_auth_pull_install_calls": 0,
+  "container_absent": true,
+  "container_exit_code": 0,
+  "OOMKilled": false,
+  "next_proposal": "Separately authorized metadata-only command with pipe readers bounded64KiB perstream; no RLIMIT_FSIZE inherited by native runtime. Preserve actualversion stdout/stderr/returncode beforeassert.",
+  "public_scan": "Public output contains only static CLI error classification and hashes, no private transcript/credentials"
+}

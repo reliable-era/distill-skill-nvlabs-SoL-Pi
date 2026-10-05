@@ -1,0 +1,43 @@
+{
+  "status": "PASS_NATIVE_SYNTHETIC_DECLARED_VIEW_TOOL_LOOP_ONLY",
+  "plan_sha256": "219fa8f89789d6e15257a7828276d3eec1f66248031d5c4de8a2626f8def58f4",
+  "native_starts": 1,
+  "synthetic_POST": 2,
+  "real_inference": 0,
+  "native_exit": 0,
+  "actual_view_path_and_marker_tool_success": true,
+  "actual_final_ACK_and_result": true,
+  "declared_view_schema_verified": true,
+  "native_usage_fixture_only": {
+    "inputTokens": 24,
+    "outputTokens": 12,
+    "cacheReadTokens": 8,
+    "cacheWriteTokens": 0,
+    "reasoningTokens": 4
+  },
+  "model_request_count": 2,
+  "native_user_turn_count": 1,
+  "inclusive_fixture_gross_NOT_real_tokens": 36,
+  "lastCall_input12_output6_NOT_run_total": true,
+  "agent_model_metrics_duplicate_not_additive": true,
+  "cleanup_verified": true,
+  "version_probe_not_repeated": true,
+  "offline_tests_passed": 4,
+  "retries": 0,
+  "builtin_skills_not_evaluated_skill_delivery": true,
+  "NOT_covered": [
+    "actualQwen model behavior",
+    "candidate/K/Both delivery",
+    "failed/cutoff/auxiliary usage",
+    "benchmarkquality/economy/USD/confirmation"
+  ],
+  "private_artifact_hashes": {
+    "result.json": "2512717967f3b655551842ae779e6ef361da7d3146c7c65acd6097c4adea2dcd",
+    "broker-ledger.json": "3050343580ef07306c6f4330663ec7c5e9c9932b9acd9a5c36b0753979c410d8",
+    "container-before-start.json": "bf4a7ab1ab604bf4964950ac426ff0dd234db70bec49ff38464b290c61b9e455",
+    "output/private-usage.json": "7575d877445e6588ac05a86bf611dedcd10df66239f81d0d21f7ab087084ea56",
+    "output/private-native.stdout": "8ab40f8194a730c3f6391c65ecf83717fe25eed84959f2d24739495f84f7ae87"
+  },
+  "scored_scheduler_wait_renewed": false,
+  "goal_complete": false
+}

@@ -1,0 +1,29 @@
+{
+  "status": "OFFLINE_SYNTHETIC_PROVIDER_FIXTURE_TESTED_NOT_NATIVE_READINESS",
+  "implementation": "copilot_provider_stream_fixture.py",
+  "tests": "test_copilot_provider_stream_fixture.py",
+  "passed_tests": 6,
+  "covers": [
+    "one declared tool call with fragmented JSON arguments",
+    "separate final response and terminal usage chunk",
+    "inclusive input plus output; cache and reasoning not added twice",
+    "reject missing terminal or usage rather than assigning zero",
+    "reject duplicate usage and data after terminal"
+  ],
+  "does_not_cover": [
+    "pinned native Copilot acceptance or tool execution",
+    "native usage-output-file schema or aggregate mapping",
+    "real Qwen response semantics or partial/retry/auxiliary accounting",
+    "benchmark grading, skill delivery, efficiency or promotion"
+  ],
+  "fake_usage_excluded_from_real_accounting": true,
+  "new_native_actor_calls": 0,
+  "new_model_or_network_calls": 0,
+  "scheduler_budget_renewed": false,
+  "next": "separately authorized bounded native synthetic stream/tool gate; do not rerun completed startup/fake400 or substitute SDK",
+  "goal_complete": false,
+  "source_sha256": {
+    "copilot_provider_stream_fixture.py": "b881daa7d875d0414fb58767c15d914ff4a5745518d884408595b24be1ab607e",
+    "test_copilot_provider_stream_fixture.py": "ac60f10f18a32a7778764aa2fae5899d6a6354cb7a2f5db28d99fc2348c2c708"
+  }
+}

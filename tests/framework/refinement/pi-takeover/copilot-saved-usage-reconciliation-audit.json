@@ -1,0 +1,130 @@
+{
+  "status": "PASS_OFFLINE_SAVED_SCHEMA_AND_NEGATIVE_RECONCILIATION_ONLY",
+  "cases": [
+    {
+      "stage": "mock-successful-stream-prepared",
+      "plan_sha256": "7def27bf8adea945bb2bb87fbc30fb401cdb5dda6dd2f6ab1271b5b7db0cbad1",
+      "execution_audit_sha256": "63e0676190a822a2d548dc97f41d10820ddb756e6ec15b4c3ca5d4f2aaf12f9d",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "INCOMPLETE_OR_UNCOVERED",
+        "reasons": [
+          "failed_or_unavailable_response",
+          "native_usage_schema_missing_or_invalid"
+        ],
+        "accepted_provider_POST": 1,
+        "native_model_request_count": null,
+        "native_user_turn_count": 0,
+        "observed_native_fixture_tokens": null,
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": null,
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    },
+    {
+      "stage": "mock-stream-guard-diagnostic",
+      "plan_sha256": "423f3462a75f6ff0835dfb86573d9497065d5d43ff0f4e2bbf5cb1e1b4d94c80",
+      "execution_audit_sha256": "6e225900c5b6307552e8c9542e141bca5c13d669ea3c494f675377344f244617",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "INCOMPLETE_OR_UNCOVERED",
+        "reasons": [
+          "failed_or_unavailable_response",
+          "native_usage_schema_missing_or_invalid"
+        ],
+        "accepted_provider_POST": 1,
+        "native_model_request_count": null,
+        "native_user_turn_count": 0,
+        "observed_native_fixture_tokens": null,
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": null,
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    },
+    {
+      "stage": "mock-final-stream",
+      "plan_sha256": "1f4060fb5fae353bf26bd9ee5b7e411da423dff844db58851ef15828b65b770d",
+      "execution_audit_sha256": "98dae5e119853682ece0927c45bfedc50b56b7c84a59f4b23b9fca5c006a8d8e",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "MATCHED_FIXTURE_ONLY",
+        "reasons": [],
+        "accepted_provider_POST": 1,
+        "native_model_request_count": 1,
+        "native_user_turn_count": 1,
+        "observed_native_fixture_tokens": {
+          "inputTokens": 12,
+          "outputTokens": 6,
+          "cacheReadTokens": 4,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 2,
+          "inclusive_gross": 18
+        },
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": {
+          "inputTokens": 12,
+          "outputTokens": 6,
+          "cacheReadTokens": 4,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 2,
+          "inclusive_gross": 18
+        },
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    },
+    {
+      "stage": "mock-view-tool-stream",
+      "plan_sha256": "219fa8f89789d6e15257a7828276d3eec1f66248031d5c4de8a2626f8def58f4",
+      "execution_audit_sha256": "bb90f8af54c3f1bb26743058eeb03349c3d4623e4e1922e9b7f5cc47331eceb8",
+      "reconciliation": {
+        "scope": "COPILOT_1.0.91_SAVED_SYNTHETIC_ONLY",
+        "status": "MATCHED_FIXTURE_ONLY",
+        "reasons": [],
+        "accepted_provider_POST": 2,
+        "native_model_request_count": 2,
+        "native_user_turn_count": 1,
+        "observed_native_fixture_tokens": {
+          "inputTokens": 24,
+          "outputTokens": 12,
+          "cacheReadTokens": 8,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 4,
+          "inclusive_gross": 36
+        },
+        "pinned_source_fixture_expectation_NOT_raw_provider_usage": {
+          "inputTokens": 24,
+          "outputTokens": 12,
+          "cacheReadTokens": 8,
+          "cacheWriteTokens": 0,
+          "reasoningTokens": 4,
+          "inclusive_gross": 36
+        },
+        "provider_usage_receipts_complete": false,
+        "real_model_tokens": null,
+        "USD": null,
+        "native_agent_model_metrics_not_additive": true,
+        "lastCall_counters_not_run_total": true,
+        "real_scored_eligible": false
+      }
+    }
+  ],
+  "new_native_starts": 0,
+  "new_provider_POST": 0,
+  "real_inference": 0,
+  "historical_stage_results_changed": false,
+  "provider_raw_response_usage_not_retained": true,
+  "benchmark_eligible": false,
+  "goal_complete": false
+}

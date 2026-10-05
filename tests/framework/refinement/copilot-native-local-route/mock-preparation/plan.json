@@ -1,0 +1,63 @@
+{
+  "status": "prepared_unlaunched_requires_root_review",
+  "purpose": "native fake HTTP400 routing only; zero actual inference",
+  "image_id": "sha256:d6d79bfad41b1fbac8288fc90fbc5d0412851fa355fcb9efcddae06531d2fd70",
+  "native_version": "1.0.91",
+  "native_starts_cap": 1,
+  "POST_cap": 2,
+  "POST_scope": "2 accepted/body-read POSTs; all POST headers including refused counted separately; 16 accepted broker connections maximum",
+  "native_seconds": 30,
+  "outer_seconds": 45,
+  "cleanup_seconds": 40,
+  "models": 0,
+  "retries": 0,
+  "acquisitions": 0,
+  "auth_calls": 0,
+  "worker_caps": {
+    "cpu": 1,
+    "memory_bytes": 536870912,
+    "pids": 128,
+    "network": "none",
+    "rootfs": "readonly",
+    "cap_drop": [
+      "ALL"
+    ],
+    "security_opt": [
+      "no-new-privileges"
+    ]
+  },
+  "routing": "native documented HTTP_PROXY/HTTPS_PROXY; localhost exact-authority HTTP/CONNECT proxy relays only fixed Unix socket; no Node monkeypatch",
+  "bytes": {
+    "request": 262144,
+    "response": 2097152
+  },
+  "accounting": "broker accepted request count/body hashes/status + native usage JSON if emitted; HTTP400 cannot validate gross token coverage",
+  "primary_source_provenance": "../audit.json",
+  "source_hashes": {
+    "stream_proxy.py": "46303ddcf52006e674af50a13488a51e38bfb44aaa1b7f69c3e41fef84d5dc6e",
+    "server.py": "59a2d9da646a721768fe186b89a28811945b3cfaaf2640a17cebff5be7f13e32",
+    "tunnel_proxy.py": "cd58735e0b43e40909afcbe9b8b247fa82bd629f8596402e084ac2d849388cca",
+    "test_mock.py": "680c9a63b86788cacc01f8abcd04be6f7cc40b5524a65660a4561f16efa810c7",
+    "worker.py": "cde0bf32f0bb81267893699f474f23c1a3d3db1ee1025ca7dc182f0a4d3b6d35",
+    "run_mock.py": "521f5ed1544fc9409be9088666a2d90ae413476de73d2f709886c74aad3ae241"
+  },
+  "reuse_scope": "Copied reviewed Pi generic Python proxy/server only; native transport compatibility remains untested",
+  "executable": "python3 run_mock.py --launch after exact authorizedTrue/hash authorization",
+  "native_output_file_cap_bytes": 1048576,
+  "remaining_gates": [
+    "Root review before execution",
+    "Actual native proxy compatibility untested",
+    "Negative mock cannot validate complete gross usage"
+  ],
+  "superseded_zero_call_plan_sha256": "bf696e7b6dc9d4b8e8b868709857a3bc9e8bb0eea1009dfebe3515805084323c",
+  "runtime_hashes": {
+    "loader_sha256": "0ea824a86be5757533fdb092eff7050871bd7a711a46babde0ffe0e44ac5ad88",
+    "native_binary_sha256": "5ba1d69542af6fd91702d4dbf4845f41c0a29efa3e9bc56fcc308347ff70ff3e"
+  },
+  "accepted_connections_cap": 16,
+  "active_broker_handlers_cap": 4,
+  "accepted_socket_timeout_seconds": 3,
+  "broker_UID": "explicit frozen host UID:GID owns private mode0700 dirs/0600 socket; no capabilities required",
+  "host_uid": 1003,
+  "host_gid": 1004
+}

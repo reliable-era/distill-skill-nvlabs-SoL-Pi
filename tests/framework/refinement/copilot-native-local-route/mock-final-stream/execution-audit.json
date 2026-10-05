@@ -1,0 +1,37 @@
+{
+  "status": "PASS_ONE_NATIVE_SYNTHETIC_FINAL_SSE_ONLY",
+  "plan_sha256": "1f4060fb5fae353bf26bd9ee5b7e411da423dff844db58851ef15828b65b770d",
+  "native_starts": 1,
+  "synthetic_POST": 1,
+  "real_inference": 0,
+  "native_exit": 0,
+  "actual_ACK_and_terminal_result": true,
+  "model_label": "Qwen3.8-27B-FP8",
+  "captured_native_usage": {
+    "inputTokens": 12,
+    "outputTokens": 6,
+    "cacheReadTokens": 4,
+    "cacheWriteTokens": 0,
+    "reasoningTokens": 2
+  },
+  "fixture_inclusive_gross_NOT_real_tokens": 18,
+  "agent_breakdown_equals_model_aggregate_do_not_sum": true,
+  "cache_and_reasoning_SUBSETS_in_fixture": true,
+  "no_toolloop_actualQwen_cutoff_failed_aux_accounting_proof": true,
+  "native_builtin_skills_loaded": true,
+  "builtin_presence_not_test_skill_delivery": true,
+  "cleanup_verified": true,
+  "retries": 0,
+  "native_version_probe_not_repeated": true,
+  "authorization_basis": "agentstandingdelegation/NOTexplicitplan-specifichumanapproval",
+  "private_artifact_hashes": {
+    "result.json": "993be02bf7f19ac9cb28f609a070bb9283f8e54844f8769f898c5264e9c5c244",
+    "broker-ledger.json": "7cc0f8ad27d4b41283cb4958334a3b11b68bef9816100622e8d3434f7a01f49c",
+    "container-before-start.json": "8241bca411f12e85075a84a634bd879d0ced4165721df100a2fc9f1ff952bbbc",
+    "output/private-usage.json": "7d0f939b3b768f67c6cbf9d3e7fcbceaec095b32ddfb39bd21bac4a11a8eb0e0",
+    "output/private-native.stdout": "04716a2384fa478585a9a295be5e289197d8825ff2b13977c4c55876117b0f58"
+  },
+  "scored_scheduler_wait_renewed": false,
+  "primary_harness_costwin": false,
+  "goal_complete": false
+}
