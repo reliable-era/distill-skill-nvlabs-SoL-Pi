@@ -1,0 +1,57 @@
+{
+  "contract_sha256": "58221bef014f21f463aac2e14d19c777d0b288f847d8a86fb7d1995d148ba410",
+  "root": "/tmp/solpi-g1-cal-7b1bb5e672e8",
+  "rows": [
+    {
+      "task": "break-filter-js-from-html",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/break-filter-js-from-html",
+      "arm": "No skill",
+      "family": "terminal-bench-2",
+      "solved": null,
+      "prompt_sha256": "3c3941b6aadfdf60a1af9813f5aa99f689396a6e1d741ea5ee07eb5e1e1b3528",
+      "recipe": {
+        "task": "break-filter-js-from-html",
+        "actor_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+        "grader_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "mounts": [],
+        "environment": {},
+        "guidance": "",
+        "all_arms_uniform_required": true,
+        "inference_authorized": false
+      }
+    }
+  ],
+  "starts": 0,
+  "POST": 0,
+  "error": {
+    "type": "RuntimeError",
+    "message": "Calibration admission expired; pause and report, do not retry stage"
+  },
+  "cleanup_errors": [],
+  "owned_containers_absent": true,
+  "proxy_journal": {
+    "journal_collected": true,
+    "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "records": [],
+    "provider_POST": 0,
+    "contains_request_payloads": false
+  },
+  "verified_solves": 0,
+  "budget_pass": false,
+  "not_started": [
+    "break-filter-js-from-html",
+    "build-cython-ext",
+    "build-pmars",
+    "financial-document-processor",
+    "make-doom-for-mips",
+    "overfull-hbox",
+    "regex-log",
+    "sparql-university",
+    "train-fasttext",
+    "go/exercises/practice/food-chain"
+  ],
+  "ended_utc": "2026-10-05T18:16:21.987008+00:00",
+  "scope": "Step 3 calibration only; no savings or confirmation claim"
+}
