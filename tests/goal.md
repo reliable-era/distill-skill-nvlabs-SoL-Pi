@@ -48,6 +48,10 @@ one harness on two benchmark families.
   below 1 against all three comparators in each family. With 9 tasks this
   requires roughly a 25% or larger true reduction (see `review.md` B3).
   If that is not met, the result is reported as inconclusive, not a win.
+  This freezes review.md decision rule B3(a): retain the interval-below-1
+  requirement and screen for approximately 25% or greater token reduction
+  against all three comparators, with no observed solve loss. Do not weaken
+  the rule after seeing confirmation results.
 - Report solve-rate uncertainty, round variability, and wall time per solve
   separately. Tokens are not dollars; no USD claim.
 
