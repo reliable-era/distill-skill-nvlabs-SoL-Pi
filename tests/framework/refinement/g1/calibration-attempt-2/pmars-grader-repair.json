@@ -1,0 +1,51 @@
+{
+  "native_starts": 0,
+  "model_POST": 0,
+  "original_failure": {
+    "type": "ValueError",
+    "message": "only trusted setup bridge allowed"
+  },
+  "captured_artifact_sha256": "35820adebd02e283e1810a46cbd4787fbaf819aad4c8ead936af7f10ec0c107c",
+  "dynamic": {
+    "source_directory": "/app/pmars-0.9.4"
+  },
+  "solved": false,
+  "source_tests_manifest": {
+    "test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+    "test_outputs.py": "d9d2796ddc19cf8159670567e174ea377e2bce675bf3451d5951c045b01f4e85"
+  },
+  "replay": {
+    "task": "build-pmars",
+    "replay_complete": true,
+    "restored_paths": [
+      "/usr/local/bin/pmars",
+      "/app/pmars-0.9.4"
+    ],
+    "witness_paths_not_replayed": [],
+    "trusted_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+    "actor_image_id": "sha256:7b5bae6c1dea946c16c088a0f254182013f7040298420d0021612fe1b1a2e5ee",
+    "trusted_payload_owner": "0:0",
+    "rebuild_performed": false,
+    "official_grade_available": false,
+    "cost_eligibility": false
+  },
+  "preload": {
+    "trusted_software_preload_complete": true,
+    "python": "3.13.7",
+    "uv": "0.9.5",
+    "pytest": "8.4.1",
+    "pytest_json_ctrf": "0.3.5",
+    "sources_sha256": "66108d5e131d22e8868b813ecb3a588328bee608306737447ea364aacd6a1b2f",
+    "setup_log_sha256": "38f61af845f81a540d7102ec1e9707da0651f428b3bbe8264ef20386dae45281",
+    "seconds": 27.177043721079826,
+    "test_network_disconnected": true,
+    "target_builds": 0,
+    "target_installs": 0,
+    "original_test_script_unchanged": true
+  },
+  "verifier_exit": 0,
+  "reward": "0",
+  "test_events": 4,
+  "cleanup_verified": true,
+  "ended_utc": "2026-10-05T23:29:37.083045+00:00"
+}

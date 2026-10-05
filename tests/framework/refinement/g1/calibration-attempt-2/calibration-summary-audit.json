@@ -1,0 +1,239 @@
+{
+  "status": "PARTIAL_CALIBRATION_BUDGET_NOT_FROZEN",
+  "rows": [
+    {
+      "task": "break-filter-js-from-html",
+      "started": true,
+      "solved": true,
+      "requests": 38,
+      "tokens": 1437030,
+      "cost_complete": true,
+      "native_wall_seconds": 1012.1299477126449,
+      "load_at_start": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 3,
+          "num_waiting_reqs": 1,
+          "num_tokens": 163648,
+          "num_pending_tokens": 15418,
+          "ts_tic": 12774910.012591027
+        }
+      ],
+      "periodic_samples": 33,
+      "running_range": [
+        3,
+        6
+      ],
+      "waiting_range": [
+        0,
+        3
+      ],
+      "heavy_load": true,
+      "grade_reference": "html-grader-repair-r2.json",
+      "original_grading_failure_preserved": {
+        "type": "RuntimeError",
+        "message": "Original grade unavailable"
+      }
+    },
+    {
+      "task": "build-cython-ext",
+      "started": true,
+      "solved": false,
+      "requests": 34,
+      "tokens": 1477456,
+      "cost_complete": true,
+      "native_wall_seconds": 668.8363469578326,
+      "load_at_start": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 3,
+          "num_waiting_reqs": 0,
+          "num_tokens": 97308,
+          "num_pending_tokens": 0,
+          "ts_tic": 12775933.853086516
+        }
+      ],
+      "periodic_samples": 22,
+      "running_range": [
+        3,
+        5
+      ],
+      "waiting_range": [
+        0,
+        0
+      ],
+      "heavy_load": false,
+      "grade_reference": "calibration-result.json",
+      "original_grading_failure_preserved": null
+    },
+    {
+      "task": "build-pmars",
+      "started": true,
+      "solved": false,
+      "requests": 18,
+      "tokens": 407960,
+      "cost_complete": true,
+      "native_wall_seconds": 460.78644332289696,
+      "load_at_start": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 3,
+          "num_waiting_reqs": 0,
+          "num_tokens": 109822,
+          "num_pending_tokens": 0,
+          "ts_tic": 12776621.316973308
+        }
+      ],
+      "periodic_samples": 15,
+      "running_range": [
+        2,
+        4
+      ],
+      "waiting_range": [
+        0,
+        3
+      ],
+      "heavy_load": true,
+      "grade_reference": "pmars-grader-repair.json",
+      "original_grading_failure_preserved": {
+        "type": "ValueError",
+        "message": "only trusted setup bridge allowed"
+      }
+    },
+    {
+      "task": "financial-document-processor",
+      "started": true,
+      "solved": false,
+      "requests": 13,
+      "tokens": 149087,
+      "cost_complete": true,
+      "native_wall_seconds": 86.77795081026852,
+      "load_at_start": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 2,
+          "num_waiting_reqs": 0,
+          "num_tokens": 25649,
+          "num_pending_tokens": 0,
+          "ts_tic": 12777084.348197475
+        }
+      ],
+      "periodic_samples": 2,
+      "running_range": [
+        2,
+        3
+      ],
+      "waiting_range": [
+        0,
+        0
+      ],
+      "heavy_load": false,
+      "grade_reference": "calibration-result.json",
+      "original_grading_failure_preserved": null
+    },
+    {
+      "task": "make-doom-for-mips",
+      "started": true,
+      "solved": false,
+      "requests": 20,
+      "tokens": 607141,
+      "cost_complete": true,
+      "native_wall_seconds": 283.9102695751935,
+      "load_at_start": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 2,
+          "num_waiting_reqs": 0,
+          "num_tokens": 15643,
+          "num_pending_tokens": 0,
+          "ts_tic": 12777244.55865048
+        }
+      ],
+      "periodic_samples": 9,
+      "running_range": [
+        1,
+        3
+      ],
+      "waiting_range": [
+        0,
+        0
+      ],
+      "heavy_load": false,
+      "grade_reference": "calibration-result.json",
+      "original_grading_failure_preserved": null
+    },
+    {
+      "task": "overfull-hbox",
+      "started": false,
+      "solved": null,
+      "requests": 0,
+      "tokens": 0,
+      "native_wall_seconds": null,
+      "heavy_load": null
+    },
+    {
+      "task": "regex-log",
+      "started": false,
+      "solved": null,
+      "requests": 0,
+      "tokens": 0,
+      "native_wall_seconds": null,
+      "heavy_load": null
+    },
+    {
+      "task": "sparql-university",
+      "started": false,
+      "solved": null,
+      "requests": 0,
+      "tokens": 0,
+      "native_wall_seconds": null,
+      "heavy_load": null
+    },
+    {
+      "task": "train-fasttext",
+      "started": false,
+      "solved": null,
+      "requests": 0,
+      "tokens": 0,
+      "native_wall_seconds": null,
+      "heavy_load": null
+    },
+    {
+      "task": "go/exercises/practice/food-chain",
+      "started": false,
+      "solved": null,
+      "requests": 0,
+      "tokens": 0,
+      "native_wall_seconds": null,
+      "heavy_load": null
+    }
+  ],
+  "native_starts": 5,
+  "provider_requests": 123,
+  "complete_tokens": 4078674,
+  "unknown_cost_requests": 0,
+  "verified_solves": 1,
+  "verified_failures": 4,
+  "unstarted": 5,
+  "budget_frozen": false,
+  "reason": "Fewer than five verified solves in the fixed ten-task pool; remaining five tasks cannot start after 07:30 and fit full 120-minute cap",
+  "all_providers_direct18001": true,
+  "all_native_starts_before_latest_start": true,
+  "all_started_runs_cost_complete": true,
+  "worker_and_repair_jobs_terminal": true,
+  "owned_network_absent": true,
+  "cleanup_errors": [],
+  "canonical_sha256": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+  "initial_expired_attempt_preserved": true,
+  "no_candidate_calls": true,
+  "window_not_extended": true,
+  "grade_repairs_rerun_model": false,
+  "artifact_hashes": {
+    "calibration-launch.json": "a0e0fdafdd106534c438b77a65a7d45de013c5690f587746223e51a4bc3da66c",
+    "calibration-result.json": "5839d6cfd971b428b476197dcf7bb8b2049611a939dd366003807184ebff4e11",
+    "html-grader-repair.json": "2f5d4d086bd8d71c9a64720ed8686e56b356bd7fef1bf40bfeaea5d0e5833a1f",
+    "html-grader-repair-r2.json": "dd240dba7e7902a3869e115bea0d512daabae9fb002280f89b3c653e100798fe",
+    "pmars-grader-repair.json": "2d020f1b35a63dd3b2f5ca58c07a1b4c7c09741188434db08cb07cbff486cf76"
+  },
+  "audit_utc": "2026-10-05T23:39:22.478359+00:00"
+}
