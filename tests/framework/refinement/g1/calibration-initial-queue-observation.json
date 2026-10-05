@@ -1,0 +1,37 @@
+{
+  "purpose": "Single metadata observation during Step 3 preparation; not actor admission or inference",
+  "records": [
+    {
+      "port": 18001,
+      "observed_utc": "2026-10-05T17:33:14.295526+00:00",
+      "status": 200,
+      "load": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 2,
+          "num_waiting_reqs": 0,
+          "num_tokens": 10175,
+          "num_pending_tokens": 0,
+          "ts_tic": 12755903.558475759
+        }
+      ]
+    },
+    {
+      "port": 18002,
+      "observed_utc": "2026-10-05T17:33:14.298912+00:00",
+      "status": 200,
+      "load": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 2,
+          "num_waiting_reqs": 0,
+          "num_tokens": 9160,
+          "num_pending_tokens": 0,
+          "ts_tic": 12755904.286903748
+        }
+      ]
+    }
+  ],
+  "eligible_by_user_queue_rule": true,
+  "model_POST": 0
+}
