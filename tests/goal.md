@@ -1,8 +1,92 @@
-# Active goal: economical skill refinement
+# Active goal (G1, narrowed): economical skill refinement on Codex + local Qwen
+
+Set 2026-10-05 by the user. This replaces the 2026-10-04 goal below, whose
+≥3/5-harness and three-family criteria could not be met under the user's
+scope override. Rationale and audit: workspace `review.md`. The goal is
+active, not achieved.
+
+## Objective
+
+Refine `skills/efficient-coding` so that Ours uses fewer tokens per verified
+solve than No skill, Karpathy, and Both, without losing verified solves, in
+one harness on two benchmark families.
+
+## Fixed scope
+
+- **Harness:** Codex 0.160.0 only. Pi is an optional later extension after a
+  Codex result; it is not a requirement. Copilot, agy, Cursor are out of scope.
+- **Model:** local `Qwen3.8-27B-FP8` only, shared server unchanged, no fallback.
+- **Benchmark families (2):** Terminal-Bench 2.0 and Aider polyglot.
+  SWE-bench is out of scope.
+- **Arms (4):** No skill, frozen Karpathy, candidate, candidate + frozen Karpathy.
+- **Budget per run:** identical across arms, calibrated once on the
+  development pool so that control arms solve at least half of the
+  development tasks (starting point: 30 min, 60 model requests, 16K output
+  cap). Frozen before any candidate run. The old 600 s / 16-request budget
+  is retired: it produced floor effects.
+
+## Task pools
+
+- **Development pool (open):** the nine previously selected Terminal-Bench
+  tasks (`framework/refinement/pi-takeover/terminal-10pct-selection.json`)
+  and the reused Go/polyglot fixtures. All are exposed and may be used for
+  tuning. They must never be used for confirmation.
+- **Confirmation pool (sealed):** a fresh metadata-only sample drawn with
+  the existing selector and a new recorded seed: 9 Terminal-Bench 2.0 tasks
+  from the 78 eligible unexposed tasks (quotas 1 easy / 5 medium / 3 hard)
+  and 9 Aider polyglot tasks stratified by language. No agent reads their
+  traces or outcomes before the candidate is frozen. No task replacement.
+
+## Acceptance criteria
+
+- In each family, Ours uses at least 5% fewer complete reported tokens per
+  verified solve than each of No skill, Karpathy, and Both, with no observed
+  reduction in solved count on the sealed confirmation panel. Costs include
+  failures, timeouts, and retries. Incomplete costs block a savings claim.
+- Three independently scheduled rounds per confirmation cell.
+- The paired task-cluster bootstrap 95% interval for the cost ratio lies
+  below 1 against all three comparators in each family. With 9 tasks this
+  requires roughly a 25% or larger true reduction (see `review.md` B3).
+  If that is not met, the result is reported as inconclusive, not a win.
+- Report solve-rate uncertainty, round variability, and wall time per solve
+  separately. Tokens are not dollars; no USD claim.
+
+## Execution rules
+
+- Order: commit and short `STATUS.md` → reserve a server window → draw and
+  validate sealed samples (grader controls only) → calibrate budget →
+  derive ≤3 candidate mechanisms from existing trace token sinks → screen
+  each on ≥3 control-solvable development tasks × 4 arms → freeze the best →
+  confirmation → analysis → report. Details: workspace `review.md` Part C.
+- At most 3 candidates. If two consecutive candidates show no improvement,
+  or no candidate meets the target in screening, stop and report to the user.
+- No harness onboarding or mock-infrastructure work. No candidate screens
+  on a single task. No model calls before the order's first four steps are
+  committed.
+- Commit after each completed stage; keep `STATUS.md` to one page in plain
+  readable text. Existing controls, frozen hashes, and the rules under
+  "Controls and refinement loop" below still apply.
+
+---
+
+# Superseded goal (2026-10-04): economical skill refinement
+
+Replaced by G1 above on 2026-10-05. Kept as history; its acceptance
+criteria and launch instructions no longer apply.
 
 Set 2026-10-04. Refine `skills/efficient-coding` so Ours beats No skill,
 Karpathy, and Both in most harnesses across different benchmark families,
-without sacrificing verified task completion. The goal is active, not achieved.
+without sacrificing verified task completion.
+
+## Pi takeover and user scope override
+
+Codex session `nvlab-sol-pi-skills-eval` is paused and has handed coordination to Pi. Historical launch permissions are not replay authorization. Apply workspace `optmization.md`; use only local `Qwen3.8-27B-FP8` for evaluation, no more than3benchmark sources, and a small representative roughly10% subset. Do not restart/reconfigure the shared server or erase earlier attempts.
+
+Current decision (2026-10-05): recovery-context terminal, 4 actors/63 POST/995896 complete provider tokens, all original grades0; no active worker or promotable candidate. Four recent separate coalesced descendants each have zero verified solves; no finite solve-economy ratios. `framework/refinement/pi-takeover/candidate-decision-review.md` and its hash-pinned JSON map the remaining requirements. Stop automatic resource-clause variants; next bounded work is original-versus-candidate cross-task instruction/adherence review of existing evidence. Canonical unchanged. Scope remains frozen9/89 and two benchmark sources (third deferred), local Qwen only; final acceptance below unchanged and unverified.
+
+Historical takeover checkpoint (superseded by linked current decision, not replay authorization): one Codex harness. Scope-coverage passed the Go smoke (candidate1/1; other arms0/1; all costs complete) but failed Terminal (candidate0/1; controls1/1; two costs incomplete); both panels are independently audited. It is not promotion-ready. Patch-first completed4starts/57POST with all provider costs complete but failed quality versus No skill;rejected for promotion. The new incremental-coverage hypothesis changes one first-bullet prerequisite versus scope-coverage and adds frozen original Ours as a fifth historical control.56offline tests pass;5starts/80POST,600s actors,240s passive receipt grace,no retries/continuation. User-authorized8000 Nginx balances same-Qwen replicas18001/18002;both loads and per-request backend provenance are tracked. New quality/accounting remainpending;old direct-route controls are not pooled. This is two benchmark sources, not fresh confirmation. A nine-task metadata-stratified Terminal-Bench2.0 allocation is frozen from the89-task release; its environments/inference remain unstarted. Do not automatically launch older three-family or five-harness matrices.
+
+Authoritative new state and evidence: [Pi takeover](framework/refinement/pi-takeover/README.md), [Go results](framework/refinement/pi-takeover/go-smoke-results.md), and [requirement audit](framework/refinement/pi-takeover/completion-requirements.md). The final performance criteria below are not established by a development smoke. No promotion, stable multi-harness win, billing savings, or goal completion is claimed.
 
 ## Acceptance criteria
 
@@ -113,9 +197,7 @@ References are pinned in `framework/refinement/references.json`; Jev's intended
 identity remains TBD. Evaluate one mechanism at a time, preserving unfavorable
 results. Candidate performance, most-harness superiority, and billing remain TBD.
 Native Copilot documents a local-provider route without account authentication.
-Routing validation remains unfinished: its version preflight reproduced bundled
-package extraction failure under the initial 128 MiB scratch limit. A separate
-larger-resource metadata probe is authorized; no Copilot model calls have run.
+Original version preflight failed package extraction under128MiB scratch; later preserved version and native fake400 routing stages passed using separately scoped512MiB executable scratch. This does not change scored actor resources. One fake providerPOST with zero inference and empty native usage proves routing only, not Qwen stream/tool compatibility or complete accounting. No real Copilot model calls have run; completed startup/fake400 probes must not be repeated. A successful synthetic stream/tool/accounting gate remains unexecuted and requires separate authorization. See framework/refinement/pi-takeover/primary-harness-evidence-map.md for actual evidence and coverage limits.
 Native agy and Cursor local-provider and full accounting support remain TBD.
 
 The shipped skill is unchanged. Every execution stage has numeric start, request,
