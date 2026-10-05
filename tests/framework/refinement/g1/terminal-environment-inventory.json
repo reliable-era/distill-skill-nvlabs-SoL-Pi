@@ -1,0 +1,186 @@
+{
+  "tasks": [
+    {
+      "task": "chess-best-move",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/chess-best-move:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    },
+    {
+      "task": "fix-git",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/fix-git:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    },
+    {
+      "task": "fix-ocaml-gc",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/fix-ocaml-gc:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 3600.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    },
+    {
+      "task": "git-multibranch",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/git-multibranch:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    },
+    {
+      "task": "gpt2-codegolf",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/gpt2-codegolf:20251031",
+        "cpus": 1,
+        "memory_mb": 8192,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    },
+    {
+      "task": "merge-diff-arc-agi-task",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/merge-diff-arc-agi-task:20251031",
+        "cpus": 1,
+        "memory_mb": 4096,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    },
+    {
+      "task": "polyglot-rust-c",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/polyglot-rust-c:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    },
+    {
+      "task": "sqlite-with-gcov",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/sqlite-with-gcov:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    },
+    {
+      "task": "tune-mjcf",
+      "environment_metadata": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/tune-mjcf:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "verifier_metadata": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "oracle_exists": true,
+      "cached_image_id": null
+    }
+  ],
+  "read_surface": "task.toml environment/verifier metadata and file existence only; no task prompt, oracle or test contents",
+  "controls_executed": 0
+}

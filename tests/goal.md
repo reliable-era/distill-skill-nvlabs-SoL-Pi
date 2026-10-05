@@ -21,7 +21,8 @@ one harness on two benchmark families.
 - **Arms (4):** No skill, frozen Karpathy, candidate, candidate + frozen Karpathy.
 - **Budget per run:** identical across arms, calibrated once on the
   development pool so that control arms solve at least half of the
-  development tasks (starting point: 30 min, 60 model requests, 16K output
+  development tasks (user-corrected starting point: 60 model requests as
+  the primary budget, a 60-minute wall-clock safety cap, and a 16K output
   cap). Frozen before any candidate run. The old 600 s / 16-request budget
   is retired: it produced floor effects.
 
@@ -57,16 +58,24 @@ one harness on two benchmark families.
 
 ## Execution rules
 
-- Order: commit and short `STATUS.md` → reserve a server window → draw and
-  validate sealed samples (grader controls only) → calibrate budget →
+- Order: commit and short `STATUS.md` → record shared-server admission rules →
+  draw and validate sealed samples (grader controls only) → calibrate budget →
   derive ≤3 candidate mechanisms from existing trace token sinks → screen
   each on ≥3 control-solvable development tasks × 4 arms → freeze the best →
   confirmation → analysis → report. Details: workspace `review.md` Part C.
 - At most 3 candidates. If two consecutive candidates show no improvement,
   or no candidate meets the target in screening, stop and report to the user.
 - No harness onboarding or mock-infrastructure work. No candidate screens
-  on a single task. No model calls before the order's first four steps are
-  committed.
+  on a single task. No model calls until Step 2 is complete and committed and
+  the Step 3 calibration contract is committed. Then No-skill calibration is
+  authorized for at most eight hours from the Step 2 completion commit.
+  Before each run, admit when /get_load reports num_waiting_reqs = 0 on both
+  replicas; otherwise back off for at most ten minutes, then pause and report.
+  Record per-request backend and observed queue state, retaining and flagging
+  contention-inflated runs. Do not interfere with the token_economiy workload.
+  After Step 3, commit and report, then stop before Step 4. Candidate calls and
+  later stages require the specified gates and separate user approval.
+  See `G1-AUTHORIZATION.md` for the user's correction; no reservation is assumed.
 - Commit after each completed stage; keep `STATUS.md` to one page in plain
   readable text. Existing controls, frozen hashes, and the rules under
   "Controls and refinement loop" below still apply.

@@ -1,0 +1,173 @@
+{
+  "benchmark": "terminal-bench-2",
+  "category_population": {
+    "data-processing": 2,
+    "data-science": 8,
+    "debugging": 3,
+    "file-operations": 5,
+    "games": 1,
+    "machine-learning": 3,
+    "mathematics": 4,
+    "model-training": 3,
+    "optimization": 1,
+    "personal-assistant": 1,
+    "scientific-computing": 8,
+    "security": 6,
+    "software-engineering": 23,
+    "system-administration": 9,
+    "video-processing": 1
+  },
+  "category_sample": {
+    "debugging": 1,
+    "games": 1,
+    "scientific-computing": 1,
+    "software-engineering": 4,
+    "system-administration": 2
+  },
+  "eligible_population": 78,
+  "excluded_previously_exposed": [
+    "break-filter-js-from-html",
+    "build-cython-ext",
+    "build-pmars",
+    "code-from-image",
+    "financial-document-processor",
+    "make-doom-for-mips",
+    "overfull-hbox",
+    "regex-log",
+    "sanitize-git-repo",
+    "sparql-university",
+    "train-fasttext"
+  ],
+  "fraction_of_eligible_population": 0.11538461538461539,
+  "fraction_of_full_population": 0.10112359550561797,
+  "fraction_rule": "ceil(0.10 * full release population)",
+  "full_population": 89,
+  "harness": "Codex 0.160.0 only",
+  "limits": [
+    "Metadata-stratified sample, not a guarantee of performance representativeness. Nine tasks cannot cover every category.",
+    "Excluded exposed tasks change inference target to the eligible release population.",
+    "Difficulty is stratified; categories and runtime distributions are descriptive, not balanced by outcome-selected resampling.",
+    "Unweighted task averages describe this panel; use declared stratum design weights for an eligible-population estimate and report uncertainty.",
+    "No task may be replaced due to model failure, environment cost, or unavailability. Blocked tasks remain planned/unrun."
+  ],
+  "metadata_population_sha256": "d1b159965498c9aefd411374f3174dc34d0fe6d4e682388d5b7722c4998b522c",
+  "model": "Qwen3.8-27B-FP8",
+  "read_surface": "task.toml metadata only, pinned Git metadata blobs; no task instructions, verifier assertions or solutions read",
+  "schema_version": 1,
+  "seed": 20261006,
+  "selected_size": 9,
+  "selected_tasks": [
+    {
+      "category": "games",
+      "design_weight": 9.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 45.0,
+      "id": "chess-best-move",
+      "metadata_sha256": "d8f01d3c84ed5836edbb49c6c3b3cc7b5b96d951cf01a0987467c9206fb22f9e",
+      "previously_exposed": false,
+      "stratum_population": 48,
+      "stratum_sample": 5
+    },
+    {
+      "category": "software-engineering",
+      "design_weight": 3.0,
+      "difficulty": "easy",
+      "expert_time_estimate_min": 5.0,
+      "id": "fix-git",
+      "metadata_sha256": "25507ef6cbd6bf73c8bfdfbe7f7ba136224c8453fbba2de2993c639e2a61ad8b",
+      "previously_exposed": false,
+      "stratum_population": 3,
+      "stratum_sample": 1
+    },
+    {
+      "category": "software-engineering",
+      "design_weight": 9.0,
+      "difficulty": "hard",
+      "expert_time_estimate_min": 1440.0,
+      "id": "fix-ocaml-gc",
+      "metadata_sha256": "423aab8ce6f44ce9349dcde647ca3cbd09afd5ac023910c25699ed687a3c71b2",
+      "previously_exposed": false,
+      "stratum_population": 27,
+      "stratum_sample": 3
+    },
+    {
+      "category": "system-administration",
+      "design_weight": 9.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 180.0,
+      "id": "git-multibranch",
+      "metadata_sha256": "4b9981604578a31205257cca36a28d0c89c9d8d1058541330acd11d3f8d65f82",
+      "previously_exposed": false,
+      "stratum_population": 48,
+      "stratum_sample": 5
+    },
+    {
+      "category": "software-engineering",
+      "design_weight": 9.0,
+      "difficulty": "hard",
+      "expert_time_estimate_min": 2400.0,
+      "id": "gpt2-codegolf",
+      "metadata_sha256": "a3fa186d438a42af5909384b8dc0dfdc2ab7a3a68af9159e9d00464988895af0",
+      "previously_exposed": false,
+      "stratum_population": 27,
+      "stratum_sample": 3
+    },
+    {
+      "category": "debugging",
+      "design_weight": 9.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 20.0,
+      "id": "merge-diff-arc-agi-task",
+      "metadata_sha256": "6ced40e06b43b169857509765eb7f07791db558f9437cc7367d2536771c2ca5b",
+      "previously_exposed": false,
+      "stratum_population": 48,
+      "stratum_sample": 5
+    },
+    {
+      "category": "software-engineering",
+      "design_weight": 9.0,
+      "difficulty": "hard",
+      "expert_time_estimate_min": 180.0,
+      "id": "polyglot-rust-c",
+      "metadata_sha256": "3c41e83437068c62a3fdff74641899146e34907aefd9e47346213f47caeb82de",
+      "previously_exposed": false,
+      "stratum_population": 27,
+      "stratum_sample": 3
+    },
+    {
+      "category": "system-administration",
+      "design_weight": 9.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 30.0,
+      "id": "sqlite-with-gcov",
+      "metadata_sha256": "9a0da96990ee2ecbf4d92682a4c5301a53db45fc6e2d46ac7d45d3b8ee7fe523",
+      "previously_exposed": false,
+      "stratum_population": 48,
+      "stratum_sample": 5
+    },
+    {
+      "category": "scientific-computing",
+      "design_weight": 9.6,
+      "difficulty": "medium",
+      "expert_time_estimate_min": 30.0,
+      "id": "tune-mjcf",
+      "metadata_sha256": "27b6d4e5a23761cc1a24a695125d891be74a2930fb83a02a66221db0244b08b3",
+      "previously_exposed": false,
+      "stratum_population": 48,
+      "stratum_sample": 5
+    }
+  ],
+  "selection_rule": "minimum-one difficulty coverage + proportional largest-remainder remaining allocation + seeded SHA256 ranking within difficulty",
+  "source_revision": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "status": "Sealed G1 allocation; gold/no-op controls pending; no model attempts",
+  "stratum_counts": {
+    "easy": 3,
+    "hard": 27,
+    "medium": 48
+  },
+  "stratum_quotas": {
+    "easy": 1,
+    "hard": 3,
+    "medium": 5
+  }
+}

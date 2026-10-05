@@ -1,0 +1,113 @@
+{
+  "all_strata_covered": true,
+  "balance_within": [],
+  "candidate_metadata_sha256": "b9b9abd34ff3c470c4e7f2b35798c71e23e824f6e0051bc96715812711570043",
+  "eligible_unique_tasks": 211,
+  "exclusion_rule": "Previously used pilot/smoke fixtures and previously prepared confirmation allocations; conservative metadata-only exclusion, independent of scores",
+  "exclusions": [
+    "aider:cpp/exercises/practice/robot-name",
+    "aider:cpp/exercises/practice/sublist",
+    "aider:cpp/exercises/practice/zebra-puzzle",
+    "aider:go/exercises/practice/food-chain",
+    "aider:go/exercises/practice/pig-latin",
+    "aider:java/exercises/practice/bottle-song",
+    "aider:java/exercises/practice/ocr-numbers",
+    "aider:java/exercises/practice/series",
+    "aider:javascript/exercises/practice/bowling",
+    "aider:javascript/exercises/practice/phone-number",
+    "aider:python/exercises/practice/bottle-song",
+    "aider:python/exercises/practice/proverb",
+    "aider:rust/exercises/practice/acronym",
+    "aider:rust/exercises/practice/simple-cipher"
+  ],
+  "language_counts": {
+    "cpp": 1,
+    "go": 2,
+    "java": 2,
+    "javascript": 1,
+    "python": 1,
+    "rust": 2
+  },
+  "provenance": {
+    "metadata_read_surface": "pinned Git tree path names only",
+    "revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+    "selector_sha256": "2d84da729a2de550b85e10aea7ac8e66f1b2fb7c97c6e9fdda9113157702dec1",
+    "source": "/tmp/solpi-polyglot-grader-source"
+  },
+  "requested_size": 9,
+  "schema_version": 1,
+  "seed": 20261006,
+  "selected_size": 9,
+  "selected_tasks": [
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:rust/exercises/practice/forth",
+      "id": "rust/exercises/practice/forth",
+      "language": "rust",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:java/exercises/practice/transpose",
+      "id": "java/exercises/practice/transpose",
+      "language": "java",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:go/exercises/practice/connect",
+      "id": "go/exercises/practice/connect",
+      "language": "go",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:cpp/exercises/practice/meetup",
+      "id": "cpp/exercises/practice/meetup",
+      "language": "cpp",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:python/exercises/practice/zebra-puzzle",
+      "id": "python/exercises/practice/zebra-puzzle",
+      "language": "python",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:javascript/exercises/practice/alphametics",
+      "id": "javascript/exercises/practice/alphametics",
+      "language": "javascript",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:rust/exercises/practice/accumulate",
+      "id": "rust/exercises/practice/accumulate",
+      "language": "rust",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:java/exercises/practice/queen-attack",
+      "id": "java/exercises/practice/queen-attack",
+      "language": "java",
+      "repo": "Aider-AI/polyglot-benchmark"
+    },
+    {
+      "benchmark": "aider-polyglot",
+      "canonical_id": "aider:go/exercises/practice/crypto-square",
+      "id": "go/exercises/practice/crypto-square",
+      "language": "go",
+      "repo": "Aider-AI/polyglot-benchmark"
+    }
+  ],
+  "selection_method": "sha256-ranked strata round-robin; no outcomes",
+  "selection_sha256": "e7d55fb3994f048aa1f0fd414ef6e745ece323af8a979559d737fb9eeba957a3",
+  "status": "Sealed G1 allocation; gold/no-op controls pending; no model attempts",
+  "strata": [
+    "language"
+  ],
+  "stratum_count": 6
+}
