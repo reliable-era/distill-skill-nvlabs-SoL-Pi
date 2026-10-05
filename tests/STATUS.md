@@ -1,6 +1,6 @@
 # G1 status
 
-Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 preparation; no G1 model calls.
+Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 route clarification; no G1 model calls.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
@@ -46,7 +46,7 @@ All nine old Terminal-Bench tasks are development-only. No historical candidate 
 | 0: commit and archive | 0 | — | 0 | Complete; B3(a) recorded |
 | 1: shared-server admission | 0 | — | 0 | Approved; bounded queue checks, no reservation |
 | 2: sealed samples and controls | 0 | — | 0 | Complete: Terminal 9/9 and Aider 9/9 pairs pass |
-| 3: No-skill calibration | 0 | — | 0 | Not started; 60 requests / 60-minute safety cap |
+| 3: No-skill calibration | 0 | — | 0 | Contract committed; clarify extra backends on port 8000 |
 | 4: measured mechanisms | 0 | — | 0 | Not started; at most 3 candidates |
 | 5: multi-task screens | 0 | — | 0 | Not started; ≥3 solvable tasks per candidate |
 | 6: winner freeze | 0 | — | 0 | Not started |
