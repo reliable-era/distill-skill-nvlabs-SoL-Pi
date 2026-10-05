@@ -4,6 +4,7 @@
 Native-agent adaptation: fixed single attempt, tests withheld from actor, official
 exercise test runner after restoring tests. This is not the original Aider two-try
 leaderboard protocol. Supports Python, Go, Rust, C++, Java; Java requires cached Gradle dependencies.
+JavaScript support is limited to selected alphametics with the official cached npm runner.
 """
 import argparse
 import hashlib
@@ -16,7 +17,8 @@ REVISION = '7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f'
 HARNESS_REVISION = '5dc9490bb35f9729ef2c95d00a19ccd30c26339c'
 COMMANDS = {'python': ['python3', '-m', 'pytest', '-q'], 'go': ['go', 'test', '-json', './...'],
             'rust': ['cargo', 'test', '--offline', '--', '--include-ignored'],
-            'cpp': ['bash', '/grader/cpp-test.sh'], 'java': ['bash', './gradlew', '--offline', 'test']}
+            'cpp': ['bash', '/grader/cpp-test.sh'], 'java': ['bash', './gradlew', '--offline', 'test'],
+            'javascript': ['bash', '/grader/npm-test.sh']}
 
 
 def digest(path):
@@ -33,6 +35,8 @@ def prepare(source, task, output):
         raise ValueError('Unsupported canonical practice path')
     if subprocess.run(['git', '-C', str(source), 'diff', '--quiet', 'HEAD', '--', task]).returncode:
         raise ValueError('Exercise differs from pinned Git content')
+    if parts[0] == 'javascript' and task != 'javascript/exercises/practice/alphametics':
+        raise ValueError('JavaScript support is scoped to the selected alphametics task')
     exercise = source.joinpath(*parts)
     config = json.loads((exercise / '.meta/config.json').read_text())
     files = dict(config['files'])
@@ -66,11 +70,19 @@ def prepare(source, task, output):
             raise ValueError('Ambiguous reference filename match')
         if len(matches) == 1:
             mapping[solution] = matches[0]; remaining.remove(matches[0])
-    unmapped = [name for name in files['solution'] if name not in mapping]
-    if unmapped:
-        if len(unmapped) != len(remaining):
-            raise ValueError('Ambiguous reference-to-solution mapping')
-        mapping.update(zip(unmapped, remaining)); remaining = []
+    # Selected meetup's official reference is header-only. Keep its original
+    # starter .cpp unchanged; never fabricate a second reference solution.
+    if task == 'cpp/exercises/practice/meetup':
+        if files['solution'] != ['meetup.cpp', 'meetup.h'] or examples != ['.meta/example.h']:
+            raise ValueError('Selected meetup reference metadata changed')
+        mapping = {'meetup.h': '.meta/example.h'}
+        remaining = []
+    else:
+        unmapped = [name for name in files['solution'] if name not in mapping]
+        if unmapped:
+            if len(unmapped) != len(remaining):
+                raise ValueError('Ambiguous reference-to-solution mapping')
+            mapping.update(zip(unmapped, remaining)); remaining = []
     for solution, example in mapping.items():
         dest = reference / solution; dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(exercise / example, dest)
@@ -107,6 +119,12 @@ def prepare(source, task, output):
     shutil.copy2(Path(__file__).with_name('polyglot_grade.py'), grader / 'grade.py')
     if parts[0] == 'cpp':
         shutil.copy2(Path(__file__).with_name('polyglot_cpp_test.sh'), grader / 'cpp-test.sh')
+    if parts[0] == 'javascript':
+        runner = Path('/tmp/solpi-aider-harness-source')
+        if subprocess.check_output(['git', '-C', str(runner), 'rev-parse', 'HEAD'], text=True).strip() != HARNESS_REVISION:
+            raise ValueError('Official JavaScript runner revision mismatch')
+        raw = subprocess.check_output(['git', '-C', str(runner), 'show', HARNESS_REVISION + ':benchmark/npm-test.sh'])
+        (grader / 'npm-test.sh').write_bytes(raw)
     return manifest
 
 

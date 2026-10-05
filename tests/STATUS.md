@@ -45,7 +45,7 @@ All nine old Terminal-Bench tasks are development-only. No historical candidate 
 |---|---:|---:|---:|---|
 | 0: commit and archive | 0 | — | 0 | Complete; B3(a) recorded |
 | 1: shared-server admission | 0 | — | 0 | Approved; bounded queue checks, no reservation |
-| 2: sealed samples and controls | 0 | — | 0 | 9 + 9 frozen; 3 gold/no-op pairs pass; preparation ongoing |
+| 2: sealed samples and controls | 0 | — | 0 | Aider 9/9 pairs pass; Terminal 2/9 pass, controls running |
 | 3: No-skill calibration | 0 | — | 0 | Not started; 60 requests / 60-minute safety cap |
 | 4: measured mechanisms | 0 | — | 0 | Not started; at most 3 candidates |
 | 5: multi-task screens | 0 | — | 0 | Not started; ≥3 solvable tasks per candidate |

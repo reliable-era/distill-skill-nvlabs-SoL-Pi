@@ -56,7 +56,7 @@ def main():
             print(type(error).__name__)
             return 2
         print(result.stdout)
-        infrastructure_markers = ('no matching package named', 'No cached version of', 'No cached resource available for offline mode')
+        infrastructure_markers = ('no matching package named', 'No cached version of', 'No cached resource available for offline mode', 'Could NOT find Boost')
         if result.returncode and any(marker in result.stdout for marker in infrastructure_markers):
             return 2
         if result.returncode != 0:
@@ -76,6 +76,8 @@ def main():
             executed = sum(int(n) for n in re.findall(r'test result: ok\. (\d+) passed', result.stdout))
         elif language == 'cpp':
             executed = sum(int(n) for n in re.findall(r'in (\d+) test cases?\)', result.stdout))
+        elif language == 'javascript':
+            executed = sum(int(n) for n in re.findall(r'Tests:\s*(\d+) passed', result.stdout))
         elif language == 'java':
             for report in scratch.glob('build/test-results/test/TEST-*.xml'):
                 suite = ET.parse(report).getroot()

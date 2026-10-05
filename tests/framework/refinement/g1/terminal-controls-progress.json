@@ -1,0 +1,118 @@
+[
+  {
+    "task": "chess-best-move",
+    "image_id": "sha256:0977c69064c0e9d25a2267d99794290653e3683349a52e974c6f171e4293828f",
+    "source_hashes": {
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "a540714e0156fc14564badedcb48d1f7b69a4b457d876036535439b30cb8f286",
+      "solution/solve.sh": "53b5c5e2278ca915b0930eedfd44565ca84ef21c7346fd6601434484cf76151f"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-99e467705b07",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "8e26e4d60e8706f70b59994bbe1d75c5e35503cf8f5449aa21347bd326ff58f2"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-79aa1d6fd214",
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "2a8c15cf3163153330aed1fa36b876d9710051f9aa2713343cdf2f7ade4c2ba2"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "68861511c9a438447bedee2cac3ec72d70faf46dfad2d6fc3f6752b707b87f97"
+        },
+        "reward": "1",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
+      }
+    ],
+    "model_agent_calls": 0,
+    "valid_pair": true
+  },
+  {
+    "task": "fix-git",
+    "image_id": "sha256:b041e51b3fd55da33dc43648fcfb28f4887374a8676c77b0836923422e7fde29",
+    "source_hashes": {
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "a8a6f51eb0d7c4ebdf0813c8f0b645edf29c995f1f9faf2aca3886a6713043f3",
+      "solution/solve.sh": "4789fa74e92e5b7b893c4b8637c26db2b6458b2136edfc3e686cc278dfc23630"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-ac6afe7aabab",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "fb7e588bfdf324ead8597fd82cd0e9058fdb737a92c19c3af23fca82030f2281"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 2,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-7c0cfd9e1c67",
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "ec8cd807c5a7c26bc132a4bc5f0a29b388a08dcda97a11894e0b7bfb14f0241d"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "8f8877280978d894d58f0271b62d79e429921d6f3c8f4fee785b57c2a356c91c"
+        },
+        "reward": "1",
+        "valid_expected_reward": true,
+        "test_events": 2,
+        "owned_container_absent": true
+      }
+    ],
+    "model_agent_calls": 0,
+    "valid_pair": true
+  },
+  {
+    "task": "fix-ocaml-gc",
+    "image_id": "sha256:64b43d0dbddfbc0291d03486954c3def53d5d19c67426c8f758631d5dd9d7d85",
+    "source_hashes": {
+      "tests/test.sh": "9a2114729f090f351fb8e8bf055f013f299946108d032e845f5d01e725fa2719",
+      "tests/test_outputs.py": "e6031cd07c9962f024f2ae232d0645126bd399df0cd8d3df6a46475b68aa4959",
+      "solution/solve.sh": "0582baecb730dc76448563ffda39eb3756a31e76f0756d2a5c0ffcbcad049f2f"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-3e0282c75b48",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "edc63c53e539e88a282e9b5f32834f9346ec54e148abd769ce0559eb55b10826"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-2853f06d5ea6",
+        "expected_reward": "1"
+      }
+    ],
+    "model_agent_calls": 0
+  }
+]

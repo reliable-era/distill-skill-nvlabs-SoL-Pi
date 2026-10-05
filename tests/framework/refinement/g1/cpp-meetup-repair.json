@@ -1,0 +1,26 @@
+{
+  "task": "cpp/exercises/practice/meetup",
+  "private_preparation": "/tmp/solpi-g1-meetup-repair-6201ac0d31",
+  "image_id": "sha256:1fe22dc5aebfe2d740c5bded3877d9e656fd434d1d1cb68fe4aab3d2a16f81a0",
+  "controls": [
+    {
+      "mode": "workspace",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "owned_container_absent": true,
+      "private_log_sha256": "3e32903dfd5216a31a1b6ec5a221925ea2eb4126c91b54e4633cc0fd918c8cb3"
+    },
+    {
+      "mode": "reference",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "owned_container_absent": true,
+      "private_log_sha256": "650fcbe2913bd301fb04ce782c76ce8319653443d97742a0ae7c920778fc8c69"
+    }
+  ],
+  "valid_pair": true,
+  "prior_failures_preserved": true,
+  "prior_pair_invalid_reason": "Both prior controls could not find Boost; their exit 1 was an infrastructure failure, not a valid negative grading control",
+  "fix": "Official header-only reference mapping and required libboost-date-time-dev; no task tests or candidate code changed",
+  "model_calls": 0
+}
