@@ -110,9 +110,283 @@
       {
         "mode": "gold",
         "container_name": "solpi-g1-tb-control-2853f06d5ea6",
-        "expected_reward": "1"
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "629d6c07a477417ac69810c16e1c1e72015979b4ef448178df8ac448c14035bf"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "83f1f3965e8f648b2e4106ab4ceaf08364ebca929ccae6a2da312cf9865ba0eb"
+        },
+        "reward": "1",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
       }
     ],
-    "model_agent_calls": 0
+    "model_agent_calls": 0,
+    "valid_pair": true
+  },
+  {
+    "task": "git-multibranch",
+    "image_id": "sha256:ec6eeb02cecf35faf5badd75646ab0dd2e02cab484638b413ccd4606a2e2ef7d",
+    "source_hashes": {
+      "tests/test.sh": "ddbde3eea6ffa8fda105cbd86597a53bd409f41e13223900aa27e77a84b6b155",
+      "tests/test_outputs.py": "f03c6867663b8e8fb7899df51ee4df26411fab62ed491753964b801e591d16c5",
+      "solution/solve.sh": "300ca96b79db8d77f14742109aaf76048aafc4644ced750b1bc5c2761e8d0175"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-fab1dea29256",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "117ed2648b8ae90a55083a4340142464f57903e13e3638fbad5fe837e7becec1"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-8d80713247fd",
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 127,
+          "log_sha256": "94c964a65b4ab2dbd2fa18b05e98fb6faca1b0d91af723dc3d7a3fffbac5a448"
+        },
+        "classification": "Original gold execution failed; retained",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "342cf6a1569e3007e0dfb1b6f502cea4f428929415bcf8cace10cdea0acca777"
+        },
+        "reward": "1",
+        "valid_expected_reward": false,
+        "test_events": 1,
+        "owned_container_absent": true
+      }
+    ],
+    "model_agent_calls": 0,
+    "valid_pair": false
+  },
+  {
+    "task": "gpt2-codegolf",
+    "image_id": "sha256:f4771870b08b96c63feb567c49bcc2c2b4deefd0fc3acab5ccb781ed4fc492a6",
+    "source_hashes": {
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "6232bb719c5a4ce0b2d59f1fd9c298b2d78986c550e0de37ff319e3309fe4795",
+      "solution/solve.sh": "8c288a53bdf566d7278a35eda08d6baaf50883b0e1917ceb638b823cf6456b70"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-2cfc159d3031",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "a06fd91f7aadfb6271c61d172ded48f980a06f10b18252123ccbe60f33b87195"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-6335b4dfb838",
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "fa1892ac01ebb7e0bf2888666816a4b7da917100dcae88420daa23449e699b96"
+        },
+        "reward": "1",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
+      }
+    ],
+    "model_agent_calls": 0,
+    "valid_pair": true
+  },
+  {
+    "task": "merge-diff-arc-agi-task",
+    "image_id": "sha256:1994f7ed8975cf2a616e00daa45fc556e842418f8040398053f064cf0bba3c69",
+    "source_hashes": {
+      "tests/test.sh": "c9052954cd6ce25c4a375a2fb48e765b1efa5b39f7991b93993cc793af8ab9d2",
+      "tests/test.json": "20f116a6b718bbf4874bbe203d15a5c0f85a1d88cb622e2d7529c7e4fb2d4c28",
+      "tests/test_outputs.py": "2754ba6c5c5f75c9db5ed2c5729d9f5d7e21cb7fdb18aa0c65abdc3e7e85c149",
+      "solution/solve.sh": "48d4becc41fda5b6063fe96947474ffe778a29d6924d7b2bb235eb61e5ce555d"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-bad37ece65b9",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "11fb9fc2af92ac4e6eb8ed7fb4cbab7efd0485789a0ad2d31036c35233add098"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 5,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-b8a2348a429a",
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "62e7e4067069a1228454cc3c02714f1d824b0a6ef8e69cf1ec90888af23b6a23"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "40e026028bca29c1d2187a02d286dd68a9d3987983ebdbf9bbddd6db6f1423f9"
+        },
+        "reward": "1",
+        "valid_expected_reward": true,
+        "test_events": 5,
+        "owned_container_absent": true
+      }
+    ],
+    "model_agent_calls": 0,
+    "valid_pair": true
+  },
+  {
+    "task": "polyglot-rust-c",
+    "image_id": "sha256:42e1c101034156ab6a0cbefc63ee654ab7fccb668e1580a090abba89244f6a93",
+    "source_hashes": {
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "baed5e4d0cc0e5809ff41a7df1815d18c65c708a3a3f264428e1cda11ce692f9",
+      "solution/solve.sh": "f3b101d9528efb3997937fa134b10e3773521bf83d576dab3183e977d12c9638"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-a3e2ad44130b",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "adb34495e344eb2501c894481c9f42b86c774078a1f39c034baf825e4d093b57"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-3defe985765a",
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "b0d99e809be21bfae1c0a0b69ac6dac655703d46fe3a69b020ddc82f0af1bf54"
+        },
+        "reward": "1",
+        "valid_expected_reward": true,
+        "test_events": 1,
+        "owned_container_absent": true
+      }
+    ],
+    "model_agent_calls": 0,
+    "valid_pair": true
+  },
+  {
+    "task": "sqlite-with-gcov",
+    "image_id": "sha256:b9726244945382a5d73839440e391c88aceeb52346805eebd8712eb1b6ba8b3a",
+    "source_hashes": {
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "b165f8504bb93a901451b80c4ea73344b71b6af377ebdabef745fbcdd1d2993b",
+      "solution/solve.sh": "e054f4092eb4b2895866a89c4d4e3591dda0fa28bd9d825ca60403f359a8f027"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-99f300886543",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "cd5a1b7c82875d2d8e07745be510b74ebe92ad40d77529ee50c2932e6b93964d"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 3,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-e4ac9b0a47dc",
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "1875b81cdfacbf0b42d380ee6816bbbd2eed05eb293e13753e55af1f91ea63ce"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "dd760904e7abe003640e0de6020e000ba74eae5090b5c0dd981e258bf37baf14"
+        },
+        "reward": "1",
+        "valid_expected_reward": true,
+        "test_events": 3,
+        "owned_container_absent": true
+      }
+    ],
+    "model_agent_calls": 0,
+    "valid_pair": true
+  },
+  {
+    "task": "tune-mjcf",
+    "image_id": "sha256:9b16b1b03963fede220751f194eaa4e59c22a7341290a5a26fef85cbbaf09f14",
+    "source_hashes": {
+      "tests/test.sh": "343a0604775b960f47cb7ed04bc0c4f9e23f8439c4ba44d6027f0cb245327e97",
+      "tests/model_ref.xml": "f3561cbea5bb024886e9627e795c8f60a3984bd749853073bbd433d0e49bf0b7",
+      "tests/test_outputs.py": "3f20e17eb16bb51e236a9321ddc1331345838467473c5a6faf7e1c762af10bbc",
+      "solution/solve.sh": "afe5dcb32992bcd89893af943ccf0d0e38c1d43627e15adc6abd8df1f6c11d54"
+    },
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g1-tb-control-d8f7b83bac87",
+        "expected_reward": "0",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "1c4d6a4dc21b8b2e75c83c64b1d5a921adb530e85ab6da9dfedb23f711e89bb7"
+        },
+        "reward": "0",
+        "valid_expected_reward": true,
+        "test_events": 4,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g1-tb-control-b45284a537e7",
+        "expected_reward": "1",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "e71bf5502c914fd14bac126ce828b3fd9d7918c8fbe74883407c218b4b146903"
+        },
+        "reward": "1",
+        "valid_expected_reward": true,
+        "test_events": 4,
+        "owned_container_absent": true
+      }
+    ],
+    "model_agent_calls": 0,
+    "valid_pair": true
   }
 ]

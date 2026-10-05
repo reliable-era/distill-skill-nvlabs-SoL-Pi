@@ -1,0 +1,20 @@
+{
+  "task": "git-multibranch",
+  "image_id": "sha256:07507b6f5e5f5d1f9d4896a6df81627d601059189131fd3fb4708a9a16484f40",
+  "fix": "Install missing tmux only; original oracle/tests unchanged",
+  "passing_noop_not_repeated": true,
+  "prior_failure_preserved": true,
+  "private_root": "/tmp/solpi-g1-git-multibranch-gold-repair-9af4d0f0b7",
+  "model_agent_calls": 0,
+  "oracle": {
+    "exit_code": 0,
+    "log_sha256": "f662f25206b37254ec59d1e6ab3cf50a9b699b555f30ec97c57d3ae2a95487cd"
+  },
+  "verifier": {
+    "exit_code": 0,
+    "log_sha256": "0eb6ab8291d27edf78e5dd13f7bf06f26ea601e36d593b8d727c6c179bb71f4e"
+  },
+  "reward": "1",
+  "owned_container_absent": true,
+  "gold_valid": true
+}
