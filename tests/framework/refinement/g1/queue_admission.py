@@ -7,7 +7,7 @@ import socket
 import threading
 import time
 
-PORTS = (18001, 18002)
+PORTS = (18001,)
 
 def fetch(port, deadline=None):
     call_deadline = min(time.monotonic() + 2, deadline) if deadline is not None else time.monotonic() + 2
