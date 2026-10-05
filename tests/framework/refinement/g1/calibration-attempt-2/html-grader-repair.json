@@ -1,0 +1,66 @@
+{
+  "model_POST": 0,
+  "native_starts": 0,
+  "original_grading_failure": {
+    "type": "RuntimeError",
+    "message": "Original grade unavailable"
+  },
+  "original_reward": "0",
+  "original_test_events": 0,
+  "captured_artifact_sha256": "9f3da7218a37efbe3eabd7b8e2e2f7d9571d49d067c62c88ae6b0e36e56e2870",
+  "source_tests_manifest": {
+    "filter.py": "9b04d17c5111dfaf8672b6cec09ae773327848c41b509f3ab4618766eba580f4",
+    "test.sh": "09386b7e4929216fe490deb7d32c99841c03be2471897181dda2bd11f8922c00",
+    "test_outputs.py": "31ba6a0baac550de110680ff32a16bbc4fa858e1bfe41f2a63516f90073729bc"
+  },
+  "solved": null,
+  "started_utc": "2026-10-05T23:13:06.453157+00:00",
+  "replay": {
+    "task": "break-filter-js-from-html",
+    "replay_complete": true,
+    "restored_paths": [
+      "/app/out.html"
+    ],
+    "witness_paths_not_replayed": [],
+    "trusted_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+    "actor_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+    "trusted_payload_owner": "0:0",
+    "rebuild_performed": false,
+    "official_grade_available": false,
+    "cost_eligibility": false
+  },
+  "generic_preload": {
+    "trusted_software_preload_complete": true,
+    "test_network_disconnected": true,
+    "network": "none",
+    "seconds": 2.2633903063833714,
+    "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+    "target_builds": 0,
+    "target_installs": 0,
+    "original_test_script_unchanged": true,
+    "cache_inputs": {
+      "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+      "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+      "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+      "mounts": [
+        "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+      ],
+      "wheel_hashes": {
+        "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+        "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+        "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+        "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+        "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+        "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      },
+      "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+      "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+    }
+  },
+  "error": {
+    "type": "CalledProcessError",
+    "message": "Command '['docker', 'network', 'connect', 'bridge', 'solpi-g1-cal-74d3696471a9-html-regrade']' returned non-zero exit status 1."
+  },
+  "cleanup_verified": true,
+  "ended_utc": "2026-10-05T23:13:09.946645+00:00"
+}
