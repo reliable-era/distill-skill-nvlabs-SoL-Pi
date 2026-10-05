@@ -1,0 +1,101 @@
+{
+  "phase": "G1 Step 3 only; no candidate or confirmation calls",
+  "step_2_commit": "53dd11a65e56d1a2f559555fba583d07df03ddef",
+  "step_2_audit_sha256": "c4f0af52633bd5b1d236aee721e103b8c71afc78844e8fdc71aeae072ee0eb8c",
+  "window_start": "2026-10-06T01:30:00+08:00",
+  "window_end": "2026-10-06T09:30:00+08:00",
+  "model": "Qwen3.8-27B-FP8",
+  "harness": "Codex 0.160.0",
+  "arms": [
+    "No skill"
+  ],
+  "rounds": 1,
+  "development_pool": [
+    {
+      "id": "break-filter-js-from-html",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/break-filter-js-from-html",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "build-cython-ext",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/build-cython-ext",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "build-pmars",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/build-pmars",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "financial-document-processor",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/financial-document-processor",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "make-doom-for-mips",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/make-doom-for-mips",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "overfull-hbox",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/overfull-hbox",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "regex-log",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/regex-log",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "sparql-university",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/sparql-university",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "train-fasttext",
+      "family": "terminal-bench-2",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/train-fasttext",
+      "exposure": "Previously used in development; never confirmation"
+    },
+    {
+      "id": "go/exercises/practice/food-chain",
+      "family": "aider-polyglot",
+      "source": "/tmp/solpi-polyglot-grader-source/go/exercises/practice/food-chain",
+      "exposure": "Reused development fixture; never confirmation"
+    }
+  ],
+  "schedule_rule": "Nine former Terminal tasks in their original metadata-selected order, then the reused Go food-chain fixture; no outcome-selected changes",
+  "maximum_native_starts": 10,
+  "maximum_provider_requests": 600,
+  "maximum_requests_per_run": 60,
+  "wall_safety_seconds_per_run": 3600,
+  "output_token_cap": 16384,
+  "admission": {
+    "endpoints": [
+      "http://127.0.0.1:18001/get_load",
+      "http://127.0.0.1:18002/get_load"
+    ],
+    "criterion": "num_waiting_reqs == 0 on both; active num_reqs may be nonzero",
+    "maximum_wait_seconds_per_run": 600,
+    "backoff_seconds": [
+      5,
+      10,
+      20,
+      30,
+      60
+    ],
+    "failure_action": "Pause stage and report; do not restart or cancel workloads"
+  },
+  "accounting": "Retain all attempts, retries, failures and unknown costs. Record backend and observed queue state per request. No full-actor retries. No blind uncertainty resends. Queue contention flags do not exclude or rerun cells.",
+  "budget_pass": "At least 5 of these 10 development tasks independently verified solved by No skill; distinguish unavailable grades and unstarted cells. Report completeness and freeze budget before any candidate call.",
+  "stop_policy": "Stop at the eight-hour window, admission expiry, uncertain cleanup/provider completion, or after the one-round calibration. Commit results and report; do not start Step 4.",
+  "model_calls_before_contract_commit": 0
+}
