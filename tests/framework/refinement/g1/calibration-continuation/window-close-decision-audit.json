@@ -1,0 +1,43 @@
+{
+  "status": "INCONCLUSIVE_SCREENING_POOL_INSUFFICIENT_WITH_STARTUP_FAILURES",
+  "closed_utc": "2026-10-06T23:18:43.008945+00:00",
+  "window_end": "2026-10-07T07:18:43+08:00",
+  "cap_hits": [],
+  "budget_frozen": true,
+  "frozen_budget": {
+    "requests": 60,
+    "wall_seconds": 7200,
+    "output_tokens": 16384
+  },
+  "freeze_basis": "User-authorized nominal budget rule at window end; cap checks and complete provider accounting. Not proof that this budget prevents model or harness failures.",
+  "model_runs_new": 4,
+  "failed_startup_attempts": 6,
+  "failed_startup_tasks": [
+    "go/exercises/practice/food-chain",
+    "cpp/exercises/practice/sublist",
+    "java/exercises/practice/series",
+    "javascript/exercises/practice/bowling",
+    "python/exercises/practice/proverb",
+    "rust/exercises/practice/acronym"
+  ],
+  "provider_requests_new": 71,
+  "provider_tokens_new": 1760285,
+  "zero_request_startup_cost_known_zero": true,
+  "unknown_provider_costs": 0,
+  "screening_pool": [
+    "break-filter-js-from-html",
+    "overfull-hbox"
+  ],
+  "step_3_complete": false,
+  "g1_complete": false,
+  "quality_caveat": "Six tasks never reached Codex. Their starter grades are not model-quality observations; failure to reach a three-task pool cannot establish model inability to separate skills.",
+  "no_task_retry_or_server_change": true,
+  "no_step_4": true,
+  "confirmation_rule_unchanged": true,
+  "sealed_samples_untouched": true,
+  "inputs_sha256": {
+    "calibration-window.json": "178e9460898dcae02d65f8a903a3647a871e01b6bd1e1ad3c8e0be362b3c99cc",
+    "calibration-result.json": "e4ce254d1b8f885e0295a8ea2191bdd256ac53bf924bdd234d355c21044359bc",
+    "aider-startup-failure-audit.json": "360645c6ffdb33d9f2a220f9a264a3ba3b30cbfba25d300d887f90a79fe0208d"
+  }
+}

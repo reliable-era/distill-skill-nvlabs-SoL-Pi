@@ -1,6 +1,6 @@
 # G1 status
 
-Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 continuation authorized by decision.md: prepare a new four-hour commit-timed window for the five unstarted tasks, then the conditional exposed-fixture fallback. Prior runs unchanged; no Step 4 authorization.
+Steps 0–2 complete; all 18 selected gold/no-op pairs pass. G1 stopped operationally inconclusive: four new model runs, one new solve, six zero-call startup failures. Pool is HTML + TeX only (2 < 3). Nominal caps frozen at window end under the amended rule; no retries or Step 4.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
@@ -47,7 +47,8 @@ All nine old Terminal-Bench tasks are development-only. No historical candidate 
 | 1: shared-server admission | 0 | — | 0 | Approved; bounded queue checks, no reservation |
 | 2: sealed samples and controls | 0 | — | 0 | Complete: Terminal 9/9 and Aider 9/9 pairs pass |
 | 3a: expired admission | 0 | Not measured | 0; no requests | Preserved; no wait renewal |
-| 3b: No-skill calibration | 5 | 1; four failed; five unstarted | 4,078,674; complete | Threshold unmet; budget not frozen; stop before Step 4 |
+| 3b: No-skill calibration | 5 | 1; four failed; five unstarted | 4,078,674; complete | Preserved prior cohort |
+| 3c: pending tasks + fallback | 10 shell attempts; 4 model runs | 1; three failed; six model-untested | 1,760,285; complete | Startup permission fault preserved; pool 2 < 3; nominal caps frozen; G1 inconclusive |
 | 4: measured mechanisms | 0 | — | 0 | Not started; at most 3 candidates |
 | 5: multi-task screens | 0 | — | 0 | Not started; ≥3 solvable tasks per candidate |
 | 6: winner freeze | 0 | — | 0 | Not started |

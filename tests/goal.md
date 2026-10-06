@@ -3,7 +3,9 @@
 Set 2026-10-05 by the user. This replaces the 2026-10-04 goal below, whose
 ≥3/5-harness and three-family criteria could not be met under the user's
 scope override. Rationale and audit: workspace `review.md`. The goal is
-active, not achieved.
+not achieved. G1 stopped operationally inconclusive on 2026-10-07 after the
+amended Step 3 window: the verified screening pool has two tasks, and six
+Aider/Go launches failed before Codex. See `STATUS.md` and the Step 3 report.
 
 ## Objective
 
@@ -19,12 +21,17 @@ one harness on two benchmark families.
 - **Benchmark families (2):** Terminal-Bench 2.0 and Aider polyglot.
   SWE-bench is out of scope.
 - **Arms (4):** No skill, frozen Karpathy, candidate, candidate + frozen Karpathy.
-- **Budget per run:** identical across arms, calibrated once on the
-  development pool so that control arms solve at least half of the
-  development tasks (user-corrected starting point: 60 model requests as
-  the primary budget, a 60-minute wall-clock safety cap, and a 16K output
-  cap). Frozen before any candidate run. The old 600 s / 16-request budget
-  is retired: it produced floor effects.
+- **Budget per run:** identical across arms: 60 model requests, 120-minute
+  wall safety and 16384 output tokens. Under the user's decision.md amendment
+  committed before continuation calls, freeze independent of solve count if
+  no new request/wall cap is hit. The nominal budget was frozen at the new
+  window end, 2026-10-07 07:18:43 +08. This does not establish solvability.
+  Step 5 requires at least three verified No-skill-solvable development tasks;
+  this replaces the half-of-development / five-of-ten calibration solve gate.
+  If fewer than three remain, attempt up to five frozen exposed, non-sealed
+  Aider fixtures once in task-ID order within that window. If the resulting
+  pool still has fewer than three, stop G1 as inconclusive. No candidate run
+  is authorized. The old 600 s / 16-request budget remains retired.
 
 ## Task pools
 
@@ -67,12 +74,17 @@ one harness on two benchmark families.
   or no candidate meets the target in screening, stop and report to the user.
 - No harness onboarding or mock-infrastructure work. No candidate screens
   on a single task. No model calls until Step 2 is complete and committed and
-  the Step 3 calibration contract is committed. Then No-skill calibration is
-  authorized for at most eight hours from the Step 2 completion commit.
-  Before each run, admit when /get_load reports num_waiting_reqs = 0 on both
-  replicas; otherwise back off for at most ten minutes, then pause and report.
-  Record per-request backend and observed queue state, retaining and flagging
-  contention-inflated runs. Do not interfere with the token_economiy workload.
+  the Step 3 calibration contract is committed. The user's latest amendment
+  authorized only the five unstarted primary tasks plus the conditional
+  exposed-fixture fallback, never the five completed runs. Its commit dc768c3
+  started a new four-hour window (03:18:43–07:18:43 +08 on 2026-10-07), latest
+  start 05:18:43, with no extension or automatic task retries. All G1 model
+  calls use direct 127.0.0.1:18001 without fallback. Admit only with valid
+  metadata and 0 <= running requests < 8; waiting requests are allowed.
+  Back off at most ten minutes, then pause and report. Record load at start,
+  before every request and every 30 seconds. Flag any observation with running
+  >= 6 or waiting > 0; retain all flagged runs without causal slowdown claims.
+  Do not interfere with shared workloads or change shared servers.
   After Step 3, commit and report, then stop before Step 4. Candidate calls and
   later stages require the specified gates and separate user approval.
   See `G1-AUTHORIZATION.md` for the user's correction; no reservation is assumed.
