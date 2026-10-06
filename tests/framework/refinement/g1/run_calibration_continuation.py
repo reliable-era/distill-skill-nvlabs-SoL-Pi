@@ -65,6 +65,10 @@ def make_controller():
     replace("            if time.monotonic()+7200>deadline:break\n            ident=task['id'];", "            if time.monotonic()+7200>deadline:break\n            if index>=5 and len(PRIOR_SOLVED)+sum(r.get('solved') is True for r in rows)>=3:break\n            ident=task['id'];")
     replace("manifest=polyglot.prepare('/tmp/solpi-polyglot-grader-source',ident,prepared)", "manifest=fallback_prepare('/tmp/solpi-polyglot-grader-source',ident,prepared)")
     replace("spec={'actor_image_id':S.IMAGE,'grader_image_id':S.IMAGE,'cpus':1,'memory_mb':2048,'mounts':[],'environment':{},'guidance':''}", "spec=fixture_spec(ident,controller)")
+    # Prepared workspaces and CODEX_HOME are root-owned. Aider images default
+    # to a non-root login user; preserve isolation/caps but select the intended
+    # container-only root identity, as used by the Terminal task images.
+    replace("            args+=docker_options(spec);argv=A.argv('codex',8000,d)", "            if task['family']=='aider-polyglot':args[1:1]=['--user','0:0']\n            args+=docker_options(spec);argv=A.argv('codex',8000,d)")
     old_start="                    grade=prefix+'-go-grade';owned.append(grade)"
     start=code.index(old_start)
     end=code.index("            except Exception as e:row['grade_error']",start)
