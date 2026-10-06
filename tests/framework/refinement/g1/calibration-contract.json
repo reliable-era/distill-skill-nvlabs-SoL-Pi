@@ -2,8 +2,9 @@
   "phase": "G1 Step 3 only; no candidate or confirmation calls",
   "step_2_commit": "53dd11a65e56d1a2f559555fba583d07df03ddef",
   "step_2_audit_sha256": "c4f0af52633bd5b1d236aee721e103b8c71afc78844e8fdc71aeae072ee0eb8c",
-  "window_start": "2026-10-06T01:30:00+08:00",
-  "window_end": "2026-10-06T09:30:00+08:00",
+  "window_start": "Commit timestamp of calibration-decision-amendment.md",
+  "window_end": "That commit timestamp plus 14400 seconds",
+  "window_seconds": 14400,
   "model": "Qwen3.8-27B-FP8",
   "harness": "Codex 0.160.0",
   "arms": [
@@ -94,13 +95,19 @@
     "failure_action": "Pause stage and report; do not restart or cancel workloads"
   },
   "accounting": "Retain all attempts, retries, failures and unknown costs. Record backend and observed queue state per request. No full-actor retries. No blind uncertainty resends. Queue contention flags do not exclude or rerun cells.",
-  "budget_pass": "At least 5 of these 10 development tasks independently verified solved by No skill; distinguish unavailable grades and unstarted cells. Report completeness and freeze budget before any candidate call.",
-  "stop_policy": "Stop at the eight-hour window, admission expiry, uncertain cleanup/provider completion, or after the one-round calibration. Commit results and report; do not start Step 4.",
+  "budget_pass": "Freeze 60 requests / 7200 seconds / 16384 output after all five remaining primary runs or at window end, independent of solve count, only if no new run hits a request or wall cap and accounting/cleanup support the cap check. No cap hit may be ignored. Step 3 completion separately requires a pool of at least three verified No-skill-solvable development tasks.",
+  "stop_policy": "No start unless its full 7200-second cap fits in the new four-hour window. No window extension, full-actor retries, or reruns of completed tasks. Stop/report on admission expiry or uncertain provider completion. Any cap hit must be reported and prevents freezing the budget. If fewer than three verified solvable development tasks remain after the conditional fallback, report G1 inconclusive rather than successful. Commit results/report and stop before Step 4.",
   "model_calls_before_contract_commit": 0,
   "model_endpoint": "http://127.0.0.1:18001/v1",
   "route_amendment": "calibration-direct18001-amendment.md",
   "load_budget_amendment": "calibration-load-budget-amendment.md",
   "load_sampling_seconds": 30,
   "heavy_load_flag_rule": "Any observed num_reqs >= 6 or num_waiting_reqs > 0; descriptive flag only, never exclusion",
-  "latest_start": "2026-10-06T07:30:00+08:00"
+  "latest_start": "Amendment commit timestamp plus 7200 seconds",
+  "decision_amendment": "calibration-decision-amendment.md",
+  "pending_primary_ids": ["overfull-hbox", "regex-log", "sparql-university", "train-fasttext", "go/exercises/practice/food-chain"],
+  "prior_result": "calibration-attempt-2/calibration-summary-audit.json",
+  "fallback_manifest": "calibration-fallback-fixtures.json",
+  "fallback_policy": "Only after the pending primary tasks have been attempted or the start window closes, if the total verified solvable pool is below three, attempt each frozen exposed fixture at most once in task-ID order, up to five and within the same window. Never use sealed tasks or substitute by outcome.",
+  "confirmation_floor_risk": "Low Terminal-Bench solve rates may make tokens per solve noisy and sealed confirmation inconclusive under unchanged B3(a). Aider results cannot replace the separate Terminal-Bench acceptance requirement."
 }

@@ -1,6 +1,6 @@
 # G1 status
 
-Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 second attempt stopped cleanly: five starts, one verified solve, five tasks unstarted. Budget not calibrated; stop before Step 4.
+Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 continuation authorized by decision.md: prepare a new four-hour commit-timed window for the five unstarted tasks, then the conditional exposed-fixture fallback. Prior runs unchanged; no Step 4 authorization.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
