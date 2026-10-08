@@ -1,4 +1,15 @@
-# G1 status
+# Active G2 status
+
+G2 opened by user commit `1401e9a`; separate from closed G1. Candidate 2 frozen unchanged. `framework/refinement/g2/plan.json` preregisters all task/arm/round seeds, schedule, analysis and source/skill hashes. Six mathematical analysis tests pass; zero model calls so far. Next: committed offline runtime preflight, then separately committed bounded Aider round-1 wave. Stop at 36 cells if candidate/No skill misses 5% savings or loses solves. Terminal remains gated on full Aider acceptance; no shipping without approval.
+
+| G2 stage | Starts / requests | Solves | Complete tokens | Decision |
+|---|---:|---:|---:|---|
+| Freeze / preregister | 0 / 0 | — | 0 | Frozen candidate; three required comparisons; candidate/Both informational |
+| Aider rounds 1–3 | 0 / 0 | — | 0 | Unstarted; 108 planned, futility at 36 |
+| Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
+| Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
+
+# Closed G1 status (unchanged result)
 
 **Stopped: negative development result; G1 savings objective NOT achieved.** Steps 0–3 passed under written amendments; 18 sealed gold/no-op pairs valid; four control-solvable development tasks. Two full matched screens failed the all-comparator gate. Candidate 1 lost quality; candidate 2 beats No skill/Karpathy but costs 38.32% more per solve than Both. Stop rule fires; third slot unused. All workers/resources gone; canonical and sealed selections unchanged. No winner, confirmation or promotion. Final report/audit: `framework/refinement/g1/report.md` and `prompt-to-artifact-audit.md`.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.

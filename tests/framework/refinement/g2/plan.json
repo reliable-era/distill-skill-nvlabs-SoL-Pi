@@ -1,0 +1,2358 @@
+{
+  "contract_commit": "1401e9a",
+  "g1_closed_commit": "f537bfa",
+  "candidate_frozen": true,
+  "skills": {
+    "candidate": {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g2/frozen/candidate",
+      "source": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g1/candidates/effect-checked-transitions/efficient-coding",
+      "tree_hashes": {
+        "SKILL.md": "39f7b30993b0fb4cfdc306df6eba45d1ebcb8a75955b7713f5f3f306976e8a25",
+        "agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      }
+    },
+    "karpathy": {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g2/frozen/karpathy",
+      "source": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/pi-takeover-qwen-source-backed-16k/frozen/karpathy",
+      "tree_hashes": {
+        "SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      }
+    }
+  },
+  "arm_skills": {
+    "none": [],
+    "K": [
+      "karpathy"
+    ],
+    "candidate": [
+      "candidate"
+    ],
+    "Both": [
+      "karpathy",
+      "candidate"
+    ]
+  },
+  "families": {
+    "aider-polyglot": {
+      "tasks": [
+        "rust/exercises/practice/forth",
+        "java/exercises/practice/transpose",
+        "go/exercises/practice/connect",
+        "cpp/exercises/practice/meetup",
+        "python/exercises/practice/zebra-puzzle",
+        "javascript/exercises/practice/alphametics",
+        "rust/exercises/practice/accumulate",
+        "java/exercises/practice/queen-attack",
+        "go/exercises/practice/crypto-square"
+      ],
+      "selection_sha256": "8a33bef7e3b7cf613c1d7cd56703c6821fa3d3b0ec4bb9ef264ee7256546a74d",
+      "round_seeds": {
+        "1": 2026101001,
+        "2": 2026101101,
+        "3": 2026101201
+      }
+    },
+    "terminal-bench-2": {
+      "tasks": [
+        "chess-best-move",
+        "fix-git",
+        "fix-ocaml-gc",
+        "git-multibranch",
+        "gpt2-codegolf",
+        "merge-diff-arc-agi-task",
+        "polyglot-rust-c",
+        "sqlite-with-gcov",
+        "tune-mjcf"
+      ],
+      "selection_sha256": "a34aace43d41c80fd5a8be2c2eed9c1df19c40ab96cef3a01dbe0bbe65347e3e",
+      "round_seeds": {
+        "1": 2026101002,
+        "2": 2026101102,
+        "3": 2026101202
+      }
+    }
+  },
+  "schedule": [
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "go/exercises/practice/connect",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t2-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "go/exercises/practice/connect",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t2-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "go/exercises/practice/connect",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t2-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "go/exercises/practice/connect",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t2-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t7-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t7-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t7-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t7-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t6-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t6-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t6-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t6-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t3-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t3-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t3-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t3-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "java/exercises/practice/transpose",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t1-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "java/exercises/practice/transpose",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t1-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "java/exercises/practice/transpose",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t1-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "java/exercises/practice/transpose",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t1-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t5-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t5-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t5-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t5-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "rust/exercises/practice/forth",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t0-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "rust/exercises/practice/forth",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t0-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "rust/exercises/practice/forth",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t0-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "rust/exercises/practice/forth",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t0-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t8-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t8-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t8-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t8-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "none",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t4-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "K",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t4-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "Both",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t4-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 1,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "candidate",
+      "round_seed": 2026101001,
+      "cell_id": "g2-aider-r1-t4-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "java/exercises/practice/transpose",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t1-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "java/exercises/practice/transpose",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t1-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "java/exercises/practice/transpose",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t1-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "java/exercises/practice/transpose",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t1-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "go/exercises/practice/connect",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t2-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "go/exercises/practice/connect",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t2-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "go/exercises/practice/connect",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t2-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "go/exercises/practice/connect",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t2-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t4-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t4-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t4-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t4-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t5-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t5-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t5-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t5-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "rust/exercises/practice/forth",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t0-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "rust/exercises/practice/forth",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t0-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "rust/exercises/practice/forth",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t0-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "rust/exercises/practice/forth",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t0-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t7-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t7-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t7-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t7-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t8-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t8-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t8-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t8-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t3-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t3-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t3-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t3-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "none",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t6-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "candidate",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t6-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "Both",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t6-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 2,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "K",
+      "round_seed": 2026101101,
+      "cell_id": "g2-aider-r2-t6-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t3-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t3-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t3-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "cpp/exercises/practice/meetup",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t3-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t8-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t8-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t8-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "go/exercises/practice/crypto-square",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t8-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "go/exercises/practice/connect",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t2-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "go/exercises/practice/connect",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t2-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "go/exercises/practice/connect",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t2-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "go/exercises/practice/connect",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t2-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t7-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t7-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t7-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "java/exercises/practice/queen-attack",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t7-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "rust/exercises/practice/forth",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t0-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "rust/exercises/practice/forth",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t0-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "rust/exercises/practice/forth",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t0-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "rust/exercises/practice/forth",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t0-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "java/exercises/practice/transpose",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t1-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "java/exercises/practice/transpose",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t1-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "java/exercises/practice/transpose",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t1-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "java/exercises/practice/transpose",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t1-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t4-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t4-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t4-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "python/exercises/practice/zebra-puzzle",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t4-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t6-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t6-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t6-Both"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "rust/exercises/practice/accumulate",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t6-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "K",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t5-K"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "none",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t5-none"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "candidate",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t5-candidate"
+    },
+    {
+      "family": "aider-polyglot",
+      "round": 3,
+      "task": "javascript/exercises/practice/alphametics",
+      "arm": "Both",
+      "round_seed": 2026101201,
+      "cell_id": "g2-aider-r3-t5-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "gpt2-codegolf",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t4-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "gpt2-codegolf",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t4-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "gpt2-codegolf",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t4-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "gpt2-codegolf",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t4-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "tune-mjcf",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t8-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "tune-mjcf",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t8-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "tune-mjcf",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t8-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "tune-mjcf",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t8-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "fix-git",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t1-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "fix-git",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t1-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "fix-git",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t1-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "fix-git",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t1-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "polyglot-rust-c",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t6-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "polyglot-rust-c",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t6-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "polyglot-rust-c",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t6-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "polyglot-rust-c",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t6-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "git-multibranch",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t3-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "git-multibranch",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t3-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "git-multibranch",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t3-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "git-multibranch",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t3-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "chess-best-move",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t0-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "chess-best-move",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t0-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "chess-best-move",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t0-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "chess-best-move",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t0-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "sqlite-with-gcov",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t7-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "sqlite-with-gcov",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t7-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "sqlite-with-gcov",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t7-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "sqlite-with-gcov",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t7-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "fix-ocaml-gc",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t2-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "fix-ocaml-gc",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t2-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "fix-ocaml-gc",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t2-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "fix-ocaml-gc",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t2-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "Both",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t5-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "none",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t5-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "K",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t5-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 1,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "candidate",
+      "round_seed": 2026101002,
+      "cell_id": "g2-terminal-r1-t5-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "polyglot-rust-c",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t6-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "polyglot-rust-c",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t6-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "polyglot-rust-c",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t6-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "polyglot-rust-c",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t6-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "fix-ocaml-gc",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t2-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "fix-ocaml-gc",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t2-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "fix-ocaml-gc",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t2-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "fix-ocaml-gc",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t2-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "gpt2-codegolf",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t4-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "gpt2-codegolf",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t4-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "gpt2-codegolf",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t4-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "gpt2-codegolf",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t4-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t5-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t5-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t5-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t5-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "tune-mjcf",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t8-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "tune-mjcf",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t8-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "tune-mjcf",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t8-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "tune-mjcf",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t8-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "chess-best-move",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t0-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "chess-best-move",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t0-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "chess-best-move",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t0-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "chess-best-move",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t0-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "sqlite-with-gcov",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t7-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "sqlite-with-gcov",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t7-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "sqlite-with-gcov",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t7-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "sqlite-with-gcov",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t7-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "fix-git",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t1-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "fix-git",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t1-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "fix-git",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t1-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "fix-git",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t1-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "git-multibranch",
+      "arm": "K",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t3-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "git-multibranch",
+      "arm": "candidate",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t3-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "git-multibranch",
+      "arm": "Both",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t3-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 2,
+      "task": "git-multibranch",
+      "arm": "none",
+      "round_seed": 2026101102,
+      "cell_id": "g2-terminal-r2-t3-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "gpt2-codegolf",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t4-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "gpt2-codegolf",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t4-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "gpt2-codegolf",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t4-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "gpt2-codegolf",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t4-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "chess-best-move",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t0-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "chess-best-move",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t0-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "chess-best-move",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t0-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "chess-best-move",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t0-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "polyglot-rust-c",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t6-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "polyglot-rust-c",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t6-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "polyglot-rust-c",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t6-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "polyglot-rust-c",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t6-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t5-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t5-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t5-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "merge-diff-arc-agi-task",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t5-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "sqlite-with-gcov",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t7-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "sqlite-with-gcov",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t7-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "sqlite-with-gcov",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t7-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "sqlite-with-gcov",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t7-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "git-multibranch",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t3-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "git-multibranch",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t3-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "git-multibranch",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t3-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "git-multibranch",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t3-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "fix-ocaml-gc",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t2-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "fix-ocaml-gc",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t2-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "fix-ocaml-gc",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t2-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "fix-ocaml-gc",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t2-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "fix-git",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t1-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "fix-git",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t1-K"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "fix-git",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t1-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "fix-git",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t1-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "tune-mjcf",
+      "arm": "none",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t8-none"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "tune-mjcf",
+      "arm": "candidate",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t8-candidate"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "tune-mjcf",
+      "arm": "Both",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t8-Both"
+    },
+    {
+      "family": "terminal-bench-2",
+      "round": 3,
+      "task": "tune-mjcf",
+      "arm": "K",
+      "round_seed": 2026101202,
+      "cell_id": "g2-terminal-r3-t8-K"
+    }
+  ],
+  "task_sources": {
+    "rust/exercises/practice/forth": "/tmp/solpi-polyglot-grader-source/rust/exercises/practice/forth",
+    "java/exercises/practice/transpose": "/tmp/solpi-polyglot-grader-source/java/exercises/practice/transpose",
+    "go/exercises/practice/connect": "/tmp/solpi-polyglot-grader-source/go/exercises/practice/connect",
+    "cpp/exercises/practice/meetup": "/tmp/solpi-polyglot-grader-source/cpp/exercises/practice/meetup",
+    "python/exercises/practice/zebra-puzzle": "/tmp/solpi-polyglot-grader-source/python/exercises/practice/zebra-puzzle",
+    "javascript/exercises/practice/alphametics": "/tmp/solpi-polyglot-grader-source/javascript/exercises/practice/alphametics",
+    "rust/exercises/practice/accumulate": "/tmp/solpi-polyglot-grader-source/rust/exercises/practice/accumulate",
+    "java/exercises/practice/queen-attack": "/tmp/solpi-polyglot-grader-source/java/exercises/practice/queen-attack",
+    "go/exercises/practice/crypto-square": "/tmp/solpi-polyglot-grader-source/go/exercises/practice/crypto-square",
+    "chess-best-move": "/tmp/solpi-refinement-terminal-bench-2/chess-best-move",
+    "fix-git": "/tmp/solpi-refinement-terminal-bench-2/fix-git",
+    "fix-ocaml-gc": "/tmp/solpi-refinement-terminal-bench-2/fix-ocaml-gc",
+    "git-multibranch": "/tmp/solpi-refinement-terminal-bench-2/git-multibranch",
+    "gpt2-codegolf": "/tmp/solpi-refinement-terminal-bench-2/gpt2-codegolf",
+    "merge-diff-arc-agi-task": "/tmp/solpi-refinement-terminal-bench-2/merge-diff-arc-agi-task",
+    "polyglot-rust-c": "/tmp/solpi-refinement-terminal-bench-2/polyglot-rust-c",
+    "sqlite-with-gcov": "/tmp/solpi-refinement-terminal-bench-2/sqlite-with-gcov",
+    "tune-mjcf": "/tmp/solpi-refinement-terminal-bench-2/tune-mjcf"
+  },
+  "task_source_hashes": {
+    "rust/exercises/practice/forth": {
+      ".docs/instructions.append.md": "8bde756b54111f5943cbd8803d7f2b58540c5cbdde9f791e164c82102affdc78",
+      ".docs/instructions.md": "06875da79159e3783cde3d006e405f8329e16837b09b0b4b8225efc3d27a6d9c",
+      ".meta/config.json": "96ceb4aaf974832b3dbc7f33b4f7719fee7d6cc0e7dad990fdb35141c1f8eadc",
+      ".meta/example.rs": "ef704d2864519848f5030e3144c0e7ef3dd0f62e6380307e2b44fb4a1c8d90f6",
+      ".meta/test_template.tera": "090d984a619f2d6b2bae81849a56d952558e21ccdd4b6768e2d5ab808d78b1cf",
+      ".meta/tests.toml": "5e95f54179a466d5412ce4507b64e421921c14e8ae38e9446952ca34b770cb0c",
+      "Cargo.toml": "9141705cd71d21e13c47b87400632527b9e0caad93a99a0f67a5906fe90aba0b",
+      "src/lib.rs": "439ec43a6c67aba6ca003c079fd030d72d4c91a542c488436fe59ed28a5ea762",
+      "tests/alloc-attack.rs": "23242b129edba250de03033a7010395fac7d941b0ebc075be3b690626111baa3",
+      "tests/forth.rs": "d55f197270ead3ca9417d301716e5cb3b2f187d4063fcd64ace46e69917e9385"
+    },
+    "java/exercises/practice/transpose": {
+      ".docs/instructions.md": "4107fc3ed25cb2106df05774f9e6328663bf96777712df14ab5c3090438c6c66",
+      ".meta/config.json": "57c17152ab5efa01cefac4905d3571a96bc6024db4ec4f1e1a64b24d5501fefd",
+      ".meta/src/reference/java/Transpose.java": "50b38fd814a9af3553e72b75ddacc3cd165113be52bfad2be3e8b0e8bcc2a017",
+      ".meta/tests.toml": "902a64f54668a7a14e04491adfa77750dae4b35fe63d108a1469efbd116f651c",
+      "build.gradle": "a4c46817089967addcdafc9b979d4b4ef96a1c7f39b594fbeeb28efa7bc0c9c5",
+      "gradle/wrapper/gradle-wrapper.jar": "cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8",
+      "gradle/wrapper/gradle-wrapper.properties": "025ad9787315e9eed5f009d42a574e415ffa845cd25f2a0bd42491352c14dcae",
+      "gradlew": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d",
+      "gradlew.bat": "bdecf875b6868cbcbd36a1f85eedf0832f358ff28092c5797ed645f7edce77d9",
+      "src/main/java/Transpose.java": "813c3b74a0504b752b386d668191db56ffe2c924a5c7055533c3e177e5157c4c",
+      "src/test/java/TransposeTest.java": "ed05e15ef5ff8e1e14fb0dbb4d6dcc89395751f089cb8b9202143e22cee12cae"
+    },
+    "go/exercises/practice/connect": {
+      ".docs/instructions.md": "3c717817dc88865be3fd9ad5b084d0244602e8bd416a59eca9c3cbea546b70aa",
+      ".meta/config.json": "990c9d78166df064f1fa399741fca263db331438c5da76841731d750e554d71f",
+      ".meta/example.go": "58ca1f08510c789e46dc19b36598406343366f36a647cd4fbdf56405643898de",
+      ".meta/gen.go": "5956a779ac529b32be33adc5d951f30cac4481464534f1c4e39c3c93225a0405",
+      ".meta/tests.toml": "2e0e95dd77ad2a2e02e3803f4680e1281e0ec59d13192db60af3be6bb86b40bc",
+      "cases_test.go": "08c20054a94cb7cf10ccb22bd0b93e60f2df3a6dbadc87468b3c6a6e3ec0379a",
+      "connect.go": "16b8c58bcfe1133c1b665072ba20ca28e72ab07b15b0be5ecaa7d8303be27ddb",
+      "connect_test.go": "88fdb6caa841a77ca7b9b38ac999fa55ae5720a023a76d43b64fda7c2c9ef763",
+      "go.mod": "80a60685b6fcec65e5600aaf764c77ed17423d1b34d343aec93d3e282a6e8275"
+    },
+    "cpp/exercises/practice/meetup": {
+      ".docs/instructions.md": "7fe0003115d9d10a589579c6a7eae523278e09a89bc9f967243ed2679ff1144d",
+      ".docs/introduction.md": "4d99b634efebd36d21cd853b21d7ef08fe496fef00ccd8cf45f8f13944dfafdf",
+      ".meta/config.json": "12df8012221babb578b8793d94e8c1a670b17e10b61592e44cde0e540ceda336",
+      ".meta/example.h": "239e3a2dca861675c6d77f37023ca92eb28a4babd8e47c6ea0f1dc854157592d",
+      ".meta/tests.toml": "ad903dedc98f2f1ffbd7f86c28ef446bf0f332020481d8d7f9e0aa1e14de9ccf",
+      "CMakeLists.txt": "606ad89681c16232db5e7a3e5616bc766bddaa8868b26f56079a53d5593b5eda",
+      "meetup.cpp": "7f29a1a567d9b1847b3569e7ade57c0fcd542cf29954e2f3dd7d1d3927a69cdb",
+      "meetup.h": "7273b3548666621db84f0fd18b16baaa16c43c788edc4a9295ebec51da294ac1",
+      "meetup_test.cpp": "2eda2b18b6fb6bf7bd5aa3785b64493a699d6d31a026a3964f8605005f87a83a",
+      "test/catch.hpp": "681e7505a50887c9085539e5135794fc8f66d8e5de28eadf13a30978627b0f47",
+      "test/tests-main.cpp": "5847fda35c1320d94f8d088aaf34229d689f66f1da235f885cbb28c8f17e4260"
+    },
+    "python/exercises/practice/zebra-puzzle": {
+      ".docs/instructions.md": "475239352eed823e34a2677b65d861d58e0ca37a7da9ae399141c0c95758a8e6",
+      ".docs/introduction.md": "5579722519373eecc2559b9a6301a4e65408bb2888f34b0542de36c33f052c3d",
+      ".meta/config.json": "89e35b4a4c1b115fa314dc875a960e5828daca645b11ef06158819810165eafd",
+      ".meta/example.py": "74be8f26867df7ef1946dcfc1c07ce851758dbbf3d2ab795abba19c2213eba7a",
+      ".meta/template.j2": "e517b187e6a3e06f7482e3ffe3c744b4a57244bc18269a45b6716f8862c80acc",
+      ".meta/tests.toml": "bf004e47e8707eb7c273f910d91f2be3c9102b30cd7756d8ef1dc545e4e138d6",
+      "zebra_puzzle.py": "6916bddd73997faa6920d6ef41a6a9f593e65bac41252dedc19deb65df844c67",
+      "zebra_puzzle_test.py": "079d65e614c911f7e21ef19a1aa5d0d4bb2c69fba1bd86cb84e0f1f4e39efb90"
+    },
+    "javascript/exercises/practice/alphametics": {
+      ".docs/instructions.md": "8f798632934cfd35d9e2f36b9e66cae5ffa23279a09ddc61974f64e88180c4de",
+      ".eslintrc": "77e1a47bf248ee8ac2f88bb7a68458b36f1c11beff01b081c481c053b163ff75",
+      ".meta/config.json": "c5a1a38617fccf0fa2183f662070d914931e931922745db13dd547cb30c5bc1d",
+      ".meta/proof.ci.js": "562313b18505b6232a927cf38dac7a42670b48891ea80328b1c7a1e98d5bd908",
+      ".meta/tests.toml": "deed16f879de7e9e5425c38871eca465e408847c71e5370e9cb5a86022fb6e79",
+      ".npmrc": "6542f3e59455afe3a988ac72da0d2f92ce61666ad2c258e2c7847b5a75b6743a",
+      "LICENSE": "e52f804e74f0fbd34e8927962319df346166b8194094309a0aee318693df44df",
+      "alphametics.js": "a92685d4f0ff6101044eec39a638822ed811823c3d3e6d1f812bc102c6c1e18e",
+      "alphametics.spec.js": "d794958b8cebdb8a248947786d417c9184c2d06e327688a60f7ba5b74a2f1b70",
+      "babel.config.js": "76d07c91b23ee54d8064fae124c8937f9d02a6f758a63446e137f62923e0e8fa",
+      "package.json": "ccef9743ff6c63164e86b4c4621cccfddb9ce4e1106e371c12c87ef4810b7944"
+    },
+    "rust/exercises/practice/accumulate": {
+      ".docs/hints.md": "a5e928aa30e5845aa9eb2c47e904f9db5ca3d3db911f81a64a97763c10e03151",
+      ".docs/instructions.append.md": "dbe698a634d78cdb7b38b656613ff45654b730687535d406e45cd4dd9e99f84f",
+      ".docs/instructions.md": "77f023722b03a24354a89882faf24baa34bcc44b0117737001ec63c0b71bbc60",
+      ".meta/config.json": "91e19aef60d68fd76574a074376cd49bb61e1b70bb5b0e0c227a5533cb50a0e2",
+      ".meta/example.rs": "04b6f488a00454a89248bd91d496bb10ad2ecea5be7126ed31efe192acafacfc",
+      ".meta/tests.toml": "c64015cf4485652082f244aabc60d44ce322179abe1f47e7d2c2d69c86c34514",
+      "Cargo.toml": "3117675b78efa86c56ad52eca2fbdbc5f55c01b4670ba9411b0942a78718a20e",
+      "src/lib.rs": "b9de7bcff417e9fb788f15d5dc63b983460863eb67d02254bba56657f3bb79db",
+      "tests/accumulate.rs": "8b8ff91f987ef8a31d10338467d653c08b9db6ddadf0c5c52f82c2516950f48c"
+    },
+    "java/exercises/practice/queen-attack": {
+      ".approaches/config.json": "bec039c4e75df097a281c5da9513abcad66c09fda52d054f3d88c85e30d88131",
+      ".approaches/difference-comparison/content.md": "2189a3257dc84b2ed235524b2a46462e9d52256b7bd94501717ee43a8084c2ec",
+      ".approaches/difference-comparison/snippet.txt": "a950dbf32f5b0f1e2efc310186e67048007699b304d8f4449b983df1ed6fb215",
+      ".approaches/introduction.md": "869b266a72538d2f7773cee17a6394af3de75e25dc69358fd024b5a0bf0e83be",
+      ".docs/instructions.md": "159a9bda6a12590da669cc838f7203bd98096cd9df7ef02a11e50381413a71a5",
+      ".meta/config.json": "7477b67c997b3a7d47eb0f2aac2f1d2b0042c499952ce7176721c65f3c43de0d",
+      ".meta/src/reference/java/Queen.java": "b4a3302e36a727207687d07562b99b562882ddc10c3d31f8089e5d8c67972b11",
+      ".meta/src/reference/java/QueenAttackCalculator.java": "1f523f5288c207ee53197f405373648da6be3e8ecf3c4698c5381185ca8b0cc9",
+      ".meta/tests.toml": "29a5273ffe979adba854415059f892c52f862de1a6c92f3ab59cfabe75fcd3ff",
+      "build.gradle": "a4c46817089967addcdafc9b979d4b4ef96a1c7f39b594fbeeb28efa7bc0c9c5",
+      "gradle/wrapper/gradle-wrapper.jar": "cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8",
+      "gradle/wrapper/gradle-wrapper.properties": "025ad9787315e9eed5f009d42a574e415ffa845cd25f2a0bd42491352c14dcae",
+      "gradlew": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d",
+      "gradlew.bat": "bdecf875b6868cbcbd36a1f85eedf0832f358ff28092c5797ed645f7edce77d9",
+      "src/main/java/Queen.java": "c6aa63edc9b421c968fa6a184c6fd8113fa2a732395a60c3a4d7f983a8683af8",
+      "src/main/java/QueenAttackCalculator.java": "15881ac65396e7da4a10e363ca48cdfce8d07deb2b40ba2122d0c5e62442f360",
+      "src/test/java/QueenAttackCalculatorTest.java": "50fa121e5f6781f79afb531346f9d7f1db7fd3e0035306fa97c9c0780724f43e"
+    },
+    "go/exercises/practice/crypto-square": {
+      ".docs/instructions.md": "1c64e2087dfbcfc0fafe2aa84009c24967c55d2533379e190ff5cc8aef987a63",
+      ".meta/config.json": "ab5bea1c641b2003c69d0fd7d88b1379b131b2f997ae0753616a38b5e68d671f",
+      ".meta/example.go": "f1e61d312b1ad249949ca7c9c209a54b2e47c70ac0bbd2e6f1fba9d82fd8ff51",
+      ".meta/tests.toml": "d68be52b7d55019962eea5fd0b48621998041babac82ea9a5bc0d560f56d9b02",
+      "crypto_square.go": "01c4daec5ffe031b0f1e0961be9f8e51eddad00d13f683706f9bc00c40d30ddb",
+      "crypto_square_test.go": "2b37fedb2c22866c1bf38d564da8aed13929fb50542a1d261e0d4cb2b36be906",
+      "go.mod": "bda58fe8994efd854fd8e5bd009655eec642ccaa2c14b6f6409b8e04d44b27e4"
+    },
+    "chess-best-move": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "bdf339ea1848c81e884f0f811803ecdeaa3dc741e997bda53841f2816fbafd18",
+      "environment/Dockerfile": "d5697e7a11399e45f105bf43f40e5c95746d6a8601965ea6935a52b59bbbfa2b",
+      "environment/make.py": "46b95008df62fac7ca7fd7260baf36519de5718b91a4bde485c8d9b7d37f17c1",
+      "instruction.md": "6ba25be4e291a4ad04ae42b2dddefcdaef67ca45ca9d5dce661a2e517b19ce7a",
+      "solution/solve.sh": "53b5c5e2278ca915b0930eedfd44565ca84ef21c7346fd6601434484cf76151f",
+      "task.toml": "d8f01d3c84ed5836edbb49c6c3b3cc7b5b96d951cf01a0987467c9206fb22f9e",
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "a540714e0156fc14564badedcb48d1f7b69a4b457d876036535439b30cb8f286"
+    },
+    "fix-git": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "818af93ec53de56cffbd33da3377f5bd013786e1232cc7fa47f7dff6cca9a93f",
+      "environment/Dockerfile": "dfd64a46955909f58d1b562ea233c3cace75195bbef5d75cd6b599f3b8967bb7",
+      "environment/resources/patch_files/about.md": "2e09260b011012f9f7f491cd02809903449924cf8f825acd369fb8990b04e768",
+      "environment/resources/patch_files/default.html": "fb3fad17b83338002f5fd6a99ea1ec3a662cea570f9fff9240b8abc1861be655",
+      "environment/setup.sh": "99125cf2e362f2f4a864ba2f55c2f0e9f0aa0641fed588cef588184fcc192de2",
+      "instruction.md": "f98174e47ba5ce040f6fad22ef3cbca4dd27b3192868ea5d082077222c3ec4e8",
+      "solution/solve.sh": "4789fa74e92e5b7b893c4b8637c26db2b6458b2136edfc3e686cc278dfc23630",
+      "task.toml": "25507ef6cbd6bf73c8bfdfbe7f7ba136224c8453fbba2de2993c639e2a61ad8b",
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "a8a6f51eb0d7c4ebdf0813c8f0b645edf29c995f1f9faf2aca3886a6713043f3"
+    },
+    "fix-ocaml-gc": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "888ba7d498896d756fa3c0b7ba47075f69ec2aabaa2f217169e9d392f572de2c",
+      "environment/Dockerfile": "36d7fd9cc31b3b26eb56079f2a2a0be8cf577df7c9d8f77a1b08249805d5a0df",
+      "instruction.md": "a8867e4f8a537b3b1622ca2b80cbb278eeba772ce95602ed735c2581d23b2dec",
+      "solution/solve.sh": "0582baecb730dc76448563ffda39eb3756a31e76f0756d2a5c0ffcbcad049f2f",
+      "task.toml": "423aab8ce6f44ce9349dcde647ca3cbd09afd5ac023910c25699ed687a3c71b2",
+      "tests/test.sh": "9a2114729f090f351fb8e8bf055f013f299946108d032e845f5d01e725fa2719",
+      "tests/test_outputs.py": "e6031cd07c9962f024f2ae232d0645126bd399df0cd8d3df6a46475b68aa4959"
+    },
+    "git-multibranch": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "3b9473429381d9eacabab498cb4a8915aa2bca24fa857ef862e5991d3f81f113",
+      "environment/Dockerfile": "88d9a9f4fef1ae7fddf632799dedf5a2fb6489460a93b610c33dd8b122982821",
+      "environment/default.conf": "a3a4c5d0ac9cfe79b0510e4225c80fa3988c27fbac13622505886bf66449e04a",
+      "instruction.md": "54014a38d7526d65faeb6c11d9b7ed3d4a5cb5d973d68d3da3b68b8c0289e125",
+      "solution/solve.sh": "300ca96b79db8d77f14742109aaf76048aafc4644ced750b1bc5c2761e8d0175",
+      "task.toml": "4b9981604578a31205257cca36a28d0c89c9d8d1058541330acd11d3f8d65f82",
+      "tests/test.sh": "ddbde3eea6ffa8fda105cbd86597a53bd409f41e13223900aa27e77a84b6b155",
+      "tests/test_outputs.py": "f03c6867663b8e8fb7899df51ee4df26411fab62ed491753964b801e591d16c5"
+    },
+    "gpt2-codegolf": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "c39fd8e0c2a3ecc44d51f90e8fa922c280fc791ec0a4c8578893bca1b1780dc3",
+      "environment/Dockerfile": "e1f57eb413b92c10565a8100e559f633c4f4ec5c0bcdd5a755a0eb92eb4de02f",
+      "instruction.md": "1c8de5f0365407d57fbec968bbeb76cba2648a02fbb2045d323d2798ff5dbccc",
+      "solution/solve.sh": "8c288a53bdf566d7278a35eda08d6baaf50883b0e1917ceb638b823cf6456b70",
+      "task.toml": "a3fa186d438a42af5909384b8dc0dfdc2ab7a3a68af9159e9d00464988895af0",
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "6232bb719c5a4ce0b2d59f1fd9c298b2d78986c550e0de37ff319e3309fe4795"
+    },
+    "merge-diff-arc-agi-task": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "d6b48ed0890b12eb68f72c12cd02689bd6bfae2191dd2688949cde6fe77f6a94",
+      "environment/Dockerfile": "4a03ae6f0c60b9c2f45c33f0413b5aa75c9811870254e3ff1968fd0119173fc6",
+      "environment/task-deps/bundle1.bundle": "a759f9b6ffc1a2eee50778d72a1899ad7d724becab84fa30e7aac71ee9e443a5",
+      "environment/task-deps/bundle2.bundle": "75e3e3916a01c980a03715de67b16c729e03661d94a694b5f4223d229bd6593a",
+      "environment/task-deps/examples.json": "5426569e4ea078bbb74039ec712a2d4d35f1f9fa3a5f26bf2a0de4a2c8ef5db8",
+      "instruction.md": "2d826479873e5ac1c94c1f802763bf85c22bb04624384685ebdf6b153fe0278e",
+      "solution/solve.sh": "48d4becc41fda5b6063fe96947474ffe778a29d6924d7b2bb235eb61e5ce555d",
+      "task.toml": "6ced40e06b43b169857509765eb7f07791db558f9437cc7367d2536771c2ca5b",
+      "tests/test.json": "20f116a6b718bbf4874bbe203d15a5c0f85a1d88cb622e2d7529c7e4fb2d4c28",
+      "tests/test.sh": "c9052954cd6ce25c4a375a2fb48e765b1efa5b39f7991b93993cc793af8ab9d2",
+      "tests/test_outputs.py": "2754ba6c5c5f75c9db5ed2c5729d9f5d7e21cb7fdb18aa0c65abdc3e7e85c149"
+    },
+    "polyglot-rust-c": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "6e091c5e7d2c1634b4527361385563f6afee3d9b184ec5c587f686fdd2b1504d",
+      "environment/Dockerfile": "d8a3dc4dc57fa9dac783a029aef3b3094d99a6fdbff57e5201a5fb16e84dee0d",
+      "instruction.md": "b0fbcd99a97fc886e4e198b6189b977409dada47cae0a87ac7dc185b440b2355",
+      "solution/solve.sh": "f3b101d9528efb3997937fa134b10e3773521bf83d576dab3183e977d12c9638",
+      "task.toml": "3c41e83437068c62a3fdff74641899146e34907aefd9e47346213f47caeb82de",
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "baed5e4d0cc0e5809ff41a7df1815d18c65c708a3a3f264428e1cda11ce692f9"
+    },
+    "sqlite-with-gcov": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "ba1a1f05c7152b9a4d355382212fa4d8e6829f604fee4b8a4f3aa4a7a603bac6",
+      "environment/Dockerfile": "f4be72b64b710962e5d9d5236716b4823ec72401a5379423039101cc00a73cd6",
+      "environment/vendor/sqlite-fossil-release.tar.gz": "7c02b6cc04dddc2f90e63d43ab8900cb694ba4665f4e4ac877ec724733125229",
+      "environment/vendor/sqlite-fossil-release.tar.gz.sha256": "3574015c694bd2465942ff17731db62293fea6ec7d90f34be09de1445fcdb18a",
+      "instruction.md": "b6ba9acf62292bc2a0bab40d4805b3abceededbb0ccd4477a1ce9ccc42c14dd9",
+      "solution/solve.sh": "e054f4092eb4b2895866a89c4d4e3591dda0fa28bd9d825ca60403f359a8f027",
+      "task.toml": "9a0da96990ee2ecbf4d92682a4c5301a53db45fc6e2d46ac7d45d3b8ee7fe523",
+      "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+      "tests/test_outputs.py": "b165f8504bb93a901451b80c4ea73344b71b6af377ebdabef745fbcdd1d2993b"
+    },
+    "tune-mjcf": {
+      ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+      "README.md": "fb39a996f9133f2d9bac5df777ba228d810fa942e6746615c5bba04499cdfe70",
+      "environment/Dockerfile": "9b78295361faa3a84399ee97e95e85a8f1032bb5c4cb609013335b51f5d0d006",
+      "environment/src/eval.py": "9943ce3b2d6a15e7198946d07044e58d3b1b4d56cabb05327d324e7ced64140d",
+      "environment/src/model_ref.xml": "f3561cbea5bb024886e9627e795c8f60a3984bd749853073bbd433d0e49bf0b7",
+      "instruction.md": "c7fb299b6c6d6c9a2dcd95c5938e6f902ddad1cb02aee875d369cb7eae584b1f",
+      "solution/solve.sh": "afe5dcb32992bcd89893af943ccf0d0e38c1d43627e15adc6abd8df1f6c11d54",
+      "task.toml": "27b6d4e5a23761cc1a24a695125d891be74a2930fb83a02a66221db0244b08b3",
+      "tests/model_ref.xml": "f3561cbea5bb024886e9627e795c8f60a3984bd749853073bbd433d0e49bf0b7",
+      "tests/test.sh": "343a0604775b960f47cb7ed04bc0c4f9e23f8439c4ba44d6027f0cb245327e97",
+      "tests/test_outputs.py": "3f20e17eb16bb51e236a9321ddc1331345838467473c5a6faf7e1c762af10bbc"
+    }
+  },
+  "task_resource_specs": {
+    "rust/exercises/practice/forth": {
+      "actor_image_id": "sha256:3d73526aba5c3e157473cd374780f426fa6209ad3c3633956ad55ef1ead0c676",
+      "grader_image_id": "sha256:3d73526aba5c3e157473cd374780f426fa6209ad3c3633956ad55ef1ead0c676",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "java/exercises/practice/transpose": {
+      "actor_image_id": "sha256:95b20c222db5063b990a542842c4a286fa2d82dec5abb1b4775b2d16bd8a5b0c",
+      "grader_image_id": "sha256:95b20c222db5063b990a542842c4a286fa2d82dec5abb1b4775b2d16bd8a5b0c",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "go/exercises/practice/connect": {
+      "actor_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "grader_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "cpp/exercises/practice/meetup": {
+      "actor_image_id": "sha256:1fe22dc5aebfe2d740c5bded3877d9e656fd434d1d1cb68fe4aab3d2a16f81a0",
+      "grader_image_id": "sha256:1fe22dc5aebfe2d740c5bded3877d9e656fd434d1d1cb68fe4aab3d2a16f81a0",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "python/exercises/practice/zebra-puzzle": {
+      "actor_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "grader_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "javascript/exercises/practice/alphametics": {
+      "actor_image_id": "sha256:3d73526aba5c3e157473cd374780f426fa6209ad3c3633956ad55ef1ead0c676",
+      "grader_image_id": "sha256:3d73526aba5c3e157473cd374780f426fa6209ad3c3633956ad55ef1ead0c676",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "rust/exercises/practice/accumulate": {
+      "actor_image_id": "sha256:3d73526aba5c3e157473cd374780f426fa6209ad3c3633956ad55ef1ead0c676",
+      "grader_image_id": "sha256:3d73526aba5c3e157473cd374780f426fa6209ad3c3633956ad55ef1ead0c676",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "java/exercises/practice/queen-attack": {
+      "actor_image_id": "sha256:95b20c222db5063b990a542842c4a286fa2d82dec5abb1b4775b2d16bd8a5b0c",
+      "grader_image_id": "sha256:95b20c222db5063b990a542842c4a286fa2d82dec5abb1b4775b2d16bd8a5b0c",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "go/exercises/practice/crypto-square": {
+      "actor_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "grader_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    }
+  },
+  "protected_g1_hashes": {
+    "analyze_development_sinks.py": "e8d6d9856adfbdefec4a2c9aff0a174d24be178a1ae772a7ea6b9b8303d9010f",
+    "audit_candidate_2_screen.py": "dacfcb3962775a1d2a4e4b863b199a8b18483dfc4adf7cf9b18e658c7b03ded1",
+    "audit_candidate_screen.py": "ff8167441af219c8b7a9853790b03f62576fb349d986d2a351e6300bce0dd260",
+    "calibration-admission-expiry.json": "450a04f9d7de0ab5f21469a9cbca4b92e5a41925133e72698e911a98070e3082",
+    "calibration-attempt-2/calibration-cap-checks.json": "66c645c97fdb27a8cdfbd4571ff7e6c3b854162e2cce6ad42acc7f21a6c2fa2f",
+    "calibration-attempt-2/calibration-launch.json": "a0e0fdafdd106534c438b77a65a7d45de013c5690f587746223e51a4bc3da66c",
+    "calibration-attempt-2/calibration-progress.json": "09328c443168fdbcc5132de2bc23535080e9293c88e079bd4ec0ad0da0c299e5",
+    "calibration-attempt-2/calibration-result.json": "5839d6cfd971b428b476197dcf7bb8b2049611a939dd366003807184ebff4e11",
+    "calibration-attempt-2/calibration-summary-audit.json": "825f6a85ea9b05e39237d6e656b5555ee7e49e03ac90d39ba7f74d74ecce06f7",
+    "calibration-attempt-2/html-grader-repair-r2.json": "dd240dba7e7902a3869e115bea0d512daabae9fb002280f89b3c653e100798fe",
+    "calibration-attempt-2/html-grader-repair.json": "2f5d4d086bd8d71c9a64720ed8686e56b356bd7fef1bf40bfeaea5d0e5833a1f",
+    "calibration-attempt-2/per-run-load-records.json": "5e1b39e1fdca48f86273c058e7e5af932b3039e953253623471a2ccee8f47fa8",
+    "calibration-attempt-2/pmars-grader-repair.json": "2d020f1b35a63dd3b2f5ca58c07a1b4c7c09741188434db08cb07cbff486cf76",
+    "calibration-attempt-2/request-accounting-audit.json": "58291a999950665b991202cd6fd471841d8abcab79862c3f79b4344b09a1924d",
+    "calibration-cap-checks.json": "0bb96e5a1c9040e9e258fc3832eefc1e130d6198cf69fe3d4a2ebcceb5a123b1",
+    "calibration-continuation/aider-startup-failure-audit.json": "360645c6ffdb33d9f2a220f9a264a3ba3b30cbfba25d300d887f90a79fe0208d",
+    "calibration-continuation/calibration-launch.json": "ca5dd761164f572b62250676ee2e584ab1764c21b75ebbd999e9fa524a3de09f",
+    "calibration-continuation/calibration-progress.json": "eae8760caaac155b7957b4fb08d592ee3953aaf9763e38ee4349a1b5ba2fd22d",
+    "calibration-continuation/calibration-result.json": "e4ce254d1b8f885e0295a8ea2191bdd256ac53bf924bdd234d355c21044359bc",
+    "calibration-continuation/calibration-window.json": "178e9460898dcae02d65f8a903a3647a871e01b6bd1e1ad3c8e0be362b3c99cc",
+    "calibration-continuation/continuation-preflight.json": "609f6bf08a423ac86a155ad3689a0d8b579c56305201c1bddcedcf7286a2a6e0",
+    "calibration-continuation/decision-summary.json": "6e3e0579768fe9436e417cd2735f3725842ac8ff7aa100c2687dddea2a36be73",
+    "calibration-continuation/final-stop-audit.json": "ad0c44520d69aca0ca724db71fb3d4331c52ebe7462269183ccc82fb14e15474",
+    "calibration-continuation/per-run-load-records.json": "541b5af84d3e5203f2fe649aabab3e0bd74fe265d066ce9b1625c8e13040d485",
+    "calibration-continuation/reconciled-calibration-audit.json": "f4194491b04ff9c744f63a8be890f00d53d77b35e98138283e264256cb24f70d",
+    "calibration-continuation/request-accounting-audit.json": "86a7ec9dcc3c01fcebf4c47751955684ea062f1390252d660b493914df8e0847",
+    "calibration-continuation/window-close-decision-audit.json": "fb416245a1eb30eca7d482bf4ad9540c55498b9a3e995e0f5eacf2f671e1b8a8",
+    "calibration-continuation/window-close-wait.json": "f1d9c11d37ed79c23c3fb1ed9accad4ae0cd961f923747395c6070dee9622606",
+    "calibration-contract.json": "1fb18d8f54f67b5f7ede399353d34a91738b36abe7affb8026e276206ddb5fe2",
+    "calibration-decision-amendment.md": "1073f34888b93c0645280dd107c3aa185eb12af26e26d57c24a88e5813219a54",
+    "calibration-direct18001-amendment.md": "86e6c7a277a43b3b79fc44757d06a10948075917ff433c8baf1bd7b5b697b0ea",
+    "calibration-fallback-fixtures.json": "26fe17b600a389b18cbca157de3c414022b0986c48addc2ddbeed55b81c3e3ba",
+    "calibration-initial-queue-observation.json": "6aaa1a41101f223bdba6a3d8d07f172cd28b2508f67e8f5cec24c76f78e8dcc2",
+    "calibration-launch.json": "b89667d89b4cc51f751130cd23f06214af2ecf491b07bf2d9ca826f0a1f557ab",
+    "calibration-load-budget-amendment.md": "92a304d20b537b34d251a64b7a3c91c7755806f9e91bf786e3bac69e9484a5af",
+    "calibration-progress.json": "18399f631cc7a99a9b9c54b08285ed83bfbf93a8cb2a80342f81c110320ea682",
+    "calibration-recovery/calibration-cap-checks.json": "48d72ff845c930249f939dbd7b87574b5474c5e799ce6466eae722d5834095ad",
+    "calibration-recovery/calibration-launch.json": "c4c4b393e9add1e7770d64a03a06057edafcb3fc8762473c0767dfc2a07d2980",
+    "calibration-recovery/calibration-progress.json": "07b4a5d26556dc67572d2c31310cbb9bed27fa2a4e12c2a3554a5b894bc16d20",
+    "calibration-recovery/calibration-result.json": "7a586d9224331c50b4861637622b7f32702e6d5070b5e8793c776793f83a133b",
+    "calibration-recovery/calibration-window.json": "7fea70fd691def4814ab2e5356d69cd8cfe83a07b9e43c793fa7d0ac3fbdce2f",
+    "calibration-recovery/per-run-load-records.json": "8613ebeac15b53d6eeab64bc2822cc814a06625fd72f94fcdcbfdaf41b8222ff",
+    "calibration-recovery/recovery-decision.json": "044512db1883e883a073d8b2150a35db22cab5798479b69994c3f9f00b3eba6d",
+    "calibration-recovery/request-accounting-audit.json": "b8a4f65fc8e2c37393891921a7b06ddb719ba10b8fab303935bafe83fcfc347c",
+    "calibration-recovery/saved-log-classification.json": "28a629c244ae29e0d6c3e330505ff9373fde22a9966d741e93d3083b590c2a08",
+    "calibration-recovery/step-3-recovery-audit.json": "86a3bc87fea875c170f54d5ffff8c07d268e97c59cc22702d661664b0dd129e2",
+    "calibration-recovery-window.md": "11dc9817382354b9e89a478902c57ec200a62acf9b8c1abbf8245e00a33aec4b",
+    "calibration-result.json": "e5d0c7c2d742f9e552925327c320a385b955515c489abb7b583a3b944ce08729",
+    "calibration-route-preflight.json": "7f656d230c656f751996c980438246290a2ad459a04b9a7620795ef05cc22b39",
+    "calibration-route-question.md": "0ef9001b530a47fd07b89c4c7df014e23713ccd8833e371d113605330cb6c914",
+    "calibration-stop-audit.json": "815faeeedb5c93f83c626ea6ac9b5ddf08a5bb0495df43d9c99b9e67b6cfb70c",
+    "calibration_fallback_adapter.py": "341c264e0432599e271e81f2356791273959a8075fcdf35e578f12642296b15d",
+    "candidate-1-wave-1-window.md": "d2fd954c22f3a979429ebbdd3b9570b133d28d74bbaee7bc6afeb0560718593d",
+    "candidate-1-wave-2-window.md": "4a36f51720f98bff39de02816a3af2529a600face5526585939b7750786d1ae4",
+    "candidate-2-wave-1-window.md": "4722e17d0fc3ec99cac6247890a6f95b13972b8f4c277a8d31c8fed43b1e6c34",
+    "candidate-2-wave-2-window.md": "6afae6bce3364753271c0dd69154df2a60d48e3e85748af7e64a731e86bb594d",
+    "candidates/bounded-reasoning/efficient-coding/SKILL.md": "e11948951958094ea411a5da55610c9ba8f68404d352950830a35d7c4161096d",
+    "candidates/bounded-reasoning/efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+    "candidates/bounded-reasoning/efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+    "candidates/bounded-reasoning/efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+    "candidates/bounded-reasoning/efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+    "candidates/bounded-reasoning/efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+    "candidates/bounded-reasoning/efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+    "candidates/bounded-reasoning/efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+    "candidates/bounded-reasoning/efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+    "candidates/bounded-reasoning/efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+    "candidates/bounded-reasoning/efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+    "candidates/bounded-reasoning/efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4",
+    "candidates/effect-checked-transitions/efficient-coding/SKILL.md": "39f7b30993b0fb4cfdc306df6eba45d1ebcb8a75955b7713f5f3f306976e8a25",
+    "candidates/effect-checked-transitions/efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+    "candidates/effect-checked-transitions/efficient-coding/assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+    "candidates/effect-checked-transitions/efficient-coding/assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+    "candidates/effect-checked-transitions/efficient-coding/assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+    "candidates/effect-checked-transitions/efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+    "candidates/effect-checked-transitions/efficient-coding/references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+    "candidates/effect-checked-transitions/efficient-coding/references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+    "candidates/effect-checked-transitions/efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+    "candidates/effect-checked-transitions/efficient-coding/references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+    "candidates/effect-checked-transitions/efficient-coding/scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+    "candidates/effect-checked-transitions/efficient-coding/scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4",
+    "check_calibration_caps.py": "9245f697a531339f1e21da264de6c0cb993cfe4f55afef70532eda56a9ad205b",
+    "close_calibration_window.py": "c78598c714dbecd62ba1ef867431ff77f1964c4f0eb02c08e19a0f8c877e1e4e",
+    "cpp-meetup-repair.json": "50a665f2606ed5098341708cbd376551e54c10513eb9caae67778b6b90ae1749",
+    "draw_samples.py": "89d16ee5cfffb46cb367a13c6ee44accfaac58c76c590b38d3cbc701245cd9f3",
+    "final-development-stop-audit.json": "059cf01d530ce100f2ceeb158917f0544fa775d8ef0826fa53f14502aa1394c8",
+    "git-multibranch-fix-budget.json": "2ec81baea15ceb060461ce093dc10ee6c276a2a453b469ebbcc594f236f93f9a",
+    "git-multibranch-gold-repair.json": "d924bbbcfeb8fc02ab0e8bca4dfd84aa39882d5ad6bbe56c827c474c43717ec3",
+    "html_screen_grader_setup.py": "5bf3ce13a87c49f41536269ea621b72b6d3c96df25e8d9ed64fe68b3a95db613",
+    "javascript-dependencies.json": "85b52fb715ac68de947f8c2b50e6073ef30fd9a0d736854bd8c3212ea0d76a51",
+    "mechanisms/candidate-1-error-sink-audit.json": "2ccd36a24a5464417b35dc15cf848f8d103a7f85fa8cd1a39d1d7f2616fb30b8",
+    "mechanisms/candidate-1-integrity-audit.json": "e9e098fdddf1f7348f6ba769de661367cfe4fdeb1c49f311a87e5b66634ecd65",
+    "mechanisms/candidate-1-screen-audit.json": "963c40bdedac6c7ee067717f33876a549ee56af6620b1145aee9289362108e25",
+    "mechanisms/candidate-1-screen-plan.json": "36b2172f67c12cb1ec14beb11251b22982253c369d12660c33a7c43f55688a42",
+    "mechanisms/candidate-1-sink-inventory.json": "4473828715b05e3001e6ed0bf8debab7ed76b4aa7723901865fcf726a89ce68d",
+    "mechanisms/candidate-2-screen-audit.json": "e66be811aa41439b9875c80dfc50f98bd2aac49a006fa4a37b9118a901197b21",
+    "mechanisms/candidate-2-screen-plan.json": "c8086b36e57a8c06fe80f002645821f684ec9df073b01247163645f548037cab",
+    "mechanisms/development-sink-inventory.json": "6f82366bf29540ef0fafd095a6384e70130e3f1b96ac50e688812af9960a6e8d",
+    "mechanisms/html-dependency-preflight/trusted-setup.log": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+    "mechanisms/html-dependency-preflight-r2/trusted-setup.log": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+    "mechanisms/html-dependency-preflight-r2.json": "e89d1fb9efbcd35fc6de38fe54705def430b8892504bc586cb6e9cfe1abbca23",
+    "mechanisms/html-dependency-preflight.json": "924f0b9b399b759bf59d04a279b773d77c7f6dc5913fb23f95f32984dfc5e4d4",
+    "mechanisms/html-public-wheels.json": "bcd509d459e73189b4a014562840386513ff5477afb6a45e9a39dd39e9c34ae7",
+    "mechanisms/step-4-mechanism-1.md": "b3841a22fa1d8c8153cc2db5ce5180790584f4949510f1fc0db1dc0d706f8910",
+    "mechanisms/step-4-mechanism-2.md": "95604538003a849ea3259a52df4aebe9bd32fbaf45b60465444a5f07dbc910b1",
+    "polyglot-completion-audit.json": "3e284e78e6bd96e8b4cd30f882826cf7f9061109157ef9ee9b5c4dc870f6f9f1",
+    "polyglot-controls-launch.json": "476d42a3bfe428c94fa8abe14d50c4d470ad1a54e527f87b35f47c0313da4557",
+    "polyglot-controls-progress.json": "726c58c4f4630b3aac95def8d98cc4f36388ddd03a69adc493fbec7c0ac57d0f",
+    "polyglot-controls-result.json": "8c17ef9f1dc48d8591eefb88c8e66bf94cb9c31eb054dcdb65faadb4b02dbe56",
+    "polyglot-preparation-failure.json": "175a9df402ce8669e36a89a37bf7106341ea9cf3ab2c5dab8491d75ea1bf50fd",
+    "polyglot-remaining-launch.json": "0299b3a1fdd9c698a3b86c15e11766a84b3d6e3a40dc80904e338e9fd8f1ac86",
+    "polyglot-remaining-progress.json": "fe6242311f90b5ee6859761532d46684cb04dc8fd6706d6883c73e9be879f6f8",
+    "polyglot-remaining-result.json": "8536843e386b5340d73f95693e2ac28c2a21ca49f70a1e2286f8b3cbb1090c3c",
+    "polyglot-selection.json": "8a33bef7e3b7cf613c1d7cd56703c6821fa3d3b0ec4bb9ef264ee7256546a74d",
+    "prepare_terminal_images.py": "96f7df8ade18709fe537f1e171843e1917361d3356bddfd4995a2dcb0826e4ee",
+    "prompt-to-artifact-audit.json": "8acbce6e12b7867a229c78387e37e81e255a6aa29f6bbd0177fcbc7a457e551b",
+    "prompt-to-artifact-audit.md": "7e12b9d22a4976e856d919cd5492495640b9338595aa865b11c204a57d1d65f8",
+    "queue-admission-rule-checks.json": "503d9e4f3637ed2305eff6019a1a889a0081caa08ed619c7a45feb049e581b13",
+    "queue_admission.py": "7e9c2242a62c32850136ab9a717e67381acecd1361c2d13d44271378568fbda5",
+    "regrade_calibration_html.py": "ca8111cdbbd70265889f9a1c284a695148e19ab9c7edc69c9ddd0a9ec448b706",
+    "regrade_calibration_pmars.py": "93ec9a0127c53e9907d45cc4f7b5fcc0dd0e70b1db916f8ae64aad6c9cc1e762",
+    "report.md": "2699c9f55ba49e75cd2afa9a3275ca61e3ddb2833d7ec960ddea66ddfc51d3c7",
+    "run_calibration.py": "61b0795036b96050b078ccdd09d61c240eee2b00a76964b5ddf8e63faeb80ceb",
+    "run_calibration_continuation.py": "cd94a644a296c5a54983e4fa11b1f59030a998089271c307570a2c5a59f90866",
+    "run_calibration_recovery.py": "7ebb6c45c7ee389fec2987adc67f1caaa6e0d59237d9ac73cfbc243e2ebad81a",
+    "run_candidate_2_screen.py": "74b4f8d27fec3e2bec83843b92c09953f61d7a28e72aa0fffe56f12da4b6b54a",
+    "run_candidate_screen.py": "d97437151ce7d9710a401347cb2c004e0257882cc55e1d372b7af04d76932521",
+    "run_polyglot_controls.py": "12ac7552240408a311e336a729430d3b7b3a06fa4b81593f6e2d5ebd23d2a088",
+    "run_polyglot_controls_remaining.py": "82ecea2dfa440eb21610cc8ddd692ef4aa848f33d813bb1472aea21216cc9f8f",
+    "run_terminal_controls.py": "b6fdb4e8a677e00913a201a79ed51c1b754798382fd1e84a0a045dfd85509b2e",
+    "runtime/actor_profile.py": "bf91ccf521cefa6f3c26e451ff45d0b6cf8dcaad64c15f9994e855d791094623",
+    "runtime/broker_session.py": "0061b83c95ee509b77d91dea4734bd58a811e1b344495f9c433e19690046fb99",
+    "runtime/budget_panel.py": "3cbb939756adadf950eb94bb1ae3015a158955447dbf7ef39b8268b067707b63",
+    "runtime/output_policy.py": "f0a820740967beb83b0f8aa22db1a4a1bb2675e8d239bce0393cb2cdf996123c",
+    "runtime/provider_cost.py": "7516b00d0183d4a1e5f67558f1dfb9f29fe61407ddc581084374353529286bb5",
+    "runtime/reasoning_adapter.py": "81a1d1c91b1c0b8f1843aef5878a6a97b7a2d6a50fd5244c2287c1d3e88d941a",
+    "runtime/server.py": "0acdf030666bc55105a7dc7825c8477c91e64a5d653e8a15a29401b0af5117e2",
+    "runtime/session.py": "f10d8f30de159dfe6eff8ffc0abd62542dca1262f7a738a37f611984af52e710",
+    "runtime/sse_bridge.py": "8823a534579b2c6a0a9442e42a0f21ae76c9c9839ecfcb0b605c2f513c8ab980",
+    "runtime/stream_proxy.py": "1b28e4025ff14e71c3c01dacb650d3fb5eb1c0a50330d18bd47e1872c44813c9",
+    "runtime/usage_normalization.py": "bd6cc9ebd88848c893ca3f02c8a44be1acbdfd92ecd4edd6a721b13bba730688",
+    "runtime/wrapper.py": "5c5824ecaac6b2d329bd2c2164fdb65dcd7c8cfd2863bfda40305c7a54b5b434",
+    "screen-candidate-1-wave-1/calibration-launch.json": "bed8dea54ee025db3ff9ed9825fc0d254480b3fc9dffaf895834935ca134e1fa",
+    "screen-candidate-1-wave-1/calibration-progress.json": "979f355e56a68a53676aa31103795593540425f9fe62e247fee381ae7437301c",
+    "screen-candidate-1-wave-1/calibration-result.json": "b14cfeb2c02adacd87d3f679c6822d125945babb8dbe520922407074ac1e56b1",
+    "screen-candidate-1-wave-1/screen-window.json": "79946eb088d1bed1551e4ff1c29d53ec3cc44c81723ed403cf61e24b7f19c5e4",
+    "screen-candidate-1-wave-1/wave-completion-audit.json": "5d95a75cb48ea5eda555461f1478624910501138dc0917cf6d2a2af6aa635aa9",
+    "screen-candidate-1-wave-2/calibration-launch.json": "d5d41f411f9eaa5e1a9646fb9bc8ef72ef614d094a25565e647266e51b7c201f",
+    "screen-candidate-1-wave-2/calibration-progress.json": "40df8d79b5de1285d7b72916b048753b7628d0cdc53d604497be8534ca1d5d46",
+    "screen-candidate-1-wave-2/calibration-result.json": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+    "screen-candidate-1-wave-2/screen-window.json": "34baa61544b3d24f180f41b0c72a844e7426c899ce9403947c85a777b6e9680e",
+    "screen-candidate-1-wave-2/wave-completion-audit.json": "0d0359e0afc4f4e640d078c5ce51e83c1a6fab451737781cce43ae645bad2505",
+    "screen-candidate-2-wave-1/calibration-launch.json": "fc38a67a548fbcaedb06468decef431ae0a9358c5fd2d0fe8071858c40beb2a9",
+    "screen-candidate-2-wave-1/calibration-progress.json": "d711b8ea12c1037f9a567b1d328ed93da86e48babfba480a42b9579ced42696c",
+    "screen-candidate-2-wave-1/calibration-result.json": "a2e3e6a27a15ee677a081e4badf7bb92a130529033005eed7040f76e53e196ad",
+    "screen-candidate-2-wave-1/screen-window.json": "5594166156a81b373c6a4581f51ab53926551ba3ee8b2cc694d3172888c8e48e",
+    "screen-candidate-2-wave-1/wave-completion-audit.json": "820fa9e71c447f7e9413a8ffa2f5791736dcc898edeacb34459b3966ad99f7ca",
+    "screen-candidate-2-wave-2/calibration-launch.json": "9d5a05f2e3a7190f8b86a84e2312f33ab7eea282dabdd6791f5fa035e293f58f",
+    "screen-candidate-2-wave-2/calibration-progress.json": "24c524c207f697d07d6db0c0eb1c46a5cad3b7b43897e29583dd4a6b62577519",
+    "screen-candidate-2-wave-2/calibration-result.json": "35ab4c1d5038ff7b6d4b68457c1b897540be705336a040b682b685aeeb1d1ded",
+    "screen-candidate-2-wave-2/screen-window.json": "c76e2d4f3fe4695828696ec6452e545a34cd8b05330dd84f541c439973979989",
+    "screen-candidate-2-wave-2/wave-completion-audit.json": "e7a152325a37d72090369b324cefa3c39aa4cb5db0fc02ea7c8eb1e316959e16",
+    "selected-fix-budget.json": "e35bceaaf825aa20252a17c6575f3ea6c810752ef62b4284f32dfb5582a4828d",
+    "selected-grader-fixes.md": "337314c4627b05771a81e27d2c55809c0879a4810dafacdfd2ede05b394b565c",
+    "selection-audit.json": "d790ac4c5f8c3f58b9750637bdab5c64c331d2ae45f7f28cdef2ae7c0f8e6d09",
+    "standing-authorization.md": "8823715943f38981e6c5defa90b44afcc04a87941c62c4d1ef2ea3c6bb73f0f3",
+    "step-2-completion-audit.json": "c4f0af52633bd5b1d236aee721e103b8c71afc78844e8fdc71aeae072ee0eb8c",
+    "step-2-report.md": "a5b505c3c29a48777433526257ce7c1d27bbdb3eac8cb0112129e9ae4607f6cd",
+    "step-3-attempt-2-report.md": "d1fff7804e052f16337c2b8d6eaa3b9edeccd32d56f40dffa202848d64f7adc4",
+    "step-3-continuation-report.md": "61d207523533283db01c328cd94594fd9ff7f44c9da63f955ab4816a75b30bd6",
+    "step-3-recovery-report.md": "c1223251a261fc6fb4f4e60f877dc4ef9d57a538df9a8cf7804b9c21987f4f96",
+    "step-3-report.md": "a137aaf10407cf0953909bb9ba6aa7ae8e36056f1c297a7754d7f81acd3e63ae",
+    "step-5-candidate-1-report.md": "a03a4a04e508427c0485f823dff219612bb898b074a57bc788d65b1ec42138d4",
+    "step-5-candidate-1-wave-1-report.md": "c33fca9822838fb42a6ec0f141997f45f1bda23fe7bd826387563c6c5c793953",
+    "step-5-candidate-2-report.md": "09e6655f34dfc8f8a3c92668a518c64fa46ccdb454b879b191bb3278569c8a87",
+    "step-5-candidate-2-wave-1-report.md": "0b5aa8cd814da52002ca7aa12324ba2a4f2a4cc092bb38d693076b31249d4896",
+    "terminal-controls-launch.json": "17d9348f5a9dd5bc503dd01bfcc23255cc8e219070f3b70e928ad01fbbdd0eab",
+    "terminal-controls-progress.json": "410b79049f74d64acb0cfd837268b1837f86ae78099b780f64df4ab6a332e1fe",
+    "terminal-controls-result.json": "945facd90d2cfd816e7ddc4b078a36becbfe07d7a383575cc187408f68a3709c",
+    "terminal-environment-inventory.json": "73e1596fde874c5b26e62f972a629b6ced67a9d263e549005a8214e113218617",
+    "terminal-images-launch.json": "b148b5034c8c4d4801be004294c24cdd4d53086afb4bfdcc639fdb11d23d49a3",
+    "terminal-images-progress.json": "c709d0cdb33696f22b0faee993a86202680458b5bfb98203a61958554abd4f93",
+    "terminal-images-result.json": "ac52afa94780d730019cb402f7d57484bb08f8d0bdb2abb72a1f18760f9faf51",
+    "terminal-selection.json": "a34aace43d41c80fd5a8be2c2eed9c1df19c40ab96cef3a01dbe0bbe65347e3e"
+  },
+  "implementation_sha256": {
+    "preregister.py": "be171c939f78ccb01829f0ae9e3ee763c1bdc5b5215121118fb066332061304a",
+    "run_confirmation.py": "158f26247308ab60ce9777643d97d35d2c0f136ceebad10af7a8c5c10f3b77a5",
+    "audit.py": "39042e90dedc77050d9ed9c16089f79d8e9bafd82d23a18bd3f9c7e3baaf0da0",
+    "test_analyze.py": "3167a5ee17fdf8197a5936db7337fbca61be953e78db466aace27fb6104116d4",
+    "analyze.py": "c76bad21d82e150819e72e1951c5c0e0a5ff0bd0990d97517110a7f4acd3c5d2"
+  },
+  "grader_sha256": "3b94ff6bbbd9856ef3e1e52a29d788e4f1f2a06d148bf24bb8d8f35e55366060",
+  "route": "127.0.0.1:18001",
+  "model": "Qwen3.8-27B-FP8",
+  "codex": "0.160.0",
+  "binary_sha256": "12eb3e81114588aca3b7998f4f19e8997b056aca08e57a7ca7c8a3ec8c652aad",
+  "caps": {
+    "requests": 60,
+    "wall_seconds": 7200,
+    "output_tokens": 16384
+  },
+  "analysis": {
+    "bootstrap_repetitions": 20000,
+    "bootstrap_seeds": {
+      "aider-polyglot": 2026100911,
+      "terminal-bench-2": 2026100912
+    },
+    "required_pairs": [
+      "candidate/none",
+      "Both/K",
+      "candidate/K"
+    ],
+    "informational_pair": "candidate/Both",
+    "threshold_ratio": 0.95,
+    "upper_95_less_than": 1,
+    "bootstrap_unit": "task, retain all matched arms and all rounds",
+    "undefined_replicates": "+inf; never discarded; null upper endpoint blocks acceptance",
+    "early_stop": "After all 36 Aider round-1 cells, negative if candidate/none undefined or >.95 or candidate solves fewer; unknown evidence blocks gate and requires original-artifact repair or inconclusive closure; never early acceptance"
+  },
+  "retries": "Only separately classified infrastructure attempts with zero model requests; never repeat a cell that reached model",
+  "terminal_execution": "Design/task IDs/round seeds/analysis frozen now; execution adapter and resource recipe must be independently committed before conditional stage-2 inference. No Terminal model call until Aider acceptance.",
+  "no_shipping_without_user_approval": true
+}
