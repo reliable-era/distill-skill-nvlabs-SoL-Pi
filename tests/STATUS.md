@@ -1,6 +1,6 @@
 # G1 status
 
-Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 complete under standing authorization: recovery solved food-chain and SPARQL (separate authorized retry), 31 requests / 723,545 complete tokens. Pool: HTML, TeX, food-chain, SPARQL. Fallback stopped without new calls; regex not retried. Step 4 measured accumulated reasoning/trajectory input as the dominant sink and defined candidate 1. Step 5 wave 1 completed: 6 cells / 278 requests / 15,847,923 complete tokens, 1 solve / 5 failures. Worker 957247 and owned resources are gone. Six frozen wave-2 cells remain; comparisons unavailable. No savings result or promotion.
+Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 complete under standing authorization: recovery solved food-chain and SPARQL (separate authorized retry), 31 requests / 723,545 complete tokens. Pool: HTML, TeX, food-chain, SPARQL. Fallback stopped without new calls; regex not retried. Step 4 measured accumulated reasoning/trajectory input as the dominant sink and defined candidate 1. Step 5 wave 1 completed: 6 cells / 278 requests / 15,847,923 complete tokens, 1 solve / 5 failures. Worker 957247 and owned resources are gone. Wave 2 is live (worker 1165232), window 4a2a0f6: 15:39–19:39 +08, latest start 17:39. Comparisons unavailable; no savings result or promotion.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
