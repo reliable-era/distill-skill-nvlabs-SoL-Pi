@@ -1,0 +1,172 @@
+{
+  "candidate_index": 2,
+  "mechanism": "Effect-checked fail-loud shell transitions",
+  "skills": {
+    "candidate": {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g1/candidates/effect-checked-transitions/efficient-coding",
+      "skill_sha256": "39f7b30993b0fb4cfdc306df6eba45d1ebcb8a75955b7713f5f3f306976e8a25",
+      "tree_hashes": {
+        "SKILL.md": "39f7b30993b0fb4cfdc306df6eba45d1ebcb8a75955b7713f5f3f306976e8a25",
+        "agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
+        "assets/handoff.md": "f50fa575078e1104307cc00d02a1a3d86c996c78650e6758ba8dd5336443a278",
+        "assets/icon.svg": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+        "assets/task-contract.md": "aa0a1a7873ec9382ed6e6d62737254fc31b1e029596afab07d0dc5a32e3b7e25",
+        "references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
+        "references/execution.md": "c709f7029588fa440f35bf64c3a94317f402ff7a8251d9eb7fb0e8c7881497b5",
+        "references/measurement.md": "abef5f303f193277e3587572a29d20ab434a3dbcdeac6b5284403011d007c64e",
+        "references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719",
+        "references/worked-examples.md": "71bc9a69becf8225be13cdf082be8e65e297297dcd14d483398eed3330c344c8",
+        "scripts/cost_audit.py": "f2284d16c075a4108e044dc2163907954692aa9894dcfe8e33687220be7f833e",
+        "scripts/evidence.py": "064db74ff7e3a3d56417acfc9d5a9de467a6f3a937791178fb272f17ddf3d1b4"
+      }
+    },
+    "karpathy": {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/development/pi-takeover-qwen-source-backed-16k/frozen/karpathy",
+      "skill_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+      "tree_hashes": {
+        "SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      }
+    }
+  },
+  "tasks": [
+    "break-filter-js-from-html",
+    "go/exercises/practice/food-chain",
+    "overfull-hbox"
+  ],
+  "schedule": [
+    {
+      "cell_id": "ect2-r1-t0-none",
+      "task": "break-filter-js-from-html",
+      "arm": "none",
+      "round": 1,
+      "wave": 1
+    },
+    {
+      "cell_id": "ect2-r1-t1-K",
+      "task": "go/exercises/practice/food-chain",
+      "arm": "K",
+      "round": 1,
+      "wave": 1
+    },
+    {
+      "cell_id": "ect2-r1-t2-candidate",
+      "task": "overfull-hbox",
+      "arm": "candidate",
+      "round": 1,
+      "wave": 1
+    },
+    {
+      "cell_id": "ect2-r1-t0-K",
+      "task": "break-filter-js-from-html",
+      "arm": "K",
+      "round": 1,
+      "wave": 1
+    },
+    {
+      "cell_id": "ect2-r1-t1-candidate",
+      "task": "go/exercises/practice/food-chain",
+      "arm": "candidate",
+      "round": 1,
+      "wave": 1
+    },
+    {
+      "cell_id": "ect2-r1-t2-Both",
+      "task": "overfull-hbox",
+      "arm": "Both",
+      "round": 1,
+      "wave": 1
+    },
+    {
+      "cell_id": "ect2-r1-t0-candidate",
+      "task": "break-filter-js-from-html",
+      "arm": "candidate",
+      "round": 1,
+      "wave": 2
+    },
+    {
+      "cell_id": "ect2-r1-t1-Both",
+      "task": "go/exercises/practice/food-chain",
+      "arm": "Both",
+      "round": 1,
+      "wave": 2
+    },
+    {
+      "cell_id": "ect2-r1-t2-none",
+      "task": "overfull-hbox",
+      "arm": "none",
+      "round": 1,
+      "wave": 2
+    },
+    {
+      "cell_id": "ect2-r1-t0-Both",
+      "task": "break-filter-js-from-html",
+      "arm": "Both",
+      "round": 1,
+      "wave": 2
+    },
+    {
+      "cell_id": "ect2-r1-t1-none",
+      "task": "go/exercises/practice/food-chain",
+      "arm": "none",
+      "round": 1,
+      "wave": 2
+    },
+    {
+      "cell_id": "ect2-r1-t2-K",
+      "task": "overfull-hbox",
+      "arm": "K",
+      "round": 1,
+      "wave": 2
+    }
+  ],
+  "caps": {
+    "requests": 60,
+    "wall_seconds": 7200,
+    "output_tokens": 16384
+  },
+  "route": "127.0.0.1:18001 only",
+  "admission": "valid running <8; waiting allowed; bounded backoff <=600s",
+  "acceptance": "About 25% lower total complete tokens/verified solve against all three comparators, no solved-count loss overall or within represented families; failures included; unknown costs prevent qualification",
+  "retries": "No score/load/spend-selected retries; infrastructure grading repairs replay exact captured outputs, no model rerun",
+  "screen_rounds": 1,
+  "confirmation_allowed": false,
+  "window_rule": "Two precommitted bounded waves, six cells each. Unstarted boundary cells require a new committed remaining-cell schedule; never repeat an existing cell.",
+  "html_public_wheels_sha256": "bcd509d459e73189b4a014562840386513ff5477afb6a45e9a39dd39e9c34ae7",
+  "task_resource_specs": {
+    "break-filter-js-from-html": {
+      "task": "break-filter-js-from-html",
+      "actor_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+      "grader_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": "",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    },
+    "go/exercises/practice/food-chain": {
+      "actor_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "grader_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "cpus": 1,
+      "memory_mb": 2048,
+      "mounts": [],
+      "environment": {},
+      "guidance": ""
+    },
+    "overfull-hbox": {
+      "task": "overfull-hbox",
+      "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+      "grader_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+      "cpus": 2,
+      "memory_mb": 4096,
+      "mounts": [],
+      "environment": {},
+      "guidance": "",
+      "all_arms_uniform_required": true,
+      "inference_authorized": false
+    }
+  },
+  "candidate_stop_rule": "First candidate was non-improving. If candidate 2 also does not improve, stop after two successive non-improving candidates; no third screen.",
+  "non_improving_definition": "Not a complete screen with strictly lower finite tokens-per-solve ratios against all three comparators and no observed solved-count loss overall or within represented families. Improvement below 25% is not winner qualification."
+}
