@@ -343,6 +343,82 @@
       "cap_hit": false,
       "result_sha256": "8f28d55b22213bde0d9b0c76c500c257c4129369965c3cb7a56b9f23a14a837d",
       "native_trace_sha256": "12fa177becd52595f173b9dfcd33d370b8bb81dc6047dd9b8757935c5a09f953"
+    },
+    {
+      "cell_id": "g2-aider-r1-t1-candidate",
+      "task": "java/exercises/practice/transpose",
+      "round": 1,
+      "arm": "candidate",
+      "family": "aider-polyglot",
+      "solved": true,
+      "grade_valid": true,
+      "tests": 12,
+      "cost_complete": true,
+      "tokens_lower_bound": 937914,
+      "provider_eof_valid": true,
+      "requests": 35,
+      "native_wall_seconds": 372.3452927172184,
+      "heavy_load": false,
+      "cap_hit": false,
+      "result_sha256": "53264116f34fcbaffc077f482a2e85699e1dd05d9c0fd32490a392303d357ccb",
+      "native_trace_sha256": "29fefc42410b9d4e440e6054ea1c90cb4020ca46fd6180be8860274f0f2965da"
+    },
+    {
+      "cell_id": "g2-aider-r1-t1-none",
+      "task": "java/exercises/practice/transpose",
+      "round": 1,
+      "arm": "none",
+      "family": "aider-polyglot",
+      "solved": false,
+      "grade_valid": true,
+      "tests": 0,
+      "cost_complete": true,
+      "tokens_lower_bound": 894337,
+      "provider_eof_valid": true,
+      "requests": 33,
+      "native_wall_seconds": 774.9367689695209,
+      "heavy_load": true,
+      "cap_hit": false,
+      "result_sha256": "53264116f34fcbaffc077f482a2e85699e1dd05d9c0fd32490a392303d357ccb",
+      "native_trace_sha256": "a6081ef99d3d4578160b96a0656cc102c31bf1ba47a6722789961639061c45f5"
+    },
+    {
+      "cell_id": "g2-aider-r1-t5-candidate",
+      "task": "javascript/exercises/practice/alphametics",
+      "round": 1,
+      "arm": "candidate",
+      "family": "aider-polyglot",
+      "solved": false,
+      "grade_valid": true,
+      "tests": 0,
+      "cost_complete": true,
+      "tokens_lower_bound": 39464,
+      "provider_eof_valid": true,
+      "requests": 3,
+      "native_wall_seconds": 281.8236075602472,
+      "heavy_load": false,
+      "cap_hit": false,
+      "result_sha256": "53264116f34fcbaffc077f482a2e85699e1dd05d9c0fd32490a392303d357ccb",
+      "native_trace_sha256": "9fdbfacee939401bf92fb0c00a5df527e109e5c435d5fa0a7f211dbb2f10e80d"
+    },
+    {
+      "cell_id": "g2-aider-r1-t5-K",
+      "task": "javascript/exercises/practice/alphametics",
+      "round": 1,
+      "arm": "K",
+      "family": "aider-polyglot",
+      "solved": true,
+      "grade_valid": true,
+      "tests": 9,
+      "cost_complete": false,
+      "tokens_lower_bound": 722256,
+      "provider_eof_valid": false,
+      "requests": 26,
+      "native_wall_seconds": 1844.2690342999995,
+      "heavy_load": true,
+      "cap_hit": false,
+      "result_sha256": "53264116f34fcbaffc077f482a2e85699e1dd05d9c0fd32490a392303d357ccb",
+      "native_trace_sha256": "59ded99a78f8f305fccd7adcab979a436023993bbf15b54366d8aa07a5085f45"
     }
   ],
   "waves": [
@@ -366,13 +442,19 @@
       "error": null,
       "cleanup_errors": [],
       "owned_cleanup": true
+    },
+    {
+      "wave": "aider-r1-w04",
+      "result_sha256": "53264116f34fcbaffc077f482a2e85699e1dd05d9c0fd32490a392303d357ccb",
+      "error": {
+        "type": "RuntimeError",
+        "message": "Owned provider completion uncertain"
+      },
+      "cleanup_errors": [],
+      "owned_cleanup": true
     }
   ],
   "missing_cells": [
-    "g2-aider-r1-t1-candidate",
-    "g2-aider-r1-t1-none",
-    "g2-aider-r1-t5-candidate",
-    "g2-aider-r1-t5-K",
     "g2-aider-r1-t5-Both",
     "g2-aider-r1-t5-none",
     "g2-aider-r1-t0-Both",
@@ -460,7 +542,18 @@
     "g2-aider-r3-t5-candidate",
     "g2-aider-r3-t5-Both"
   ],
-  "all_observed_evidence_valid": true,
+  "all_observed_evidence_valid": false,
   "acceptance_established": false,
-  "utc": "2026-10-08T18:44:16.142337+00:00"
+  "utc": "2026-10-08T19:53:24.222563+00:00",
+  "repair_sidecars": [
+    {
+      "sidecar": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g2/waves/aider-r1-w04/grade-and-accounting-repair.json",
+      "sha256": "8c47f13a21c2548944a1466a4154ff3afca1e50969f3042113673538f212f5e2",
+      "original_result_sha256": "53264116f34fcbaffc077f482a2e85699e1dd05d9c0fd32490a392303d357ccb",
+      "cell_id": "g2-aider-r1-t5-K"
+    }
+  ],
+  "raw_results_unchanged": true,
+  "model_retries": 0,
+  "unknown_costs_retained": true
 }

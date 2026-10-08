@@ -1,0 +1,31 @@
+{
+  "status": "UNRECOVERABLE_FROM_CAPTURE_UNKNOWN_COST_NOT_IMPUTED",
+  "cell_id": "g2-aider-r1-t5-K",
+  "request": 97,
+  "receipt_sha256": "7f643d47b7d18e14857188a5f3b7b8886ce06a634b9540ae1d7677be4b2e8320",
+  "captured_event_types": {
+    "response.created": 1,
+    "response.in_progress": 1,
+    "response.output_item.added": 1,
+    "response.reasoning_summary_part.added": 1,
+    "response.reasoning_summary_text.delta": 2309
+  },
+  "usage_events": 0,
+  "completed_events": 0,
+  "native_error": "stream disconnected before completion: stream closed before response.completed",
+  "broker_record_error": "AttributeError",
+  "budget_cap_hit": false,
+  "original_frozen_runtime_changed": false,
+  "grader_repair": "Exact captured artifact replay: original grader exit 0, accepted tests 9; no model call",
+  "attempted_paths": [
+    "Parse exact captured receipt for usage/response.completed (absent)",
+    "Inspect native terminal events and source-backed normalized accounting (request 97 unknown)",
+    "Replay original grader on exact captured work (valid solve)"
+  ],
+  "unsafe_or_forbidden_paths_not_attempted": [
+    "No other workload/server logs or shared configuration changes",
+    "No model-cell retry",
+    "No token estimate from bytes/output length/native aggregate or prior cells"
+  ],
+  "next_action": "Continue only remaining frozen round-1 cells; preserve request97 unknown and apply frozen complete-roster gate at36; no acceptance with this unresolved accounting gap"
+}
