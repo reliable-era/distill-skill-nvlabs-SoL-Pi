@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 active, separate from closed G1. Candidate/analysis/schedule frozen `75ab79c`. First two Aider waves complete: **12 cells / 306 requests / 9,315,281 complete tokens; 3 solves / 9 failures**. No unknown grades/costs or cap hits; both workers/resources independently absent. Original Queen-attack tests actually failed (not grader infrastructure); no outcome-based change or retry. Round-1 futility due only at all 36 cells; no comparison yet. Wave 03 live: worker **2112230**, window `730c122`, 1 new start / 6 requests at last ledger read (meetup/candidate); six next frozen cells only. Terminal gated; no shipping without approval.
+G2 active, separate from closed G1. Candidate/analysis/schedule frozen `75ab79c`. First three Aider waves complete: **18 cells / 556 requests / 19,276,285 complete tokens; 4 solves / 14 failures**. No unknown grades/costs or cap hits; all three workers/resources independently absent. No outcome-based edit, substitution or retry. Only half of round 1 is complete; futility due at all 36 cells, no comparison yet. Continue fixed remaining cells. Terminal gated; no shipping without approval.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 12 / 306 complete + 1 / 6 live | 3 / 12 known | 9,315,281 complete + pending | Wave 03 worker 2112230; futility only at all 36 cells |
+| Aider rounds 1–3 | 18 / 556 | 4 / 18 | 19,276,285 complete | Waves 01–03 complete; 18 round-1 cells pending; no futility decision yet |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
