@@ -1,4 +1,70 @@
-# Active goal (G1, narrowed): economical skill refinement on Codex + local Qwen
+# Active goal (G2): sealed confirmation of frozen candidate 2
+
+Set 2026-10-09. The user asked Claude to decide, and Claude decided to continue
+with one confirmation test. G1 is closed (f537bfa); its result stands and is not
+rewritten. G2 is a new, separate contract. It runs under the same standing
+authorization and Claude supervision (workspace `supervisor-policy.md`).
+
+## Why G2 exists
+
+In G1's screen, candidate 2 used 76% fewer tokens per solve than No skill and
+45% fewer than Karpathy, with no fewer solves. G1 rejected it only because it
+did not beat "Both". Both is candidate 2 plus Karpathy, so that rule requires
+Karpathy to make the candidate worse. The rule is replaced here by the original
+campaign's three comparisons. The screen used 3 exposed tasks and 1 round, and
+the candidate was designed from those tasks, so its effect is unproven and
+probably overestimated. G2 tests it once on sealed tasks.
+
+## Fixed setup
+
+- **Candidate:** G1 candidate 2, SHA `39f7b30993b0fb4cfdc306df6eba45d1ebcb8a75955b7713f5f3f306976e8a25`,
+  frozen. No edits, no new candidates.
+- **Arms (4):** No skill, frozen Karpathy, candidate 2, Both (candidate 2 + frozen Karpathy).
+- **Harness, model, route, budget:** unchanged from G1. Codex 0.160.0, local
+  Qwen3.8-27B-FP8, direct 127.0.0.1:18001 only, admission when fewer than 8
+  requests are running, 60 requests / 120 min / 16K output per run.
+- **Tasks:** the 9 sealed Aider polyglot tasks from G1 Step 2
+  (`framework/refinement/g1/polyglot-selection.json`). No substitution.
+  The 9 sealed Terminal-Bench tasks stay sealed and are used only in stage 2.
+- **Rounds:** 3 independently scheduled rounds; arm order randomized per task
+  with a recorded seed. Stage 1 = 9 tasks × 4 arms × 3 rounds = 108 runs.
+
+## Acceptance (per family)
+
+All three comparisons must pass. Tokens include failed runs.
+
+1. Candidate vs No skill.
+2. Both vs Karpathy.
+3. Candidate vs Karpathy.
+
+For each comparison, tokens per verified solve must be at least 5% lower, and
+the paired task-cluster bootstrap 95% interval of the cost ratio must lie below 1.
+Total verified solves must be no fewer than the comparator's. "Candidate vs Both"
+is reported for information only and is not a gate.
+
+## Stops
+
+- **Early stop (preregistered, futility only):** after round 1 (36 runs), stop G2
+  as negative if the candidate is not at least 5% cheaper per solve than No skill,
+  or if it has fewer solves than No skill. This check can end G2 early but cannot
+  declare a win.
+- **Stage 2:** run the same design on the 9 sealed Terminal-Bench tasks only if
+  Aider passes all three comparisons. If Aider fails, G2 ends as negative.
+- Keep every run, failure and cost. No retries except cells that never reached the
+  model (infrastructure failures), recorded separately.
+
+## Outcome
+
+Report a score table per family (solves, tokens, tokens per solve, ratios with
+95% intervals for all four arms). If accepted, recommend shipping candidate 2,
+or Both if it is the cheapest configuration. Do not change the shipped skill
+without the user's approval. If rejected, close the project with the negative result.
+
+---
+
+# Closed goal (G1, narrowed): economical skill refinement on Codex + local Qwen
+
+Closed 2026-10-08 by a negative development stop (f537bfa). Kept as history.
 
 Set 2026-10-05 by the user. This replaces the 2026-10-04 goal below, whose
 ≥3/5-harness and three-family criteria could not be met under the user's
