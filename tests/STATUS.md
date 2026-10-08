@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 opened by user commit `1401e9a`; separate from closed G1. Candidate 2 frozen unchanged. `framework/refinement/g2/plan.json` preregisters all task/arm/round seeds, schedule, analysis and source/skill hashes. Six mathematical analysis tests pass; zero model calls so far. Next: committed offline runtime preflight, then separately committed bounded Aider round-1 wave. Stop at 36 cells if candidate/No skill misses 5% savings or loses solves. Terminal remains gated on full Aider acceptance; no shipping without approval.
+G2 is live, separate from closed G1. Candidate 2 unchanged; plan/analysis/schedule committed `75ab79c` before inference. Six mathematical tests and four-image offline startup/source checks pass. First Aider round-1 window `0ed59c8`; worker **1993956**, durable ledger 1 start / 4 requests at last check (cell connect/candidate). No finished grade or comparison yet. Stop at 36 cells if candidate/No skill misses 5% savings or loses solves. Terminal remains gated; no shipping without approval.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
-| Freeze / preregister | 0 / 0 | — | 0 | Frozen candidate; three required comparisons; candidate/Both informational |
-| Aider rounds 1–3 | 0 / 0 | — | 0 | Unstarted; 108 planned, futility at 36 |
+| Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
+| Aider rounds 1–3 | 1 / 4 live | Pending | Pending | Worker 1993956, first six frozen cells; 108 planned, futility at 36 |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
