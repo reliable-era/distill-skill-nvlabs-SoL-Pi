@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 active; candidate/analysis/schedule/runtime unchanged. **28 cells / 691 requests / ≥22,672,065 tokens; 7 solves / 21 failures**. Wave05 complete and audited; all workers/resources absent. One prior unknown request cost (JS/K request97) remains; grade-only exact-artifact replay passed nine tests, raw error preserved, no model retry. Complete eight remaining fixed round-1 cells; accounting gap blocks acceptance/complete-roster gate unless recovered, otherwise honest inconclusive at36. No G1 rewrite, token imputation, substitution or shipping.
+G2 active; candidate/analysis/schedule/runtime unchanged. **28 cells / 691 requests / ≥22,672,065 tokens; 7 solves / 21 failures**. Wave05 complete and audited; all workers/resources absent. One prior unknown request cost (JS/K request97) remains; grade-only exact-artifact replay passed nine tests, raw error preserved, no model retry. Complete eight remaining fixed round-1 cells; accounting gap blocks acceptance/complete-roster gate unless recovered, otherwise honest inconclusive at36. Wave06 live: worker **2359020**, window `2c93b79`, 1 new start / 11 requests at last check (crypto-square/Both); six next frozen cells, then two remain to36. No G1 rewrite, token imputation, substitution or shipping.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 28 / 691 | 7 / 28 | ≥22,672,065; 1 unknown | Wave05 complete; 8 fixed round-1 cells pending; no gate yet |
+| Aider rounds 1–3 | 28 / 691 terminal + 1 / 11 live | 7 / 28 known | ≥22,672,065 + pending; 1 unknown | Wave06 worker2359020; round-1 gate at36 only |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
