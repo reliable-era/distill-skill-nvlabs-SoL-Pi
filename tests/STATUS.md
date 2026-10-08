@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 active, separate from closed G1. Candidate/analysis/schedule frozen `75ab79c`. First three Aider waves complete: **18 cells / 556 requests / 19,276,285 complete tokens; 4 solves / 14 failures**. No unknown grades/costs or cap hits; all three workers/resources independently absent. No outcome-based edit, substitution or retry. Only half of round 1 is complete; futility due at all 36 cells, no comparison yet. Continue fixed remaining cells. Terminal gated; no shipping without approval.
+G2 active, separate from closed G1. Candidate/analysis/schedule frozen `75ab79c`. First three Aider waves complete: **18 cells / 556 requests / 19,276,285 complete tokens; 4 solves / 14 failures**. No unknown grades/costs or cap hits; all three workers/resources independently absent. No outcome-based edit, substitution or retry. Only half of round 1 is complete; futility due at all 36 cells, no comparison yet. Wave 04 live: worker **2176181**, window `d452fe1`, 1 new start / 14 requests at last ledger read (transpose/candidate). Original JS grader cache digest rechecked unchanged before its first cells. Terminal gated; no shipping without approval.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 18 / 556 | 4 / 18 | 19,276,285 complete | Waves 01–03 complete; 18 round-1 cells pending; no futility decision yet |
+| Aider rounds 1–3 | 18 / 556 complete + 1 / 14 live | 4 / 18 known | 19,276,285 complete + pending | Wave 04 worker 2176181; futility at all 36 cells only |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
