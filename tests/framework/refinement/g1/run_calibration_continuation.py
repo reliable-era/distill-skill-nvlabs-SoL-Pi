@@ -53,7 +53,7 @@ def grade_fixture(base, ident, work, prepared, d, prefix, owned, spec, row):
     if result.returncode not in (0,1):raise RuntimeError('Original fixture grader unavailable')
 
 
-def make_controller(primary_count=5, driver_path=None):
+def make_controller(primary_count=5, driver_path=None, source_transform=None):
     source=G/'run_calibration.py';code=source.read_text()
     def replace(old,new):
         nonlocal code
@@ -77,6 +77,7 @@ def make_controller(primary_count=5, driver_path=None):
     replace("            if sources()!=live or W.files(task['source'])!=plan['task_source_hashes'][ident]:raise RuntimeError('Source identity changed')", "            if any(sha(G/name)!=value for name,value in plan['continuation_sources'].items()):raise RuntimeError('Continuation source changed')\n            if sources()!=live or W.files(task['source'])!=plan['task_source_hashes'][ident]:raise RuntimeError('Source identity changed')")
     driver_entries=[G/'run_calibration_continuation.py',G/'calibration_fallback_adapter.py']+([pathlib.Path(driver_path)] if driver_path else [])
     replace("    plan['launch_commit'] =", "    plan['prior_summary_sha256']=sha(G/'calibration-attempt-2/calibration-summary-audit.json')\n    plan['fallback_manifest_sha256']=sha(G/'calibration-fallback-fixtures.json')\n    plan['continuation_sources']={p.name:sha(p) for p in driver_entries}\n    plan['launch_commit'] =")
+    if source_transform is not None:code=source_transform(code)
     module=types.ModuleType('g1_pending_calibration')
     module.__file__=str(source)
     module.__dict__.update(load_contract=load_contract,window_end=window_end,fixture_spec=fixture_spec,grade_fixture=grade_fixture,PRIOR_SOLVED=PRIOR_SOLVED,driver_entries=driver_entries)
