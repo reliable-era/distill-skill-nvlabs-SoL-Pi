@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 is live, separate from closed G1. Candidate 2 unchanged; plan/analysis/schedule committed `75ab79c` before inference. Six mathematical tests and four-image offline startup/source checks pass. First Aider round-1 window `0ed59c8`; worker **1993956**, durable ledger 1 start / 4 requests at last check (cell connect/candidate). No finished grade or comparison yet. Stop at 36 cells if candidate/No skill misses 5% savings or loses solves. Terminal remains gated; no shipping without approval.
+G2 active, separate from closed G1. Candidate/analysis/schedule frozen `75ab79c`. First Aider wave complete: **6 cells / 144 requests / 4,582,746 complete tokens; 1 solve / 5 failures**, no unknown grades/costs or cap hits. Worker 1993956 and owned resources gone; independent artifact/receipt audit valid. Round-1 futility is due only at 36 cells; no comparison or acceptance claim at six. Continue remaining predeclared cells; Terminal gated; no shipping without approval.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 1 / 4 live | Pending | Pending | Worker 1993956, first six frozen cells; 108 planned, futility at 36 |
+| Aider rounds 1–3 | 6 / 144 | 1 / 6 | 4,582,746 | First wave complete, 30 round-1 cells pending; no futility decision yet |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
