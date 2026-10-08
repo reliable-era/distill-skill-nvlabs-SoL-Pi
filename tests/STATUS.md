@@ -1,6 +1,6 @@
 # G1 status
 
-Steps 0–2 complete; all 18 selected gold/no-op pairs pass. G1 reopened under 2026-10-08 standing authorization and Claude supervision. Step 3 recovery: pool HTML + TeX (2); scoped startup fix committed, six zero-model cells permitted with fallback stopping at 3. One broken SPARQL run may be retried; regex is a real failure and is not retried. Nominal caps unchanged.
+Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 complete under standing authorization: recovery solved food-chain and SPARQL (separate authorized retry), 31 requests / 723,545 complete tokens. Pool: HTML, TeX, food-chain, SPARQL. Fallback stopped without new calls; regex not retried. Proceed to Step 4; no savings result or promotion.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
@@ -49,7 +49,8 @@ All nine old Terminal-Bench tasks are development-only. No historical candidate 
 | 3a: expired admission | 0 | Not measured | 0; no requests | Preserved; no wait renewal |
 | 3b: No-skill calibration | 5 | 1; four failed; five unstarted | 4,078,674; complete | Preserved prior cohort |
 | 3c: pending tasks + fallback | 10 shell attempts; 4 model runs | 1; three failed; six model-untested | 1,760,285; complete | Startup permission fault preserved; pool 2 < 3; nominal caps frozen; G1 inconclusive |
-| 4: measured mechanisms | 0 | — | 0 | Not started; at most 3 candidates |
+| 3d: startup/interruption recovery | 2 | 2 | 723,545; complete | Gate passes: four solvable tasks; caps unchanged |
+| 4: measured mechanisms | 0 | — | 0 | Next: rank saved trace sinks; at most 3 candidates |
 | 5: multi-task screens | 0 | — | 0 | Not started; ≥3 solvable tasks per candidate |
 | 6: winner freeze | 0 | — | 0 | Not started |
 | 7: sealed confirmation | 0 | — | 0 | Not started; 216 cells |

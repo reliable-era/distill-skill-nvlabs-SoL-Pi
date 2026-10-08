@@ -1,0 +1,2021 @@
+{
+  "requests": [
+    {
+      "request": 1,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:44:17.445659+00:00",
+      "ended_utc": "2026-10-08T04:44:19.517146+00:00",
+      "elapsed_seconds": 2.071513444185257,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "68ff1d6cba00bd7efca0b8320f2bb69f077c040a3974b3e81de242d5f3ca8e40",
+        "forwarded_sha256": "cd93a1b7c3c92b3b6d574dfd798ca089b4f6227f679e2d245ad2b74733fad7de",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "68ff1d6cba00bd7efca0b8320f2bb69f077c040a3974b3e81de242d5f3ca8e40",
+      "sha256": "0a5397af3bc1b34b6afb9ee695cb74938fff2411ecc4f1431043b5ea5d0415f0",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:44:17.441783+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 0,
+              "num_waiting_reqs": 0,
+              "num_tokens": 0,
+              "num_pending_tokens": 0,
+              "ts_tic": 12968966.703892572
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 7145,
+        "input_tokens_inclusive": 7076,
+        "output_tokens_inclusive": 69,
+        "cache_read_tokens_reported": 0,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 15,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 2,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:44:19.606529+00:00",
+      "ended_utc": "2026-10-08T04:44:20.357730+00:00",
+      "elapsed_seconds": 0.7512291688472033,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "51a97944b9f4bfe06bac5bb0466bef641b609d3726405a99edf368aba2f538f3",
+        "forwarded_sha256": "b7815c2052929f40ac304c53b3c15b5a8b500d716c9adad8a393a71fb76f0e71",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "51a97944b9f4bfe06bac5bb0466bef641b609d3726405a99edf368aba2f538f3",
+      "sha256": "8f2ad261dfb50ced6acf46d4bde3f7d833d59da67e21088b4ccfccd5e410e592",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:44:19.602538+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 63413,
+              "num_pending_tokens": 0,
+              "ts_tic": 12968968.864505824
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 7390,
+        "input_tokens_inclusive": 7335,
+        "output_tokens_inclusive": 55,
+        "cache_read_tokens_reported": 7040,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 17,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 3,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:44:20.421205+00:00",
+      "ended_utc": "2026-10-08T04:45:28.260146+00:00",
+      "elapsed_seconds": 67.83896680176258,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "096785e5c43a61c37f6d2f102813b8f77b067b4e1cf0b8206b5c7301dfce86c2",
+        "forwarded_sha256": "28e085a503a3331dc1caea14b27574595b33889f238faceacd37859849f3cec2",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "096785e5c43a61c37f6d2f102813b8f77b067b4e1cf0b8206b5c7301dfce86c2",
+      "sha256": "dcf39508f5795cf1d6d37b59415f83943cedae0a7e3bf06bcdbd38ff479c2d35",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:44:20.417995+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 1,
+              "num_waiting_reqs": 0,
+              "num_tokens": 57158,
+              "num_pending_tokens": 0,
+              "ts_tic": 12968969.679801151
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 10541,
+        "input_tokens_inclusive": 7519,
+        "output_tokens_inclusive": 3022,
+        "cache_read_tokens_reported": 7296,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 2479,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 4,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:45:37.842113+00:00",
+      "ended_utc": "2026-10-08T04:47:26.773344+00:00",
+      "elapsed_seconds": 108.93125227093697,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "ec709e35f6978d05b2dec46a3e2bc130194d6ec911cbc8b42f26abf0e399c23c",
+        "forwarded_sha256": "ba73226cdc6bd508861a5fee5ed0167b53ba05950e08a2b626805784a22931e3",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "ec709e35f6978d05b2dec46a3e2bc130194d6ec911cbc8b42f26abf0e399c23c",
+      "sha256": "d45c9e0e2b058aac6123f1d661d17dec5cc19b727452bb9cecf98c3ac4b10bad",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:45:37.838621+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 0,
+              "num_waiting_reqs": 0,
+              "num_tokens": 40512,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969047.100542909
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 11554,
+        "input_tokens_inclusive": 10609,
+        "output_tokens_inclusive": 945,
+        "cache_read_tokens_reported": 0,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 239,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 5,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:47:26.848185+00:00",
+      "ended_utc": "2026-10-08T04:47:33.486260+00:00",
+      "elapsed_seconds": 6.638117281720042,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "354ad9cab8fcd4693c51c58d2cab744b6cf89ef19f8a046d0f679bbd3e699a32",
+        "forwarded_sha256": "520a3a3ee31992015b12f93b0919171dd67f88fbf97049b4f3a51c9aa0faebb1",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "354ad9cab8fcd4693c51c58d2cab744b6cf89ef19f8a046d0f679bbd3e699a32",
+      "sha256": "54ec99958faecf27402affb619f37d053a724fbedd1ec23295c308d8cb837318",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:47:26.844315+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 137642,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969156.1062075
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 12509,
+        "input_tokens_inclusive": 11773,
+        "output_tokens_inclusive": 736,
+        "cache_read_tokens_reported": 11520,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 166,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 6,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:47:33.587616+00:00",
+      "ended_utc": "2026-10-08T04:47:35.420057+00:00",
+      "elapsed_seconds": 1.8324661441147327,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "8dfc23f7f8dd1ed6142c036770ad5c49c839fe43d6e0c65b34a6ccc5ac8c1d89",
+        "forwarded_sha256": "c08b2475973f704c4a93e458fc795afcecc92f9f7803e8a04b6399657626da16",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "8dfc23f7f8dd1ed6142c036770ad5c49c839fe43d6e0c65b34a6ccc5ac8c1d89",
+      "sha256": "6b835f77039857d68e4354b10a36a45f09f7313404f507089db6beb173821923",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:47:33.583324+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 0,
+              "num_waiting_reqs": 0,
+              "num_tokens": 0,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969162.845140051
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 12763,
+        "input_tokens_inclusive": 12631,
+        "output_tokens_inclusive": 132,
+        "cache_read_tokens_reported": 12288,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 59,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 7,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:47:35.488884+00:00",
+      "ended_utc": "2026-10-08T04:47:39.972815+00:00",
+      "elapsed_seconds": 4.483957082033157,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "71daa1bbc099bca20f09ee16e303d3c3278dab7e16c6e40880579f18c53ffa86",
+        "forwarded_sha256": "ff54c2b27fbd0172e48b614aac0323eb57a951907749aa84c0d129b47b9bf762",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "71daa1bbc099bca20f09ee16e303d3c3278dab7e16c6e40880579f18c53ffa86",
+      "sha256": "c0c5c6a2d48898a048496df9cccdb8fb24eeee38cf0343b65a1866ffa70c744c",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:47:35.484652+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 1,
+              "num_waiting_reqs": 0,
+              "num_tokens": 12747,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969164.746348336
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 13357,
+        "input_tokens_inclusive": 13083,
+        "output_tokens_inclusive": 274,
+        "cache_read_tokens_reported": 12608,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 183,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 8,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:47:40.042592+00:00",
+      "ended_utc": "2026-10-08T04:47:41.823646+00:00",
+      "elapsed_seconds": 1.7810946330428123,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "4610ee486432a88487b6d7ce3bb3b88b6b8787d240fd39acfd30bae3c24e545b",
+        "forwarded_sha256": "4140402fb6464d13f7e69006dfd70148554519db411cd01203060ea9d0f0ccdb",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "4610ee486432a88487b6d7ce3bb3b88b6b8787d240fd39acfd30bae3c24e545b",
+      "sha256": "7000dcb8e6f05cc565f213b7a64e10a758d449ee58cff26445a73e8eaf5f6303",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:47:40.038221+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 146260,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969169.30023564
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 13588,
+        "input_tokens_inclusive": 13470,
+        "output_tokens_inclusive": 118,
+        "cache_read_tokens_reported": 13312,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 50,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 9,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:47:41.846087+00:00",
+      "ended_utc": "2026-10-08T04:47:48.017542+00:00",
+      "elapsed_seconds": 6.1714823096990585,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "abb35fa743749463863febf8d1d02cbc327f5893d788e242add1c748da797456",
+        "forwarded_sha256": "a10f29d4421c00e186bf84fa4b423ad365d8516b24fa1429e39963796bc075d2",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "abb35fa743749463863febf8d1d02cbc327f5893d788e242add1c748da797456",
+      "sha256": "6873775ee38f9f7533791d381c35920a8ff5861da721a32711b9e8cb2fd30cb3",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:47:41.842224+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 147481,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969171.104206905
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 14028,
+        "input_tokens_inclusive": 13664,
+        "output_tokens_inclusive": 364,
+        "cache_read_tokens_reported": 13568,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 297,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 10,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:47:48.086651+00:00",
+      "ended_utc": "2026-10-08T04:47:53.275480+00:00",
+      "elapsed_seconds": 5.188853964209557,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "1bccca23fd5c2b82bf6ee8bed0d09e46a8bada4877350b2b2e403af073420702",
+        "forwarded_sha256": "fb4e76e125dfdeab51ad632a4c984cb785c9b9e70b65ef62880af9f61d17e8fa",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "1bccca23fd5c2b82bf6ee8bed0d09e46a8bada4877350b2b2e403af073420702",
+      "sha256": "9b3d30bb51e7fc8387fc8183cbff777d5218b7aed98da105ac77181c4850f91d",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:47:48.082046+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 3,
+              "num_waiting_reqs": 0,
+              "num_tokens": 151141,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969177.34406916
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 15776,
+        "input_tokens_inclusive": 15523,
+        "output_tokens_inclusive": 253,
+        "cache_read_tokens_reported": 13824,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 191,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 11,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:47:53.342841+00:00",
+      "ended_utc": "2026-10-08T04:48:04.549882+00:00",
+      "elapsed_seconds": 11.207063369452953,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "0229ed3078cb00a5131e21e2620c5730e909ac13dfff6f1300d0a03f4bc265ee",
+        "forwarded_sha256": "3a0c1016ec47b73ba5931c207a6df467bf1c0937f0f2198c0fe8bf38f0b68a3b",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "0229ed3078cb00a5131e21e2620c5730e909ac13dfff6f1300d0a03f4bc265ee",
+      "sha256": "47836a2c6741cb06e4977cc4162ae7918fe9446c969d42651707b5a9574a3f27",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:47:53.339368+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 1,
+              "num_waiting_reqs": 0,
+              "num_tokens": 744,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969182.60103009
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 16778,
+        "input_tokens_inclusive": 15956,
+        "output_tokens_inclusive": 822,
+        "cache_read_tokens_reported": 15616,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 202,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 12,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:48:04.635155+00:00",
+      "ended_utc": "2026-10-08T04:48:06.096710+00:00",
+      "elapsed_seconds": 1.461582062765956,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "1ba2778922f8205e2fce94cb375ffc235b19f35955ac531928733966ac9f0b8d",
+        "forwarded_sha256": "70ab0ccd8964aa292e1905837c08cb4319f8e3d60c1abee10fcef670a115d5d9",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "1ba2778922f8205e2fce94cb375ffc235b19f35955ac531928733966ac9f0b8d",
+      "sha256": "3a32949433900fa2bc3f161a6bbdf85e5beb0b547b5d23d44579dbc3d9c7945c",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:48:04.630586+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 3,
+              "num_waiting_reqs": 0,
+              "num_tokens": 161789,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969193.892546635
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 17045,
+        "input_tokens_inclusive": 16958,
+        "output_tokens_inclusive": 87,
+        "cache_read_tokens_reported": 16640,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 19,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 13,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:48:06.156931+00:00",
+      "ended_utc": "2026-10-08T04:48:21.797069+00:00",
+      "elapsed_seconds": 15.640162467956543,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "e094f694bf2a0b17b5e05e6ec84f3c7d6858907fc10ff670e16db8ad5354d791",
+        "forwarded_sha256": "761242a93fc52887fda717f8ea2c8866ec9c23c8e2a3e0031935bec7ae50dd7c",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "e094f694bf2a0b17b5e05e6ec84f3c7d6858907fc10ff670e16db8ad5354d791",
+      "sha256": "db1d8d643bfdf5bb91c1564ff45cb446c91c319d2e4def9e7518f9b664dc0b28",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:48:06.152340+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 162599,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969195.414117
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 18989,
+        "input_tokens_inclusive": 17720,
+        "output_tokens_inclusive": 1269,
+        "cache_read_tokens_reported": 16896,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 698,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 14,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:48:23.132035+00:00",
+      "ended_utc": "2026-10-08T04:48:34.082971+00:00",
+      "elapsed_seconds": 10.95095831155777,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "6d001a08e4f4909f4b423d200536623de4834fd5e9853cdefa6d2eac03d4abef",
+        "forwarded_sha256": "69a70188e2de1978e71b02149faaa0c08d0f4b7d34e7cd6f757be9a6fbc35cf6",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "6d001a08e4f4909f4b423d200536623de4834fd5e9853cdefa6d2eac03d4abef",
+      "sha256": "5d6593a61ac785febfac5aacb1f56849a1caaf3f1038acd431d01e6f9bf94068",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:48:23.127486+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 155141,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969212.389369596
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 20136,
+        "input_tokens_inclusive": 19047,
+        "output_tokens_inclusive": 1089,
+        "cache_read_tokens_reported": 18944,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 108,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 15,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:48:42.689995+00:00",
+      "ended_utc": "2026-10-08T04:48:45.720158+00:00",
+      "elapsed_seconds": 3.030188014730811,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "53a94623c39c4034aea4a51b52615f5da2840197ab75d0866753217d683b958a",
+        "forwarded_sha256": "3278469d533902fae0c5643a52c0b9f3cf151b5bf845a6bfccd98fabf69f6858",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "53a94623c39c4034aea4a51b52615f5da2840197ab75d0866753217d683b958a",
+      "sha256": "ef1c5fe855014bf9bbef26fc37dcb977007ea9c9f5153075ea1991a108e90872",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:48:42.337716+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 1,
+              "num_waiting_reqs": 0,
+              "num_tokens": 334,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969231.945065351
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 20409,
+        "input_tokens_inclusive": 20244,
+        "output_tokens_inclusive": 165,
+        "cache_read_tokens_reported": 19968,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 49,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 16,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:48:56.571904+00:00",
+      "ended_utc": "2026-10-08T04:48:57.877129+00:00",
+      "elapsed_seconds": 1.305249074473977,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "f962dcb4e83b1b701e250d38452702b66a0ea0d68baa1e3c1adaf9a31026b9a9",
+        "forwarded_sha256": "b8db2e9a44d34dfa6711a5bab11f12d67aaca2541ad4fc4c7ad85a022db38cd2",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "f962dcb4e83b1b701e250d38452702b66a0ea0d68baa1e3c1adaf9a31026b9a9",
+      "sha256": "f1a9983f56259909ed155d3271b24475fabfd322c8377670781c8502d6582e76",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:48:55.924910+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 1,
+              "num_waiting_reqs": 0,
+              "num_tokens": 1613,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969245.826692356
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 20538,
+        "input_tokens_inclusive": 20469,
+        "output_tokens_inclusive": 69,
+        "cache_read_tokens_reported": 20224,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 18,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 17,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:49:03.289278+00:00",
+      "ended_utc": "2026-10-08T04:49:04.777272+00:00",
+      "elapsed_seconds": 1.4880334436893463,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "1e87bd7a907931fc78aa29dc63aade0623c47836add91d39cc04aeae433fe27b",
+        "forwarded_sha256": "86854a37c0fcc56cc2f1aafd30d062fca3f2dcb6cb98133c801be1c5d6f5509f",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "1e87bd7a907931fc78aa29dc63aade0623c47836add91d39cc04aeae433fe27b",
+      "sha256": "f8f99c01ca886717e3c713ec58043ea9d564be9a26f84d5ee1457a6de6df2227",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:49:03.283432+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 173906,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969252.545765102
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 20697,
+        "input_tokens_inclusive": 20617,
+        "output_tokens_inclusive": 80,
+        "cache_read_tokens_reported": 20480,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 21,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 18,
+      "actor": "go/exercises/practice/food-chain",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:49:04.998256+00:00",
+      "ended_utc": "2026-10-08T04:49:12.528091+00:00",
+      "elapsed_seconds": 7.5298572685569525,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "f562dfc92268474b7f4391b7e53be89961c7c0430e6bfe72c2b4323cf9f24252",
+        "forwarded_sha256": "0def59aa4c0296ddae936eeba8cd7717c5c2308c6ef4099e12d14c4297fe3013",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "f562dfc92268474b7f4391b7e53be89961c7c0430e6bfe72c2b4323cf9f24252",
+      "sha256": "051b538fd209d7bd6fcb8e0e47ed7ff5a2dfefe6de2332d24d9774576a2eb7dc",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:49:04.992322+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 22788,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969254.254691346
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 21361,
+        "input_tokens_inclusive": 20873,
+        "output_tokens_inclusive": 488,
+        "cache_read_tokens_reported": 20608,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 201,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 19,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:49:32.057085+00:00",
+      "ended_utc": "2026-10-08T04:49:34.356820+00:00",
+      "elapsed_seconds": 2.2997584119439125,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "010dfb3fef1d9ceaa601e88278f920f952afac8498385d796819b85696006270",
+        "forwarded_sha256": "a74ead12ddcafa601c67ff4f84ee709d0576c8f389a488f33df54eb67b5ea046",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "010dfb3fef1d9ceaa601e88278f920f952afac8498385d796819b85696006270",
+      "sha256": "0993941fc8b317c21c2966a17e274df9be1344971e7cf49ce75c402569f32852",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:49:32.053354+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 186217,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969281.315090803
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 6803,
+        "input_tokens_inclusive": 6715,
+        "output_tokens_inclusive": 88,
+        "cache_read_tokens_reported": 0,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 21,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 20,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:49:34.429868+00:00",
+      "ended_utc": "2026-10-08T04:49:44.484328+00:00",
+      "elapsed_seconds": 10.054484890773892,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "d69c9cec1fa1dbe3bc5aecc1c378963523714fd7269522e16cb6d6856e09e706",
+        "forwarded_sha256": "68ba4511ce516f01490aa2b276cb9f163b606def2d285aed9a99d20be615ca61",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "d69c9cec1fa1dbe3bc5aecc1c378963523714fd7269522e16cb6d6856e09e706",
+      "sha256": "53757ab259ad91d7a048bbbb8efc1a72125c728a6d16f264bb8ba91179c4c189",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:49:34.425731+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 8574,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969283.687668968
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 7736,
+        "input_tokens_inclusive": 7670,
+        "output_tokens_inclusive": 66,
+        "cache_read_tokens_reported": 6336,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 9,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 21,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:49:44.527081+00:00",
+      "ended_utc": "2026-10-08T04:53:52.568990+00:00",
+      "elapsed_seconds": 248.04193146713078,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "bcab9fb60c50a3728b7d070aab861c8ba18b906a4fc8211d55d30a16617ae221",
+        "forwarded_sha256": "92d6f255c43b1eac5b1d5440dfd9f841042a98c87bc6bd8470cc8d23fcd98aec",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "bcab9fb60c50a3728b7d070aab861c8ba18b906a4fc8211d55d30a16617ae221",
+      "sha256": "bc62b9009a269eaafd65a94b4f322e143003260381c49bf0487663247a82fd5b",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:49:44.523186+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 3,
+              "num_waiting_reqs": 0,
+              "num_tokens": 54891,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969293.784948261
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 22425,
+        "input_tokens_inclusive": 10845,
+        "output_tokens_inclusive": 11580,
+        "cache_read_tokens_reported": 7680,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 11521,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 22,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:53:52.596523+00:00",
+      "ended_utc": "2026-10-08T04:55:46.991640+00:00",
+      "elapsed_seconds": 114.39513780549169,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "8f788a6f2e292d5a91277767cb5e96ebcf13f6a35e24cae7025ef1c767840d74",
+        "forwarded_sha256": "f9cb0a240af7a3d9d35193934872deba3fcd2dc983e32556b9f12c2e158d0e4f",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "8f788a6f2e292d5a91277767cb5e96ebcf13f6a35e24cae7025ef1c767840d74",
+      "sha256": "9d0ca1631d959b6f7f0ff78f38ec027aaef271d399c2e8ee1919ea55aa82fb13",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:53:52.591199+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 4,
+              "num_waiting_reqs": 2,
+              "num_tokens": 166500,
+              "num_pending_tokens": 3870,
+              "ts_tic": 12969541.85306488
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 36211,
+        "input_tokens_inclusive": 26724,
+        "output_tokens_inclusive": 9487,
+        "cache_read_tokens_reported": 22272,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 8744,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 23,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:55:47.017949+00:00",
+      "ended_utc": "2026-10-08T04:55:49.258685+00:00",
+      "elapsed_seconds": 2.240760652348399,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "eed71e8ada676e17673a90383b40d54202df30d9e70dc96d1a20a3813669090f",
+        "forwarded_sha256": "229089ec67b629995446e4e3674797d42e21ed5738415b842e2446eb796197d3",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "eed71e8ada676e17673a90383b40d54202df30d9e70dc96d1a20a3813669090f",
+      "sha256": "b8302c92f9970f8733e38e9921c7250b17223d41b41e886789a12e166e953f66",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:55:47.011825+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 3,
+              "num_waiting_reqs": 0,
+              "num_tokens": 81540,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969656.273993267
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 36390,
+        "input_tokens_inclusive": 36264,
+        "output_tokens_inclusive": 126,
+        "cache_read_tokens_reported": 36096,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 43,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 24,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:55:49.307792+00:00",
+      "ended_utc": "2026-10-08T04:55:51.170734+00:00",
+      "elapsed_seconds": 1.8629643861204386,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "e3929bf5d0b41f6524d2aaed16c7e86d5b2c341a1f855e7b953f348a3cdba9c1",
+        "forwarded_sha256": "769312f3467067a1572f66724139b03190f452615f52e73e3ded422b9b26673e",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "e3929bf5d0b41f6524d2aaed16c7e86d5b2c341a1f855e7b953f348a3cdba9c1",
+      "sha256": "a186a1dc23f18d48c027e26e29d1d2c048d08a9ff6f351a9b4c8bd12b9489b83",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:55:49.302243+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 75691,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969658.564190144
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 36555,
+        "input_tokens_inclusive": 36445,
+        "output_tokens_inclusive": 110,
+        "cache_read_tokens_reported": 36352,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 75,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 25,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:55:51.217385+00:00",
+      "ended_utc": "2026-10-08T04:56:45.675541+00:00",
+      "elapsed_seconds": 54.458178924396634,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "8b418e78767ddcfc3f3f0ef6d785a662cdf2e233588cdf973694e1f9eb20ad4c",
+        "forwarded_sha256": "3e751c4649ca59e33739472184521123f3e3ae94aab0fb4c50e8fd8160ab4a08",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "8b418e78767ddcfc3f3f0ef6d785a662cdf2e233588cdf973694e1f9eb20ad4c",
+      "sha256": "c865fe3783e6c213e0bd3a55e404e53119e211df6cb45cb76629ef4259d3286f",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:55:51.210976+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 0,
+              "num_waiting_reqs": 0,
+              "num_tokens": 0,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969660.472681377
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 38684,
+        "input_tokens_inclusive": 37178,
+        "output_tokens_inclusive": 1506,
+        "cache_read_tokens_reported": 36416,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 1405,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 26,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:56:45.725999+00:00",
+      "ended_utc": "2026-10-08T04:56:48.430970+00:00",
+      "elapsed_seconds": 2.7049926798790693,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "d2dcb3ebe79adb29d96495ea9f13f35620ff5543094892ad7196f8c6800286b8",
+        "forwarded_sha256": "b0b11136ed2a7e480529011a2a6ae546556b72414c80aad0e8ec4d251ccc6f19",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "d2dcb3ebe79adb29d96495ea9f13f35620ff5543094892ad7196f8c6800286b8",
+      "sha256": "953e78a94311b2222c1c42e3c97080860ec84cdb97f81c6bf7ded16cf5895168",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:56:45.718510+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 3,
+              "num_waiting_reqs": 0,
+              "num_tokens": 120385,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969714.980587818
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 38936,
+        "input_tokens_inclusive": 38764,
+        "output_tokens_inclusive": 172,
+        "cache_read_tokens_reported": 38656,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 90,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 27,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:56:48.492994+00:00",
+      "ended_utc": "2026-10-08T04:56:50.418948+00:00",
+      "elapsed_seconds": 1.9259770642966032,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "d9b52fd528ed3be32ec83fd507fba55feb67bfa482a212a1fc8d741b1360098c",
+        "forwarded_sha256": "f560fe0897d16c833c710897df30c325b2b04329e1ace6dbbcf00377fcd94e32",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "d9b52fd528ed3be32ec83fd507fba55feb67bfa482a212a1fc8d741b1360098c",
+      "sha256": "9dcb44571b3d933d87dabb2121808d222d7fee2ee2cbcf965f5d0fd801fbba41",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:56:48.485853+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 3,
+              "num_waiting_reqs": 0,
+              "num_tokens": 121364,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969717.748250647
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 39092,
+        "input_tokens_inclusive": 38993,
+        "output_tokens_inclusive": 99,
+        "cache_read_tokens_reported": 38912,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 47,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 28,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:56:50.473779+00:00",
+      "ended_utc": "2026-10-08T04:57:56.642593+00:00",
+      "elapsed_seconds": 66.16883908212185,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "bd7a00fd5c190c305741bfc99f2125726e32a0ed2fc770e8f385cac1b632ac38",
+        "forwarded_sha256": "dbdaa1636e35ea9b08b8505ffd479ea58fbe3c2f57085b44aa5a9fa4356a3baa",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "bd7a00fd5c190c305741bfc99f2125726e32a0ed2fc770e8f385cac1b632ac38",
+      "sha256": "7df38635d1230f433f7285333431828254eb4195acf96e6d68bc13194159637a",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:56:50.466687+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 119981,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969719.728906767
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 44740,
+        "input_tokens_inclusive": 41678,
+        "output_tokens_inclusive": 3062,
+        "cache_read_tokens_reported": 38976,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 2513,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 29,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:57:56.686039+00:00",
+      "ended_utc": "2026-10-08T04:57:58.742890+00:00",
+      "elapsed_seconds": 2.056874180212617,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "152ecfc24290ec52a3499f6594f498e20a6b426d2b3be0fab171b41987177502",
+        "forwarded_sha256": "6437573dbf47e51eeb9dce1ba70f2a7a5c6bcf8f4a8d01aa23a14ef7bafe3243",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "152ecfc24290ec52a3499f6594f498e20a6b426d2b3be0fab171b41987177502",
+      "sha256": "9c86f51bd2d3186f85c690f0684c620ff6f3ef103723d240f7669f1de42d61e7",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:57:56.678696+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 47213,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969785.940898595
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 44989,
+        "input_tokens_inclusive": 44792,
+        "output_tokens_inclusive": 197,
+        "cache_read_tokens_reported": 44544,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 162,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 30,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:57:58.790032+00:00",
+      "ended_utc": "2026-10-08T04:58:41.316893+00:00",
+      "elapsed_seconds": 42.5268842484802,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "bccdda4488a61767bb0b63a42bf5238f415361bef508c1512b87b7fd15a184d7",
+        "forwarded_sha256": "bf4bf7d2d4c1a1b5b0a75fa8d084433a4c6a39b20987e73a38c2d4d9bf3ec1a0",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "bccdda4488a61767bb0b63a42bf5238f415361bef508c1512b87b7fd15a184d7",
+      "sha256": "a49d9d2617edff49b75c3315d25e916cfc632bfb553b75a623823285bcbeaa48",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:57:58.783611+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 2,
+              "num_waiting_reqs": 0,
+              "num_tokens": 47646,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969788.045590175
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 47823,
+        "input_tokens_inclusive": 45516,
+        "output_tokens_inclusive": 2307,
+        "cache_read_tokens_reported": 44800,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 2222,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    },
+    {
+      "request": 31,
+      "actor": "sparql-university",
+      "provider_backend": "127.0.0.1:18001",
+      "provider_status": 200,
+      "started_utc": "2026-10-08T04:58:41.365353+00:00",
+      "ended_utc": "2026-10-08T04:58:50.024523+00:00",
+      "elapsed_seconds": 8.659194279462099,
+      "stream_eof": true,
+      "payload_policy": {
+        "policy": "standard Responses max_output_tokens=16384; matching identity allowed",
+        "changed_fields": [
+          "max_output_tokens"
+        ],
+        "original_sha256": "0adb8367a9b6ded868f806fa62c7867b365ac36bcfd1541e5962f3a989ba7c3f",
+        "forwarded_sha256": "6e1970343a459deb975d94defb2ca821224545b3bcf4a8ec92e6096b088f9909",
+        "output_cap": 16384,
+        "native_configuration_claim": false
+      },
+      "request_sha256": "0adb8367a9b6ded868f806fa62c7867b365ac36bcfd1541e5962f3a989ba7c3f",
+      "sha256": "6d34b2dc21b71b728535e14ae0aa55ef6ca65df70043bca8b3f3eda35afabb0c",
+      "observed_queue_before_request": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T04:58:41.357073+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 3,
+              "num_waiting_reqs": 0,
+              "num_tokens": 143647,
+              "num_pending_tokens": 0,
+              "ts_tic": 12969830.619390424
+            }
+          ]
+        }
+      ],
+      "provider_cost": {
+        "gross_usage_complete": true,
+        "gross_tokens": 48557,
+        "input_tokens_inclusive": 47902,
+        "output_tokens_inclusive": 655,
+        "cache_read_tokens_reported": 47616,
+        "cache_write_tokens_reported": 0,
+        "reasoning_tokens_reported": 185,
+        "cache_components_complete": false,
+        "error": null,
+        "generation_complete": true,
+        "provider_cost_complete": true,
+        "protocol_valid": true,
+        "protocol_violations": []
+      },
+      "source_provenance": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "model": "Qwen3.8-27B-FP8",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa",
+        "speculative_algorithm": "DFLASH",
+        "speculative_num_draft_tokens": 8,
+        "peer": "127.0.0.1:18001"
+      }
+    }
+  ],
+  "provider_POST": 31,
+  "private_root": "/tmp/solpi-g1-cal-b20f02279a06"
+}
