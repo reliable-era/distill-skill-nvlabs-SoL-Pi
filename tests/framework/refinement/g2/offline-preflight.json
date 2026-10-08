@@ -1,0 +1,62 @@
+{
+  "status": "OFFLINE_PREFLIGHT_PASS_NOT_PERFORMANCE",
+  "images": [
+    {
+      "image_id": "sha256:1fe22dc5aebfe2d740c5bded3877d9e656fd434d1d1cb68fe4aab3d2a16f81a0",
+      "exit": 0,
+      "stdout": "codex-cli 0.160.0",
+      "owned_container_absent": true
+    },
+    {
+      "image_id": "sha256:3d73526aba5c3e157473cd374780f426fa6209ad3c3633956ad55ef1ead0c676",
+      "exit": 0,
+      "stdout": "codex-cli 0.160.0",
+      "owned_container_absent": true
+    },
+    {
+      "image_id": "sha256:95b20c222db5063b990a542842c4a286fa2d82dec5abb1b4775b2d16bd8a5b0c",
+      "exit": 0,
+      "stdout": "codex-cli 0.160.0",
+      "owned_container_absent": true
+    },
+    {
+      "image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+      "exit": 0,
+      "stdout": "codex-cli 0.160.0",
+      "owned_container_absent": true
+    }
+  ],
+  "backend": [
+    {
+      "name": "jev-pi-qwen38-replica-20261004-nccl-only",
+      "id": "ba48cc04acc47ce37d11a7005df4850a62ead583cf7ea9f5b01ef401be101c65",
+      "image": "sha256:33d2e9514eaf8b9c69d041bb0eee10c7f33bc8c35aa6b9d3625319f5577f65bd",
+      "cmd_sha256": "e857aceddbce9b821dc37469837d97b1fbe5efb4897dc5b4c8a8873484aeb99b",
+      "source_pins": {
+        "dflash_worker_sha256": "5fd1e3f16c5725e4d56ac327515b56cfd06de52f94b069332d43faad7d771482",
+        "dflash_utils_sha256": "61feff7656e2e4c157e472a1140ea9525200f5003f9bf0de639b50424e776018",
+        "schedule_batch_sha256": "348cd231d705a618c3d4a80a356470f92a430a941c97b429a8b5d16336fd035c",
+        "dflash_kernel_sha256": "21f11619531f493bbe9f71d465912ca707f2d722991832e446ff65aecb40528c",
+        "output_streamer_sha256": "4f069fbba82a77360fec29330edf5f6cf3740960984c5e1d01ef4e385c90ecaa"
+      },
+      "peer": "127.0.0.1:18001"
+    }
+  ],
+  "model_advertisement": {
+    "object": "list",
+    "data": [
+      {
+        "id": "Qwen3.8-27B-FP8",
+        "object": "model",
+        "created": 1791476420,
+        "owned_by": "sglang",
+        "root": "Qwen3.8-27B-FP8",
+        "parent": null,
+        "max_model_len": 262144
+      }
+    ]
+  },
+  "model_POST": 0,
+  "original_task_graders_unchanged": true,
+  "utc": "2026-10-08T16:20:20.591291+00:00"
+}
