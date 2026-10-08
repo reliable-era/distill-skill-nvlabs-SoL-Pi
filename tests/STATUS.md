@@ -1,6 +1,6 @@
 # G1 status
 
-Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 complete under standing authorization: recovery solved food-chain and SPARQL (separate authorized retry), 31 requests / 723,545 complete tokens. Pool: HTML, TeX, food-chain, SPARQL. Fallback stopped without new calls; regex not retried. Step 4 measured accumulated reasoning/trajectory input as the dominant sink and defined candidate 1. Step 5 candidate 1 completed: 12 cells / 405 requests / 19,722,985 complete tokens. Candidate 1 has 1 solve versus No skill 2; tokens/solve ratio 1.4467. Not qualified: quality loss, no all-comparator win (Both zero solves). First non-improving candidate. Candidate 2 wave 1 completed: 6 cells / 215 requests / 9,674,526 complete tokens, 3 solves / 3 failures; worker/resources gone. Six frozen second-wave cells remain; comparison pending. Two candidates defined, one slot remains. No savings result or promotion.
+Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 complete under standing authorization: recovery solved food-chain and SPARQL (separate authorized retry), 31 requests / 723,545 complete tokens. Pool: HTML, TeX, food-chain, SPARQL. Fallback stopped without new calls; regex not retried. Step 4 measured accumulated reasoning/trajectory input as the dominant sink and defined candidate 1. Step 5 candidate 1 completed: 12 cells / 405 requests / 19,722,985 complete tokens. Candidate 1 has 1 solve versus No skill 2; tokens/solve ratio 1.4467. Not qualified: quality loss, no all-comparator win (Both zero solves). First non-improving candidate. Candidate 2 wave 1 completed: 6 cells / 215 requests / 9,674,526 complete tokens, 3 solves / 3 failures; worker/resources gone. Wave 2 is live (worker 1392260), window a5705ce: 17:44–21:44 +08, latest start 19:44; comparison pending. Two candidates defined, one slot remains. No savings result or promotion.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
@@ -51,7 +51,7 @@ All nine old Terminal-Bench tasks are development-only. No historical candidate 
 | 3c: pending tasks + fallback | 10 shell attempts; 4 model runs | 1; three failed; six model-untested | 1,760,285; complete | Startup permission fault preserved; pool 2 < 3; nominal caps frozen; G1 inconclusive |
 | 3d: startup/interruption recovery | 2 | 2 | 723,545; complete | Gate passes: four solvable tasks; caps unchanged |
 | 4: measured mechanisms | 0 | — | 0 | Candidates 1–2 defined: bounded reasoning; effect-checked shell transitions; one slot remains |
-| 5: multi-task screens | 12 starts / 405 requests | 4 / 12 | 19,722,985 complete | Candidate 1 not qualified; C2 wave 1: 6 starts / 215 requests / 3 solves / 9,674,526 tokens; 6 cells remain |
+| 5: multi-task screens | 12 starts / 405 requests | 4 / 12 | 19,722,985 complete | Candidate 1 not qualified; C2 wave 1: 6 starts / 215 requests / 3 solves / 9,674,526 tokens; wave 2 live |
 | 6: winner freeze | 0 | — | 0 | Not started |
 | 7: sealed confirmation | 0 | — | 0 | Not started; 216 cells |
 | 8: analysis | 0 | — | 0 | Not started |
