@@ -1,5 +1,5 @@
 {
-  "status": "INCOMPLETE_OR_UNCERTAIN_SCREEN",
+  "status": "COMPLETE_SCREEN",
   "candidate_index": 1,
   "plan_sha256": "36b2172f67c12cb1ec14beb11251b22982253c369d12660c33a7c43f55688a42",
   "rows": [
@@ -116,6 +116,120 @@
       "request_or_wall_cap_hit": true,
       "raw_result_sha256": "b14cfeb2c02adacd87d3f679c6822d125945babb8dbe520922407074ac1e56b1",
       "native_trace_sha256": "4bb0fdcd1dbc11b650e947a2d697e11d3120e285b5fec379c9b528509dcbe3b8"
+    },
+    {
+      "cell_id": "br1-r1-t0-candidate",
+      "task": "break-filter-js-from-html",
+      "arm": "candidate",
+      "family": "terminal-bench-2",
+      "solved": false,
+      "grade_valid": true,
+      "tests": 1,
+      "requests": 3,
+      "complete_tokens": 44005,
+      "tokens_lower_bound": 44005,
+      "cost_complete": true,
+      "provider_eof_valid": true,
+      "native_wall_seconds": 226.71911917068064,
+      "heavy_load": false,
+      "request_or_wall_cap_hit": false,
+      "raw_result_sha256": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+      "native_trace_sha256": "87f34437c006412b69e25bef801bf78c2e1db28e76ad6b3a49c61dbe7c2b03cf"
+    },
+    {
+      "cell_id": "br1-r1-t1-Both",
+      "task": "go/exercises/practice/food-chain",
+      "arm": "Both",
+      "family": "aider-polyglot",
+      "solved": false,
+      "grade_valid": true,
+      "tests": 11,
+      "requests": 18,
+      "complete_tokens": 309849,
+      "tokens_lower_bound": 309849,
+      "cost_complete": true,
+      "provider_eof_valid": true,
+      "native_wall_seconds": 122.67438926920295,
+      "heavy_load": true,
+      "request_or_wall_cap_hit": false,
+      "raw_result_sha256": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+      "native_trace_sha256": "a340263cecbe7cf1da43fd92c79f8ffa131a02149814403a9da929723d3da9b5"
+    },
+    {
+      "cell_id": "br1-r1-t2-none",
+      "task": "overfull-hbox",
+      "arm": "none",
+      "family": "terminal-bench-2",
+      "solved": true,
+      "grade_valid": true,
+      "tests": 4,
+      "requests": 23,
+      "complete_tokens": 805736,
+      "tokens_lower_bound": 805736,
+      "cost_complete": true,
+      "provider_eof_valid": true,
+      "native_wall_seconds": 519.6438710745424,
+      "heavy_load": false,
+      "request_or_wall_cap_hit": false,
+      "raw_result_sha256": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+      "native_trace_sha256": "8d3cd671ea9bb1399b4b47baca1caf1a6df4881c79c1ea01dd496422127d14f0"
+    },
+    {
+      "cell_id": "br1-r1-t0-Both",
+      "task": "break-filter-js-from-html",
+      "arm": "Both",
+      "family": "terminal-bench-2",
+      "solved": false,
+      "grade_valid": true,
+      "tests": 1,
+      "requests": 44,
+      "complete_tokens": 1917011,
+      "tokens_lower_bound": 1917011,
+      "cost_complete": true,
+      "provider_eof_valid": true,
+      "native_wall_seconds": 917.859524551779,
+      "heavy_load": false,
+      "request_or_wall_cap_hit": false,
+      "raw_result_sha256": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+      "native_trace_sha256": "4442c4c66701f883206f2a1a0eda7b98d435b2db52744b8de529da8721a93edd"
+    },
+    {
+      "cell_id": "br1-r1-t1-none",
+      "task": "go/exercises/practice/food-chain",
+      "arm": "none",
+      "family": "aider-polyglot",
+      "solved": true,
+      "grade_valid": true,
+      "tests": 11,
+      "requests": 20,
+      "complete_tokens": 313495,
+      "tokens_lower_bound": 313495,
+      "cost_complete": true,
+      "provider_eof_valid": true,
+      "native_wall_seconds": 129.43656720221043,
+      "heavy_load": false,
+      "request_or_wall_cap_hit": false,
+      "raw_result_sha256": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+      "native_trace_sha256": "7353523a624a99da9fb8aaf03d7f6977946a266229939c73e52a716ded694f2e"
+    },
+    {
+      "cell_id": "br1-r1-t2-K",
+      "task": "overfull-hbox",
+      "arm": "K",
+      "family": "terminal-bench-2",
+      "solved": true,
+      "grade_valid": true,
+      "tests": 4,
+      "requests": 19,
+      "complete_tokens": 484966,
+      "tokens_lower_bound": 484966,
+      "cost_complete": true,
+      "provider_eof_valid": true,
+      "native_wall_seconds": 294.6815105173737,
+      "heavy_load": false,
+      "request_or_wall_cap_hit": false,
+      "raw_result_sha256": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+      "native_trace_sha256": "65af7ec72374d1eec6284516fef27e0b098dae8df4ede8c0fc3667d44f7a3997"
     }
   ],
   "waves": [
@@ -127,51 +241,51 @@
       "cleanup_claim": true,
       "scheduled_cells": 6,
       "finished_cells": 6
+    },
+    {
+      "wave": 2,
+      "result_sha256": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+      "error": null,
+      "cleanup_errors": [],
+      "cleanup_claim": true,
+      "scheduled_cells": 6,
+      "finished_cells": 6
     }
   ],
-  "missing_waves": [
-    2
-  ],
-  "missing_cells": [
-    "br1-r1-t0-Both",
-    "br1-r1-t0-candidate",
-    "br1-r1-t1-Both",
-    "br1-r1-t1-none",
-    "br1-r1-t2-K",
-    "br1-r1-t2-none"
-  ],
+  "missing_waves": [],
+  "missing_cells": [],
   "aggregates": {
     "none": {
-      "cells": 1,
-      "solves": 0,
+      "cells": 3,
+      "solves": 2,
       "unknown_grades": 0,
-      "tokens_lower_bound": 3366659,
+      "tokens_lower_bound": 4485890,
       "costs_complete": true,
-      "tokens_per_solve": null,
-      "wall_seconds_all_attempts": 2290.2173021454364,
+      "tokens_per_solve": 2242945.0,
+      "wall_seconds_all_attempts": 2939.2977404221892,
       "families": {
         "terminal-bench-2": {
-          "solves": 0,
-          "cells": 1
+          "solves": 1,
+          "cells": 2
         },
         "aider-polyglot": {
-          "solves": 0,
-          "cells": 0
+          "solves": 1,
+          "cells": 1
         }
       }
     },
     "K": {
-      "cells": 2,
-      "solves": 0,
+      "cells": 3,
+      "solves": 1,
       "unknown_grades": 0,
-      "tokens_lower_bound": 5412630,
+      "tokens_lower_bound": 5897596,
       "costs_complete": true,
-      "tokens_per_solve": null,
-      "wall_seconds_all_attempts": 2858.798997523263,
+      "tokens_per_solve": 5897596.0,
+      "wall_seconds_all_attempts": 3153.480508040637,
       "families": {
         "terminal-bench-2": {
-          "solves": 0,
-          "cells": 1
+          "solves": 1,
+          "cells": 2
         },
         "aider-polyglot": {
           "solves": 0,
@@ -180,17 +294,17 @@
       }
     },
     "candidate": {
-      "cells": 2,
+      "cells": 3,
       "solves": 1,
       "unknown_grades": 0,
-      "tokens_lower_bound": 3200904,
+      "tokens_lower_bound": 3244909,
       "costs_complete": true,
-      "tokens_per_solve": 3200904.0,
-      "wall_seconds_all_attempts": 1273.2491525243968,
+      "tokens_per_solve": 3244909.0,
+      "wall_seconds_all_attempts": 1499.9682716950774,
       "families": {
         "terminal-bench-2": {
           "solves": 1,
-          "cells": 1
+          "cells": 2
         },
         "aider-polyglot": {
           "solves": 0,
@@ -199,44 +313,44 @@
       }
     },
     "Both": {
-      "cells": 1,
+      "cells": 3,
       "solves": 0,
       "unknown_grades": 0,
-      "tokens_lower_bound": 3867730,
+      "tokens_lower_bound": 6094590,
       "costs_complete": true,
       "tokens_per_solve": null,
-      "wall_seconds_all_attempts": 884.771945072338,
+      "wall_seconds_all_attempts": 1925.30585889332,
       "families": {
         "terminal-bench-2": {
           "solves": 0,
-          "cells": 1
+          "cells": 2
         },
         "aider-polyglot": {
           "solves": 0,
-          "cells": 0
+          "cells": 1
         }
       }
     }
   },
   "comparisons": {
     "none": {
-      "ratio": null,
-      "no_observed_solve_loss": null,
+      "ratio": 1.4467180425734916,
+      "no_observed_solve_loss": false,
       "target_25_percent_met": false
     },
     "K": {
-      "ratio": null,
-      "no_observed_solve_loss": null,
-      "target_25_percent_met": false
+      "ratio": 0.5502087630281898,
+      "no_observed_solve_loss": true,
+      "target_25_percent_met": true
     },
     "Both": {
       "ratio": null,
-      "no_observed_solve_loss": null,
+      "no_observed_solve_loss": true,
       "target_25_percent_met": false
     }
   },
   "qualifies_for_winner_consideration": false,
   "confirmation_acceptance_established": false,
   "limits": "One development round, three exposed tasks. No paired CI or promotion claim. Missing/unknown costs or grades block qualification; no baseline grades borrowed.",
-  "audit_utc": "2026-10-08T07:36:01.389343+00:00"
+  "audit_utc": "2026-10-08T08:21:50.972458+00:00"
 }

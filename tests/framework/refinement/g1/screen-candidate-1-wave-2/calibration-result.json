@@ -1,0 +1,4470 @@
+{
+  "contract_sha256": "1fb18d8f54f67b5f7ede399353d34a91738b36abe7affb8026e276206ddb5fe2",
+  "root": "/tmp/solpi-g1-cal-f5917d6ff2a5",
+  "rows": [
+    {
+      "task": "break-filter-js-from-html",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/break-filter-js-from-html",
+      "arm": "candidate",
+      "cell_id": "br1-r1-t0-candidate",
+      "family": "terminal-bench-2",
+      "solved": false,
+      "prompt_sha256": "ee3c4c8c5f552627ef229210c58bd4d8714603a3b2db0f2bc6f5547a031b88c6",
+      "recipe": {
+        "task": "break-filter-js-from-html",
+        "actor_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+        "grader_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "mounts": [],
+        "environment": {},
+        "guidance": "",
+        "all_arms_uniform_required": true,
+        "inference_authorized": false
+      },
+      "load_at_start": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T07:39:41.654656+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 0,
+              "num_waiting_reqs": 0,
+              "num_tokens": 0,
+              "num_pending_tokens": 0,
+              "ts_tic": 12979490.91883488
+            }
+          ]
+        }
+      ],
+      "periodic_load_samples": [
+        {
+          "kind": "start",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:39:41.654656+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 0,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 0,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979490.91883488
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:40:11.659992+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 20162,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979520.922271457
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:40:41.663053+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 13009,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979550.925308572
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:41:11.666446+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 33495,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979580.928552428
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:41:41.669752+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 17630,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979610.931727683
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:42:11.672338+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 20273,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979640.934651103
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:42:41.675908+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 24257,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979670.93867346
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:43:11.680040+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 40513,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979700.943214772
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "native_exit": 0,
+      "actor_seconds": 226.71911917068064,
+      "native_trace_sha256": "87f34437c006412b69e25bef801bf78c2e1db28e76ad6b3a49c61dbe7c2b03cf",
+      "provider_POST": 3,
+      "unknown_cost_requests": [],
+      "provider_tokens_lower_bound": 44005,
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ],
+      "queue_records": [
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:39:42.100861+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979491.362657089
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:39:44.277052+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979493.538735252
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:40:06.095190+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979515.356889544
+              }
+            ]
+          }
+        ]
+      ],
+      "capture": {
+        "output_absent_verified": true
+      },
+      "replay": {
+        "verified_actor_output_absence": true,
+        "fresh_original_baseline": true
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 2.241626748815179,
+        "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+          "mounts": [
+            "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          },
+          "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+          "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+        }
+      },
+      "reward": "0",
+      "test_events": 1,
+      "verifier_exit": 0,
+      "heavy_load": false,
+      "contention_observed": false,
+      "contention_exclusion": false,
+      "wall_time_inflation": "Possible when contention observed; not causally identifiable from load alone"
+    },
+    {
+      "task": "go/exercises/practice/food-chain",
+      "source": "/tmp/solpi-polyglot-grader-source/go/exercises/practice/food-chain",
+      "arm": "Both",
+      "cell_id": "br1-r1-t1-Both",
+      "family": "aider-polyglot",
+      "solved": false,
+      "prompt_sha256": "5bb58b33499d8680bac30fca400197daf67d291a026a7e89161b2915c4ef99fb",
+      "recipe": {
+        "actor_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+        "grader_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "mounts": [],
+        "environment": {},
+        "guidance": ""
+      },
+      "load_at_start": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T07:43:40.140418+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 1,
+              "num_waiting_reqs": 0,
+              "num_tokens": 7306,
+              "num_pending_tokens": 0,
+              "ts_tic": 12979729.402656414
+            }
+          ]
+        }
+      ],
+      "periodic_load_samples": [
+        {
+          "kind": "start",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:43:40.140418+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 7306,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979729.402656414
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:44:10.144889+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 12233,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979759.407060985
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:44:40.148131+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 15311,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979789.41129516
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:45:10.152371+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 1,
+                  "num_tokens": 67493,
+                  "num_pending_tokens": 18341,
+                  "ts_tic": 12979819.414571969
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:45:40.155959+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 24000,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979849.418056209
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "native_exit": 0,
+      "actor_seconds": 122.67438926920295,
+      "native_trace_sha256": "a340263cecbe7cf1da43fd92c79f8ffa131a02149814403a9da929723d3da9b5",
+      "provider_POST": 18,
+      "unknown_cost_requests": [],
+      "provider_tokens_lower_bound": 309849,
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ],
+      "queue_records": [
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:43:40.523214+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 7369,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979729.784719853
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:43:46.334764+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 39387,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979735.59665372
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:43:47.270803+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 39793,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979736.53268526
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:44:28.943207+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 2772,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979778.20581157
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:44:32.238015+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979781.5000916
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:44:33.416972+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 16894,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979782.679149892
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:44:37.412519+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 18747,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979786.674502589
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:44:39.583113+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979788.84497226
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:44:42.092864+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979791.35472894
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:44:43.444256+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979792.706214665
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:44:47.769712+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979797.034488445
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:45:06.355164+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 32768,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979815.61707181
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:45:15.853057+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979825.1151613
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:45:24.480271+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979833.742306393
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:45:30.314459+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979839.576543627
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:45:33.669907+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979842.931697983
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:45:35.443146+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979844.705281392
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:45:37.952161+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979847.214202529
+              }
+            ]
+          }
+        ]
+      ],
+      "verifier_exit": 1,
+      "heavy_load": true,
+      "contention_observed": true,
+      "contention_exclusion": false,
+      "wall_time_inflation": "Possible when contention observed; not causally identifiable from load alone"
+    },
+    {
+      "task": "overfull-hbox",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/overfull-hbox",
+      "arm": "none",
+      "cell_id": "br1-r1-t2-none",
+      "family": "terminal-bench-2",
+      "solved": true,
+      "prompt_sha256": "08e993b084ae348b9fc992059536f8eb3acd10795690a1fd82b847b4d77a1caa",
+      "recipe": {
+        "task": "overfull-hbox",
+        "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "grader_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "cpus": 2,
+        "memory_mb": 4096,
+        "mounts": [],
+        "environment": {},
+        "guidance": "",
+        "all_arms_uniform_required": true,
+        "inference_authorized": false
+      },
+      "load_at_start": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T07:46:02.025312+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 1,
+              "num_waiting_reqs": 0,
+              "num_tokens": 62769,
+              "num_pending_tokens": 0,
+              "ts_tic": 12979871.287092544
+            }
+          ]
+        }
+      ],
+      "periodic_load_samples": [
+        {
+          "kind": "start",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:46:02.025312+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 62769,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979871.287092544
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:46:32.030776+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 15702,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979901.292988017
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:47:02.033496+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 20271,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979931.295615705
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:47:32.037046+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 31441,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979961.299490338
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:48:02.040762+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 25820,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12979991.302881764
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:48:32.043864+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 28457,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980021.305989703
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:49:02.047153+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 49664,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980051.309387956
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:49:32.050553+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 33726,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980081.312828943
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:50:02.054238+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 37518,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980111.316880168
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:50:32.058363+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 43914,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980141.32051298
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:51:02.061909+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 49397,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980171.324078323
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:51:32.065364+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 46471,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980201.327697651
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:52:02.069145+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 49593,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980231.331557492
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:52:32.073259+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 52553,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980261.335346024
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:53:02.076044+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 55407,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980291.338290486
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:53:32.079752+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 58245,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980321.342110893
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:54:02.083737+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 60880,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980351.346092245
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:54:32.087777+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 65142,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980381.350063225
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "native_exit": 0,
+      "actor_seconds": 519.6438710745424,
+      "native_trace_sha256": "8d3cd671ea9bb1399b4b47baca1caf1a6df4881c79c1ea01dd496422127d14f0",
+      "provider_POST": 23,
+      "unknown_cost_requests": [],
+      "provider_tokens_lower_bound": 805736,
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ],
+      "queue_records": [
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:02.357672+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 62769,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979871.619486684
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:05.016902+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 69626,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979874.27879348
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:06.101001+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 70125,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979875.362873811
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:08.072052+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 72902,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979877.3339966
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:09.951432+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 73887,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979879.213377668
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:13.215085+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 76561,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979882.477333177
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:16.241872+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 77330,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979885.503850088
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:18.276310+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 78004,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979887.538130349
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:49.428632+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 85567,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979918.690565392
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:46:55.695644+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12979924.957507363
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:49:22.943114+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980072.205240713
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:49:50.260589+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 126589,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980099.522468347
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:49:52.651961+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 91677,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980101.913885156
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:49:55.499185+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980104.761302568
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:50:59.324352+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 48633,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980168.586330004
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:51:01.184381+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 49081,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980170.4462928
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:51:48.924875+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980218.18702547
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:52:37.928572+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980267.190788116
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:53:11.759648+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980301.021877581
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:53:48.070834+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 75283,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980337.332601408
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:54:08.012459+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980357.2744533
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:54:21.204342+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980370.466505509
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:54:23.558763+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980372.820676979
+              }
+            ]
+          }
+        ]
+      ],
+      "capture": {
+        "task": "overfull-hbox",
+        "capture_complete": true,
+        "artifacts": {
+          "/app/input.tex": {
+            "path": "/app/input.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "output",
+            "bytes": 5118,
+            "sha256": "850c6c30f3461ad742b07233d3b54ca0587a501fffcda6560a40309359f7f190",
+            "capture_complete": true,
+            "local_payload": "payload-0"
+          },
+          "/app/main.tex": {
+            "path": "/app/main.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 328,
+            "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+            "capture_complete": true,
+            "local_payload": "payload-1"
+          },
+          "/app/synonyms.txt": {
+            "path": "/app/synonyms.txt",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 6008,
+            "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+            "capture_complete": true,
+            "local_payload": "payload-2"
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false,
+        "unsupported_symlinks_are_not_quality_failures": true,
+        "input_witness": {
+          "unchanged": true,
+          "reason": null
+        },
+        "protected_baseline_available": true,
+        "protected_input_gate_passed": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76"
+      },
+      "replay": {
+        "task": "overfull-hbox",
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/input.tex"
+        ],
+        "witness_paths_not_replayed": [
+          "/app/main.tex",
+          "/app/synonyms.txt"
+        ],
+        "trusted_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "trusted_payload_owner": "0:0",
+        "rebuild_performed": false,
+        "official_grade_available": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 2.0512170549482107,
+        "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+          "mounts": [
+            "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          },
+          "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+          "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+        }
+      },
+      "reward": "1",
+      "test_events": 4,
+      "verifier_exit": 0,
+      "heavy_load": false,
+      "contention_observed": false,
+      "contention_exclusion": false,
+      "wall_time_inflation": "Possible when contention observed; not causally identifiable from load alone"
+    },
+    {
+      "task": "break-filter-js-from-html",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/break-filter-js-from-html",
+      "arm": "Both",
+      "cell_id": "br1-r1-t0-Both",
+      "family": "terminal-bench-2",
+      "solved": false,
+      "prompt_sha256": "ae97c08badf3e0ee8815535c5c546ef9ece2fe26a0b55fb92404d4077ad6cbe1",
+      "recipe": {
+        "task": "break-filter-js-from-html",
+        "actor_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+        "grader_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "mounts": [],
+        "environment": {},
+        "guidance": "",
+        "all_arms_uniform_required": true,
+        "inference_authorized": false
+      },
+      "load_at_start": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T07:54:52.965885+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 0,
+              "num_waiting_reqs": 0,
+              "num_tokens": 0,
+              "num_pending_tokens": 0,
+              "ts_tic": 12980402.228946645
+            }
+          ]
+        }
+      ],
+      "periodic_load_samples": [
+        {
+          "kind": "start",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:54:52.965885+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 0,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 0,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980402.228946645
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:55:22.972368+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 17623,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980432.23464136
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:55:52.975870+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 23639,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980462.238014499
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:56:22.978970+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 16572,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980492.24119268
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:56:52.982177+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 20648,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980522.244449211
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:57:22.985604+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 25187,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980552.247825412
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:57:52.989370+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 0,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 0,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980582.25166052
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:58:22.992855+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 33657,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980612.254929444
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:58:52.996203+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 32300,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980642.258241693
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:59:22.999344+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 48835,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980672.261452312
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T07:59:53.002757+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 0,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 0,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980702.264828077
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:00:23.005911+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 0,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 0,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980732.268287962
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:00:53.009576+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 49406,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980762.271818904
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:01:23.012865+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 47990,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980792.275071234
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:01:53.016364+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 52850,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980822.278182788
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:02:23.018818+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 58100,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980852.281354792
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:02:53.023161+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 63009,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980882.285401164
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:03:23.026996+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 67687,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980912.28945286
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:03:53.031392+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 72212,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980942.293467091
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:04:23.035054+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 77738,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12980972.29683914
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:04:53.038176+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 20891,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981002.300461266
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:05:23.042116+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 63742,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981032.30417813
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:05:53.045775+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 66598,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981062.307835745
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:06:23.049392+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 69129,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981092.31161562
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:06:53.053351+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 74625,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981122.315508513
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:07:23.057266+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 73514,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981152.319300013
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:07:53.060857+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 75233,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981182.322895719
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:08:23.064498+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 79559,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981212.326725127
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:08:53.068578+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 81379,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981242.330782676
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:09:23.072863+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 83422,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981272.335242815
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:09:53.077062+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 85733,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981302.339046808
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "native_exit": 0,
+      "actor_seconds": 917.859524551779,
+      "native_trace_sha256": "4442c4c66701f883206f2a1a0eda7b98d435b2db52744b8de529da8721a93edd",
+      "provider_POST": 44,
+      "unknown_cost_requests": [],
+      "provider_tokens_lower_bound": 1917011,
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ],
+      "queue_records": [
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:54:53.342881+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980402.604564724
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:54:56.073645+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980405.335701516
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:55:22.358499+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980431.672521207
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:56:42.645927+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980511.907951375
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:56:44.665629+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980513.92765407
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:56:51.367541+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980520.629666183
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:57:10.340401+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980539.6024681
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:57:14.149770+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980543.411706928
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:57:17.487589+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980546.74939473
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:57:21.863110+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980551.125130316
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:57:30.659473+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980559.921451816
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:57:39.088592+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980568.35041493
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:58:07.896307+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980597.15836435
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:58:22.150818+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980611.412792765
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:58:27.510746+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980616.772939086
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:58:46.003471+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980635.265593313
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:58:58.366928+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 571,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980647.62846888
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:59:11.662262+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980660.923975691
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:59:14.743461+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980664.005647205
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:59:28.722471+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980677.984678729
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:59:31.264199+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980680.526182968
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:59:34.074819+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 39840,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980683.336610371
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T07:59:42.130141+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980691.392075652
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:00:01.475172+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 11805,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980710.737257311
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:00:29.480465+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980738.74251188
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:00:36.461330+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980745.723328412
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:00:52.228649+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 6099,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980761.490708422
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:01:12.110494+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 1954,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980781.37247441
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:01:20.472549+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 47489,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980789.734367168
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:01:48.549489+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 51857,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980817.811524153
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:02:28.276337+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 59052,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980857.53832364
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:03:29.913971+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 14004,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980919.175955908
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:03:32.092076+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 69154,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980921.354042403
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:04:00.130508+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 73446,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980949.392446777
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:04:03.689956+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 16709,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980952.951653402
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:04:21.959955+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 18334,
+                "num_pending_tokens": 0,
+                "ts_tic": 12980971.221775694
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:04:53.193186+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 20891,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981002.455036756
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:05:27.656435+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981036.91854572
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:05:53.759809+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981063.021573205
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:07:47.444317+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981176.706256391
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:08:30.188625+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981219.450492347
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:08:45.517805+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981234.77982732
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:09:22.066772+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981271.32835746
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:09:58.881158+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981308.143124584
+              }
+            ]
+          }
+        ]
+      ],
+      "capture": {
+        "task": "break-filter-js-from-html",
+        "capture_complete": true,
+        "artifacts": {
+          "/app/out.html": {
+            "path": "/app/out.html",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "output",
+            "bytes": 256,
+            "sha256": "bb5e00f622501d18aeb31093a3d1a8ecc7d7fd665cb1628cdcea136d7e6924b3",
+            "capture_complete": true,
+            "local_payload": "payload-0"
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false,
+        "unsupported_symlinks_are_not_quality_failures": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645"
+      },
+      "replay": {
+        "task": "break-filter-js-from-html",
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/out.html"
+        ],
+        "witness_paths_not_replayed": [],
+        "trusted_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+        "actor_image_id": "sha256:1c09e20b95f90415fe2f5424335b3bca11e36ee915715b2891aeaaefec475645",
+        "trusted_payload_owner": "0:0",
+        "rebuild_performed": false,
+        "official_grade_available": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 2.1334266290068626,
+        "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+          "mounts": [
+            "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          },
+          "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+          "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+        }
+      },
+      "reward": "0",
+      "test_events": 1,
+      "verifier_exit": 0,
+      "heavy_load": false,
+      "contention_observed": false,
+      "contention_exclusion": false,
+      "wall_time_inflation": "Possible when contention observed; not causally identifiable from load alone"
+    },
+    {
+      "task": "go/exercises/practice/food-chain",
+      "source": "/tmp/solpi-polyglot-grader-source/go/exercises/practice/food-chain",
+      "arm": "none",
+      "cell_id": "br1-r1-t1-none",
+      "family": "aider-polyglot",
+      "solved": true,
+      "prompt_sha256": "5a35b31c08aa26d8f0d6fc96ec0b8ed7318c81ddf4c203d5dbf7067193f6d27a",
+      "recipe": {
+        "actor_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+        "grader_image_id": "sha256:be1506c27383f1294c827041f4705d45a7342ca01273e7fbb47ff69df875b118",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "mounts": [],
+        "environment": {},
+        "guidance": ""
+      },
+      "load_at_start": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T08:10:29.440916+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 0,
+              "num_waiting_reqs": 0,
+              "num_tokens": 0,
+              "num_pending_tokens": 0,
+              "ts_tic": 12981338.70320933
+            }
+          ]
+        }
+      ],
+      "periodic_load_samples": [
+        {
+          "kind": "start",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:10:29.440916+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 0,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 0,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981338.70320933
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:10:59.453259+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 15222,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981368.715555584
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:11:29.456617+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 15484,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981398.718813268
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:11:59.459793+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 0,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 0,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981428.722056815
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:12:29.463119+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 19221,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981458.725424148
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "native_exit": 0,
+      "actor_seconds": 129.43656720221043,
+      "native_trace_sha256": "7353523a624a99da9fb8aaf03d7f6977946a266229939c73e52a716ded694f2e",
+      "provider_POST": 20,
+      "unknown_cost_requests": [],
+      "provider_tokens_lower_bound": 313495,
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ],
+      "queue_records": [
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:10:29.894364+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981339.156257235
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:10:32.283652+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981341.545311484
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:10:32.839631+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981342.10155238
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:05.666576+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981374.928469025
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:09.623599+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981378.885571381
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:11.668657+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981380.930730373
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:13.922960+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 13878,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981383.1850378
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:15.755945+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981385.017860152
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:20.033653+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981389.296108928
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:26.373813+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981395.635716788
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:32.295837+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 7512,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981401.557784764
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:36.284707+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981405.54666111
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:39.161085+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981408.4230283
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:11:55.696885+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981424.958747841
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:12:01.408059+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981430.66989611
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:12:03.286245+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981432.548246594
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:12:25.981758+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981455.243713465
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:12:30.808231+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981460.070293458
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:12:34.380905+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981463.642981373
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:12:36.802242+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981466.064281577
+              }
+            ]
+          }
+        ]
+      ],
+      "verifier_exit": 0,
+      "heavy_load": false,
+      "contention_observed": false,
+      "contention_exclusion": false,
+      "wall_time_inflation": "Possible when contention observed; not causally identifiable from load alone"
+    },
+    {
+      "task": "overfull-hbox",
+      "source": "/tmp/solpi-refinement-terminal-bench-2/overfull-hbox",
+      "arm": "K",
+      "cell_id": "br1-r1-t2-K",
+      "family": "terminal-bench-2",
+      "solved": true,
+      "prompt_sha256": "37db875450aa0846414a4abf38b44cc24db39a17a348da514e5a30dbf8dd97f1",
+      "recipe": {
+        "task": "overfull-hbox",
+        "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "grader_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "cpus": 2,
+        "memory_mb": 4096,
+        "mounts": [],
+        "environment": {},
+        "guidance": "",
+        "all_arms_uniform_required": true,
+        "inference_authorized": false
+      },
+      "load_at_start": [
+        {
+          "port": 18001,
+          "observed_utc": "2026-10-08T08:12:57.702616+00:00",
+          "status": 200,
+          "load": [
+            {
+              "dp_rank": 0,
+              "num_reqs": 0,
+              "num_waiting_reqs": 0,
+              "num_tokens": 0,
+              "num_pending_tokens": 0,
+              "ts_tic": 12981486.964276388
+            }
+          ]
+        }
+      ],
+      "periodic_load_samples": [
+        {
+          "kind": "start",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:12:57.702616+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 0,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 0,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981486.964276388
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:13:27.710089+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 17188,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981516.97217498
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:13:57.713211+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 19897,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981546.975586971
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:14:27.716878+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 22130,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981576.979061317
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:14:57.719973+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 27069,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981606.981999105
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:15:27.723079+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 1,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 27986,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981636.984863153
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:15:57.725789+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 31265,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981666.987860342
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:16:27.729157+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 36597,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981696.991893783
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:16:57.733711+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 42056,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981726.995929528
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "periodic",
+          "observations": [
+            {
+              "port": 18001,
+              "observed_utc": "2026-10-08T08:17:27.737345+00:00",
+              "status": 200,
+              "load": [
+                {
+                  "dp_rank": 0,
+                  "num_reqs": 2,
+                  "num_waiting_reqs": 0,
+                  "num_tokens": 47475,
+                  "num_pending_tokens": 0,
+                  "ts_tic": 12981756.999461044
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "native_exit": 0,
+      "actor_seconds": 294.6815105173737,
+      "native_trace_sha256": "65af7ec72374d1eec6284516fef27e0b098dae8df4ede8c0fc3667d44f7a3997",
+      "provider_POST": 19,
+      "unknown_cost_requests": [],
+      "provider_tokens_lower_bound": 484966,
+      "cost_complete": true,
+      "backends": [
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001",
+        "127.0.0.1:18001"
+      ],
+      "queue_records": [
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:12:58.038407+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981487.299978863
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:13:00.749428+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981490.011539966
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:13:02.439345+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 11054,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981491.701269876
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:13:04.349850+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981493.611908324
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:13:05.284918+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981494.547080936
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:13:12.705046+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981501.966983875
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:13:17.211260+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981506.473370818
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:13:18.309530+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 19676,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981507.57151646
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:14:49.169315+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 25527,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981598.431060405
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:14:50.277075+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 25732,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981599.539126115
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:14:57.961359+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 27069,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981607.223286828
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:14:59.429951+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 27292,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981608.692080136
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:15:19.249306+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981628.511250565
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:15:22.127692+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 0,
+                "num_waiting_reqs": 0,
+                "num_tokens": 0,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981631.38976074
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:17:16.687988+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 1,
+                "num_waiting_reqs": 0,
+                "num_tokens": 7639,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981745.949862547
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:17:41.327352+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 49949,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981770.589370416
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:17:44.146649+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 52289,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981773.408740535
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:17:45.656080+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 52580,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981774.917905238
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "port": 18001,
+            "observed_utc": "2026-10-08T08:17:48.077907+00:00",
+            "status": 200,
+            "load": [
+              {
+                "dp_rank": 0,
+                "num_reqs": 2,
+                "num_waiting_reqs": 0,
+                "num_tokens": 53181,
+                "num_pending_tokens": 0,
+                "ts_tic": 12981777.339918127
+              }
+            ]
+          }
+        ]
+      ],
+      "capture": {
+        "task": "overfull-hbox",
+        "capture_complete": true,
+        "artifacts": {
+          "/app/input.tex": {
+            "path": "/app/input.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "output",
+            "bytes": 5152,
+            "sha256": "d49d952371adbce3927f3535f8f8c6795df452c71c21d578e416c2762beb1a42",
+            "capture_complete": true,
+            "local_payload": "payload-0"
+          },
+          "/app/main.tex": {
+            "path": "/app/main.tex",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 328,
+            "sha256": "6c07d3203fdc3fc54317fafeee9d19b576418c9de2e142a599814b2f6cb32b2f",
+            "capture_complete": true,
+            "local_payload": "payload-1"
+          },
+          "/app/synonyms.txt": {
+            "path": "/app/synonyms.txt",
+            "kind": "file",
+            "max_bytes": 33554432,
+            "purpose": "input_witness",
+            "bytes": 6008,
+            "sha256": "bc8f7cf4b41914be036e6d4666e1550971d39b2f23b7e69e3e975f4bdb387be6",
+            "capture_complete": true,
+            "local_payload": "payload-2"
+          }
+        },
+        "grading_verified": false,
+        "cost_eligibility": false,
+        "unsupported_symlinks_are_not_quality_failures": true,
+        "input_witness": {
+          "unchanged": true,
+          "reason": null
+        },
+        "protected_baseline_available": true,
+        "protected_input_gate_passed": true,
+        "stopped_actor_verified": true,
+        "image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76"
+      },
+      "replay": {
+        "task": "overfull-hbox",
+        "replay_complete": true,
+        "restored_paths": [
+          "/app/input.tex"
+        ],
+        "witness_paths_not_replayed": [
+          "/app/main.tex",
+          "/app/synonyms.txt"
+        ],
+        "trusted_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "actor_image_id": "sha256:14636c361ced3673ad2a80291343b30916af81c26d954567e6f3d9de04df3b76",
+        "trusted_payload_owner": "0:0",
+        "rebuild_performed": false,
+        "official_grade_available": false,
+        "cost_eligibility": false
+      },
+      "dependency_setup": {
+        "trusted_software_preload_complete": true,
+        "test_network_disconnected": true,
+        "network": "none",
+        "seconds": 2.0050376933068037,
+        "setup_log_sha256": "9dfea5a7a946b33ad96965364fe283723122abfcd457520b2b791040e283e2ba",
+        "target_builds": 0,
+        "target_installs": 0,
+        "original_test_script_unchanged": true,
+        "cache_inputs": {
+          "software_scope": "publicuv0.9.5/CP3137/pytest8.4.1/plugin0.3.5;notarget/test/solution",
+          "uv_root": "/tmp/solpi-tex-public-runtime-expanded/uv/uv-x86_64-unknown-linux-gnu",
+          "python_root": "/tmp/solpi-tex-public-runtime-expanded/cpython/python",
+          "mounts": [
+            "/tmp/solpi-tex-software-preflight-1d7805797e/wheels:/opt/public-wheels:ro"
+          ],
+          "wheel_hashes": {
+            "pygments-2.19.2-py3-none-any.whl": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b",
+            "pytest-8.4.1-py3-none-any.whl": "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7",
+            "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+            "iniconfig-2.1.0-py3-none-any.whl": "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760",
+            "pytest_json_ctrf-0.3.5-py3-none-any.whl": "e82fd1d69be2f92385bc33540063e5ad7b17b36de67764c84f3ceb9815a895e9",
+            "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          },
+          "setup_module_sha256": "0050e014b7dcd2e286fdae8ea0877b7888e57209eec17eee1c55e26b6f41d3ef",
+          "proof_sha256": "924402414e50a9cbc29877baba17b417c677ebbaa2ce92a35b6eef7e5f3af060"
+        }
+      },
+      "reward": "1",
+      "test_events": 4,
+      "verifier_exit": 0,
+      "heavy_load": false,
+      "contention_observed": false,
+      "contention_exclusion": false,
+      "wall_time_inflation": "Possible when contention observed; not causally identifiable from load alone"
+    }
+  ],
+  "starts": 6,
+  "POST": 127,
+  "error": null,
+  "cleanup_errors": [],
+  "owned_containers_absent": true,
+  "proxy_journal": {
+    "journal_collected": true,
+    "sha256": "446466adc8225d52fa1e0766a58c38d7fb68bfd95f7a1aa28a1b7a2e21c76399",
+    "records": [],
+    "provider_POST": 0,
+    "contains_request_payloads": false
+  },
+  "verified_solves": 3,
+  "budget_pass": false,
+  "budget_policy": "Decision amendment; evaluated independently after accounting and cap audit",
+  "not_started": [],
+  "ended_utc": "2026-10-08T08:18:03.818369+00:00",
+  "scope": "Step 5 matched development screen only; not confirmation or a savings acceptance claim"
+}
