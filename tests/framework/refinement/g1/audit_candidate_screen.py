@@ -46,7 +46,16 @@ def main():
             solved=row.get('solved');tests=row.get('test_events')
             if row['family']=='aider-polyglot':
                 text=(d/'verifier.log').read_text(errors='replace') if (d/'verifier.log').exists() else ''
-                match=re.search(r'Executed accepted tests:\s*(\d+)',text);tests=int(match.group(1)) if match else 0
+                events=[]
+                for line in text.splitlines():
+                    try:event=json.loads(line)
+                    except json.JSONDecodeError:continue
+                    if isinstance(event,dict) and event.get('Test') and event.get('Action') in ('pass','fail'):events.append(event)
+                if row['task'].startswith('go/'):
+                    tests=len(events)
+                    if 'test_events' in row:assert tests==row['test_events']
+                else:
+                    match=re.search(r'Executed accepted tests:\s*(\d+)',text);tests=int(match.group(1)) if match else 0
             grade_valid=tests is not None and tests>0 and solved in (True,False) and 'grade_error' not in row
             rows.append({'cell_id':row['cell_id'],'task':row['task'],'arm':row['arm'],'family':row['family'],'solved':solved if grade_valid else None,'grade_valid':grade_valid,'tests':tests,'requests':len(receipts),'complete_tokens':tokens if complete else None,'tokens_lower_bound':tokens,'cost_complete':complete,'provider_eof_valid':eof,'native_wall_seconds':row['actor_seconds'],'heavy_load':row['heavy_load'],'request_or_wall_cap_hit':len(receipts)>=60 or bool(row.get('actor_deadline_interrupted')),'raw_result_sha256':sha(file),'native_trace_sha256':row['native_trace_sha256']})
         waves.append({'wave':wave,'result_sha256':sha(file),'error':result['error'],'cleanup_errors':result['cleanup_errors'],'cleanup_claim':result['owned_containers_absent'],'scheduled_cells':6,'finished_cells':sum('native_exit' in r for r in result['rows'])})
