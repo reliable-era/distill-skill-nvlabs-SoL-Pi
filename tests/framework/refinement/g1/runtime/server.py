@@ -42,7 +42,11 @@ class PostHandler(http.server.BaseHTTPRequestHandler):
   try:n=int(self.headers.get('Content-Length','-1'))
   except ValueError:self.send_error(413);return
   if not 0<=n<=262144:self.send_error(413);return
-  if not self.server.busy.acquire(False):self.send_error(429);return
+  # A sequential SDK may send its next turn as soon as SSE completion is
+  # emitted, while the previous handler is still persisting its receipt.
+  # Serialize locally instead of falsely reporting provider rate limiting.
+  remaining=getattr(self.session,'deadline',time.monotonic()+120)-time.monotonic()-10
+  if not self.server.busy.acquire(timeout=max(0,min(120,remaining))):self.send_error(429);return
   timer=threading.Timer(7200,lambda:self.cutoff(self.connection));timer.start();headers_sent=False
   try:
    body=self.rfile.read(n)

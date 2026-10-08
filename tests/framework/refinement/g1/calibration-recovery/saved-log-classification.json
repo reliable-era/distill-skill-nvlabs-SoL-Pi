@@ -1,0 +1,42 @@
+{
+  "analysis_utc": "2026-10-08T04:41:25.420893+00:00",
+  "saved_logs_only": true,
+  "no_reruns_for_classification": true,
+  "rows": [
+    {
+      "task": "regex-log",
+      "native_log_sha256": "11443fa2cb460224c8c5f54f2b74fd71d722b89d7610962ec1bf12c2e3218213",
+      "saved_model_requests": 1,
+      "all_provider_receipts_200_eof": true,
+      "completed_commands": 0,
+      "terminal_event_types": [
+        "turn.completed"
+      ],
+      "classification": "Real model attempt; output-limited reasoning-only failure, not broken startup/transport",
+      "evidence": "Task-specific reasoning generated until 16382 output tokens; turn.completed, no turn.failed, no executed write/tool, verified absent artifact. The metadata warning also occurs in other runs and is not a startup failure.",
+      "retry_authorized_used": false,
+      "raw_usage_complete": false,
+      "provider_cost_complete": true,
+      "cost_evidence": "Existing source-normalized prospective-ledger receipts; raw usage-completeness flag preserved separately"
+    },
+    {
+      "task": "sparql-university",
+      "native_log_sha256": "0ca391f8b4de5dbab856f3b4680315bc14e4367ca8ae63994dc8b3141842cebc",
+      "saved_model_requests": 2,
+      "all_provider_receipts_200_eof": true,
+      "completed_commands": 2,
+      "terminal_event_types": [
+        "error",
+        "turn.failed"
+      ],
+      "classification": "Model reached and tools worked, but run was infrastructure-interrupted; eligible for one separately recorded retry",
+      "evidence": "Two successful task file-read commands then fatal SDK 429/turn.failed. Both forwarded provider requests completed status 200/EOF, no raw budget denials or body rejection journal. Owned frontend has a nonblocking semaphore that returns 429 while previous handler persists after SSE completion. That race is the supported diagnosis, not a directly logged lock observation.",
+      "retry_task_once": true,
+      "raw_usage_complete": true,
+      "provider_cost_complete": true,
+      "cost_evidence": "Existing source-normalized prospective-ledger receipts; raw usage-completeness flag preserved separately"
+    }
+  ],
+  "original_grades_and_costs_retained": true,
+  "local_fix": "Bounded serialization of next frontend request while previous receipt completes; no provider resend, no cap increase"
+}

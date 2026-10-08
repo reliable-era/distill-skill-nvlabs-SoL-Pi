@@ -3,9 +3,11 @@
 Set 2026-10-05 by the user. This replaces the 2026-10-04 goal below, whose
 ≥3/5-harness and three-family criteria could not be met under the user's
 scope override. Rationale and audit: workspace `review.md`. The goal is
-not achieved. G1 stopped operationally inconclusive on 2026-10-07 after the
-amended Step 3 window: the verified screening pool has two tasks, and six
-Aider/Go launches failed before Codex. See `STATUS.md` and the Step 3 report.
+not achieved. The user reopened G1 on 2026-10-08 with standing authorization
+and Claude supervision (workspace supervisor-policy.md). The prior operational
+stop and six zero-model startup failures remain preserved. Resume Step 3 with
+the scoped permission fix; proceed through Steps 4–9 only if its gate passes.
+See `STATUS.md` and `framework/refinement/g1/standing-authorization.md`.
 
 ## Objective
 
@@ -30,8 +32,10 @@ one harness on two benchmark families.
   this replaces the half-of-development / five-of-ten calibration solve gate.
   If fewer than three remain, attempt up to five frozen exposed, non-sealed
   Aider fixtures once in task-ID order within that window. If the resulting
-  pool still has fewer than three, stop G1 as inconclusive. No candidate run
-  is authorized. The old 600 s / 16-request budget remains retired.
+  pool still has fewer than three after actual Aider/Go model tests, stop G1 as
+  inconclusive. Standing authorization now permits candidate runs and later
+  steps once the gate passes, without changing acceptance or candidate limits.
+  The old 600 s / 16-request budget remains retired.
 
 ## Task pools
 
@@ -85,9 +89,18 @@ one harness on two benchmark families.
   before every request and every 30 seconds. Flag any observation with running
   >= 6 or waiting > 0; retain all flagged runs without causal slowdown claims.
   Do not interfere with shared workloads or change shared servers.
-  After Step 3, commit and report, then stop before Step 4. Candidate calls and
-  later stages require the specified gates and separate user approval.
-  See `G1-AUTHORIZATION.md` for the user's correction; no reservation is assumed.
+  These historical windows stay closed. The user's 2026-10-08 standing
+  authorization permits new bounded windows back to back, each committed
+  before use, and the six proven zero-model startup cells with the permission
+  fix. Saved-log-only classification permits one separate retry of SPARQL's
+  infrastructure-interrupted run; regex's real output-limited attempt is not
+  retried. Stop fallback at three verified solvable tasks. If the gate passes,
+  commit/report Step 3 and proceed through Steps 4–9 without another approval
+  stop. Ask only for a gate failing after actual Aider/Go tests, a needed goal
+  rule change, shared-workload/server risks, or a final result. Claude may
+  handle routine infrastructure fixes, windows and /goal resume on behalf of
+  the user. See standing-authorization.md under framework/refinement/g1.
+  No reservation or exclusive server use is assumed.
 - Commit after each completed stage; keep `STATUS.md` to one page in plain
   readable text. Existing controls, frozen hashes, and the rules under
   "Controls and refinement loop" below still apply.

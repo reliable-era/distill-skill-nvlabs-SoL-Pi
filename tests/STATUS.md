@@ -1,6 +1,6 @@
 # G1 status
 
-Steps 0–2 complete; all 18 selected gold/no-op pairs pass. G1 stopped operationally inconclusive: four new model runs, one new solve, six zero-call startup failures. Pool is HTML + TeX only (2 < 3). Nominal caps frozen at window end under the amended rule; no retries or Step 4.
+Steps 0–2 complete; all 18 selected gold/no-op pairs pass. G1 reopened under 2026-10-08 standing authorization and Claude supervision. Step 3 recovery: pool HTML + TeX (2); scoped startup fix committed, six zero-model cells permitted with fallback stopping at 3. One broken SPARQL run may be retried; regex is a real failure and is not retried. Nominal caps unchanged.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
