@@ -1,6 +1,6 @@
 # G1 status
 
-Steps 0–2 complete; all 18 selected gold/no-op pairs pass. Step 3 complete under standing authorization: recovery solved food-chain and SPARQL (separate authorized retry), 31 requests / 723,545 complete tokens. Pool: HTML, TeX, food-chain, SPARQL. Fallback stopped without new calls; regex not retried. Step 4 measured accumulated reasoning/trajectory input as the dominant sink and defined candidate 1. Step 5 candidate 1 completed: 12 cells / 405 requests / 19,722,985 complete tokens. Candidate 1 has 1 solve versus No skill 2; tokens/solve ratio 1.4467. Not qualified: quality loss, no all-comparator win (Both zero solves). First non-improving candidate. Candidate 2 wave 1 completed: 6 cells / 215 requests / 9,674,526 complete tokens, 3 solves / 3 failures; worker/resources gone. Wave 2 is live (worker 1392260), window a5705ce: 17:44–21:44 +08, latest start 19:44; comparison pending. Two candidates defined, one slot remains. No savings result or promotion.
+**Stopped: negative development result; G1 savings objective NOT achieved.** Steps 0–3 passed under written amendments; 18 sealed gold/no-op pairs valid; four control-solvable development tasks. Two full matched screens failed the all-comparator gate. Candidate 1 lost quality; candidate 2 beats No skill/Karpathy but costs 38.32% more per solve than Both. Stop rule fires; third slot unused. All workers/resources gone; canonical and sealed selections unchanged. No winner, confirmation or promotion. Final report/audit: `framework/refinement/g1/report.md` and `prompt-to-artifact-audit.md`.
 Scope: Codex 0.160.0, local Qwen3.8-27B-FP8, Terminal-Bench 2.0 and Aider polyglot.
 B3(a) is frozen: require a paired 95% ratio interval below 1; screen for about 25% savings.
 
@@ -50,11 +50,11 @@ All nine old Terminal-Bench tasks are development-only. No historical candidate 
 | 3b: No-skill calibration | 5 | 1; four failed; five unstarted | 4,078,674; complete | Preserved prior cohort |
 | 3c: pending tasks + fallback | 10 shell attempts; 4 model runs | 1; three failed; six model-untested | 1,760,285; complete | Startup permission fault preserved; pool 2 < 3; nominal caps frozen; G1 inconclusive |
 | 3d: startup/interruption recovery | 2 | 2 | 723,545; complete | Gate passes: four solvable tasks; caps unchanged |
-| 4: measured mechanisms | 0 | — | 0 | Candidates 1–2 defined: bounded reasoning; effect-checked shell transitions; one slot remains |
-| 5: multi-task screens | 12 starts / 405 requests | 4 / 12 | 19,722,985 complete | Candidate 1 not qualified; C2 wave 1: 6 starts / 215 requests / 3 solves / 9,674,526 tokens; wave 2 live |
-| 6: winner freeze | 0 | — | 0 | Not started |
-| 7: sealed confirmation | 0 | — | 0 | Not started; 216 cells |
-| 8: analysis | 0 | — | 0 | Not started |
-| 9: report and decision | 0 | — | 0 | Not started; canonical skill unchanged |
+| 4: measured mechanisms | 0 | — | 0 | Two defined; no third mechanism after mandatory stop |
+| 5: multi-task screens | 24 starts / 798 requests | 11 / 24 | 37,789,437 complete | Separate C1/C2 cohorts; both fail all-comparator gate; 4 cap hits retained; STOP |
+| 6: winner freeze | 0 | — | 0 | No qualified winner; not reached |
+| 7: sealed confirmation | 0 | — | 0 | All 216 cells unstarted; not authorized after stop |
+| 8: acceptance analysis | 0 | — | 0 | Per-family point ratios / paired CI / three rounds unverified |
+| 9: report and decision | 0 | — | 0 | Negative development report delivered; no acceptance or promotion |
 
 **Stop rule:** two consecutive non-improving candidates, or none meeting the screening target, means stop and report. No old stage resumes. Archived checkpoints must not be appended to.

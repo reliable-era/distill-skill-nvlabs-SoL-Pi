@@ -5,9 +5,18 @@ Set 2026-10-05 by the user. This replaces the 2026-10-04 goal below, whose
 scope override. Rationale and audit: workspace `review.md`. The goal is
 not achieved. The user reopened G1 on 2026-10-08 with standing authorization
 and Claude supervision (workspace supervisor-policy.md). The prior operational
-stop and six zero-model startup failures remain preserved. Resume Step 3 with
-the scoped permission fix; proceed through Steps 4–9 only if its gate passes.
+stop and six zero-model startup failures remain preserved. That amendment
+authorized scoped Step 3 recovery and later steps only after the gate passed;
+it did not waive acceptance or the search stop rule.
 See `STATUS.md` and `framework/refinement/g1/standing-authorization.md`.
+
+Final development disposition (2026-10-08): two complete matched candidate
+screens failed the all-comparator gate. Candidate 2 beat No skill and Karpathy
+but cost 38.32% more tokens per solve than Both. The preregistered stop rule
+ends this search; third slot unused, no winner freeze or confirmation calls,
+canonical unchanged. G1 savings acceptance is NOT achieved. See
+`framework/refinement/g1/report.md` and `prompt-to-artifact-audit.md` there.
+No further inference is authorized by this exhausted search contract.
 
 ## Objective
 

@@ -1,0 +1,96 @@
+{
+  "status": "MANDATORY_DEVELOPMENT_STOP_G1_NOT_ACHIEVED",
+  "integrity_checks": {
+    "canonical": {
+      "path": "distill-skill-nvlabs-SoL-Pi/skills/efficient-coding/SKILL.md",
+      "sha256": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
+      "unchanged": true
+    },
+    "candidate": {
+      "path": "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g1/candidates/bounded-reasoning/efficient-coding/SKILL.md",
+      "sha256": "e11948951958094ea411a5da55610c9ba8f68404d352950830a35d7c4161096d",
+      "unchanged": true
+    },
+    "terminal_selection": {
+      "path": "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g1/terminal-selection.json",
+      "sha256": "a34aace43d41c80fd5a8be2c2eed9c1df19c40ab96cef3a01dbe0bbe65347e3e",
+      "unchanged": true
+    },
+    "polyglot_selection": {
+      "path": "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g1/polyglot-selection.json",
+      "sha256": "8a33bef7e3b7cf613c1d7cd56703c6821fa3d3b0ec4bb9ef264ee7256546a74d",
+      "unchanged": true
+    },
+    "archived_checkpoint": {
+      "path": "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/continuation-checkpoint.md",
+      "sha256": "53ec4ce47dffedbdd22599acbe36d9a0fbf98a23c85015f83e3aa0125302c4e9",
+      "unchanged": true
+    },
+    "archived_requirements": {
+      "path": "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/pi-takeover/completion-requirements.md",
+      "sha256": "007347e967e4adb7cd34f798df37b8bca65d10e029ec69dd5a4ef10ced972094",
+      "unchanged": true
+    },
+    "candidate_2": {
+      "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g1/candidates/effect-checked-transitions/efficient-coding/SKILL.md",
+      "sha256": "39f7b30993b0fb4cfdc306df6eba45d1ebcb8a75955b7713f5f3f306976e8a25",
+      "unchanged": true
+    }
+  },
+  "screen_workers_terminal": [
+    957247,
+    1165232,
+    1274686,
+    1392260
+  ],
+  "owned_cleanup": [
+    {
+      "candidate": 1,
+      "wave": 1,
+      "result_sha256": "b14cfeb2c02adacd87d3f679c6822d125945babb8dbe520922407074ac1e56b1",
+      "containers_absent": true,
+      "network_absent": true
+    },
+    {
+      "candidate": 1,
+      "wave": 2,
+      "result_sha256": "52579df5f795d985784663ed8cb4304ae0f6134a9282140dc944899e9d103159",
+      "containers_absent": true,
+      "network_absent": true
+    },
+    {
+      "candidate": 2,
+      "wave": 1,
+      "result_sha256": "a2e3e6a27a15ee677a081e4badf7bb92a130529033005eed7040f76e53e196ad",
+      "containers_absent": true,
+      "network_absent": true
+    },
+    {
+      "candidate": 2,
+      "wave": 2,
+      "result_sha256": "35ab4c1d5038ff7b6d4b68457c1b897540be705336a040b682b685aeeb1d1ded",
+      "containers_absent": true,
+      "network_absent": true
+    }
+  ],
+  "scope_audit_baseline": "99fdcb3 (accepted Step 0 archival boundary)",
+  "forbidden_paths_changed_after_accepted_Step_0": [],
+  "scope_audit_initial_attempt": {
+    "baseline": "7423ef8",
+    "outcome": "Assertion failed because diff included historical uncommitted work snapshotted by accepted Step 0 archive commits 13e65d8 and 9cb6b1f. Git history inspected; no archived file was edited to repair the audit. Protected current hashes verified unchanged.",
+    "corrected_baseline": "99fdcb3"
+  },
+  "screens_complete": 2,
+  "non_improving_against_all_comparators": 2,
+  "candidate_3_not_defined_or_started": true,
+  "screen_starts": 24,
+  "screen_requests": 798,
+  "screen_complete_tokens": 37789437,
+  "screen_unknown_cost_cells": 0,
+  "winner_frozen": false,
+  "confirmation_model_calls": 0,
+  "promotion": false,
+  "g1_acceptance_verified": false,
+  "next_action": "Stop; report negative development result. Do not spend the third slot or open more windows under this exhausted search contract.",
+  "audit_utc": "2026-10-08T10:51:59.512122+00:00"
+}
