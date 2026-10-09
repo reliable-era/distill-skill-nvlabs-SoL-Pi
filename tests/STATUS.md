@@ -1,13 +1,13 @@
-# Active G2 status
+# Closed G2 status
 
-G2 active: **102 audited cells / 2,387 requests / ≥76,371,342 tokens; 38 solves / 64 failures**. Round3 30/36 complete; wave05 worker884817/resources absent, all wave costs/grades/EOF valid. Two capped failures and JS/K request97 unknown cost retained under recorded conservative ruling; original analysis retained. Final Aider wave06 live: worker **941302**, window `630893e`, 2 new starts/41 requests last check (accumulate/K). Finish final six fixed cells before family analysis; no partial-round gate/win. Frozen skills/runtime/math/G1 unchanged. Terminal locked; no shipping.
+**Negative confirmation under authorized conservative K-denominator analysis; no savings acceptance or shipping.** All108 Aider cells audited: **2,544 requests / ≥82,334,104 tokens;41 solves /67 failures**. Candidate/No skill passes (0.374763;95% [0.114493,0.854773]), but Both/K (≤1.027620; surrogate95% [0.352441,2.946979]) and candidate/K (≤0.639262; surrogate95% [0.309018,1.129367]) do not establish required gates. All observed solve-count gates pass. Original complete-cost analysis remains evidence-incomplete due to retained JS/K request97; failed conservative bounds do not prove true K ratios fail. Two capped failures retained; all workers/resources absent. G1/frozen skills/runtime/original math/canonical unchanged. Report and actual prompt-to-artifact audit: `framework/refinement/g2/report.md`, `requirements.md`.
 
-| G2 stage | Starts / requests | Solves | Complete tokens | Decision |
+| G2 stage | Starts / requests | Solves | Provider tokens | Decision |
 |---|---:|---:|---:|---|
-| Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 102 / 2,387 terminal + 2 / 41 live | 38 / 102 audited | ≥76,371,342 + pending; 1 unknown | Round3 30/36 complete; final wave06 worker941302 live |
-| Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
-| Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
+| Freeze / preregister |0 /0|—|0|75ab79c; original design/math unchanged |
+| Aider rounds 1–3 |108 /2,544|41 /108|≥82,334,104; one unknown request|Negative all-comparator confirmation; no retest |
+| Conditional Terminal |0 /0|—|0|Not eligible; unattempted, no score claim |
+| Final report / audit |0 /0|—|0|Actual108-cell audit and independent bootstrap verified; no shipment |
 
 # Closed G1 status (unchanged result)
 

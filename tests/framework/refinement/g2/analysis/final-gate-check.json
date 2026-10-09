@@ -1,0 +1,88 @@
+{
+  "independent_counter_aggregation_bootstrap_matches": true,
+  "checks": {
+    "candidate/none": {
+      "integer_5_percent_left": 11526041100,
+      "integer_5_percent_right": 29217802900,
+      "point_met": true,
+      "bootstrap_95": [
+        0.11449313967298108,
+        0.8547733844850416
+      ],
+      "undefined_replicates": 79,
+      "required": true,
+      "passes": true,
+      "relation": "="
+    },
+    "Both/K": {
+      "integer_5_percent_left": 22396758000,
+      "integer_5_percent_right": 20705037485,
+      "point_met": false,
+      "bootstrap_95": [
+        0.3524414125366057,
+        2.9469789301483997
+      ],
+      "undefined_replicates": 31,
+      "required": true,
+      "passes": false,
+      "relation": "<="
+    },
+    "candidate/K": {
+      "integer_5_percent_left": 16465773000,
+      "integer_5_percent_right": 24469589755,
+      "point_met": true,
+      "bootstrap_95": [
+        0.30901845708802045,
+        1.1293669639310413
+      ],
+      "undefined_replicates": 12,
+      "required": true,
+      "passes": false,
+      "relation": "<="
+    },
+    "candidate/Both": {
+      "integer_5_percent_left": 18112350300,
+      "integer_5_percent_right": 27659996130,
+      "point_met": true,
+      "bootstrap_95": [
+        0.29678519307827084,
+        1.1993495685071829
+      ],
+      "undefined_replicates": 21,
+      "required": false,
+      "passes": false,
+      "relation": "="
+    },
+    "K/none": {
+      "integer_5_percent_left": 13869403100,
+      "integer_5_percent_right": 22475233000,
+      "point_met": true,
+      "bootstrap_95": [
+        0.23533084790291514,
+        1.1516442299538971
+      ],
+      "undefined_replicates": 79,
+      "required": false,
+      "passes": false,
+      "relation": ">="
+    },
+    "Both/none": {
+      "integer_5_percent_left": 15677730600,
+      "integer_5_percent_right": 24722756300,
+      "point_met": true,
+      "bootstrap_95": [
+        0.19849818385735318,
+        1.5733087343152719
+      ],
+      "undefined_replicates": 98,
+      "required": false,
+      "passes": false,
+      "relation": "="
+    }
+  },
+  "analysis_sha256": "7f158098649d205dd6bec28170ce4e98f7f2ce37c5728ea10c8fc8602b084ea5",
+  "disposition": "NEGATIVE_UNDER_AUTHORIZED_BOUNDED_ANALYSIS",
+  "original_complete_cost_disposition": "EVIDENCE_INCOMPLETE",
+  "terminal_eligible": false,
+  "no_savings_acceptance": true
+}
