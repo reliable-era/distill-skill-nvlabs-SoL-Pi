@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 active: **78 audited cells / 1,834 requests / ≥57,214,119 tokens; 30 solves / 48 failures**. Round3 6/36 complete; wave01 worker244310/resources absent, all wave costs/grades/EOF valid. Prior-round72-cell boundary audited; no partial-round gate/win. One prior cap failure and JS/K request97 unknown cost remain retained under recorded conservative ruling; original analysis retained. Advance fixed round3 schedule only. Frozen skills/runtime/math/G1 unchanged. Terminal locked; no shipping.
+G2 active: **78 audited cells / 1,834 requests / ≥57,214,119 tokens; 30 solves / 48 failures**. Round3 6/36 complete; wave01 worker244310/resources absent, all wave costs/grades/EOF valid. Prior-round72-cell boundary audited; no partial-round gate/win. One prior cap failure and JS/K request97 unknown cost remain retained under recorded conservative ruling; original analysis retained. Round3 wave02 live: worker **390536**, window `992db73`, 1 new start/7 requests last check (crypto-square/No-skill). Advance fixed round3 schedule only. Frozen skills/runtime/math/G1 unchanged. Terminal locked; no shipping.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 78 / 1,834 | 30 / 78 | ≥57,214,119; 1 unknown | Round3 6/36 complete; wave01 worker/resources absent; no partial-round decision |
+| Aider rounds 1–3 | 78 / 1,834 terminal + 1 / 7 live | 30 / 78 audited | ≥57,214,119 + pending; 1 unknown | Round3 6/36 complete; wave02 worker390536 live; no partial-round decision |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
