@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 active: **60 audited cells / 1,265 requests / ≥38,243,540 tokens; 23 solves / 37 failures**. Round2 24/36 complete; wave04 worker4057363/resources absent, all six failures/full costs/grades/EOF retained. Round1 futility survived (candidate/No-skill0.259847, 5 vs2 solves); no partial-round gate or win. JS/K request97 stays unknown under committed conservative denominator ruling; original complete-cost analysis retained. Round2 wave05 live: worker **5702**, window `d61f13f`, 1 new start/3 requests last check (crypto-square/candidate). Continue fixed round2 schedule; frozen math/skills/runtime/G1 unchanged. Terminal locked; no shipping.
+G2 active: **66 audited cells / 1,459 requests / ≥45,369,513 tokens; 27 solves / 39 failures**. Round2 30/36 complete; wave05 worker5702/resources absent, all costs/grades/EOF valid. C++/No-skill60-request cap hit retained with failure/full cost. Round1 futility survived; no partial-round gate or win. JS/K request97 stays unknown under committed conservative denominator ruling; original analysis retained. Finish six remaining round2 cells before round3; frozen skills/runtime/math/G1 unchanged. Terminal locked; no shipping.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 60 / 1,265 terminal + 1 / 3 live | 23 / 60 audited | ≥38,243,540 + pending; 1 unknown | Round2 24/36 complete; wave05 worker5702 live; no partial-round decision |
+| Aider rounds 1–3 | 66 / 1,459 | 27 / 66 | ≥45,369,513; 1 unknown | Round2 30/36 complete; wave05 absent; one request-cap failure retained |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
