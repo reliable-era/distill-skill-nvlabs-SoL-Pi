@@ -1,0 +1,193 @@
+{
+  "evidence_complete": false,
+  "tasks": [
+    "rust/exercises/practice/forth",
+    "java/exercises/practice/transpose",
+    "go/exercises/practice/connect",
+    "cpp/exercises/practice/meetup",
+    "python/exercises/practice/zebra-puzzle",
+    "javascript/exercises/practice/alphametics",
+    "rust/exercises/practice/accumulate",
+    "java/exercises/practice/queen-attack",
+    "go/exercises/practice/crypto-square"
+  ],
+  "rounds": [
+    1
+  ],
+  "aggregates": {
+    "none": {
+      "cells": 9,
+      "solves": 2,
+      "tokens_lower_bound": 6782379,
+      "costs_complete": true,
+      "unknown_grades": 0,
+      "tokens_per_solve": 3391189.5,
+      "native_wall_seconds": 4100.14747049287,
+      "native_wall_per_solve": 2050.073735246435,
+      "solve_fraction": 0.2222222222222222,
+      "descriptive_wilson_95": [
+        0.06322510711784671,
+        0.5474110308930111
+      ],
+      "rounds": {
+        "1": {
+          "solves": 2,
+          "tokens": 6782379
+        }
+      }
+    },
+    "K": {
+      "cells": 9,
+      "solves": 3,
+      "tokens_lower_bound": 7225667,
+      "costs_complete": false,
+      "unknown_grades": 0,
+      "tokens_per_solve": null,
+      "native_wall_seconds": 5146.368770822883,
+      "native_wall_per_solve": 1715.4562569409609,
+      "solve_fraction": 0.3333333333333333,
+      "descriptive_wilson_95": [
+        0.1205838183869109,
+        0.6457978644196036
+      ],
+      "rounds": {
+        "1": {
+          "solves": 3,
+          "tokens": 7225667
+        }
+      }
+    },
+    "candidate": {
+      "cells": 9,
+      "solves": 5,
+      "tokens_lower_bound": 4405945,
+      "costs_complete": true,
+      "unknown_grades": 0,
+      "tokens_per_solve": 881189.0,
+      "native_wall_seconds": 2848.7960838545114,
+      "native_wall_per_solve": 569.7592167709023,
+      "solve_fraction": 0.5555555555555556,
+      "descriptive_wilson_95": [
+        0.26665129349549305,
+        0.8112214789023355
+      ],
+      "rounds": {
+        "1": {
+          "solves": 5,
+          "tokens": 4405945
+        }
+      }
+    },
+    "Both": {
+      "cells": 9,
+      "solves": 5,
+      "tokens_lower_bound": 6775810,
+      "costs_complete": true,
+      "unknown_grades": 0,
+      "tokens_per_solve": 1355162.0,
+      "native_wall_seconds": 3329.0714350361377,
+      "native_wall_per_solve": 665.8142870072276,
+      "solve_fraction": 0.5555555555555556,
+      "descriptive_wilson_95": [
+        0.26665129349549305,
+        0.8112214789023355
+      ],
+      "rounds": {
+        "1": {
+          "solves": 5,
+          "tokens": 6775810
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "candidate/none": {
+      "ratio": null,
+      "bootstrap_95": [
+        null,
+        null
+      ],
+      "undefined_replicates": 0,
+      "no_fewer_solves": null,
+      "point_5_percent_met": false,
+      "interval_below_1": false,
+      "gate": true,
+      "passes": false
+    },
+    "Both/K": {
+      "ratio": null,
+      "bootstrap_95": [
+        null,
+        null
+      ],
+      "undefined_replicates": 0,
+      "no_fewer_solves": null,
+      "point_5_percent_met": false,
+      "interval_below_1": false,
+      "gate": true,
+      "passes": false
+    },
+    "candidate/K": {
+      "ratio": null,
+      "bootstrap_95": [
+        null,
+        null
+      ],
+      "undefined_replicates": 0,
+      "no_fewer_solves": null,
+      "point_5_percent_met": false,
+      "interval_below_1": false,
+      "gate": true,
+      "passes": false
+    },
+    "candidate/Both": {
+      "ratio": null,
+      "bootstrap_95": [
+        null,
+        null
+      ],
+      "undefined_replicates": 0,
+      "no_fewer_solves": null,
+      "point_5_percent_met": false,
+      "interval_below_1": false,
+      "gate": false,
+      "passes": false
+    },
+    "K/none": {
+      "ratio": null,
+      "bootstrap_95": [
+        null,
+        null
+      ],
+      "undefined_replicates": 0,
+      "no_fewer_solves": null,
+      "point_5_percent_met": false,
+      "interval_below_1": false,
+      "gate": false,
+      "passes": false
+    },
+    "Both/none": {
+      "ratio": null,
+      "bootstrap_95": [
+        null,
+        null
+      ],
+      "undefined_replicates": 0,
+      "no_fewer_solves": null,
+      "point_5_percent_met": false,
+      "interval_below_1": false,
+      "gate": false,
+      "passes": false
+    }
+  },
+  "round_1_negative_stop": false,
+  "round_1_gate_unverifiable": true,
+  "family_accepted": false,
+  "bootstrap": {
+    "seed": 2026100911,
+    "repetitions": 20000,
+    "unit": "task; retain all rounds and matched arms",
+    "percentile_method": "nearest rank 2.5/97.5%; undefined replicates are +inf, null interval endpoint means not finite"
+  },
+  "quality_interval_note": "Wilson descriptive only; repeated task attempts are not independent population draws"
+}

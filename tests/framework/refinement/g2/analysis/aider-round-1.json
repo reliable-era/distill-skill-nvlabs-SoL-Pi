@@ -1,0 +1,222 @@
+{
+  "evidence_complete": true,
+  "tasks": [
+    "rust/exercises/practice/forth",
+    "java/exercises/practice/transpose",
+    "go/exercises/practice/connect",
+    "cpp/exercises/practice/meetup",
+    "python/exercises/practice/zebra-puzzle",
+    "javascript/exercises/practice/alphametics",
+    "rust/exercises/practice/accumulate",
+    "java/exercises/practice/queen-attack",
+    "go/exercises/practice/crypto-square"
+  ],
+  "rounds": [
+    1
+  ],
+  "aggregates": {
+    "none": {
+      "cells": 9,
+      "solves": 2,
+      "tokens_lower_bound": 6782379,
+      "costs_complete": true,
+      "unknown_grades": 0,
+      "tokens_per_solve": 3391189.5,
+      "native_wall_seconds": 4100.14747049287,
+      "native_wall_per_solve": 2050.073735246435,
+      "solve_fraction": 0.2222222222222222,
+      "descriptive_wilson_95": [
+        0.06322510711784671,
+        0.5474110308930111
+      ],
+      "rounds": {
+        "1": {
+          "solves": 2,
+          "tokens": 6782379
+        }
+      }
+    },
+    "K": {
+      "cells": 9,
+      "solves": 3,
+      "tokens_lower_bound": 7225667,
+      "costs_complete": false,
+      "unknown_grades": 0,
+      "tokens_per_solve": null,
+      "native_wall_seconds": 5146.368770822883,
+      "native_wall_per_solve": 1715.4562569409609,
+      "solve_fraction": 0.3333333333333333,
+      "descriptive_wilson_95": [
+        0.1205838183869109,
+        0.6457978644196036
+      ],
+      "rounds": {
+        "1": {
+          "solves": 3,
+          "tokens": 7225667
+        }
+      },
+      "tokens_per_solve_lower_bound": 2408555.6666666665,
+      "tokens_relation": ">=",
+      "tokens_per_solve_relation": ">="
+    },
+    "candidate": {
+      "cells": 9,
+      "solves": 5,
+      "tokens_lower_bound": 4405945,
+      "costs_complete": true,
+      "unknown_grades": 0,
+      "tokens_per_solve": 881189.0,
+      "native_wall_seconds": 2848.7960838545114,
+      "native_wall_per_solve": 569.7592167709023,
+      "solve_fraction": 0.5555555555555556,
+      "descriptive_wilson_95": [
+        0.26665129349549305,
+        0.8112214789023355
+      ],
+      "rounds": {
+        "1": {
+          "solves": 5,
+          "tokens": 4405945
+        }
+      }
+    },
+    "Both": {
+      "cells": 9,
+      "solves": 5,
+      "tokens_lower_bound": 6775810,
+      "costs_complete": true,
+      "unknown_grades": 0,
+      "tokens_per_solve": 1355162.0,
+      "native_wall_seconds": 3329.0714350361377,
+      "native_wall_per_solve": 665.8142870072276,
+      "solve_fraction": 0.5555555555555556,
+      "descriptive_wilson_95": [
+        0.26665129349549305,
+        0.8112214789023355
+      ],
+      "rounds": {
+        "1": {
+          "solves": 5,
+          "tokens": 6775810
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "candidate/none": {
+      "ratio": 0.2598465818557176,
+      "bootstrap_95": [
+        0.12249060026117473,
+        null
+      ],
+      "undefined_replicates": 2084,
+      "no_fewer_solves": true,
+      "point_5_percent_met": true,
+      "interval_below_1": false,
+      "gate": true,
+      "passes": false,
+      "true_ratio_relation_to_reported": "=",
+      "bootstrap_interpretation": "Original paired task-cluster bootstrap 95% ratio interval"
+    },
+    "Both/K": {
+      "ratio": 0.5626450817620021,
+      "bootstrap_95": [
+        0.2033807825129315,
+        1.5059985270428173
+      ],
+      "undefined_replicates": 495,
+      "no_fewer_solves": true,
+      "point_5_percent_met": true,
+      "interval_below_1": false,
+      "gate": true,
+      "passes": false,
+      "true_ratio_relation_to_reported": "<=",
+      "bootstrap_interpretation": "Paired 95% interval for conservative upper-bound surrogate; NOT exact equal-tailed interval for unknown true ratio"
+    },
+    "candidate/K": {
+      "ratio": 0.3658578509084352,
+      "bootstrap_95": [
+        0.11248380881171856,
+        null
+      ],
+      "undefined_replicates": 501,
+      "no_fewer_solves": true,
+      "point_5_percent_met": true,
+      "interval_below_1": false,
+      "gate": true,
+      "passes": false,
+      "true_ratio_relation_to_reported": "<=",
+      "bootstrap_interpretation": "Paired 95% interval for conservative upper-bound surrogate; NOT exact equal-tailed interval for unknown true ratio"
+    },
+    "candidate/Both": {
+      "ratio": 0.6502462436225337,
+      "bootstrap_95": [
+        0.3623447794006553,
+        1.2837279221869027
+      ],
+      "undefined_replicates": 27,
+      "no_fewer_solves": true,
+      "point_5_percent_met": true,
+      "interval_below_1": false,
+      "gate": false,
+      "passes": false,
+      "true_ratio_relation_to_reported": "=",
+      "bootstrap_interpretation": "Original paired task-cluster bootstrap 95% ratio interval"
+    },
+    "K/none": {
+      "ratio": 0.7102391850018014,
+      "bootstrap_95": [
+        0.32520138769879176,
+        null
+      ],
+      "undefined_replicates": 2084,
+      "no_fewer_solves": true,
+      "point_5_percent_met": true,
+      "interval_below_1": false,
+      "gate": false,
+      "passes": false,
+      "true_ratio_relation_to_reported": ">=",
+      "bootstrap_interpretation": "Paired 95% interval for lower-bound surrogate; no upper-bound acceptance interpretation"
+    },
+    "Both/none": {
+      "ratio": 0.3996125843159163,
+      "bootstrap_95": [
+        0.17063202279829212,
+        null
+      ],
+      "undefined_replicates": 2084,
+      "no_fewer_solves": true,
+      "point_5_percent_met": true,
+      "interval_below_1": false,
+      "gate": false,
+      "passes": false,
+      "true_ratio_relation_to_reported": "=",
+      "bootstrap_interpretation": "Original paired task-cluster bootstrap 95% ratio interval"
+    }
+  },
+  "round_1_negative_stop": false,
+  "round_1_gate_unverifiable": false,
+  "family_accepted": false,
+  "bootstrap": {
+    "seed": 2026100911,
+    "repetitions": 20000,
+    "unit": "task; retain all rounds and matched arms",
+    "percentile_method": "nearest rank 2.5/97.5%; undefined replicates are +inf, null interval endpoint means not finite"
+  },
+  "quality_interval_note": "Wilson descriptive only; repeated task attempts are not independent population draws",
+  "raw_evidence_complete": false,
+  "bounded_comparator_cells": [
+    "g2-aider-r1-t5-K"
+  ],
+  "analysis_eligible_under_supervisor_ruling": true,
+  "evidence_complete_definition": "Complete mathematical inputs for conservative surrogate under recorded ruling; NOT complete raw provider costs/EOF. See raw_evidence_complete.",
+  "analysis_policy": "SUPERVISOR_K_LOWER_BOUND; not original complete-cost preregistration",
+  "missing_cost_estimated": false,
+  "source_evidence": {
+    "audit_sha256": "3c92e93295acef2b3cbdd4f0cfa33e84a0f93a7795fa8fcbc5c1005701c354ab",
+    "notes_sha256": "3ce6dca5efa2fdfd3162520dbad8e528d30d70e969c23954e0345f93fc30ec2e",
+    "adapter_sha256": "0a98ab3622f34607ef23222a857c00e8f5b5cd6e01c7b703c84e8180dc185797",
+    "frozen_analysis_sha256": "c76bad21d82e150819e72e1951c5c0e0a5ff0bd0990d97517110a7f4acd3c5d2"
+  }
+}

@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 resumed after observation-provider outage, not experimental stop. **34 audited cells / 800 requests / ≥24,696,490 tokens; 13 solves / 21 failures**. Wave06 worker/resources absent. Wave07 worker **3842753** live, window `cec6cb3`, final two fixed round1 cells (2 starts/19 requests last ledger check). JS/K request97 cost stays unknown, never estimated/rerun. Supervisor ruling recorded before gate: K lower-bound denominator yields conservative ≤ candidate/K and Both/K ratios; raw evidence remains incomplete. Original frozen analysis retained alongside explicit bounded adapter; candidate/No-skill unchanged, no early acceptance. Skills/runtime/schedule/G1 unchanged; no shipping.
+G2 round1 **36 unique cells / 830 requests / ≥25,189,801 tokens; 15 solves / 21 failures**, original grades valid, workers/resources absent. Mandatory futility survived: candidate/No-skill **0.259847**, **5 vs2 solves**; no acceptance and all three required intervals fail at round1. Independent rounds2/3 pending. JS/K request97 stays unknown, never estimated/rerun; supervisor ruling committed before gate supports conservative ≤ K-denominator ratios. Raw accounting incomplete, bounded analysis eligible, original complete-cost analysis retained separately. Frozen math/skills/runtime/schedule/G1 unchanged; Terminal locked and no shipping.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 34 / 800 terminal + 2 / 19 live | 13 / 34 audited | ≥24,696,490 + pending; 1 unknown | Wave07 worker3842753; gate at36 with explicit K-bound ruling |
+| Aider rounds 1–3 | 36 / 830 | 15 / 36 | ≥25,189,801; 1 unknown | Round1 futility survived under recorded ruling; no early success; rounds2/3 pending |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 

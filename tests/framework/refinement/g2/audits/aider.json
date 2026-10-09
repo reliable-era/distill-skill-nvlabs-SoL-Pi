@@ -647,6 +647,44 @@
       "cap_hit": false,
       "result_sha256": "fd4818fb8f9179a7d115c526ce784ed2ef93d4a7dcda75bc288ade5dce539dab",
       "native_trace_sha256": "44df318734075642c89f16fa12c07dc823af5528f05ed17b2f373168e33b7254"
+    },
+    {
+      "cell_id": "g2-aider-r1-t4-Both",
+      "task": "python/exercises/practice/zebra-puzzle",
+      "round": 1,
+      "arm": "Both",
+      "family": "aider-polyglot",
+      "solved": true,
+      "grade_valid": true,
+      "tests": 2,
+      "cost_complete": true,
+      "tokens_lower_bound": 241713,
+      "provider_eof_valid": true,
+      "requests": 15,
+      "native_wall_seconds": 111.66472893953323,
+      "heavy_load": false,
+      "cap_hit": false,
+      "result_sha256": "9538da43ba3ba9d2f04e4a34c7e9fa2cec054603ff70ae3c8a8026c89e2771fe",
+      "native_trace_sha256": "a2c623e331ca8a98e80c165462df187f90fc06a222b429f57ba49e330f2e5613"
+    },
+    {
+      "cell_id": "g2-aider-r1-t4-candidate",
+      "task": "python/exercises/practice/zebra-puzzle",
+      "round": 1,
+      "arm": "candidate",
+      "family": "aider-polyglot",
+      "solved": true,
+      "grade_valid": true,
+      "tests": 2,
+      "cost_complete": true,
+      "tokens_lower_bound": 251598,
+      "provider_eof_valid": true,
+      "requests": 15,
+      "native_wall_seconds": 130.5640127826482,
+      "heavy_load": false,
+      "cap_hit": false,
+      "result_sha256": "9538da43ba3ba9d2f04e4a34c7e9fa2cec054603ff70ae3c8a8026c89e2771fe",
+      "native_trace_sha256": "e348cdca48c3f79914efa2c4a7db685d7c5853ecaf27da59c390ff393da1e653"
     }
   ],
   "waves": [
@@ -694,11 +732,16 @@
       "error": null,
       "cleanup_errors": [],
       "owned_cleanup": true
+    },
+    {
+      "wave": "aider-r1-w07",
+      "result_sha256": "9538da43ba3ba9d2f04e4a34c7e9fa2cec054603ff70ae3c8a8026c89e2771fe",
+      "error": null,
+      "cleanup_errors": [],
+      "owned_cleanup": true
     }
   ],
   "missing_cells": [
-    "g2-aider-r1-t4-Both",
-    "g2-aider-r1-t4-candidate",
     "g2-aider-r2-t1-Both",
     "g2-aider-r2-t1-candidate",
     "g2-aider-r2-t1-K",
@@ -774,7 +817,7 @@
   ],
   "all_observed_evidence_valid": false,
   "acceptance_established": false,
-  "utc": "2026-10-09T12:47:16.102203+00:00",
+  "utc": "2026-10-09T12:53:40.474133+00:00",
   "repair_sidecars": [
     {
       "sidecar": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g2/waves/aider-r1-w04/grade-and-accounting-repair.json",
