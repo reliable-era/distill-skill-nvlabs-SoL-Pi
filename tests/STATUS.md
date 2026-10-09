@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 active; candidate/analysis/schedule/runtime unchanged. **28 cells / 691 requests / ≥22,672,065 tokens; 7 solves / 21 failures**. Wave05 complete and audited; all workers/resources absent. One prior unknown request cost (JS/K request97) remains; grade-only exact-artifact replay passed nine tests, raw error preserved, no model retry. Complete eight remaining fixed round-1 cells; accounting gap blocks acceptance/complete-roster gate unless recovered, otherwise honest inconclusive at36. Wave06 live: worker **2359020**, window `2c93b79`, 1 new start / 11 requests at last check (crypto-square/Both); six next frozen cells, then two remain to36. No G1 rewrite, token imputation, substitution or shipping.
+G2 resumed after observation-provider outage, not experimental stop. **34 audited cells / 800 requests / ≥24,696,490 tokens; 13 solves / 21 failures**. Wave06 worker/resources absent. Wave07 worker **3842753** live, window `cec6cb3`, final two fixed round1 cells (2 starts/19 requests last ledger check). JS/K request97 cost stays unknown, never estimated/rerun. Supervisor ruling recorded before gate: K lower-bound denominator yields conservative ≤ candidate/K and Both/K ratios; raw evidence remains incomplete. Original frozen analysis retained alongside explicit bounded adapter; candidate/No-skill unchanged, no early acceptance. Skills/runtime/schedule/G1 unchanged; no shipping.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 28 / 691 terminal + 1 / 11 live | 7 / 28 known | ≥22,672,065 + pending; 1 unknown | Wave06 worker2359020; round-1 gate at36 only |
+| Aider rounds 1–3 | 34 / 800 terminal + 2 / 19 live | 13 / 34 audited | ≥24,696,490 + pending; 1 unknown | Wave07 worker3842753; gate at36 with explicit K-bound ruling |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
