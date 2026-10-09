@@ -1,11 +1,11 @@
 # Active G2 status
 
-G2 round1 **36 unique cells / 830 requests / ≥25,189,801 tokens; 15 solves / 21 failures**, original grades valid, workers/resources absent. Mandatory futility survived: candidate/No-skill **0.259847**, **5 vs2 solves**; no acceptance and all three required intervals fail at round1. Independent rounds2/3 pending. JS/K request97 stays unknown, never estimated/rerun; supervisor ruling committed before gate supports conservative ≤ K-denominator ratios. Raw accounting incomplete, bounded analysis eligible, original complete-cost analysis retained separately. Round2 wave01 live: worker **3855677**, window `cf048dd`, 1 new start/14 requests last verified (transpose/Both). Frozen math/skills/runtime/schedule/G1 unchanged; Terminal locked and no shipping.
+G2 round1 **36 unique cells / 830 requests / ≥25,189,801 tokens; 15 solves / 21 failures**, original grades valid, workers/resources absent. Mandatory futility survived: candidate/No-skill **0.259847**, **5 vs2 solves**; no acceptance and all three required intervals fail at round1. Independent rounds2/3 pending. JS/K request97 stays unknown, never estimated/rerun; supervisor ruling committed before gate supports conservative ≤ K-denominator ratios. Raw accounting incomplete, bounded analysis eligible, original complete-cost analysis retained separately. Round2 wave01 complete and audited: 6 cells/162 requests/4,803,436 complete tokens, 3 solves/3 failures; worker3855677/resources absent. Cumulative **42 cells/992 requests/≥29,993,237 tokens; 18 solves/24 failures**. Advance only remaining fixed round2 schedule; no new partial-round gate. Frozen math/skills/runtime/schedule/G1 unchanged; Terminal locked and no shipping.
 
 | G2 stage | Starts / requests | Solves | Complete tokens | Decision |
 |---|---:|---:|---:|---|
 | Freeze / preregister | 0 / 0 | — | 0 | Committed 75ab79c; offline preflight verified; candidate/Both informational |
-| Aider rounds 1–3 | 36 / 830 terminal + 1 / 14 live | 15 / 36 audited | ≥25,189,801 + pending; 1 unknown | Round1 futility survived; independent round2 wave01 worker3855677 live; no acceptance |
+| Aider rounds 1–3 | 42 / 992 | 18 / 42 | ≥29,993,237; 1 unknown | Round2 6/36 complete, worker/resources absent; no partial-round decision |
 | Conditional Terminal | 0 / 0 | — | 0 | Locked until Aider passes; 108 conditional |
 | Final report / audit | 0 / 0 | — | 0 | Pending; no acceptance claim |
 
