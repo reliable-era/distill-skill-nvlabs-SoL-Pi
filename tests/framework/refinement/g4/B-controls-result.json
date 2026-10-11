@@ -1,0 +1,414 @@
+{
+  "rows": [
+    {
+      "task": "fix-git",
+      "image_id": "sha256:b041e51b3fd55da33dc43648fcfb28f4887374a8676c77b0836923422e7fde29",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-76fd882f17db",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/fix-git/nop",
+          "inspect_sha256": "43e8aa573903227b6e9da049897d67ca0618537c38f359c1c8081c963f4af1eb",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "cef0030bd8441ab80cfa32dca3fbb26e30e32c832bdb5a5a269297b4cda4459d"
+          },
+          "reward": "0",
+          "test_events": 2,
+          "ctrf_sha256": "9efce2178d182e52536da2704161886158d77991352f7b8b3a7e8af568b8d99b",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-2edd404a0d83",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/fix-git/gold",
+          "inspect_sha256": "19aca2e3ca2d160322a5d3a45f3d1818f2f08c8c451a44826c54b0da566df68a",
+          "oracle": {
+            "exit_code": 0,
+            "log_sha256": "ec8cd807c5a7c26bc132a4bc5f0a29b388a08dcda97a11894e0b7bfb14f0241d"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "48789d542c21a99176e77afb1932c9d5afa537153e64214f0e3895a133c74ea0"
+          },
+          "reward": "1",
+          "test_events": 2,
+          "ctrf_sha256": "09a9af7a84850dacd6791e2fc1976b5e4094c8884fc0a552791cc7c141779317",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true,
+      "seconds": 12.250564174726605
+    },
+    {
+      "task": "gpt2-codegolf",
+      "image_id": "sha256:f4771870b08b96c63feb567c49bcc2c2b4deefd0fc3acab5ccb781ed4fc492a6",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-dbcfa68699ab",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/gpt2-codegolf/nop",
+          "inspect_sha256": "280eadd90710c1fff52672c957df9b7818b01d673748bcaa3abfef297ff17ae6",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "0e366bdbbdd3a8231d6fa2e4ef6f374b0103675f0a306b56b1e00c3fed11b4ff"
+          },
+          "reward": "0",
+          "test_events": 1,
+          "ctrf_sha256": "ec41a885ae8b85390fb58b019653f87110beca97abcd3ccf5d85f01a999bb25f",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-8e50af10befa",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/gpt2-codegolf/gold",
+          "inspect_sha256": "7d61db79d62beda6e1e2f64994b88a112a049ce2c0499d6e08775c8561b20f77",
+          "oracle": {
+            "exit_code": 0,
+            "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "269b1b82eb5a82084bee77c4a2c3c691231c6b96f19d8796181e28258a334eab"
+          },
+          "reward": "1",
+          "test_events": 1,
+          "ctrf_sha256": "220f7c3b4b9d966b67799b5b98e1a00d2faa4a40fcc727ffc8ea569ef210bbfc",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true,
+      "seconds": 47.73720934800804
+    },
+    {
+      "task": "chess-best-move",
+      "image_id": "sha256:0977c69064c0e9d25a2267d99794290653e3683349a52e974c6f171e4293828f",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-caa17b1d695b",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/chess-best-move/nop",
+          "inspect_sha256": "ef388cb5e626dbbb1b0c8ea4f774e4067c9c375cc3cbb021795217356df764d9",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "136a0e89aa0cc7320c4fa91e968d49ead29a47544db4d680bd3c7a3d71d180e3"
+          },
+          "reward": "0",
+          "test_events": 1,
+          "ctrf_sha256": "458face9d8bed9a52ec9517800fe43b89d53b8aa8c84b32661411e0a68f5dae5",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-177b12809a06",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/chess-best-move/gold",
+          "inspect_sha256": "6aac84535251f2d856d0a959552eaca3d06b2fef265ebd63b152548b10a66200",
+          "oracle": {
+            "exit_code": 0,
+            "log_sha256": "a6dcc82d20e0beb278c8eebefcd5c82c613aee92adb0ba2565f14e08d6a88832"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "6f580cc5c8734c9127addd55b7fead3b1bfa7da7aa7dcbd03992c21e4655980d"
+          },
+          "reward": "1",
+          "test_events": 1,
+          "ctrf_sha256": "1426d1afff3575b2596c7ae43b6459d10b52f0fde626aada021ba6c22c9d107d",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true,
+      "seconds": 66.39455333910882
+    },
+    {
+      "task": "git-multibranch",
+      "image_id": "sha256:ec6eeb02cecf35faf5badd75646ab0dd2e02cab484638b413ccd4606a2e2ef7d",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-4f9864cdbe2f",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/git-multibranch/nop",
+          "inspect_sha256": "02665a44de76484075469921bead4c1f1b0614af22fe82d75a9c05be842d02c0",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "37d4b6b9efcb6f449f0b4bf29af30ef40a6bdb04c28f9e2c11115360551cfdbc"
+          },
+          "reward": "0",
+          "test_events": 1,
+          "ctrf_sha256": "8be68a72d5c84d5e6363fb4b9911232235acb49963fbd4a51c44232164a03e52",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-ad6906253c4f",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/git-multibranch/gold",
+          "inspect_sha256": "d1868a632dd667594daafe7ed14e9421c7f7eaa3e665e006cfa06269a8013aa7",
+          "oracle": {
+            "exit_code": 127,
+            "log_sha256": "94c964a65b4ab2dbd2fa18b05e98fb6faca1b0d91af723dc3d7a3fffbac5a448"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "3a0c5221af31582805631b6a407de8d09b4330e2adf5431e6087e5c880c150ed"
+          },
+          "reward": "1",
+          "test_events": 1,
+          "ctrf_sha256": "3647c7d52b41407a68c05b1fdaab460a566c4d1f845cd648d07af8056769c0b8",
+          "valid_expected_reward": false,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false,
+      "seconds": 71.57305579446256
+    },
+    {
+      "task": "polyglot-rust-c",
+      "image_id": "sha256:42e1c101034156ab6a0cbefc63ee654ab7fccb668e1580a090abba89244f6a93",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-b4b0a97c0d07",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/polyglot-rust-c/nop",
+          "inspect_sha256": "0c2746e226afedeafa1bf4d120eee2f83495d4d154f6784bf1061ed3c7e5ac8d",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "9b33f746d07d5ce7166dfd67933041ff8712633415376e294b4418a2a695d46a"
+          },
+          "reward": "0",
+          "test_events": 1,
+          "ctrf_sha256": "b87c4d4a49d62fda5f2202a9b6ca840fbd148fe2c8da255ff71fd86a3d8d6d9f",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-adabb1fec570",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/polyglot-rust-c/gold",
+          "inspect_sha256": "e8214921605e968a3827f17a862942096c0c4698f33337642082c35f20d463a6",
+          "oracle": {
+            "exit_code": 0,
+            "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "acec8f74d9a2a861e0b901d8a953ab5a78a4ca471d54a7c476dd816cdc16c876"
+          },
+          "reward": "1",
+          "test_events": 1,
+          "ctrf_sha256": "fd5fb44e831b3fc711b2a6fa9a03b81c6088249b3435f9c400508400d0aed4b7",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true,
+      "seconds": 42.50436154380441
+    },
+    {
+      "task": "merge-diff-arc-agi-task",
+      "image_id": "sha256:1994f7ed8975cf2a616e00daa45fc556e842418f8040398053f064cf0bba3c69",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-26124375c53f",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/merge-diff-arc-agi-task/nop",
+          "inspect_sha256": "3d545fa37d4b01451b2722608d7b0306f146abf47ae33957502013ad8f1f11e5",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "2b704a7903092da9b5ea89ea6730a39e90aee118964cd5496b585f07900aa630"
+          },
+          "reward": "0",
+          "test_events": 5,
+          "ctrf_sha256": "d5623f6ca958b6dbd158fb34f7a4ed91a14f09621c47c82fe0c59c9515f22c4d",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-5ce35f9f0e00",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/merge-diff-arc-agi-task/gold",
+          "inspect_sha256": "35e5a87961fda8ab8b407ea5d97d8778631484847b8adf8ea3374ff00e945ac6",
+          "oracle": {
+            "exit_code": 0,
+            "log_sha256": "50f1e91446ac88de1977d7ed8d6d6b6a4246ae7428f97dfe082224633d217d2d"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "c18eee52c644c2498c2deaffa1b1f654a46cec53ad5151f97e7daae116c287d6"
+          },
+          "reward": "1",
+          "test_events": 5,
+          "ctrf_sha256": "86e4f5ffa1fbc1d4d9f38cf1924cb5aea6e68d512478dc0a52dd79ed8181797c",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true,
+      "seconds": 70.71037001535296
+    },
+    {
+      "task": "tune-mjcf",
+      "image_id": "sha256:9b16b1b03963fede220751f194eaa4e59c22a7341290a5a26fef85cbbaf09f14",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-2d0e25604734",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/tune-mjcf/nop",
+          "inspect_sha256": "b5b38df161e3b079bd95c18f6df57a74827f06ce3d514083a4a9c062eada89c4",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "ad64ec3616b35e1db007529613440120b41827c459b86082d29cc9319b15970f"
+          },
+          "reward": "0",
+          "test_events": 4,
+          "ctrf_sha256": "392a9185a342d299d717e58410e8d0508c2ade86d7ab8dd61f4eb3b90fc23b04",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-b64c156ffe4f",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/tune-mjcf/gold",
+          "inspect_sha256": "23b6287bcb1d348b51d4eefec2175222bde6b536f6e34e168bc7c0c16b51f0b1",
+          "oracle": {
+            "exit_code": 0,
+            "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "701ecfa6a092ed22c54ad1ae850c6d0d217b933eafd9e44197e07f1a44555985"
+          },
+          "reward": "1",
+          "test_events": 4,
+          "ctrf_sha256": "d85857fc875075ef36f924a7f16983c27b36db67eedbc88d152aaeba35d59b80",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true,
+      "seconds": 28.682874001562595
+    },
+    {
+      "task": "sqlite-with-gcov",
+      "image_id": "sha256:b9726244945382a5d73839440e391c88aceeb52346805eebd8712eb1b6ba8b3a",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-d8df31fe15cb",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/sqlite-with-gcov/nop",
+          "inspect_sha256": "90b23fea99fe83e09bc136c5b06c679d3c90dcb3b265ce21941306fef263b161",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "52ed5c85612cf77b36b78eb419956eeb7a5809c08857d835d62bf8473daaa1e8"
+          },
+          "reward": "0",
+          "test_events": 3,
+          "ctrf_sha256": "a44215ae45e24f7b04ed9d74d2bbd84e1641d68010d9aad1d14341fa14b1b505",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-78ce98657bcb",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/sqlite-with-gcov/gold",
+          "inspect_sha256": "1a492f2483ff558566065d42db49519b7634ee7c645bd4415ef7845fd8e0adef",
+          "oracle": {
+            "exit_code": 0,
+            "log_sha256": "f7a88f32129dda6367982bdc3c55f417c4c8e93395060ed2d4f7fa07cddec5fc"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "a52fe347497b7b1f5913b72e002dac9cf0e6b547ac420354a6775e24c8260cc9"
+          },
+          "reward": "1",
+          "test_events": 3,
+          "ctrf_sha256": "642263e1c2621f6cfc7e8ad7787939d80e743c93e1cefc407ebaae52f3ea08c6",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true,
+      "seconds": 92.08548844791949
+    },
+    {
+      "task": "fix-ocaml-gc",
+      "image_id": "sha256:64b43d0dbddfbc0291d03486954c3def53d5d19c67426c8f758631d5dd9d7d85",
+      "controls": [
+        {
+          "mode": "nop",
+          "container_name": "solpi-g4-B-control-07c0af4a8235",
+          "expected_reward": "0",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/fix-ocaml-gc/nop",
+          "inspect_sha256": "0fe5d0862731957f7c542422a69a78114a3cc363668766bc7c256d430e92837b",
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "78beed95bfbfced3b7d54dc83abbc5444a6ef69ba2191640ffd30858376df62b"
+          },
+          "reward": "0",
+          "test_events": 1,
+          "ctrf_sha256": "07e6e052a4245c87f96a5004ad46769b20f37a79699a57ad03e43c84a7b5fc0d",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        },
+        {
+          "mode": "gold",
+          "container_name": "solpi-g4-B-control-9161de850e84",
+          "expected_reward": "1",
+          "private_root": "/tmp/solpi-g4-B-controls-453169786e33/fix-ocaml-gc/gold",
+          "inspect_sha256": "42393d83d845d6a4e39b5219b4d2153f6e1b62a49f6568633ea252dabf6a336a",
+          "oracle": {
+            "exit_code": 0,
+            "log_sha256": "629d6c07a477417ac69810c16e1c1e72015979b4ef448178df8ac448c14035bf"
+          },
+          "verifier": {
+            "exit_code": 0,
+            "log_sha256": "21b21814e4b6c58efda4b0a156d75936448ee0f96000bab1eedeac7784df0ead"
+          },
+          "reward": "1",
+          "test_events": 1,
+          "ctrf_sha256": "82bb2b994393cb21b273cfdcf4ed4fa51c5eb1c806c82b1f3ccac20be3f931e2",
+          "valid_expected_reward": true,
+          "owned_container_absent": true
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true,
+      "seconds": 845.6893417909741
+    }
+  ],
+  "model_calls": 0,
+  "all_nine_completed": true,
+  "valid_pairs": 8,
+  "private_root": "/tmp/solpi-g4-B-controls-453169786e33",
+  "seconds": 845.6949399076402
+}
