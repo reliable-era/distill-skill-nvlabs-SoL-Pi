@@ -1,0 +1,337 @@
+{
+  "rows": [
+    {
+      "task": "chess-best-move",
+      "image_id": "sha256:0977c69064c0e9d25a2267d99794290653e3683349a52e974c6f171e4293828f",
+      "repo_digests": [
+        "alexgshaw/chess-best-move@sha256:bb447f94d9e2a8ed879f85c85a514b213b7418f9fe11fd7b2428a0b0e436e647"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/chess-best-move:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 900.0
+      },
+      "verifier": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "6ba25be4e291a4ad04ae42b2dddefcdaef67ca45ca9d5dce661a2e517b19ce7a",
+        "README.md": "bdf339ea1848c81e884f0f811803ecdeaa3dc741e997bda53841f2816fbafd18",
+        "task.toml": "d8f01d3c84ed5836edbb49c6c3b3cc7b5b96d951cf01a0987467c9206fb22f9e",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "d5697e7a11399e45f105bf43f40e5c95746d6a8601965ea6935a52b59bbbfa2b",
+        "environment/make.py": "46b95008df62fac7ca7fd7260baf36519de5718b91a4bde485c8d9b7d37f17c1",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "a540714e0156fc14564badedcb48d1f7b69a4b457d876036535439b30cb8f286",
+        "solution/solve.sh": "53b5c5e2278ca915b0930eedfd44565ca84ef21c7346fd6601434484cf76151f"
+      }
+    },
+    {
+      "task": "fix-git",
+      "image_id": "sha256:b041e51b3fd55da33dc43648fcfb28f4887374a8676c77b0836923422e7fde29",
+      "repo_digests": [
+        "alexgshaw/fix-git@sha256:61e431c00c58df652287aadce5457634d9f9330cfdd153ebdf2802df0d540119"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/fix-git:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 900.0
+      },
+      "verifier": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "f98174e47ba5ce040f6fad22ef3cbca4dd27b3192868ea5d082077222c3ec4e8",
+        "README.md": "818af93ec53de56cffbd33da3377f5bd013786e1232cc7fa47f7dff6cca9a93f",
+        "task.toml": "25507ef6cbd6bf73c8bfdfbe7f7ba136224c8453fbba2de2993c639e2a61ad8b",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "dfd64a46955909f58d1b562ea233c3cace75195bbef5d75cd6b599f3b8967bb7",
+        "environment/setup.sh": "99125cf2e362f2f4a864ba2f55c2f0e9f0aa0641fed588cef588184fcc192de2",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "a8a6f51eb0d7c4ebdf0813c8f0b645edf29c995f1f9faf2aca3886a6713043f3",
+        "solution/solve.sh": "4789fa74e92e5b7b893c4b8637c26db2b6458b2136edfc3e686cc278dfc23630",
+        "environment/resources/patch_files/about.md": "2e09260b011012f9f7f491cd02809903449924cf8f825acd369fb8990b04e768",
+        "environment/resources/patch_files/default.html": "fb3fad17b83338002f5fd6a99ea1ec3a662cea570f9fff9240b8abc1861be655"
+      }
+    },
+    {
+      "task": "fix-ocaml-gc",
+      "image_id": "sha256:64b43d0dbddfbc0291d03486954c3def53d5d19c67426c8f758631d5dd9d7d85",
+      "repo_digests": [
+        "alexgshaw/fix-ocaml-gc@sha256:66a1e2293076c9ef27a118611b3089a6284fdf467fd4675592d0cce7d11e5b0b"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/fix-ocaml-gc:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 3600.0
+      },
+      "verifier": {
+        "timeout_sec": 3600.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "a8867e4f8a537b3b1622ca2b80cbb278eeba772ce95602ed735c2581d23b2dec",
+        "README.md": "888ba7d498896d756fa3c0b7ba47075f69ec2aabaa2f217169e9d392f572de2c",
+        "task.toml": "423aab8ce6f44ce9349dcde647ca3cbd09afd5ac023910c25699ed687a3c71b2",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "36d7fd9cc31b3b26eb56079f2a2a0be8cf577df7c9d8f77a1b08249805d5a0df",
+        "tests/test.sh": "9a2114729f090f351fb8e8bf055f013f299946108d032e845f5d01e725fa2719",
+        "tests/test_outputs.py": "e6031cd07c9962f024f2ae232d0645126bd399df0cd8d3df6a46475b68aa4959",
+        "solution/solve.sh": "0582baecb730dc76448563ffda39eb3756a31e76f0756d2a5c0ffcbcad049f2f"
+      }
+    },
+    {
+      "task": "git-multibranch",
+      "image_id": "sha256:ec6eeb02cecf35faf5badd75646ab0dd2e02cab484638b413ccd4606a2e2ef7d",
+      "repo_digests": [
+        "alexgshaw/git-multibranch@sha256:5bc449921c138295f6ddd8dca2977319fee2ce523811dbe56cec4ca663385fb5"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/git-multibranch:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 900.0
+      },
+      "verifier": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "54014a38d7526d65faeb6c11d9b7ed3d4a5cb5d973d68d3da3b68b8c0289e125",
+        "README.md": "3b9473429381d9eacabab498cb4a8915aa2bca24fa857ef862e5991d3f81f113",
+        "task.toml": "4b9981604578a31205257cca36a28d0c89c9d8d1058541330acd11d3f8d65f82",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "88d9a9f4fef1ae7fddf632799dedf5a2fb6489460a93b610c33dd8b122982821",
+        "environment/default.conf": "a3a4c5d0ac9cfe79b0510e4225c80fa3988c27fbac13622505886bf66449e04a",
+        "tests/test.sh": "ddbde3eea6ffa8fda105cbd86597a53bd409f41e13223900aa27e77a84b6b155",
+        "tests/test_outputs.py": "f03c6867663b8e8fb7899df51ee4df26411fab62ed491753964b801e591d16c5",
+        "solution/solve.sh": "300ca96b79db8d77f14742109aaf76048aafc4644ced750b1bc5c2761e8d0175"
+      }
+    },
+    {
+      "task": "gpt2-codegolf",
+      "image_id": "sha256:f4771870b08b96c63feb567c49bcc2c2b4deefd0fc3acab5ccb781ed4fc492a6",
+      "repo_digests": [
+        "alexgshaw/gpt2-codegolf@sha256:537e7bd26b02db5c761230515fa09dc05f89403c6737fbdae4b5793ebc2c7066"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/gpt2-codegolf:20251031",
+        "cpus": 1,
+        "memory_mb": 8192,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 900.0
+      },
+      "verifier": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "1c8de5f0365407d57fbec968bbeb76cba2648a02fbb2045d323d2798ff5dbccc",
+        "README.md": "c39fd8e0c2a3ecc44d51f90e8fa922c280fc791ec0a4c8578893bca1b1780dc3",
+        "task.toml": "a3fa186d438a42af5909384b8dc0dfdc2ab7a3a68af9159e9d00464988895af0",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "e1f57eb413b92c10565a8100e559f633c4f4ec5c0bcdd5a755a0eb92eb4de02f",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "6232bb719c5a4ce0b2d59f1fd9c298b2d78986c550e0de37ff319e3309fe4795",
+        "solution/solve.sh": "8c288a53bdf566d7278a35eda08d6baaf50883b0e1917ceb638b823cf6456b70"
+      }
+    },
+    {
+      "task": "merge-diff-arc-agi-task",
+      "image_id": "sha256:1994f7ed8975cf2a616e00daa45fc556e842418f8040398053f064cf0bba3c69",
+      "repo_digests": [
+        "alexgshaw/merge-diff-arc-agi-task@sha256:bfc2a235f2ceea64ffb1ffc5529c2acebf570bff61f3668f0e5669ef570c17d4"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/merge-diff-arc-agi-task:20251031",
+        "cpus": 1,
+        "memory_mb": 4096,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 900.0
+      },
+      "verifier": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "2d826479873e5ac1c94c1f802763bf85c22bb04624384685ebdf6b153fe0278e",
+        "README.md": "d6b48ed0890b12eb68f72c12cd02689bd6bfae2191dd2688949cde6fe77f6a94",
+        "task.toml": "6ced40e06b43b169857509765eb7f07791db558f9437cc7367d2536771c2ca5b",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "4a03ae6f0c60b9c2f45c33f0413b5aa75c9811870254e3ff1968fd0119173fc6",
+        "tests/test.sh": "c9052954cd6ce25c4a375a2fb48e765b1efa5b39f7991b93993cc793af8ab9d2",
+        "tests/test.json": "20f116a6b718bbf4874bbe203d15a5c0f85a1d88cb622e2d7529c7e4fb2d4c28",
+        "tests/test_outputs.py": "2754ba6c5c5f75c9db5ed2c5729d9f5d7e21cb7fdb18aa0c65abdc3e7e85c149",
+        "solution/solve.sh": "48d4becc41fda5b6063fe96947474ffe778a29d6924d7b2bb235eb61e5ce555d",
+        "environment/task-deps/bundle1.bundle": "a759f9b6ffc1a2eee50778d72a1899ad7d724becab84fa30e7aac71ee9e443a5",
+        "environment/task-deps/bundle2.bundle": "75e3e3916a01c980a03715de67b16c729e03661d94a694b5f4223d229bd6593a",
+        "environment/task-deps/examples.json": "5426569e4ea078bbb74039ec712a2d4d35f1f9fa3a5f26bf2a0de4a2c8ef5db8"
+      }
+    },
+    {
+      "task": "polyglot-rust-c",
+      "image_id": "sha256:42e1c101034156ab6a0cbefc63ee654ab7fccb668e1580a090abba89244f6a93",
+      "repo_digests": [
+        "alexgshaw/polyglot-rust-c@sha256:3ba84f0e138a4b65e58c53f920a0fc852571e6402901c3bdbb876e9dab6e6c5e"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/polyglot-rust-c:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 900.0
+      },
+      "verifier": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "b0fbcd99a97fc886e4e198b6189b977409dada47cae0a87ac7dc185b440b2355",
+        "README.md": "6e091c5e7d2c1634b4527361385563f6afee3d9b184ec5c587f686fdd2b1504d",
+        "task.toml": "3c41e83437068c62a3fdff74641899146e34907aefd9e47346213f47caeb82de",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "d8a3dc4dc57fa9dac783a029aef3b3094d99a6fdbff57e5201a5fb16e84dee0d",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "baed5e4d0cc0e5809ff41a7df1815d18c65c708a3a3f264428e1cda11ce692f9",
+        "solution/solve.sh": "f3b101d9528efb3997937fa134b10e3773521bf83d576dab3183e977d12c9638"
+      }
+    },
+    {
+      "task": "sqlite-with-gcov",
+      "image_id": "sha256:b9726244945382a5d73839440e391c88aceeb52346805eebd8712eb1b6ba8b3a",
+      "repo_digests": [
+        "alexgshaw/sqlite-with-gcov@sha256:f986820b00c74ce75db7288719d364df313fde7c7917bea6eb6352a08431a89f"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/sqlite-with-gcov:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 900.0
+      },
+      "verifier": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "b6ba9acf62292bc2a0bab40d4805b3abceededbb0ccd4477a1ce9ccc42c14dd9",
+        "README.md": "ba1a1f05c7152b9a4d355382212fa4d8e6829f604fee4b8a4f3aa4a7a603bac6",
+        "task.toml": "9a0da96990ee2ecbf4d92682a4c5301a53db45fc6e2d46ac7d45d3b8ee7fe523",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "f4be72b64b710962e5d9d5236716b4823ec72401a5379423039101cc00a73cd6",
+        "tests/test.sh": "4770437ea96c3cc84684b4f99d55fb148fcac09f9ea1e8ef49de487716e6c334",
+        "tests/test_outputs.py": "b165f8504bb93a901451b80c4ea73344b71b6af377ebdabef745fbcdd1d2993b",
+        "solution/solve.sh": "e054f4092eb4b2895866a89c4d4e3591dda0fa28bd9d825ca60403f359a8f027",
+        "environment/vendor/sqlite-fossil-release.tar.gz.sha256": "3574015c694bd2465942ff17731db62293fea6ec7d90f34be09de1445fcdb18a",
+        "environment/vendor/sqlite-fossil-release.tar.gz": "7c02b6cc04dddc2f90e63d43ab8900cb694ba4665f4e4ac877ec724733125229"
+      }
+    },
+    {
+      "task": "tune-mjcf",
+      "image_id": "sha256:9b16b1b03963fede220751f194eaa4e59c22a7341290a5a26fef85cbbaf09f14",
+      "repo_digests": [
+        "alexgshaw/tune-mjcf@sha256:56c197739db2db79562384581fcc9d3d71e6c171bf052104b1a7ee0282e7c3cf"
+      ],
+      "environment": {
+        "build_timeout_sec": 600.0,
+        "docker_image": "alexgshaw/tune-mjcf:20251031",
+        "cpus": 1,
+        "memory_mb": 2048,
+        "storage_mb": 10240,
+        "gpus": 0,
+        "allow_internet": true,
+        "mcp_servers": [],
+        "env": {}
+      },
+      "agent": {
+        "timeout_sec": 900.0
+      },
+      "verifier": {
+        "timeout_sec": 900.0,
+        "env": {}
+      },
+      "source_hashes": {
+        "instruction.md": "c7fb299b6c6d6c9a2dcd95c5938e6f902ddad1cb02aee875d369cb7eae584b1f",
+        "README.md": "fb39a996f9133f2d9bac5df777ba228d810fa942e6746615c5bba04499cdfe70",
+        "task.toml": "27b6d4e5a23761cc1a24a695125d891be74a2930fb83a02a66221db0244b08b3",
+        ".gitignore": "9a8dd8d9b6c3adb8e9e56328df27deef859a3e98fffc9b8133c8b22207c25953",
+        "environment/Dockerfile": "9b78295361faa3a84399ee97e95e85a8f1032bb5c4cb609013335b51f5d0d006",
+        "tests/test.sh": "343a0604775b960f47cb7ed04bc0c4f9e23f8439c4ba44d6027f0cb245327e97",
+        "tests/model_ref.xml": "f3561cbea5bb024886e9627e795c8f60a3984bd749853073bbd433d0e49bf0b7",
+        "tests/test_outputs.py": "3f20e17eb16bb51e236a9321ddc1331345838467473c5a6faf7e1c762af10bbc",
+        "solution/solve.sh": "afe5dcb32992bcd89893af943ccf0d0e38c1d43627e15adc6abd8df1f6c11d54",
+        "environment/src/eval.py": "9943ce3b2d6a15e7198946d07044e58d3b1b4d56cabb05327d324e7ced64140d",
+        "environment/src/model_ref.xml": "f3561cbea5bb024886e9627e795c8f60a3984bd749853073bbd433d0e49bf0b7"
+      }
+    }
+  ],
+  "model_calls": 0,
+  "original_image_manifest_sha256": "ac52afa94780d730019cb402f7d57484bb08f8d0bdb2abb72a1f18760f9faf51",
+  "source_revision": "2fd12b88aafdd04a52c298e3940bcb189f9766d6",
+  "all_cached": true
+}
