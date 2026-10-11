@@ -27,7 +27,7 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 | Aider polyglot (sealed) | Karpathy | 10/27 | ≥1.98M | 0 |
 | Aider polyglot (sealed) | Both skills (candidate 2 + Karpathy) | 11/27 | 2.04M | 0 |
 
-**Sample sizes:** SWE-bench Verified has **6 unique issues × 2 rounds = 12 attempts per configuration**. Our synthetic diagnostics have **10 fixtures**: 5 development × 2 rounds + 5 held-out × 3 rounds = **25 attempts per configuration**. Aider polyglot has **9 sealed tasks × 3 rounds = 27 attempts per configuration**. Fractions in the table and plot count solved attempts, not unique tasks.
+**Sample sizes:** SWE-bench Verified has **6 unique issues × 2 rounds = 12 attempts per configuration**. Our synthetic diagnostics have **10 fixtures**: 5 development × 2 rounds + 5 held-out × 3 rounds = **25 attempts per configuration**. Aider polyglot has **9 sealed tasks × 3 rounds = 27 attempts per configuration**. **These are small subsets, not full benchmark runs:** 6 of 500 SWE-bench Verified issues and 9 of 225 Aider polyglot exercises (drawn from 211 eligible). Terminal-Bench 2.0 was planned (9 sealed tasks from 78 eligible) but not run, because the Aider stage did not pass. Fractions in the table and plot count solved attempts, not unique tasks.
 
 **Ours** is the latest shipped revision; the Aider rows instead test candidate 2, which was not shipped. **Both skills** loads Karpathy and ours separately. Tokens include failed attempts; `k` = thousand, `M` = million, `≥` = incomplete lower bound. Unmeasured or unverified items are marked **TBD**.
 
