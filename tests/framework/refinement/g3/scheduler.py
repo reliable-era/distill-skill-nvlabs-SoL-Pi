@@ -94,7 +94,7 @@ class Queue:
 def window(marker):
  commit,stamp=subprocess.check_output(['git','log','-1','--format=%H|%cI','--',str(marker)],cwd=H,text=True).strip().split('|');t=datetime.datetime.fromisoformat(stamp);return dict(commit=commit,start=t.isoformat(),end=(t+datetime.timedelta(hours=4)).isoformat(),latest=(t+datetime.timedelta(hours=2)).isoformat())
 def main():
- p=argparse.ArgumentParser();p.add_argument('wave');p.add_argument('--round',type=int,required=True,choices=(1,2,3));args=p.parse_args();plan=load_plan();prior=prior_attempts()
+ p=argparse.ArgumentParser();p.add_argument('wave');p.add_argument('--round',type=int,required=True,choices=(1,2,3));p.add_argument('--max-primary',type=int,default=72);args=p.parse_args();assert 1<=args.max_primary<=784;plan=load_plan();prior=prior_attempts()
  if args.round>1:
   expected={c['cell_id'] for c in plan['schedule'] if c['round']<args.round};assert all(next_attempt(c,prior) is None for c in plan['schedule'] if c['cell_id'] in expected)
   gate=json.loads((H/'analysis/round1.json').read_text());assert gate['round1_survived'] and not gate['round1_negative_stop']
@@ -102,7 +102,7 @@ def main():
  marker=H/'windows'/(args.wave+'.md');assert marker.exists();w=window(marker);latest=datetime.datetime.fromisoformat(w['latest']).timestamp();assert time.time()<latest
  out=H/'waves'/args.wave;out.mkdir(parents=True,exist_ok=True);assert not (out/'launch.json').exists()
  identity=check_model();root=pathlib.Path('/tmp/solpi-g3-'+args.wave+'-'+uuid.uuid4().hex[:10]);root.mkdir(mode=0o700)
- cells=[c for c in plan['schedule'] if c['round']==args.round and next_attempt(c,prior) is not None]
+ cells=[c for c in plan['schedule'] if c['round']==args.round and next_attempt(c,prior) is not None][:args.max_primary]
  save(out/'launch.json',dict(pid=__import__('os').getpid(),root=str(root),window=w,plan_sha256=sha(H/'plan.json'),model_identity=identity,round=args.round,scheduled_cells=[c['cell_id'] for c in cells],utc=datetime.datetime.now(datetime.timezone.utc).isoformat()))
  q=Queue(plan,cells,prior,out,root,latest);q.persist();error=None
  try:
