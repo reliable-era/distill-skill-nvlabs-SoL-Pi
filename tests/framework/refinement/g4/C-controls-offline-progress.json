@@ -1431,6 +1431,437 @@
       ],
       "model_calls": 0,
       "valid_pair": true
+    },
+    {
+      "task": "matplotlib__matplotlib-26113",
+      "image_id": "sha256:a74186e03876e851501fa41ebf6f0807b48f72dcb2a5c160dcfc5bc2a834d881",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/matplotlib__matplotlib-26113/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 812,
+              "passed": 812,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.matplotlib__matplotlib-26113.g4-a2927cc389854054",
+              "image_id": "sha256:a74186e03876e851501fa41ebf6f0807b48f72dcb2a5c160dcfc5bc2a834d881",
+              "inspect_sha256": "f9894422ce5106c509fdc47044e83f005cead7bd5ac1c76ec383dcab36ae4ea6"
+            },
+            {
+              "original_base_commit_verified": "5ca694b38d861c0e24cd8743753427dda839b90b"
+            },
+            {
+              "name": "sweb.eval.matplotlib__matplotlib-26113.g4-a2927cc389854054",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 90.06252532079816,
+          "artifacts": {
+            "container-inspect.json": "f9894422ce5106c509fdc47044e83f005cead7bd5ac1c76ec383dcab36ae4ea6",
+            "owned.json": "ba1654c9d811f5c7c2e104579c078c9535e23c354d38426438a9ddc0c140b0f7",
+            "logs/evaluation/g4-a2927cc389854054/g4-control/matplotlib__matplotlib-26113/run_instance.log": "22caeb14b691c170a005bf13fb97bdcc41f7746d37a4bbe815841cb5f102f2f6",
+            "logs/evaluation/g4-a2927cc389854054/g4-control/matplotlib__matplotlib-26113/report.json": "f55bd11809ac61bc91551e0164a07c28367b2ecadb3b47984593ee1bc82fa390",
+            "logs/evaluation/g4-a2927cc389854054/g4-control/matplotlib__matplotlib-26113/test_output.txt": "74f6b2a3d8d2a0ea686514c5105d77ca4b14f026395b23f7bc45475457fa74f6",
+            "logs/evaluation/g4-a2927cc389854054/g4-control/matplotlib__matplotlib-26113/eval.sh": "20050f42ebc6e573e245418ccfdb507af17c9bf1e89ede754239f711a193a17b"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/matplotlib__matplotlib-26113/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 812,
+              "passed": 812,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.matplotlib__matplotlib-26113.g4-59557d27e2c548ab",
+              "image_id": "sha256:a74186e03876e851501fa41ebf6f0807b48f72dcb2a5c160dcfc5bc2a834d881",
+              "inspect_sha256": "2178b82241cce4d4252703281b46c7ab811d469c85553de0c4e5239527518894"
+            },
+            {
+              "original_base_commit_verified": "5ca694b38d861c0e24cd8743753427dda839b90b"
+            },
+            {
+              "name": "sweb.eval.matplotlib__matplotlib-26113.g4-59557d27e2c548ab",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 89.33138681948185,
+          "artifacts": {
+            "container-inspect.json": "2178b82241cce4d4252703281b46c7ab811d469c85553de0c4e5239527518894",
+            "owned.json": "e05fc6428008edec3dbc679684468200dc37f65c753d7518681afee6986f6c41",
+            "logs/evaluation/g4-59557d27e2c548ab/g4-control/matplotlib__matplotlib-26113/patch.diff": "19289b1c984a6a351dd0f0f737ec91cf37ff8dde6251f67950b00bc21cf068ba",
+            "logs/evaluation/g4-59557d27e2c548ab/g4-control/matplotlib__matplotlib-26113/run_instance.log": "ec68903c0b6deb7e579b0b2a7fa2ea63ccbc6efdad7ab9917f37fb2c333214e4",
+            "logs/evaluation/g4-59557d27e2c548ab/g4-control/matplotlib__matplotlib-26113/report.json": "ae92a829cd465c339e173b372c2c0f47ac01a3dff96fbcdf4288b1b987eba818",
+            "logs/evaluation/g4-59557d27e2c548ab/g4-control/matplotlib__matplotlib-26113/test_output.txt": "eb24bdaecb954cdedd119e29b73d001d09dad795066405259161f34fee5ec89d",
+            "logs/evaluation/g4-59557d27e2c548ab/g4-control/matplotlib__matplotlib-26113/eval.sh": "20050f42ebc6e573e245418ccfdb507af17c9bf1e89ede754239f711a193a17b"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "scikit-learn__scikit-learn-10844",
+      "image_id": "sha256:b6eb25f28d261bfbac6e16a17be6fe36f6a8c087aa4198d832670dfa4ef7b1e3",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/scikit-learn__scikit-learn-10844/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 16,
+              "passed": 16,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-10844.g4-ca0b5db30dfe4cff",
+              "image_id": "sha256:b6eb25f28d261bfbac6e16a17be6fe36f6a8c087aa4198d832670dfa4ef7b1e3",
+              "inspect_sha256": "ee3b40fef660ce63bb570854326caed9c7fffa14c626156d70610484cfd5f4f9"
+            },
+            {
+              "original_base_commit_verified": "97523985b39ecde369d83352d7c3baf403b60a22"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-10844.g4-ca0b5db30dfe4cff",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.555349707603455,
+          "artifacts": {
+            "container-inspect.json": "ee3b40fef660ce63bb570854326caed9c7fffa14c626156d70610484cfd5f4f9",
+            "owned.json": "9eec2a63afb63134093523fc0716babbdb192499a36df773bb2f09f9976d5e16",
+            "logs/evaluation/g4-ca0b5db30dfe4cff/g4-control/scikit-learn__scikit-learn-10844/run_instance.log": "7bb5cf6cf9011a23a85570418647a07a9695f1af209442cc20fd3abc288c979d",
+            "logs/evaluation/g4-ca0b5db30dfe4cff/g4-control/scikit-learn__scikit-learn-10844/report.json": "625e8b803d44f2a15ebc71d8ff4a4cc423c72904cfaa6bfb3e267e98f2a1a46c",
+            "logs/evaluation/g4-ca0b5db30dfe4cff/g4-control/scikit-learn__scikit-learn-10844/test_output.txt": "c1953d71c0e10ccec94b7d62b7fde4ebeea11c97f34ed233832e62c6e3ae08da",
+            "logs/evaluation/g4-ca0b5db30dfe4cff/g4-control/scikit-learn__scikit-learn-10844/eval.sh": "c0e487efc6ee86435fe81d7a7b8cc93361c294a5de8de4147542256cffd25f7e"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/scikit-learn__scikit-learn-10844/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 16,
+              "passed": 16,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-10844.g4-16478d69d30e4cad",
+              "image_id": "sha256:b6eb25f28d261bfbac6e16a17be6fe36f6a8c087aa4198d832670dfa4ef7b1e3",
+              "inspect_sha256": "67c9c2cfad60c1e6effb94144643b6265ec2d4a0e24a9f0593c3bde4c1fbf42a"
+            },
+            {
+              "original_base_commit_verified": "97523985b39ecde369d83352d7c3baf403b60a22"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-10844.g4-16478d69d30e4cad",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.22800077870488,
+          "artifacts": {
+            "container-inspect.json": "67c9c2cfad60c1e6effb94144643b6265ec2d4a0e24a9f0593c3bde4c1fbf42a",
+            "owned.json": "4df3bd8720a3f973999ceddc8a85384c64b358d57b934a40a7405ba4e2b374e1",
+            "logs/evaluation/g4-16478d69d30e4cad/g4-control/scikit-learn__scikit-learn-10844/patch.diff": "6b23af07d11343fd59602be794f7e7b6dba69127d5898f87d8e5760b6a531271",
+            "logs/evaluation/g4-16478d69d30e4cad/g4-control/scikit-learn__scikit-learn-10844/run_instance.log": "68c5659637804fcabb8324d48982f703a8fa1f722b0cc1c8c7526a169cc600fd",
+            "logs/evaluation/g4-16478d69d30e4cad/g4-control/scikit-learn__scikit-learn-10844/report.json": "0de85d57c4082a5d80f24d50edadda45ccd3bd5de72bd80abfd731e60f0f8985",
+            "logs/evaluation/g4-16478d69d30e4cad/g4-control/scikit-learn__scikit-learn-10844/test_output.txt": "9842b93acf06157f7af21fede6766dfeec046bde2205005b3353b56d8f5d1c03",
+            "logs/evaluation/g4-16478d69d30e4cad/g4-control/scikit-learn__scikit-learn-10844/eval.sh": "c0e487efc6ee86435fe81d7a7b8cc93361c294a5de8de4147542256cffd25f7e"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "pytest-dev__pytest-7236",
+      "image_id": "sha256:c1f5ff162a4837fdcaf7017fffbe91b583e063e8d8f1af1455c78e0e2fcf55f5",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/pytest-dev__pytest-7236/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.pytest-dev__pytest-7236.g4-3d071b9f68fb4681",
+              "image_id": "sha256:c1f5ff162a4837fdcaf7017fffbe91b583e063e8d8f1af1455c78e0e2fcf55f5",
+              "inspect_sha256": "69f24a18c3da6b1b899bf944c45d1f57cb5ac4033993bbc4cce53f62e420aaab"
+            },
+            {
+              "original_base_commit_verified": "c98bc4cd3d687fe9b392d8eecd905627191d4f06"
+            },
+            {
+              "name": "sweb.eval.pytest-dev__pytest-7236.g4-3d071b9f68fb4681",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.86127202771604,
+          "artifacts": {
+            "container-inspect.json": "69f24a18c3da6b1b899bf944c45d1f57cb5ac4033993bbc4cce53f62e420aaab",
+            "owned.json": "0241cb333eb4ed349a4d2ee4b2d3fedfd1b88daad0a235315c68a13c8c40db56",
+            "logs/evaluation/g4-3d071b9f68fb4681/g4-control/pytest-dev__pytest-7236/run_instance.log": "a05b0a034ebb6e56f2671d9fc302db5ab2f65b1cbd1787477453edc9eb114778",
+            "logs/evaluation/g4-3d071b9f68fb4681/g4-control/pytest-dev__pytest-7236/report.json": "1c5af5a41a5c91af35702ae2f48a71d775ef68b7401e3419bb0b355f9f342a59",
+            "logs/evaluation/g4-3d071b9f68fb4681/g4-control/pytest-dev__pytest-7236/test_output.txt": "0bc83f85ea9d4a595853fc604f6f3cb84168fbd2d23b609a40db6bd741a7492a",
+            "logs/evaluation/g4-3d071b9f68fb4681/g4-control/pytest-dev__pytest-7236/eval.sh": "dc5fb33563c34a75384aa2c913989f86e608d26910c1005ccfce1b54abe2e5c4"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/pytest-dev__pytest-7236/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.pytest-dev__pytest-7236.g4-eced2a442ef1470b",
+              "image_id": "sha256:c1f5ff162a4837fdcaf7017fffbe91b583e063e8d8f1af1455c78e0e2fcf55f5",
+              "inspect_sha256": "330f816c456ab914da2c759ceb0d12b904f0848d095d3a738c78c7df933f8895"
+            },
+            {
+              "original_base_commit_verified": "c98bc4cd3d687fe9b392d8eecd905627191d4f06"
+            },
+            {
+              "name": "sweb.eval.pytest-dev__pytest-7236.g4-eced2a442ef1470b",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 20.11402791365981,
+          "artifacts": {
+            "container-inspect.json": "330f816c456ab914da2c759ceb0d12b904f0848d095d3a738c78c7df933f8895",
+            "owned.json": "e1b21f409f9fad997b0e059ea78dc120cb6fa8c6fceb57d6159c74e153d1d841",
+            "logs/evaluation/g4-eced2a442ef1470b/g4-control/pytest-dev__pytest-7236/patch.diff": "9641921f5afd783a16547e1480b06453c7b819271c2df8f195b435afd1a5688b",
+            "logs/evaluation/g4-eced2a442ef1470b/g4-control/pytest-dev__pytest-7236/run_instance.log": "d906982870b8e89822013f6b95a5a1ae676b58b0d42a1ac9c4a867c2ec80c4b2",
+            "logs/evaluation/g4-eced2a442ef1470b/g4-control/pytest-dev__pytest-7236/report.json": "07572444e19eac8e0281617efd18f5928835bcfdd63f584938bac6da1a4179aa",
+            "logs/evaluation/g4-eced2a442ef1470b/g4-control/pytest-dev__pytest-7236/test_output.txt": "3cdf916d8fc0f09c6da3b8f3cc259efa69e63e05a9252f753e6ed87669a0438a",
+            "logs/evaluation/g4-eced2a442ef1470b/g4-control/pytest-dev__pytest-7236/eval.sh": "dc5fb33563c34a75384aa2c913989f86e608d26910c1005ccfce1b54abe2e5c4"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-13837",
+      "image_id": "sha256:c207cacd618002ab203374eef1bffaaa511626f6dc025c9e17ee05e082cfa4ac",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/django__django-13837/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 57,
+              "passed": 57,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13837.g4-ac07f0dcd0244168",
+              "image_id": "sha256:c207cacd618002ab203374eef1bffaaa511626f6dc025c9e17ee05e082cfa4ac",
+              "inspect_sha256": "2ae1b54b8fb044afea3e47ff548f686283df4045b966ecec1a7099c242db1d21"
+            },
+            {
+              "original_base_commit_verified": "415f50298f97fb17f841a9df38d995ccf347dfcc"
+            },
+            {
+              "name": "sweb.eval.django__django-13837.g4-ac07f0dcd0244168",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.728608679026365,
+          "artifacts": {
+            "container-inspect.json": "2ae1b54b8fb044afea3e47ff548f686283df4045b966ecec1a7099c242db1d21",
+            "owned.json": "19ee1a96d1029f107bb699d1257716c959c49c272717dec9182898733b710c51",
+            "logs/evaluation/g4-ac07f0dcd0244168/g4-control/django__django-13837/run_instance.log": "c86163afea1d19bcc00faa0902ee278924561ec1fa88c87056c19dbdf21e20a1",
+            "logs/evaluation/g4-ac07f0dcd0244168/g4-control/django__django-13837/report.json": "749eb71b2445752ffd125ae10cdc00d2c84dd67d4584576b7e3df0fd829f51fb",
+            "logs/evaluation/g4-ac07f0dcd0244168/g4-control/django__django-13837/test_output.txt": "1f1d548bce467df0d495562b9716c569e9503a725be00f1364f696b4f7ad2ae8",
+            "logs/evaluation/g4-ac07f0dcd0244168/g4-control/django__django-13837/eval.sh": "5014f39c587793b56ddb8e489510ca529456709a683da9ca7a18aade2ea9ce5a"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/django__django-13837/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 57,
+              "passed": 57,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13837.g4-be8f4c580f8d4633",
+              "image_id": "sha256:c207cacd618002ab203374eef1bffaaa511626f6dc025c9e17ee05e082cfa4ac",
+              "inspect_sha256": "efbdb1a8276a70a7d2c537b2188e1b0ee9d38ca8685dbeb46979c738176754e5"
+            },
+            {
+              "original_base_commit_verified": "415f50298f97fb17f841a9df38d995ccf347dfcc"
+            },
+            {
+              "name": "sweb.eval.django__django-13837.g4-be8f4c580f8d4633",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 22.051316944882274,
+          "artifacts": {
+            "container-inspect.json": "efbdb1a8276a70a7d2c537b2188e1b0ee9d38ca8685dbeb46979c738176754e5",
+            "owned.json": "62a140c53bc842da6b16127de5ddd590a999d933b4ab46212bf5a65d13b7e7bb",
+            "logs/evaluation/g4-be8f4c580f8d4633/g4-control/django__django-13837/patch.diff": "43af4ecf3fe14bc72c6a01450a99dee3ddb452d494d493b0b7bc90af6975b433",
+            "logs/evaluation/g4-be8f4c580f8d4633/g4-control/django__django-13837/run_instance.log": "33b427ce4adb66d0101645b1ad40a29d6144f2c447fbef74f675514bf2121f73",
+            "logs/evaluation/g4-be8f4c580f8d4633/g4-control/django__django-13837/report.json": "8748d68c7edd5b5cfecb2028baf96ba004900953b053a8e660dcaca9da4d9a5c",
+            "logs/evaluation/g4-be8f4c580f8d4633/g4-control/django__django-13837/test_output.txt": "158a1661a68695cbf907f329b5a515a7031a5c0810fd196a9c1ee49726cc8568",
+            "logs/evaluation/g4-be8f4c580f8d4633/g4-control/django__django-13837/eval.sh": "5014f39c587793b56ddb8e489510ca529456709a683da9ca7a18aade2ea9ce5a"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "django__django-11477",
+      "image_id": "sha256:6c36858a3f956b3ae30f007168d2891621b3667c3c78c16ff72faf2197c46272",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/django__django-11477/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Missing/ambiguous original test statuses"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11477.g4-dab2013c7d1a4943",
+              "image_id": "sha256:6c36858a3f956b3ae30f007168d2891621b3667c3c78c16ff72faf2197c46272",
+              "inspect_sha256": "44c7c41424b138bb7f665b7aaeca260a6b542f6a8d5994d67c0b77aa7e31298d"
+            },
+            {
+              "original_base_commit_verified": "e28671187903e6aca2428374fdd504fca3032aee"
+            },
+            {
+              "name": "sweb.eval.django__django-11477.g4-dab2013c7d1a4943",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 22.025058845058084,
+          "artifacts": {
+            "container-inspect.json": "44c7c41424b138bb7f665b7aaeca260a6b542f6a8d5994d67c0b77aa7e31298d",
+            "owned.json": "b200a333721aca0317dd2d18d88e304436f1b3fc06dd6566ddcfc6cdf4afee72",
+            "logs/evaluation/g4-dab2013c7d1a4943/g4-control/django__django-11477/run_instance.log": "9cd560546e508f39ce987189ca897ec965e6a886d01d1627b72bf0e023d37aad",
+            "logs/evaluation/g4-dab2013c7d1a4943/g4-control/django__django-11477/report.json": "5b42e49a2d4919d228dbfca10aa1f34f86170a820a7f5bf4bda4542e1af68384",
+            "logs/evaluation/g4-dab2013c7d1a4943/g4-control/django__django-11477/test_output.txt": "a48adacdd1c191f9aef21939d9300f2123310a4f25088750d98051bcb84f80c8",
+            "logs/evaluation/g4-dab2013c7d1a4943/g4-control/django__django-11477/eval.sh": "eb93e324a0ebb80d28809a00a6ba9f90fbb934e8c128891dcabd449c481e6cf7"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-offline-776350944478/django__django-11477/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 3,
+              "passed": 3,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 151,
+              "passed": 151,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11477.g4-83585cd064804cdb",
+              "image_id": "sha256:6c36858a3f956b3ae30f007168d2891621b3667c3c78c16ff72faf2197c46272",
+              "inspect_sha256": "3e7461b32ab34b232b11d5e5569e04a7fc8f18ae6af9e26a9db6ee021b6f33e1"
+            },
+            {
+              "original_base_commit_verified": "e28671187903e6aca2428374fdd504fca3032aee"
+            },
+            {
+              "name": "sweb.eval.django__django-11477.g4-83585cd064804cdb",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.883665274828672,
+          "artifacts": {
+            "container-inspect.json": "3e7461b32ab34b232b11d5e5569e04a7fc8f18ae6af9e26a9db6ee021b6f33e1",
+            "owned.json": "6212b0edb110b128f653ab69cc41b503d823e7ff0776d05b7f3158df108875e8",
+            "logs/evaluation/g4-83585cd064804cdb/g4-control/django__django-11477/patch.diff": "cba46df40568af2ead931ad6cae5686321100e5193ee8fdc732227d034ac3ae2",
+            "logs/evaluation/g4-83585cd064804cdb/g4-control/django__django-11477/run_instance.log": "365e2216575139d3485023342ae7152a4b9cc087ef661dd252e0a7fbfc188340",
+            "logs/evaluation/g4-83585cd064804cdb/g4-control/django__django-11477/report.json": "c992c27a7dcde79de17f07f8da5417a88c9584238e4141790f7f92dbed4140a0",
+            "logs/evaluation/g4-83585cd064804cdb/g4-control/django__django-11477/test_output.txt": "c414a2275ae68a23489848b03a88376246b5055fd9b804630b78e5bfbfd6a416",
+            "logs/evaluation/g4-83585cd064804cdb/g4-control/django__django-11477/eval.sh": "eb93e324a0ebb80d28809a00a6ba9f90fbb934e8c128891dcabd449c481e6cf7"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
     }
   ],
   "model_calls": 0
