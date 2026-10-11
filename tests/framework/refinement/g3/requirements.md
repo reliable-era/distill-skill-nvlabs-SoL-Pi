@@ -14,14 +14,14 @@ prompt-to-artifact audit, owned cleanup. G1/G2 stay closed, never pooled.
 | Model Qwen/Qwen3.8-27B direct9012; model identity round start | route-preflight.json and future round identity/each receipt backend | Preflight/first window identity200 correct; first46 completed actual receipts200/complete usage/direct9012; initial /load404 retained diagnostic |
 | Rolling18 concurrent; new run only slot free+all waiting0 | waves/r1-w01/launch.json and progress events plus private receipts | Live PID162609;18 maximum allocated slots, waiting-zero admission |
 | Caps Codex0.160.0/60 requests/7200s/16384 output | Frozen plan hashes and actual provider payload/receipts | Live native actors; cap unchanged |
-| Infra never-model/refused/reset once-from-scratch uniform all arms; keep both | Future attempt classifications/receipts/retry queue/all-cost aggregation | Not started; no completed-model retry yet |
+| Infra never-model/refused/reset once-from-scratch uniform all arms; keep both | Actual wave attempts/private receipts; first36 retained and complete_window.py | No completed-model retries; first36 startup failure cells retained without exclusion |
 | Complete round1 futility candidate vs both none/K≤.95/no fewer solves; no win | Complete boundary audit and independent integer check | Pending |
 | Complete3-round final3 gates;candidate/Both information;20k paired clusters | Preregister math and final actual analysis/independent bootstrap | Pending |
-| Incomplete costs conservatively bounded, no fabricated usage | Analyze distinguishes unknown numerator vs denominator; raw completeness flags |10 tests cover missing numerator blocking, denominator bounds, failures retained |
+| Incomplete costs conservatively bounded, no fabricated usage | Analyze unknown numerator vs denominator; raw flags and exact-byte usage projections |26 current tests pass; original12 wave01 accounting flags retained, actual terminal usage recovered without estimate |
 | Per-round/total solves/tokens/TPS/timeouts/ratio95%,quality/wall uncertainty | Future report.md and raw all-attempt audit | Pending |
 | Bounded windows committed before inference; no outcome-selected schedule | Window88afe49 first36 fixed cells; frozen full queue and launch event order | First window committed before calls; no partial gate/win |
-| Specific live worker before waits; retain failures/caps/unknowns | Specific controls PID/atomic progress; future scheduler handles | Both control workers absent, all owned grader containers independently absent; no timeout restart |
-| All prompt/resource/test/source/runtime/image/receipt provenance+owned cleanup | Future independent audit and requirement closure certificate | Pending |
+| Specific live worker before waits; retain failures/caps/unknowns | Controls and inference worker handles/atomic progress | Controls and wave01 workers/resources absent; wave02 PID230657 live; no timeout restart |
+| All prompt/resource/test/source/runtime/image/receipt provenance+owned cleanup | audit.py and supplemental complete_window.py; plan and explicit execution-repair.json | First36 audited; wave02 ongoing; closure still pending |
 | No nginx/tunnel/honey/18001/18002/gpu01/other-workload action;9012 outage pause | scoped commands/metadata9012 only; future integrity audit | No prohibited endpoint access/intervention |
 | No G1/G2/shipped/README/archive changes or push | git diff from68cff75; unrelated nginx/backup state preserved | New G3 and STATUS only; no push |
 
