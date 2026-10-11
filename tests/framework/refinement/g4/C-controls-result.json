@@ -1,0 +1,2494 @@
+{
+  "rows": [
+    {
+      "task": "psf__requests-6028",
+      "image_id": "sha256:3f1c90905a173481bcde28f71c8332d59837427de0e9caef6f7e676cdc2baab6",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/psf__requests-6028/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 2,
+              "passed": 0,
+              "failed": 2
+            },
+            "PASS_TO_PASS": {
+              "expected": 185,
+              "passed": 185,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.psf__requests-6028.g4-d04ef065be314f6e",
+              "image_id": "sha256:3f1c90905a173481bcde28f71c8332d59837427de0e9caef6f7e676cdc2baab6",
+              "inspect_sha256": "70732fcffb3089f8b874028c3f9635666c4796ab2e87ff24a4a1826c9a4bf149"
+            },
+            {
+              "original_base_commit_verified": "0192aac24123735b3eaf9b08df46429bb770c283"
+            },
+            {
+              "name": "sweb.eval.psf__requests-6028.g4-d04ef065be314f6e",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 17.538978707045317,
+          "artifacts": {
+            "container-inspect.json": "70732fcffb3089f8b874028c3f9635666c4796ab2e87ff24a4a1826c9a4bf149",
+            "owned.json": "cf6838d07035b0349626324d1895fc03b88e0b36be0042edb4c29c2e2231fd2a",
+            "logs/evaluation/g4-d04ef065be314f6e/g4-control/psf__requests-6028/run_instance.log": "4e784cee14c3e28fa942ac48a9acdd248aa8d0d65d17aedf1db1b8947c2b2654",
+            "logs/evaluation/g4-d04ef065be314f6e/g4-control/psf__requests-6028/report.json": "dc8343a5a1e4f6a16367c9fbb167411f35160635af40478b9143f07a675991f7",
+            "logs/evaluation/g4-d04ef065be314f6e/g4-control/psf__requests-6028/test_output.txt": "66d38b095fdfb819b5f9d6452992ce190b9cf1fa52aee344ab85e855ebd446f4",
+            "logs/evaluation/g4-d04ef065be314f6e/g4-control/psf__requests-6028/eval.sh": "65cf203780a36db5a5e004aff4982dcb6712ca6bef206ebafa34a2391454ce86"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/psf__requests-6028/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 185,
+              "passed": 185,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.psf__requests-6028.g4-80a26e0f243249b5",
+              "image_id": "sha256:3f1c90905a173481bcde28f71c8332d59837427de0e9caef6f7e676cdc2baab6",
+              "inspect_sha256": "c039ee2b2ec32c6a89d75bd9d557f5b28bb28fad9e7a888ad26a8fe0da5e46b8"
+            },
+            {
+              "original_base_commit_verified": "0192aac24123735b3eaf9b08df46429bb770c283"
+            },
+            {
+              "name": "sweb.eval.psf__requests-6028.g4-80a26e0f243249b5",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 17.439454896375537,
+          "artifacts": {
+            "container-inspect.json": "c039ee2b2ec32c6a89d75bd9d557f5b28bb28fad9e7a888ad26a8fe0da5e46b8",
+            "owned.json": "5e30fefd7c90400a141bb4905e7fb04bbf4b2b5e7477bdaced71d36332b7b3bb",
+            "logs/evaluation/g4-80a26e0f243249b5/g4-control/psf__requests-6028/patch.diff": "9cd3e2a2c10cc8b9555156f0e9cda00c67aa4e08f40ebd125f417bbeb41b2fb3",
+            "logs/evaluation/g4-80a26e0f243249b5/g4-control/psf__requests-6028/run_instance.log": "a465a7125ccf06f356dd5df936bdba28e25ccb929bbb467916aaa68734ff0865",
+            "logs/evaluation/g4-80a26e0f243249b5/g4-control/psf__requests-6028/report.json": "cf09ac0238650a72cada96b82f27982ffa1ec09d98d49837fb656d26a2cc114d",
+            "logs/evaluation/g4-80a26e0f243249b5/g4-control/psf__requests-6028/test_output.txt": "839944938caf4ea95f23d2dae08cbc1a5682764205975fd81f8335ecc144cbda",
+            "logs/evaluation/g4-80a26e0f243249b5/g4-control/psf__requests-6028/eval.sh": "65cf203780a36db5a5e004aff4982dcb6712ca6bef206ebafa34a2391454ce86"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "sympy__sympy-20154",
+      "image_id": "sha256:2660d6b354036cc50ec0289e477abfb562dc4fddb55ca272e8412d76e4dac45c",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sympy__sympy-20154/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 2,
+              "passed": 0,
+              "failed": 2
+            },
+            "PASS_TO_PASS": {
+              "expected": 40,
+              "passed": 40,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sympy__sympy-20154.g4-901ea63c294b4780",
+              "image_id": "sha256:2660d6b354036cc50ec0289e477abfb562dc4fddb55ca272e8412d76e4dac45c",
+              "inspect_sha256": "23144624d30fb419e4335b5a88d70ef6d42dcd58a2b986a6565d212fe65c32da"
+            },
+            {
+              "original_base_commit_verified": "bdb49c4abfb35554a3c8ce761696ffff3bb837fe"
+            },
+            {
+              "name": "sweb.eval.sympy__sympy-20154.g4-901ea63c294b4780",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.615108493715525,
+          "artifacts": {
+            "container-inspect.json": "23144624d30fb419e4335b5a88d70ef6d42dcd58a2b986a6565d212fe65c32da",
+            "owned.json": "8d44f92bf9da58a0adebef61be774f002390510033255a69de4234840abe600c",
+            "logs/evaluation/g4-901ea63c294b4780/g4-control/sympy__sympy-20154/run_instance.log": "d16d0ddc5aa65b35423b5a7fa283f02f0f5bd58a607b50e0662560ab556a2b39",
+            "logs/evaluation/g4-901ea63c294b4780/g4-control/sympy__sympy-20154/report.json": "606b16eccf3565fa1943a88f5413317cc446166edfbb61dd9217fa4a07c60702",
+            "logs/evaluation/g4-901ea63c294b4780/g4-control/sympy__sympy-20154/test_output.txt": "7c86af53c01caf1adf81be9753ed5816e81b3a20dd8fe2ecfa81ebd5425891d5",
+            "logs/evaluation/g4-901ea63c294b4780/g4-control/sympy__sympy-20154/eval.sh": "2133291d7cbb15c10220d2670827d8d1f89342ed0af7b4e9fc172ed8b66f8568"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sympy__sympy-20154/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 40,
+              "passed": 40,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sympy__sympy-20154.g4-0e72c7a8d60643ea",
+              "image_id": "sha256:2660d6b354036cc50ec0289e477abfb562dc4fddb55ca272e8412d76e4dac45c",
+              "inspect_sha256": "d88c96e3f5f9fa302b3480d434920cf7f44f3fc6cf22da795a0764afa5103f41"
+            },
+            {
+              "original_base_commit_verified": "bdb49c4abfb35554a3c8ce761696ffff3bb837fe"
+            },
+            {
+              "name": "sweb.eval.sympy__sympy-20154.g4-0e72c7a8d60643ea",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.417305583134294,
+          "artifacts": {
+            "container-inspect.json": "d88c96e3f5f9fa302b3480d434920cf7f44f3fc6cf22da795a0764afa5103f41",
+            "owned.json": "a53444d381a324117235cd94d127c6f6cb39b5fb7923403daea18ca3247e59dc",
+            "logs/evaluation/g4-0e72c7a8d60643ea/g4-control/sympy__sympy-20154/patch.diff": "af9701694b221266b83758b2209e9494b7f2c52388c0f80c3ea07965279feec1",
+            "logs/evaluation/g4-0e72c7a8d60643ea/g4-control/sympy__sympy-20154/run_instance.log": "ed140df567e005ef496fba69bba91e5112bafa114103a9d7eb9df15cc14a42b3",
+            "logs/evaluation/g4-0e72c7a8d60643ea/g4-control/sympy__sympy-20154/report.json": "aaff017bcb2fd2b729f9cd856232ec12cd6e5c5665a5152ddc938d8dfc2e0d92",
+            "logs/evaluation/g4-0e72c7a8d60643ea/g4-control/sympy__sympy-20154/test_output.txt": "db44588ee278030a6f670c2d430b4b1cb441c205b380f1d2ed73210ad65969f0",
+            "logs/evaluation/g4-0e72c7a8d60643ea/g4-control/sympy__sympy-20154/eval.sh": "2133291d7cbb15c10220d2670827d8d1f89342ed0af7b4e9fc172ed8b66f8568"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "django__django-11333",
+      "image_id": "sha256:1770234cb0f5ecf1677e407d04af8dc27422f7e281c283a646fd02efcf41172e",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-11333/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11333.g4-582757878f624af0",
+              "image_id": "sha256:1770234cb0f5ecf1677e407d04af8dc27422f7e281c283a646fd02efcf41172e",
+              "inspect_sha256": "757bbf65afc41105f448b02472979d5e6af58cd8dde29d2d441917ba6c0d5f3c"
+            },
+            {
+              "original_base_commit_verified": "55b68de643b5c2d5f0a8ea7587ab3b2966021ccc"
+            },
+            {
+              "name": "sweb.eval.django__django-11333.g4-582757878f624af0",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.593788389116526,
+          "artifacts": {
+            "container-inspect.json": "757bbf65afc41105f448b02472979d5e6af58cd8dde29d2d441917ba6c0d5f3c",
+            "owned.json": "26744cdc16ff02838bae37e13beff65831d860ff081d89b99f7f174c31d44778",
+            "logs/evaluation/g4-582757878f624af0/g4-control/django__django-11333/run_instance.log": "f77bd2e2e9c2b84a4e55d573f9d3f79647577c25b33b825b0c05aed2c559e45e",
+            "logs/evaluation/g4-582757878f624af0/g4-control/django__django-11333/report.json": "acc3621807803ef12f1f155b59f1e437a60b5ae6deba83283d0145545864fa84",
+            "logs/evaluation/g4-582757878f624af0/g4-control/django__django-11333/test_output.txt": "afe78a0916a937540b51e7fb28e632d6bcb21c8aff501bd3df301c7b735d62e9",
+            "logs/evaluation/g4-582757878f624af0/g4-control/django__django-11333/eval.sh": "2450afb1779de614cad8d00edd438929e21f4f327aeed787f8e51e0fa89bd2f7"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-11333/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11333.g4-7843aef7933d4e60",
+              "image_id": "sha256:1770234cb0f5ecf1677e407d04af8dc27422f7e281c283a646fd02efcf41172e",
+              "inspect_sha256": "a333e5968098ed84ebcca812764552aeacdb1b141b255f4275a087e8a7b93938"
+            },
+            {
+              "original_base_commit_verified": "55b68de643b5c2d5f0a8ea7587ab3b2966021ccc"
+            },
+            {
+              "name": "sweb.eval.django__django-11333.g4-7843aef7933d4e60",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.44387778081,
+          "artifacts": {
+            "container-inspect.json": "a333e5968098ed84ebcca812764552aeacdb1b141b255f4275a087e8a7b93938",
+            "owned.json": "afdddafb782f2be9b3559ddd2573d62b3883ca79bcdace02479735bc814e1725",
+            "logs/evaluation/g4-7843aef7933d4e60/g4-control/django__django-11333/patch.diff": "eda6a87fe39c2bc8b3b136c10053d2c59a7134c35224f0fd762b00ad8662b21d",
+            "logs/evaluation/g4-7843aef7933d4e60/g4-control/django__django-11333/run_instance.log": "074d8c42bf249db70f7ea4b5d7e162a930ec14d5f114ea09b8b050d7a49f7b98",
+            "logs/evaluation/g4-7843aef7933d4e60/g4-control/django__django-11333/report.json": "17c522c51b74d03282cdf38086b28694e9ee160ab0c58c75a574cea5b31cb1b9",
+            "logs/evaluation/g4-7843aef7933d4e60/g4-control/django__django-11333/test_output.txt": "ef6e5280d1c798d54ea99b64b9eee11b3804fac32c1ef9c29a6039bb6bfb22dc",
+            "logs/evaluation/g4-7843aef7933d4e60/g4-control/django__django-11333/eval.sh": "2450afb1779de614cad8d00edd438929e21f4f327aeed787f8e51e0fa89bd2f7"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "django__django-12155",
+      "image_id": "sha256:a3b144f5869b093c44bbc5807a4d2bbe6fc6f4a373f21fc4d9500c106667c9a9",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-12155/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 6,
+              "passed": 6,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-12155.g4-7486c332350747a9",
+              "image_id": "sha256:a3b144f5869b093c44bbc5807a4d2bbe6fc6f4a373f21fc4d9500c106667c9a9",
+              "inspect_sha256": "a4033edf77dc65bf0035087905b939584db70b5e241e0d8c9174b4882bd0c6c5"
+            },
+            {
+              "original_base_commit_verified": "e8fcdaad5c428878d0a5d6ba820d957013f75595"
+            },
+            {
+              "name": "sweb.eval.django__django-12155.g4-7486c332350747a9",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.599913200363517,
+          "artifacts": {
+            "container-inspect.json": "a4033edf77dc65bf0035087905b939584db70b5e241e0d8c9174b4882bd0c6c5",
+            "owned.json": "07f8173a1d03d61ffb05bd21d8adceb04e389d203589918cb0ffe1194792225a",
+            "logs/evaluation/g4-7486c332350747a9/g4-control/django__django-12155/run_instance.log": "042fba10bb4a543cebce942532b7edaba8a50763d5bae7d248be34df973cc883",
+            "logs/evaluation/g4-7486c332350747a9/g4-control/django__django-12155/report.json": "9e1e581d2d54589e4b7814afc1a1d4e6683370bb005d6795271b8997c6c54d4f",
+            "logs/evaluation/g4-7486c332350747a9/g4-control/django__django-12155/test_output.txt": "50a200bf5815ef70da3b3d10fe1cd514d7c2bb0a7fbfb9266922814c88035c99",
+            "logs/evaluation/g4-7486c332350747a9/g4-control/django__django-12155/eval.sh": "25e8e028bcd5620e5c7d5588f842a67d35540807bf3f02b01c83941f215d9efd"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-12155/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 6,
+              "passed": 6,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-12155.g4-887d1e1624ff463c",
+              "image_id": "sha256:a3b144f5869b093c44bbc5807a4d2bbe6fc6f4a373f21fc4d9500c106667c9a9",
+              "inspect_sha256": "b39b5b9c06f61853e745486c6d9bcf0cf8569eff7bcd32c919db80dbe5a17c7e"
+            },
+            {
+              "original_base_commit_verified": "e8fcdaad5c428878d0a5d6ba820d957013f75595"
+            },
+            {
+              "name": "sweb.eval.django__django-12155.g4-887d1e1624ff463c",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.655097579583526,
+          "artifacts": {
+            "container-inspect.json": "b39b5b9c06f61853e745486c6d9bcf0cf8569eff7bcd32c919db80dbe5a17c7e",
+            "owned.json": "fa5868d8425087792d032302a97b99616cafbce139e744e4b845f30696c51172",
+            "logs/evaluation/g4-887d1e1624ff463c/g4-control/django__django-12155/patch.diff": "b9fe08301b7bcda6d724d253fa522266487c71d4e27e3b6f099e3fd92232532c",
+            "logs/evaluation/g4-887d1e1624ff463c/g4-control/django__django-12155/run_instance.log": "b5bee03c9e6e5041fbc4e9443e53fcb49db28f56867bb3a650bbfb3339c1d18e",
+            "logs/evaluation/g4-887d1e1624ff463c/g4-control/django__django-12155/report.json": "0b8fbc47afbfe6b4d02b88c342c150b808b4a32b497235a838ab2997476f585d",
+            "logs/evaluation/g4-887d1e1624ff463c/g4-control/django__django-12155/test_output.txt": "8ff3c425619a7419c88b0812e4f1b70b6651063567a20e13351bfec2cdd1e1ba",
+            "logs/evaluation/g4-887d1e1624ff463c/g4-control/django__django-12155/eval.sh": "25e8e028bcd5620e5c7d5588f842a67d35540807bf3f02b01c83941f215d9efd"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "astropy__astropy-8872",
+      "image_id": "sha256:54c72d99f74bd197b28e22fa05c60e7eb316536d069b41123170d596643d70df",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/astropy__astropy-8872/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 80,
+              "passed": 80,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.astropy__astropy-8872.g4-1410263bf9b64b26",
+              "image_id": "sha256:54c72d99f74bd197b28e22fa05c60e7eb316536d069b41123170d596643d70df",
+              "inspect_sha256": "232fc7e1a5ea88784f6c34d80f2e6a929e6734341e1eb8a500c4a4bbceaf4760"
+            },
+            {
+              "original_base_commit_verified": "b750a0e6ee76fb6b8a099a4d16ec51977be46bf6"
+            },
+            {
+              "name": "sweb.eval.astropy__astropy-8872.g4-1410263bf9b64b26",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 23.285570351406932,
+          "artifacts": {
+            "container-inspect.json": "232fc7e1a5ea88784f6c34d80f2e6a929e6734341e1eb8a500c4a4bbceaf4760",
+            "owned.json": "1acc620bf86317c3470a7330e7a2b295b4fac8b306af5b63164ee7f96524da68",
+            "logs/evaluation/g4-1410263bf9b64b26/g4-control/astropy__astropy-8872/run_instance.log": "e515616dc50256fd4f4614de9c38c974be346410d4022a5537e8796fd0bef745",
+            "logs/evaluation/g4-1410263bf9b64b26/g4-control/astropy__astropy-8872/report.json": "262c5909d4d25d44c0ebdb3c11a2b098c6edf4b19b27740d29d3e6343348d60a",
+            "logs/evaluation/g4-1410263bf9b64b26/g4-control/astropy__astropy-8872/test_output.txt": "07017e0b7100a577daa1f5bec04469d5b2f0a717a0ca779c1af4314a1811b47b",
+            "logs/evaluation/g4-1410263bf9b64b26/g4-control/astropy__astropy-8872/eval.sh": "4926aeb850c2cdaf95ba8b484a12a3ad71765b7399f49a56bd03018337620558"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/astropy__astropy-8872/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 80,
+              "passed": 80,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.astropy__astropy-8872.g4-a92ea350a4d24303",
+              "image_id": "sha256:54c72d99f74bd197b28e22fa05c60e7eb316536d069b41123170d596643d70df",
+              "inspect_sha256": "0ec0ed86d58fa0f8053b57151c8fcadffb2b9a7522cff22332a38007d445d379"
+            },
+            {
+              "original_base_commit_verified": "b750a0e6ee76fb6b8a099a4d16ec51977be46bf6"
+            },
+            {
+              "name": "sweb.eval.astropy__astropy-8872.g4-a92ea350a4d24303",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 23.206840289756656,
+          "artifacts": {
+            "container-inspect.json": "0ec0ed86d58fa0f8053b57151c8fcadffb2b9a7522cff22332a38007d445d379",
+            "owned.json": "5766846f741fa55ebd02d659a728da6e453d564b3df712f892616d327d703270",
+            "logs/evaluation/g4-a92ea350a4d24303/g4-control/astropy__astropy-8872/patch.diff": "3c94cbaa3a1c5b44d16801d41191f98136a6d83e9bfc723a29569c671520ca6e",
+            "logs/evaluation/g4-a92ea350a4d24303/g4-control/astropy__astropy-8872/run_instance.log": "a1d393abf6221f3d289fe2ea58daf180ffddb0d46143e98863e8463c6b382760",
+            "logs/evaluation/g4-a92ea350a4d24303/g4-control/astropy__astropy-8872/report.json": "8a0c81e52fc29ce31802aa5a2320a3171bdfefdf72c148d23e84816450571117",
+            "logs/evaluation/g4-a92ea350a4d24303/g4-control/astropy__astropy-8872/test_output.txt": "518016c7af166d0085e38a6755c9249eec8ef1e0fcd9710ef3b08488194a882f",
+            "logs/evaluation/g4-a92ea350a4d24303/g4-control/astropy__astropy-8872/eval.sh": "4926aeb850c2cdaf95ba8b484a12a3ad71765b7399f49a56bd03018337620558"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "django__django-11740",
+      "image_id": "sha256:405c963e909844f43db644653872def0bee6bb66a8915d5faa79f15b29c34680",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-11740/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 109,
+              "passed": 109,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11740.g4-17c4b4389fe9421f",
+              "image_id": "sha256:405c963e909844f43db644653872def0bee6bb66a8915d5faa79f15b29c34680",
+              "inspect_sha256": "cc67e166decaa22fcfc3d78edf15028dc1085bc4142a88022d69399409ce639d"
+            },
+            {
+              "original_base_commit_verified": "003bb34b218adb23d1a7e67932a6ba9b3c4dcc81"
+            },
+            {
+              "name": "sweb.eval.django__django-11740.g4-17c4b4389fe9421f",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.222533082589507,
+          "artifacts": {
+            "container-inspect.json": "cc67e166decaa22fcfc3d78edf15028dc1085bc4142a88022d69399409ce639d",
+            "owned.json": "374739c0f2d05559af0327193f6d2251c94f0230aeabcc03c89ecaab2b23f712",
+            "logs/evaluation/g4-17c4b4389fe9421f/g4-control/django__django-11740/run_instance.log": "e2ad4f12d0ebbbbf93a2210ae7fd7a360a525a476c32d01795e2acae5a25129a",
+            "logs/evaluation/g4-17c4b4389fe9421f/g4-control/django__django-11740/report.json": "3a694ea612c857f46a23991ec268a6922ac1fb626593075ff4d98812df5c1b2b",
+            "logs/evaluation/g4-17c4b4389fe9421f/g4-control/django__django-11740/test_output.txt": "542a2ae8dfd92612d12be99b155a22471286a50e8030f5a30abfd37d514d99d3",
+            "logs/evaluation/g4-17c4b4389fe9421f/g4-control/django__django-11740/eval.sh": "3a2e66b3e3cb6647dc86088645370caf8680ec0ac350d625f6dc4b8a6fe67f67"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-11740/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 109,
+              "passed": 109,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11740.g4-213fdb183cc04c93",
+              "image_id": "sha256:405c963e909844f43db644653872def0bee6bb66a8915d5faa79f15b29c34680",
+              "inspect_sha256": "aa24325b1a549f395e17ae774c0df2c46a6f335c7055032b95cc62b6124448e5"
+            },
+            {
+              "original_base_commit_verified": "003bb34b218adb23d1a7e67932a6ba9b3c4dcc81"
+            },
+            {
+              "name": "sweb.eval.django__django-11740.g4-213fdb183cc04c93",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.667933847755194,
+          "artifacts": {
+            "container-inspect.json": "aa24325b1a549f395e17ae774c0df2c46a6f335c7055032b95cc62b6124448e5",
+            "owned.json": "2a87c5efadcdae6a299ec19c93597c22e885e29438e342b5a3a4baf3bfcfd6ab",
+            "logs/evaluation/g4-213fdb183cc04c93/g4-control/django__django-11740/patch.diff": "87a8df03c5a6c48e26c26af2b41d2c9d67e197947dfb94bdbda1f07a3c613d85",
+            "logs/evaluation/g4-213fdb183cc04c93/g4-control/django__django-11740/run_instance.log": "453b2d080329fb109e08d31799e104a0dfdea2cdc3aa8d32fb3039de70dd438b",
+            "logs/evaluation/g4-213fdb183cc04c93/g4-control/django__django-11740/report.json": "41fbc77bb13668eadaaba9c64bc8272aa3c2e6609d118354ab54280ac654c8ed",
+            "logs/evaluation/g4-213fdb183cc04c93/g4-control/django__django-11740/test_output.txt": "bd973cd2fffecf42a29d209a3eca57b385bfbbef7dd9e6a16bb7bfed27dd1e25",
+            "logs/evaluation/g4-213fdb183cc04c93/g4-control/django__django-11740/eval.sh": "3a2e66b3e3cb6647dc86088645370caf8680ec0ac350d625f6dc4b8a6fe67f67"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "django__django-13212",
+      "image_id": "sha256:96ec8d3c284106346882f675d94344cc5b5b5f474a987c8aac45c3d9cfa9df4a",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-13212/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Missing/ambiguous original test statuses"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13212.g4-0162ba80491444d2",
+              "image_id": "sha256:96ec8d3c284106346882f675d94344cc5b5b5f474a987c8aac45c3d9cfa9df4a",
+              "inspect_sha256": "f622bf21e9cbda2a51e0f17fd71bf9634f6463d3a9fba121105494907102f42b"
+            },
+            {
+              "original_base_commit_verified": "f4e93919e4608cfc50849a1f764fd856e0917401"
+            },
+            {
+              "name": "sweb.eval.django__django-13212.g4-0162ba80491444d2",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.84852341003716,
+          "artifacts": {
+            "container-inspect.json": "f622bf21e9cbda2a51e0f17fd71bf9634f6463d3a9fba121105494907102f42b",
+            "owned.json": "d41c689d2893e63c1a5435ab60ae732632cc1c42488c7aa768127721a89f1487",
+            "logs/evaluation/g4-0162ba80491444d2/g4-control/django__django-13212/run_instance.log": "880f18cac28c59d79e927374103cc68ce14d8ba646b6d955b696f4833bab980b",
+            "logs/evaluation/g4-0162ba80491444d2/g4-control/django__django-13212/report.json": "ccd99b5e455439e10374a17d3c3a4195a26e38e940598649992122cefccc68a5",
+            "logs/evaluation/g4-0162ba80491444d2/g4-control/django__django-13212/test_output.txt": "bc5121e53608dd1d67fd52c2b1fb2c895d2825dc359f397f7f027fff2f3f255f",
+            "logs/evaluation/g4-0162ba80491444d2/g4-control/django__django-13212/eval.sh": "235a4e7836b0de4524468a60eb131a26456d01074479734968c96f1641bfd785"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-13212/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 5,
+              "passed": 5,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13212.g4-b94aa0faabfd4558",
+              "image_id": "sha256:96ec8d3c284106346882f675d94344cc5b5b5f474a987c8aac45c3d9cfa9df4a",
+              "inspect_sha256": "a77536aacf1a428f38329fa24f27159a3e75717f394dc8e255de4203ed9f535d"
+            },
+            {
+              "original_base_commit_verified": "f4e93919e4608cfc50849a1f764fd856e0917401"
+            },
+            {
+              "name": "sweb.eval.django__django-13212.g4-b94aa0faabfd4558",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.45737535879016,
+          "artifacts": {
+            "container-inspect.json": "a77536aacf1a428f38329fa24f27159a3e75717f394dc8e255de4203ed9f535d",
+            "owned.json": "b98248bd8484f7433ea045d4bef4de328da98a3f13f570714752ee34d6c938e2",
+            "logs/evaluation/g4-b94aa0faabfd4558/g4-control/django__django-13212/patch.diff": "e5289566e5f9bfe936d6339b7f2562207ba34f90d3a1f10b2f08194a0e5b5166",
+            "logs/evaluation/g4-b94aa0faabfd4558/g4-control/django__django-13212/run_instance.log": "a02809a6c3176374e96a1f9035e14ca2351f43ef4aca0741c05729ba67ed2d15",
+            "logs/evaluation/g4-b94aa0faabfd4558/g4-control/django__django-13212/report.json": "3cbcc07a404f62708822577b4efbfabf29462cdbdced00b2214f080fe1084109",
+            "logs/evaluation/g4-b94aa0faabfd4558/g4-control/django__django-13212/test_output.txt": "6bca4550bf543399bf1a327560069379296f9fdb20bad7e5d5a7e1e780eaa58b",
+            "logs/evaluation/g4-b94aa0faabfd4558/g4-control/django__django-13212/eval.sh": "235a4e7836b0de4524468a60eb131a26456d01074479734968c96f1641bfd785"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-14376",
+      "image_id": "sha256:361c60ef55ff38574b399af7ea90eb80160c7b6a8744479ea1bf24c0d3234d53",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-14376/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-14376.g4-e5bff9a72ba74347",
+              "image_id": "sha256:361c60ef55ff38574b399af7ea90eb80160c7b6a8744479ea1bf24c0d3234d53",
+              "inspect_sha256": "0a7b00b1bab4a02ce9ed402ebdd1711fb0471e34b9cda2d4648aa9cf7e71ad7b"
+            },
+            {
+              "original_base_commit_verified": "d06c5b358149c02a62da8a5469264d05f29ac659"
+            },
+            {
+              "name": "sweb.eval.django__django-14376.g4-e5bff9a72ba74347",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.005423851311207,
+          "artifacts": {
+            "container-inspect.json": "0a7b00b1bab4a02ce9ed402ebdd1711fb0471e34b9cda2d4648aa9cf7e71ad7b",
+            "owned.json": "935fd49fd3e56d620f1996a2b1370211994c0eca246e2c6dd7e7c047d41c0412",
+            "logs/evaluation/g4-e5bff9a72ba74347/g4-control/django__django-14376/run_instance.log": "0ee9f5c04a741575dd07d4d8286643b520eaad41baf0c6f456f162f74988a2a8",
+            "logs/evaluation/g4-e5bff9a72ba74347/g4-control/django__django-14376/report.json": "5e772d6a813e6eb8953f1edd806cf702f2fd72de163cf5cf3064a1b9ab77ebd9",
+            "logs/evaluation/g4-e5bff9a72ba74347/g4-control/django__django-14376/test_output.txt": "9ced2abb65e67de849fef3ebb8962bd7f251d7d1aa9d931ae9426f3132302903",
+            "logs/evaluation/g4-e5bff9a72ba74347/g4-control/django__django-14376/eval.sh": "57040bc2ef6b45d34e5d600bc2146d80ef667c2ad8c20c7e1c5740a3e1d84aa1"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-14376/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-14376.g4-022ac5dea1f545d2",
+              "image_id": "sha256:361c60ef55ff38574b399af7ea90eb80160c7b6a8744479ea1bf24c0d3234d53",
+              "inspect_sha256": "9371dd7d192978e8566f474b621d45e17141aca94ab290b75cb96f4463e6aba9"
+            },
+            {
+              "original_base_commit_verified": "d06c5b358149c02a62da8a5469264d05f29ac659"
+            },
+            {
+              "name": "sweb.eval.django__django-14376.g4-022ac5dea1f545d2",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.086296893656254,
+          "artifacts": {
+            "container-inspect.json": "9371dd7d192978e8566f474b621d45e17141aca94ab290b75cb96f4463e6aba9",
+            "owned.json": "48c4ba7f8bf393aa7a44ecc6e8fdf0e7559124ac6d75536c09305b2e6a642ef7",
+            "logs/evaluation/g4-022ac5dea1f545d2/g4-control/django__django-14376/patch.diff": "e2ed16289f208a60f6c662e66638dd658db39c176dbacad4f6cd9b815dc52769",
+            "logs/evaluation/g4-022ac5dea1f545d2/g4-control/django__django-14376/run_instance.log": "de07bb02b22cdd3fa3060c58f75d23f0ebe651690d9df729aac7c6cb1a10d5be",
+            "logs/evaluation/g4-022ac5dea1f545d2/g4-control/django__django-14376/report.json": "1de7e78d432b88f7c49e71b4f8075f75dc3a61d60cbbb61fbb9eabfcccda2e95",
+            "logs/evaluation/g4-022ac5dea1f545d2/g4-control/django__django-14376/test_output.txt": "859f6b68ecf3b8e0a0bfacac1cb3908b9aa7550bdc72340afe2e392dea280ef2",
+            "logs/evaluation/g4-022ac5dea1f545d2/g4-control/django__django-14376/eval.sh": "57040bc2ef6b45d34e5d600bc2146d80ef667c2ad8c20c7e1c5740a3e1d84aa1"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-13410",
+      "image_id": "sha256:f5fa79b26f52016a0cdaf12d7f41b37ad9534d392d61a3399f504de9c5a8600e",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-13410/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 2,
+              "passed": 0,
+              "failed": 2
+            },
+            "PASS_TO_PASS": {
+              "expected": 40,
+              "passed": 40,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13410.g4-91226278c15b4728",
+              "image_id": "sha256:f5fa79b26f52016a0cdaf12d7f41b37ad9534d392d61a3399f504de9c5a8600e",
+              "inspect_sha256": "57549fab8ead3c812be827c32884c2ebcac3648e805dbc51af59347787515830"
+            },
+            {
+              "original_base_commit_verified": "580a4341cb0b4cbfc215a70afc004875a7e815f4"
+            },
+            {
+              "name": "sweb.eval.django__django-13410.g4-91226278c15b4728",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.43137197755277,
+          "artifacts": {
+            "container-inspect.json": "57549fab8ead3c812be827c32884c2ebcac3648e805dbc51af59347787515830",
+            "owned.json": "c4af2fc670a30b711af221eef808a9fdab1596e59795f87994cb2e2b5730b92d",
+            "logs/evaluation/g4-91226278c15b4728/g4-control/django__django-13410/run_instance.log": "70032b281f79ba1e34489ca93cab3bdf074837be57ca345b86f0be440212e501",
+            "logs/evaluation/g4-91226278c15b4728/g4-control/django__django-13410/report.json": "db11cc651f50edddc1fe2a5aceb6af8bd96d3ddae1fb2d2c9c35805753a19940",
+            "logs/evaluation/g4-91226278c15b4728/g4-control/django__django-13410/test_output.txt": "839c18739470168889332dd9422cb6708a7a2f5bc342f715fc457381d499a228",
+            "logs/evaluation/g4-91226278c15b4728/g4-control/django__django-13410/eval.sh": "b47a1849668dd524983732055c3edd1586ac49a3adab77ee07b973febc4da7ab"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-13410/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 40,
+              "passed": 40,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13410.g4-97bc840d9e5f4fcd",
+              "image_id": "sha256:f5fa79b26f52016a0cdaf12d7f41b37ad9534d392d61a3399f504de9c5a8600e",
+              "inspect_sha256": "720a44dd8673be9b56206014399ae80e221df318c4bebfef577278fb5fac59c6"
+            },
+            {
+              "original_base_commit_verified": "580a4341cb0b4cbfc215a70afc004875a7e815f4"
+            },
+            {
+              "name": "sweb.eval.django__django-13410.g4-97bc840d9e5f4fcd",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.694051533937454,
+          "artifacts": {
+            "container-inspect.json": "720a44dd8673be9b56206014399ae80e221df318c4bebfef577278fb5fac59c6",
+            "owned.json": "7ec16025b1aa47c324df9a25c3c8588814de9742d178fc177c4f4d6130710ff1",
+            "logs/evaluation/g4-97bc840d9e5f4fcd/g4-control/django__django-13410/patch.diff": "cb1afa47138b17aa28c6296c57ceb7e9d0cdf781dd6cb89bd3f9a02dd6776f18",
+            "logs/evaluation/g4-97bc840d9e5f4fcd/g4-control/django__django-13410/run_instance.log": "e6625b139d383dd2dabd6a52fb82d4d4ca43fb38ccf716ea28e808d6bc5d2ff9",
+            "logs/evaluation/g4-97bc840d9e5f4fcd/g4-control/django__django-13410/report.json": "b05d34df661207015bc3f25de93230a2c09895fa0ffb3109206c42b2181fbafd",
+            "logs/evaluation/g4-97bc840d9e5f4fcd/g4-control/django__django-13410/test_output.txt": "9779a4fa9aaa3bb585e5a922b200358c677738a5ae901109e534761970abc186",
+            "logs/evaluation/g4-97bc840d9e5f4fcd/g4-control/django__django-13410/eval.sh": "b47a1849668dd524983732055c3edd1586ac49a3adab77ee07b973febc4da7ab"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "django__django-14787",
+      "image_id": "sha256:ce8c3f289670ac50768dd38f1a637af814260baf2a016def2427952745388a85",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-14787/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-14787.g4-934d70f53faa4961",
+              "image_id": "sha256:ce8c3f289670ac50768dd38f1a637af814260baf2a016def2427952745388a85",
+              "inspect_sha256": "33cb5fb00ff52a9106503cb3de9e5a85ae432ff8a1afea52431237fa76c7dd03"
+            },
+            {
+              "original_base_commit_verified": "004b4620f6f4ad87261e149898940f2dcd5757ef"
+            },
+            {
+              "name": "sweb.eval.django__django-14787.g4-934d70f53faa4961",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 27.6489568464458,
+          "artifacts": {
+            "container-inspect.json": "33cb5fb00ff52a9106503cb3de9e5a85ae432ff8a1afea52431237fa76c7dd03",
+            "owned.json": "b00229216541b2fa93b93a5ba47bccf16ce4e9a012ad6c4fb272eb83185b3c33",
+            "logs/evaluation/g4-934d70f53faa4961/g4-control/django__django-14787/run_instance.log": "6aedb66a1265d505ea653f8dc2e6e0965795582707ac9ec9e2bdb755d72fbab5",
+            "logs/evaluation/g4-934d70f53faa4961/g4-control/django__django-14787/report.json": "f4fb63928e43b6c1b0e21084426e7a4a50a723eb7aa1adcc5dd3dee2eec3da99",
+            "logs/evaluation/g4-934d70f53faa4961/g4-control/django__django-14787/test_output.txt": "9133e9a9e3c0dd068a8a657b46cd7ba42f548f8ba2423534bd00b8113105b893",
+            "logs/evaluation/g4-934d70f53faa4961/g4-control/django__django-14787/eval.sh": "14b4877d95caec9f74094223c38c6d5929114b42d05d2ee833d34e861127a8b5"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-14787/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-14787.g4-8b65b05b99b54cb3",
+              "image_id": "sha256:ce8c3f289670ac50768dd38f1a637af814260baf2a016def2427952745388a85",
+              "inspect_sha256": "107fe0c6f09d3962fc73a50bd7c021a1f6285a3893905c137ae2d39aa9a6ddd1"
+            },
+            {
+              "original_base_commit_verified": "004b4620f6f4ad87261e149898940f2dcd5757ef"
+            },
+            {
+              "name": "sweb.eval.django__django-14787.g4-8b65b05b99b54cb3",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 28.022051451727748,
+          "artifacts": {
+            "container-inspect.json": "107fe0c6f09d3962fc73a50bd7c021a1f6285a3893905c137ae2d39aa9a6ddd1",
+            "owned.json": "ea76b7f55cd5d9d03d630c7181b528785ad8979fea467e5a4bbc71ef607d9c6b",
+            "logs/evaluation/g4-8b65b05b99b54cb3/g4-control/django__django-14787/patch.diff": "96d2dfb5441604f64daf06f4bc5ce0877dd5ab7db83a11835d1201d067ca92a6",
+            "logs/evaluation/g4-8b65b05b99b54cb3/g4-control/django__django-14787/run_instance.log": "8eae2fc93693d535849336df7c620fc5e04027edf41ebfc8d35cfb0d27ec4848",
+            "logs/evaluation/g4-8b65b05b99b54cb3/g4-control/django__django-14787/report.json": "5e4d060c04825c3ed22b455833ca2209b19b82b20ecfa897479de59086464b7d",
+            "logs/evaluation/g4-8b65b05b99b54cb3/g4-control/django__django-14787/test_output.txt": "00b8341e240310a5846dc1b2ff9fb887a3cdffccaddc5dcbcc37ac57b0437686",
+            "logs/evaluation/g4-8b65b05b99b54cb3/g4-control/django__django-14787/eval.sh": "14b4877d95caec9f74094223c38c6d5929114b42d05d2ee833d34e861127a8b5"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-13809",
+      "image_id": "sha256:8e381f2d3b66b0585a5afe53926c9e85d5b8681fe675bd05aa14b5dd64b39671",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-13809/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Incomplete original tests"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13809.g4-ae610e8fa12b4e6f",
+              "image_id": "sha256:8e381f2d3b66b0585a5afe53926c9e85d5b8681fe675bd05aa14b5dd64b39671",
+              "inspect_sha256": "131c1ce49707a7d50131b92075ab0191e0a646e3ce6bcc113b64269c3811320f"
+            },
+            {
+              "original_base_commit_verified": "bef6f7584280f1cc80e5e2d80b7ad073a93d26ec"
+            },
+            {
+              "name": "sweb.eval.django__django-13809.g4-ae610e8fa12b4e6f",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 58.08887878060341,
+          "artifacts": {
+            "container-inspect.json": "131c1ce49707a7d50131b92075ab0191e0a646e3ce6bcc113b64269c3811320f",
+            "owned.json": "b523925f3c1e9c013b175093b70f6acd5974dad812547567388e39353c7eff72",
+            "logs/evaluation/g4-ae610e8fa12b4e6f/g4-control/django__django-13809/run_instance.log": "97f477ec0f92a0026475912ce1d071a9ec5ae8d99a49d7c7472a43590a7de3aa",
+            "logs/evaluation/g4-ae610e8fa12b4e6f/g4-control/django__django-13809/report.json": "ae4bab568a7ff3475dc821696723f399ca55dbd0efbf2030d94875cf73daf937",
+            "logs/evaluation/g4-ae610e8fa12b4e6f/g4-control/django__django-13809/test_output.txt": "bcda856843904cfe53ad03b636200a33d16913de408ed7fec0885f2bc4f1fa92",
+            "logs/evaluation/g4-ae610e8fa12b4e6f/g4-control/django__django-13809/eval.sh": "cb1501f6447566d1ae99ccb465cc0ae0a84e4c2359a6b1b1ad42518e6e1335b8"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-13809/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 245,
+              "passed": 245,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13809.g4-4d63dbd43dd54d44",
+              "image_id": "sha256:8e381f2d3b66b0585a5afe53926c9e85d5b8681fe675bd05aa14b5dd64b39671",
+              "inspect_sha256": "418c8aa5c01d0066330c1507990eef67fe4cd7277be2d1745bc4e7ee4e5f654c"
+            },
+            {
+              "original_base_commit_verified": "bef6f7584280f1cc80e5e2d80b7ad073a93d26ec"
+            },
+            {
+              "name": "sweb.eval.django__django-13809.g4-4d63dbd43dd54d44",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 57.50084708631039,
+          "artifacts": {
+            "container-inspect.json": "418c8aa5c01d0066330c1507990eef67fe4cd7277be2d1745bc4e7ee4e5f654c",
+            "owned.json": "856f3377c9885247c197fa6e37eb149f7296cf40583e180fbcca4a512c3f4cb7",
+            "logs/evaluation/g4-4d63dbd43dd54d44/g4-control/django__django-13809/patch.diff": "6ffda1af3e10ea2092376fb86a88a1e7533dbae2c2a09bf9e1974f62bf0fbba8",
+            "logs/evaluation/g4-4d63dbd43dd54d44/g4-control/django__django-13809/run_instance.log": "4db25f9bfeadd3269fa79e56bae9918e7d28ed77cf15fbfe9b35c955ae8efa72",
+            "logs/evaluation/g4-4d63dbd43dd54d44/g4-control/django__django-13809/report.json": "edbe6b26daf159f8291549d85255585014648fa9b5838ac3464609e7ded44c87",
+            "logs/evaluation/g4-4d63dbd43dd54d44/g4-control/django__django-13809/test_output.txt": "1c758017ac129f82c4d2759277a696eab00c284707e8a162a382bce4d028df00",
+            "logs/evaluation/g4-4d63dbd43dd54d44/g4-control/django__django-13809/eval.sh": "cb1501f6447566d1ae99ccb465cc0ae0a84e4c2359a6b1b1ad42518e6e1335b8"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-16145",
+      "image_id": "sha256:73759043f4e93113d3ca4315967a25bd69a6bb516082eb62e61b2a0cd5707662",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-16145/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-16145.g4-25bd5a1921604139",
+              "image_id": "sha256:73759043f4e93113d3ca4315967a25bd69a6bb516082eb62e61b2a0cd5707662",
+              "inspect_sha256": "4f58f68bc8058fca422860f45863d582a1dc12735e5263ff80c750dab20744d4"
+            },
+            {
+              "original_base_commit_verified": "93d4c9ea1de24eb391cb2b3561b6703fd46374df"
+            },
+            {
+              "name": "sweb.eval.django__django-16145.g4-25bd5a1921604139",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 94.29634200409055,
+          "artifacts": {
+            "container-inspect.json": "4f58f68bc8058fca422860f45863d582a1dc12735e5263ff80c750dab20744d4",
+            "owned.json": "60181062d92e882a5fcb2ec5ec3aed8d94bcd8445878a79b2c204e1ba689db71",
+            "logs/evaluation/g4-25bd5a1921604139/g4-control/django__django-16145/run_instance.log": "ae28896b393a15989909ad3cdc97c348a6983044b1e86cabc06e77157b9793b5",
+            "logs/evaluation/g4-25bd5a1921604139/g4-control/django__django-16145/report.json": "73067aa1498dd16d3f798a17e7ff87fa8dfa5115a8ed0de34bab3eb11066873e",
+            "logs/evaluation/g4-25bd5a1921604139/g4-control/django__django-16145/test_output.txt": "aea503d1926a451d6fa91419ee23a9786a1ee6f06a225ef19aee90d1dbbd0334",
+            "logs/evaluation/g4-25bd5a1921604139/g4-control/django__django-16145/eval.sh": "9ae3f404e943b075051c78f07ae55c5708767c8b4a32699bb59008c45b3e5b4b"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-16145/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-16145.g4-d8f7879ebdb7461a",
+              "image_id": "sha256:73759043f4e93113d3ca4315967a25bd69a6bb516082eb62e61b2a0cd5707662",
+              "inspect_sha256": "bbe5760958fa86d8f11153a39f49e4eb67d51c9cd2ebec877f3791bf0a5c88cf"
+            },
+            {
+              "original_base_commit_verified": "93d4c9ea1de24eb391cb2b3561b6703fd46374df"
+            },
+            {
+              "name": "sweb.eval.django__django-16145.g4-d8f7879ebdb7461a",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 92.94108435511589,
+          "artifacts": {
+            "container-inspect.json": "bbe5760958fa86d8f11153a39f49e4eb67d51c9cd2ebec877f3791bf0a5c88cf",
+            "owned.json": "7997cea3d84b6e4b5aeadde5d4eb2f22ab4dafbd37909a788dc7812698113020",
+            "logs/evaluation/g4-d8f7879ebdb7461a/g4-control/django__django-16145/patch.diff": "d34fe5906d7f59205994b6c308b05ded2253bc8604fc5407c9a85f97b5941123",
+            "logs/evaluation/g4-d8f7879ebdb7461a/g4-control/django__django-16145/run_instance.log": "f189d4adcce713173fffbe88471a96b6c163221504093b8bc2d370c0bf7d0d0e",
+            "logs/evaluation/g4-d8f7879ebdb7461a/g4-control/django__django-16145/report.json": "9c9098acbc771edcec271576c2726b49538234165c5c8d58d0aaa66d7fd873f1",
+            "logs/evaluation/g4-d8f7879ebdb7461a/g4-control/django__django-16145/test_output.txt": "3b90451059a0ef1e17047d7e898d4631bdf02dd73a96c0d0d05f54022cfaccf8",
+            "logs/evaluation/g4-d8f7879ebdb7461a/g4-control/django__django-16145/eval.sh": "9ae3f404e943b075051c78f07ae55c5708767c8b4a32699bb59008c45b3e5b4b"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "scikit-learn__scikit-learn-12682",
+      "image_id": "sha256:a96877e56adac27bc829be89cc4fec3cb2544896852a52818a83942cb65af5a2",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/scikit-learn__scikit-learn-12682/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 66,
+              "passed": 66,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-12682.g4-a6eec7b1ff72476f",
+              "image_id": "sha256:a96877e56adac27bc829be89cc4fec3cb2544896852a52818a83942cb65af5a2",
+              "inspect_sha256": "3c9234b9100dbd062a1ad31dafc1582eadce56724800c0252de20d952ae0012f"
+            },
+            {
+              "original_base_commit_verified": "d360ffa7c5896a91ae498b3fb9cf464464ce8f34"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-12682.g4-a6eec7b1ff72476f",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 41.36422514729202,
+          "artifacts": {
+            "container-inspect.json": "3c9234b9100dbd062a1ad31dafc1582eadce56724800c0252de20d952ae0012f",
+            "owned.json": "0c19ff5d16907720659d0cdb4187be4a16dbd60e36e2b33b486fbb6d1d5e9b63",
+            "logs/evaluation/g4-a6eec7b1ff72476f/g4-control/scikit-learn__scikit-learn-12682/run_instance.log": "93365a1780946f482d6916afd50fa4f8370e1425d1423ba4cf05cc41bb03faf0",
+            "logs/evaluation/g4-a6eec7b1ff72476f/g4-control/scikit-learn__scikit-learn-12682/report.json": "f759159e754a3c44b9a5c98d3f7df8a124105e01a76c554a4c7deb954e131da3",
+            "logs/evaluation/g4-a6eec7b1ff72476f/g4-control/scikit-learn__scikit-learn-12682/test_output.txt": "ecb6e388a87ab1bd1a0653b722caf3e9b1d34362bfc8fedfc5505d3b784c8f96",
+            "logs/evaluation/g4-a6eec7b1ff72476f/g4-control/scikit-learn__scikit-learn-12682/eval.sh": "ca83a488d8e602f07bc9f5bdd29f2264d1727688e529b885a34aa0b490aea490"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/scikit-learn__scikit-learn-12682/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 66,
+              "passed": 66,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-12682.g4-45d7eaa819414ad5",
+              "image_id": "sha256:a96877e56adac27bc829be89cc4fec3cb2544896852a52818a83942cb65af5a2",
+              "inspect_sha256": "5f233a8b595a1c900ba0aea59d353775fe35f7057d062f94f71eb6c877915f49"
+            },
+            {
+              "original_base_commit_verified": "d360ffa7c5896a91ae498b3fb9cf464464ce8f34"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-12682.g4-45d7eaa819414ad5",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 46.793759947642684,
+          "artifacts": {
+            "container-inspect.json": "5f233a8b595a1c900ba0aea59d353775fe35f7057d062f94f71eb6c877915f49",
+            "owned.json": "10593e831f7c1c4c4e5260be80a4f06d6841bd845edd6792597521a15cbae67f",
+            "logs/evaluation/g4-45d7eaa819414ad5/g4-control/scikit-learn__scikit-learn-12682/patch.diff": "631e2c178614daaab168ae7008c31a3026742c623da3ed4341d17d2dd7a4e3c4",
+            "logs/evaluation/g4-45d7eaa819414ad5/g4-control/scikit-learn__scikit-learn-12682/run_instance.log": "7c11e08738ca3aa75bdf8ed2098dfae034240b0a0491ab994a8d01fd8a315a67",
+            "logs/evaluation/g4-45d7eaa819414ad5/g4-control/scikit-learn__scikit-learn-12682/report.json": "3abebecf0b1d10e3fc7e7776fd50abf35e9e1a0e6ebd59c3a5b148d2b354b3b7",
+            "logs/evaluation/g4-45d7eaa819414ad5/g4-control/scikit-learn__scikit-learn-12682/test_output.txt": "e2408a88f4e77a0bd02cbfa5b01516cad6ba238e4b6b38f94387341f52367094",
+            "logs/evaluation/g4-45d7eaa819414ad5/g4-control/scikit-learn__scikit-learn-12682/eval.sh": "ca83a488d8e602f07bc9f5bdd29f2264d1727688e529b885a34aa0b490aea490"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "sympy__sympy-23824",
+      "image_id": "sha256:743db3a4c4bae7f7736762ec7029e370955925cbb9ece3ca7f861a6e170c1a37",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sympy__sympy-23824/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sympy__sympy-23824.g4-9cc30c1ad3ae4a21",
+              "image_id": "sha256:743db3a4c4bae7f7736762ec7029e370955925cbb9ece3ca7f861a6e170c1a37",
+              "inspect_sha256": "19183cf10e1e35ef7346ea2c4a7257c1271026a1955e51653015302b71ebe721"
+            },
+            {
+              "original_base_commit_verified": "39de9a2698ad4bb90681c0fdb70b30a78233145f"
+            },
+            {
+              "name": "sweb.eval.sympy__sympy-23824.g4-9cc30c1ad3ae4a21",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 23.160407081246376,
+          "artifacts": {
+            "container-inspect.json": "19183cf10e1e35ef7346ea2c4a7257c1271026a1955e51653015302b71ebe721",
+            "owned.json": "0d8f64c3e380b9684f7fddf24afad3f413c0bc1123e4286d6a1cc09b809af5f0",
+            "logs/evaluation/g4-9cc30c1ad3ae4a21/g4-control/sympy__sympy-23824/run_instance.log": "e8fc977b43f3d1f52739ed2a52f1334c841d04c0b081c038f0d510ad685b0c6e",
+            "logs/evaluation/g4-9cc30c1ad3ae4a21/g4-control/sympy__sympy-23824/report.json": "162eb51f5936298fe931a08b8f6c0c615ecbe9877fc47082d9d62220cde8ec46",
+            "logs/evaluation/g4-9cc30c1ad3ae4a21/g4-control/sympy__sympy-23824/test_output.txt": "4b2aebc7c10add13be656f79499105f13ee88c535d7f632c5f88776e3f7c7862",
+            "logs/evaluation/g4-9cc30c1ad3ae4a21/g4-control/sympy__sympy-23824/eval.sh": "9f2a1c8d66aed441c62931154a870de2f930a7d426549d9785bcb90b7e7ea566"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sympy__sympy-23824/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sympy__sympy-23824.g4-024d80f31d8941ae",
+              "image_id": "sha256:743db3a4c4bae7f7736762ec7029e370955925cbb9ece3ca7f861a6e170c1a37",
+              "inspect_sha256": "c99100d463891c7d409e529153424633efee2f4f314c1448e8cea4f9ca496fdc"
+            },
+            {
+              "original_base_commit_verified": "39de9a2698ad4bb90681c0fdb70b30a78233145f"
+            },
+            {
+              "name": "sweb.eval.sympy__sympy-23824.g4-024d80f31d8941ae",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 23.155767207965255,
+          "artifacts": {
+            "container-inspect.json": "c99100d463891c7d409e529153424633efee2f4f314c1448e8cea4f9ca496fdc",
+            "owned.json": "4467435ffcc323fd0570db955218a4503f78c7188bd5afc4a6e78405d3131cf8",
+            "logs/evaluation/g4-024d80f31d8941ae/g4-control/sympy__sympy-23824/patch.diff": "eadefff453a6ec9255b3a7c5d22e2facb674c6edb515a3525fffc1c8ce17ddb9",
+            "logs/evaluation/g4-024d80f31d8941ae/g4-control/sympy__sympy-23824/run_instance.log": "3c56a396284004bef49fab7ef2fbc35fd9bbfbfd100ca42ee303e61620fbab4e",
+            "logs/evaluation/g4-024d80f31d8941ae/g4-control/sympy__sympy-23824/report.json": "6c35fb9142ee325f9b480232cfbbf1b7e2d8a597560cd1ff4af9b8788c16b7cc",
+            "logs/evaluation/g4-024d80f31d8941ae/g4-control/sympy__sympy-23824/test_output.txt": "5753dac18267b9b06fbb987321e33160227826eeafe637d24ef98bb87bf621d3",
+            "logs/evaluation/g4-024d80f31d8941ae/g4-control/sympy__sympy-23824/eval.sh": "9f2a1c8d66aed441c62931154a870de2f930a7d426549d9785bcb90b7e7ea566"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "django__django-11087",
+      "image_id": "sha256:39f7963e6b454583854e8c7970cbd4c337d60f004a360a5c5940c17190f5624f",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-11087/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 41,
+              "passed": 41,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11087.g4-b8a20cc7a2e346d0",
+              "image_id": "sha256:39f7963e6b454583854e8c7970cbd4c337d60f004a360a5c5940c17190f5624f",
+              "inspect_sha256": "16fecb3c7495147a92a7015c28612cf52739494f927f31821f05ac012d7224e3"
+            },
+            {
+              "original_base_commit_verified": "8180ffba21bf10f4be905cb0d4890dc2bcff2788"
+            },
+            {
+              "name": "sweb.eval.django__django-11087.g4-b8a20cc7a2e346d0",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.982686730101705,
+          "artifacts": {
+            "container-inspect.json": "16fecb3c7495147a92a7015c28612cf52739494f927f31821f05ac012d7224e3",
+            "owned.json": "84489fa8fc2121744ef800a60da81f2794a45f98fbb3809910c765e3d0ac88d5",
+            "logs/evaluation/g4-b8a20cc7a2e346d0/g4-control/django__django-11087/run_instance.log": "d20140287bcc8d5c68f12af6c2f3f0fd93d80b38e28aa347856919f2991814af",
+            "logs/evaluation/g4-b8a20cc7a2e346d0/g4-control/django__django-11087/report.json": "21d380f18e368e6129e6da4a5b956b11ec5981a71eae768cc300071cd8627915",
+            "logs/evaluation/g4-b8a20cc7a2e346d0/g4-control/django__django-11087/test_output.txt": "3a1cfce4270ed0fad1d56560246546e170edd52b92eaaf3fb03f872a7d0e5de7",
+            "logs/evaluation/g4-b8a20cc7a2e346d0/g4-control/django__django-11087/eval.sh": "88b8af846b6d274be3e049298027a2f0819427446e166abf4f78fd25b666ca26"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-11087/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 41,
+              "passed": 41,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11087.g4-a0bf4d3fd84d46ef",
+              "image_id": "sha256:39f7963e6b454583854e8c7970cbd4c337d60f004a360a5c5940c17190f5624f",
+              "inspect_sha256": "fb992aa6f567666ba83c98668b316df6e01135502e61c44b30e0fbbbab154e79"
+            },
+            {
+              "original_base_commit_verified": "8180ffba21bf10f4be905cb0d4890dc2bcff2788"
+            },
+            {
+              "name": "sweb.eval.django__django-11087.g4-a0bf4d3fd84d46ef",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 22.201165517792106,
+          "artifacts": {
+            "container-inspect.json": "fb992aa6f567666ba83c98668b316df6e01135502e61c44b30e0fbbbab154e79",
+            "owned.json": "a4c7c0678802bb16e0dd6607b79f46e221a4c3c9a037ad48a449511be7da2573",
+            "logs/evaluation/g4-a0bf4d3fd84d46ef/g4-control/django__django-11087/patch.diff": "38dfd449272afdf7269e56d798668fd4167db5c34c775614ca0b2fb47eb25789",
+            "logs/evaluation/g4-a0bf4d3fd84d46ef/g4-control/django__django-11087/run_instance.log": "2bc62d7cff1cd3a76bf65d929a2f158641c25234d0f910dea1733b0634e77930",
+            "logs/evaluation/g4-a0bf4d3fd84d46ef/g4-control/django__django-11087/report.json": "dc2e6085f4d464006a4c5b094f0e2cf76c7d5f9502036835d4a111c360a83b19",
+            "logs/evaluation/g4-a0bf4d3fd84d46ef/g4-control/django__django-11087/test_output.txt": "7c84893f3483654fc2cbefb004e95cdc78e730ccf9f467a852b7c41544f792d1",
+            "logs/evaluation/g4-a0bf4d3fd84d46ef/g4-control/django__django-11087/eval.sh": "88b8af846b6d274be3e049298027a2f0819427446e166abf4f78fd25b666ca26"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "astropy__astropy-14365",
+      "image_id": "sha256:186d28b0d249e6d87d9d65aaada7688fc0e2cf4f8d70dfef591dfdfaaa283492",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/astropy__astropy-14365/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.astropy__astropy-14365.g4-9c1a31ce9c2e4a9b",
+              "image_id": "sha256:186d28b0d249e6d87d9d65aaada7688fc0e2cf4f8d70dfef591dfdfaaa283492",
+              "inspect_sha256": "48afa3ee3843140dc9e2356352fb9daa97a7469376048a0cb22b520b2a4181a8"
+            },
+            {
+              "original_base_commit_verified": "7269fa3e33e8d02485a647da91a5a2a60a06af61"
+            },
+            {
+              "name": "sweb.eval.astropy__astropy-14365.g4-9c1a31ce9c2e4a9b",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.873197274282575,
+          "artifacts": {
+            "container-inspect.json": "48afa3ee3843140dc9e2356352fb9daa97a7469376048a0cb22b520b2a4181a8",
+            "owned.json": "5e08e90c734b71d7132bf9450bcb451cdbb63cd82281ad72051f5e826ad5ea7d",
+            "logs/evaluation/g4-9c1a31ce9c2e4a9b/g4-control/astropy__astropy-14365/run_instance.log": "210c697e42019d5342347089d994f35f78f9204a2c2bc58a93fdb914a5ed6cee",
+            "logs/evaluation/g4-9c1a31ce9c2e4a9b/g4-control/astropy__astropy-14365/report.json": "4bcd5bec2dcf1dc507c80259093434fd6d405dc36d3689f724db3a29d61331be",
+            "logs/evaluation/g4-9c1a31ce9c2e4a9b/g4-control/astropy__astropy-14365/test_output.txt": "3c366cf1cd82d75fbf122cdf93c6cf0007555b3fbeaa1511212677209c55499c",
+            "logs/evaluation/g4-9c1a31ce9c2e4a9b/g4-control/astropy__astropy-14365/eval.sh": "c37a7ea7ea8015300c33a28eaa80c4a8fa768a78348e31033f2a5a8258f08227"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/astropy__astropy-14365/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.astropy__astropy-14365.g4-7bc0be995933484b",
+              "image_id": "sha256:186d28b0d249e6d87d9d65aaada7688fc0e2cf4f8d70dfef591dfdfaaa283492",
+              "inspect_sha256": "811d7cf8261d0de9eca74821d8d65c3318fe6dbd08c0bec6f2f38097d57c3cb1"
+            },
+            {
+              "original_base_commit_verified": "7269fa3e33e8d02485a647da91a5a2a60a06af61"
+            },
+            {
+              "name": "sweb.eval.astropy__astropy-14365.g4-7bc0be995933484b",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 27.18569192662835,
+          "artifacts": {
+            "container-inspect.json": "811d7cf8261d0de9eca74821d8d65c3318fe6dbd08c0bec6f2f38097d57c3cb1",
+            "owned.json": "76171ca84269642b0b81ed3f9806a6bccc28c26fa67f093999c61bd2cf7de988",
+            "logs/evaluation/g4-7bc0be995933484b/g4-control/astropy__astropy-14365/patch.diff": "42420ff7003feddd01ddde186a66486ab686dc91af2a3155970dea6ca4df63c3",
+            "logs/evaluation/g4-7bc0be995933484b/g4-control/astropy__astropy-14365/run_instance.log": "3ed546f713d02e83c9202117ba406a0a84f80462f4be16946b42a3f7714b1f0a",
+            "logs/evaluation/g4-7bc0be995933484b/g4-control/astropy__astropy-14365/report.json": "f29773c31fa9c7a6ef51784d62faf7233381b4c31b7e565393af33942489f373",
+            "logs/evaluation/g4-7bc0be995933484b/g4-control/astropy__astropy-14365/test_output.txt": "c3d7ccd6ae2c235d1fdef902923018d9cc0af357c6d9d6670f1794897e94b048",
+            "logs/evaluation/g4-7bc0be995933484b/g4-control/astropy__astropy-14365/eval.sh": "c37a7ea7ea8015300c33a28eaa80c4a8fa768a78348e31033f2a5a8258f08227"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "matplotlib__matplotlib-26113",
+      "image_id": "sha256:a74186e03876e851501fa41ebf6f0807b48f72dcb2a5c160dcfc5bc2a834d881",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/matplotlib__matplotlib-26113/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.matplotlib__matplotlib-26113.g4-c102592b43394629",
+              "image_id": "sha256:a74186e03876e851501fa41ebf6f0807b48f72dcb2a5c160dcfc5bc2a834d881",
+              "inspect_sha256": "543bf38e1f85bb906941ef408db8a3148e980da31852115b8f9a2d01ac7af8bd"
+            },
+            {
+              "original_base_commit_verified": "5ca694b38d861c0e24cd8743753427dda839b90b"
+            },
+            {
+              "name": "sweb.eval.matplotlib__matplotlib-26113.g4-c102592b43394629",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 96.41245150752366,
+          "artifacts": {
+            "container-inspect.json": "543bf38e1f85bb906941ef408db8a3148e980da31852115b8f9a2d01ac7af8bd",
+            "owned.json": "a1b7d8b89040ed59ce7caefc762b55adc311be34331f8255fc094c8134ed4b82",
+            "logs/evaluation/g4-c102592b43394629/g4-control/matplotlib__matplotlib-26113/run_instance.log": "ce988bc40f0037f7d61f5508d8f41d318f98267f425b9cf01e5c0421bc8d336f",
+            "logs/evaluation/g4-c102592b43394629/g4-control/matplotlib__matplotlib-26113/report.json": "f55bd11809ac61bc91551e0164a07c28367b2ecadb3b47984593ee1bc82fa390",
+            "logs/evaluation/g4-c102592b43394629/g4-control/matplotlib__matplotlib-26113/test_output.txt": "b101330dfa16bf595576eff030dfecb7fd0f0670d8a76241723728137dba3107",
+            "logs/evaluation/g4-c102592b43394629/g4-control/matplotlib__matplotlib-26113/eval.sh": "20050f42ebc6e573e245418ccfdb507af17c9bf1e89ede754239f711a193a17b"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/matplotlib__matplotlib-26113/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.matplotlib__matplotlib-26113.g4-ac7e969d9e7a4aeb",
+              "image_id": "sha256:a74186e03876e851501fa41ebf6f0807b48f72dcb2a5c160dcfc5bc2a834d881",
+              "inspect_sha256": "5276d4d176a825d70cde47795c05a92f5058b315068eb1c71a3849454b98750a"
+            },
+            {
+              "original_base_commit_verified": "5ca694b38d861c0e24cd8743753427dda839b90b"
+            },
+            {
+              "name": "sweb.eval.matplotlib__matplotlib-26113.g4-ac7e969d9e7a4aeb",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 96.69477701373398,
+          "artifacts": {
+            "container-inspect.json": "5276d4d176a825d70cde47795c05a92f5058b315068eb1c71a3849454b98750a",
+            "owned.json": "2258f734ced313e4b38e82455e1d85bb58518926789ffbaaeec90e13339b63ec",
+            "logs/evaluation/g4-ac7e969d9e7a4aeb/g4-control/matplotlib__matplotlib-26113/patch.diff": "19289b1c984a6a351dd0f0f737ec91cf37ff8dde6251f67950b00bc21cf068ba",
+            "logs/evaluation/g4-ac7e969d9e7a4aeb/g4-control/matplotlib__matplotlib-26113/run_instance.log": "febc74a8848f0f23a3984a062059ed3c2d3500715b67c41136dcfb851dbfc338",
+            "logs/evaluation/g4-ac7e969d9e7a4aeb/g4-control/matplotlib__matplotlib-26113/report.json": "ae92a829cd465c339e173b372c2c0f47ac01a3dff96fbcdf4288b1b987eba818",
+            "logs/evaluation/g4-ac7e969d9e7a4aeb/g4-control/matplotlib__matplotlib-26113/test_output.txt": "3f7ba9f0efc115bf6b09673dd1ec5eb456c3b73dd8fd1abb129ad38a00aaf4c4",
+            "logs/evaluation/g4-ac7e969d9e7a4aeb/g4-control/matplotlib__matplotlib-26113/eval.sh": "20050f42ebc6e573e245418ccfdb507af17c9bf1e89ede754239f711a193a17b"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "scikit-learn__scikit-learn-10844",
+      "image_id": "sha256:b6eb25f28d261bfbac6e16a17be6fe36f6a8c087aa4198d832670dfa4ef7b1e3",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/scikit-learn__scikit-learn-10844/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 16,
+              "passed": 16,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-10844.g4-81c34ced72704087",
+              "image_id": "sha256:b6eb25f28d261bfbac6e16a17be6fe36f6a8c087aa4198d832670dfa4ef7b1e3",
+              "inspect_sha256": "32850e7ac04b9cd8bd02edc2b2b30da76be094954310c6fdcdb493597ea30bd0"
+            },
+            {
+              "original_base_commit_verified": "97523985b39ecde369d83352d7c3baf403b60a22"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-10844.g4-81c34ced72704087",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.716510947793722,
+          "artifacts": {
+            "container-inspect.json": "32850e7ac04b9cd8bd02edc2b2b30da76be094954310c6fdcdb493597ea30bd0",
+            "owned.json": "3ea1a36344d4f36e1ff7a72dad1c2cf033b089eff140be82018c8e2792d846f5",
+            "logs/evaluation/g4-81c34ced72704087/g4-control/scikit-learn__scikit-learn-10844/run_instance.log": "3fcac43edb0ddb68258b7f25894842ef8eabce557dbe993da52be25d201488a8",
+            "logs/evaluation/g4-81c34ced72704087/g4-control/scikit-learn__scikit-learn-10844/report.json": "625e8b803d44f2a15ebc71d8ff4a4cc423c72904cfaa6bfb3e267e98f2a1a46c",
+            "logs/evaluation/g4-81c34ced72704087/g4-control/scikit-learn__scikit-learn-10844/test_output.txt": "c12e16250d6e14f3f2d47b8c7e2e71a4c5cb0601b5ee47a6d5179c76c0eedada",
+            "logs/evaluation/g4-81c34ced72704087/g4-control/scikit-learn__scikit-learn-10844/eval.sh": "c0e487efc6ee86435fe81d7a7b8cc93361c294a5de8de4147542256cffd25f7e"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/scikit-learn__scikit-learn-10844/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 16,
+              "passed": 16,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-10844.g4-b7a21c69eed840cc",
+              "image_id": "sha256:b6eb25f28d261bfbac6e16a17be6fe36f6a8c087aa4198d832670dfa4ef7b1e3",
+              "inspect_sha256": "af2b7ba18c372f6c4512a61dfc9218f7e974fc9b807d762d530671985c575cf6"
+            },
+            {
+              "original_base_commit_verified": "97523985b39ecde369d83352d7c3baf403b60a22"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-10844.g4-b7a21c69eed840cc",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.135891428217292,
+          "artifacts": {
+            "container-inspect.json": "af2b7ba18c372f6c4512a61dfc9218f7e974fc9b807d762d530671985c575cf6",
+            "owned.json": "6e49c36e02badaf46986e97efd73f8b9ae2f9f5beffa3bce25d73274bb89171e",
+            "logs/evaluation/g4-b7a21c69eed840cc/g4-control/scikit-learn__scikit-learn-10844/patch.diff": "6b23af07d11343fd59602be794f7e7b6dba69127d5898f87d8e5760b6a531271",
+            "logs/evaluation/g4-b7a21c69eed840cc/g4-control/scikit-learn__scikit-learn-10844/run_instance.log": "e330a132123e1f2cda51e788a3e2d4888f817c3357a30fe3015bc0b3d8c44214",
+            "logs/evaluation/g4-b7a21c69eed840cc/g4-control/scikit-learn__scikit-learn-10844/report.json": "0de85d57c4082a5d80f24d50edadda45ccd3bd5de72bd80abfd731e60f0f8985",
+            "logs/evaluation/g4-b7a21c69eed840cc/g4-control/scikit-learn__scikit-learn-10844/test_output.txt": "a79f6d98e75204e3e78f36dfdae20d2763b6ab18f28a82e8685c05810ab966fc",
+            "logs/evaluation/g4-b7a21c69eed840cc/g4-control/scikit-learn__scikit-learn-10844/eval.sh": "c0e487efc6ee86435fe81d7a7b8cc93361c294a5de8de4147542256cffd25f7e"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "pytest-dev__pytest-7236",
+      "image_id": "sha256:c1f5ff162a4837fdcaf7017fffbe91b583e063e8d8f1af1455c78e0e2fcf55f5",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/pytest-dev__pytest-7236/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.pytest-dev__pytest-7236.g4-ae4fa5e1c343423c",
+              "image_id": "sha256:c1f5ff162a4837fdcaf7017fffbe91b583e063e8d8f1af1455c78e0e2fcf55f5",
+              "inspect_sha256": "5ee5d4760d778f214aac4ed9a906b922189228383d316d26c39fb3899a003bdd"
+            },
+            {
+              "original_base_commit_verified": "c98bc4cd3d687fe9b392d8eecd905627191d4f06"
+            },
+            {
+              "name": "sweb.eval.pytest-dev__pytest-7236.g4-ae4fa5e1c343423c",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.04226421006024,
+          "artifacts": {
+            "container-inspect.json": "5ee5d4760d778f214aac4ed9a906b922189228383d316d26c39fb3899a003bdd",
+            "owned.json": "067cf128070f8364d0bd499667c8c2fcb0aa3b04e19a66aaaec7d467feb0d3e8",
+            "logs/evaluation/g4-ae4fa5e1c343423c/g4-control/pytest-dev__pytest-7236/run_instance.log": "45884442fe1e0a1f24f496e8259439c17217ad635f9f4dd4342790b5ecb43dc4",
+            "logs/evaluation/g4-ae4fa5e1c343423c/g4-control/pytest-dev__pytest-7236/report.json": "1c5af5a41a5c91af35702ae2f48a71d775ef68b7401e3419bb0b355f9f342a59",
+            "logs/evaluation/g4-ae4fa5e1c343423c/g4-control/pytest-dev__pytest-7236/test_output.txt": "4bbcc086ff380e63f25ee23c1d48975f776c38a4cf0263e00559bd8fd607e00c",
+            "logs/evaluation/g4-ae4fa5e1c343423c/g4-control/pytest-dev__pytest-7236/eval.sh": "dc5fb33563c34a75384aa2c913989f86e608d26910c1005ccfce1b54abe2e5c4"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/pytest-dev__pytest-7236/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.pytest-dev__pytest-7236.g4-6418607ee6c145db",
+              "image_id": "sha256:c1f5ff162a4837fdcaf7017fffbe91b583e063e8d8f1af1455c78e0e2fcf55f5",
+              "inspect_sha256": "d0207be5f20bd4a9e43db781d7509b2fc414f49d4f99121a11c595c6426e45fc"
+            },
+            {
+              "original_base_commit_verified": "c98bc4cd3d687fe9b392d8eecd905627191d4f06"
+            },
+            {
+              "name": "sweb.eval.pytest-dev__pytest-7236.g4-6418607ee6c145db",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.08251771144569,
+          "artifacts": {
+            "container-inspect.json": "d0207be5f20bd4a9e43db781d7509b2fc414f49d4f99121a11c595c6426e45fc",
+            "owned.json": "58873f01bca7e16b97b190bedcb240d2e59c59086662ea95be09811294deadc5",
+            "logs/evaluation/g4-6418607ee6c145db/g4-control/pytest-dev__pytest-7236/patch.diff": "9641921f5afd783a16547e1480b06453c7b819271c2df8f195b435afd1a5688b",
+            "logs/evaluation/g4-6418607ee6c145db/g4-control/pytest-dev__pytest-7236/run_instance.log": "b6f5890343138f4579d9542ad42306fa0b9214fde861b4ce07a5640e8906772a",
+            "logs/evaluation/g4-6418607ee6c145db/g4-control/pytest-dev__pytest-7236/report.json": "07572444e19eac8e0281617efd18f5928835bcfdd63f584938bac6da1a4179aa",
+            "logs/evaluation/g4-6418607ee6c145db/g4-control/pytest-dev__pytest-7236/test_output.txt": "39ecdbb9e3c01eea5fe15b21d84f8ba9ecc5ae1c9f79d17db3cdd1ce373e6a7d",
+            "logs/evaluation/g4-6418607ee6c145db/g4-control/pytest-dev__pytest-7236/eval.sh": "dc5fb33563c34a75384aa2c913989f86e608d26910c1005ccfce1b54abe2e5c4"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-13837",
+      "image_id": "sha256:c207cacd618002ab203374eef1bffaaa511626f6dc025c9e17ee05e082cfa4ac",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-13837/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 57,
+              "passed": 57,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13837.g4-707dba11535149b3",
+              "image_id": "sha256:c207cacd618002ab203374eef1bffaaa511626f6dc025c9e17ee05e082cfa4ac",
+              "inspect_sha256": "39f1ceb96fba616f5b06d5149b9bac9a351df9d0a3fa17b2d4c16ac692cf6c1c"
+            },
+            {
+              "original_base_commit_verified": "415f50298f97fb17f841a9df38d995ccf347dfcc"
+            },
+            {
+              "name": "sweb.eval.django__django-13837.g4-707dba11535149b3",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.818143935874104,
+          "artifacts": {
+            "container-inspect.json": "39f1ceb96fba616f5b06d5149b9bac9a351df9d0a3fa17b2d4c16ac692cf6c1c",
+            "owned.json": "112960fc916e2d1a7cb787dfcee30118ded396066148aacea8c7f804818e06e2",
+            "logs/evaluation/g4-707dba11535149b3/g4-control/django__django-13837/run_instance.log": "b743840b6fd3793ce5f59b1587e3884b3abd75709389890618e1267beb616c2f",
+            "logs/evaluation/g4-707dba11535149b3/g4-control/django__django-13837/report.json": "749eb71b2445752ffd125ae10cdc00d2c84dd67d4584576b7e3df0fd829f51fb",
+            "logs/evaluation/g4-707dba11535149b3/g4-control/django__django-13837/test_output.txt": "b5bd0a29bf4979e80564521447a1e934b7874593ad80e9214eca8e4a5f55f08a",
+            "logs/evaluation/g4-707dba11535149b3/g4-control/django__django-13837/eval.sh": "5014f39c587793b56ddb8e489510ca529456709a683da9ca7a18aade2ea9ce5a"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-13837/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 57,
+              "passed": 57,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-13837.g4-ff31d55e03084e9a",
+              "image_id": "sha256:c207cacd618002ab203374eef1bffaaa511626f6dc025c9e17ee05e082cfa4ac",
+              "inspect_sha256": "d6784a97bd41cca896f5023e31bffa880ea0e59195d8b14cafe5ba7ad099f47d"
+            },
+            {
+              "original_base_commit_verified": "415f50298f97fb17f841a9df38d995ccf347dfcc"
+            },
+            {
+              "name": "sweb.eval.django__django-13837.g4-ff31d55e03084e9a",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.93846001289785,
+          "artifacts": {
+            "container-inspect.json": "d6784a97bd41cca896f5023e31bffa880ea0e59195d8b14cafe5ba7ad099f47d",
+            "owned.json": "5f7eee64de6ce41c8fa33c9c1ac163104df74d4297223e649cf0384dd26a665c",
+            "logs/evaluation/g4-ff31d55e03084e9a/g4-control/django__django-13837/patch.diff": "43af4ecf3fe14bc72c6a01450a99dee3ddb452d494d493b0b7bc90af6975b433",
+            "logs/evaluation/g4-ff31d55e03084e9a/g4-control/django__django-13837/run_instance.log": "54e04b9115669d9a93a48d53c4238d94a4e4ab10782e22be5707acb8fb97ec9d",
+            "logs/evaluation/g4-ff31d55e03084e9a/g4-control/django__django-13837/report.json": "8748d68c7edd5b5cfecb2028baf96ba004900953b053a8e660dcaca9da4d9a5c",
+            "logs/evaluation/g4-ff31d55e03084e9a/g4-control/django__django-13837/test_output.txt": "b2b52f1237c47cfbcbc6e7c16b00d0ddec92d0d62895bb95ed7297fd9a14579b",
+            "logs/evaluation/g4-ff31d55e03084e9a/g4-control/django__django-13837/eval.sh": "5014f39c587793b56ddb8e489510ca529456709a683da9ca7a18aade2ea9ce5a"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "django__django-11477",
+      "image_id": "sha256:6c36858a3f956b3ae30f007168d2891621b3667c3c78c16ff72faf2197c46272",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-11477/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Missing/ambiguous original test statuses"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11477.g4-17d4860426fc4fac",
+              "image_id": "sha256:6c36858a3f956b3ae30f007168d2891621b3667c3c78c16ff72faf2197c46272",
+              "inspect_sha256": "b47cf3c163a71f4dc8154fc9cd9d25ce83824675e0435875438600cadf620aa5"
+            },
+            {
+              "original_base_commit_verified": "e28671187903e6aca2428374fdd504fca3032aee"
+            },
+            {
+              "name": "sweb.eval.django__django-11477.g4-17d4860426fc4fac",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 21.738248642534018,
+          "artifacts": {
+            "container-inspect.json": "b47cf3c163a71f4dc8154fc9cd9d25ce83824675e0435875438600cadf620aa5",
+            "owned.json": "ace468c40a7d0769fb3691ab9d5e5ba6b540defabc992763ab0e71b4cc6941eb",
+            "logs/evaluation/g4-17d4860426fc4fac/g4-control/django__django-11477/run_instance.log": "09b8d89310caa279753d257972bd44462d05f4c7e1a83f47728bee7295d6230d",
+            "logs/evaluation/g4-17d4860426fc4fac/g4-control/django__django-11477/report.json": "5b42e49a2d4919d228dbfca10aa1f34f86170a820a7f5bf4bda4542e1af68384",
+            "logs/evaluation/g4-17d4860426fc4fac/g4-control/django__django-11477/test_output.txt": "61d4ca270bea82e6a26401ec219b5889919da4bd8e336c1e9d77752e274dab10",
+            "logs/evaluation/g4-17d4860426fc4fac/g4-control/django__django-11477/eval.sh": "eb93e324a0ebb80d28809a00a6ba9f90fbb934e8c128891dcabd449c481e6cf7"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-11477/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 3,
+              "passed": 3,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 151,
+              "passed": 151,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-11477.g4-8207655c3f464494",
+              "image_id": "sha256:6c36858a3f956b3ae30f007168d2891621b3667c3c78c16ff72faf2197c46272",
+              "inspect_sha256": "f3fe030c6b378f038c53bfe538c9e0eaf70dec660a1b4a593058cd98eb0ecabb"
+            },
+            {
+              "original_base_commit_verified": "e28671187903e6aca2428374fdd504fca3032aee"
+            },
+            {
+              "name": "sweb.eval.django__django-11477.g4-8207655c3f464494",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 22.003474371507764,
+          "artifacts": {
+            "container-inspect.json": "f3fe030c6b378f038c53bfe538c9e0eaf70dec660a1b4a593058cd98eb0ecabb",
+            "owned.json": "3d4c1fcf858817244842eea194c7f8574caa805b907d0ddb6c698f26a775e6df",
+            "logs/evaluation/g4-8207655c3f464494/g4-control/django__django-11477/patch.diff": "cba46df40568af2ead931ad6cae5686321100e5193ee8fdc732227d034ac3ae2",
+            "logs/evaluation/g4-8207655c3f464494/g4-control/django__django-11477/run_instance.log": "d3ee75b73a8c3c655a959eeb905b27ffc59763df32d0dffd2cbc1699e0b64a46",
+            "logs/evaluation/g4-8207655c3f464494/g4-control/django__django-11477/report.json": "c992c27a7dcde79de17f07f8da5417a88c9584238e4141790f7f92dbed4140a0",
+            "logs/evaluation/g4-8207655c3f464494/g4-control/django__django-11477/test_output.txt": "834898c2d4ce633cbf017b2ba48a2b0c605f522fe99a979f8663a2ba92b27099",
+            "logs/evaluation/g4-8207655c3f464494/g4-control/django__django-11477/eval.sh": "eb93e324a0ebb80d28809a00a6ba9f90fbb934e8c128891dcabd449c481e6cf7"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-16485",
+      "image_id": "sha256:5fe07904aeca850bb40f45087f3cf47c38512d0661ee9c329530681b6aaa4f66",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-16485/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-16485.g4-6c68cee45edf4bfb",
+              "image_id": "sha256:5fe07904aeca850bb40f45087f3cf47c38512d0661ee9c329530681b6aaa4f66",
+              "inspect_sha256": "227947cbf9ee74961e11ed8e83b0e4d4cecdf285869ea95f28d6d2b6f69f3ec4"
+            },
+            {
+              "original_base_commit_verified": "39f83765e12b0e5d260b7939fc3fe281d879b279"
+            },
+            {
+              "name": "sweb.eval.django__django-16485.g4-6c68cee45edf4bfb",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.08525980450213,
+          "artifacts": {
+            "container-inspect.json": "227947cbf9ee74961e11ed8e83b0e4d4cecdf285869ea95f28d6d2b6f69f3ec4",
+            "owned.json": "c446a26793ae3996719fd2472425552fe76745839a3ddee7e5a4a37679464693",
+            "logs/evaluation/g4-6c68cee45edf4bfb/g4-control/django__django-16485/run_instance.log": "9cd5c8483cfb59fa76718ca6ec126b35e21802d0018af3f664022225c9584d02",
+            "logs/evaluation/g4-6c68cee45edf4bfb/g4-control/django__django-16485/report.json": "ef0811264a7d4e65dfd60615ccfacac2154a3d19e30a290e4daa2f6d785db77b",
+            "logs/evaluation/g4-6c68cee45edf4bfb/g4-control/django__django-16485/test_output.txt": "212714be94e39bfbccb000179cf3b2b291b61bb651880f55443093567c0e09bd",
+            "logs/evaluation/g4-6c68cee45edf4bfb/g4-control/django__django-16485/eval.sh": "c44c7b80f030a1352063585330d30f75c9252169e8668a14b6f0d0a812ce0a1b"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-16485/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-16485.g4-bf8346044a5243ca",
+              "image_id": "sha256:5fe07904aeca850bb40f45087f3cf47c38512d0661ee9c329530681b6aaa4f66",
+              "inspect_sha256": "59160645fb00b233f096c4f172a2aea08ad0f3b19034588d173e64cfcca78add"
+            },
+            {
+              "original_base_commit_verified": "39f83765e12b0e5d260b7939fc3fe281d879b279"
+            },
+            {
+              "name": "sweb.eval.django__django-16485.g4-bf8346044a5243ca",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.056094044819474,
+          "artifacts": {
+            "container-inspect.json": "59160645fb00b233f096c4f172a2aea08ad0f3b19034588d173e64cfcca78add",
+            "owned.json": "8f2a7226de5edf7fb23b5072be7be6102965c34c52ae1a1319124af40159d2a4",
+            "logs/evaluation/g4-bf8346044a5243ca/g4-control/django__django-16485/patch.diff": "0a273714573dd7033b3126ca3227096ff786db8d990ac0558c0ee99d0d2b4149",
+            "logs/evaluation/g4-bf8346044a5243ca/g4-control/django__django-16485/run_instance.log": "cb45a09c834a260deb6893cb2bbd5a30a8b9b293ee2164d1d0354ef22e837735",
+            "logs/evaluation/g4-bf8346044a5243ca/g4-control/django__django-16485/report.json": "8f9ce9cde7291565276cf58ad37f8d6492870ba9e919ac0378142ba580ca3e42",
+            "logs/evaluation/g4-bf8346044a5243ca/g4-control/django__django-16485/test_output.txt": "04c72a072ce6ad9c3d58291e87740fec0003fa7d1563a2cd9a357dd78060ad73",
+            "logs/evaluation/g4-bf8346044a5243ca/g4-control/django__django-16485/eval.sh": "c44c7b80f030a1352063585330d30f75c9252169e8668a14b6f0d0a812ce0a1b"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-14539",
+      "image_id": "sha256:87ee174bf76b880a59fe31b9e4587a8cd9db24fe0728e5aed16ceecd07a23432",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-14539/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-14539.g4-61b273d68fd14199",
+              "image_id": "sha256:87ee174bf76b880a59fe31b9e4587a8cd9db24fe0728e5aed16ceecd07a23432",
+              "inspect_sha256": "1dcbc9a87b491a1c5861349cf0cee8473a01810bf2e83e408751b2affca457af"
+            },
+            {
+              "original_base_commit_verified": "6a5ef557f80a8eb6a758ebe99c8bb477ca47459e"
+            },
+            {
+              "name": "sweb.eval.django__django-14539.g4-61b273d68fd14199",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.006775703281164,
+          "artifacts": {
+            "container-inspect.json": "1dcbc9a87b491a1c5861349cf0cee8473a01810bf2e83e408751b2affca457af",
+            "owned.json": "6522864578a1a9a0be057c404f51f02b00686a28bf48b1da6e7c68ab28ffa849",
+            "logs/evaluation/g4-61b273d68fd14199/g4-control/django__django-14539/run_instance.log": "469563e135e49127eaf891fc68bb23c87605abf4b3c715d7b0293b9f8bed89ed",
+            "logs/evaluation/g4-61b273d68fd14199/g4-control/django__django-14539/report.json": "008ef0a3b879794f46b16a46f5f33875b036796f0435041dc5e39fb285bc8b8a",
+            "logs/evaluation/g4-61b273d68fd14199/g4-control/django__django-14539/test_output.txt": "9da7b937931f21b9f2e6c1276d8a46c9d0bec67f3398559bb54d0f16ba3d2a4e",
+            "logs/evaluation/g4-61b273d68fd14199/g4-control/django__django-14539/eval.sh": "e2b8adc0a8367078b1c9724db624bcd5d1b0faebb50dbaee7e0ceb19ff8e0213"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-14539/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-14539.g4-18c2112e0f144f06",
+              "image_id": "sha256:87ee174bf76b880a59fe31b9e4587a8cd9db24fe0728e5aed16ceecd07a23432",
+              "inspect_sha256": "66f3e1b6e74f00c84b76c4110eb9f44e7b79c890222fbb31ff3235add576aaa4"
+            },
+            {
+              "original_base_commit_verified": "6a5ef557f80a8eb6a758ebe99c8bb477ca47459e"
+            },
+            {
+              "name": "sweb.eval.django__django-14539.g4-18c2112e0f144f06",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 26.04555841907859,
+          "artifacts": {
+            "container-inspect.json": "66f3e1b6e74f00c84b76c4110eb9f44e7b79c890222fbb31ff3235add576aaa4",
+            "owned.json": "e7de630217d81e67b40d132bd61282fa2586d9f828c63a143ff9f7895d8193a0",
+            "logs/evaluation/g4-18c2112e0f144f06/g4-control/django__django-14539/patch.diff": "f7f6ee8991f4ea436f1a5cafaf21b3f9af1b4a708afd17ff1b27c699488d0306",
+            "logs/evaluation/g4-18c2112e0f144f06/g4-control/django__django-14539/run_instance.log": "9d78ec70e5e4cc7b5b00c9eb1993920ee0bdbc6c9e4461bdc81de57f34a713dc",
+            "logs/evaluation/g4-18c2112e0f144f06/g4-control/django__django-14539/report.json": "bc7f07cdab7b73affaf2f218434b056fbf64fb286361de34d6407e957c829779",
+            "logs/evaluation/g4-18c2112e0f144f06/g4-control/django__django-14539/test_output.txt": "5011c384ba23ddef30bc917dce2c4b1b687c3f5edb0875ae840c2fb48c166666",
+            "logs/evaluation/g4-18c2112e0f144f06/g4-control/django__django-14539/eval.sh": "e2b8adc0a8367078b1c9724db624bcd5d1b0faebb50dbaee7e0ceb19ff8e0213"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "django__django-14855",
+      "image_id": "sha256:4482ed260f2daf4e3726fe2ac6f2feabba5c99d5716c18289d44740b8f263380",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-14855/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-14855.g4-9d47c6ba77fd4890",
+              "image_id": "sha256:4482ed260f2daf4e3726fe2ac6f2feabba5c99d5716c18289d44740b8f263380",
+              "inspect_sha256": "47328fbcd9e4674959f77e2f2b13d134e45d16210c3a000aba9d79a6f86d5d12"
+            },
+            {
+              "original_base_commit_verified": "475cffd1d64c690cdad16ede4d5e81985738ceb4"
+            },
+            {
+              "name": "sweb.eval.django__django-14855.g4-9d47c6ba77fd4890",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 48.69165529683232,
+          "artifacts": {
+            "container-inspect.json": "47328fbcd9e4674959f77e2f2b13d134e45d16210c3a000aba9d79a6f86d5d12",
+            "owned.json": "07aed39227fa802d9048f6487be8f747c5f22e00ba74554780e0bec85b30c9ba",
+            "logs/evaluation/g4-9d47c6ba77fd4890/g4-control/django__django-14855/run_instance.log": "1886b71f7cfea4eb14a4868ba72a8050b4802871ee663daa2380f0586905cc0d",
+            "logs/evaluation/g4-9d47c6ba77fd4890/g4-control/django__django-14855/report.json": "d9a71cae46aec3a8eee911898dfa0cdba0373478d9e907332d78ef1019a9fc51",
+            "logs/evaluation/g4-9d47c6ba77fd4890/g4-control/django__django-14855/test_output.txt": "dffa41e6fbe1ace4a825ef2fa21b3d1d537d6f0913989072c3f87ee86f8f7c18",
+            "logs/evaluation/g4-9d47c6ba77fd4890/g4-control/django__django-14855/eval.sh": "8dd32f1d6c28d0281d43ddd42e4398b42f1f3892a53ee42d08e6ab2c69e11e37"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/django__django-14855/gold",
+          "valid": false,
+          "resolved": true,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.django__django-14855.g4-e5386f93459f439e",
+              "image_id": "sha256:4482ed260f2daf4e3726fe2ac6f2feabba5c99d5716c18289d44740b8f263380",
+              "inspect_sha256": "16410e847f71f6f69757ec94be50b151c415320fdf13b855279dc37e4dd8818f"
+            },
+            {
+              "original_base_commit_verified": "475cffd1d64c690cdad16ede4d5e81985738ceb4"
+            },
+            {
+              "name": "sweb.eval.django__django-14855.g4-e5386f93459f439e",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 47.940749088302255,
+          "artifacts": {
+            "container-inspect.json": "16410e847f71f6f69757ec94be50b151c415320fdf13b855279dc37e4dd8818f",
+            "owned.json": "5a752e570f3f4cf4c1b5adedc28b3eb050efda24b05943e3e2e0527d5b73f264",
+            "logs/evaluation/g4-e5386f93459f439e/g4-control/django__django-14855/patch.diff": "d3030b5f4fad5c863ff06db624c2394aa0a7f8e23a3bc281954555e703488016",
+            "logs/evaluation/g4-e5386f93459f439e/g4-control/django__django-14855/run_instance.log": "2d199eb3af3b8bc2c5f4170b68fe61fb536abfb8390d162ecb75ee19f1f51543",
+            "logs/evaluation/g4-e5386f93459f439e/g4-control/django__django-14855/report.json": "7bd6659eac15f041b33ad66526e9afbc07b60d89fdda81d1c4791f2d0f7394fa",
+            "logs/evaluation/g4-e5386f93459f439e/g4-control/django__django-14855/test_output.txt": "4a6a122dd8b2addec783d97835e3a76a68e29076de4bb08f5f9c3c7eddeb86d5",
+            "logs/evaluation/g4-e5386f93459f439e/g4-control/django__django-14855/eval.sh": "8dd32f1d6c28d0281d43ddd42e4398b42f1f3892a53ee42d08e6ab2c69e11e37"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "sphinx-doc__sphinx-7985",
+      "image_id": "sha256:d391c2941a2478cbeb23c2d6e762a0d1f73814f4f2bd3f304f330215ffaf17f1",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sphinx-doc__sphinx-7985/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-7985.g4-c83f18c9fd1b440b",
+              "image_id": "sha256:d391c2941a2478cbeb23c2d6e762a0d1f73814f4f2bd3f304f330215ffaf17f1",
+              "inspect_sha256": "07e7487c013926678efb36aff4d32f75b9dc5db32601f89423caa6865457dc10"
+            },
+            {
+              "original_base_commit_verified": "f30284ef926ebaf04b176f21b421e2dffc679792"
+            },
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-7985.g4-c83f18c9fd1b440b",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 18.898460248485208,
+          "artifacts": {
+            "container-inspect.json": "07e7487c013926678efb36aff4d32f75b9dc5db32601f89423caa6865457dc10",
+            "owned.json": "7af8b7c9d0bab74cc16c8177dc3acb1cf4688a6198fe72932d19cdfe9708cbc3",
+            "logs/evaluation/g4-c83f18c9fd1b440b/g4-control/sphinx-doc__sphinx-7985/run_instance.log": "83305279ada04c54a93ebeccafc180cda5fe837403f641f60f79fb5326d1becb",
+            "logs/evaluation/g4-c83f18c9fd1b440b/g4-control/sphinx-doc__sphinx-7985/report.json": "d194dedea9df95f585d1665c822d3d8df2c99563ad67b7afbee9e5ed2bb33e6a",
+            "logs/evaluation/g4-c83f18c9fd1b440b/g4-control/sphinx-doc__sphinx-7985/test_output.txt": "bd8a35eb92255ae571f587776a88542c26cad56ae04992dafefac51fd4406b30",
+            "logs/evaluation/g4-c83f18c9fd1b440b/g4-control/sphinx-doc__sphinx-7985/eval.sh": "d1057bcbc18eb3475255e63ed4af89d88c10bc4b1544d8d82a363380c0525944"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sphinx-doc__sphinx-7985/gold",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-7985.g4-4957d57d7ba9482b",
+              "image_id": "sha256:d391c2941a2478cbeb23c2d6e762a0d1f73814f4f2bd3f304f330215ffaf17f1",
+              "inspect_sha256": "354667a102f93c5bdc6f57874f7b2d519997f1c8509ea0ea27278802b6899dac"
+            },
+            {
+              "original_base_commit_verified": "f30284ef926ebaf04b176f21b421e2dffc679792"
+            },
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-7985.g4-4957d57d7ba9482b",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 18.57576296105981,
+          "artifacts": {
+            "container-inspect.json": "354667a102f93c5bdc6f57874f7b2d519997f1c8509ea0ea27278802b6899dac",
+            "owned.json": "419464a6ccdcf3dd23becda6f8484cedfa8095c7480abefaabb075208cee0b2e",
+            "logs/evaluation/g4-4957d57d7ba9482b/g4-control/sphinx-doc__sphinx-7985/patch.diff": "c5e48b316c65a3fee14df4302e045d5b6b89f2201c4ba7e812e7b9fc497ab0ba",
+            "logs/evaluation/g4-4957d57d7ba9482b/g4-control/sphinx-doc__sphinx-7985/run_instance.log": "d2e5dfa8267372d164f56da6440cd4485ac4e1906b077e06d214d4b35945f078",
+            "logs/evaluation/g4-4957d57d7ba9482b/g4-control/sphinx-doc__sphinx-7985/report.json": "d194dedea9df95f585d1665c822d3d8df2c99563ad67b7afbee9e5ed2bb33e6a",
+            "logs/evaluation/g4-4957d57d7ba9482b/g4-control/sphinx-doc__sphinx-7985/test_output.txt": "329f67d450d4f2835ee0478a59cab9ea6f047256b53877a332fb91f71a808ad8",
+            "logs/evaluation/g4-4957d57d7ba9482b/g4-control/sphinx-doc__sphinx-7985/eval.sh": "d1057bcbc18eb3475255e63ed4af89d88c10bc4b1544d8d82a363380c0525944"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "sphinx-doc__sphinx-9591",
+      "image_id": "sha256:2dca3f31f7195a925a7f0d48a0c6bbfc7d10a7f7b7d67af7c90e7863b5ae1529",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sphinx-doc__sphinx-9591/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Missing/ambiguous original test statuses"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-9591.g4-6fcfdb47605349e9",
+              "image_id": "sha256:2dca3f31f7195a925a7f0d48a0c6bbfc7d10a7f7b7d67af7c90e7863b5ae1529",
+              "inspect_sha256": "63d190b0fb63c9f037fa7b4dc721dd65d0e1a7a7b595c397c13e63cfbece12c4"
+            },
+            {
+              "original_base_commit_verified": "9ed054279aeffd5b1d0642e2d24a8800389de29f"
+            },
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-9591.g4-6fcfdb47605349e9",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 20.11980851739645,
+          "artifacts": {
+            "container-inspect.json": "63d190b0fb63c9f037fa7b4dc721dd65d0e1a7a7b595c397c13e63cfbece12c4",
+            "owned.json": "23280608942fe811df01c5f62e0823d1cbece54125c8e6b739f2cba4475ff3d5",
+            "logs/evaluation/g4-6fcfdb47605349e9/g4-control/sphinx-doc__sphinx-9591/run_instance.log": "9876a1635f871fec77a386e7ef6f4dab0e8c692271a1dd49bdbeacfa4c38d408",
+            "logs/evaluation/g4-6fcfdb47605349e9/g4-control/sphinx-doc__sphinx-9591/report.json": "d6a34382cbf36ec0c7be00f2e9d1d84aed5bbde06cf4200495f8f18173ed6f59",
+            "logs/evaluation/g4-6fcfdb47605349e9/g4-control/sphinx-doc__sphinx-9591/test_output.txt": "0e9688edf59ae01ee33b40b63f17ca0c43054c5a194aeb637f3c94e8a8158279",
+            "logs/evaluation/g4-6fcfdb47605349e9/g4-control/sphinx-doc__sphinx-9591/eval.sh": "9a912fa934f813a6c04ed72666dccc908d9429fe1d4d2adf7b9955cec214ee59"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sphinx-doc__sphinx-9591/gold",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-9591.g4-f138e1ffc7e84d8e",
+              "image_id": "sha256:2dca3f31f7195a925a7f0d48a0c6bbfc7d10a7f7b7d67af7c90e7863b5ae1529",
+              "inspect_sha256": "a0df1fcff657ff4a06e45a5addcb6f247ed6c14b0b7a0ae40274c1ea5ed3cc38"
+            },
+            {
+              "original_base_commit_verified": "9ed054279aeffd5b1d0642e2d24a8800389de29f"
+            },
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-9591.g4-f138e1ffc7e84d8e",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 20.262480925768614,
+          "artifacts": {
+            "container-inspect.json": "a0df1fcff657ff4a06e45a5addcb6f247ed6c14b0b7a0ae40274c1ea5ed3cc38",
+            "owned.json": "b0dc354b34c63a340393e7868a9931502900ff84c75809a9e2abce6520d328b1",
+            "logs/evaluation/g4-f138e1ffc7e84d8e/g4-control/sphinx-doc__sphinx-9591/patch.diff": "e523d5057b448cc62524c765353f192caa38db7dcfcdeac0ee7238d519de25f0",
+            "logs/evaluation/g4-f138e1ffc7e84d8e/g4-control/sphinx-doc__sphinx-9591/run_instance.log": "1a309f26af5ff2bbff1313bb4ed51614867d94b7ef156330470f92841a2c3cad",
+            "logs/evaluation/g4-f138e1ffc7e84d8e/g4-control/sphinx-doc__sphinx-9591/report.json": "3bf4b2b966cc0ca38442230a94c9667994dd379b38c0e07a6b63ec5b202b906b",
+            "logs/evaluation/g4-f138e1ffc7e84d8e/g4-control/sphinx-doc__sphinx-9591/test_output.txt": "c0045a0931156e99d5b9226e8c4ad6c7053f441f5e7c250a35abe92052288867",
+            "logs/evaluation/g4-f138e1ffc7e84d8e/g4-control/sphinx-doc__sphinx-9591/eval.sh": "9a912fa934f813a6c04ed72666dccc908d9429fe1d4d2adf7b9955cec214ee59"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "sphinx-doc__sphinx-10449",
+      "image_id": "sha256:d957e17fb9bf9f6cee2f6158b032192513492fcc3962710e6aac2e6fc732641d",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sphinx-doc__sphinx-10449/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Missing/ambiguous original test statuses"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-10449.g4-c7c7b7611d844f52",
+              "image_id": "sha256:d957e17fb9bf9f6cee2f6158b032192513492fcc3962710e6aac2e6fc732641d",
+              "inspect_sha256": "1c85e2f8bd64fd7f3570bec94832a420bd204a21ff5c0d7ae4ec7380cb47158d"
+            },
+            {
+              "original_base_commit_verified": "36367765fe780f962bba861bf368a765380bbc68"
+            },
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-10449.g4-c7c7b7611d844f52",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.800915410742164,
+          "artifacts": {
+            "container-inspect.json": "1c85e2f8bd64fd7f3570bec94832a420bd204a21ff5c0d7ae4ec7380cb47158d",
+            "owned.json": "fffb6c9ecc62ef245547feaa0e33e1c66b0a57be741b01c2b42335aa185fe628",
+            "logs/evaluation/g4-c7c7b7611d844f52/g4-control/sphinx-doc__sphinx-10449/run_instance.log": "de0709305707f41b70bd42d31d1f8073f609a1f2d309770a68d482ec14aef3a6",
+            "logs/evaluation/g4-c7c7b7611d844f52/g4-control/sphinx-doc__sphinx-10449/report.json": "935dc763001ebb7872974186be6af37ae0c0de7e60ae49f13582a119c43b1fb6",
+            "logs/evaluation/g4-c7c7b7611d844f52/g4-control/sphinx-doc__sphinx-10449/test_output.txt": "01847d730b501f362a36976aee2505f2bb2396c13954c050305ba774f6d34414",
+            "logs/evaluation/g4-c7c7b7611d844f52/g4-control/sphinx-doc__sphinx-10449/eval.sh": "0eadef81b7eb685e3f3f9135bf6a6d6aa75cf97a648ac099e9f4a645a1895540"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/sphinx-doc__sphinx-10449/gold",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "Official control infrastructure/collection failure"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-10449.g4-62088b12494647ad",
+              "image_id": "sha256:d957e17fb9bf9f6cee2f6158b032192513492fcc3962710e6aac2e6fc732641d",
+              "inspect_sha256": "7d6d0a6fc1138a61ebb659899a863c4957721fc71517d653c2d838eb0b10de87"
+            },
+            {
+              "original_base_commit_verified": "36367765fe780f962bba861bf368a765380bbc68"
+            },
+            {
+              "name": "sweb.eval.sphinx-doc__sphinx-10449.g4-62088b12494647ad",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 19.95014150813222,
+          "artifacts": {
+            "container-inspect.json": "7d6d0a6fc1138a61ebb659899a863c4957721fc71517d653c2d838eb0b10de87",
+            "owned.json": "21008c596ff35ad16b5fbe187ecbf2ec88ae7570255dec0a586ce21e3c43ec00",
+            "logs/evaluation/g4-62088b12494647ad/g4-control/sphinx-doc__sphinx-10449/patch.diff": "686d63a8c9b8ee171de780e334fa9ec3a84bbf0d88deb0fa5533cd816282da74",
+            "logs/evaluation/g4-62088b12494647ad/g4-control/sphinx-doc__sphinx-10449/run_instance.log": "bc27295928e29fd38ccd97b9ca56e667f9c926cc98a0d985a0d280c4c57a3464",
+            "logs/evaluation/g4-62088b12494647ad/g4-control/sphinx-doc__sphinx-10449/report.json": "9244886c6f30c616af1606cbc1b4d57b0a1d327b9f493cfed17568ce5eae2add",
+            "logs/evaluation/g4-62088b12494647ad/g4-control/sphinx-doc__sphinx-10449/test_output.txt": "f336a53f833a9821c5262215a8b5f2e7fc1a69d834478b91071135a7e3bd89ec",
+            "logs/evaluation/g4-62088b12494647ad/g4-control/sphinx-doc__sphinx-10449/eval.sh": "0eadef81b7eb685e3f3f9135bf6a6d6aa75cf97a648ac099e9f4a645a1895540"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "scikit-learn__scikit-learn-25747",
+      "image_id": "sha256:6ccd3038f26d22daecfe8f80015b33eb189d49eaa10ee4e0928af2a2a16823ad",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/scikit-learn__scikit-learn-25747/nop",
+          "valid": true,
+          "resolved": false,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 0,
+              "failed": 1
+            },
+            "PASS_TO_PASS": {
+              "expected": 14,
+              "passed": 14,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-25747.g4-f27df68a9c794507",
+              "image_id": "sha256:6ccd3038f26d22daecfe8f80015b33eb189d49eaa10ee4e0928af2a2a16823ad",
+              "inspect_sha256": "70bb8f163c9a0a0e48582f1e2c7e749c0b100159afdbc23a8060fb29b3d2dbb0"
+            },
+            {
+              "original_base_commit_verified": "2c867b8f822eb7a684f0d5c4359e4426e1c9cfe0"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-25747.g4-f27df68a9c794507",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 311.52348378300667,
+          "artifacts": {
+            "container-inspect.json": "70bb8f163c9a0a0e48582f1e2c7e749c0b100159afdbc23a8060fb29b3d2dbb0",
+            "owned.json": "df7f0bcd1b011e39e949fd27bd0591c0ffa3411c6dd8272ba312e40698bfd1d7",
+            "logs/evaluation/g4-f27df68a9c794507/g4-control/scikit-learn__scikit-learn-25747/run_instance.log": "601312290119221e2e2ae51a6f396c557b1b08c6d3901cc2b9c87262b7ef3be8",
+            "logs/evaluation/g4-f27df68a9c794507/g4-control/scikit-learn__scikit-learn-25747/report.json": "e04e54aa65fbae63698ff701371ed72fe6c1b16bbebb2b74a3609ec9bc0e6d64",
+            "logs/evaluation/g4-f27df68a9c794507/g4-control/scikit-learn__scikit-learn-25747/test_output.txt": "7eddc57aa2b273bfaabeba00104f936617314a6f3863f82a60e3943fbf46949f",
+            "logs/evaluation/g4-f27df68a9c794507/g4-control/scikit-learn__scikit-learn-25747/eval.sh": "f95790000d06ff226871b26fa55d454911858d718d12ae12c138e2b721ceee83"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/scikit-learn__scikit-learn-25747/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 1,
+              "passed": 1,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 14,
+              "passed": 14,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-25747.g4-2ee99ab70c344aed",
+              "image_id": "sha256:6ccd3038f26d22daecfe8f80015b33eb189d49eaa10ee4e0928af2a2a16823ad",
+              "inspect_sha256": "2df0d5c7ae252129cff15103fe1cf264bd19139d170f4eb9a33d287f66efbc2c"
+            },
+            {
+              "original_base_commit_verified": "2c867b8f822eb7a684f0d5c4359e4426e1c9cfe0"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-25747.g4-2ee99ab70c344aed",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 312.38294416479766,
+          "artifacts": {
+            "container-inspect.json": "2df0d5c7ae252129cff15103fe1cf264bd19139d170f4eb9a33d287f66efbc2c",
+            "owned.json": "493a26f011d28ac472e9d8366d0b082997f74bdc96069034e8cc6cb34f98fa0b",
+            "logs/evaluation/g4-2ee99ab70c344aed/g4-control/scikit-learn__scikit-learn-25747/patch.diff": "cd985cfd10afb83adb9d714fb81873b001a56de5938d93b5a9c7dbb641d3c9b3",
+            "logs/evaluation/g4-2ee99ab70c344aed/g4-control/scikit-learn__scikit-learn-25747/run_instance.log": "3ccb671b0bd2dc9472fe9e288a45e9ddaac3e15afe91e98d0bf11f99f8f20df4",
+            "logs/evaluation/g4-2ee99ab70c344aed/g4-control/scikit-learn__scikit-learn-25747/report.json": "6b77b226f373928e3d51a2d95f9e6e240fc109a0076ef35e4c12433d5e0142fb",
+            "logs/evaluation/g4-2ee99ab70c344aed/g4-control/scikit-learn__scikit-learn-25747/test_output.txt": "492bb05365c952bee601ca168e4145a3924587743b056d9c263ad43d6f434bdc",
+            "logs/evaluation/g4-2ee99ab70c344aed/g4-control/scikit-learn__scikit-learn-25747/eval.sh": "f95790000d06ff226871b26fa55d454911858d718d12ae12c138e2b721ceee83"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": true
+    },
+    {
+      "task": "pydata__xarray-3993",
+      "image_id": "sha256:bda81056d40c4be9809fe6bbbd1d22c8486215ce8bff984e58d58e9d9c47f9c1",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/pydata__xarray-3993/nop",
+          "valid": false,
+          "resolved": false,
+          "error": {
+            "type": "RuntimeError",
+            "message": "No original F2P or original P2P regression"
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.pydata__xarray-3993.g4-1fba2edc65454813",
+              "image_id": "sha256:bda81056d40c4be9809fe6bbbd1d22c8486215ce8bff984e58d58e9d9c47f9c1",
+              "inspect_sha256": "beea0a5d209eeaeed05ec97a3bf3ae527176ae468f4299f15055544f32ada166"
+            },
+            {
+              "original_base_commit_verified": "8cc34cb412ba89ebca12fc84f76a9e452628f1bc"
+            },
+            {
+              "name": "sweb.eval.pydata__xarray-3993.g4-1fba2edc65454813",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 120.70377674140036,
+          "artifacts": {
+            "container-inspect.json": "beea0a5d209eeaeed05ec97a3bf3ae527176ae468f4299f15055544f32ada166",
+            "owned.json": "c4cf91e3ac9855bf79dd4bedd5b874dd5a1f2d56504029da4d6ee077fec5ef6f",
+            "logs/evaluation/g4-1fba2edc65454813/g4-control/pydata__xarray-3993/run_instance.log": "da1de9cdefb315c40464a03743637344af8b5d70e81ac0a716f48f9c85fac8ca",
+            "logs/evaluation/g4-1fba2edc65454813/g4-control/pydata__xarray-3993/report.json": "bd6ad1fed9277eed8a5c736b8811b193c13d19ba9db7d5e07cc91acaad073023",
+            "logs/evaluation/g4-1fba2edc65454813/g4-control/pydata__xarray-3993/test_output.txt": "599858430fc9ca9e85439b040026c52700653735fda6f8f289204577075e8317",
+            "logs/evaluation/g4-1fba2edc65454813/g4-control/pydata__xarray-3993/eval.sh": "a33af7ede489e098b82448888cd40bdc14ffaaf7e77abcc5d2bfaa389da13616"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/pydata__xarray-3993/gold",
+          "valid": true,
+          "resolved": true,
+          "coverage": {
+            "FAIL_TO_PASS": {
+              "expected": 2,
+              "passed": 2,
+              "failed": 0
+            },
+            "PASS_TO_PASS": {
+              "expected": 2398,
+              "passed": 2398,
+              "failed": 0
+            }
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.pydata__xarray-3993.g4-88e9efa7a2d44321",
+              "image_id": "sha256:bda81056d40c4be9809fe6bbbd1d22c8486215ce8bff984e58d58e9d9c47f9c1",
+              "inspect_sha256": "ca7b60c1ebe2a2afb00dc63d7f9b23a1366bf1ed5fbb21de3d714c9bdba8e2b8"
+            },
+            {
+              "original_base_commit_verified": "8cc34cb412ba89ebca12fc84f76a9e452628f1bc"
+            },
+            {
+              "name": "sweb.eval.pydata__xarray-3993.g4-88e9efa7a2d44321",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 126.62705928087234,
+          "artifacts": {
+            "container-inspect.json": "ca7b60c1ebe2a2afb00dc63d7f9b23a1366bf1ed5fbb21de3d714c9bdba8e2b8",
+            "owned.json": "dd029a843577ca34111bbe3eadded9c3668231fc341412da438d91b1da9938e5",
+            "logs/evaluation/g4-88e9efa7a2d44321/g4-control/pydata__xarray-3993/patch.diff": "71416a1368862b9d068eab21976cb76e9d127f4d5596a1bffe21dd34eb32f5b8",
+            "logs/evaluation/g4-88e9efa7a2d44321/g4-control/pydata__xarray-3993/run_instance.log": "ccd931a04ddb12ac38564febbc0c9d165b69cc4d502c5a04dccbbdd628b984dc",
+            "logs/evaluation/g4-88e9efa7a2d44321/g4-control/pydata__xarray-3993/report.json": "cdbfbe61848e8765f61cbad6e74e4e7855e8c6dba960c5ff434ffb8feecb5975",
+            "logs/evaluation/g4-88e9efa7a2d44321/g4-control/pydata__xarray-3993/test_output.txt": "46c0536f12f39422a892db88a02a8ace250b3e1688218dacef6b89c0fa095342",
+            "logs/evaluation/g4-88e9efa7a2d44321/g4-control/pydata__xarray-3993/eval.sh": "a33af7ede489e098b82448888cd40bdc14ffaaf7e77abcc5d2bfaa389da13616"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    },
+    {
+      "task": "scikit-learn__scikit-learn-14710",
+      "image_id": "sha256:4832a969ff4538fce25c13dbdefe339f895ea02ab8242aa930866117bfb4cbfb",
+      "controls": [
+        {
+          "kind": "nop",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/scikit-learn__scikit-learn-14710/nop",
+          "valid": false,
+          "error": {
+            "type": "AssertionError",
+            "message": ""
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-14710.g4-245b222544f44861",
+              "image_id": "sha256:4832a969ff4538fce25c13dbdefe339f895ea02ab8242aa930866117bfb4cbfb",
+              "inspect_sha256": "cfb08d6be509f35a56b3d4bb75e451b63f17949ee9e821be1fc655d73862fbea"
+            },
+            {
+              "original_base_commit_verified": "4b6273b87442a4437d8b3873ea3022ae163f4fdf"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-14710.g4-245b222544f44861",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 621.934601848945,
+          "artifacts": {
+            "container-inspect.json": "cfb08d6be509f35a56b3d4bb75e451b63f17949ee9e821be1fc655d73862fbea",
+            "owned.json": "0f499848fdd18fcc2af65496bf58156c338bc7b40e1044ae2ba08c613044c41d",
+            "logs/evaluation/g4-245b222544f44861/g4-control/scikit-learn__scikit-learn-14710/run_instance.log": "c9404ce15572e633bfb102902a870efad0858e8e0bc81793adfa82318befa98d",
+            "logs/evaluation/g4-245b222544f44861/g4-control/scikit-learn__scikit-learn-14710/test_output.txt": "e3cc9ab37f56419ad0fff1d543d45e95dc93ede8b88797922afc5b232be49d48",
+            "logs/evaluation/g4-245b222544f44861/g4-control/scikit-learn__scikit-learn-14710/eval.sh": "f63c50534203199e47998d55a90345ee9b2d59eab41778643df81a01b6ca5bb1"
+          }
+        },
+        {
+          "kind": "gold",
+          "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705/scikit-learn__scikit-learn-14710/gold",
+          "valid": false,
+          "error": {
+            "type": "AssertionError",
+            "message": ""
+          },
+          "proofs": [
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-14710.g4-1a062bf5786449ce",
+              "image_id": "sha256:4832a969ff4538fce25c13dbdefe339f895ea02ab8242aa930866117bfb4cbfb",
+              "inspect_sha256": "c4dc27b3ef153cc5a9e58b309f6773a1f6a5df56bbe138a767042e31f1f77ce7"
+            },
+            {
+              "original_base_commit_verified": "4b6273b87442a4437d8b3873ea3022ae163f4fdf"
+            },
+            {
+              "name": "sweb.eval.scikit-learn__scikit-learn-14710.g4-1a062bf5786449ce",
+              "absence_verified": true
+            }
+          ],
+          "seconds": 627.0422058645636,
+          "artifacts": {
+            "container-inspect.json": "c4dc27b3ef153cc5a9e58b309f6773a1f6a5df56bbe138a767042e31f1f77ce7",
+            "owned.json": "fd04bdfe466657ca870820f880abb2b8a1ddbff7eb041987251b16196362d26f",
+            "logs/evaluation/g4-1a062bf5786449ce/g4-control/scikit-learn__scikit-learn-14710/patch.diff": "ea508aad267a71daf749414322ad3af3ea2efea674592cb2eedb8b7575c617d9",
+            "logs/evaluation/g4-1a062bf5786449ce/g4-control/scikit-learn__scikit-learn-14710/run_instance.log": "a55a980e1bd6b33c00b4e1b790f5dab2ddba27b1a9f479cd95a5423c155d1afd",
+            "logs/evaluation/g4-1a062bf5786449ce/g4-control/scikit-learn__scikit-learn-14710/test_output.txt": "150fa8c25e56205340da01f4b2aab10ad1071f72a33e4c20d17b41da8014cd19",
+            "logs/evaluation/g4-1a062bf5786449ce/g4-control/scikit-learn__scikit-learn-14710/eval.sh": "f63c50534203199e47998d55a90345ee9b2d59eab41778643df81a01b6ca5bb1"
+          }
+        }
+      ],
+      "model_calls": 0,
+      "valid_pair": false
+    }
+  ],
+  "all30_completed": true,
+  "valid_pairs": 13,
+  "model_calls": 0,
+  "private_root": "/tmp/solpi-g4-C-controls-10afab4a0705"
+}
