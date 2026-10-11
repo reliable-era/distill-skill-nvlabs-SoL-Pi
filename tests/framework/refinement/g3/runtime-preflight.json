@@ -1,0 +1,147 @@
+{
+  "utc": "2026-10-11T15:26:01.758260+00:00",
+  "model_calls": 0,
+  "/v1/models": {
+    "status": 200,
+    "body": {
+      "object": "list",
+      "data": [
+        {
+          "id": "Qwen/Qwen3.8-27B",
+          "object": "model",
+          "created": 1791732361,
+          "owned_by": "sglang",
+          "root": "Qwen/Qwen3.8-27B",
+          "parent": null,
+          "max_model_len": 262144
+        }
+      ]
+    }
+  },
+  "/get_load": {
+    "status": 200,
+    "body": [
+      {
+        "dp_rank": 0,
+        "num_reqs": 2,
+        "num_waiting_reqs": 0,
+        "num_tokens": 24387,
+        "num_pending_tokens": 0,
+        "ts_tic": 1929803.400688446
+      },
+      {
+        "dp_rank": 1,
+        "num_reqs": 0,
+        "num_waiting_reqs": 0,
+        "num_tokens": 0,
+        "num_pending_tokens": 0,
+        "ts_tic": 1929803.400688446
+      },
+      {
+        "dp_rank": 2,
+        "num_reqs": 5,
+        "num_waiting_reqs": 0,
+        "num_tokens": 49959,
+        "num_pending_tokens": 0,
+        "ts_tic": 1929803.400688446
+      },
+      {
+        "dp_rank": 3,
+        "num_reqs": 1,
+        "num_waiting_reqs": 0,
+        "num_tokens": 10458,
+        "num_pending_tokens": 0,
+        "ts_tic": 1929803.400688446
+      }
+    ]
+  },
+  "/openapi.json": {
+    "status": 200,
+    "body": {
+      "paths": [
+        "/v1/loads",
+        "/scale_elastic_ep",
+        "/is_scaling_elastic_ep",
+        "/ready",
+        "/health_generate",
+        "/health",
+        "/get_model_info",
+        "/model_info",
+        "/weight_version",
+        "/get_weight_version",
+        "/get_server_info",
+        "/server_info",
+        "/get_load",
+        "/set_internal_state",
+        "/generate",
+        "/encode",
+        "/classify",
+        "/flush_cache",
+        "/add_external_corpus",
+        "/remove_external_corpus",
+        "/list_external_corpora",
+        "/clear_hicache_storage_backend",
+        "/hicache/storage-backend/clear",
+        "/hicache/storage-backend",
+        "/start_profile",
+        "/stop_profile",
+        "/set_trace_level",
+        "/freeze_gc",
+        "/start_expert_distribution_record",
+        "/stop_expert_distribution_record",
+        "/dump_expert_distribution_record",
+        "/update_weights_from_disk",
+        "/init_weights_send_group_for_remote_instance",
+        "/send_weights_to_remote_instance",
+        "/get_remote_instance_transfer_engine_info",
+        "/remote_instance_transfer_engine_info",
+        "/init_weights_update_group",
+        "/destroy_weights_update_group",
+        "/update_weights_from_tensor",
+        "/update_weights_from_distributed",
+        "/update_weights_from_ipc",
+        "/update_weight_version",
+        "/get_weights_by_name",
+        "/release_memory_occupation",
+        "/resume_memory_occupation",
+        "/weights_checker",
+        "/slow_down",
+        "/load_lora_adapter",
+        "/load_lora_adapter_from_tensors",
+        "/unload_lora_adapter",
+        "/open_session",
+        "/close_session",
+        "/configure_logging",
+        "/abort_request",
+        "/parse_function_call",
+        "/separate_reasoning",
+        "/pause_generation",
+        "/continue_generation",
+        "/v1/completions",
+        "/v1/chat/completions",
+        "/v1/embeddings",
+        "/v1/classify",
+        "/v1/tokenize",
+        "/v1/detokenize",
+        "/v1/audio/transcriptions",
+        "/v1/models",
+        "/v1/models/{model}",
+        "/v1/score",
+        "/v1/responses",
+        "/v1/responses/{response_id}",
+        "/v1/responses/{response_id}/cancel",
+        "/v1/rerank",
+        "/",
+        "/api/chat",
+        "/api/generate",
+        "/api/tags",
+        "/api/show",
+        "/v1/messages",
+        "/v1/messages/count_tokens",
+        "/ping",
+        "/invocations",
+        "/vertex_generate"
+      ]
+    }
+  }
+}
