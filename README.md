@@ -83,7 +83,7 @@ npx skills add reliable-era/distill-skill-nvlabs-SoL-Pi --skill efficient-coding
 
 Add `--global` for a user-wide installation. In Codex, invoke with `$efficient-coding`.
 
-These commands follow the [Skills CLI documentation](https://github.com/vercel-labs/skills); these installation routes have not been validated in this repository. Official marketplace listing is TBD.
+These commands follow the [Skills CLI documentation](https://github.com/vercel-labs/skills). All three were validated on 2026-10-12 with Skills CLI 1.7.2 on Node 22: every installed file is byte-identical to the repository copy ([check script](tests/validation/skills_cli_check.sh)). Claude Code installs to `.claude/skills/`; Codex and Cursor install to `.agents/skills/`. The CLI needs Node 22 or newer. Official marketplace listing is TBD.
 
 <details>
 <summary>Manual installation and upgrade validation</summary>
