@@ -1,7 +1,7 @@
 """One G3 attempt, immutable input/isolated actor/receipt and exact artifact grade.
 No scheduling or automatic retry here. Scheduler alone authorizes admitted start.
 """
-import datetime,hashlib,json,os,pathlib,re,shutil,subprocess,threading,time,uuid
+import datetime,hashlib,json,os,pathlib,re,shutil,subprocess,tarfile,threading,time,uuid
 from transport import Broker,MODEL,save,metadata
 H=pathlib.Path(__file__).resolve().parent
 BINARY=pathlib.Path('/home/wangjian/.codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/bin/codex')
@@ -17,6 +17,16 @@ def argv(prompt):
  result=['/opt/solpi/codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--json','--dangerously-bypass-approvals-and-sandbox']
  for k,v in cfg.items():result+=['-c',k+'='+json.dumps(v)]
  return result+[prompt]
+
+def starter_archive(starter,destination):
+ # Docker cp's archive metadata must target actor UID0, not host UID1003.
+ # No capability grant or chmod-world-write; source bytes/modes unchanged.
+ with tarfile.open(destination,'w') as archive:
+  for p in [pathlib.Path(starter),*sorted(pathlib.Path(starter).rglob('*'))]:
+   rel='app' if p==pathlib.Path(starter) else 'app/'+str(p.relative_to(starter));info=archive.gettarinfo(str(p),arcname=rel);info.uid=0;info.gid=0;info.uname='root';info.gname='root'
+   if info.isfile():
+    with p.open('rb') as source:archive.addfile(info,source)
+   else:archive.addfile(info)
 
 def prepare(cell,root,plan):
  root=pathlib.Path(root);root.mkdir(mode=0o700);(root/'skills').mkdir();task=cell['task'];baseline=pathlib.Path(plan['prepared_tasks'][task]);assert tree(baseline/'grader')==plan['grader_trees'][task];assert tree(baseline/'workspace')==plan['starter_trees'][task];assert sha(baseline/'prompt.txt')==plan['prompt_sha256'][task]
@@ -34,7 +44,8 @@ def attempt(cell,number,root,plan,admission,start_callback):
   assert sha(BINARY)==BINARY_SHA;image=plan['images'][cell['task'].split('/')[0]]
   broker=Broker(root/'transport',time.monotonic()+7200);broker.start()
   cmd=['create','--pull=never','--name',name,'--user','0','--network','none','--cpus','1','--memory','2g','--pids-limit','128','--cap-drop','ALL','--security-opt','no-new-privileges','--tmpfs','/tmp:rw,size=128m','-v',str(root/'skills')+':/skills:ro','-v',str(BINARY)+':/opt/solpi/codex:ro','-v',str(H/'relay.py')+':/opt/solpi/relay.py:ro','-v',str(root/'transport/socket')+':/broker:ro','-e','HOME=/root/solpi-home','-e','CODEX_HOME=/root/solpi-home/.codex','-e','MOCK_KEY=dummy-not-secret','-e','HTTP_PROXY=','-e','HTTPS_PROXY=','-e','ALL_PROXY=','-e','http_proxy=','-e','https_proxy=','-e','all_proxy=','-e','NO_PROXY=127.0.0.1','-e','no_proxy=127.0.0.1','-w','/app','--entrypoint','/bin/sh',image,'-c','mkdir -p "$CODEX_HOME"; python3 /opt/solpi/relay.py & relay=$!; trap "kill $relay 2>/dev/null || true" EXIT; sleep 0.2; "$@"','g3',*argv(prompt)]
-  docker(*cmd);inspect=json.loads(docker('inspect',name))[0];hc=inspect['HostConfig'];assert hc['NetworkMode']=='none' and hc['NanoCpus']==1000000000 and hc['Memory']==2147483648 and inspect['Image']==image;save(root/'actor-inspect.json',inspect);docker('cp',str(root/'starter')+'/.',name+':/app')
+  docker(*cmd);inspect=json.loads(docker('inspect',name))[0];hc=inspect['HostConfig'];assert hc['NetworkMode']=='none' and hc['NanoCpus']==1000000000 and hc['Memory']==2147483648 and inspect['Image']==image;save(root/'actor-inspect.json',inspect);starter_archive(root/'starter',root/'starter.tar')
+  with (root/'starter.tar').open('rb') as source:subprocess.run(['docker','cp','-',name+':/'],stdin=source,check=True,capture_output=True,timeout=30)
   admission=start_callback(ident,admission);save(root/'admission.json',admission);started=time.monotonic();broker.deadline=started+7200;row.update(native_started=True,started_utc=datetime.datetime.now(datetime.timezone.utc).isoformat());save(root/'attempt-progress.json',row)
   samples=[dict(kind='start',observation=admission)];save(root/'load-samples.json',samples)
   def sample():

@@ -28,7 +28,7 @@ def usage_from_sse(raw,eof):
   if not line.startswith(b'data: ') or line==b'data: [DONE]':continue
   try:events.append(json.loads(line[6:]))
   except ValueError:malformed=True
- complete=[e for e in events if e.get('type')=='response.completed'];usage=complete[-1].get('response',{}).get('usage') if complete else None
+ complete=[e for e in events if e.get('type') in ('response.completed','response.incomplete','response.failed')];usage=complete[-1].get('response',{}).get('usage') if complete else None
  valid=isinstance(usage,dict) and all(type(usage.get(k)) is int and usage[k]>=0 for k in ('input_tokens','output_tokens','total_tokens')) and usage['total_tokens']==usage['input_tokens']+usage['output_tokens']
  return dict(cost_complete=bool(eof and not malformed and len(complete)==1 and valid),tokens_lower_bound=usage['total_tokens'] if valid else 0,usage=usage,terminal_completed=len(complete),malformed_json=malformed)
 

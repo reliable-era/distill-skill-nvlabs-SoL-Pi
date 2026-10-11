@@ -27,6 +27,8 @@ class Refused(Connection):
  def connect(self):raise ConnectionRefusedError('test-only refused')
 class Tests(unittest.TestCase):
  def test_standard_usage(self):self.assertEqual(usage_from_sse(RAW,True)['tokens_lower_bound'],112);self.assertTrue(usage_from_sse(RAW,True)['cost_complete'])
+ def test_terminal_incomplete_usage_exact(self):
+  raw=RAW.replace(b'response.completed',b'response.incomplete');self.assertTrue(usage_from_sse(raw,True)['cost_complete']);self.assertEqual(usage_from_sse(raw,True)['tokens_lower_bound'],112)
  def test_missing_terminal_unknown(self):self.assertFalse(usage_from_sse(b'data: {}\n',True)['cost_complete'])
  def test_eof_required(self):self.assertFalse(usage_from_sse(RAW,False)['cost_complete'])
  def test_malformed_or_inconsistent(self):

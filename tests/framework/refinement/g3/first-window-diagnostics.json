@@ -1,0 +1,62 @@
+{
+  "stage": "First fixed36-cell window; all36 already admitted before diagnosis",
+  "model_cell_retries": 0,
+  "first36_retained_no_exclusion": true,
+  "ownership_fault": "Docker cp restored source solution uid1003/gid1004; actor user0 with ALL capabilities dropped cannot write existing files. Native shell reports Permission denied. No model-error retry permitted.",
+  "evidence_cell": "g3-r1-t29-K",
+  "native_sha256": "22d1a320dd7134cfd8e4b1ebe87bdc24ecda9878cb1e77672eb6187d163a614a",
+  "prospective_fix": "Build byte-identical starter tar with uid/gid0 for Docker cp; same isolation/caps/tests/arms/model. Verify offline all four images before any next window.",
+  "accounting_fault": "Raw terminal response.incomplete has exact standard input/output/total usage, but initial parser required response.completed. Preserve raw records, project exact captured terminal incomplete usage, no estimates/replays/model retries.",
+  "response_examples": [
+    {
+      "path": "/tmp/solpi-g3-r1-w01-eefdcda46f/g3-r1-t61-candidate-a1/transport/response-4.sse",
+      "sha256": "ef6481a4fc547f83f641675c849269916c9fed37b000418dbacd894ba839a936",
+      "terminal_events": [
+        {
+          "type": "response.incomplete",
+          "usage": {
+            "input_tokens": 8704,
+            "input_tokens_details": {
+              "cached_tokens": 7744,
+              "cache_write_tokens": 0
+            },
+            "output_tokens": 16382,
+            "output_tokens_details": {
+              "reasoning_tokens": 16382
+            },
+            "total_tokens": 25086
+          },
+          "status": "incomplete",
+          "incomplete_details": {
+            "reason": "max_output_tokens"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/tmp/solpi-g3-r1-w01-eefdcda46f/g3-r1-t73-Both-a1/transport/response-2.sse",
+      "sha256": "2a192d6c72386eff774803db1727622ae0040b857dd7c821f61e31d3e1329965",
+      "terminal_events": [
+        {
+          "type": "response.incomplete",
+          "usage": {
+            "input_tokens": 8815,
+            "input_tokens_details": {
+              "cached_tokens": 6336,
+              "cache_write_tokens": 0
+            },
+            "output_tokens": 16382,
+            "output_tokens_details": {
+              "reasoning_tokens": 16382
+            },
+            "total_tokens": 25197
+          },
+          "status": "incomplete",
+          "incomplete_details": {
+            "reason": "max_output_tokens"
+          }
+        }
+      ]
+    }
+  ]
+}

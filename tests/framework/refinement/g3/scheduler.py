@@ -7,8 +7,8 @@ from transport import check_model,metadata,waiting_zero,save
 
 def load_plan():
  plan=json.loads((H/'plan.json').read_text())
- for name,digest in plan['implementation_sha256'].items():
-  if sha(H/name)!=digest:raise RuntimeError('Frozen implementation changed: '+name)
+ from implementation_policy import verify
+ verify(plan)
  for key,s in plan['skills'].items():
   if tree(pathlib.Path(s['path']))!=s['tree']:raise RuntimeError('Frozen skill changed: '+key)
  for path,digest in plan['protected_files'].items():
@@ -103,7 +103,7 @@ def main():
  out=H/'waves'/args.wave;out.mkdir(parents=True,exist_ok=True);assert not (out/'launch.json').exists()
  identity=check_model();root=pathlib.Path('/tmp/solpi-g3-'+args.wave+'-'+uuid.uuid4().hex[:10]);root.mkdir(mode=0o700)
  cells=[c for c in plan['schedule'] if c['round']==args.round and next_attempt(c,prior) is not None][:args.max_primary]
- save(out/'launch.json',dict(pid=__import__('os').getpid(),root=str(root),window=w,plan_sha256=sha(H/'plan.json'),model_identity=identity,round=args.round,scheduled_cells=[c['cell_id'] for c in cells],utc=datetime.datetime.now(datetime.timezone.utc).isoformat()))
+ save(out/'launch.json',dict(pid=__import__('os').getpid(),root=str(root),window=w,plan_sha256=sha(H/'plan.json'),model_identity=identity,execution_repair_sha256=sha(H/'execution-repair.json') if (H/'execution-repair.json').exists() else None,round=args.round,scheduled_cells=[c['cell_id'] for c in cells],utc=datetime.datetime.now(datetime.timezone.utc).isoformat()))
  q=Queue(plan,cells,prior,out,root,latest);q.persist();error=None
  try:
   with F.ThreadPoolExecutor(max_workers=18) as pool:
