@@ -1,6 +1,6 @@
 # Active G3 status
 
-G3 contract `68cff75`: full eligible Aider cohort, separate model `Qwen/Qwen3.8-27B`, direct9012 only. All211 gold/no-op controls completed:190 initially valid plus6 separately committed adapter/count repairs; **196 valid /15 control-based exclusions**, all original records retained. Control workers/resources absent. Full design now784 cells/round,2,352 primary cells maximum. No model calls or inference window yet; runtime/preregistration queues still pending. Draft math10 tests pass. G1/G2/shipped/README unchanged; unrelated nginx/backup files untouched; no push.
+G3 contract `68cff75`: full eligible Aider cohort, separate model `Qwen/Qwen3.8-27B`, direct9012 only. All211 gold/no-op controls completed:190 initially valid plus6 separately committed adapter/count repairs; **196 valid /15 control-based exclusions**, all original records retained. Control workers/resources absent. Full design784 cells/round,2,352 primary cells maximum. Preregistration `5d9ca19` plus zero-call fixed-window clarification `7257c9d`;25 offline tests and four-image startup probes pass. First fixed36-cell rolling18-slot window `88afe49` is live: scheduler **162609**,18 slots;51 provider POST attempts at first check. First46 completed receipts all200/complete standard usage; no terminal cells yet. No partial gate/win. G1/G2/shipped/README unchanged; unrelated nginx/backup files untouched; no push.
 
 # Closed G2 status
 
