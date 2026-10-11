@@ -38,8 +38,8 @@ class Tests(unittest.TestCase):
    with tempfile.TemporaryDirectory() as d:
     b=Broker(pathlib.Path(d)/'transport',time.monotonic()+7200);client=Client()
     with patch('transport.metadata',return_value={'body':[]}):b.forward('/v1/responses',json.dumps({'model':MODEL,'stream':True}).encode(),client,connect=connection)
-    self.assertEqual(b.posts,1);self.assertEqual(b.records[0]['cost_complete'],complete);self.assertEqual(b.records[0]['backend'],'127.0.0.1:9012')
-    if not complete:self.assertTrue(b.records[0]['connection_infra_failure'])
+    self.assertEqual(b.posts,1);self.assertTrue(b.records[0]['cost_complete']);self.assertEqual(b.records[0]['backend'],'127.0.0.1:9012')
+    if not complete:self.assertTrue(b.records[0]['connection_infra_failure']);self.assertTrue(b.records[0]['proven_zero_model_refusal']);self.assertEqual(b.records[0]['tokens_lower_bound'],0)
  def test_caps_before_forward(self):
   with tempfile.TemporaryDirectory() as d:
    b=Broker(pathlib.Path(d)/'t',time.monotonic()+7200);b.posts=60;c=Client();b.forward('/v1/responses',json.dumps({'model':MODEL,'stream':True}).encode(),c,connect=Connection);self.assertEqual(c.errors,[429]);self.assertEqual(b.posts,60);self.assertFalse(b.denials[0]['forwarded'])

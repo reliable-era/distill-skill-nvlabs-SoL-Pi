@@ -71,9 +71,9 @@ class Broker:
   record=dict(request=n,backend=PEER,model=MODEL,path=path,started_utc=utc(),original_sha256=sha(body),forwarded_sha256=sha(forwarded),output_cap=CAP,stream_eof=False,error=None,provider_status=None,client_disconnected=False)
   try:record['load_before_request']=metadata('/get_load')
   except Exception as e:record['load_before_request']={'backend':PEER,'utc':utc(),'error':type(e).__name__,'message':str(e)}
-  c=connect('127.0.0.1',9012,timeout=max(.1,self.deadline-time.monotonic()+240));timer=None;dest=self.root/f'response-{n}.sse';start=time.monotonic()
+  c=connect('127.0.0.1',9012,timeout=max(.1,self.deadline-time.monotonic()+240));timer=None;dest=self.root/f'response-{n}.sse';start=time.monotonic();connected=False
   try:
-   c.connect()
+   c.connect();connected=True
    with self.lock:self.connections.add(c)
    sock=c.sock
    def cutoff():
@@ -96,6 +96,8 @@ class Broker:
   finally:
    if timer:timer.cancel()
    c.close();raw=dest.read_bytes() if dest.exists() else b'';record.update(ended_utc=utc(),seconds=time.monotonic()-start,response_sha256=sha(raw),response_bytes=len(raw));record.update(usage_from_sse(raw,record['stream_eof']));record['cost_complete']=record['cost_complete'] and record['error'] is None and record['provider_status']==200
+   record['proven_zero_model_refusal']=record['error']=='ConnectionRefusedError' and not connected
+   if record['proven_zero_model_refusal']:record.update(cost_complete=True,tokens_lower_bound=0)
    with self.lock:self.connections.discard(c);self.records.append(record);self.records.sort(key=lambda r:r['request']);self.active-=1;self.persist()
  def close(self):
   if self.server:self.server.shutdown();self.thread.join(timeout=5)
