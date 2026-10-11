@@ -77,7 +77,11 @@ def main():
         elif language == 'cpp':
             executed = sum(int(n) for n in re.findall(r'in (\d+) test cases?\)', result.stdout))
         elif language == 'javascript':
-            executed = sum(int(n) for n in re.findall(r'Tests:\s*(\d+) passed', result.stdout))
+            # Jest may list skipped tests before passed tests. Count original
+            # executed passes without unskipping or altering any original test.
+            executed = sum(int(n) for line in result.stdout.splitlines()
+                           if line.lstrip().startswith('Tests:')
+                           for n in re.findall(r'(\d+) passed', line))
         elif language == 'java':
             for report in scratch.glob('build/test-results/test/TEST-*.xml'):
                 suite = ET.parse(report).getroot()

@@ -70,10 +70,11 @@ def prepare(source, task, output):
             mapping[solution] = matches[0]; remaining.remove(matches[0])
     # Selected meetup's official reference is header-only. Keep its original
     # starter .cpp unchanged; never fabricate a second reference solution.
-    if task == 'cpp/exercises/practice/meetup':
-        if files['solution'] != ['meetup.cpp', 'meetup.h'] or examples != ['.meta/example.h']:
-            raise ValueError('Selected meetup reference metadata changed')
-        mapping = {'meetup.h': '.meta/example.h'}
+    if task in ('cpp/exercises/practice/meetup', 'cpp/exercises/practice/binary-search-tree', 'cpp/exercises/practice/circular-buffer'):
+        stem = task.split('/')[-1].replace('-', '_')
+        if files['solution'] != [stem + '.cpp', stem + '.h'] or examples != ['.meta/example.h']:
+            raise ValueError('Reviewed header-only reference metadata changed')
+        mapping = {stem + '.h': '.meta/example.h'}
         remaining = []
     else:
         unmapped = [name for name in files['solution'] if name not in mapping]
@@ -92,8 +93,10 @@ def prepare(source, task, output):
         if len(parents) != 1:
             raise ValueError('Ambiguous reference auxiliary source directory')
         name = str(Path(parents.pop()) / Path(example).name)
-        if name in mapping or (reference / name).exists():
+        if name in mapping or ((reference / name).exists() and task != 'java/exercises/practice/connect'):
             raise ValueError('Reference auxiliary destination collision')
+        # Connect's official helpers also have starter copies: overlay only the
+        # private gold reference, never actor or trusted candidate support.
         shutil.copy2(exercise / example, reference / name); auxiliary.append(name)
     docs = exercise / '.docs'
     prompt = '\n\n'.join((docs / name).read_text() for name in ('introduction.md', 'instructions.md', 'instructions.append.md') if (docs / name).exists())
