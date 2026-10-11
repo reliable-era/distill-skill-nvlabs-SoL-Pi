@@ -1,0 +1,59 @@
+{
+  "model_calls": 0,
+  "base_image_id": "sha256:ec6eeb02cecf35faf5badd75646ab0dd2e02cab484638b413ccd4606a2e2ef7d",
+  "original_failed_pair_retained": true,
+  "no_test_or_oracle_edits": true,
+  "neutral_change": "Install missing tmux; same image for both controls and every eventual model arm",
+  "installation_exit": 0,
+  "installation_log_sha256": "98877e41c9c794e162b56438012c0426ea8ba35fab0aaed7b147b7a3649c48a5",
+  "derivative_image_id": "sha256:525e2e1441ba317ca110952a65ac8ab5b0b8e1f468a4dea7f6e923f21f0052c1",
+  "image_tag": "solpi-g4-gitmultibranch-tmux:db0669d91e33",
+  "control_pair": {
+    "task": "git-multibranch",
+    "image_id": "sha256:525e2e1441ba317ca110952a65ac8ab5b0b8e1f468a4dea7f6e923f21f0052c1",
+    "controls": [
+      {
+        "mode": "nop",
+        "container_name": "solpi-g4-B-control-657cde54cfd6",
+        "expected_reward": "0",
+        "private_root": "/tmp/solpi-g4-B-tmux-689aff04d27d/controls/git-multibranch/nop",
+        "inspect_sha256": "f56ad576e99733345931205b09cd948b0f432b6fd93dc746a3ff74c1d02ed122",
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "d6d4bd314ff8d736c780353b0b314e4b4eb42d4c689fabf26fe4ffda21aa0bc2"
+        },
+        "reward": "0",
+        "test_events": 1,
+        "ctrf_sha256": "9696e2bb18dd9b5726166963a86ffcee088cfb626e93169169b7947d95f1eee7",
+        "valid_expected_reward": true,
+        "owned_container_absent": true
+      },
+      {
+        "mode": "gold",
+        "container_name": "solpi-g4-B-control-374096a2bac7",
+        "expected_reward": "1",
+        "private_root": "/tmp/solpi-g4-B-tmux-689aff04d27d/controls/git-multibranch/gold",
+        "inspect_sha256": "9bec279a6e05c8b870769465ebaaba5425466b926b11eea483f0e21b8cad2625",
+        "oracle": {
+          "exit_code": 0,
+          "log_sha256": "f662f25206b37254ec59d1e6ab3cf50a9b699b555f30ec97c57d3ae2a95487cd"
+        },
+        "verifier": {
+          "exit_code": 0,
+          "log_sha256": "17f178276a967027908f643e125c391922b9d0c055de493570b4bb52ba033439"
+        },
+        "reward": "1",
+        "test_events": 1,
+        "ctrf_sha256": "f662929484d0e95490e35475716384c17a6fc03add10863a0f4d715c5b5e9867",
+        "valid_expected_reward": true,
+        "owned_container_absent": true
+      }
+    ],
+    "model_calls": 0,
+    "valid_pair": true,
+    "seconds": 46.936812851578
+  },
+  "valid_pair": true,
+  "prepare_container_absent": true,
+  "private_root": "/tmp/solpi-g4-B-tmux-689aff04d27d"
+}
