@@ -1,4 +1,87 @@
-# Active goal (G3): full-eligible Aider run of frozen candidate 2
+# Active goal (G4): fill the open TBD measurements
+
+Set 2026-10-12 at the user's request ("complete the jobs TBD"). G1-G3 are closed;
+their results stand and are not pooled with G4. G4 runs under the same standing
+authorization and Claude supervision (workspace `supervisor-policy.md`).
+
+G4 is **descriptive measurement**, not a promotion test. The shipped skill
+(`skills/efficient-coding/`, SKILL.md SHA `68ea78dc...`) is the "ours" arm everywhere;
+no candidate is shipped from G4.
+
+## Shared setup (all parts)
+
+- **Model route (user decision, 2026-10-12):** the gpu02 load balancer
+  `127.0.0.1:8000` only, **16 concurrent runs** in total across all G4 parts.
+  The user was told and accepted that 8000 currently mixes two model variants:
+  `Qwen3.8-27B-FP8` (local and gpu01 backends) and `Qwen/Qwen3.8-27B` full
+  precision (tunnel backend). Every result is labelled
+  **"mixed FP8 + full-precision pool"**. For every request, record the `model`
+  field of the response (which identifies the variant) and its usage. Report the
+  per-arm share of requests served by each variant.
+- **Admission:** rolling queue; start a run when one of the 16 slots frees and
+  `8000/get_load` shows no waiting requests on any backend; otherwise wait.
+- **Do not touch:** nginx or its config, the tunnel, any backend server, gpu01,
+  or other workloads. If 8000 is down, pause and report.
+- **Fairness:** a task's arms are queued next to each other in a per-task random
+  order (recorded seed), so matched arms see the same load and pool mix.
+- **Records:** keep every run, failure, cap hit and cost. Infrastructure failures
+  (never reached the model, or connection refused/reset) are rerun once from
+  scratch under the same rule for every arm, keeping both records.
+- **Analysis per part:** solves, total tokens, tokens per verified solve
+  (failures included), timeouts; cost ratios versus No skill and versus Karpathy
+  with paired task-cluster bootstrap 95% intervals (20,000 draws, recorded seed).
+  No pass/fail gate and no early stop.
+
+## Part A: Pi-harness table including NVlabs SoL-Pi
+
+Fills the README rows "NVlabs SoL-Pi" and "NVlabs SoL-Pi + Karpathy".
+
+- **Harness:** Pi coding agent, one pinned version for all arms, recorded.
+- **Arms (6):** No skill; Karpathy (frozen `framework/refinement/g2/frozen/karpathy/`);
+  SoL-Pi extension; SoL-Pi extension + Karpathy; ours (shipped skill);
+  ours + Karpathy.
+- **SoL-Pi extension:** NVlabs/SoL-Pi at commit
+  `1559b5cb12c72da4a485bc50fe326586b216fb19`, built from source with no edits.
+  Enable all four mechanisms (Action Fusion, Online Context Compact,
+  ObservationPack, Evidence-Preserving Reducer) as in the upstream full-stack
+  configuration; record the exact config file and its hash. The reducer's helper
+  model is the same 8000 route (no separate cheaper model is available); say so
+  in the report. Do not modify upstream code; if it cannot run against this
+  route, record the reason and report Part A as blocked rather than patching it.
+- **Tasks:** the same tasks as the Claude Code table: the 10 synthetic
+  diagnostics (5 development x 2 rounds + 5 held-out x 3 rounds = 25 attempts per
+  arm) and the 6 SWE-bench Verified issues x 2 rounds (12 per arm). 222 runs.
+  Use the original campaign caps for each benchmark (SWE-bench: 60 turns,
+  1800 s); record them.
+- Report as a separate Pi-harness table; never mix it into the Claude Code table.
+
+## Part B: Terminal-Bench 2.0
+
+- **Harness:** Codex 0.160.0. **Arms (4):** No skill, Karpathy, ours, Both.
+- **Tasks:** the 9 sealed Terminal-Bench tasks from G1 Step 2
+  (`framework/refinement/g1/terminal-selection.json`), unsealed now. Recheck the
+  gold/no-op grader controls first; exclude only tasks that fail and record them.
+- **Rounds:** 3. 108 runs. Caps: 60 requests / 120 min / 16K output.
+
+## Part C: larger SWE-bench Verified sample
+
+- **Harness:** Codex 0.160.0. **Arms (4):** No skill, Karpathy, ours, Both.
+- **Tasks:** a fresh random sample of 30 SWE-bench Verified issues, drawn with a
+  new recorded seed before any model call. Exclude the 6 issues already in the
+  README table and the 18 previously exposed issues. Run the official grader's
+  gold/no-op checks first; replace nothing, exclude only failures and record them.
+- **Rounds:** 1. 120 runs. Caps: 60 requests / 120 min / 16K output.
+
+## Outcome
+
+Commit a report per part. Do not change the shipped skill, the README or
+`docs/`, and do not push; Claude updates the documentation and pushes after a
+privacy scan. Order: preregister all three parts first, then run B and C while
+preparing A, then A.
+
+---
+
+# Closed goal (G3): full-eligible Aider run of frozen candidate 2
 
 Set 2026-10-11 at the user's request. G2 is closed negative (a697bde, 8692e5d);
 its result stands, is not rewritten and is not pooled with G3. G3 runs under the

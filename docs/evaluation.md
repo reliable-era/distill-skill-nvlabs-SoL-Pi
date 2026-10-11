@@ -50,7 +50,7 @@ Synthetic: 10 fixtures, 25 attempts per condition, including development data; n
 
 [Full report](../tests/report.md) · [Comparison chart](../assets/benchmark-numbers.svg)
 
-### Candidate 2: promising, but not promoted
+### Candidate 2: not promoted
 
 Candidate 2 adds one rule to the shipped skill: make shell failures visible and confirm a write or test really happened before reasoning from it. [Frozen candidate](../tests/framework/refinement/g2/frozen/candidate/SKILL.md).
 
@@ -65,12 +65,21 @@ Candidate 2 adds one rule to the shipped skill: make shell failures visible and 
 
 Candidate 2 used 62.5% fewer tokens per solve than no skill; the cost-ratio interval was 0.11–0.85. Its advantage over Karpathy was **not established**: the conservative upper-bound surrogate interval reached 1.13. The full preregistered pass rule was not met, so the candidate was not shipped. No G2 run timed out.
 
-**G3 running:** Codex · Qwen/Qwen3.8-27B, full precision · 196 Aider tasks × 4 conditions × 3 rounds. Results are **TBD** and will be reported separately from G2.
+**G3 completed, negative:** Codex · Qwen/Qwen3.8-27B, full precision · 196 Aider tasks × 4 conditions. The preregistered futility rule stopped G3 after round 1 (784 runs), so rounds 2–3 were not run.
 
-[G2 report](../tests/framework/refinement/g2/report.md) · [G3 plans and audits](../tests/framework/refinement/g3/)
+| Condition | Solved / 196 | Tokens / solve |
+|---|---:|---:|
+| No skill | 56 | **456k** |
+| Candidate 2 | 52 | 526k |
+| Karpathy | **57** | 568k |
+| Both | 55 | 521k |
+
+On the larger task set, candidate 2 solved fewer tasks than no skill and used 15.5% more tokens per solve. The four conditions are statistically indistinguishable: every cost-ratio interval includes 1. The large G2 saving did not replicate. G3 used a different model variant from G2, so the two are not pooled. No G3 run timed out, hit the 60-request cap or was retried.
+
+[G2 report](../tests/framework/refinement/g2/report.md) · [G3 report](../tests/framework/refinement/g3/report.md)
 
 <details>
-<summary>G2 statistical comparisons and recorded G3 progress</summary>
+<summary>G2 and G3 statistical comparisons</summary>
 
 Cost ratio = candidate or combined condition ÷ comparator. Below 1 means fewer tokens per solve.
 
@@ -84,7 +93,14 @@ Comparisons against Karpathy use upper-bound surrogates because one run's record
 
 Three tasks drove the G2 lead: alphametics, transpose, and accumulate. Resampling without them can push the ratio above 1.
 
-Last recorded G3 progress: round 1 of 3 running; 169 of 784 round-1 runs audited at commit `5c6f69b`. See the G3 directory for subsequent audits.
+G3 has complete cost records, so its intervals are exact paired task-cluster bootstrap intervals (20,000 draws).
+
+| Comparison | G3 cost ratio | G3 95% interval | Solves | Verdict |
+|---|---:|---|---|---|
+| Candidate 2 vs no skill | 1.155 | 0.89–1.49 | 52 vs 56 | Fail |
+| Candidate 2 vs Karpathy | 0.927 | 0.73–1.19 | 52 vs 57 | Fail |
+| Both vs Karpathy | 0.918 | 0.72–1.17 | 55 vs 57 | Fail |
+| Candidate 2 vs Both (informational) | 1.010 | 0.78–1.30 | 52 vs 55 | — |
 
 </details>
 
@@ -93,7 +109,7 @@ Last recorded G3 progress: round 1 of 3 running; 169 of 784 round-1 runs audited
 - Completed evaluations use small task samples. Repeated attempts on a task are not independent; intervals resample whole tasks.
 - Evidence covers one model family and two agents. Broader transfer remains unmeasured; the [native-agent pilot](../tests/framework/trials/README.md) is exploratory.
 - Public SWE-bench fixes may affect attribution. Incomplete cost records limit savings claims.
-- G3 is still running. Terminal-Bench has not been run.
+- G3 stopped after round 1 under its futility rule. Terminal-Bench has not been run.
 
 ## Evaluation
 
@@ -103,7 +119,7 @@ Last recorded G3 progress: round 1 of 3 running; 169 of 784 round-1 runs audited
 |---|---|---|---|
 | Synthetic diagnostics | 10 fixtures: 5 development + 5 held-out | Hidden tests pass | Complete |
 | [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) | 6 of 500 issues | Official grader resolves the issue | Complete; larger sample TBD |
-| [Aider polyglot](https://github.com/Aider-AI/polyglot-benchmark) @ `7e0611e` | G2: 9 tasks; G3: 196 of 225 | Exercise tests pass | G2 complete; G3 running |
+| [Aider polyglot](https://github.com/Aider-AI/polyglot-benchmark) @ `7e0611e` | G2: 9 tasks; G3: 196 of 225 | Exercise tests pass | G2 complete; G3 complete (stopped after round 1) |
 | Terminal-Bench 2.0 | 9 sealed tasks, from 78 eligible | Task verifier passes | Not run; G2 Aider stage did not pass |
 
 Grading runs in isolated Docker containers. Before G2 and G3 model calls, each task's grader must accept the reference solution and reject an unchanged submission. G3 excluded 15 of 211 eligible tasks that failed this check.
