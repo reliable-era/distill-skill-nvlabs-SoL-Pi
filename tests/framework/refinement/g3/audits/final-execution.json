@@ -1,0 +1,124 @@
+{
+  "status": "ACTUAL_G3_NEGATIVE_EXECUTION_CLOSURE_VERIFIED_NOT_SAVINGS_ACCEPTANCE",
+  "disposition": "negative_round1_futility",
+  "rounds_attempted": [
+    1
+  ],
+  "rounds2_3": "unattempted/ineligible after mandatory futility",
+  "cells": 784,
+  "attempts": 784,
+  "requests": 6660,
+  "tokens": 113901577,
+  "solves": 220,
+  "failures": 564,
+  "native_wall_timeouts": 0,
+  "verified_original_test_deadlines": 2,
+  "request_cap_reached_cells": 0,
+  "infra_retry_attempts": 0,
+  "provider_terminal_events": {
+    "response.completed": 6546,
+    "response.incomplete": 114
+  },
+  "individual_output_cap_responses_by_arm": {
+    "candidate": 27,
+    "Both": 30,
+    "none": 33,
+    "K": 24
+  },
+  "individual_output_cap_responses_total": 114,
+  "actual_provider_usage_independently_summed_from_terminal_SSE": true,
+  "all_provider_costs_exact_after_named_raw_byte_projection": true,
+  "raw_incomplete_cost_flags_retained": 12,
+  "raw_unknown_grade_records_retained": 2,
+  "all_original_controls_logs_manifests_hash_checked": 428,
+  "original_control_preparation_failures_preserved": 3,
+  "all211_have_final_original_gold_noop_checks": true,
+  "all_attempt_payload_response_prompt_grade_inspect_artifacts_checked": true,
+  "load_samples": 8154,
+  "maximum_slots": 18,
+  "all_owned_workers_containers_absent": true,
+  "owned_networks_created": 0,
+  "source_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+  "candidate_sha256": "39f7b30993b0fb4cfdc306df6eba45d1ebcb8a75955b7713f5f3f306976e8a25",
+  "karpathy_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+  "windows": [
+    {
+      "wave": "r1-w01",
+      "commit": "88afe4914ce210114ed8d46046b318b831864f4e",
+      "cells": 36,
+      "launch_sha256": "f7e205641a64a2a5add9ba2e0ae00e717081734f8109f72405a99dbc5ebf779a",
+      "result_sha256": "a00806dd7569f720617ce926e1a6589fde4028e1fe0c912f062fcc97d277fca5"
+    },
+    {
+      "wave": "r1-w02",
+      "commit": "2461722c5e6ad4fe533604eb6b6a16b58e32cbd0",
+      "cells": 72,
+      "launch_sha256": "3031647cb47e361687054d5e602c606651ff5d87ba75bb3b6e281070ca52679b",
+      "result_sha256": "d2a2b23dd66f56948d3e5d26006e000fe002ef490c54fd6a6078d45b6fec8183"
+    },
+    {
+      "wave": "r1-w03",
+      "commit": "d5c6ea3d44127f8009381cdb2f76042c2afcf53b",
+      "cells": 288,
+      "launch_sha256": "30d520f00f1bbcdbcb7eabbbc4102e7bb4a496d55cd5239d5d6602571d6846f0",
+      "result_sha256": "ca498384b3ca21570268fbc40ab4cdf5134269a1ef4dd195822824e73ca1d65f"
+    },
+    {
+      "wave": "r1-w04",
+      "commit": "e9832875cc13828f07c7227fd477c8686c595887",
+      "cells": 288,
+      "launch_sha256": "6a007efbae677e46cb0572ad7b395006258c0d87f1eae2faccbbba874f6980f7",
+      "result_sha256": "e29ac10934861814edbba06f9a831a51b755b06b1ffd3cbceb9b6658dcee5d19"
+    },
+    {
+      "wave": "r1-w05",
+      "commit": "a21fb663a78e9bde7cac9c1ba7d0b7166b9ae794",
+      "cells": 100,
+      "launch_sha256": "1872e6504225e822a8f4b51b4b800981d378f6e9ec72cb1c2f85adb41646de0e",
+      "result_sha256": "98b247f2c1ab8a158eb9e4eb3cc6bddc5a517bd49bf0d68134b079422904cc72"
+    }
+  ],
+  "first_provider_post_utc": "2026-10-11T15:40:23.953894+00:00",
+  "last_provider_end_utc": "2026-10-11T20:21:00.787042+00:00",
+  "unrelated_worktree_status_preserved": [
+    " M tests/framework/refinement/pi-takeover/qwen-load-balancer/nginx.conf",
+    "?? tests/framework/refinement/pi-takeover/qwen-load-balancer/nginx.conf.bak-20261010-152736",
+    "?? tests/framework/refinement/pi-takeover/qwen-load-balancer/nginx.conf.bak-20261011-011330",
+    "?? tests/framework/refinement/pi-takeover/qwen-load-balancer/nginx.conf.bak-20261011-225035"
+  ],
+  "external_supervisor_README_exception": {
+    "path": "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/README.md",
+    "original_sha256": "3e31ff6ec8918872087ceea92da36f6e3e098151976cfdc979f3a24af41bc2f4",
+    "external_sha256": "ff7e806e4716901fc7916f64f455fe52efe1d60ac0c494f7a54625feec09c4d6",
+    "external_commit": "193494a904864e127e2d12f282f9cfe348eae70a",
+    "external_commit_paths": [
+      "README.md"
+    ],
+    "source": "External supervisor Claude coauthored committed README restructuring observed while wave03 ran; not produced by this agent",
+    "reason": "G3 contract says Claude updates README; agent must not edit/restore it. README is not runtime/model/prompt/task/grade/analysis input. Permit only this exact metadata hash;393-file protected list otherwise remains strict.",
+    "experimental_inputs_changed": false,
+    "agent_README_edits": 0,
+    "no_restoration_or_push": true
+  },
+  "agent_changes_scoped_G3_STATUS_only": true,
+  "no_shipping": true,
+  "no_push": true,
+  "protected_scope_unchanged_except_named_external_README": true,
+  "private_artifact_index_sha256": "ea9d04f4e53b5e7e35fe6c708aaf3c38c4ff8e994b93aa9cd709dce4840a397e",
+  "utc": "2026-10-11T20:48:13.302483+00:00",
+  "inputs_sha256": {
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/plan.json": "1a6139b9ef306676176a85ee7df945ff6c33853bb00d35c5e79bc6cbe9d2dac9",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/controls-plan.json": "2b40b9e7f22fd7f733a2050cb7906eecca16841247cdf71964f8d28e6c350700",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/controls-result.json": "39bd7464429dbb1e5177842b3d59fee714f783f3270327af70d70e4970ecc0b0",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/controls-repair-result.json": "760b8db63d0fe07753b6b046ccd02af72249ad9a5f8f15416ffca170aaee5a67",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/controls-audit.json": "0fcb479a6fd6de9bed6d1e508f4dc24493b33492f11d14d3db831c631a10d7c4",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/audits/round1.json": "7253bc851b818b1785e3048973d7e4142599fc775578d605769099d8f4b45fda",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/analysis/round1.json": "eab12a2c8f2d7fe936738580da326014d8631e184d3239b95b4609fd01d2512f",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/analysis/round1-boundary.json": "3a7b8b066013273e23ed9b90b5d135481ba476193a90d18bfa0859b967604112",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/analysis/round1-independent.json": "963df97b7b8e4a745022b7b13631e30e56164fcf0eb5a1997ab167d871d32c75",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/execution-repair.json": "464515289f967cb75a7b390f78d9ced5265b88f01d01b1df068659e0b8dc6741",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/grade-timeout-repair.json": "0dd112387674718bfec4e2c7247081fc2a8436e4d2a44da0c8a20fa6c518f4ea",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/grade-timeout-replay-result.json": "8175355f6065f5ce333732781912f6c19dd313facfde78b31dc9b253d808417b",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/final_execution_audit.py": "0a5157eada9ab81a4e9c5b6972cdceff2e3367137cb1192ee4c89be4c93fe6e6"
+  }
+}

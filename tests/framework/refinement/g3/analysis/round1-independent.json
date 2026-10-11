@@ -1,0 +1,100 @@
+{
+  "status": "INDEPENDENT_INTEGER_AND_PAIRED_BOOTSTRAP_REPRODUCED_NOT_COMPLETION",
+  "cells": 784,
+  "rounds": [
+    1
+  ],
+  "repetitions": 20000,
+  "comparisons": {
+    "candidate/none": {
+      "integer_5_percent_met": false,
+      "no_fewer_solves": false,
+      "ratio": 1.1546596149125317,
+      "paired_bootstrap_95": [
+        0.8949153948737743,
+        1.4876880798156102
+      ],
+      "undefined_replicates": 0
+    },
+    "Both/K": {
+      "integer_5_percent_met": true,
+      "no_fewer_solves": false,
+      "ratio": 0.9181593008815044,
+      "paired_bootstrap_95": [
+        0.718953264129359,
+        1.1655216267640465
+      ],
+      "undefined_replicates": 0
+    },
+    "candidate/K": {
+      "integer_5_percent_met": true,
+      "no_fewer_solves": false,
+      "ratio": 0.9270760323979216,
+      "paired_bootstrap_95": [
+        0.7264914226980962,
+        1.1896513838693896
+      ],
+      "undefined_replicates": 0
+    },
+    "candidate/Both": {
+      "integer_5_percent_met": false,
+      "no_fewer_solves": false,
+      "ratio": 1.009711529914097,
+      "paired_bootstrap_95": [
+        0.7847864564234398,
+        1.3036677617175623
+      ],
+      "undefined_replicates": 0
+    },
+    "K/none": {
+      "integer_5_percent_met": false,
+      "no_fewer_solves": true,
+      "ratio": 1.2454853480851569,
+      "paired_bootstrap_95": [
+        0.9761692361337799,
+        1.5790674459061889
+      ],
+      "undefined_replicates": 0
+    },
+    "Both/none": {
+      "integer_5_percent_met": false,
+      "no_fewer_solves": false,
+      "ratio": 1.1435539564560249,
+      "paired_bootstrap_95": [
+        0.8929830559867838,
+        1.4564357061362545
+      ],
+      "undefined_replicates": 0
+    }
+  },
+  "round1_negative_stop": true,
+  "family_accepted": false,
+  "costs_complete": true,
+  "original_grade_timeout_projections": [
+    {
+      "cell_id": "g3-r1-t132-Both",
+      "sidecar_sha256": "0dd112387674718bfec4e2c7247081fc2a8436e4d2a44da0c8a20fa6c518f4ea",
+      "model_requests_added": 0,
+      "original_verifier_exit": 2,
+      "original_grade_unknown": true,
+      "projected_solved": false,
+      "original_grader_budget_unchanged_seconds": 180
+    },
+    {
+      "cell_id": "g3-r1-t132-K",
+      "sidecar_sha256": "0dd112387674718bfec4e2c7247081fc2a8436e4d2a44da0c8a20fa6c518f4ea",
+      "model_requests_added": 0,
+      "original_verifier_exit": 2,
+      "original_grade_unknown": true,
+      "projected_solved": false,
+      "original_grader_budget_unchanged_seconds": 180
+    }
+  ],
+  "inputs_sha256": {
+    "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/audits/round1.json": "7253bc851b818b1785e3048973d7e4142599fc775578d605769099d8f4b45fda",
+    "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/analysis/round1.json": "eab12a2c8f2d7fe936738580da326014d8631e184d3239b95b4609fd01d2512f",
+    "distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/analysis/round1-boundary.json": "3a7b8b066013273e23ed9b90b5d135481ba476193a90d18bfa0859b967604112",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/plan.json": "1a6139b9ef306676176a85ee7df945ff6c33853bb00d35c5e79bc6cbe9d2dac9",
+    "/data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g3/independent_analysis.py": "bcfcd00ce740b0848c23f30ca8fa2f362db8c8bd3fe401cc8c5d776d1e7fa034"
+  }
+}

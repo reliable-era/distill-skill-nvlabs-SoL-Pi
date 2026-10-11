@@ -1,6 +1,15 @@
-# Active G3 status
+# Closed G3 status
 
-G3 contract `68cff75`:196 control-valid tasks /15 documented exclusions from211 checks; full design784 cells/round,2,352 primary cells. Model `Qwen/Qwen3.8-27B`, direct9012 only; frozen arms/queue/math committed before calls. **684 round1 cells audited /5,776 requests /98,987,039 tokens;189 solves /495 failures**; complete costs and original-test outcomes valid after named repairs. No model retries or native wall timeouts;2 failed original-test180s deadlines verified by exact-artifact replay plus passing gold, raw exit2/null grades retained.100 cells remain before futility; no partial gate/win. Waves01–04 workers/resources absent; wave04 completed288 cells/86 solves, no retries/timeouts, original grades and costs complete. Final100-cell round1 wave05 live: scheduler **1136378**,18 slots/59 POST at initial check; committed window `a21fb66`,9012 correct model rechecked. First36 ownership-affected cells retained without retry/exclusion; exact captured usage repair preserves12 original incomplete flags (`ac77eaa`); startup-regime confound disclosed.26 tests and four-image corrected ownership probes pass. G1/G2/shipped unchanged; agent README untouched (external supervisor metadata-only commit `193494a` explicitly recorded); unrelated nginx/backups untouched; no push.
+**Negative mandatory round1 futility; no savings acceptance, promotion, shipment or push.** Contract `68cff75`; separate `Qwen/Qwen3.8-27B` direct9012 cohort.225 pinned exercises minus exact14 exclusions =211 gold/no-op checks;196 valid/15 failed-control exclusions. Full seeded2352-cell design preserved. **784 round1 cells /6,660 requests /113,901,577 exact tokens;220 solves /564 failures.** Candidate52 solves < none56 and K57; candidate/none1.154660 fails≤.95. Candidate/K0.927076 meets point cost but fails observed quality. Full boundary and independent20,000 task-cluster bootstrap agree; rounds2–3 unattempted/ineligible, all allowances retired.
+
+| G3 round1 = total | Solves /196 | Provider tokens | Tokens / solve | Native wall / original-test timeouts |
+|---|---:|---:|---:|---:|
+| No skill |56|25,521,055|455,733.13|0 /0|
+| Karpathy |57|32,353,709|567,608.93|0 /1|
+| Candidate2 |52|27,363,265|526,216.63|0 /0|
+| Both |55|28,663,548|521,155.42|0 /1|
+
+Candidate/none95% [0.894915,1.487688]; Both/K0.918159 [0.718953,1.165522]; candidate/K0.927076 [0.726491,1.189651]; candidate/Both1.009712 [0.784786,1.303668] informational. All observed intervals include1; no all-three-round confirmation claim. No model retries or60-request/native wall caps;114 individual output-cap responses fully charged. First36 owner-affected cells remain, heterogeneous startup-regime confound disclosed.12 raw incomplete-cost flags recovered only from exact captured usage; two raw exit2/null grades remain with proved failed original180s test-timeout projections, zero extra model calls. All five schedulers, control/replay workers and owned containers absent; private artifacts retained. Agent changed only G3/STATUS; external supervisor README-only193494a recorded, not edited/restored. G1/G2/shipped/archive/goal unchanged; unrelated nginx/backups untouched. Final report and actual requirement audit: `framework/refinement/g3/report.md`, `requirements.md`, `completion-audit.json`.
 
 # Closed G2 status
 
