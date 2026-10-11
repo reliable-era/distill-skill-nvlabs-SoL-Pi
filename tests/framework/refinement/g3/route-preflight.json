@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-11T15:07:15.311832+00:00",
+  "backend": "127.0.0.1:9012",
+  "model_calls": 0,
+  "/v1/models": {
+    "status": 200,
+    "body": {
+      "object": "list",
+      "data": [
+        {
+          "id": "Qwen/Qwen3.8-27B",
+          "object": "model",
+          "created": 1791731235,
+          "owned_by": "sglang",
+          "root": "Qwen/Qwen3.8-27B",
+          "parent": null,
+          "max_model_len": 262144
+        }
+      ]
+    }
+  },
+  "/load": {
+    "error": "HTTPError",
+    "message": "HTTP Error 404: Not Found"
+  },
+  "/get_load": {
+    "status": 200,
+    "body": [
+      {
+        "dp_rank": 0,
+        "num_reqs": 3,
+        "num_waiting_reqs": 0,
+        "num_tokens": 27079,
+        "num_pending_tokens": 0,
+        "ts_tic": 1928701.522183549
+      },
+      {
+        "dp_rank": 1,
+        "num_reqs": 3,
+        "num_waiting_reqs": 0,
+        "num_tokens": 41414,
+        "num_pending_tokens": 0,
+        "ts_tic": 1928701.522183549
+      },
+      {
+        "dp_rank": 2,
+        "num_reqs": 2,
+        "num_waiting_reqs": 0,
+        "num_tokens": 23879,
+        "num_pending_tokens": 0,
+        "ts_tic": 1928701.522183549
+      },
+      {
+        "dp_rank": 3,
+        "num_reqs": 2,
+        "num_waiting_reqs": 0,
+        "num_tokens": 24950,
+        "num_pending_tokens": 0,
+        "ts_tic": 1928701.522183549
+      }
+    ]
+  }
+}
