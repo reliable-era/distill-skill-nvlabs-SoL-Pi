@@ -8,8 +8,8 @@ prompt-to-artifact audit, owned cleanup. G1/G2 stay closed, never pooled.
 |---|---|---|
 | Contract68cff75; frozen4 arms, candidate39f7b309…/Karpathy unchanged | tests/goal.md Active G3 read fully; future plan tree hashes and actual prompts | Contract read; no skill edits |
 |225 pinned exercises minus exact14 exclusions =211 | controls-plan.json, original selection SHA, pinned source revision | Enumerated/committed47ccf73 |
-| Before any inference gold/no-op checks on all211 | controls launch/progress/results, private manifest/log SHA, immutable images | Live PID4137993,4 concurrent graders;0 model calls |
-| Exclude only failing controls; record all, no substitution | Future controls audit/exclusions with raw failed checks and any grade-only setup repairs | Initial adapter preparation errors not silently excluded |
+| Before any inference gold/no-op checks on all211 | controls launch/progress/results, private manifest/log SHA, immutable images | All211 completed; original and repair workers absent;0 model calls |
+| Exclude only failing controls; record all, no substitution | Future controls audit/exclusions with raw failed checks and any grade-only setup repairs | controls-audit.json:196 valid/15 excluded;6 adapter/count repairs passed with original failed records retained |
 | Preregister committed seeds/full adjacent-arm queues/original math before calls | Future plan.json, analyze.py/test_analyze.py, introducing commit hashes | Math drafted;10 tests pass; queues pending control roster |
 | Model Qwen/Qwen3.8-27B direct9012; model identity round start | route-preflight.json and future round identity/each receipt backend | /v1/models200 correct;/get_load200 available; wrong /load404 retained diagnostic |
 | Rolling18 concurrent; new run only slot free+all waiting0 | Future scheduler event ledger, start/per-request load evidence | Not started |
@@ -20,10 +20,10 @@ prompt-to-artifact audit, owned cleanup. G1/G2 stay closed, never pooled.
 | Incomplete costs conservatively bounded, no fabricated usage | Analyze distinguishes unknown numerator vs denominator; raw completeness flags |10 tests cover missing numerator blocking, denominator bounds, failures retained |
 | Per-round/total solves/tokens/TPS/timeouts/ratio95%,quality/wall uncertainty | Future report.md and raw all-attempt audit | Pending |
 | Bounded windows committed before inference; no outcome-selected schedule | Future window commits/scheduler exact order/round boundaries | No inference window yet |
-| Specific live worker before waits; retain failures/caps/unknowns | Specific controls PID/atomic progress; future scheduler handles | Controls worker confirmed live; no timeout restart |
+| Specific live worker before waits; retain failures/caps/unknowns | Specific controls PID/atomic progress; future scheduler handles | Both control workers absent, all owned grader containers independently absent; no timeout restart |
 | All prompt/resource/test/source/runtime/image/receipt provenance+owned cleanup | Future independent audit and requirement closure certificate | Pending |
 | No nginx/tunnel/honey/18001/18002/gpu01/other-workload action;9012 outage pause | scoped commands/metadata9012 only; future integrity audit | No prohibited endpoint access/intervention |
-| No G1/G2/shipped/README/archive changes or push | git diff from68cff75; unrelated nginx/backup state preserved | Only new G3 files so far; no push |
+| No G1/G2/shipped/README/archive changes or push | git diff from68cff75; unrelated nginx/backup state preserved | New G3 and STATUS only; no push |
 
 Control preflight uses no actor/model. Preparation errors indicate adapter support
 limitations and are diagnosed before exclusions; gold/no-op test outcomes alone
