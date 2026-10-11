@@ -1,0 +1,27 @@
+{
+  "cells": {
+    "g3-r1-t132-K": {
+      "root": "/tmp/solpi-g3-r1-w03-ce944117db/g3-r1-t132-K-a1",
+      "raw_attempt_result_sha256": "4d3363666daf7e5b2c71b8f42b0e8644e686862237cd5a9c8de41c5c92b3abce",
+      "solution_sha256": "51e51a63c9b006757ec7b3ab7d6dada43f29fb6a35e65e38fadde6c25b19fc98",
+      "original_test_sha256": "03e7f51ae0858cae18bf0b9a391ab727ca204fafc8a9713f514297c2ce55a947",
+      "original_runner_sha256": "4ad9c732f05da5cad4608545454b574c40a97aefb45ead784a31f398b5dad687",
+      "loop_variable": "multiple"
+    },
+    "g3-r1-t132-Both": {
+      "root": "/tmp/solpi-g3-r1-w03-ce944117db/g3-r1-t132-Both-a1",
+      "raw_attempt_result_sha256": "fd8c8712730198d3f34c6394848e4fb290e392910378ff5aec71ac061927161b",
+      "solution_sha256": "0d9fe3b6e16abe038ee8b5947bce74139d71cb4750417362217ae52bb4830964",
+      "original_test_sha256": "03e7f51ae0858cae18bf0b9a391ab727ca204fafc8a9713f514297c2ce55a947",
+      "original_runner_sha256": "4ad9c732f05da5cad4608545454b574c40a97aefb45ead784a31f398b5dad687",
+      "loop_variable": "value"
+    }
+  },
+  "replay_result_sha256": "8175355f6065f5ce333732781912f6c19dd313facfde78b31dc9b253d808417b",
+  "projected_solved": false,
+  "model_calls_added": 0,
+  "original_exit2_null_grade_preserved": true,
+  "diagnosis": "Captured implementation loops advance by factor0 and never terminate on original zero-factor test. Official npm runner converts xtest to test before running. Both exact-artifact original grader replays time out at180s, original gold passes in1.82s in same image/resources. These are failed original-test model outcomes, not infrastructure model retries.",
+  "budgets_tests_solutions_unmodified": true,
+  "scope": "Only named hash-verified captured artifacts; apply same failed-test timeout classification to any future arm only after equivalent evidence; no solve rescue/exclusion/new inference."
+}
