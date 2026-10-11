@@ -12,12 +12,10 @@ no candidate is shipped from G4.
 
 - **Model route (user decision, 2026-10-12):** the gpu02 load balancer
   `127.0.0.1:8000` only, **16 concurrent runs** in total across all G4 parts.
-  The user was told and accepted that 8000 currently mixes two model variants:
-  `Qwen3.8-27B-FP8` (local and gpu01 backends) and `Qwen/Qwen3.8-27B` full
-  precision (tunnel backend). Every result is labelled
-  **"mixed FP8 + full-precision pool"**. For every request, record the `model`
-  field of the response (which identifies the variant) and its usage. Report the
-  per-arm share of requests served by each variant.
+  8000 serves `Qwen3.8-27B-FP8` and full-precision `Qwen/Qwen3.8-27B`. **Amendment
+  (user, 2026-10-12, before any G4 model call): treat the two as the same model.**
+  No "mixed pool" label. Still record the response `model` field and usage of
+  every request.
 - **Admission:** rolling queue; start a run when one of the 16 slots frees and
   `8000/get_load` shows no waiting requests on any backend; otherwise wait.
 - **Do not touch:** nginx or its config, the tunnel, any backend server, gpu01,
@@ -37,9 +35,11 @@ no candidate is shipped from G4.
 Fills the README rows "NVlabs SoL-Pi" and "NVlabs SoL-Pi + Karpathy".
 
 - **Harness:** Pi coding agent, one pinned version for all arms, recorded.
-- **Arms (6):** No skill; Karpathy (frozen `framework/refinement/g2/frozen/karpathy/`);
-  SoL-Pi extension; SoL-Pi extension + Karpathy; ours (shipped skill);
-  ours + Karpathy.
+- **Arms (2), amended by the user before any G4 model call ("re-use"):** SoL-Pi
+  extension; SoL-Pi extension + Karpathy (frozen
+  `framework/refinement/g2/frozen/karpathy/`). The other four README rows re-use
+  the existing Claude Code measurements; the report must state that the SoL-Pi
+  rows used the Pi harness and the re-used rows used Claude Code 2.1.286.
 - **SoL-Pi extension:** NVlabs/SoL-Pi at commit
   `1559b5cb12c72da4a485bc50fe326586b216fb19`, built from source with no edits.
   Enable all four mechanisms (Action Fusion, Online Context Compact,
@@ -50,10 +50,12 @@ Fills the README rows "NVlabs SoL-Pi" and "NVlabs SoL-Pi + Karpathy".
   route, record the reason and report Part A as blocked rather than patching it.
 - **Tasks:** the same tasks as the Claude Code table: the 10 synthetic
   diagnostics (5 development x 2 rounds + 5 held-out x 3 rounds = 25 attempts per
-  arm) and the 6 SWE-bench Verified issues x 2 rounds (12 per arm). 222 runs.
+  arm) and the 6 SWE-bench Verified issues x 2 rounds (12 per arm). 74 runs.
   Use the original campaign caps for each benchmark (SWE-bench: 60 turns,
   1800 s); record them.
-- Report as a separate Pi-harness table; never mix it into the Claude Code table.
+- Report the two SoL-Pi rows with their harness stated. Paired ratios versus the
+  re-used rows are informational only, because the harness differs.
+- Re-use the existing G3 runner, receipt broker and grader adapters where possible.
 
 ## Part B: Terminal-Bench 2.0
 
