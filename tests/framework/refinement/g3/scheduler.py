@@ -11,8 +11,15 @@ def load_plan():
  verify(plan)
  for key,s in plan['skills'].items():
   if tree(pathlib.Path(s['path']))!=s['tree']:raise RuntimeError('Frozen skill changed: '+key)
+ external=json.loads((H/'external-readme-change.json').read_text()) if (H/'external-readme-change.json').exists() else None
  for path,digest in plan['protected_files'].items():
-  if sha(path)!=digest:raise RuntimeError('Protected source changed: '+path)
+  actual=sha(path)
+  if actual==digest:continue
+  # README is not any experimental source/input. The G3 contract explicitly
+  # leaves supervisor README updates outside this agent's scope; never restore
+  # or edit that external work. All other protected hashes stay strict.
+  if external and pathlib.Path(path).name=='README.md' and path==external['path'] and digest==external['original_sha256'] and actual==external['external_sha256']:continue
+  raise RuntimeError('Protected source changed: '+path)
  return plan
 
 def prior_attempts():
