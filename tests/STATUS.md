@@ -1,3 +1,7 @@
+# Active G3 status
+
+G3 contract `68cff75`: full eligible Aider cohort, separate model `Qwen/Qwen3.8-27B`, direct9012 only. Enumerated225 minus14 original exclusions =211; zero-model control plan committed `47ccf73`. Gold/no-op worker **4137993** live (4 concurrent graders);53 completed/48 valid at last check. Initial preparation errors retained for diagnosis, not silently excluded. No model calls or inference window yet. Preregistration queues wait for audited control-valid roster; draft math10 tests pass. G1/G2/shipped/README unchanged; unrelated nginx/backup files untouched; no push.
+
 # Closed G2 status
 
 **Negative confirmation under authorized conservative K-denominator analysis; no savings acceptance or shipping.** All108 Aider cells audited: **2,544 requests / ≥82,334,104 tokens;41 solves /67 failures**. Candidate/No skill passes (0.374763;95% [0.114493,0.854773]), but Both/K (≤1.027620; surrogate95% [0.352441,2.946979]) and candidate/K (≤0.639262; surrogate95% [0.309018,1.129367]) do not establish required gates. All observed solve-count gates pass. Original complete-cost analysis remains evidence-incomplete due to retained JS/K request97; failed conservative bounds do not prove true K ratios fail. Two capped failures retained; all workers/resources absent. G1/frozen skills/runtime/original math/canonical unchanged. Report and actual prompt-to-artifact audit: `framework/refinement/g2/report.md`, `requirements.md`.
