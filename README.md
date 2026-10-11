@@ -6,7 +6,7 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 
 ## Numbers
 
-**LLM:** Qwen3.8-27B-FP8 · **Runtime:** SGLang + DFlash · **Agent:** Claude Code 2.1.286.
+**LLM:** Qwen3.8-27B-FP8 · **Runtime:** SGLang + DFlash · **Agent:** Claude Code 2.1.286 (Aider polyglot rows: Codex 0.160.0).
 
 ![Benchmark comparison: solve rates, failure-inclusive tokens per solve, and model timeouts](assets/benchmark-numbers.svg)
 
@@ -22,14 +22,18 @@ A portable `efficient-coding` skill inspired by [NVlabs/SoL-Pi](https://github.c
 | SWE-bench Verified | SoL-Pi (ours) | 11/12 | ≥1.42M | 2 |
 | SWE-bench Verified | Karpathy | 11/12 | ≥1.45M | 2 |
 | SWE-bench Verified | Both skills | 8/12 | ≥1.94M | 3 |
+| Aider polyglot (sealed) | No skill (baseline) | 7/27 | 3.38M | 0 |
+| Aider polyglot (sealed) | Candidate 2 (ours, not shipped) | 13/27 | 1.27M | 0 |
+| Aider polyglot (sealed) | Karpathy | 10/27 | ≥1.98M | 0 |
+| Aider polyglot (sealed) | Both skills (candidate 2 + Karpathy) | 11/27 | 2.04M | 0 |
 
-**Sample sizes:** SWE-bench Verified has **6 unique issues × 2 rounds = 12 attempts per configuration**. Our synthetic diagnostics have **10 fixtures**: 5 development × 2 rounds + 5 held-out × 3 rounds = **25 attempts per configuration**. Fractions in the table and plot count solved attempts, not unique tasks.
+**Sample sizes:** SWE-bench Verified has **6 unique issues × 2 rounds = 12 attempts per configuration**. Our synthetic diagnostics have **10 fixtures**: 5 development × 2 rounds + 5 held-out × 3 rounds = **25 attempts per configuration**. Aider polyglot has **9 sealed tasks × 3 rounds = 27 attempts per configuration**. Fractions in the table and plot count solved attempts, not unique tasks.
 
-**Ours** is the latest shipped revision. **Both skills** loads Karpathy and ours separately. Tokens include failed attempts; `k` = thousand, `M` = million, `≥` = incomplete lower bound. Unmeasured or unverified items are marked **TBD**.
+**Ours** is the latest shipped revision; the Aider rows instead test candidate 2, which was not shipped. **Both skills** loads Karpathy and ours separately. Tokens include failed attempts; `k` = thousand, `M` = million, `≥` = incomplete lower bound. Unmeasured or unverified items are marked **TBD**.
 
-Ours ties Karpathy at 11/12 SWE-bench Verified solves; baseline is cheaper on our synthetic diagnostics. **A stable general efficiency win is not established.** Public repair retrieval limits repository attribution; incomplete costs do not support exact savings claims.
+Ours ties Karpathy at 11/12 SWE-bench Verified solves; baseline is cheaper on our synthetic diagnostics. On sealed Aider polyglot, candidate 2 used 62.5% fewer tokens per solve than baseline (paired 95% CI for the ratio 0.11–0.85) and ≤0.64× Karpathy's, but the Karpathy interval (up to 0.31–1.13) includes parity. **A stable general efficiency win is not established.** Public repair retrieval limits repository attribution; incomplete costs do not support exact savings claims.
 
-**Benchmark sources:** Our synthetic diagnostics combine custom development and held-out fixtures. This aggregate includes development data and is not a pure held-out score. [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) combines six distinct issues, each repeated twice: the original four-issue sample plus two new randomly selected easy issues. Totals sum all attempts across both samples; their selection rules differ, so this is a descriptive six-issue aggregate. Five diagnostic cases ×2 development / ×3 held-out rounds. Scheduling seeds do not control model sampling. [Full results and limitations](tests/report.md) · [Random subset details](tests/eval/random-followup/results/summary.md).
+**Benchmark sources:** Our synthetic diagnostics combine custom development and held-out fixtures. This aggregate includes development data and is not a pure held-out score. [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) combines six distinct issues, each repeated twice: the original four-issue sample plus two new randomly selected easy issues. Totals sum all attempts across both samples; their selection rules differ, so this is a descriptive six-issue aggregate. Five diagnostic cases ×2 development / ×3 held-out rounds. Scheduling seeds do not control model sampling. [Full results and limitations](tests/report.md) · [Random subset details](tests/eval/random-followup/results/summary.md). Aider polyglot uses 9 tasks sealed before the run (seed 20261006), never used in development; the plot does not include it ([G2 report](tests/framework/refinement/g2/report.md)).
 
 <details>
 <summary>Original-version results</summary>
@@ -55,7 +59,7 @@ The later development candidate was rejected and is not shipped. Original calibr
 
 [Docker framework](tests/framework/README.md): nine agent CLIs, six benchmark sources, a frozen eight-task pilot, cost accounting, and isolated grading. [A four-configuration native pilot](tests/framework/trials/README.md) is complete for Pi, Codex, Copilot, Cursor Auto, and Antigravity `agy`: 40 real attempts on two reused synthetic fixtures. It does not establish a general efficiency win. [Native public-benchmark development](tests/framework/refinement/development/README-broad.md) covers official Flask repair grading, a Go exercise and terminal sanitization.
 
-**Refinement attempts (Codex + local Qwen3.8-27B-FP8).** Nineteen candidate revisions were tested; none was shipped. Each one's change and reason for rejection is listed in the [rejected-candidate index](tests/archive/rejected-candidates/INDEX.md). The final candidate went through a sealed confirmation on 9 Aider polyglot tasks × 4 configurations × 3 rounds (108 runs). It used 62.5% fewer tokens per solve than No skill (paired 95% CI for the ratio 0.11–0.85) and solved 13/27 vs 7/27. Its comparisons against Karpathy were not established, so it failed the preregistered all-comparator rule and the shipped skill is unchanged ([G2 report](tests/framework/refinement/g2/report.md), [G1 report](tests/framework/refinement/g1/report.md)). A stable economic win remains **TBD**. [Human login steps](tests/framework/runtime/README.md).
+**Refinement attempts (Codex + local Qwen3.8-27B-FP8).** Nineteen candidate revisions were tested; none was shipped. Each one's change and reason for rejection is listed in the [rejected-candidate index](tests/archive/rejected-candidates/INDEX.md). The final candidate went through a sealed confirmation on 9 Aider polyglot tasks × 4 configurations × 3 rounds (108 runs). It used 62.5% fewer tokens per solve than No skill (paired 95% CI for the ratio 0.11–0.85) and solved 13/27 vs 7/27. Against Karpathy it solved 13/27 vs 10/27 at ≤0.64× the tokens per solve, but the conservative paired CI (up to 0.31–1.13) includes 1, so these comparisons were not established, so it failed the preregistered all-comparator rule and the shipped skill is unchanged ([G2 report](tests/framework/refinement/g2/report.md), [G1 report](tests/framework/refinement/g1/report.md)). A stable economic win remains **TBD**. [Human login steps](tests/framework/runtime/README.md).
 
 ## Quick start
 
