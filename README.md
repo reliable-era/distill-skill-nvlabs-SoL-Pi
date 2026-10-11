@@ -48,18 +48,24 @@ The Claude Code marketplace installation is tested in Docker and GitHub Actions.
 
 ## Measured results
 
-In two pilot benchmarks, `efficient-coding` solved more attempts than the no-skill baseline:
+Compare `efficient-coding` with standalone and combined baselines. **SoL-Pi below means NVlabs' original Pi extension**; our portable skill is listed separately.
 
-| Benchmark | No skill: solved | `efficient-coding`: solved | Tokens / solve: no skill → skill |
-|---|---:|---:|---:|
-| Synthetic diagnostics | 21/25 | **23/25** | 234k → 253k |
-| SWE-bench Verified | 9/12 | **11/12** | ≥1.62M → ≥1.42M |
+| Condition | Synthetic solved ↑ | Synthetic tokens / solve ↓ | SWE-bench solved ↑ | SWE-bench tokens / solve ↓ |
+|---|---:|---:|---:|---:|
+| No skill | 21/25 | **234k** | 9/12 | ≥1.62M |
+| Karpathy | 19/25 | 296k | **11/12** | ≥1.45M |
+| NVlabs SoL-Pi | Not run | Not run | Not run | Not run |
+| NVlabs SoL-Pi + Karpathy | Not run | Not run | Not run | Not run |
+| **Ours: `efficient-coding`** | **23/25** | 253k | **11/12** | **≥1.42M** |
+| Ours + Karpathy | 22/25 | 288k | 8/12 | ≥1.94M |
 
-Claude Code 2.1.286 · Qwen3.8-27B-FP8. These are **solved attempts**, not unique tasks: 10 synthetic fixtures, including development data, and 6 SWE-bench issues. Tokens per solve include the cost of failed attempts. `k` = thousand; `M` = million; `≥` marks incomplete cost accounting.
+**Completed comparisons:** Claude Code 2.1.286 · Qwen3.8-27B-FP8. These are solved attempts, not unique tasks: 10 synthetic fixtures, including development data, and 6 SWE-bench issues. Tokens per solve include failed attempts. `k` = thousand; `M` = million; `≥` marks incomplete cost accounting.
 
-Compared with loading our skill **together with Karpathy**, the standalone skill solved 23 vs 22 synthetic attempts and 11 vs 8 SWE-bench attempts. Synthetic tokens per solve were **253k vs 288k—about 12% lower**. “Together” means both instruction sets loaded in one agent task; the setup is explained in the [evaluation document](docs/evaluation.md#what-the-comparison-conditions-mean).
+**Baseline definitions:** “Ours + Karpathy” is the condition called “Both” in the existing reports: two skills loaded into one agent task. NVlabs SoL-Pi and NVlabs SoL-Pi + Karpathy require the Pi runtime and have no matched measurements in this campaign. The upstream paper's results use a different setup and are not substituted here.
 
-Token results against no skill are mixed: synthetic cost per solve increased, and the SWE-bench lower bounds do not establish an exact saving. These small pilots support further evaluation; they do not establish a general performance advantage.
+Our standalone skill solved more attempts than no skill and than Ours + Karpathy on both pilot benchmarks. Compared with Ours + Karpathy, its synthetic tokens per solve were **about 12% lower** (253k vs 288k). Compared with Karpathy alone, it solved more synthetic attempts and the same number of SWE-bench attempts.
+
+Token results against no skill remain mixed: synthetic cost per solve increased, and SWE-bench lower bounds do not establish an exact saving. These small pilots do not establish a general performance advantage or superiority to NVlabs SoL-Pi.
 
 [Full comparison and development history](docs/evaluation.md) · [Original report](tests/report.md) · [Comparison chart](assets/benchmark-numbers.svg)
 
