@@ -1,4 +1,81 @@
-# Active goal (G2): sealed confirmation of frozen candidate 2
+# Active goal (G3): full-eligible Aider run of frozen candidate 2
+
+Set 2026-10-11 at the user's request. G2 is closed negative (a697bde, 8692e5d);
+its result stands, is not rewritten and is not pooled with G3. G3 runs under the
+same standing authorization and Claude supervision (workspace `supervisor-policy.md`).
+
+## Why G3 exists
+
+G2 used 9 tasks. Candidate 2 was 62.5% cheaper per solve than No skill (CI
+0.11-0.85) and at most 0.64x Karpathy, but the Karpathy interval (up to
+0.31-1.13) crossed 1. With 9 task clusters, two or three tasks decided the
+comparison. G3 asks the same question on every eligible Aider polyglot exercise.
+
+## Fixed setup
+
+- **Arms (4), frozen, no edits:** No skill; Karpathy
+  (`framework/refinement/g2/frozen/karpathy/`); candidate 2, SHA
+  `39f7b30993b0fb4cfdc306df6eba45d1ebcb8a75955b7713f5f3f306976e8a25`
+  (`framework/refinement/g2/frozen/candidate/`); Both (candidate 2 + Karpathy).
+- **Tasks:** all 211 eligible exercises from `framework/refinement/g1/polyglot-selection.json`
+  (pinned revision `7e0611e7`, 225 exercises minus its 14 development exclusions).
+  The 9 G2 tasks are included; the candidate was frozen before G2 and never tuned
+  on them. Before any model call, run the gold and no-op grader checks on all 211.
+  Exclude a task only if those checks fail, and record it. No other exclusion or
+  substitution.
+- **Model and route:** `Qwen/Qwen3.8-27B` on the tunnel backend, direct
+  `127.0.0.1:9012` only. Never use the nginx balancer on 8000 (it mixes this model
+  with the FP8 model) and never fall back to 18001/18002. Preflight: `/v1/models`
+  must report `Qwen/Qwen3.8-27B`; record it and recheck at each round start.
+  Record the backend for every request. This is a different model variant from
+  G1/G2 (FP8), so G3 results are a separate cohort.
+- **Harness and caps:** Codex 0.160.0; 60 requests / 120 min / 16K output per run.
+- **Scheduling:** rolling queue with **18 concurrent runs** (user-approved,
+  2026-10-11). A new run starts when a slot frees and 9012 reports
+  `num_waiting_reqs == 0`; otherwise wait. Task order is shuffled per round with
+  a recorded seed. A task's four arms are queued next to each other in a
+  per-task random arm order, so matched arms see similar load.
+- **Rounds:** 3. Each round = 211 x 4 = 844 runs. Round 2 starts only after the
+  round-1 futility check.
+- **Do not touch:** nginx, the tunnel, the honey server or its configuration,
+  18001/18002, gpu01, or other workloads. If 9012 is down, pause and report.
+
+## Acceptance
+
+Same rule as G2. All three must pass; tokens include failed runs:
+
+1. Candidate vs No skill.
+2. Both vs Karpathy.
+3. Candidate vs Karpathy.
+
+For each comparison, tokens per verified solve must be at least 5% lower, the
+paired task-cluster bootstrap 95% interval of the cost ratio (20,000 replicates,
+recorded seed) must lie below 1, and verified solves must be no fewer than the
+comparator's. "Candidate vs Both" is informational only. If any run's cost is
+incomplete, use the G2 conservative-bound treatment and say so.
+
+## Stops
+
+- **Futility only, after round 1:** stop G3 as negative if the candidate is not
+  at least 5% cheaper per solve than No skill or than Karpathy, or has fewer
+  solves than either. This check cannot declare a win.
+- **Infrastructure failures:** a run that never reached the model, or whose
+  connection to 9012 was refused or reset (not a model error or cap), is marked
+  infra-failed and rerun once from scratch. Both records are kept. The rule is
+  the same for every arm. Everything else, including every model failure and cap
+  hit, is kept as-is.
+- Terminal-Bench stays sealed and is not part of G3.
+
+## Outcome
+
+Report per round and in total: a score table for all four arms (solves, tokens,
+tokens per solve, timeouts) and all ratios with 95% intervals. Do not change the
+shipped skill or the README; Claude updates the README and asks the user before
+shipping anything.
+
+---
+
+# Closed goal (G2): sealed confirmation of frozen candidate 2
 
 Set 2026-10-09. The user asked Claude to decide, and Claude decided to continue
 with one confirmation test. G1 is closed (f537bfa); its result stands and is not
