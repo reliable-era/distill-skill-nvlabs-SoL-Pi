@@ -1,0 +1,68 @@
+{
+  "utc": "2026-10-11T22:38:46.437763+00:00",
+  "route": "127.0.0.1:8000",
+  "model_calls": 0,
+  "observations": {
+    "/get_load": {
+      "status": 200,
+      "body": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 7,
+          "num_waiting_reqs": 5,
+          "num_tokens": 353213,
+          "num_pending_tokens": 103188,
+          "ts_tic": 13292635.718693843,
+          "backend": "127.0.0.1:18002"
+        },
+        {
+          "dp_rank": 0,
+          "num_reqs": 6,
+          "num_waiting_reqs": 5,
+          "num_tokens": 434230,
+          "num_pending_tokens": 317552,
+          "ts_tic": 13292635.721965188,
+          "backend": "127.0.0.1:18001"
+        },
+        {
+          "dp_rank": 0,
+          "num_reqs": 8,
+          "num_waiting_reqs": 7,
+          "num_tokens": 423430,
+          "num_pending_tokens": 242174,
+          "ts_tic": 11387382.725156613,
+          "backend": "10.193.104.97:18002"
+        },
+        {
+          "dp_rank": 0,
+          "num_reqs": 6,
+          "num_waiting_reqs": 4,
+          "num_tokens": 402693,
+          "num_pending_tokens": 209645,
+          "ts_tic": 11387382.727158168,
+          "backend": "10.193.104.97:18001"
+        }
+      ],
+      "sha256": "73c2ad6ceff50b5ec0638162bc9cb4c8a460130710f476b8c78ff639162d47d8"
+    },
+    "/v1/models": {
+      "status": 200,
+      "body": {
+        "object": "list",
+        "data": [
+          {
+            "id": "Qwen/Qwen3.8-27B",
+            "object": "model",
+            "created": 1791758326,
+            "owned_by": "sglang",
+            "root": "Qwen/Qwen3.8-27B",
+            "parent": null,
+            "max_model_len": 262144
+          }
+        ]
+      },
+      "sha256": "54cc81a363d412969f6d9b75f60a6da7782234005c449f0a245a1ec1ef3a6fbc"
+    }
+  },
+  "model_policy": "both labels treated as the same model per5b8e715; per-request model/usage retained"
+}
