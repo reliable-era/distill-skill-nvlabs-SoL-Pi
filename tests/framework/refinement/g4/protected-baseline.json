@@ -2,7 +2,7 @@
   "contract": "049ab2a",
   "head": "049ab2ae7931cc044818b25499290a74f6a4ff7b",
   "protected": {
-    "README.md": "58dbfcabb2b93fae05bc33027c80c14d2d16d8428fcc164b179095b7b76d0c28",
+    "README.md": "c4e1d20fb396b11e8a5c01acda8c04056ee76ef963aaaf4b9579f298b6a285ed",
     "docs/evaluation.md": "84d1a35129edf09822cd07d1fe791b3c81e6e87209314250ba11b2ae70dfc5d0",
     "skills/efficient-coding/SKILL.md": "68ea78dcb9ee8a565f99c8a1b8bfec13f4c6d65c5695ce847eb5577b0449b1ef",
     "skills/efficient-coding/agents/openai.yaml": "62ad90930f64dfbfe601c50536d576e2cd393205a087783d58d6af13809ca814",
@@ -540,5 +540,19 @@
     "nginx.conf.bak-20261011-011330": "3ab2c50fea684dd8ca65ef2f54e583d270ca5fbd0369861f9b5eede896cbcd25"
   },
   "model_calls": 0,
-  "amendment": "5b8e715"
+  "amendment": "5b8e715",
+  "external_metadata_changes": [
+    {
+      "external_commit": "1eb8159",
+      "paths": [
+        "README.md",
+        "tests/validation/skills_cli_check.sh"
+      ],
+      "README_old_sha256": "58dbfcabb2b93fae05bc33027c80c14d2d16d8428fcc164b179095b7b76d0c28",
+      "README_new_sha256": "c4e1d20fb396b11e8a5c01acda8c04056ee76ef963aaaf4b9579f298b6a285ed",
+      "agent_README_edits": 0,
+      "reason": "External supervisor documentation/install-validation commit during zero-model preparation; neither path is a G4 experimental input; no agent edit/restoration"
+    }
+  ],
+  "baseline_amended_before_any_model_call": true
 }
