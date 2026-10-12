@@ -1,0 +1,46 @@
+{
+  "window": "04",
+  "observed_completed_model_failures": [
+    {
+      "cell_id": "g4-B-066",
+      "attempts": 1,
+      "native_exit": 1,
+      "requests": 1,
+      "native_failures": [
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "stream disconnected before completion: Incomplete response returned, reason: max_output_tokens"
+          }
+        }
+      ],
+      "native_sha256": "9b811495d76579c3b6afe4d93d230783e1e770acee86ce011048f457b94ff4c5",
+      "ledger_sha256": "23019de6fed691361eba6cd76d0a4b98385d7df17660e78a9fd12126efdfe087",
+      "grade_valid": true,
+      "solved": false,
+      "policy": "Observed model/output-cap failure; no from-scratch rerun. Captured original verifier result/cost retained."
+    },
+    {
+      "cell_id": "g4-B-065",
+      "attempts": 1,
+      "native_exit": 1,
+      "requests": 1,
+      "native_failures": [
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "stream disconnected before completion: Incomplete response returned, reason: max_output_tokens"
+          }
+        }
+      ],
+      "native_sha256": "999856c980390384b53f895e0a8e0f11efe68b5e780915e33832f76403665a40",
+      "ledger_sha256": "609c6b23087927995506ce7309b7f7764639bf611d0bbd7abcc6bd586df684e8",
+      "grade_valid": true,
+      "solved": false,
+      "policy": "Observed model/output-cap failure; no from-scratch rerun. Captured original verifier result/cost retained."
+    }
+  ],
+  "scope": "Current completed-attempt subset only; not all-window outcome or cost audit",
+  "not_a_completion_audit": true,
+  "model_calls": 0
+}
