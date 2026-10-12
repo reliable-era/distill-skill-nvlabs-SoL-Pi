@@ -15,7 +15,14 @@ def audit(window):
   g=json.loads(result.read_text());bad=[]
   if not g['owned_containers_absent']:bad.append('cleanup flag')
   if not g['grade_valid']:bad.append('grade unavailable: retain explicit unknown, reconcile reason')
-  if g['patch_sha256']!=row['patch_sha256'] or g['image_id']!=plan['images'][row['task']]:bad.append('patch/image identity')
+  patch_digest=row.get('patch_sha256')
+  if cell in repair:
+   projected=repair[cell]
+   if sha(result)!=projected['authoritative_grade_sha256'] or sha(pathlib.Path(row['root'])/'attempt-result.json')!=projected['original_attempt_sha256']:bad.append('repair grade/original attempt identity')
+   if patch_digest is None:
+    capture=pathlib.Path(projected['capture_projection_root']);proof_path=capture/'projection-proof.json';proof=json.loads(proof_path.read_text());patch_digest=projected['projected_patch_sha256']
+    if row['error']['type']!='AbsoluteLinkError' or sha(proof_path)!=projected['capture_projection_proof_sha256'] or sha(pathlib.Path(row['root'])/'captured.tar')!=proof['captured_tar_sha256'] or sha(capture/'model.patch')!=patch_digest or proof['patch_sha256']!=patch_digest or not proof['data_filter_preserved'] or proof['model_calls']!=0 or proof['actor_reruns']!=0:bad.append('capture-only projection identity/safety')
+  if g['patch_sha256']!=patch_digest or g['image_id']!=plan['images'][row['task']]:bad.append('patch/image identity')
   for relative,digest in g['artifacts'].items():
    if sha(directory/relative)!=digest:bad.append('original artifact changed:'+relative)
   owned=json.loads((directory/'owned.json').read_text())['names'];ins=json.loads((directory/'container-inspect.json').read_text());host=ins['HostConfig'];mounts=ins['Mounts']
