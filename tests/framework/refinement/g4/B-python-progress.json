@@ -1,0 +1,229 @@
+{
+  "rows": [
+    {
+      "task": "gpt2-codegolf",
+      "original_image_id": "sha256:f4771870b08b96c63feb567c49bcc2c2b4deefd0fc3acab5ccb781ed4fc492a6",
+      "model_calls": 0,
+      "no_task_test_or_gold_edits": true,
+      "image_id": "sha256:ad8d4ca196449f6fd8b0295cb066877c3c04f59c5318bc056e349cfed0dab51a",
+      "image_tag": "solpi-g4-python:d09193d9597e",
+      "install_log_sha256": "9a5372a125161431b3d5e7da256908d203cd432c4330f13abf96ffd3e57b59f6",
+      "pair": {
+        "task": "gpt2-codegolf",
+        "image_id": "sha256:ad8d4ca196449f6fd8b0295cb066877c3c04f59c5318bc056e349cfed0dab51a",
+        "controls": [
+          {
+            "mode": "nop",
+            "container_name": "solpi-g4-B-control-b1d1e7f0f43b",
+            "expected_reward": "0",
+            "private_root": "/tmp/solpi-g4-B-python-3d633b8c95d6/gpt2-codegolf/controls/gpt2-codegolf/nop",
+            "inspect_sha256": "ef9a39ea449706289404ba6f1247057acbf6918d22f51b522d3f161c23ca2e5c",
+            "verifier": {
+              "exit_code": 0,
+              "log_sha256": "217c517213666f315d25db2518500b511015e917900708de1670c7e214bd5104"
+            },
+            "reward": "0",
+            "test_events": 1,
+            "ctrf_sha256": "9c78291f5a1b37aa59847823695b347f0661c0853567bfa9be633dd2ef45964c",
+            "valid_expected_reward": true,
+            "owned_container_absent": true
+          },
+          {
+            "mode": "gold",
+            "container_name": "solpi-g4-B-control-5bd568026379",
+            "expected_reward": "1",
+            "private_root": "/tmp/solpi-g4-B-python-3d633b8c95d6/gpt2-codegolf/controls/gpt2-codegolf/gold",
+            "inspect_sha256": "b794615fbbc0e42578fff5e1f92b5251020a83b937272c54b219840de9738e77",
+            "oracle": {
+              "exit_code": 0,
+              "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verifier": {
+              "exit_code": 0,
+              "log_sha256": "954293b0d3053828811b5b0d700f6a14275b0f3eb718f7c860d6a8b231f33620"
+            },
+            "reward": "1",
+            "test_events": 1,
+            "ctrf_sha256": "fda8f63e74bafd9ae7796c41cd1fc485c753cefe79c88b99512128430f128bbb",
+            "valid_expected_reward": true,
+            "owned_container_absent": true
+          }
+        ],
+        "model_calls": 0,
+        "valid_pair": true,
+        "seconds": 27.427027801051736
+      },
+      "valid_pair": true,
+      "prepare_container_absent": true
+    },
+    {
+      "task": "merge-diff-arc-agi-task",
+      "original_image_id": "sha256:1994f7ed8975cf2a616e00daa45fc556e842418f8040398053f064cf0bba3c69",
+      "model_calls": 0,
+      "no_task_test_or_gold_edits": true,
+      "image_id": "sha256:0882bf084736626279d3995957b4f8207b79664400821a11b66eae239cb2171e",
+      "image_tag": "solpi-g4-python:3b582959536a",
+      "install_log_sha256": "e0121102420b93a11e4f994093b7fa0fb94f2abf55dd8c9bbbe9e0109f59e4b0",
+      "pair": {
+        "task": "merge-diff-arc-agi-task",
+        "image_id": "sha256:0882bf084736626279d3995957b4f8207b79664400821a11b66eae239cb2171e",
+        "controls": [
+          {
+            "mode": "nop",
+            "container_name": "solpi-g4-B-control-0d021d3d134c",
+            "expected_reward": "0",
+            "private_root": "/tmp/solpi-g4-B-python-3d633b8c95d6/merge-diff-arc-agi-task/controls/merge-diff-arc-agi-task/nop",
+            "inspect_sha256": "818a69519c8653da4d8b6d68c4fa8570e1889437b3e6cf5132fa3f11a55f93ed",
+            "verifier": {
+              "exit_code": 0,
+              "log_sha256": "e65b1ef74c5ddec9f406af0ab2504bdf2774b84200d2ebea4e869f9d7027ac67"
+            },
+            "reward": "0",
+            "test_events": 5,
+            "ctrf_sha256": "b0f3c46b4ba6af178a9fff32dba80c12be10095dc4676c2b472b87cdd4807b63",
+            "valid_expected_reward": true,
+            "owned_container_absent": true
+          },
+          {
+            "mode": "gold",
+            "container_name": "solpi-g4-B-control-53a403f5fc1c",
+            "expected_reward": "1",
+            "private_root": "/tmp/solpi-g4-B-python-3d633b8c95d6/merge-diff-arc-agi-task/controls/merge-diff-arc-agi-task/gold",
+            "inspect_sha256": "dce0a96a5ca12d8d9137ee51abaa9d1dcfd1c9e61c5cdfb69946b0d11d72be5e",
+            "oracle": {
+              "exit_code": 0,
+              "log_sha256": "e463a22155e35f9f636aa2c2aeac4d927f083c7d3ec5a305f1c08becebccce34"
+            },
+            "verifier": {
+              "exit_code": 0,
+              "log_sha256": "a990310db7e447995063f724b745345dbdcbd40b9fcd0a2b10825a08de209b23"
+            },
+            "reward": "1",
+            "test_events": 5,
+            "ctrf_sha256": "d4c27c4341b68ea7b0872dcdd51e6ab65d4b05ad6e708b8ac3fcb0abc844911a",
+            "valid_expected_reward": true,
+            "owned_container_absent": true
+          }
+        ],
+        "model_calls": 0,
+        "valid_pair": true,
+        "seconds": 43.71459827199578
+      },
+      "valid_pair": true,
+      "prepare_container_absent": true
+    },
+    {
+      "task": "polyglot-rust-c",
+      "original_image_id": "sha256:42e1c101034156ab6a0cbefc63ee654ab7fccb668e1580a090abba89244f6a93",
+      "model_calls": 0,
+      "no_task_test_or_gold_edits": true,
+      "image_id": "sha256:d7c8a13b78c764571381f63ff731bc9aa2858c21bfb937c262823f43755a14f2",
+      "image_tag": "solpi-g4-python:cee0eb7d716d",
+      "install_log_sha256": "16316ffd364ca09f44a8cce5f93964e6bb8fbdd2b9539a2b1beac008e143262b",
+      "pair": {
+        "task": "polyglot-rust-c",
+        "image_id": "sha256:d7c8a13b78c764571381f63ff731bc9aa2858c21bfb937c262823f43755a14f2",
+        "controls": [
+          {
+            "mode": "nop",
+            "container_name": "solpi-g4-B-control-d5ba2929b44b",
+            "expected_reward": "0",
+            "private_root": "/tmp/solpi-g4-B-python-3d633b8c95d6/polyglot-rust-c/controls/polyglot-rust-c/nop",
+            "inspect_sha256": "2da1f00b95142698ac0d85fa8a56b2130f1ef55c6f724f097c06f20b74bd58d4",
+            "verifier": {
+              "exit_code": 0,
+              "log_sha256": "a8a720374e1a57bee15de3266bea4dac0900ad01b9b15a69bc656439583d78dd"
+            },
+            "reward": "0",
+            "test_events": 1,
+            "ctrf_sha256": "92afc3704e1cf0d2a88d564aff66de6b7b19a2de0989fcc9115c1e37499473ce",
+            "valid_expected_reward": true,
+            "owned_container_absent": true
+          },
+          {
+            "mode": "gold",
+            "container_name": "solpi-g4-B-control-0f7d89e9e6bc",
+            "expected_reward": "1",
+            "private_root": "/tmp/solpi-g4-B-python-3d633b8c95d6/polyglot-rust-c/controls/polyglot-rust-c/gold",
+            "inspect_sha256": "6bf4b1e400dffe1419f6d406682f0696afa7b3aa477b5175ab755027106a71ad",
+            "oracle": {
+              "exit_code": 0,
+              "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verifier": {
+              "exit_code": 0,
+              "log_sha256": "1463da7035b0837c2f3e4866cf37144945005e7e4ac2973bcbae4a81fb647752"
+            },
+            "reward": "1",
+            "test_events": 1,
+            "ctrf_sha256": "8ed31887a3dcdeaa556708e1d212bdefbc1ada7042a973117631d434a9045c98",
+            "valid_expected_reward": true,
+            "owned_container_absent": true
+          }
+        ],
+        "model_calls": 0,
+        "valid_pair": true,
+        "seconds": 28.943538781255484
+      },
+      "valid_pair": true,
+      "prepare_container_absent": true
+    },
+    {
+      "task": "sqlite-with-gcov",
+      "original_image_id": "sha256:b9726244945382a5d73839440e391c88aceeb52346805eebd8712eb1b6ba8b3a",
+      "model_calls": 0,
+      "no_task_test_or_gold_edits": true,
+      "image_id": "sha256:da475a2c1cd628c4e512cf4eee9d8e6f9ec1d79e183d340509215c874811e453",
+      "image_tag": "solpi-g4-python:da8f21290e34",
+      "install_log_sha256": "4d580ccdc7be15ae41695a60345128a417c34e453f18d366e8bcad0fbefe7802",
+      "pair": {
+        "task": "sqlite-with-gcov",
+        "image_id": "sha256:da475a2c1cd628c4e512cf4eee9d8e6f9ec1d79e183d340509215c874811e453",
+        "controls": [
+          {
+            "mode": "nop",
+            "container_name": "solpi-g4-B-control-553f964adeca",
+            "expected_reward": "0",
+            "private_root": "/tmp/solpi-g4-B-python-3d633b8c95d6/sqlite-with-gcov/controls/sqlite-with-gcov/nop",
+            "inspect_sha256": "b5289a94e1c461953a492f0e95e43f47c35030929fda9f92ac53d22ff34060bd",
+            "verifier": {
+              "exit_code": 0,
+              "log_sha256": "ec0ee7d01e97a8e02656013e9c9d44b29b2ebe664f7f564f20485e145f1837a4"
+            },
+            "reward": "0",
+            "test_events": 3,
+            "ctrf_sha256": "dd7a689dc40991f5acbf47a6f12e3eee033506a6e235a16f408c49e71b20ca82",
+            "valid_expected_reward": true,
+            "owned_container_absent": true
+          },
+          {
+            "mode": "gold",
+            "container_name": "solpi-g4-B-control-2b0c96073204",
+            "expected_reward": "1",
+            "private_root": "/tmp/solpi-g4-B-python-3d633b8c95d6/sqlite-with-gcov/controls/sqlite-with-gcov/gold",
+            "inspect_sha256": "067ec2e3f66c353e059a645b6f1c925545687df4186246f490c8227b0143f0f9",
+            "oracle": {
+              "exit_code": 0,
+              "log_sha256": "9199358b58d6820f6c0e597b3f22ccc1166ceeb6b1a1bfe102382471a07b3e61"
+            },
+            "verifier": {
+              "exit_code": 0,
+              "log_sha256": "3c65c18a202130f2df2460fba87af311956df1747280da0dcd8fb46dc38a6a35"
+            },
+            "reward": "1",
+            "test_events": 3,
+            "ctrf_sha256": "b9581396e1a9e52bd2fac76bc5efe81eeb1b012129ed447972a00795f4173ccd",
+            "valid_expected_reward": true,
+            "owned_container_absent": true
+          }
+        ],
+        "model_calls": 0,
+        "valid_pair": true,
+        "seconds": 99.18431927450001
+      },
+      "valid_pair": true,
+      "prepare_container_absent": true
+    }
+  ],
+  "model_calls": 0
+}
