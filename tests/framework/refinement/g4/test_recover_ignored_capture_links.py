@@ -19,6 +19,10 @@ class CaptureProjection(unittest.TestCase):
   archive=self.archive();proof=project(archive,self.base,self.root/'recovered');cmp=self.root/'original-semantics';shutil.copytree(self.source,cmp);(cmp/'code.py').write_bytes(b'after\n');(cmp/'result_images').mkdir();(cmp/'result_images/new.png').write_bytes(b'PNG bytes retained');(cmp/'.pytest_cache').mkdir();(cmp/'.pytest_cache/.gitignore').write_bytes(b'*\n');(cmp/'result_images/expected.png').symlink_to('/testbed/nonexistent-image.png')
   new=[str(p.relative_to(cmp)) for p in cmp.rglob('*') if p.is_file() and '.git' not in p.relative_to(cmp).parts and str(p.relative_to(cmp)) not in {'.gitignore','code.py'}];env=dict(os.environ,GIT_CONFIG_NOSYSTEM='1',GIT_CONFIG_GLOBAL='/dev/null');run(['git','-C',str(cmp),'add','-N','--force','--',*new],env=env);expected=run(['git','-C',str(cmp),'diff','--binary','HEAD'],env=env).stdout
   self.assertEqual((self.root/'recovered/model.patch').read_bytes(),expected);self.assertIn('result_images/new.png',proof['new_intent_added_paths']);self.assertEqual(len(proof['omitted']),1);self.assertTrue(proof['data_filter_preserved']);self.assertFalse((self.root/'recovered/captured/result_images/expected.png').is_symlink());self.assertEqual(proof['model_calls'],0)
+ def test_pdf_eps_expected_image_links_use_same_nonfile_proof(self):
+  for ext in ('pdf','eps'):
+   with self.subTest(ext=ext):
+    proof=project(self.archive(('result_images/expected.'+ext,'/testbed/nonexistent.'+ext)),self.base,self.root/('recovered-'+ext));self.assertEqual(len(proof['omitted']),2);self.assertTrue(proof['data_filter_preserved'])
  def test_changed_ignore_rejected(self):
   with self.assertRaisesRegex(ValueError,'ignore rules'):project(self.archive(ignore=b''),self.base,self.root/'reject')
  def test_absolute_source_link_rejected(self):

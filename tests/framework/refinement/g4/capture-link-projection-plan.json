@@ -24,21 +24,23 @@
     }
   ],
   "task": "matplotlib__matplotlib-26113",
-  "projection_sha256": "2d45b4e7050bd487ab196fa8735713580454a94835c06bbdab85b8fbe008f257",
-  "test_sha256": "e09ad05e3edd753fb20b0ad1c133f6ca0e62a5c2cf7979aca6557b6b3a8712e9",
+  "projection_sha256": "680b6c957e68fe5e065650538392d91288516b3cf7834a65af590b72e2165f6d",
+  "test_sha256": "213ccf9bf55308bed911b5fb582a24018ccfc520027a1972d333b8e7abfb383a",
   "preregistration_v2_sha256": "a887f4c3a181fe3650dd3c8cd7ed626ccd7580e466291b4dadc5f3d471907fa9",
   "requirements": [
     "Original tar/attempt/native/cost records immutable",
     "Never weaken filter=data for remaining members",
-    "Omit only untracked frozen-ignored result_images PNG absolute links whose target is under absent host /testbed without traversal, with unchanged existing ignore rules/no new relevant ignore rules",
+    "Omit only untracked frozen-ignored result_images PNG/PDF/EPS absolute links whose target is under absent host /testbed without traversal, with unchanged existing ignore rules/no new relevant ignore rules",
     "These omitted links cannot pass original host is_file test, cannot be force intent-added, and cannot enter original ignored/untracked diff; regular generated artifacts remain force intent-added exactly as frozen v2",
     "Uniform all4 arms regardless of eventual grade",
     "Same original official grader/plan/images/test criteria/resources, derived patch/projection hashes retained",
     "Do not grade until window05 scheduler exits and all occupied slots zero; no overlapping model window",
-    "Eight offline tests compare original-rule patch bytes and reject unsafe/tracked/changed-ignore/traversal paths; real outcomes not yet observed",
+    "Nine offline tests compare original-rule patch bytes and reject unsafe/tracked/changed-ignore/traversal paths; real outcomes not yet observed",
     "A future capture recovery needs separately committed scope; no change to frozen model runners/prompts/queues/analysis"
   ],
   "model_calls": 0,
   "grader_calls": 0,
-  "not_a_completion_audit": true
+  "not_a_completion_audit": true,
+  "prior_plan_commit": "7d5b23c",
+  "amendment": "One capture-only preparation refused before extraction/patch/grade: initial PNG-only guard excluded62 PDF/1 EPS expected-image links in C087. Permit only these additional known image suffixes under identical non-file/ignored/untracked/unchanged-ignore/data-filter predicates; exact4 captured archive hashes unchanged. Original refusal retained, no actor/model retry."
 }

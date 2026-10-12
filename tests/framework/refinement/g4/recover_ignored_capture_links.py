@@ -25,7 +25,7 @@ def project(archive,baseline,destination):
   if any(actual.get(n)!=b for n,b in expected.items()):raise ValueError('frozen ignore rules changed/missing')
   for n,m in byname.items():
    if not (m.issym() and pathlib.PurePosixPath(m.linkname).is_absolute()):continue
-   if not n.startswith('result_images/') or not n.endswith('.png') or not m.linkname.startswith('/testbed/') or '..' in pathlib.PurePosixPath(m.linkname).parts or n in manifest['source_tree']:raise ValueError('absolute link not eligible for projection')
+   if not n.startswith('result_images/') or pathlib.PurePosixPath(n).suffix not in {'.png','.pdf','.eps'} or not m.linkname.startswith('/testbed/') or '..' in pathlib.PurePosixPath(m.linkname).parts or n in manifest['source_tree']:raise ValueError('absolute link not eligible for projection')
    ancestors={str(p) for p in pathlib.PurePosixPath(n).parents}
    if any(str(pathlib.PurePosixPath(extra).parent) in ancestors for extra in actual.keys()-expected.keys()):raise ValueError('new relevant ignore rules')
    ignored=subprocess.run(['git','--no-optional-locks','-C',str(source),'check-ignore','--',n],capture_output=True,timeout=20)
