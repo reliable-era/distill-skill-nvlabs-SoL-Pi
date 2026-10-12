@@ -1,0 +1,20 @@
+"""Canonical final B/C projection: all costs, exactly attempt2 quality.
+Original canonical/ledgers/grades remain byte-identical. No A access/pooling.
+Requires all original and retry receipt/resource/prompt/starter/grader audits.
+"""
+import json,pathlib
+from native import H,sha
+from transport import save
+
+def normalize(output):
+ original=H/'windows-01-07-canonical.json';data=json.loads(original.read_text());manifest=json.loads((H/'BC-retry-manifest.json').read_text());launch=json.loads((H/'BC-retry-launch.json').read_text());root=pathlib.Path(launch['root']);audit=json.loads((H/'BC-retry-transport-audit.json').read_text());assert audit['transport_artifact_cleanup_verified'] and not audit['errors'];assert manifest['original_canonical_sha256']==sha(original)
+ audits={'BC-retry-resource-audit.json':'all_actor_resources_verified','window-BC-retry-prompt-delivery-audit.json':'all_prompt_deliveries_verified','window-BC-retry-C-starter-audit.json':'all_sanitized_starters_verified','window-BC-retry-B-grader-audit.json':'original_grader_capture_evidence_verified','window-BC-retry-C-grader-audit.json':'official_grader_evidence_verified'}
+ for f,flag in audits.items():assert json.loads((H/f).read_text())[flag], 'Missing actual retry proof '+f
+ cells=[c for c in data['cells'] if c['part'] in ('B','C')];lookup={c['cell_id']:c for c in cells};rows=[]
+ for m in manifest['rows']:
+  c=lookup[m['cell_id']];assert len(c['attempts'])==1 and c['attempts'][0]['attempt']==1;old=pathlib.Path(m['original_root']);assert sha(old/'attempt-result.json')==m['original_attempt_sha256'] and sha(old/'transport/ledger.json')==m['original_ledger_sha256'];fresh=json.loads((root/(c['cell_id']+'-attempts.json')).read_text());assert len(fresh)==1 and fresh[0]['attempt']==2;r=fresh[0];d=pathlib.Path(r['root']);ledger=json.loads((d/'transport/ledger.json').read_text());records=ledger['records'];known=sum(x['tokens_lower_bound'] for x in records);complete=len(records)==ledger['provider_POST'] and all(x['cost_complete'] for x in records);assert len(records)==r['requests'] and r['grade_valid'] and r['owned_cleanup_verified'];assert (r['part'],r['task'],r['arm'],r['cell_id'])==(m['part'],m['task'],m['arm'],m['cell_id'])
+  c['original_verified_solved_before_retry']=c['verified_solved'];c['verified_solved']=r['solved'];c['scored_attempt']=2;c['retry_authorization']=m;c['attempts'].append(dict(attempt=2,exact_provider_tokens=known if complete else None,known_tokens_lower_bound=known,requests=len(records),native_timeout=r['timeout'],grader_timeout=r['grader_timeout'],native_wall_seconds=r.get('wall_seconds'),original_error=r['error'],original_grade_valid=r['grade_valid'],original_solved=r['solved'],original_attempt_sha256=sha(d/'attempt-result.json'),ledger_sha256=sha(d/'transport/ledger.json'),receipt_root=str(d/'transport'),response_model_usage=[dict(request=x['request'],parent_arm=x['parent_arm'],request_role=x['request_role'],response_model=x['response_model'],response_models=x['response_models'],response_model_unknown_reason=x['response_model_unknown_reason'],usage=x['usage'],cost_complete=x['cost_complete']) for x in records]));rows.append(dict(cell_id=c['cell_id'],original_solved=c['original_verified_solved_before_retry'],scored_solved=c['verified_solved'],scored_attempt=2))
+ for c in cells:
+  if c['attempts']:c.setdefault('scored_attempt',c['attempts'][-1]['attempt'])
+ result=dict(cells=cells,contains_parts=['B','C'],attempted_cells=180,all_attempts_charged=True,original_canonical_sha256=sha(original),original_provenance=data['provenance'],retry_manifest_sha256=sha(H/'BC-retry-manifest.json'),retry_transport_audit_sha256=sha(H/'BC-retry-transport-audit.json'),retry_audit_sha256={f:sha(H/f) for f in audits},retry_quality_projection=rows,unknown_costs_not_imputed=True,A_owned_by_supervisor_not_in_input=True,model_calls=0,not_a_goal_completion_audit=True,normalizer_sha256=sha(__file__));assert sum(len(c['attempts']) for c in cells)==209;save(output,result);return result
+if __name__=='__main__':normalize(H/'BC-final-canonical.json')

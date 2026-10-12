@@ -35,6 +35,14 @@ class CompleteSyntheticPanel(unittest.TestCase):
  def test_invalid_or_duplicate_parts_rejected(self):
   for parts in ((),('A',),('B','B')):
    with self.subTest(parts=parts),self.assertRaises(AssertionError):render(self.source,self.analysis,self.independent,parts=parts)
+ def test_retry_quality_and_reserved8_scope(self):
+  root=pathlib.Path(self.temp.name);source=root/'retry-fixture.json';analysis=root/'retry-analysis.json';independent=root/'retry-independent.json';data=json.loads(self.source.read_text());data['retry_quality_projection']=[dict(synthetic_unit_test_only=True)]
+  for part in ('B','C'):
+   c=next(c for c in data['cells'] if c['part']==part and c['arm']=='ours' and len(c['attempts'])==2);c['scored_attempt']=2;c['original_verified_solved_before_retry']=True;c['verified_solved']=False
+  source.write_text(json.dumps(data));analysis.write_text(json.dumps(dict(input_sha256=sha(source),analysis_source_sha256=sha(H/'analyze.py'),parts={p:analyze_part(p,[c for c in data['cells'] if c['part']==p]) for p in ('B','C')})));self.assertEqual(check(source,analysis,independent),[]);reports=render(source,analysis,independent)
+  self.assertIn('|ours|27|28|26|1|0|2710|',reports['B']);self.assertIn('|ours|18|19|17|1|0|1810|',reports['C'])
+  for text in reports.values():
+   self.assertIn('exactly one from-scratch attempt2',text);self.assertIn('even if worse',text);self.assertIn('at most8 reserved B/C',text);self.assertIn('Honey is absent',text);self.assertIn('no zero waiting count is fabricated',text);self.assertIn('Original missing usage/model/cost fields remain untouched',text)
  def test_changed_canonical_rejected(self):
   path=pathlib.Path(self.temp.name)/'changed.json';data=json.loads(self.source.read_text());data['cells'][0]['verified_solved']=False;path.write_text(json.dumps(data))
   with self.assertRaises(AssertionError):render(path,self.analysis,self.independent)
