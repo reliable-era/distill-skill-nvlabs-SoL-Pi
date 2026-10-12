@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-12T08:51:25.114085+00:00",
+  "pid": 4021671,
+  "specific_owned_process": "    PID STAT     ELAPSED COMMAND\n4021671 Ssl        21:35 /home/wangjian/.local/share/codex-py-venv/bin/python /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g4/BC_retry_scheduler.py --plan /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g4/BC-retry-preregistration.json --window /data/wangjian/wj_code/dl_long/nvlab-sol-pi-skills/distill-skill-nvlabs-SoL-Pi/tests/framework/refinement/g4/windows/BC-retry.json --commit 61e14182430f1eeb4a9e63823d41be0cc88b2147 --root /tmp/solpi-g4-BC-retry-8b389db7b117\n",
+  "root": "/tmp/solpi-g4-BC-retry-8b389db7b117",
+  "metadata_status": 503,
+  "metadata_headers": [
+    [
+      "Server",
+      "nginx/1.24.0 (Ubuntu)"
+    ],
+    [
+      "Date",
+      "Mon, 12 Oct 2026 08:51:24 GMT"
+    ],
+    [
+      "Content-Type",
+      "application/json"
+    ],
+    [
+      "Content-Length",
+      "68"
+    ],
+    [
+      "Connection",
+      "keep-alive"
+    ]
+  ],
+  "metadata_body": {
+    "error": "complete backend load unavailable;do not infer idleness"
+  },
+  "metadata_body_hex": "7b226572726f72223a2022636f6d706c657465206261636b656e64206c6f616420756e617661696c61626c653b646f206e6f7420696e6665722069646c656e657373227d",
+  "metadata_body_sha256": "289132df5dcb30b7df250f6be770c3296a430088e70ac56c2574dd48562d90d5",
+  "admission_ready": false,
+  "completed_retry_rows": 0,
+  "native_ledger_count": 0,
+  "retry_provider_POSTs": 0,
+  "original_manifest_sha256": "afe55200cc1deccf4b3a8233f538cb959da40f4bc3e769d2abc62f36496e841b",
+  "frozen_runtime_inputs_verified": true,
+  "protected_verified": 530,
+  "unrelated_current_hashes_verified": {
+    "nginx.conf.bak-20261011-225035": "b0865aee2fb055e10889526de8da437222ca15e1aa0af97cc068f8491cc9ab45",
+    "nginx.conf": "85c855e7f5a11532e55a3f9ff7382deebb18608d42aafc32e97844eb6cc28924",
+    "nginx.conf.bak-20261010-152736": "a2074208b3e483e90c2e29f457a1b43326594cd3d47c3fc94d6630463219fdea",
+    "nginx.conf.bak-20261011-011330": "3ab2c50fea684dd8ca65ef2f54e583d270ca5fbd0369861f9b5eede896cbcd25"
+  },
+  "BC_reserved_slots": 8,
+  "model_calls_by_check": 0,
+  "no_A_work": true,
+  "no_intervention_fallback_restart": true,
+  "required_external_change": "Restore valid8000/get_load load observations for advertised active honey/local backends; never infer idleness from503 or directly contact metadata/backends",
+  "not_complete": true
+}
