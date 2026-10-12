@@ -441,14 +441,42 @@
         "forwarded-request-1.json": "bdb82aba1b5bfa05ebfee89a8789a456a1c44059e5bfb2c76ead73cc176ffea8"
       },
       "all_checks_passed": true
+    },
+    {
+      "attempt": "g4-B-079-a1",
+      "cell_id": "g4-B-079",
+      "part": "B",
+      "arm": "ours",
+      "ordered_skills": [
+        "ours"
+      ],
+      "prompt_sha256": "ede146158045cfffc59b1acfd2acbfb8654d99e34f68fee4e64dcf48342ed143",
+      "request_hashes": {
+        "request-1.json": "fdaea045836b177a50e97ee40c15c438729e0c48e409df09d15be1e0b9e22b70",
+        "forwarded-request-1.json": "82181d5e1acef19807d3163dfdcd1b78fa35f4791a0889966e5d5be127f44251"
+      },
+      "all_checks_passed": true
+    },
+    {
+      "attempt": "g4-B-080-a1",
+      "cell_id": "g4-B-080",
+      "part": "B",
+      "arm": "Both",
+      "ordered_skills": [
+        "K",
+        "ours"
+      ],
+      "prompt_sha256": "7206192e0f66470c565acd4166076612616f953809c3e9f71be419c79406c793",
+      "request_hashes": {
+        "request-1.json": "b0973825c353664c52d446b2da6a6a4cdb474b82d920797bdb5dab640ff648a5",
+        "forwarded-request-1.json": "f51451a5e29e8ed61ee7f2bf3598803aa8f576f4ef295d13c29496f80648fa70"
+      },
+      "all_checks_passed": true
     }
   ],
-  "pending": [
-    "g4-B-079",
-    "g4-B-080"
-  ],
+  "pending": [],
   "errors": [],
-  "all_prompt_deliveries_verified": false,
+  "all_prompt_deliveries_verified": true,
   "model_calls": 0,
   "not_a_completion_audit": true,
   "auditor_sha256": "75e68857da664241e3eaa0f02d35352fd9786d554beee60c1ecd9cec3d60722b"
