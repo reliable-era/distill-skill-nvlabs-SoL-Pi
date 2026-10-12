@@ -1,6 +1,8 @@
 # G4 Part A — blocked preparation and reused historical measurements
 
-**Status: PREPARATION_BLOCKED_REQUIRED_SECURITY_AUDIT; ROUTE NOT TESTED.**
+**Current status: USER_APPROVED_SECURITY_STOP_OVERRIDE; ISOLATED_PREPARATION_PENDING; ROUTE NOT YET TESTED.**
+
+On2026-10-12 the user, via supervisor, explicitly approved overriding the upstream stop at `npm audit --audit-level=high` and using the pinned unmodified source/Pi0.85.1/npm11.6.2 as-is in an isolated container with8000 as its sole permitted inference/network peer. Findings are high-severity DoS/HTTP-client issues in **undici**, **brace-expansion** and **source-map-js**. This is the user's risk/authorization decision, not a passing audit or agent waiver. Original npm11 audit/validation log SHA256: `1bec759b4dd9186a258cd9af536b3f2b97561a38fb710adbb402ea770301ac94`. No audit-fix, lockfile edit or upstream/Pi patch is permitted. See `supervisor-input-20261012.md`; compatibility, effective activation and primary/helper transport verification are still pending.
 This is a descriptive evidence report, not a gate or shipment decision. Parts
 B/C continue separately. G1–G3 results are closed, unchanged and not pooled here.
 
@@ -37,8 +39,7 @@ same logical Qwen model on8000, not a cheaper helper. No Part A model/probe/help
 call occurred, so helper cost is not a measured zero-token invocation.
 
 **This prerequisite failure does not establish8000 incompatibility.** No API
-compatibility/startup inference was attempted. Bypassing the required stop would
-need explicit approval; none is presumed. A's report must not say that the
+compatibility/startup inference was attempted. The earlier required stop was observed. The user has now explicitly approved proceeding as-is despite it; this changes neither the recorded failed audit nor the need to verify unpatched compatibility/activation/transport before measurements. A's report must not say that the
 unmodified extension was proved unable to use8000.
 
 ## Original four Claude Code2.1.286 rows, reused without repricing
