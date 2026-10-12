@@ -1,0 +1,33 @@
+{
+  "window_id": "01",
+  "plan_sha256": "7579c3f3c5c86b84e7808962e5c1f355618d04d399fe3f767804fd708698464f",
+  "cells": [
+    "g4-B-001",
+    "g4-B-002",
+    "g4-B-003",
+    "g4-B-004",
+    "g4-C-001",
+    "g4-C-002",
+    "g4-C-003",
+    "g4-C-004",
+    "g4-B-005",
+    "g4-B-006",
+    "g4-B-007",
+    "g4-B-008",
+    "g4-C-005",
+    "g4-C-006",
+    "g4-C-007",
+    "g4-C-008"
+  ],
+  "maximum_occupied_slots": 16,
+  "maximum_attempts_per_cell": 2,
+  "caps": {
+    "requests": 60,
+    "seconds": 7200,
+    "output_tokens": 16384
+  },
+  "route": "127.0.0.1:8000",
+  "admit_only_all_backends_waiting_zero": true,
+  "no_performance_stop": true,
+  "allowance": "Only these first16 eligible frozen-order cells, plus uniform once-only proved infra retry. No compatibility/extra model probes. A not authorized."
+}
