@@ -1,0 +1,63 @@
+{
+  "load_admission": {
+    "backend": "127.0.0.1:8000",
+    "path": "/get_load",
+    "status": 200,
+    "utc": "2026-10-12T04:06:54.952019+00:00",
+    "body": [
+      {
+        "dp_rank": 0,
+        "num_reqs": 3,
+        "num_waiting_reqs": 0,
+        "num_tokens": 11681,
+        "num_pending_tokens": 0,
+        "ts_tic": 13312324.205269117,
+        "backend": "127.0.0.1:18002"
+      },
+      {
+        "dp_rank": 0,
+        "num_reqs": 3,
+        "num_waiting_reqs": 0,
+        "num_tokens": 2247,
+        "num_pending_tokens": 0,
+        "ts_tic": 13312324.207521653,
+        "backend": "127.0.0.1:18001"
+      },
+      {
+        "dp_rank": 0,
+        "num_reqs": 2,
+        "num_waiting_reqs": 0,
+        "num_tokens": 8301,
+        "num_pending_tokens": 0,
+        "ts_tic": 11407071.213211736,
+        "backend": "10.193.104.97:18002"
+      },
+      {
+        "dp_rank": 0,
+        "num_reqs": 1,
+        "num_waiting_reqs": 0,
+        "num_tokens": 3019,
+        "num_pending_tokens": 0,
+        "ts_tic": 11407071.21527622,
+        "backend": "10.193.104.97:18001"
+      }
+    ]
+  },
+  "pid": 3457194,
+  "workers": 4,
+  "cells": [
+    "g4-C-087",
+    "g4-C-086",
+    "g4-C-088",
+    "g4-C-085"
+  ],
+  "maximum_occupied_slots": 4,
+  "model_calls": 0,
+  "actor_reruns": 0,
+  "scheduler_exited": true,
+  "exclusive_shared_lock": true,
+  "runner_sha256": "f1c582873bff8d47f78c74ffc66128347d9023eba05c5ecb59afeca24fb49148",
+  "adapter_sha256": "64460ea5d25c3d1939d13cd3914339892f47506af488c7058faf82dc96d09d18",
+  "patch_projection_sha256": "b502939cd0951ef6a8e82758c39669b970c08307722a41fe2c86ec06b399e001",
+  "commit": "fca0e85a95c0a37ecc55bcd4ec640774f56cf32a"
+}
