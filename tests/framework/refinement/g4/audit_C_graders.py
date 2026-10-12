@@ -20,8 +20,11 @@ def audit(window):
    projected=repair[cell]
    if sha(result)!=projected['authoritative_grade_sha256'] or sha(pathlib.Path(row['root'])/'attempt-result.json')!=projected['original_attempt_sha256']:bad.append('repair grade/original attempt identity')
    if patch_digest is None:
-    capture=pathlib.Path(projected['capture_projection_root']);proof_path=capture/'projection-proof.json';proof=json.loads(proof_path.read_text());patch_digest=projected['projected_patch_sha256']
+    capture=pathlib.Path(projected['capture_projection_root']);proof_path=capture/'projection-proof.json';proof=json.loads(proof_path.read_text());patch_digest=projected.get('capture_projected_patch_sha256',projected['projected_patch_sha256'])
     if row['error']['type']!='AbsoluteLinkError' or sha(proof_path)!=projected['capture_projection_proof_sha256'] or sha(pathlib.Path(row['root'])/'captured.tar')!=proof['captured_tar_sha256'] or sha(capture/'model.patch')!=patch_digest or proof['patch_sha256']!=patch_digest or not proof['data_filter_preserved'] or proof['model_calls']!=0 or proof['actor_reruns']!=0:bad.append('capture-only projection identity/safety')
+    if 'binary_projection_root' in projected:
+     binary=pathlib.Path(projected['binary_projection_root']);binary_proof_path=binary/'binary-proof.json';binary_proof=json.loads(binary_proof_path.read_text());old_digest=patch_digest;patch_digest=projected['projected_patch_sha256']
+     if sha(binary_proof_path)!=projected['binary_projection_proof_sha256'] or sha(binary/'model.patch')!=patch_digest or binary_proof['patch_sha256']!=patch_digest or binary_proof['original_patch_sha256']!=old_digest or binary_proof['original_projection_proof_sha256']!=sha(proof_path) or binary_proof['captured_tar_sha256']!=proof['captured_tar_sha256'] or not binary_proof['complete_git_delta_replay_equal'] or not binary_proof['utf8_readable'] or not binary_proof['no_unsafe_path_option'] or binary_proof['model_calls']!=0 or binary_proof['actor_reruns']!=0:bad.append('binary representation identity/equivalence')
   if g['patch_sha256']!=patch_digest or g['image_id']!=plan['images'][row['task']]:bad.append('patch/image identity')
   for relative,digest in g['artifacts'].items():
    if sha(directory/relative)!=digest:bad.append('original artifact changed:'+relative)
