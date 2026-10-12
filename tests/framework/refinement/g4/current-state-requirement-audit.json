@@ -1,0 +1,272 @@
+{
+  "checked_utc": "2026-10-12T04:56:58.126294+00:00",
+  "protected_files_verified": 530,
+  "unrelated_nginx_files_verified": 4,
+  "frozen_runtime_inputs_verified": true,
+  "upstream_source_clean_and_pin_verified": true,
+  "processes": [
+    {
+      "file": "B-controls-launch.json",
+      "pid": 1458549,
+      "present": false
+    },
+    {
+      "file": "B-python-launch.json",
+      "pid": 1707633,
+      "present": false
+    },
+    {
+      "file": "B-runtime-check-launch.json",
+      "pid": 1703068,
+      "present": false
+    },
+    {
+      "file": "B-tmux-launch.json",
+      "pid": 1512047,
+      "present": false
+    },
+    {
+      "file": "C-controls-launch.json",
+      "pid": 1534174,
+      "present": false
+    },
+    {
+      "file": "C-controls-offline-launch.json",
+      "pid": 1605020,
+      "present": false
+    },
+    {
+      "file": "C-grade-smoke-launch.json",
+      "pid": 1692376,
+      "present": false
+    },
+    {
+      "file": "C-image-launch.json",
+      "pid": 1495702,
+      "present": false
+    },
+    {
+      "file": "C-source-launch.json",
+      "pid": 1672612,
+      "present": false
+    },
+    {
+      "file": "C-wheel-launch.json",
+      "pid": 1594479,
+      "present": false
+    },
+    {
+      "file": "actor-startup-smoke-launch.json",
+      "pid": 1760353,
+      "present": false
+    },
+    {
+      "file": "actor-startup-smoke-uid0-launch.json",
+      "pid": 1768840,
+      "present": false
+    },
+    {
+      "file": "upstream-validation-launch.json",
+      "pid": 1432149,
+      "present": false
+    },
+    {
+      "file": "upstream-validation-npm11-launch.json",
+      "pid": 1439786,
+      "present": false
+    },
+    {
+      "file": "window-01-C-regrade-launch.json",
+      "pid": 1841618,
+      "present": false
+    },
+    {
+      "file": "window-01-launch.json",
+      "pid": 1772215,
+      "present": false
+    },
+    {
+      "file": "window-02-launch.json",
+      "pid": 1870282,
+      "present": false
+    },
+    {
+      "file": "window-03-launch.json",
+      "pid": 2080052,
+      "present": false
+    },
+    {
+      "file": "window-04-launch.json",
+      "pid": 3033596,
+      "present": false
+    },
+    {
+      "file": "window-05-C-binary-regrade-launch.json",
+      "pid": 3476071,
+      "present": false
+    },
+    {
+      "file": "window-05-C-capture-regrade-launch.json",
+      "pid": 3457194,
+      "present": false
+    },
+    {
+      "file": "window-05-launch.json",
+      "pid": 3256411,
+      "present": false
+    },
+    {
+      "file": "window-06-launch.json",
+      "pid": 3485122,
+      "present": false
+    }
+  ],
+  "attempted_cells": 176,
+  "eligible_cells": 180,
+  "provider_POSTs": 3857,
+  "unknown_model_and_usage_requests": 25,
+  "known_token_lower_bound": 140641160,
+  "exact_token_total": null,
+  "primary_requests": 3857,
+  "helper_requests_observed": 0,
+  "helper_activation_A_unverified": true,
+  "metadata_observations": [
+    {
+      "backend": "127.0.0.1:8000",
+      "path": "/get_load",
+      "status": 200,
+      "utc": "2026-10-12T04:56:58.123986+00:00",
+      "body": [
+        {
+          "dp_rank": 0,
+          "num_reqs": 3,
+          "num_waiting_reqs": 0,
+          "num_tokens": 17733,
+          "num_pending_tokens": 0,
+          "ts_tic": 13315327.376374165,
+          "backend": "127.0.0.1:18002"
+        },
+        {
+          "dp_rank": 0,
+          "num_reqs": 2,
+          "num_waiting_reqs": 0,
+          "num_tokens": 14632,
+          "num_pending_tokens": 0,
+          "ts_tic": 13315327.379151557,
+          "backend": "127.0.0.1:18001"
+        },
+        {
+          "dp_rank": 0,
+          "num_reqs": 2,
+          "num_waiting_reqs": 0,
+          "num_tokens": 18950,
+          "num_pending_tokens": 0,
+          "ts_tic": 11410074.367264358,
+          "backend": "10.193.104.97:18002"
+        },
+        {
+          "dp_rank": 0,
+          "num_reqs": 2,
+          "num_waiting_reqs": 0,
+          "num_tokens": 9142,
+          "num_pending_tokens": 0,
+          "ts_tic": 11410074.36911939,
+          "backend": "10.193.104.97:18001"
+        }
+      ]
+    },
+    {
+      "backend": "127.0.0.1:8000",
+      "path": "/v1/models",
+      "status": 200,
+      "utc": "2026-10-12T04:56:58.126180+00:00",
+      "body": {
+        "object": "list",
+        "data": [
+          {
+            "id": "Qwen3.8-27B-FP8",
+            "object": "model",
+            "created": 1791781018,
+            "owned_by": "sglang",
+            "root": "Qwen3.8-27B-FP8",
+            "parent": null,
+            "max_model_len": 262144
+          }
+        ]
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "report-A.md": "6869f1a7c59b64a7707e6226ff7e89515eba6f9221dace1f30d26a430f2c691d",
+    "report-B.md": "c754ed401753f4b243b14c699d1c41257d7c5533a4644ac96fdc87eca60525cc",
+    "report-C.md": "395a529f3e0db268fc272ace712c62f1a54c0e70ab58ac9f0a4c3363d83da3d9",
+    "windows-01-06-canonical.json": "e6b2d69ea7b80c3a004120433a011e3b24b567e959e83a926cdc64519142d7ed",
+    "windows-01-06-descriptive-analysis.json": "b20c68441915ee91cc0d54e405385a6ef9d877daa5c1ae5f3e769cb0b2c2f79a",
+    "windows-01-06-independent-analysis.json": "12b395390fb62124bf8728923a94ef7c8572375bbb7162c43b7f4dfa39e0702b",
+    "B-control-artifact-audit.json": "d1c61dd4c1c7acbe260bb04dbb6fbe191c7b4c7424e33df88f1806109a381df9",
+    "C-control-artifact-audit.json": "c627cb47eb9e3561ba4ac98ff059ce2adcdd1660ae702f243552803ab6b18dc1",
+    "admission-history-audit.json": "c08ff3afb6bddc773d767d111987cedd42775c0d26a35c8c7e1387c7bd60ee40",
+    "launch-bindings-audit.json": "c734d2bdc50e8d8c457a468cf4e28d30bcced86fae82d566a457eb73b10e555b",
+    "queue-audit.json": "d66881125e88697994788830227fc2ac61490c7434db46a4e603f592db44d297",
+    "owned-launch-process-audit.json": "ddbad8801b42ef53afb8663f77515928d3c017c68cdb0bf8072a4628aaaca67a",
+    "window-06-provider-error-observation.json": "8abc77058bd25e4334e3e29b6d6b0f4188fe95f99a0e857525a24f1ad7a3f82b",
+    "upstream-validation-result.json": "cfa17ad6b2037a72c02ac0886a1710efe8f2e22e01b70cb95e17503735f0a03e",
+    "A-config-provenance.json": "b34bb4dd47e884920a78b7f744bfe2ef21c905a4ea192c7f27b41c9837a25fbf",
+    "window-01-audit.json": "991edea4a7ff8b1ebb4cbd9b2dc1a7a2736be65d27d0a6ef188fa6cdb978f529",
+    "window-01-B-grader-audit.json": "98fb2a3317275ce0a2e17484369508d080c4f40d1121414459577416773e0c11",
+    "window-01-C-grader-audit.json": "cd684aef3f828d26b1f53c75fdd2c5c20cbc82619619734b8f66d56514dda757",
+    "window-01-actor-resource-audit.json": "8aee30b399ec5f5ba0138fe365eeee124deb543687a37efc6f4cfb4dd0f7f2e1",
+    "window-01-prompt-delivery-audit.json": "52ab7366e0690ff2e24fe92443fb81e5166e771512a8095ed1afe7151e56b1f0",
+    "window-01-C-starter-audit.json": "fe2f42d9c98ddcade8572070f4f448721dd8fc1c850adfde1967f7ceaa57ac2c",
+    "window-01-caps-retries-audit.json": "775f171bcda9ed01554ea600bca567d839e329707bdcb76cf9df6090fc073a72",
+    "window-02-audit.json": "0b584a3ca4ed9fe76ee54f66bde3e91e90a24af727720c8c2a6c6adfdaa3babc",
+    "window-02-B-grader-audit.json": "f8e2c998e783a80c01f9b8cf680855302e8aa38ca89227a7679a272db6cb4b29",
+    "window-02-C-grader-audit.json": "9d7b105f17bf624686c91b7e69532d168ca79eab4083f91a4878ba79776457a2",
+    "window-02-actor-resource-audit.json": "afa6eb5906ba2cabb111e949cd597294ba5ac7a36736e192f5038eb930093f69",
+    "window-02-prompt-delivery-audit.json": "372cbd05607edb8d7e59d03686f65825e58beef8db4a0521da7b0c707bd2f477",
+    "window-02-C-starter-audit.json": "1519b418c93d1b8fdc6a2f9111bfd71c2b111c2b8382ba2cc014a710d7e9f9bb",
+    "window-02-caps-retries-audit.json": "aa4c891ad2f47f7d7c55938175c9f31e62a2fcd16abdc01722ad29052349a354",
+    "window-03-audit.json": "3b5af7d3d5b0d680a517c88d96b3596a719e9daa57b3595e2076f2340b5f3599",
+    "window-03-B-grader-audit.json": "1deddcc23bbd5d0fd9a4f53f76a37bff7c91af1fc0077037a2dcd8cb727f683b",
+    "window-03-C-grader-audit.json": "df962f07bd05dbab1b7406df13b99d56171a8aa64790d5d9b047b341f8b7d9bc",
+    "window-03-actor-resource-audit.json": "5cd4bac80f9ebaf82f096eb88397b8afc69708255271c486d85e703a9b6e0971",
+    "window-03-prompt-delivery-audit.json": "1881ae1d0ec134b9bc0151a52678be592c19fb05216a0938c0fda36bf19f93c8",
+    "window-03-C-starter-audit.json": "5eef5ab2ea96f4315fd4c7dec036d133f3f35a61a40d1018a2d4903f4bb1324e",
+    "window-03-caps-retries-audit.json": "e9114289a9b8da402aaab10ecba226e29150ec4f273dc4f40e70f10b5df7a12b",
+    "window-04-audit.json": "ae146c77f648a89865c2a3385d12ff5049f32f216dec36366f5ee23508bc94cf",
+    "window-04-B-grader-audit.json": "743d2d355146c7561607b079696376dd6dc24efe1d48e15e079bd640d607d2a4",
+    "window-04-C-grader-audit.json": "65b8940eddc01e547e72d29ca7da30ee9261a0b3bcaf14414eba94cad144fe7f",
+    "window-04-actor-resource-audit.json": "50863b7baf288235654bad8f891c170b6f97dbef26d153c2b85321cfd48d1e5b",
+    "window-04-prompt-delivery-audit.json": "44ef7fa98e8d1ab8ae039055aa169544eda2d4b875a8c3a5404f302f4eaab9d7",
+    "window-04-C-starter-audit.json": "7e2d6011a63dc785a33c8eba5b632c0c92ec6f978fdcdc0e685e3d260b80461d",
+    "window-04-caps-retries-audit.json": "931236f9644aa4fc39fa6c2a6cb09c556f194626f45b0005c457ea478a6ff808",
+    "window-05-audit.json": "2b1d24e947061f806ba5a3cfea79f436009d1e9119ecacaad263e1af7d9b53b8",
+    "window-05-B-grader-audit.json": "a9a4bded7206fd19c60b7fb8db0589348ddf09da8567fa20661a7478498b68cd",
+    "window-05-C-grader-audit.json": "371b1fda020e245f2a3117bc4d6510392907f7e2b93098624666ee9e5037861c",
+    "window-05-actor-resource-audit.json": "29e3503a9e2986a49af0e8a740bd3e63a1eddbaa8d50d354c45a4371637fa17d",
+    "window-05-prompt-delivery-audit.json": "b4e35194fae6334d837716340108837243e96271be3d714a014e72fe2d622799",
+    "window-05-C-starter-audit.json": "4a68b3a12eb256e19645620e1d0e885ba270253345e359b0c78bcb53c46f476b",
+    "window-05-caps-retries-audit.json": "3b2d0d8aef22134315d2f5c4070f15cb70f0fc704404fa7f6f71ca953a88599c",
+    "window-06-audit.json": "40aa3c1b834a459e454a970ddcd943dc9686ebf2f79e00cb45db608767a51600",
+    "window-06-B-grader-audit.json": "1f80bc50525092ce9a4b52893b08ea439d0bafea563025fecf8b69216a8f5596",
+    "window-06-C-grader-audit.json": "2132701956a4064c92ec45a1805ae729012aeb91c09b0d6cb6b6a671a75b7516",
+    "window-06-actor-resource-audit.json": "91b53aa70a4997e8bc00ccec7f2c01d6c623440ead9899f6e0f3cc92c8ffd683",
+    "window-06-prompt-delivery-audit.json": "e5ae66cbe3920ffb77622599c18bfa444a963c13f786c2dac771fb88f81067ff",
+    "window-06-C-starter-audit.json": "7d7b5ad587f4c7b1f2de8565d49ad29030012654c46067afab95f5f2696be37a",
+    "window-06-caps-retries-audit.json": "290d0eb065d53072e7bd7638f1232925d8bf1b246e1f5fa61677e19877c26573"
+  },
+  "missing": [
+    "Four control-valid C cells117-120 unattempted, requiring externally restored8000 provider POST service with restoration evidence/confirmation; metadata200 is insufficient after nginx502",
+    "Full72-cell/18-cluster C results/20k analysis pending; partial68-cell/17-cluster blocked report is not final",
+    "A74 fresh cells/mechanism activation/primary-helper transport remain blocked by mandatory high-severity security audit; no approval to bypass upstream stop, no route incompatibility asserted",
+    "Goal-wide completed-state audit/cleanup/integrity must be rerun after any resumed execution"
+  ],
+  "attempted_permitted_paths": [
+    "Unmodified upstream npm11 checks158 pass but required security audit fails; no patch/audit-fix",
+    "B/C176 fixed cells executed and reconciled; all original control/grade/prompt/capture/provider records retained",
+    "Uniform zero-model original grader/capture/binary representation repairs completed without actor/model retries",
+    "Authorized8000 metadata only; no fallback/direct backend contact or infrastructure repair"
+  ],
+  "not_complete": true,
+  "model_calls_by_audit": 0
+}
