@@ -76,6 +76,8 @@ def main(commit):
    except BaseException:stop.set();raise
    finally:
     with mutex:active.pop(cell['cell_id'],None)
+ # Persist the exact eligible fixed queue before any worker/actor admission.
+ save(root/'model-submitted-queue.json',cells)
  watch=Watch(root,stop);watch.start()
  try:
   with concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:
