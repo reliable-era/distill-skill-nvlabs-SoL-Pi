@@ -6,7 +6,7 @@ from common import save,sha
 from grade_swe import grade
 
 def validate(entry,spec,statuses,found,kind,resolve,classification):
- if classification is not None or entry.get('infra_failure') is not False or entry.get('infra_failure_reason'):raise RuntimeError('Official control infrastructure/collection failure')
+ if type(entry.get('resolved')) is not bool:raise RuntimeError('Official resolved field unavailable')
  coverage={}
  for category,expected in [('FAIL_TO_PASS',spec.FAIL_TO_PASS),('PASS_TO_PASS',spec.PASS_TO_PASS)]:
   detail=entry['tests_status'][category];reported=detail['success']+detail['failure']

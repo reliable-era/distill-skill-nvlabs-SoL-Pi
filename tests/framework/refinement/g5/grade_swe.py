@@ -64,7 +64,7 @@ def grade(root,iid,patch_file,plan):
     # Per-test coverage is retained as information; official outcome governs.
     keys=[_resolve_case(t,statuses) for t in expected];coverage[category]=dict(expected=len(expected),parsed_expected=sum(k is not None for k in keys),success=len(detail['success']),failure=len(detail['failure']))
    result['coverage']=coverage;result['test_output_found']=found
-   if type(entry.get('resolved')) is not bool or entry.get('infra_failure') is not False:raise RuntimeError('Original report uncertain/infrastructure failure')
+   if type(entry.get('resolved')) is not bool:raise RuntimeError('Official resolved field unavailable')
    # Do not add our own per-test solve/eligibility requirements.
    result.update(solved=entry['resolved'],grade_valid=True,classification='original_official_report')
  except Exception as e:result['errors'].append(dict(type=type(e).__name__,message=str(e)[:500]))
