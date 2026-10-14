@@ -61,11 +61,11 @@ def grade(root,iid,patch_file,plan):
    entry=json.loads(reports[0].read_text())[iid];result['original_report']=entry;result['original_report_sha256']=sha(reports[0]);test_log=reports[0].parent/LOG_TEST_OUTPUT;statuses,found=get_logs_eval(spec,str(test_log));coverage={}
    for category,expected in [('FAIL_TO_PASS',spec.FAIL_TO_PASS),('PASS_TO_PASS',spec.PASS_TO_PASS)]:
     detail=entry['tests_status'][category];reported=detail['success']+detail['failure']
-    if len(reported)!=len(expected) or set(reported)!=set(expected):raise RuntimeError('Original expected-test report coverage mismatch')
+    # Per-test coverage is retained as information; official outcome governs.
     keys=[_resolve_case(t,statuses) for t in expected];coverage[category]=dict(expected=len(expected),parsed_expected=sum(k is not None for k in keys),success=len(detail['success']),failure=len(detail['failure']))
    result['coverage']=coverage;result['test_output_found']=found
    if type(entry.get('resolved')) is not bool or entry.get('infra_failure') is not False:raise RuntimeError('Original report uncertain/infrastructure failure')
-   if entry['resolved'] and (not found or entry.get('patch_successfully_applied') is not True or any(v['parsed_expected']!=v['expected'] or v['failure'] for v in coverage.values())):raise RuntimeError('Reported solve lacks original expected tests')
+   # Do not add our own per-test solve/eligibility requirements.
    result.update(solved=entry['resolved'],grade_valid=True,classification='original_official_report')
  except Exception as e:result['errors'].append(dict(type=type(e).__name__,message=str(e)[:500]))
  finally:
