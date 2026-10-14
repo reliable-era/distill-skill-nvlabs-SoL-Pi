@@ -54,18 +54,18 @@ Compare `efficient-coding` with standalone and combined baselines. **SoL-Pi belo
 |---|---:|---:|---:|---:|
 | No skill | 21/25 | **234k** | 9/12 | ≥1.62M |
 | Karpathy | 19/25 | 296k | **11/12** | ≥1.45M |
-| NVlabs SoL-Pi | Not run | Not run | Not run | Not run |
-| NVlabs SoL-Pi + Karpathy | Not run | Not run | Not run | Not run |
+| NVlabs SoL-Pi † | 21/25 | ≥39k † | 5/12 | ≥621k † |
+| NVlabs SoL-Pi + Karpathy † | 19/25 | ≥56k † | 5/12 | ≥473k † |
 | **Ours: `efficient-coding`** | **23/25** | 253k | **11/12** | **≥1.42M** |
 | Ours + Karpathy | 22/25 | 288k | 8/12 | ≥1.94M |
 
-**Completed comparisons:** Claude Code 2.1.286 · Qwen3.8-27B-FP8. These are solved attempts, not unique tasks: 10 synthetic fixtures, including development data, and 6 SWE-bench issues. Tokens per solve include failed attempts. `k` = thousand; `M` = million; `≥` marks incomplete cost accounting.
+**Completed comparisons:** Claude Code 2.1.286 · Qwen3.8-27B-FP8. † NVlabs SoL-Pi rows: Pi 0.85.1 harness · Qwen3.8-27B (FP8 and full precision treated as one model), same tasks, prompts, caps and graders. These are solved attempts, not unique tasks: 10 synthetic fixtures, including development data, and 6 SWE-bench issues. Tokens per solve include failed attempts. `k` = thousand; `M` = million; `≥` marks incomplete cost accounting.
 
-**Baseline definitions:** “Ours + Karpathy” is the condition called “Both” in the existing reports: two skills loaded into one agent task. NVlabs SoL-Pi and NVlabs SoL-Pi + Karpathy require the Pi runtime and have no matched measurements in this campaign. The upstream paper's results use a different setup and are not substituted here.
+**Baseline definitions:** “Ours + Karpathy” is the condition called “Both” in the existing reports: two skills loaded into one agent task. NVlabs SoL-Pi is the unmodified extension at the pinned commit, with all four mechanisms enabled, and needs the Pi runtime. **† Its token counts are not comparable with the Claude Code rows:** the harnesses send very different system prompts and tools on every turn. Compare solve counts only, with caution. 9 of its 74 runs hit the 1800 s cap, mostly while waiting in a shared model-server queue. The upstream paper's results use a different setup and are not substituted here.
 
 Our standalone skill solved more attempts than no skill and than Ours + Karpathy on both pilot benchmarks. Compared with Ours + Karpathy, its synthetic tokens per solve were **about 12% lower** (253k vs 288k). Compared with Karpathy alone, it solved more synthetic attempts and the same number of SWE-bench attempts.
 
-Token results against no skill remain mixed: synthetic cost per solve increased, and SWE-bench lower bounds do not establish an exact saving. These small pilots do not establish a general performance advantage or superiority to NVlabs SoL-Pi.
+Token results against no skill remain mixed: synthetic cost per solve increased, and SWE-bench lower bounds do not establish an exact saving. On solve counts, NVlabs SoL-Pi matched no skill on synthetic diagnostics and solved fewer SWE-bench attempts than every Claude Code condition, but its harness differs. These small pilots do not establish a general performance advantage or superiority to NVlabs SoL-Pi.
 
 [Full comparison and development history](docs/evaluation.md) · [Original report](tests/report.md) · [Comparison chart](assets/benchmark-numbers.svg)
 

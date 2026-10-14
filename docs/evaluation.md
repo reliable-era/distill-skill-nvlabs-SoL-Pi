@@ -104,12 +104,37 @@ G3 has complete cost records, so its intervals are exact paired task-cluster boo
 
 </details>
 
+### G4: open measurements filled (descriptive)
+
+G4 measured the remaining TBD cells; it has no pass/fail gate. Qwen3.8-27B (FP8 and full precision treated as one model). [G4 report](../tests/framework/refinement/g4-A/report.md).
+
+**NVlabs SoL-Pi** (Pi 0.85.1, unmodified extension, all four mechanisms; same tasks, prompts, caps and graders as the Claude Code table above):
+
+| Condition | Synthetic solved | Synthetic tokens / solve | SWE-bench solved | SWE-bench tokens / solve |
+|---|---:|---:|---:|---:|
+| NVlabs SoL-Pi | 21/25 | ≥39k | 5/12 | ≥621k |
+| NVlabs SoL-Pi + Karpathy | 19/25 | ≥56k | 5/12 | ≥473k |
+
+Token counts are not comparable across harnesses. 9 of 74 runs hit the 1800 s cap, largely while queued at a shared model server; the evidence reducer never fired on these tasks.
+
+**Terminal-Bench 2.0 and a larger SWE-bench Verified sample** (Codex 0.160.0; 60 requests / 120 min / 16K output):
+
+| Condition | Terminal-Bench solved | Terminal-Bench tokens / solve | SWE-bench solved | SWE-bench tokens / solve |
+|---|---:|---:|---:|---:|
+| No skill | 11/27 | ≥2.40M | **14/18** | ≥918k |
+| Karpathy | 13/27 | **≥1.75M** | 9/18 | **≥721k** |
+| **Shipped skill** | 12/27 | ≥2.34M | 13/18 | ≥903k |
+| Both | **14/27** | ≥2.16M | 13/18 | ≥1.22M |
+
+Terminal-Bench: 9 sealed tasks × 3 rounds. SWE-bench: 30 fresh issues sampled, 12 excluded by failed gold/no-op grader controls, 18 run once. Every paired cost-ratio interval includes 1, so no condition is shown to be cheaper per solve. Runs killed by gateway errors were rerun; 21 needed a second, non-preregistered rerun after a client timeout, and the report gives both views.
+
 ### Limits of the evidence
 
 - Completed evaluations use small task samples. Repeated attempts on a task are not independent; intervals resample whole tasks.
 - Evidence covers one model family and two agents. Broader transfer remains unmeasured; the [native-agent pilot](../tests/framework/trials/README.md) is exploratory.
 - Public SWE-bench fixes may affect attribution. Incomplete cost records limit savings claims.
-- G3 stopped after round 1 under its futility rule. Terminal-Bench has not been run.
+- G3 stopped after round 1 under its futility rule. Terminal-Bench covers 9 tasks only.
+- A full SWE-bench Verified run (500 issues × 4 conditions, Codex) started on 2026-10-14 (G5).
 
 ## Evaluation
 
@@ -118,9 +143,9 @@ G3 has complete cost records, so its intervals are exact paired task-cluster boo
 | Benchmark | Sample used here | Verification | Status |
 |---|---|---|---|
 | Synthetic diagnostics | 10 fixtures: 5 development + 5 held-out | Hidden tests pass | Complete |
-| [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) | 6 of 500 issues | Official grader resolves the issue | Complete; larger sample TBD |
+| [SWE-bench Verified](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified) | 6 of 500 issues; G4: 18 more | Official grader resolves the issue | Complete; full 500 running (G5) |
 | [Aider polyglot](https://github.com/Aider-AI/polyglot-benchmark) @ `7e0611e` | G2: 9 tasks; G3: 196 of 225 | Exercise tests pass | G2 complete; G3 complete (stopped after round 1) |
-| Terminal-Bench 2.0 | 9 sealed tasks, from 78 eligible | Task verifier passes | Not run; G2 Aider stage did not pass |
+| Terminal-Bench 2.0 | 9 sealed tasks, from 78 eligible | Task verifier passes | G4 complete |
 
 Grading runs in isolated Docker containers. Before G2 and G3 model calls, each task's grader must accept the reference solution and reject an unchanged submission. G3 excluded 15 of 211 eligible tasks that failed this check.
 
