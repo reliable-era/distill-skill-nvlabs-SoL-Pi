@@ -1,4 +1,47 @@
-# Active goal (G4): fill the open TBD measurements
+# Active goal (G5): full SWE-bench Verified
+
+Set 2026-10-14 at the user's request ("execute the full version of benchmark, SWE-bench").
+Choices made by the user: **SWE-bench Verified, all 500 issues**; **4 arms, Codex, 1 round**.
+G1-G4 results stand and are not pooled with G5. Runs under the same standing authorization
+and Claude supervision. G5 is descriptive measurement: no gate, no early stop, nothing shipped.
+
+- **Arms (4):** No skill; Karpathy (frozen `framework/refinement/g2/frozen/karpathy/`); ours
+  (shipped `skills/efficient-coding/`, SKILL.md SHA `68ea78dc...`); Both (ours + Karpathy).
+  Same skill mounting and prompt as G4 Part C.
+- **Tasks:** all 500 SWE-bench Verified issues, from `tests/eval/swebench_verified.jsonl` (record
+  its hash). Before any model call, run the official grader's gold and no-op checks on every
+  issue; exclude only issues that fail them and record why. No other exclusion or substitution.
+  The 6 README issues and the G4 Part C sample are included; report them as previously exposed.
+- **Harness and caps:** Codex 0.160.0, 1 round, 60 requests / 120 min / 16K output, as in G4
+  Part C. Codex client settings: `stream_idle_timeout_ms=1800000` (requests may queue at 8000
+  for many minutes; G4 lost 21 runs to the 5-minute default). Record the full Codex config.
+- **Model route:** `127.0.0.1:8000` only, called as a plain client. **Do not gate admission
+  on `/get_load` or `/v1/models`, and never touch nginx, the tunnels or any backend** (user,
+  2026-10-12: "you do the request on the service 8000, donot want to operate it"). Slow or
+  queued requests are normal. Concurrency: **16 runs** at a time.
+- **Fairness:** each issue's 4 arms are queued next to each other in a per-issue random order
+  (recorded seed).
+- **Infrastructure failures** (HTTP 5xx from 8000, connection refused/reset, client
+  disconnect before the model answered, image pull or container failure before the agent
+  starts) are rerun once from scratch, same rule for every arm; keep both records and score the
+  rerun. Model errors, caps and timeouts are never rerun.
+- **Docker images:** pull/build each issue's image when its arms are about to run and remove
+  it after its 4 runs are graded, unless it existed before G5. Never remove images, containers
+  or volumes G5 did not create. Keep free space on `/` above 300 GB.
+- **Records:** every request's response model and usage, every run, failure, cap and cost.
+  Raw traces and patches stay in `/tmp`; commit only summaries.
+- **Analysis:** solves, total tokens, tokens per verified solve (failures included), timeouts;
+  cost ratios ours/none, ours/K, Both/none, Both/K with paired task-cluster bootstrap 95%
+  intervals (20,000 draws, recorded seed). Incomplete costs are lower bounds, never imputed.
+- **Outcome:** commit a preregistration before the first model call, progress reports while
+  running, and `framework/refinement/g5/report.md` at the end. Do not change the shipped
+  skill, README or `docs/`, and do not push; Claude updates the docs and pushes after a privacy
+  scan. Never write private IPs or hostnames into committed files; refer to the route as
+  "127.0.0.1:8000".
+
+---
+
+# Closing goal (G4): fill the open TBD measurements (runs complete; Claude finishing docs)
 
 Set 2026-10-12 at the user's request ("complete the jobs TBD"). G1-G3 are closed;
 their results stand and are not pooled with G4. G4 runs under the same standing
