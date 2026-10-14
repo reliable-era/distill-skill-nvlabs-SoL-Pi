@@ -9,7 +9,7 @@ RESERVE=80_000_000_000
 class StorageBlocked(RuntimeError):pass
 class Images:
  def __init__(self,root):
-  self.root=pathlib.Path(root);self.lock=threading.RLock();self.leases={};self.preexisting=set(json.loads((self.root/'preexisting-images.json').read_text()))
+  self.root=pathlib.Path(root);self.lock=threading.RLock();self.leases={};self.owned_ids=set();self.owned_tags={};self.preexisting=set(json.loads((self.root/'preexisting-images.json').read_text()))
  def reserve(self,iid):
   with self.lock:
    if disk_free()<=FLOOR+RESERVE*(len(self.leases)+1):raise StorageBlocked('Insufficient reserved root space; G5-only cleanup required')
@@ -48,12 +48,21 @@ class Images:
  def release(self,iid):
   with self.lock:
    record=self.leases.get(iid)
-   if record and record['created_by_G5']:
+   if record and record.get('image_id'):
+    image_id=record['image_id']
+    owned_records=[r for r in self.leases.values() if r and r.get('image_id')==image_id and r['created_by_G5']]
+    if owned_records:
+     assert image_id not in self.preexisting
+     self.owned_ids.add(image_id);self.owned_tags.setdefault(image_id,set()).update(r['tag'] for r in owned_records)
+   if record and record.get('image_id') in self.owned_ids:
     image=inspect_image(record['image_id'])
     if image is not None:
-     allowed={record['tag']};tags=set(image.get('RepoTags') or [])
+     allowed=self.owned_tags[record['image_id']];tags=set(image.get('RepoTags') or [])
      if not tags<=allowed:raise StorageBlocked('Image gained unexpected shared tags; do not delete')
-     p=subprocess.run(['docker','image','rm',record['image_id']],capture_output=True,text=True,timeout=120)
-     if p.returncode or inspect_image(record['image_id']) is not None:raise StorageBlocked('Owned image cleanup uncertain; never force shared removal')
+     other=[r for k,r in self.leases.items() if k!=iid and r and r.get('image_id')==record['image_id']]
+     if not other:
+      targets=sorted(tags) or [record['image_id']]
+      p=subprocess.run(['docker','image','rm','--no-prune',*targets],capture_output=True,text=True,timeout=120)
+      if p.returncode or inspect_image(record['image_id']) is not None:raise StorageBlocked('Owned image cleanup uncertain; never force shared removal')
    self.leases.pop(iid,None)
    if disk_free()<=FLOOR:raise StorageBlocked('Root free space at/below300GB; no unowned cleanup permitted')

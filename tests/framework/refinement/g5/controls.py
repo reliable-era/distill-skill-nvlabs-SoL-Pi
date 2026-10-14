@@ -15,8 +15,12 @@ def cleanup_worker(directory,iid):
     subprocess.run(['docker','rm','-f',name],capture_output=True,timeout=30);r=subprocess.run(['docker','inspect',name],capture_output=True,text=True,timeout=20);assert r.returncode and 'No such' in r.stderr
 
 def main():
- prereg=verify_preregistration();root=private_root();session=__import__('os').environ.get('G5_CONTROL_SESSION','controls');launch=root/(session+'-launch.json');assert not launch.exists(),'Existing controls: inspect/wait, never restart';save(launch,dict(pid=__import__('os').getpid(),utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),model_calls=0));tasks=json.loads((root/'dataset.json').read_text());assert len(tasks)==500 and all(all(k in t for k in ('eval_script','log_parser','eval_type')) for t in tasks),'Verify official500-field enrichment before controls';template=json.loads((root/'grader-template.json').read_text());images=Images(root);rows=[];lock=threading.RLock();stop=threading.Event()
+ prereg=verify_preregistration();root=private_root();session=__import__('os').environ.get('G5_CONTROL_SESSION','controls');launch=root/(session+'-launch.json');assert not launch.exists(),'Existing controls: inspect/wait, never restart';save(launch,dict(pid=__import__('os').getpid(),utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),model_calls=0));session=__import__('os').environ.get('G5_CONTROL_DATA_SESSION',session);tasks=json.loads((root/'dataset.json').read_text());assert len(tasks)==500 and all(all(k in t for k in ('eval_script','log_parser','eval_type')) for t in tasks),'Verify official500-field enrichment before controls';template=json.loads((root/'grader-template.json').read_text());images=Images(root);rows=[];lock=threading.RLock();stop=threading.Event()
+ for f in sorted((root/session).glob('*/final-control.json')):
+  v=json.loads(f.read_text());rows.append(dict(task=v['task'],eligible=v['valid_pair'],gold_valid=next(c['valid'] for c in v['controls'] if c['kind']=='gold'),nop_valid=next(c['valid'] for c in v['controls'] if c['kind']=='nop'),failure_category='none' if v['valid_pair'] else 'official_control_failure',private_result_sha256=sha(f)))
+ done={r['task'] for r in rows}
  def pair(task):
+  if task['instance_id'] in done:return
   if stop.is_set():raise RuntimeError('Admission stopped after ownership/storage uncertainty')
   iid=task['instance_id'];d=root/session/iid;d.mkdir(parents=True,exist_ok=True)
   try:
