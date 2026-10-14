@@ -29,7 +29,8 @@ def classify(row):
    if not line.startswith(b'data: ') or line==b'data: [DONE]':continue
    try:e=json.loads(line[6:])
    except ValueError:continue
-   if e.get('type') in ('response.failed','response.incomplete'):return dict(retry=False,reason='recorded model error/output cap')
+   response=e.get('response') or {}
+   if e.get('type') in ('response.failed','response.incomplete','error') or (isinstance(response,dict) and (response.get('status') in ('failed','incomplete') or response.get('error'))):return dict(retry=False,reason='recorded model error/output cap')
   status=r.get('provider_status')
   if isinstance(status,int) and 500<=status<600:infrastructure=True;reasons.append('HTTP5xx')
   if r.get('connection_infra_failure'):infrastructure=True;reasons.append('connection refused/reset')

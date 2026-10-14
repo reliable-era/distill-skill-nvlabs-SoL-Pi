@@ -36,7 +36,7 @@ class Scheduler(unittest.TestCase):
     if not retry:
      with mutex:completed[cell['task']]+=1
     save(d/'attempt-result.json',row);return row
-   with patch.multiple(model_runs,private_root=lambda:root,verify_barrier=lambda *a:(p,c),H=public,ModelImages=Images,Watch=Watch,prepare=prep,attempt=attempt),contextlib.redirect_stdout(io.StringIO()):model_runs.main('fixture')
+   with patch.multiple(model_runs,private_root=lambda:root,verify_barrier=lambda *a:(p,c),H=public,ModelImages=Images,Watch=Watch,prepare=prep,attempt=attempt,audit_receipts=lambda r:dict(fixture_only=True,requests=r['requests'])),contextlib.redirect_stdout(io.StringIO()):model_runs.main('fixture')
    rows=json.loads((root/'model-summary.json').read_text());panel(rows,tasks);self.assertEqual(len(rows),32);self.assertEqual(len(calls),32 if preparation_failure else 33);self.assertFalse(live);self.assertLessEqual(max_images[0],4);self.assertEqual(len(list((root/'archives').glob('*.tar.gz'))),8);self.assertFalse(list((root/'models').glob('*')))
    ours=next(r for r in rows if r['task']==tasks[0] and r['arm']=='ours');self.assertEqual(ours['scored_attempt'],2);self.assertFalse(ours['solved']);self.assertEqual(ours['known_tokens_lower_bound'],100 if preparation_failure else 113);self.assertEqual(ours['cost_complete'],preparation_failure);admissions=json.loads((root/'model-admissions.json').read_text());self.assertEqual(len(admissions),32 if preparation_failure else 33);self.assertTrue(all(1<=r['occupied_slots_after_admission']<=16 for r in admissions));self.assertTrue((root/'models-complete.json').exists())
 if __name__=='__main__':unittest.main()

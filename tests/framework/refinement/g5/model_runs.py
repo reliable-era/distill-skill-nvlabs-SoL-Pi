@@ -8,6 +8,7 @@ from model_images import ModelImages,ImageUnavailable
 from prepare_source import prepare
 from retry_policy import classify
 from archive_records import compress
+from audit_receipts import audit as audit_receipts
 from run_swe_cell import attempt
 from images import StorageBlocked
 from storage_watch import Watch
@@ -63,7 +64,9 @@ def main(commit):
      policy=classify(row);save(ctx['directory']/(cell['cell_id']+'-attempts.json'),rows);save(ctx['directory']/(cell['cell_id']+'-retry-policy.json'),policy)
      if policy.get('stop'):stop.set();raise RuntimeError('Unclassified runner/cleanup failure; inspect before further admission')
      if not policy['retry']:break
-   assert 1<=len(rows)<=2;save(ctx['directory']/(cell['cell_id']+'-attempts.json'),rows);last=rows[-1];summary=dict(cell_id=cell['cell_id'],task=iid,arm=cell['arm'],attempts=len(rows),scored_attempt=last['attempt'],grade_valid=last['grade_valid'],solved=last['solved'] if last['grade_valid'] else None,requests=sum(r['requests'] for r in rows),known_tokens_lower_bound=sum(r['known_tokens_lower_bound'] for r in rows),cost_complete=all(r['cost_complete'] for r in rows),native_timeouts=sum(r['timeout'] for r in rows),grader_timeouts=sum(r['grader_timeout'] for r in rows),attempt_rows=rows)
+   assert 1<=len(rows)<=2;save(ctx['directory']/(cell['cell_id']+'-attempts.json'),rows)
+   save(ctx['directory']/(cell['cell_id']+'-receipt-audit.json'),[audit_receipts(r) for r in rows])
+   last=rows[-1];summary=dict(cell_id=cell['cell_id'],task=iid,arm=cell['arm'],attempts=len(rows),scored_attempt=last['attempt'],grade_valid=last['grade_valid'],solved=last['solved'] if last['grade_valid'] else None,requests=sum(r['requests'] for r in rows),known_tokens_lower_bound=sum(r['known_tokens_lower_bound'] for r in rows),cost_complete=all(r['cost_complete'] for r in rows),native_timeouts=sum(r['timeout'] for r in rows),grader_timeouts=sum(r['grader_timeout'] for r in rows),attempt_rows=rows)
    with mutex:results.append(summary);save(root/'model-summary.json',results);save(H/'progress.json',dict(stage='models',completed_cells=len(results),planned_eligible_cells=len(cells),solves=sum(r['solved'] is True for r in results),requests=sum(r['requests'] for r in results),known_tokens_lower_bound=sum(r['known_tokens_lower_bound'] for r in results),root_free_bytes=disk_free()));print('models',len(results),'of',len(cells),flush=True)
    return summary
   except BaseException:stop.set();raise
