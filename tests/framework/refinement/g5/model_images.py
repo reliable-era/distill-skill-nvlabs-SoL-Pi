@@ -35,13 +35,5 @@ class ModelImages(Images):
     with self.lock:self.leases[iid]=record
    self.release(iid);raise
  def release(self,iid):
-  with self.lock:
-   record=self.leases.get(iid)
-   if record and record['created_by_G5']:
-    image=inspect_image(record['image_id'])
-    if image is not None:
-     if not set(image.get('RepoTags') or [])<={record['tag']}:raise StorageBlocked('Unexpected shared image tags; no removal')
-     p=subprocess.run(['docker','image','rm','--no-prune',record['image_id']],capture_output=True,text=True,timeout=120)
-     if p.returncode or inspect_image(record['image_id']) is not None:raise StorageBlocked('Owned image removal uncertain; no forced/shared cleanup')
-   self.leases.pop(iid,None)
-   if disk_free()<=FLOOR:raise StorageBlocked('Root free at/below300GB; do not touch unowned data')
+  # Same shared-ID reference/owned-tag proof as controls; no forced removal.
+  return super().release(iid)

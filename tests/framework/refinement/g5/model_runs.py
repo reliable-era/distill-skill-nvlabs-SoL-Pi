@@ -14,6 +14,9 @@ from storage_watch import Watch
 
 def verify_barrier(root,commit):
  p=verify_preregistration();c=json.loads((root/'controls-complete.json').read_text());assert c['completed_issues']==500 and c['model_calls']==0;assert c['summary_sha256']==sha(H/'control-summary.csv');m=json.loads((H/'model-stage.json').read_text());assert m['control_summary_sha256']==c['summary_sha256'] and m['eligible_tasks_sha256']==sha(root/'controls-complete.json')
+ assert m['all500_control_audit']['all500_verified'] and m['all500_control_audit']['completed_pairs']==500
+ assert m['private_enriched_dataset_sha256']==sha(root/'dataset.json') and m['private_full_queue_sha256']==sha(root/'queue.json')
+ assert set(m['source_sha256'])=={f.name for f in H.glob('*.py')},'All runtime/helper sources must be covered'
  for f,d in m['source_sha256'].items():assert sha(H/f)==d
  assert re.fullmatch('[0-9a-f]{40}',commit);subprocess.run(['git','merge-base','--is-ancestor',commit,'HEAD'],cwd=R,check=True,capture_output=True,timeout=10);path=(H/'model-stage.json').relative_to(R);assert subprocess.check_output(['git','show',commit+':'+str(path)],cwd=R,timeout=10)==(H/'model-stage.json').read_bytes(),'Committed model allowance required';return p,c
 
