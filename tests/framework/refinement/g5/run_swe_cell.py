@@ -5,6 +5,9 @@ All provider receipts, native output, captured patch, raw grade and cleanup stay
 import datetime,hashlib,json,os,pathlib,shutil,subprocess,tarfile,threading,time,uuid
 from native import authorized,create_args,argv,H
 from source_archive import archive_source
+from common import disk_free
+from images import StorageBlocked,FLOOR
+from storage_watch import MARGIN
 from transport import Broker,save
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 def command(args,**kw):return subprocess.run(args,check=True,capture_output=True,timeout=120,**kw)
@@ -34,22 +37,18 @@ def attempt(cell,number,root,plan,window,start_callback):
    subprocess.run(['docker','stop','-t','0',name],capture_output=True,timeout=30);process.wait(timeout=30)
   row.update(native_exit=process.returncode,wall_seconds=time.monotonic()-started,native_sha256=sha(root/'native.jsonl'));stop.set();broker.close();broker=None
   # Never extract candidate symlinks outside the owned capture root.
-  row['phase']='capture';archive=root/'captured.tar';work=root/'captured';work.mkdir()
+  row['phase']='capture'
+  if disk_free()<=FLOOR+MARGIN:raise StorageBlocked('Early storage margin reached; no bulk capture or model rerun')
+  archive=root/'captured.tar';work=root/'captured';work.mkdir()
   with archive.open('xb') as out:subprocess.run(['docker','cp',name+':/testbed/.','-'],stdout=out,stderr=subprocess.PIPE,check=True,timeout=120)
-  with tarfile.open(archive) as tar:tar.extractall(work,filter='data')
-  git=work/'.git'
-  if git.is_symlink() or git.is_file():git.unlink()
-  elif git.exists():shutil.rmtree(git)
-  shutil.copytree(baseline/'workspace/.git',git)
-  # Native commits/config/hooks are not trusted by host Git. New source files
-  # are intent-added against the original single snapshot, not actor history.
-  new=[str(p.relative_to(work)) for p in work.rglob('*') if p.is_file() and '.git' not in p.relative_to(work).parts and str(p.relative_to(work)) not in manifest['source_tree']]
-  env=dict(os.environ,GIT_CONFIG_NOSYSTEM='1',GIT_CONFIG_GLOBAL='/dev/null')
-  if new:command(['git','-C',str(work),'add','-N','--force','--',*new],env=env)
-  patch=command(['git','-C',str(work),'diff','--binary','HEAD'],env=env).stdout;(root/'model.patch').write_bytes(patch);row['patch_sha256']=sha(root/'model.patch')
+  # The helper creates its fresh extraction root and proves safe binary replay.
+  work.rmdir()
+  from capture_patch import capture
+  proof=capture(archive,baseline,root);row['patch_sha256']=proof['patch_sha256'];row['capture_proof_sha256']=sha(root/'capture-proof.json')
   # The unchanged official adapter creates its root. Never precreate it.
   if (root/'grade').exists():raise RuntimeError('Fresh grader root required')
   row['phase']='grader'
+  if disk_free()<=FLOOR+MARGIN:raise StorageBlocked('Early storage margin reached; preserve records and stop admission')
   with (root/'grader.private.log').open('xb') as log:graded=subprocess.run([plan['grader_python'],str(H/'grade_swe.py'),str(root/'grade'),cell['task'],str(root/'model.patch'),plan['grader_plan']],stdout=log,stderr=subprocess.STDOUT,timeout=900)
   result=root/'grade/grade-result.json'
   if graded.returncode or not result.exists():raise RuntimeError('Original grader worker failed; retain cost and reconcile owned grader')

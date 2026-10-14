@@ -15,5 +15,5 @@ class Protocol(unittest.TestCase):
  def test_missing_usage_stays_unknown(self):
   r=usage_from_sse(b'',False);self.assertFalse(r['cost_complete']);self.assertIsNone(r['usage']);self.assertIsNone(r['response_model']);self.assertEqual(r['tokens_lower_bound'],0)
  def test_data_filter_and_caps_kept(self):
-  text=(H/'run_swe_cell.py').read_text();self.assertIn("filter='data'",text);self.assertIn('16384 output tokens',text);self.assertIn('started+7200',text)
+  text=(H/'run_swe_cell.py').read_text();self.assertIn("filter='data'",(H/'capture_patch.py').read_text());self.assertIn('16384 output tokens',text);self.assertIn('started+7200',text)
 if __name__=='__main__':unittest.main()
