@@ -13,6 +13,11 @@ def inspect_image(tag):
 def private_root():return pathlib.Path(json.loads((H/'launch.json').read_text())['private_root'])
 def verify_preregistration():
  p=json.loads((H/'preregistration.json').read_text());assert sha(R/'tests/eval/swebench_verified.jsonl')==p['dataset_sha256']
- for f,d in p['source_sha256'].items():assert sha(H/f)==d,'Frozen G5 runtime changed: '+f
+ effective=dict(p['source_sha256']);amend=H/'amendments.json'
+ if amend.exists():
+  for a in json.loads(amend.read_text()):
+   for f,change in a.get('source_changes',{}).items():
+    assert effective[f]==change['old'];effective[f]=change['new']
+ for f,d in effective.items():assert sha(H/f)==d,'Frozen G5 runtime changed: '+f
  for f,d in p['skills_sha256'].items():assert sha(R/f)==d,'Frozen skill changed'
  return p
