@@ -1,7 +1,13 @@
-import json,pathlib,shutil,subprocess,tempfile,unittest
-from source_patch import project,artifact
+import json,os,pathlib,shutil,subprocess,tempfile,unittest
+from source_patch import project,artifact,block_paths
 from patch_outcomes import empty_result
 class SourcePatch(unittest.TestCase):
+ def test_numstat_space_path_from_repository_subdirectory(self):
+  raw=b'diff --git a/a source.py b/a source.py\n--- a/a source.py\n+++ b/a source.py\n@@ -1 +1 @@\n-before\n+after\n'
+  with tempfile.TemporaryDirectory(prefix='g5-numstat-cwd-regression-') as tmp:
+   root=pathlib.Path(tmp);subprocess.run(['git','init','-q',str(root)],check=True);sub=root/'deep/subdirectory';sub.mkdir(parents=True);old=pathlib.Path.cwd()
+   try:os.chdir(sub);self.assertEqual(block_paths(raw),['a source.py'])
+   finally:os.chdir(old)
  def test_generated_binaries_excluded_real_source_and_binary_assets_preserved(self):
   with tempfile.TemporaryDirectory(prefix='g5-source-projection-') as tmp:
    t=pathlib.Path(tmp);w=t/'work';w.mkdir()

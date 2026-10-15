@@ -66,7 +66,7 @@ def main(audit_only=False,operation_commit=None):
  for a in allrows.values():
   if a['cell_id'] not in done:prior.setdefault(a['cell_id'],[]).append(a)
  for rows in prior.values():rows.sort(key=lambda a:a['attempt'])
- save(root/'model-summary-before-source-regrade.json',before);save(root/'model-summary.json',revised);save(root/'source-regrades-v1/outcomes.json',outcomes);save(root/'source-regrade-recovery-v3.json',dict(retained_rows=revised,prior_attempt_rows=prior,last16_finished_attempts=[],all_model_tokens_unchanged=True,no_model_calls=True,source_audit_sha256=sha(auditdir/'audit-final.json'),counts=counts));save(H/'patch-audit-summary.json',dict(**counts,retained_cells=len(revised),known_tokens_unchanged=True,model_calls=0));print('Source/empty regrades done',counts,flush=True)
+ save(root/'model-summary-before-source-regrade.json',before);save(root/'model-summary.json',revised);save(root/'source-regrades-v1/outcomes.json',outcomes);save(root/'source-regrade-recovery-v3.json',dict(retained_rows=revised,prior_attempt_rows=prior,last16_finished_attempts=[dict(cell_id=r['cell_id'],attempt=r['scored_attempt'],ended5xx=bool(r['attempt_rows'][-1].get('ended_on_5xx'))) for r in revised[-16:]],all_model_tokens_unchanged=True,no_model_calls=True,source_audit_sha256=sha(auditdir/'audit-final.json'),counts=counts));save(H/'patch-audit-summary.json',dict(**counts,retained_cells=len(revised),known_tokens_unchanged=True,model_calls=0));print('Source/empty regrades done',counts,flush=True)
 if __name__=='__main__':
  import argparse
  p=argparse.ArgumentParser();p.add_argument('--audit-only',action='store_true');p.add_argument('--operation-commit');args=p.parse_args();main(args.audit_only,args.operation_commit)
