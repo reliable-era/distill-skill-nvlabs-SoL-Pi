@@ -46,6 +46,15 @@ and Claude supervision. G5 is descriptive measurement: no gate, no early stop, n
   attempts from the5-attempt5xx budget. Ordinal attempt IDs remain unique and all
   evidence/costs remain retained. Commit and pass a resumed-path Docker capture
   lifecycle regression before resuming;no server changes or push.
+- **Source-patch/empty-outcome supervisor correction:** exclude `__pycache__`,
+  `.pyc` and other generated binary build products from source patches while
+  preserving original captured bytes separately. Audit every retained patch,
+  including private archives,and deterministically regrade affected attempts from
+  cleaned derivatives with the same frozen grader and no new model calls. Empty
+  patches are valid ordinary unsolved outcomes (`grade_valid=True,solved=False`),
+  without official grader execution;apply retroactively. Preserve all tokens and
+  raw/previous grades. Commit/tests before applying at a clean admission boundary;
+  allow existing native work and graders to finish,no backend changes or push.
 - **Docker images:** pull/build each issue's image when its arms are about to run and remove
   it after its 4 runs are graded, unless it existed before G5. Never remove images, containers
   or volumes G5 did not create. Keep free space on `/` above 300 GB.

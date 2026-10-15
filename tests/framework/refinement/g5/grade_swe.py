@@ -9,6 +9,9 @@ def save(p,v):pathlib.Path(p).write_text(json.dumps(v,indent=2)+'\n')
 def grade(root,iid,patch_file,plan):
  root=pathlib.Path(root);root.mkdir(mode=0o700);patch_file=pathlib.Path(patch_file)
  if patch_file.is_symlink() or not patch_file.is_file():raise RuntimeError('Regular captured patch required')
+ if not patch_file.read_bytes().strip():
+  from patch_outcomes import empty_result
+  result=empty_result(iid,patch_file);save(root/'grade-result.json',result);return result
  for p,d in plan['official_source_hashes'].items():
   if sha(p)!=d:raise RuntimeError('Original official grader changed')
  for name,d in plan['wheel_sha256'].items():

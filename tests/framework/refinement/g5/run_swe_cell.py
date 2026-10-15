@@ -51,9 +51,13 @@ def attempt(cell,number,root,plan,window,start_callback):
   if (root/'grade').exists():raise RuntimeError('Fresh grader root required')
   row['phase']='grader'
   if disk_free()<=FLOOR+MARGIN:raise StorageBlocked('Early storage margin reached; preserve records and stop admission')
-  with (root/'grader.private.log').open('xb') as log:graded=subprocess.run([plan['grader_python'],str(H/'grade_swe.py'),str(root/'grade'),cell['task'],str(root/'model.patch'),plan['grader_plan']],stdout=log,stderr=subprocess.STDOUT,timeout=900)
   result=root/'grade/grade-result.json'
-  if graded.returncode or not result.exists():raise RuntimeError('Original grader worker failed; retain cost and reconcile owned grader')
+  if not (root/'model.patch').read_bytes().strip():
+   from patch_outcomes import empty_result
+   (root/'grade').mkdir();save(result,empty_result(cell['task'],root/'model.patch'));row['grader_invoked']=False
+  else:
+   with (root/'grader.private.log').open('xb') as log:graded=subprocess.run([plan['grader_python'],str(H/'grade_swe.py'),str(root/'grade'),cell['task'],str(root/'model.patch'),plan['grader_plan']],stdout=log,stderr=subprocess.STDOUT,timeout=900)
+   if graded.returncode or not result.exists():raise RuntimeError('Original grader worker failed; retain cost and reconcile owned grader')
   g=json.loads(result.read_text());row.update(solved=g['solved'],grade_valid=g['grade_valid'],grader_sha256=sha(result),grader_owned_containers_absent=g['owned_containers_absent'])
  except Exception as e:
   row['error']=dict(type=type(e).__name__,message=str(e)[:500])
