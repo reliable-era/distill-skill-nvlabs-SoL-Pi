@@ -6,8 +6,10 @@ from common import save,inspect_image,image_tag,disk_free
 from images import Images,FLOOR,RESERVE,StorageBlocked
 class ImageUnavailable(RuntimeError):pass
 class ModelImages(Images):
+ def __init__(self,root,phase='models'):
+  super().__init__(root);self.phase=phase
  def acquire_control_image(self,iid,control_lease):
-  self.reserve(iid);directory=self.root/'models'/iid;directory.mkdir(parents=True,exist_ok=True);tag=image_tag(iid);expected=control_lease['image_id'];digests=control_lease.get('repo_digests',[]);reference=digests[0] if digests else tag;before=inspect_image(expected);record=dict(task=iid,tag=tag,image_id=expected,existed_before_acquire=before is not None,created_by_G5=False,pinned_reference=reference)
+  self.reserve(iid);directory=self.root/self.phase/iid;directory.mkdir(parents=True,exist_ok=True);tag=image_tag(iid);expected=control_lease['image_id'];digests=control_lease.get('repo_digests',[]);reference=digests[0] if digests else tag;before=inspect_image(expected);record=dict(task=iid,tag=tag,image_id=expected,existed_before_acquire=before is not None,created_by_G5=False,pinned_reference=reference)
   try:
    if before is None:
     # One pull per preparation attempt; caller uniformly records/retries the

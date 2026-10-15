@@ -3,7 +3,7 @@ One Unix socket per isolated actor. No configurable backend or fallback.
 Every receipt retains response model/usage; no model-variant aggregation.
 Plain client: no model/metadata admission probes.
 """
-import datetime,hashlib,http.client,http.server,json,os,pathlib,socket,socketserver,threading,time
+import datetime,hashlib,http.client,http.server,json,os,pathlib,shutil,socket,socketserver,tempfile,threading,time
 MODEL='Qwen/Qwen3.8-27B';PEER='127.0.0.1:8000';CAP=16384
 MODEL_ALIASES={MODEL,'Qwen3.8-27B-FP8','Qwen/Qwen3.8-27B-FP8'}
 utc=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -24,10 +24,10 @@ def usage_from_sse(raw,eof):
 class UnixServer(socketserver.ThreadingMixIn,socketserver.UnixStreamServer):
  daemon_threads=False;block_on_close=True
 class Broker:
- def __init__(self,root,deadline,parent_arm,request_role='primary'):
+ def __init__(self,root,deadline,parent_arm,request_role='primary',cell_id=None,attempt=None,global_5xx_log=None):
   if parent_arm not in ('none','K','ours','Both','solpi','solpi_K') or request_role not in ('primary','helper'):raise ValueError('Explicit parent arm/request role required')
-  self.parent_arm=parent_arm;self.request_role=request_role
-  self.root=pathlib.Path(root);self.root.mkdir(mode=0o700);self.deadline=deadline;self.records=[];self.denials=[];self.posts=0;self.active=0;self.lock=threading.RLock();self.connections=set();self.server=None;self.persist()
+  self.parent_arm=parent_arm;self.request_role=request_role;self.cell_id=cell_id;self.attempt=attempt;self.global_5xx_log=global_5xx_log
+  self.root=pathlib.Path(root);self.root.mkdir(mode=0o700);self.deadline=deadline;self.records=[];self.denials=[];self.posts=0;self.active=0;self.lock=threading.RLock();self.connections=set();self.server=None;self.short_socket_dir=None;self.persist()
  def persist(self):
   with self.lock:save(self.root/'ledger.json',dict(backend=PEER,model=MODEL,parent_arm=self.parent_arm,request_role=self.request_role,provider_POST=self.posts,records=self.records,budget_denials=self.denials,active_connections=self.active))
  def start(self):
@@ -45,10 +45,15 @@ class Broker:
      self.connection.settimeout(2);owner.forward(self.path,body,self)
     except (BrokenPipeError,ConnectionResetError):pass
     except Exception:
+     owner.log5xx(502,None,'broker_proxy_exception')
      try:self.send_error(502)
      except OSError:pass
-  socket_dir=self.root/'socket';socket_dir.mkdir(mode=0o755)
+  self.short_socket_dir=pathlib.Path(tempfile.mkdtemp(prefix='g5s-',dir='/tmp'));self.short_socket_dir.chmod(0o755);socket_dir=self.short_socket_dir
+  (self.root/'socket').symlink_to(socket_dir,target_is_directory=True);save(self.root/'socket-owner.json',dict(short_directory=str(socket_dir),container_endpoint='/broker/broker.sock',owned_by_this_broker=True))
   self.server=UnixServer(str(socket_dir/'broker.sock'),Handler);os.chmod(socket_dir/'broker.sock',0o666);self.thread=threading.Thread(target=self.server.serve_forever,daemon=True);self.thread.start()
+ def log5xx(self,status,request_index,source):
+  from five_xx import record
+  record(self.root,self.global_5xx_log,self.cell_id,self.attempt,status,request_index,source)
  def forward(self,path,body,client,connect=http.client.HTTPConnection):
   parsed=json.loads(body)
   if parsed.get('model')!=MODEL or parsed.get('stream') is not True:raise ValueError('Fixed streaming model required')
@@ -71,6 +76,7 @@ class Broker:
    timer=threading.Timer(max(.1,self.deadline-time.monotonic()+240),cutoff);timer.start()
    c.request('POST',path,forwarded,{'Content-Type':'application/json'});r=c.getresponse();record['provider_status']=r.status
    if r.status!=200:
+    if 500<=r.status<600:self.log5xx(r.status,n,'provider_response')
     err=r.read(1048576);(self.root/f'provider-error-{n}.body').write_bytes(err);record['provider_error_sha256']=sha(err)
     try:record['provider_error_response']=json.loads(err)
     except ValueError:record['provider_error_response']=None
@@ -106,3 +112,6 @@ class Broker:
   while self.active and time.monotonic()<until:time.sleep(.1)
   if self.active:raise RuntimeError('Owned provider completion uncertain')
   if self.server:self.server.server_close()
+  if self.short_socket_dir:
+   assert self.short_socket_dir.parent==pathlib.Path('/tmp') and self.short_socket_dir.name.startswith('g5s-')
+   shutil.rmtree(self.short_socket_dir);self.short_socket_dir=None

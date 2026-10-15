@@ -12,7 +12,11 @@ def panel(rows,eligible):
  by={};eligible=set(eligible)
  for r in rows:
   key=(r['task'],r['arm']);assert key not in by and r['task'] in eligible and r['arm'] in ARMS
-  a=r['attempt_rows'];assert 1<=len(a)<=2 and [x['attempt'] for x in a]==list(range(1,len(a)+1));assert r['scored_attempt']==a[-1]['attempt'];assert r['solved']==(a[-1]['solved'] if a[-1]['grade_valid'] else None)
+  a=r['attempt_rows'];assert 1<=len(a)<=5 and [x['attempt'] for x in a]==list(range(1,len(a)+1));assert r['scored_attempt']==a[-1]['attempt']
+  expected=a[-1]['solved'] if a[-1]['grade_valid'] else None
+  if r.get('status')=='infra-exhausted':assert a[-1].get('connection_infra_failure') and len(a)==5;expected=False
+  elif not a[-1].get('connection_infra_failure') and a[-1].get('patch_sha256')=='e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' and a[-1].get('native_exit') not in (None,0):expected=False
+  assert r['solved']==expected
   for k in ('requests','known_tokens_lower_bound'):assert r[k]==sum(x[k] for x in a)
   assert r['cost_complete']==all(x['cost_complete'] for x in a)
   assert all(x['task']==r['task'] and x['arm']==r['arm'] for x in a)
@@ -24,7 +28,7 @@ def aggregate(tasks,by):
  out={}
  for arm in ARMS:
   rs=[by[t,arm] for t in tasks];known=sum(r['known_tokens_lower_bound'] for r in rs);solves=sum(r['solved'] is True for r in rs);missing=sum(r['solved'] is None for r in rs);complete=all(r['cost_complete'] for r in rs)
-  out[arm]=dict(cells=len(rs),solves=solves,unavailable_grades=missing,attempts=sum(len(r['attempt_rows']) for r in rs),requests=sum(r['requests'] for r in rs),known_tokens_lower_bound=known,total_tokens=known if complete else None,cost_complete=complete,unknown_cost_cells=sum(not r['cost_complete'] for r in rs),tokens_per_verified_solve=known/solves if complete and solves and not missing else None,known_tokens_per_observed_verified_solve=known/solves if solves else None,native_timeouts=sum(r.get('native_timeouts',sum(x['timeout'] for x in r['attempt_rows'])) for r in rs),grader_timeouts=sum(r.get('grader_timeouts',sum(x['grader_timeout'] for x in r['attempt_rows'])) for r in rs))
+  out[arm]=dict(cells=len(rs),infra_exhausted=sum(r.get('status')=='infra-exhausted' for r in rs),retry_overhead_tokens_lower_bound=sum(sum(a['known_tokens_lower_bound'] for a in r['attempt_rows'][1:]) for r in rs),solves=solves,unavailable_grades=missing,attempts=sum(len(r['attempt_rows']) for r in rs),requests=sum(r['requests'] for r in rs),known_tokens_lower_bound=known,total_tokens=known if complete else None,cost_complete=complete,unknown_cost_cells=sum(not r['cost_complete'] for r in rs),tokens_per_verified_solve=known/solves if complete and solves and not missing else None,known_tokens_per_observed_verified_solve=known/solves if solves else None,native_timeouts=sum(r.get('native_timeouts',sum(x['timeout'] for x in r['attempt_rows'])) for r in rs),grader_timeouts=sum(r.get('grader_timeouts',sum(x['grader_timeout'] for x in r['attempt_rows'])) for r in rs))
  return out
 
 def ratios(stats,a,b):

@@ -21,10 +21,22 @@ and Claude supervision. G5 is descriptive measurement: no gate, no early stop, n
   queued requests are normal. Concurrency: **16 runs** at a time.
 - **Fairness:** each issue's 4 arms are queued next to each other in a per-issue random order
   (recorded seed).
-- **Infrastructure failures** (HTTP 5xx from 8000, connection refused/reset, client
-  disconnect before the model answered, image pull or container failure before the agent
-  starts) are rerun once from scratch, same rule for every arm; keep both records and score the
-  rerun. Model errors, caps and timeouts are never rerun.
+- **Infrastructure failures, amended by user instruction2026-10-16:** runs whose final
+  native event is an HTTP5xx (including native `error`/`turn.failed` with “unexpected
+  status502”) receive a clean-sandbox rerun, uniformly for every arm, up to **5 total
+  attempts**, replacing the once-only limit for5xx. Keep `connection_infra_failure=True`.
+  Between5xx attempts use exponential backoff starting60s, capped15min, with jitter.
+  Log every observed5xx (time,status,cell,attempt,request index; unknown index explicit)
+  in per-cell and global ledgers. If at least8 of the last16 finished attempts ended
+  on5xx, pause new admissions10min and log the pause; still16 plain-client slots,
+  never `/get_load` gating or backend operations. Charge every attempt, report retry
+  overhead separately, score latest. After5 attempts still ending5xx, retain the cell
+  as **infra-exhausted**, not solved or dropped. Apply retroactively to the64 identified
+  final502 rows and16 harness-affected/socket/aborted/refused cells; retain all earlier
+  costs and records. Ordinary model outcomes, unsolved results, caps, timeouts and
+  empty patches without terminal5xx are never retried under this amendment. Other
+  connection refused/reset, pre-answer disconnect, image/container pre-agent failures
+  retain the original once-only rule. No push.
 - **Docker images:** pull/build each issue's image when its arms are about to run and remove
   it after its 4 runs are graded, unless it existed before G5. Never remove images, containers
   or volumes G5 did not create. Keep free space on `/` above 300 GB.

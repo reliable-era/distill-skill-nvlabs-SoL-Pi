@@ -7,13 +7,13 @@ from common import disk_free,save
 from images import FLOOR
 MARGIN=20_000_000_000
 class Watch:
- def __init__(self,root,stop):self.root=pathlib.Path(root);self.stop=stop;self.done=threading.Event();self.thread=threading.Thread(target=self.run,daemon=True)
+ def __init__(self,root,stop,models_dir=None):self.root=pathlib.Path(root);self.models_dir=pathlib.Path(models_dir) if models_dir else self.root/'models';self.stop=stop;self.done=threading.Event();self.thread=threading.Thread(target=self.run,daemon=True)
  def start(self):self.thread.start()
  def run(self):
   while not self.done.wait(.25):
    free=disk_free()
    if free>FLOOR+MARGIN:continue
-   self.stop.set();models=self.root/'models';names=set()
+   self.stop.set();models=self.models_dir;names=set()
    for pattern in ('*/g5-*-a*/actor-inspect.json','*/source-*/prepare-inspect.json'):
     for f in models.glob(pattern):
      try:
