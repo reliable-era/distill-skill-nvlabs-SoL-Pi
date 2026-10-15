@@ -1,6 +1,6 @@
 {
   "stage": "models",
-  "completed_cells": 11,
+  "completed_cells": 65,
   "planned_eligible_cells": 1776,
   "active_slots": 16,
   "rolling_slots": 16,
@@ -9,26 +9,47 @@
   "native_5xx_diagnostic_count": 336,
   "http5xx_count_unit": "all recorded observations;response and native diagnostics separately reported",
   "terminal_5xx_attempts": 164,
-  "solves": 5,
+  "solves": 14,
   "infra_exhausted": 0,
-  "requests": 1335,
-  "known_tokens_lower_bound": 15249634,
-  "retry_overhead_tokens_lower_bound": 10133232,
-  "root_free_bytes": 2047340494848,
+  "requests": 1894,
+  "known_tokens_lower_bound": 24900933,
+  "retry_overhead_tokens_lower_bound": 19784531,
+  "root_free_bytes": 2041880137728,
   "circuit_pause_until_epoch": 0,
-  "phase": "models-resume-v2",
-  "observed_controller_pid": 949903,
+  "phase": "models-resume-v3",
+  "observed_controller_pid": 1166377,
   "observed_controller_alive": true,
-  "observed_utc": "2026-10-15T21:43:15.658490+00:00",
-  "capture_regression_repair_commit": "0d506ad",
-  "capture_harness_failed_attempts_retained": 32,
-  "supervisor_stopped_attempts_retained": 4,
-  "harness_attempts_excluded_from_five_attempt_budget": true,
-  "tests_passed": 59,
-  "real_docker_lifecycle_tests_passed": 3,
-  "actual_resumed_full_lifecycles_verified": 5,
-  "actual_resumed_capture_stderr_failures": 0,
-  "interrupted_request_completion_unknown": 3,
-  "private_first_five_lifecycle_audit_sha256": "69d7766c4d9686dbf90900724d3e2d2d9a27aecdf9ab1144c073b26cae46f1d5",
+  "controller_cwd": "G5 directory",
+  "observed_utc": "2026-10-15T22:39:30.617169+00:00",
+  "allowance_commit": "6cd4966",
+  "tests_passed_from_g5_directory": 64,
+  "real_docker_lifecycle_tests": 4,
+  "patches_scanned": 233,
+  "pyc_affected_patches": 50,
+  "literal_Binary_files_patches": 0,
+  "nonempty_cleaned_official_regrades": 30,
+  "empty_historical_outcome_corrections": 60,
+  "regrading_model_calls": 0,
+  "retained_latest_grade_valid_cells": 65,
+  "retained_latest_unknown_outcomes": 0,
+  "source_regrade_solved_per_arm_before_after": {
+    "none": [
+      2,
+      2
+    ],
+    "K": [
+      3,
+      3
+    ],
+    "ours": [
+      5,
+      5
+    ],
+    "Both": [
+      4,
+      4
+    ]
+  },
+  "regrading_known_model_tokens_unchanged": true,
   "no_push": true
 }
