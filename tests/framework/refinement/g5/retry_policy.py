@@ -42,7 +42,7 @@ def classify(row):
  def decision(**kw):return dict(**kw,**native)
  if not row.get('owned_cleanup_verified'):return decision(retry=False,reason='owned cleanup unverified',stop=True)
  if row.get('timeout') or row.get('grader_timeout'):return decision(retry=False,reason='timeout')
- if native['connection_infra_failure']:return decision(retry=row.get('attempt',1)<5,reason='terminal native HTTP5xx',infra_exhausted=row.get('attempt',1)>=5)
+ if native['connection_infra_failure']:return decision(retry=row.get('budget_attempt',row.get('attempt',1))<5,reason='terminal native HTTP5xx',infra_exhausted=row.get('budget_attempt',row.get('attempt',1))>=5)
  if row.get('attempt',1)>=2:return decision(retry=False,reason='once-only other-infrastructure retry exhausted')
  if row.get('requests',0)>=60:return decision(retry=False,reason='request cap')
  if not row.get('native_started'):

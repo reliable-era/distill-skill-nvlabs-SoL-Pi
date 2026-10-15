@@ -37,6 +37,15 @@ and Claude supervision. G5 is descriptive measurement: no gate, no early stop, n
   empty patches without terminal5xx are never retried under this amendment. Other
   connection refused/reset, pre-answer disconnect, image/container pre-agent failures
   retain the original once-only rule. No push.
+- **Capture-regression supervisor correction:** keep the short socket bind source
+  alive through capture and grading,remove it only after actor removal. Persist
+  docker-cp stderr. Any capture failure following native exit0 must trip the
+  shared admission/provider-forwarding safety stop. The32 resume-v1 capture-failed
+  attempts and cleanly supervisor-stopped in-flight attempts are harness failures:
+  retain/charge their tokens,give a clean fresh attempt,and exclude these harness
+  attempts from the5-attempt5xx budget. Ordinal attempt IDs remain unique and all
+  evidence/costs remain retained. Commit and pass a resumed-path Docker capture
+  lifecycle regression before resuming;no server changes or push.
 - **Docker images:** pull/build each issue's image when its arms are about to run and remove
   it after its 4 runs are graded, unless it existed before G5. Never remove images, containers
   or volumes G5 did not create. Keep free space on `/` above 300 GB.

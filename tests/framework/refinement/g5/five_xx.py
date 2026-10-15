@@ -18,6 +18,7 @@ def decision(row,total_attempts,raw):
  completed=any(b'"turn.completed"' in line for line in raw.splitlines())
  if other_connection and not completed and not ordinary_cap and total_attempts<2:retry=True
  return dict(connection_infra_failure=ended or other_connection,ended_on_5xx=ended,retry=retry,infra_exhausted=ended and total_attempts>=5,reason='final native HTTP5xx' if ended else ('once-only other connection failure' if retry else 'ordinary outcome;no5xx retry'),native_evidence=evidence)
+def budget_attempts(rows):return sum(not a.get('harness_failure',False) for a in rows)
 def backoff(finished_attempts,rng=random):
  base=min(900,60*2**max(0,finished_attempts-1));return min(900,base+rng.uniform(0,base*.2))
 class Circuit:

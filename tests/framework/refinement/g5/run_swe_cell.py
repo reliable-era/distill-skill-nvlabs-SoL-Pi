@@ -23,7 +23,7 @@ def attempt(cell,number,root,plan,window,start_callback):
  if not plan['arm_skills'][cell['arm']]:prompt+='\nNo skill is supplied.\n'
  (root/'prompt.txt').write_text(prompt);name='solpi-g5-C-'+uuid.uuid4().hex[:16];row=dict(cell_id=cell['cell_id'],part='C',task=cell['task'],arm=cell['arm'],round=cell['round'],attempt=number,root=str(root),actor=name,native_started=False,solved=None,grade_valid=False,timeout=False,grader_timeout=False,error=None,phase='setup');broker=None;process=None;started=None;stop=threading.Event();sampler=None
  try:
-  broker=Broker(root/'transport',time.monotonic()+7200,cell['arm'],cell_id=cell['cell_id'],attempt=number,global_5xx_log=plan.get('global_5xx_log'));broker.start();image=plan['images'][cell['task']];command(create_args(name,image,root,'C',8192,'/testbed',plan['wheelhouse']));command(['docker','start',name]);ins=json.loads(command(['docker','inspect',name]).stdout);assert ins[0]['Image']==image;save(root/'actor-inspect.json',ins[0]);command(['docker','exec',name,'sh','-c','rm -rf /testbed; mkdir /testbed']);archive_source(baseline/'workspace',root/'starter.tar')
+  broker=Broker(root/'transport',time.monotonic()+7200,cell['arm'],cell_id=cell['cell_id'],attempt=number,global_5xx_log=plan.get('global_5xx_log'),admission_stop_file=plan.get('admission_stop_file'));broker.start();image=plan['images'][cell['task']];command(create_args(name,image,root,'C',8192,'/testbed',plan['wheelhouse']));command(['docker','start',name]);ins=json.loads(command(['docker','inspect',name]).stdout);assert ins[0]['Image']==image;save(root/'actor-inspect.json',ins[0]);command(['docker','exec',name,'sh','-c','rm -rf /testbed; mkdir /testbed']);archive_source(baseline/'workspace',root/'starter.tar')
   with (root/'starter.tar').open('rb') as source_tar:command(['docker','cp','-',name+':/'],stdin=source_tar)
   head=command(['docker','exec',name,'git','-C','/testbed','rev-parse','HEAD']).stdout.decode().strip();assert head==manifest['snapshot_commit'];save(root/'source-proof.json',dict(snapshot_commit=head,original_base_commit=manifest['base_commit'],gold_in_actor=False,upstream_history_in_actor=False))
   row['phase']='native';admission=start_callback(cell,number)
@@ -35,12 +35,14 @@ def attempt(cell,number,root,plan,window,start_callback):
    try:process.wait(timeout=max(.1,broker.deadline-time.monotonic()-10))
    except subprocess.TimeoutExpired:row['timeout']=True
    subprocess.run(['docker','stop','-t','0',name],capture_output=True,timeout=30);process.wait(timeout=30)
-  row.update(native_exit=process.returncode,wall_seconds=time.monotonic()-started,native_sha256=sha(root/'native.jsonl'));stop.set();broker.close();broker=None
+  row.update(native_exit=process.returncode,wall_seconds=time.monotonic()-started,native_sha256=sha(root/'native.jsonl'));stop.set()
+  # The short socket directory is a Docker bind source. Keep it alive through
+  # stopped-container docker cp,grading,and actor removal;close only in finally.
   # Never extract candidate symlinks outside the owned capture root.
   row['phase']='capture'
   if disk_free()<=FLOOR+MARGIN:raise StorageBlocked('Early storage margin reached; no bulk capture or model rerun')
   archive=root/'captured.tar';work=root/'captured';work.mkdir()
-  with archive.open('xb') as out:subprocess.run(['docker','cp',name+':/testbed/.','-'],stdout=out,stderr=subprocess.PIPE,check=True,timeout=120)
+  with archive.open('xb') as out,(root/'capture.stderr').open('xb') as err:subprocess.run(['docker','cp',name+':/testbed/.','-'],stdout=out,stderr=err,check=True,timeout=120)
   # The helper creates its fresh extraction root and proves safe binary replay.
   work.rmdir()
   from capture_patch import capture
@@ -54,7 +56,13 @@ def attempt(cell,number,root,plan,window,start_callback):
   if graded.returncode or not result.exists():raise RuntimeError('Original grader worker failed; retain cost and reconcile owned grader')
   g=json.loads(result.read_text());row.update(solved=g['solved'],grade_valid=g['grade_valid'],grader_sha256=sha(result),grader_owned_containers_absent=g['owned_containers_absent'])
  except Exception as e:
-  row['error']=dict(type=type(e).__name__,message=str(e)[:500]);row['grader_timeout']=row['phase']=='grader' and isinstance(e,subprocess.TimeoutExpired)
+  row['error']=dict(type=type(e).__name__,message=str(e)[:500])
+  if row['phase']=='capture':
+   row['harness_failure']=True;row['harness_failure_reason']='capture failure';row['capture_stderr_sha256']=sha(root/'capture.stderr') if (root/'capture.stderr').exists() else None
+   if row.get('native_exit')==0:
+    row['safety_stop']=True
+    if plan.get('admission_stop_file'):pathlib.Path(plan['admission_stop_file']).touch(exist_ok=True)
+  row['grader_timeout']=row['phase']=='grader' and isinstance(e,subprocess.TimeoutExpired)
  finally:
   stop.set()
   if sampler:sampler.join(timeout=15)
@@ -72,5 +80,7 @@ def attempt(cell,number,root,plan,window,start_callback):
   if broker:
    try:broker.close()
    except Exception as e:row['broker_cleanup_error']=str(e)
-  ledger=json.loads((root/'transport/ledger.json').read_text()) if (root/'transport/ledger.json').exists() else dict(provider_POST=0,records=[]);records=ledger['records'];row['owned_cleanup_verified']=row['actor_absent'] and not grade_cleanup and not row.get('actor_process_uncertain') and not row.get('broker_cleanup_error');row.update(requests=ledger['provider_POST'],recorded_receipts=len(records),known_tokens_lower_bound=sum(r['tokens_lower_bound'] for r in records),cost_complete=len(records)==ledger['provider_POST'] and all(r['cost_complete'] for r in records),connection_infra_failure=any(r.get('connection_infra_failure') for r in records),backend='127.0.0.1:8000');save(root/'attempt-result.json',row)
+  ledger=json.loads((root/'transport/ledger.json').read_text()) if (root/'transport/ledger.json').exists() else dict(provider_POST=0,records=[])
+  if any(d.get('reason')=='admission_safety_stop' for d in ledger.get('budget_denials',[])):row.update(harness_failure=True,harness_failure_reason='shared capture/admission safety stop',safety_stop=True)
+  records=ledger['records'];row['owned_cleanup_verified']=row['actor_absent'] and not grade_cleanup and not row.get('actor_process_uncertain') and not row.get('broker_cleanup_error');row.update(requests=ledger['provider_POST'],recorded_receipts=len(records),known_tokens_lower_bound=sum(r['tokens_lower_bound'] for r in records),cost_complete=len(records)==ledger['provider_POST'] and all(r['cost_complete'] for r in records),connection_infra_failure=any(r.get('connection_infra_failure') for r in records),backend='127.0.0.1:8000');save(root/'attempt-result.json',row)
  return row

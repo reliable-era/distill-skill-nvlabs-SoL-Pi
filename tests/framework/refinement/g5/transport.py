@@ -24,9 +24,9 @@ def usage_from_sse(raw,eof):
 class UnixServer(socketserver.ThreadingMixIn,socketserver.UnixStreamServer):
  daemon_threads=False;block_on_close=True
 class Broker:
- def __init__(self,root,deadline,parent_arm,request_role='primary',cell_id=None,attempt=None,global_5xx_log=None):
+ def __init__(self,root,deadline,parent_arm,request_role='primary',cell_id=None,attempt=None,global_5xx_log=None,admission_stop_file=None):
   if parent_arm not in ('none','K','ours','Both','solpi','solpi_K') or request_role not in ('primary','helper'):raise ValueError('Explicit parent arm/request role required')
-  self.parent_arm=parent_arm;self.request_role=request_role;self.cell_id=cell_id;self.attempt=attempt;self.global_5xx_log=global_5xx_log
+  self.parent_arm=parent_arm;self.request_role=request_role;self.cell_id=cell_id;self.attempt=attempt;self.global_5xx_log=global_5xx_log;self.admission_stop_file=pathlib.Path(admission_stop_file) if admission_stop_file else None
   self.root=pathlib.Path(root);self.root.mkdir(mode=0o700);self.deadline=deadline;self.records=[];self.denials=[];self.posts=0;self.active=0;self.lock=threading.RLock();self.connections=set();self.server=None;self.short_socket_dir=None;self.persist()
  def persist(self):
   with self.lock:save(self.root/'ledger.json',dict(backend=PEER,model=MODEL,parent_arm=self.parent_arm,request_role=self.request_role,provider_POST=self.posts,records=self.records,budget_denials=self.denials,active_connections=self.active))
@@ -60,6 +60,8 @@ class Broker:
   if 'max_output_tokens' in parsed and parsed['max_output_tokens']!=CAP:raise ValueError('Conflicting output cap')
   parsed['max_output_tokens']=CAP;forwarded=json.dumps(parsed,separators=(',',':')).encode()
   with self.lock:
+   if self.admission_stop_file and self.admission_stop_file.exists():
+    self.denials.append(dict(utc=utc(),reason='admission_safety_stop',forwarded=False));self.persist();client.send_error(409);return
    if self.posts>=60 or time.monotonic()>=self.deadline-10:
     self.denials.append(dict(utc=utc(),reason='request_cap' if self.posts>=60 else 'wall_cap',forwarded=False));self.persist();client.send_error(429);return
    self.posts+=1;n=self.posts;self.active+=1;self.persist()

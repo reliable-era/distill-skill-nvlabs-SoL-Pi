@@ -12,9 +12,9 @@ def panel(rows,eligible):
  by={};eligible=set(eligible)
  for r in rows:
   key=(r['task'],r['arm']);assert key not in by and r['task'] in eligible and r['arm'] in ARMS
-  a=r['attempt_rows'];assert 1<=len(a)<=5 and [x['attempt'] for x in a]==list(range(1,len(a)+1));assert r['scored_attempt']==a[-1]['attempt']
+  a=r['attempt_rows'];assert len(a)>=1 and sum(not x.get('harness_failure',False) for x in a)<=5 and [x['attempt'] for x in a]==list(range(1,len(a)+1));assert r['scored_attempt']==a[-1]['attempt']
   expected=a[-1]['solved'] if a[-1]['grade_valid'] else None
-  if r.get('status')=='infra-exhausted':assert a[-1].get('connection_infra_failure') and len(a)==5;expected=False
+  if r.get('status')=='infra-exhausted':assert a[-1].get('connection_infra_failure') and sum(not x.get('harness_failure',False) for x in a)==5;expected=False
   elif not a[-1].get('connection_infra_failure') and a[-1].get('patch_sha256')=='e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' and a[-1].get('native_exit') not in (None,0):expected=False
   assert r['solved']==expected
   for k in ('requests','known_tokens_lower_bound'):assert r[k]==sum(x[k] for x in a)
