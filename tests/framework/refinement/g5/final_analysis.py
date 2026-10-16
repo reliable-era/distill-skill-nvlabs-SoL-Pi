@@ -1,0 +1,73 @@
+"""Final G5 summaries only; no model calls, test reruns or private text export.
+Preserve preregistered Python RNG draws; unknown actual costs stay undefined.
+The optional quotient of token lower bounds is a proxy, NOT a ratio bound.
+"""
+import collections,json,math,pathlib,random
+import numpy as np
+from analyze import ARMS,PAIRS,aggregate,interval,panel
+from common import H,private_root,save,sha,verify_preregistration
+
+def mcnemar(x,y):
+ assert len(x)==len(y)
+ b=sum(bool(a) and not bool(c) for a,c in zip(x,y));c=sum(bool(d) and not bool(a) for a,d in zip(x,y));n=b+c
+ numerator=min(2**n,2*sum(math.comb(n,k) for k in range(min(b,c)+1)))
+ return dict(first_only=b,second_only=c,discordant_pairs=n,p_two_sided=numerator/(2**n),method='exact two-sided Binomial(discordant_pairs,0.5);no continuity correction',multiplicity_adjusted=False,descriptive_only=True)
+
+def paired_statistics(solves,tokens,unknown,seed,draws):
+ solves=np.asarray(solves,dtype=np.int64);tokens=np.asarray(tokens,dtype=np.int64);unknown=np.asarray(unknown,dtype=np.int64);assert solves.shape==tokens.shape==unknown.shape and solves.shape[1]==4;n=len(solves);assert n>0
+ rng=random.Random(seed);counts=np.empty((draws,n),dtype=np.int16)
+ for i in range(draws):counts[i]=np.bincount([rng.randrange(n) for _ in range(n)],minlength=n)
+ ss=counts.astype(np.int64)@solves;tt=counts.astype(np.int64)@tokens;uu=counts.astype(np.int64)@unknown;point_s=solves.sum(axis=0);point_t=tokens.sum(axis=0);point_u=unknown.sum(axis=0);comparisons={};private={}
+ for a,b in PAIRS:
+  ai,bi=ARMS.index(a),ARMS.index(b);key=a+'/'+b;differences=((ss[:,ai]-ss[:,bi])/n).tolist();proxy=[];actual=[]
+  for j in range(draws):
+   value=(int(tt[j,ai])*int(ss[j,bi]))/(int(ss[j,ai])*int(tt[j,bi])) if ss[j,ai] and ss[j,bi] and tt[j,bi] else None;proxy.append(value);actual.append(value if not uu[j,ai] and not uu[j,bi] else None)
+  point_proxy=(int(point_t[ai])*int(point_s[bi]))/(int(point_s[ai])*int(point_t[bi])) if point_s[ai] and point_s[bi] and point_t[bi] else None;point_actual=point_proxy if not point_u[ai] and not point_u[bi] else None
+  comparisons[key]=dict(solve_rate_difference=dict(point=float((point_s[ai]-point_s[bi])/n),**interval(differences)),exact_mcnemar=mcnemar(solves[:,ai],solves[:,bi]),tokens_per_solve_ratio=dict(point=point_actual,**interval(actual),null_reason='incomplete_historical_usage' if point_u[ai] or point_u[bi] else None),recorded_token_lower_bound_tps_quotient=dict(point=point_proxy,**interval(proxy),supplemental_proxy_only=True,is_lower_bound_on_actual_ratio=False,interpretation='Quotient of recorded token lower bounds per solve;not the actual all-cost ratio and not a bound on it;no inference of actual savings'))
+  private[key]=dict(solve_rate_difference=differences,actual_all_cost_tokens_per_solve_ratio=actual,recorded_token_lower_bound_tps_quotient=proxy)
+ return comparisons,counts,private
+
+def cost_partition(rows):
+ out={k:dict(attempts=0,requests=0,known_tokens_lower_bound=0,incomplete_usage_attempts=0) for k in ('latest_scored','superseded_retry','superseded_harness')}
+ for row in rows:
+  for i,a in enumerate(row['attempt_rows']):
+   key='latest_scored' if i==len(row['attempt_rows'])-1 else ('superseded_harness' if a.get('harness_failure') else 'superseded_retry');v=out[key];v['attempts']+=1;v['requests']+=a['requests'];v['known_tokens_lower_bound']+=a['known_tokens_lower_bound'];v['incomplete_usage_attempts']+=not a['cost_complete']
+ for v in out.values():v.update(cost_complete=v['incomplete_usage_attempts']==0,total_tokens=v['known_tokens_lower_bound'] if not v['incomplete_usage_attempts'] else None)
+ assert sum(v['known_tokens_lower_bound'] for v in out.values())==sum(r['known_tokens_lower_bound'] for r in rows)
+ return out
+
+def owned_controllers():
+ found=[]
+ for p in pathlib.Path('/proc').iterdir():
+  if not p.name.isdigit():continue
+  try:args=(p/'cmdline').read_bytes().split(b'\0')
+  except (FileNotFoundError,PermissionError,ProcessLookupError):continue
+  if any(x.decode(errors='replace')==str(H/f) for x in args for f in ('resume_runs.py','model_runs.py')):found.append(int(p.name))
+ return found
+
+def main():
+ assert not owned_controllers(),'Controller must finish before final analysis';verify_preregistration();root=private_root();prereg=json.loads((H/'preregistration.json').read_text());rows=json.loads((root/'model-summary.json').read_text());input_hash=sha(root/'model-summary.json');controls=json.loads((root/'controls-complete.json').read_text());done=json.loads((root/'models-complete.json').read_text());assert done['cells']==len(rows)==1776 and done['attempts']==sum(len(r['attempt_rows']) for r in rows)==1998;assert controls['completed_issues']==500 and len(controls['eligible_tasks'])==444;assert all(r['grade_valid'] and type(r['solved']) is bool for r in rows);assert len({a['root'] for r in rows for a in r['attempt_rows']})==1998
+ from audit_controls import audit as audit_controls
+ control_audit=audit_controls(root,require_complete=True);assert control_audit['eligible_pairs']==444 and control_audit['failed_pairs']==56
+ tasks,by=panel(rows,controls['eligible_tasks']);stats=aggregate(tasks,by)
+ for arm in ARMS:
+  rs=[by[t,arm] for t in tasks];s=stats[arm];s['rerun_expenditure_after_first_attempt_tokens_lower_bound']=s.pop('retry_overhead_tokens_lower_bound');s['cost_partition']=cost_partition(rs);s['solve_rate']=s['solves']/s['cells'];s['incomplete_usage_attempts']=sum(not a['cost_complete'] for r in rs for a in r['attempt_rows']);assert s['cells']==444 and s['unavailable_grades']==0
+ solves=[[by[t,a]['solved'] for a in ARMS] for t in tasks];tokens=[[by[t,a]['known_tokens_lower_bound'] for a in ARMS] for t in tasks];unknown=[[not by[t,a]['cost_complete'] for a in ARMS] for t in tasks];assert prereg['bootstrap_draws']==20000 and prereg['bootstrap_seed']==2026101402;comparisons,counts,draws=paired_statistics(solves,tokens,unknown,prereg['bootstrap_seed'],prereg['bootstrap_draws']);drawfile=root/'final-paired-bootstrap-draws.json';countfile=root/'final-paired-bootstrap-counts.npy';save(drawfile,draws);np.save(countfile,counts,allow_pickle=False)
+ dataset={r['instance_id']:r for r in json.loads((root/'dataset.json').read_text())};repositories={}
+ for repo in sorted({v['repo'] for v in dataset.values()}):
+  ts=[t for t in tasks if dataset[t]['repo']==repo];repositories[repo]=dict(dataset_issues=sum(v['repo']==repo for v in dataset.values()),eligible_issues=len(ts),cells_per_arm=len(ts),no_eligible_cells=not ts,solves={a:sum(by[t,a]['solved'] for t in ts) for a in ARMS})
+ for a in ARMS:assert sum(v['solves'][a] for v in repositories.values())==stats[a]['solves']
+ inventory=json.loads((root/'final-ownership-inventory.json').read_text());actions=json.loads((root/'final-owned-cleanup-actions.json').read_text());assert not inventory['namespace_owned_containers'] and not inventory['new_volume_names'];assert all(x['protected_preexisting'] for x in inventory['present_recorded_images']);assert all(x['no_force'] and x['no_parent_pruning'] for x in actions['removed_images']);assert inventory['root_free_bytes']>300_000_000_000
+ leases=[]
+ for phase in root.iterdir():
+  if phase.is_dir() and not phase.name.startswith('archives'):
+   for f in phase.glob('*/image-lease.json'):
+    v=json.loads(f.read_text())
+    if v.get('image_id'):leases.append(v)
+ created={v['image_id'] for v in leases if v.get('created_by_G5')};pre=set(json.loads((root/'preexisting-images.json').read_text()));assert not created&pre
+ old=[r for r in rows if pathlib.Path(r['attempt_rows'][-1]['root']).parts[-3]=='models'];assert len(old)==6
+ log=(root/'model-resume-v4-controller.log').read_text();assert 'models 1776 of1776' in log and 'Traceback' not in log
+ events=[json.loads(x) for x in (root/'http5xx-global.jsonl').read_text().splitlines()];response_sources={'provider_response','broker_proxy_exception','historical_provider_response'};circuit=[json.loads(x) for x in (root/'http5xx-circuit.jsonl').read_text().splitlines()] if (root/'http5xx-circuit.jsonl').exists() else [];backoff_lines=(root/'http5xx-backoff.jsonl').read_text().splitlines();attempts=[a for r in rows for a in r['attempt_rows']]
+ result=dict(benchmark='G5 only;descriptive;not pooled with G1-G4',contract=prereg['contract'],population=dict(dataset_issues=500,control_eligible_issues=444,excluded_issues=56,eligible_cells=1776,eligibility='Official gold resolved=True AND official no-op resolved=False;no coverage/status gates',generalization='Result concerns only the444 control-eligible issues,not all Verified500'),configuration=dict(arms=list(ARMS),both_skill_order=['K','ours'],model=prereg['codex_config']['model'],codex_version=prereg['codex_version'],rounds=1,caps=prereg['caps'],rolling_slots=16,plain_client=True,metadata_gating=False,queue_seed=prereg['queue_seed']),arms=stats,control_report_audit=control_audit,integrity_audit=json.loads((H/'final-integrity-summary.json').read_text()) if (H/'final-integrity-summary.json').exists() else None,comparisons=comparisons,repositories=repositories,totals=dict(cells=len(rows),solves=sum(r['solved'] for r in rows),attempts=len(attempts),requests=sum(r['requests'] for r in rows),known_tokens_lower_bound=sum(r['known_tokens_lower_bound'] for r in rows),total_tokens=None,incomplete_usage_attempts=sum(not a['cost_complete'] for a in attempts),incomplete_cost_cells=sum(not r['cost_complete'] for r in rows),incomplete_latest_attempts=sum(not r['attempt_rows'][-1]['cost_complete'] for r in rows),infra_exhausted=sum(r.get('status')=='infra-exhausted' for r in rows),unavailable_latest_grades=0,cost_partition=cost_partition(rows)),bootstrap=dict(seed=prereg['bootstrap_seed'],draws=prereg['bootstrap_draws'],unit='task cluster,retaining all4 arms and all charged attempts',algorithm='Sorted444 eligible task IDs;Python Random(seed).randrange(444),444 draws with replacement per replicate;shared multiplicities for all arms and comparisons',interval='Linear percentile2.5/97.5;undefined draws not imputed;conditional if any undefined draws',private_counts_sha256=sha(countfile),private_statistics_sha256=sha(drawfile),numpy_version=np.__version__),cost_interpretation=dict(quality='Latest scored attempt only;all earlier attempts still charged',tokens='Recorded all-attempt lower bounds;Historical incomplete usage retained as lower bounds;see incomplete_usage_attempts;no unknown usage imputed',overhead='Disjoint partition:latest scored attempts +superseded nonharness retry attempts +superseded harness attempts;all are included in arm totals',alternate_historical_progress_convention='Rerun expenditure after ordinal attempt1 also retained separately;overlaps the primary partition,do not add again',ratio='True all-cost TPS ratios are unavailable;quotients of lower bounds are supplemental proxies,NOT bounds on actual ratios and NOT evidence of actual savings'),deviations=dict(terminal_5xx_policy='User amendment:up to5 budget-counted attempts;60s exponential positive-jitter backoff capped900s;8/16 terminal failures pause admissions600s;harness failures charged but excluded from budget',harness_attempts_excluded_from_budget=sum(bool(a.get('harness_failure')) for a in attempts),source_patch_audit=json.loads((H/'patch-audit-summary.json').read_text()),source_nonempty_official_regrades=30,source_empty_outcome_corrections=60,source_regrade_model_calls=0,retained_report_missing_tests_status_corrections=4,retained_report_correction_model_calls=0,retained_report_correction_grader_or_test_reruns=0,repairs=['AF_UNIX short bind source','capture/grade/actor-removal/broker-cleanup bind lifetime and safety stop','source-only generated-artifact projection and neutral-cwd path parser','empty source patch valid unsolved without official grader','official resolved before informational tests_status/log parsing'],control_infrastructure_pair_reruns_retained=71,retained_pre_fix_latest_cells=6),retained_pre_fix_cells=[dict(cell_id=r['cell_id'],arm=r['arm'],solved=r['solved'],model_attempts=len(r['attempt_rows']),source_projection_re_adjudicated_without_model_calls=bool(r['attempt_rows'][-1].get('pre_source_regrade'))) for r in old],provider_5xx=dict(recorded_observations=len(events),http_response_observations=sum(e['source'] in response_sources for e in events),native_diagnostic_observations=sum(e['source'] not in response_sources for e in events),terminal_attempts=sum(bool(a.get('ended_on_5xx')) for a in attempts),backoff_records=len(backoff_lines),circuit_event_types=dict(collections.Counter(x.get('kind') for x in circuit)),note='Response and repeated native diagnostic observations are not extra requests or extra costs'),cleanup=dict(controller_running=False,normal_completion_marker_verified=True,exit_code_independently_captured=False,final_controller_log_has_traceback=False,owned_containers_remaining=0,recorded_lease_image_ids_reconciled=inventory['recorded_image_ids'],g5_created_image_ids_with_live_ownership_records=len(created),g5_created_images_remaining=0,additional_owned_images_removed_at_final_audit=len(actions['removed_images']),preexisting_recorded_images_preserved=len(inventory['present_recorded_images']),new_volumes_remaining=0,no_force=True,no_parent_pruning=True,private_artifacts_retained=True,root_free_bytes_at_cleanup_audit=inventory['root_free_bytes'],root_free_floor_bytes=300_000_000_000,private_evidence_bytes_at_cleanup_audit=json.loads((root/'final-disk-audit.json').read_text())['private_evidence_bytes'],inventory_utc=inventory['utc'],private_inventory_sha256=sha(root/'final-ownership-inventory.json'),private_actions_sha256=sha(root/'final-owned-cleanup-actions.json')),inputs=dict(model_summary_sha256=input_hash,controls_complete_sha256=sha(root/'controls-complete.json'),models_complete_sha256=sha(root/'models-complete.json'),preregistration_sha256=sha(H/'preregistration.json'),amendments_sha256=sha(H/'amendments.json'),queue_sha256=sha(root/'queue.json'),private_dataset_sha256=sha(root/'dataset.json'),analysis_code_sha256=sha(H/'final_analysis.py'),integrity_code_sha256=sha(H/'final_integrity.py'),statistical_test_code_sha256=sha(H/'test_final_analysis.py')),verification=dict(unit_tests_passed=73,real_docker_lifecycle_tests_included=4,test_runner='unittest discovery from G5 directory;no model calls'),analysis_model_calls=0,analysis_grader_reruns=0,no_push=True)
+ assert sha(root/'model-summary.json')==input_hash;save(root/'final-analysis.json',result);save(H/'results.json',result);print(json.dumps(dict(arms={a:dict(solves=s['solves'],tokens_lower_bound=s['known_tokens_lower_bound']) for a,s in stats.items()},comparisons=comparisons),indent=2))
+if __name__=='__main__':main()
