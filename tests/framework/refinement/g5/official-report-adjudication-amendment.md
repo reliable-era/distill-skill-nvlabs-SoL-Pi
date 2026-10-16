@@ -1,0 +1,7 @@
+# Supervisor official-report-only grading correction
+
+The official report's boolean `resolved` governs quality. Optional `tests_status`,coverage parsing,log diagnostics and `patch_successfully_applied` cannot veto it. Determine the official outcome before invoking informational diagnostics;retain missing-status/parser errors separately without converting a genuine model failure to an unknown grade. This does not weaken actor/grader ownership checks or fabricate a report when the official outcome is unavailable.
+
+Verified all4 reports from private retained archives by matching their raw report hashes and original grade-result hashes: g5-037-K,g5-112-K,g5-112-Both,g5-171-K. Each has `resolved=False,infra_failure=False,patch_successfully_applied=False`,no `tests_status`,and an old KeyError for tests_status. Their original archived bytes/grades remain unchanged. Derived adjudications set grade_valid=True,solved=False and retain original errors as informational diagnostics. No model calls,no grader reruns,no test reruns and no token changes.
+
+Apply the runtime change at a clean admission boundary while existing native calls and graders finish normally;never stop a broker or kill a native run. Preserve all completed cells and pending-attempt costs in the next resume snapshot. Tests include the exact crash/missing-tests-status shape,the actual grader adapter with a stub official report,diagnostic parser failures,diagnostic attempts to override outcomes,and rejection of nonboolean resolved fields. Client-only,no backend changes or push.

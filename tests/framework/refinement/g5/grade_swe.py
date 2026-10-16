@@ -61,15 +61,17 @@ def grade(root,iid,patch_file,plan):
    if patch.strip() and len(instance_logs)==1 and APPLY_PATCH_FAIL in instance_logs[0].read_text():result.update(solved=False,grade_valid=True,classification='original_official_patch_application_failure')
    else:raise RuntimeError('Original official report missing/ambiguous')
   else:
-   entry=json.loads(reports[0].read_text())[iid];result['original_report']=entry;result['original_report_sha256']=sha(reports[0]);test_log=reports[0].parent/LOG_TEST_OUTPUT;statuses,found=get_logs_eval(spec,str(test_log));coverage={}
-   for category,expected in [('FAIL_TO_PASS',spec.FAIL_TO_PASS),('PASS_TO_PASS',spec.PASS_TO_PASS)]:
-    detail=entry['tests_status'][category];reported=detail['success']+detail['failure']
-    # Per-test coverage is retained as information; official outcome governs.
-    keys=[_resolve_case(t,statuses) for t in expected];coverage[category]=dict(expected=len(expected),parsed_expected=sum(k is not None for k in keys),success=len(detail['success']),failure=len(detail['failure']))
-   result['coverage']=coverage;result['test_output_found']=found
-   if type(entry.get('resolved')) is not bool:raise RuntimeError('Official resolved field unavailable')
-   # Do not add our own per-test solve/eligibility requirements.
-   result.update(solved=entry['resolved'],grade_valid=True,classification='original_official_report')
+   entry=json.loads(reports[0].read_text())[iid];result['original_report']=entry;result['original_report_sha256']=sha(reports[0])
+   def diagnostics():
+    test_log=reports[0].parent/LOG_TEST_OUTPUT;statuses,found=get_logs_eval(spec,str(test_log));coverage={}
+    for category,expected in [('FAIL_TO_PASS',spec.FAIL_TO_PASS),('PASS_TO_PASS',spec.PASS_TO_PASS)]:
+     detail=entry['tests_status'][category]
+     keys=[_resolve_case(t,statuses) for t in expected];coverage[category]=dict(expected=len(expected),parsed_expected=sum(k is not None for k in keys),success=len(detail['success']),failure=len(detail['failure']))
+    return dict(coverage=coverage,test_output_found=found)
+   # Resolve the official boolean before optional test-status/log diagnostics.
+   # A model crash can legitimately omit tests_status;it is not an unknown grade.
+   from report_outcome import adjudicate_report
+   result.update(adjudicate_report(entry,diagnostics))
  except Exception as e:result['errors'].append(dict(type=type(e).__name__,message=str(e)[:500]))
  finally:
   for name in owned:
