@@ -67,6 +67,19 @@ Our standalone skill solved more attempts than no skill and than Ours + Karpathy
 
 Token results against no skill remain mixed: synthetic cost per solve increased, and SWE-bench lower bounds do not establish an exact saving. On solve counts, NVlabs SoL-Pi matched no skill on synthetic diagnostics and solved fewer SWE-bench attempts than every Claude Code condition, but its harness differs. These small pilots do not establish a general performance advantage or superiority to NVlabs SoL-Pi.
 
+### Full SWE-bench Verified
+
+All 444 SWE-bench Verified issues that pass the official gold/no-op grader controls (56 of 500 fail them), one run per issue and condition. Codex 0.160.0 · Qwen3.8-27B.
+
+| Condition | Solved ↑ | Tokens / solve ↓ |
+|---|---:|---:|
+| No skill | 146/444 (32.9%) | ≥553k |
+| Karpathy | 161/444 (36.3%) | **≥541k** |
+| **Ours: `efficient-coding`** | **181/444 (40.8%)** | ≥555k |
+| Ours + Karpathy | 161/444 (36.3%) | ≥606k |
+
+Our skill solved **7.9 percentage points more issues than no skill** (paired 95% interval +2.9 to +12.8; exact McNemar p = 0.002) at about the same tokens per solve. Its lead over Karpathy (+4.5 points, interval −0.5 to +9.5) is not conclusive, and adding Karpathy to our skill did not help. No tokens-per-solve difference is established. [G5 report](tests/framework/refinement/g5/report.md)
+
 [Full comparison and development history](docs/evaluation.md) · [Original report](tests/report.md) · [Comparison chart](assets/benchmark-numbers.svg)
 
 ## Installation
