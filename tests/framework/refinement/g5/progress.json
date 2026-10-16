@@ -1,55 +1,44 @@
 {
   "stage": "models",
-  "completed_cells": 65,
+  "completed_cells": 719,
   "planned_eligible_cells": 1776,
   "active_slots": 16,
   "rolling_slots": 16,
-  "http5xx_count": 504,
-  "http_response_5xx_count": 168,
-  "native_5xx_diagnostic_count": 336,
+  "http5xx_count": 507,
+  "http_response_5xx_count": 169,
+  "native_5xx_diagnostic_count": 338,
   "http5xx_count_unit": "all recorded observations;response and native diagnostics separately reported",
-  "terminal_5xx_attempts": 164,
-  "solves": 14,
+  "terminal_5xx_attempts": 165,
+  "solves": 232,
   "infra_exhausted": 0,
-  "requests": 1894,
-  "known_tokens_lower_bound": 24900933,
-  "retry_overhead_tokens_lower_bound": 19784531,
-  "root_free_bytes": 2041880137728,
+  "requests": 9474,
+  "known_tokens_lower_bound": 155896013,
+  "retry_overhead_tokens_lower_bound": 26388035,
+  "root_free_bytes": 1946357063680,
   "circuit_pause_until_epoch": 0,
-  "phase": "models-resume-v3",
-  "observed_controller_pid": 1166377,
+  "phase": "models-resume-v4",
+  "observed_controller_pid": 2527728,
   "observed_controller_alive": true,
-  "controller_cwd": "G5 directory",
-  "observed_utc": "2026-10-15T22:39:30.617169+00:00",
-  "allowance_commit": "6cd4966",
-  "tests_passed_from_g5_directory": 64,
+  "observed_utc": "2026-10-16T04:54:02.647691+00:00",
+  "allowance_commit": "00686c2",
+  "tests_passed_from_g5_directory": 69,
   "real_docker_lifecycle_tests": 4,
-  "patches_scanned": 233,
-  "pyc_affected_patches": 50,
-  "literal_Binary_files_patches": 0,
-  "nonempty_cleaned_official_regrades": 30,
-  "empty_historical_outcome_corrections": 60,
-  "regrading_model_calls": 0,
-  "retained_latest_grade_valid_cells": 65,
-  "retained_latest_unknown_outcomes": 0,
-  "source_regrade_solved_per_arm_before_after": {
-    "none": [
-      2,
-      2
-    ],
-    "K": [
-      3,
-      3
-    ],
-    "ours": [
-      5,
-      5
-    ],
-    "Both": [
-      4,
-      4
-    ]
-  },
-  "regrading_known_model_tokens_unchanged": true,
+  "official_report_missing_status_cells_corrected": [
+    "g5-037-K",
+    "g5-112-K",
+    "g5-112-Both",
+    "g5-171-K"
+  ],
+  "report_adjudication_model_calls": 0,
+  "report_adjudication_grader_reruns": 0,
+  "report_adjudication_test_reruns": 0,
+  "report_adjudication_known_tokens_unchanged": true,
+  "completed_cells_retained_at_transition": 712,
+  "solves_before_and_after_adjudication": [
+    231,
+    231
+  ],
+  "unknown_latest_outcomes_after_adjudication": 0,
+  "source_controller_drained_without_killing_inflight_work": true,
   "no_push": true
 }
