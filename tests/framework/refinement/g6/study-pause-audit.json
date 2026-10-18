@@ -1,0 +1,226 @@
+{
+  "status": "PAUSED;false-positive quota guard from stale estimator initialization",
+  "allowance_commit": "671d86c770c00e8d305e39a175e58d8d72bae914",
+  "study_target": 300,
+  "study_native_calls": 3,
+  "valid_grades": 3,
+  "solves": 3,
+  "complete_pairs": 1,
+  "unstarted_cells": 297,
+  "setup_only_no_native_attempts": [
+    {
+      "task": "django__django-13410",
+      "arm": "ours",
+      "attempt": 1,
+      "native_started": false,
+      "reason": "promised second-arm quota guard before credential/API admission"
+    }
+  ],
+  "totals": {
+    "uncached_input": 40,
+    "cache_creation": 25694,
+    "cache_read": 349380,
+    "output": 4307
+  },
+  "study_token_volume": 379421,
+  "study_cache_proxy": 71402.5,
+  "prior_smoke_tokens_separate": 812369,
+  "no_quality_pooling": true,
+  "rows": [
+    {
+      "task": "django__django-13410",
+      "arm": "none",
+      "attempt": 1,
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 8,
+        "cache_creation": 5622,
+        "cache_read": 59653,
+        "output": 944
+      },
+      "token_volume": 66227,
+      "cache_proxy": 13944.8,
+      "wall_seconds": 26.374552376568317,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "4f5b61b6859c67b01bffd402d2a9eaeb605d4f2375b210033c7b335b2d3735aa",
+      "context_sha256": "6687de2f35b09883d00053ec32bd0aa9627a45a5ea1c277b80afcb7f239844cd",
+      "grade_sha256": "1d4ef94fd9d3ec9744cca0a87f650202434be0c475743a72c95189573f32751b"
+    },
+    {
+      "task": "matplotlib__matplotlib-26342",
+      "arm": "none",
+      "attempt": 1,
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 16,
+        "cache_creation": 9338,
+        "cache_read": 139305,
+        "output": 1612
+      },
+      "token_volume": 150271,
+      "cache_proxy": 27231.0,
+      "wall_seconds": 40.5359452906996,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "b5fb1962a3a6aae68d2406ba53d28979c809dc67b7b1272a4246424dc3df7e0b",
+      "context_sha256": "bc9fd0435fad05236c4e186935fa6f7b9d8953d630fc8b103e98c9d063853ec6",
+      "grade_sha256": "5d719cbfd6c9a4eae0124be994dd83c22e1544788488bfe2c670e337916d04c8"
+    },
+    {
+      "task": "matplotlib__matplotlib-26342",
+      "arm": "ours",
+      "attempt": 1,
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 16,
+        "cache_creation": 10734,
+        "cache_read": 150422,
+        "output": 1751
+      },
+      "token_volume": 162923,
+      "cache_proxy": 30226.7,
+      "wall_seconds": 42.651016825810075,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "2471e995fee3452cd18e8ead76d389436edd8c012151a3be3f61003021ff56f4",
+      "context_sha256": "b22570799cc1de94d1581e1587269186e7798f57a98e3f607ada031f08e9d717",
+      "grade_sha256": "7dac4e8b9f5ff4862824fb788572e2c2615219ec498ecc79f2aa8e2e02edb201"
+    }
+  ],
+  "latest_utilization": {
+    "seven_day": 0.8,
+    "five_hour": 0.2
+  },
+  "reported_running_rates": {
+    "seven_day": 0.040000000000000036,
+    "five_hour": 0.1
+  },
+  "initial_retained_weekly": 0.76,
+  "first_live_weekly": 0.79,
+  "retained_to_live_gap_seconds": 3025.6479845046997,
+  "actual_denial": {
+    "utc": "2026-10-18T19:24:56.273327+00:00",
+    "kind": "quota_hold",
+    "projections": {
+      "seven_day": {
+        "utilization": 0.8,
+        "rate": 0.040000000000000036,
+        "unknown": false,
+        "anchor_utilization": 0.76,
+        "anchor_completed": 0,
+        "last_step": 4,
+        "reset": 1792353600,
+        "observed_epoch": 1792351433.3302436,
+        "origin": "django__django-13410/none/1",
+        "observation_window_expired": false,
+        "threshold": 0.9,
+        "projected": 0.9200000000000002,
+        "inflight_native": 0,
+        "reserved_cells": 3,
+        "completed_study_cells": 1,
+        "observation_age_seconds": 62.94301390647888
+      },
+      "five_hour": {
+        "utilization": 0.19,
+        "rate": 0.19,
+        "unknown": false,
+        "anchor_utilization": 0.0,
+        "anchor_completed": 0,
+        "last_step": 19,
+        "reset": 1792365600,
+        "observed_epoch": 1792351433.3301368,
+        "origin": "django__django-13410/none/1",
+        "observation_window_expired": false,
+        "threshold": 0.9,
+        "projected": 0.76,
+        "inflight_native": 0,
+        "reserved_cells": 3,
+        "completed_study_cells": 1,
+        "observation_age_seconds": 62.9431254863739
+      }
+    }
+  },
+  "diagnosis": "The estimator incorrectly used stale pre-study smoke values as learning anchors;cumulative increases included the3pp weekly/19pp five-hour already present at first live observation. Weekly utilization then rose79% to80% within the study. These cumulative increases cannot all be assigned to study cells. Actual utilization did not reach90%. Do not call these observed per-study-run rates. No source correction or inference restart without supervisor decision.",
+  "diagnosis_independent_of_quality": true,
+  "all_python_hashes_match_inference_allowance": true,
+  "controller_absent": true,
+  "owned_actors_graders_proxy_network_absent": true,
+  "owned_stage_image_ids_absent": [
+    "sha256:005276f8388eeee1caec470c4d8da926cccaa959a74ef22545ad857f62c6bde8",
+    "sha256:11bba6b4d40a8935bc8eb84c7a42c199de121201bea21cc8206bb8fb7675f43e",
+    "sha256:6ed9aa56ac3507254811ed94aed2ceb83affd98a7f7064d763c1f1ccaffde785",
+    "sha256:759aeac26fa8ad55e2b7bcf85bc16b903ac3cd986c71f0a316947a44bbf29c11",
+    "sha256:b0224e25a922b8d65d3e569ff7aaf78afe3a4996e77281ca72d6c0b56c331eab",
+    "sha256:baba2f10e4dc2c9a8bfdde76b1db7f6c0ce525dc1426e75665af3569a3eb609e",
+    "sha256:d53f7aa080220946ebc12246c9f9d811e1fb2547f88078640b1a9d9d230950be"
+  ],
+  "preserved_preexisting_base_ids": [
+    "sha256:f5fa79b26f52016a0cdaf12d7f41b37ad9534d392d61a3399f504de9c5a8600e"
+  ],
+  "force_image_removal_or_parent_pruning": false,
+  "literal_credential_scan_regular_files": 107724,
+  "symlinks_not_followed": 66,
+  "native_context_redactions": 0,
+  "literal_scan_not_arbitrary_encoding_guarantee": true,
+  "no_429_5xx_overloaded": true,
+  "no_new_week_utilization_observation": true,
+  "no_automatic_restart": true
+}
