@@ -1,0 +1,196 @@
+{
+  "phase": "smoke only;excluded from scoring",
+  "complete": false,
+  "status": "BLOCKED: control advertised bundled plugins; three of four native cells ran",
+  "study_ready": false,
+  "isolation_guard_relaxed": false,
+  "automatic_restart_permitted": false,
+  "activation_field_definition": "ours_loaded means advertised in init.skills, not independently proven full SKILL.md loading; see smoke-audit.json",
+  "study_authorized": false,
+  "study_cells_launched": 0,
+  "awaiting_explicit_go": true,
+  "runs": [
+    {
+      "task": "django__django-12663",
+      "arm": "ours",
+      "attempts": 1,
+      "native_started": true,
+      "cli_version": "2.1.302",
+      "plugin_commit": "920c32eb69fff4227fe1e3991046b43a805ec61e",
+      "requested_model": "claude-opus-5-5",
+      "provider_model_ids": [
+        "claude-opus-5-5"
+      ],
+      "usage_complete": true,
+      "all_category_values_are_lower_bounds": false,
+      "per_model_all_attempts": {
+        "claude-opus-5-5": {
+          "uncached_input": 8,
+          "cache_creation": 7559,
+          "cache_read": 61476,
+          "output": 1531
+        }
+      },
+      "all_attempt_totals": {
+        "uncached_input": 8,
+        "cache_creation": 7559,
+        "cache_read": 61476,
+        "output": 1531
+      },
+      "token_volume_lower_bound": 70574,
+      "cache_adjusted_volume_5m_proxy": 17135.35,
+      "wall_seconds_all_attempts": 27.66595834493637,
+      "ours_loaded": true,
+      "ours_invoked": false,
+      "grade_valid": true,
+      "solved": true,
+      "rate_limit_events": [
+        {
+          "status": "allowed_warning",
+          "resetsAt": 1792353600,
+          "rateLimitType": "seven_day",
+          "utilization": 0.75
+        }
+      ],
+      "terminal_5xx_attempts": 0,
+      "native_error_statuses": [],
+      "harness_stopped": false,
+      "owned_actor_absence_verified": true
+    },
+    {
+      "task": "django__django-12663",
+      "arm": "none",
+      "attempts": 1,
+      "native_started": true,
+      "cli_version": "2.1.302",
+      "plugin_commit": "920c32eb69fff4227fe1e3991046b43a805ec61e",
+      "requested_model": "claude-opus-5-5",
+      "provider_model_ids": [
+        "claude-opus-5-5"
+      ],
+      "usage_complete": true,
+      "all_category_values_are_lower_bounds": false,
+      "per_model_all_attempts": {
+        "claude-opus-5-5": {
+          "uncached_input": 8,
+          "cache_creation": 20919,
+          "cache_read": 60860,
+          "output": 1144
+        }
+      },
+      "all_attempt_totals": {
+        "uncached_input": 8,
+        "cache_creation": 20919,
+        "cache_read": 60860,
+        "output": 1144
+      },
+      "token_volume_lower_bound": 82931,
+      "cache_adjusted_volume_5m_proxy": 33386.75,
+      "wall_seconds_all_attempts": 32.17952428013086,
+      "ours_loaded": false,
+      "ours_invoked": false,
+      "grade_valid": false,
+      "solved": null,
+      "rate_limit_events": [
+        {
+          "status": "allowed_warning",
+          "resetsAt": 1792353600,
+          "rateLimitType": "seven_day",
+          "utilization": 0.75
+        }
+      ],
+      "terminal_5xx_attempts": 0,
+      "native_error_statuses": [],
+      "harness_stopped": true,
+      "owned_actor_absence_verified": true
+    },
+    {
+      "task": "matplotlib__matplotlib-25311",
+      "arm": "ours",
+      "attempts": 1,
+      "native_started": true,
+      "cli_version": "2.1.302",
+      "plugin_commit": "920c32eb69fff4227fe1e3991046b43a805ec61e",
+      "requested_model": "claude-opus-5-5",
+      "provider_model_ids": [
+        "claude-opus-5-5"
+      ],
+      "usage_complete": true,
+      "all_category_values_are_lower_bounds": false,
+      "per_model_all_attempts": {
+        "claude-opus-5-5": {
+          "uncached_input": 18,
+          "cache_creation": 7442,
+          "cache_read": 151858,
+          "output": 1908
+        }
+      },
+      "all_attempt_totals": {
+        "uncached_input": 18,
+        "cache_creation": 7442,
+        "cache_read": 151858,
+        "output": 1908
+      },
+      "token_volume_lower_bound": 161226,
+      "cache_adjusted_volume_5m_proxy": 26414.300000000003,
+      "wall_seconds_all_attempts": 88.87593241035938,
+      "ours_loaded": true,
+      "ours_invoked": false,
+      "grade_valid": true,
+      "solved": true,
+      "rate_limit_events": [
+        {
+          "status": "allowed_warning",
+          "resetsAt": 1792353600,
+          "rateLimitType": "seven_day",
+          "utilization": 0.75
+        },
+        {
+          "status": "allowed_warning",
+          "resetsAt": 1792353600,
+          "rateLimitType": "seven_day",
+          "utilization": 0.75
+        }
+      ],
+      "terminal_5xx_attempts": 0,
+      "native_error_statuses": [],
+      "harness_stopped": false,
+      "owned_actor_absence_verified": true
+    },
+    {
+      "task": "matplotlib__matplotlib-25311",
+      "arm": "none",
+      "attempts": 0,
+      "native_started": false,
+      "cli_version": "2.1.302",
+      "plugin_commit": "920c32eb69fff4227fe1e3991046b43a805ec61e",
+      "requested_model": "claude-opus-5-5",
+      "provider_model_ids": [],
+      "usage_complete": false,
+      "all_category_values_are_lower_bounds": true,
+      "per_model_all_attempts": {},
+      "all_attempt_totals": {
+        "uncached_input": 0,
+        "cache_creation": 0,
+        "cache_read": 0,
+        "output": 0
+      },
+      "token_volume_lower_bound": 0,
+      "cache_adjusted_volume_5m_proxy": 0.0,
+      "wall_seconds_all_attempts": 0,
+      "ours_loaded": null,
+      "ours_invoked": null,
+      "grade_valid": false,
+      "solved": null,
+      "rate_limit_events": [],
+      "terminal_5xx_attempts": 0,
+      "native_error_statuses": [],
+      "harness_stopped": false,
+      "owned_actor_absence_verified": null
+    }
+  ],
+  "root_free_bytes": 1821918355456,
+  "private_preregistration_sha256": "7f33b508aea17728b0bc0e9ff4ce004ef184f5b20fb012f5cdaa75c72e79276a",
+  "raw_evidence_private": true,
+  "no_push": true
+}

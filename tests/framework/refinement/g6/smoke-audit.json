@@ -1,0 +1,138 @@
+{
+  "status": "BLOCKED:partial smoke;no study authorization",
+  "native_runs": 3,
+  "expected_smoke_cells": 4,
+  "study_runs": 0,
+  "known_valid_grades": 2,
+  "valid_solves": 2,
+  "quality_unknown_after_guard": 1,
+  "unstarted_cells": 1,
+  "reported_usage_complete_for_all_native_runs": true,
+  "total_reported_token_volume": 314731,
+  "total_reported_categories": {
+    "uncached_input": 34,
+    "cache_creation": 35920,
+    "cache_read": 274194,
+    "output": 4583
+  },
+  "cache_adjusted_5m_token_volume_proxy": 76936.4,
+  "cache_proxy_is_not_dollars": true,
+  "terminal_5xx": 0,
+  "rejected_rate_limits": 0,
+  "rate_limit_warning": "allowed_warning;seven_day;utilization0.75;reset1792353600;not a smoke-attributed usage delta",
+  "guard_reason": "Control advertised cc-plugin-agents-md and cc-plugin-plugin-authoring with builtin source despite empty installed inventory and disabled skills;guard fired before control capture/grading",
+  "activation_definition": "ours_loaded in parser means init.skills advertisement,not independently proven full SKILL.md loading;explicit Skill calls and Read events listed separately",
+  "owned_containers_remaining": [],
+  "owned_controller_absent": true,
+  "frozen_runner_source_hashes_unchanged": true,
+  "exact_model_stage_image_and_base_ids_verified_absent": 8,
+  "source_preparers_verified_absent": true,
+  "owned_network_and_proxy_cleanup_completed": true,
+  "dedicated_token_literal_absent_from_all_scanned_attempt_files": true,
+  "files_scanned": 60411,
+  "dedicated_token_mode600": true,
+  "raw_evidence_private": true,
+  "sanitized_attempt_metadata": [
+    {
+      "task": "django__django-12663",
+      "arm": "none",
+      "attempt": 1,
+      "native_started": true,
+      "attempt_result_sha256": "ada461f63f89b657b00d3f7cb9cf23a35ad625dc95db248393077c224983138f",
+      "native_sha256": "9c7f2721dc83d0a67f505bfce2a395595bc83c5526589111fd7e7d154bc0a720",
+      "grade_valid": false,
+      "solved": null,
+      "usage_complete": true,
+      "reported_categories": {
+        "uncached_input": 8,
+        "cache_creation": 20919,
+        "cache_read": 60860,
+        "output": 1144
+      },
+      "token_volume": 82931,
+      "primary_model_ids": [
+        "claude-opus-5-5"
+      ],
+      "native_error_count": 0,
+      "native_redactions": 0,
+      "owned_actor_absent": true,
+      "owned_graders_absent": true,
+      "advertised_builtin_plugins": [
+        "cc-plugin-agents-md",
+        "cc-plugin-plugin-authoring"
+      ],
+      "ours_advertised": false,
+      "explicit_skill_invocation": false,
+      "explicit_skill_Read_events": 0,
+      "full_skill_body_load_independently_proven": false
+    },
+    {
+      "task": "django__django-12663",
+      "arm": "ours",
+      "attempt": 1,
+      "native_started": true,
+      "attempt_result_sha256": "8be05e620823670aaf8cc17539ca50b6d08ab13f62139958d90d3106971d1b80",
+      "native_sha256": "ff870f6eb399c4a7ff003f12845118dbab528e3db2144ecc6fd99304d3a6c691",
+      "grade_valid": true,
+      "solved": true,
+      "usage_complete": true,
+      "reported_categories": {
+        "uncached_input": 8,
+        "cache_creation": 7559,
+        "cache_read": 61476,
+        "output": 1531
+      },
+      "token_volume": 70574,
+      "primary_model_ids": [
+        "claude-opus-5-5"
+      ],
+      "native_error_count": 0,
+      "native_redactions": 0,
+      "owned_actor_absent": true,
+      "owned_graders_absent": true,
+      "advertised_builtin_plugins": [
+        "cc-plugin-agents-md",
+        "cc-plugin-plugin-authoring"
+      ],
+      "ours_advertised": true,
+      "explicit_skill_invocation": false,
+      "explicit_skill_Read_events": 0,
+      "full_skill_body_load_independently_proven": false
+    },
+    {
+      "task": "matplotlib__matplotlib-25311",
+      "arm": "ours",
+      "attempt": 1,
+      "native_started": true,
+      "attempt_result_sha256": "8374657c084dcab6f63957fb31feadc26a8e36c49044fc2cb9d00a30eb0a3023",
+      "native_sha256": "f5b449ed00cdb6f1a3d4c59c6c7e04d7f8af49152dd0d0fd0cd6484865286a20",
+      "grade_valid": true,
+      "solved": true,
+      "usage_complete": true,
+      "reported_categories": {
+        "uncached_input": 18,
+        "cache_creation": 7442,
+        "cache_read": 151858,
+        "output": 1908
+      },
+      "token_volume": 161226,
+      "primary_model_ids": [
+        "claude-opus-5-5"
+      ],
+      "native_error_count": 0,
+      "native_redactions": 0,
+      "owned_actor_absent": true,
+      "owned_graders_absent": true,
+      "advertised_builtin_plugins": [
+        "cc-plugin-agents-md",
+        "cc-plugin-plugin-authoring"
+      ],
+      "ours_advertised": true,
+      "explicit_skill_invocation": false,
+      "explicit_skill_Read_events": 0,
+      "full_skill_body_load_independently_proven": false
+    }
+  ],
+  "no_quality_or_token_ratio_inference_from_incomplete_smoke": true,
+  "awaiting_supervisor_direction": true
+}
