@@ -1467,7 +1467,8 @@
       "adaptive_reservation": "For every reported window/model scope,max(0.05,2*largest observed positive utilization change between native runs/events). Sum outstanding run reservations with latest actual utilization;reject admission if any projection >=0.90. No finite reservation is a provider guarantee;unrelated account use can race observations.",
       "live": "Consume stream rate events while inference is running,not only final results;track all seven_day,shorter-window/model-specific scopes reported. Missing utilization is unknown,never zero;new unknown scopes block fresh admissions. Seed last actual seven_day0.75 observation conservatively;do not reset it to zero on elapsed reset time. Report timestamp/staleness and unreported-window coverage limitations.",
       "resume": "Quota holds admit nothing until newer actual numeric observations show headroom with all in-flight reservations. In-flight calls drain;without fresh observations,stop as incomplete and require verified refreshed stream evidence for restart. No inference-only quota probes. N stays150;budget exhaustion means incomplete study,not smaller N.",
-      "initial_concurrency": 2
+      "initial_concurrency": 2,
+      "restart_hardening_after_replacement_smoke": "Before any future inference,replay retained study as well as smoke quota observations;persist the requirement for actual refresh after rate rejection even without numeric counters. This implementation hardening adds no model call or estimation change;future calls require a new frozen allowance."
     }
   },
   "isolation": "Explicit-v2: fresh disposable HOME and fixed runner settings;no host config,CLAUDE.md,memory,skills,hooks or credentials. Both arms enable the same pinned stock skills/built-ins;control has no external plugin mount;treatment normally installs frozen distill-sol-pi only. Exact stream plugin/skill-set guard plus continuing mount/config/instruction-source audit.",

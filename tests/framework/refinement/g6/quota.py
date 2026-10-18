@@ -6,7 +6,9 @@ class QuotaHold(RuntimeError):pass
 class Quota:
     def __init__(self,seed,record=lambda x:None):
         self.lock=threading.RLock();self.scopes={};self.active={};self.record=record;self.seen=set()
-        for event in seed:self.observe(event['info'],'prior-natural-smoke',event['observed_epoch'])
+        for event in seed:
+            if event.get('require_refresh'):self.require_refresh()
+            else:self.observe(event['info'],'prior-retained-native-stream',event['observed_epoch'])
     def observe(self,event,origin,observed_epoch=None):
         # Native versions can expose additional named scopes in nested arrays/maps.
         if isinstance(event,list):

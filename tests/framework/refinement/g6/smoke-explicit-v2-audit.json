@@ -1,0 +1,178 @@
+{
+  "replacement_complete": true,
+  "study_authorized": false,
+  "study_calls": 0,
+  "target_study_N": 150,
+  "all_smoke_excluded": true,
+  "replacement_native_runs": 4,
+  "replacement_reported_tokens": 497638,
+  "prior_natural_runs": 3,
+  "prior_natural_tokens": 314731,
+  "all_smoke_reported_tokens_cost_bookkeeping_only": 812369,
+  "prior_quality_not_pooled": true,
+  "exact_model_stage_image_ids_absent": 14,
+  "owned_controllers_containers_networks_absent": true,
+  "preparers_absent": true,
+  "native_artifact_token_literal_scan_passed": true,
+  "files_scanned": 120841,
+  "extra_model_or_grader_reruns_for_guard_correction": 0,
+  "metadata_correction_disclosed": true,
+  "paired_timing_interrupted_by_metadata_guard": true,
+  "awaiting_explicit_study_go": true,
+  "runs": [
+    {
+      "task": "django__django-12663",
+      "arm": "none",
+      "native_sha256": "6d367e687ed10e05105aadf2e10d24256bcf8323fa2e0786157371c6f2ad8264",
+      "context_sha256": "4b99ee3fe144b0074f2d1a4f784ea4cf491fd917c29e45f3dee06e0bbfbbc75c",
+      "original_attempt_sha256": "36dd2c6e2e45cd5c7593ccd149de2e8afb8567199d4ee6ddc66af165e950e6d0",
+      "plugins": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "stock_skill_count": 17,
+      "full_task_input_bytes_verified": true,
+      "expanded_body_and_task_verified": true,
+      "reported_token_volume": 129044,
+      "grade_valid": true,
+      "solved": true,
+      "native_error_events": 0,
+      "quota_rejected": false,
+      "context_redactions": 0,
+      "native_redactions": 0
+    },
+    {
+      "task": "django__django-12663",
+      "arm": "ours",
+      "native_sha256": "ae6031b2f3dd4c1039a9798d121ccc96eb4aa7cadf543c7cefeeeb673be4b9ee",
+      "context_sha256": "c0d532b063e59e71dab90e33177361630ccb513a3d514d4701181f2e5170e61b",
+      "original_attempt_sha256": "a05f25685aa1c0594ba9bb873eb6f39f1ad4c31f3d6e4fe519ca806306e7a6c1",
+      "plugins": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "stock_skill_count": 17,
+      "full_task_input_bytes_verified": true,
+      "expanded_body_and_task_verified": true,
+      "reported_token_volume": 80329,
+      "grade_valid": true,
+      "solved": true,
+      "native_error_events": 0,
+      "quota_rejected": false,
+      "context_redactions": 0,
+      "native_redactions": 0
+    },
+    {
+      "task": "matplotlib__matplotlib-25311",
+      "arm": "none",
+      "native_sha256": "3867e59196ba515204d275a52a31996ccba7453ebe287a68fa76ab901288355a",
+      "context_sha256": "1a8c61b75b51ec5ccd3958326cf239a480b2c293b18df4a3699e4b8748b05f31",
+      "original_attempt_sha256": "80d0d82b2121e39911fdec89284ae77309e164b59c4f618d3400f9007987d5b8",
+      "plugins": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "stock_skill_count": 17,
+      "full_task_input_bytes_verified": true,
+      "expanded_body_and_task_verified": true,
+      "reported_token_volume": 138978,
+      "grade_valid": true,
+      "solved": true,
+      "native_error_events": 0,
+      "quota_rejected": false,
+      "context_redactions": 0,
+      "native_redactions": 0
+    },
+    {
+      "task": "matplotlib__matplotlib-25311",
+      "arm": "ours",
+      "native_sha256": "59c3648356139a4c29905b615bce6adaca75da0b1646ea86913f7ce0794c93b5",
+      "context_sha256": "ad87936065ac28b103db845cf49ee1775a5d34b9692d34f5719d84291ceeb5c8",
+      "original_attempt_sha256": "6af937ebff9c1c4ba335de52d480b92dc773260aae6191da84054d27191b3b10",
+      "plugins": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "stock_skill_count": 17,
+      "full_task_input_bytes_verified": true,
+      "expanded_body_and_task_verified": true,
+      "reported_token_volume": 149287,
+      "grade_valid": true,
+      "solved": true,
+      "native_error_events": 0,
+      "quota_rejected": false,
+      "context_redactions": 0,
+      "native_redactions": 0
+    }
+  ],
+  "source_hashes_match_final_frozen_stage_at_model_completion": true,
+  "post_smoke_offline_probe_helper_only_update": {
+    "source": "plumbing_v2.py",
+    "purpose": "Make fake-token network-none stock16 probe reproducible without relaxing authenticated runtime stock17 guard",
+    "remote_model_calls": 0
+  },
+  "post_smoke_quota_restart_hardening": {
+    "changed_sources": [
+      "plumbing_v2.py",
+      "quota.py",
+      "runner.py",
+      "test_explicit_v2.py"
+    ],
+    "purpose": "Reload study quota observations and retain rejected-rate refresh requirements across restarts;helper explicitly distinguishes offline stock16 from runtime authenticated17",
+    "remote_model_calls": 0,
+    "no_changes_during_model_calls": true,
+    "new_frozen_allowance_required": true
+  }
+}

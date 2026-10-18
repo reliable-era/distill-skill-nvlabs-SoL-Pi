@@ -30,6 +30,13 @@ class Explicit(unittest.TestCase):
         q.observe(dict(rateLimitType='seven_day',status='allowed',utilization=.4,resetsAt=2),'actual');q.reserve('a')
         q.require_refresh()
         with self.assertRaises(QuotaHold):q.reserve('b')
+    def test_restart_seeds_study_observations_and_requires_refresh(self):
+        from runner import Admissions
+        with tempfile.TemporaryDirectory() as d:
+            root=pathlib.Path(d);a=root/'study/task/none-a1';a.mkdir(parents=True);(a/'native.jsonl').write_text('');(a/'attempt-result.json').write_text(json.dumps(dict(stream=dict(rate_limit_events=[dict(rateLimitType='seven_day',utilization=.88,resetsAt=1)],rate_limited=True))))
+            quota=Admissions(root).quota
+            with self.assertRaises(QuotaHold):quota.reserve('new')
+            quota.observe(dict(rateLimitType='seven_day',utilization=.2,resetsAt=2),'fresh actual');quota.reserve('new')
     def test_nested_model_scope(self):
         q=self.quota();q.observe(dict(seven_day_opus=dict(utilization=.89,resetsAt=1)),'actual')
         with self.assertRaises(QuotaHold):q.reserve('a')

@@ -20,7 +20,7 @@ def main():
                 try:process.wait(timeout=30)
                 except subprocess.TimeoutExpired:command(['docker','stop','-t','1',name]);process.wait(timeout=10)
                 thread.join(timeout=10);assert not thread.is_alive()
-            m=parse(out);plugins=plugin_guard(m,arm,p['amendment_explicit_v2']);context=d/(arm+'-context.jsonl');raw=command(['docker','exec',name,'python3','/opt/g6/entry.py','context',m['session_id']]).stdout;context.write_bytes(raw.replace(fake,b'X'*len(fake)));e=expansion_evidence(context,task,skill,arm);rows.append(dict(arm=arm,plugins=plugins,expansion=e,network='none',dedicated_token_read=False,remote_model_calls=0,native_sha256=sha(out)))
+            m=parse(out);offline=dict(p['amendment_explicit_v2']);offline['stock_skills']=[s for s in offline['stock_skills'] if s!='schedule'];plugins=plugin_guard(m,arm,offline);context=d/(arm+'-context.jsonl');raw=command(['docker','exec',name,'python3','/opt/g6/entry.py','context',m['session_id']]).stdout;context.write_bytes(raw.replace(fake,b'X'*len(fake)));e=expansion_evidence(context,task,skill,arm);rows.append(dict(arm=arm,plugins=plugins,offline_stock_profile='fake-token/network-none omits schedule;NOT authenticated baseline;runtime still requires17',expansion=e,network='none',dedicated_token_read=False,remote_model_calls=0,native_sha256=sha(out)))
         finally:remove(name,root.name)
     save(root/'plumbing-explicit-v2-proof.json',rows)
     save(H/'plumbing-explicit-v2-summary.json',dict(network_none=True,dedicated_token_read=False,remote_model_calls=0,checks=rows,proof_sha256=sha(root/'plumbing-explicit-v2-proof.json'),passed=all(x['expansion']['command_expansion_verified'] for x in rows)))

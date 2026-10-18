@@ -1,0 +1,631 @@
+{
+  "phase": "smoke-explicit-v2",
+  "complete": true,
+  "explicitly_invoking_claim": true,
+  "post_two_treatment_outcomes_amendment_disclosed": true,
+  "study_authorized": false,
+  "study_runs": 0,
+  "study_N_fixed": 150,
+  "all_smoke_excluded_from_scoring": true,
+  "prior_natural_runs": 3,
+  "prior_natural_tokens": 314731,
+  "prior_natural_quality_not_pooled": true,
+  "replacement_native_runs": 4,
+  "replacement_reported_tokens": 497638,
+  "runs": [
+    {
+      "task": "django__django-12663",
+      "arm": "ours",
+      "activation_mode": "explicit-v2",
+      "native_attempts": 1,
+      "attempts_retained": 1,
+      "native_wall_seconds": 35.84888618811965,
+      "provider_models": [
+        "claude-opus-5-5"
+      ],
+      "usage_complete": true,
+      "per_model": [
+        {
+          "claude-opus-5-5": {
+            "uncached_input": 8,
+            "cache_creation": 10062,
+            "cache_read": 68534,
+            "output": 1725
+          }
+        }
+      ],
+      "totals": {
+        "uncached_input": 8,
+        "cache_creation": 10062,
+        "cache_read": 68534,
+        "output": 1725
+      },
+      "reported_token_volume": 80329,
+      "cache_adjusted_5m_proxy": 21163.9,
+      "plugins": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "guard_readjudication": {
+        "original_attempt_sha256": "a05f25685aa1c0594ba9bb873eb6f39f1ad4c31f3d6e4fe519ca806306e7a6c1",
+        "verified_plugins": [
+          {
+            "name": "distill-sol-pi",
+            "path": "/opt/g6/marketplace",
+            "source": "distill-sol-pi@sol-pi-skills",
+            "version": "1.0.0"
+          },
+          {
+            "name": "cc-plugin-agents-md",
+            "path": "builtin",
+            "source": "cc-plugin-agents-md@builtin",
+            "version": null
+          },
+          {
+            "name": "cc-plugin-plugin-authoring",
+            "path": "builtin",
+            "source": "cc-plugin-plugin-authoring@builtin",
+            "version": null
+          }
+        ],
+        "reason": "offline fake-token schedule omission;authenticated stock17;no model/grader rerun",
+        "grade_unchanged": true,
+        "cost_unchanged": true
+      },
+      "plugin_version_note": "builtin independent version absent/null;code bound to CLI2.1.302/frozen binary SHA",
+      "configuration_guard_failed": true,
+      "expansion": {
+        "activation_mode": "explicit-v2",
+        "submitted_task_sha256": "3e5362d33d1c6cde408dbd2798a7398eaec71364baf093062d7fa08224f4b2a4",
+        "submitted_prompt_sha256": "14433abca033e47aee4805ed2bdbc463bb3ad85d9512d6e112fb1cfcb0fc1291",
+        "skill_body_sha256": "c712dcfdac77968ce4a87db91e91364d2926fcdf34e88297fd420051430563ee",
+        "pre_assistant_user_event_indices": [
+          2,
+          3
+        ],
+        "full_task_content_observed": true,
+        "full_task_bytes_observed": false,
+        "outer_newline_trimming_only": true,
+        "full_skill_body_observed": true,
+        "command_expansion_verified": true,
+        "task_evidence_scope": "native root conversation JSONL user-context stream before first assistant;not SDK replay alone,init advertisement or model self-report"
+      },
+      "grade_valid": true,
+      "solved": true,
+      "quota_before": {
+        "seven_day": {
+          "utilization": 0.75,
+          "reset": 1792353600,
+          "observed_epoch": 1792347760.0505402,
+          "origin": "prior-natural-smoke",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.8,
+          "inflight": 0,
+          "observation_age_seconds": 24.986868619918823
+        },
+        "five_hour": {
+          "utilization": 0.23,
+          "reset": 1792347600,
+          "observed_epoch": 1792347760.050517,
+          "origin": "prior-natural-smoke",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.28,
+          "inflight": 0,
+          "observation_age_seconds": 24.98689842224121
+        }
+      },
+      "quota_after": {
+        "seven_day": {
+          "utilization": 0.76,
+          "reset": 1792353600,
+          "observed_epoch": 1792347790.1422753,
+          "origin": "django__django-12663/ours/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.76,
+          "inflight": 0,
+          "observation_age_seconds": 30.86287522315979
+        },
+        "five_hour": {
+          "utilization": 0.0,
+          "reset": 1792365600,
+          "observed_epoch": 1792347790.14217,
+          "origin": "django__django-12663/ours/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.0,
+          "inflight": 0,
+          "observation_age_seconds": 30.862982273101807
+        }
+      },
+      "rate_events": [
+        {
+          "status": "allowed_warning",
+          "resetsAt": 1792353600,
+          "rateLimitType": "seven_day",
+          "utilization": 0.76,
+          "overageStatus": "rejected",
+          "overageDisabledReason": "org_level_disabled",
+          "isUsingOverage": false,
+          "surpassedThreshold": 0.75,
+          "unifiedWindows": {
+            "five_hour": {
+              "utilization": 0,
+              "resetsAt": 1792365600
+            },
+            "seven_day": {
+              "utilization": 0.76,
+              "resetsAt": 1792353600
+            }
+          }
+        }
+      ],
+      "owned_actor_absent": true,
+      "owned_graders_absent": true,
+      "attempt_metadata_sha256": [
+        "a05f25685aa1c0594ba9bb873eb6f39f1ad4c31f3d6e4fe519ca806306e7a6c1"
+      ],
+      "context_sha256": "c0d532b063e59e71dab90e33177361630ccb513a3d514d4701181f2e5170e61b",
+      "error": null
+    },
+    {
+      "task": "django__django-12663",
+      "arm": "none",
+      "activation_mode": "explicit-v2",
+      "native_attempts": 1,
+      "attempts_retained": 1,
+      "native_wall_seconds": 61.29133947938681,
+      "provider_models": [
+        "claude-opus-5-5"
+      ],
+      "usage_complete": true,
+      "per_model": [
+        {
+          "claude-opus-5-5": {
+            "uncached_input": 14,
+            "cache_creation": 8392,
+            "cache_read": 118043,
+            "output": 2595
+          }
+        }
+      ],
+      "totals": {
+        "uncached_input": 14,
+        "cache_creation": 8392,
+        "cache_read": 118043,
+        "output": 2595
+      },
+      "reported_token_volume": 129044,
+      "cache_adjusted_5m_proxy": 24903.300000000003,
+      "plugins": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "guard_readjudication": null,
+      "plugin_version_note": "builtin independent version absent/null;code bound to CLI2.1.302/frozen binary SHA",
+      "configuration_guard_failed": false,
+      "expansion": {
+        "activation_mode": "explicit-v2",
+        "submitted_task_sha256": "3e5362d33d1c6cde408dbd2798a7398eaec71364baf093062d7fa08224f4b2a4",
+        "submitted_prompt_sha256": "3e5362d33d1c6cde408dbd2798a7398eaec71364baf093062d7fa08224f4b2a4",
+        "skill_body_sha256": "c712dcfdac77968ce4a87db91e91364d2926fcdf34e88297fd420051430563ee",
+        "pre_assistant_user_event_indices": [
+          2
+        ],
+        "full_task_content_observed": true,
+        "full_task_bytes_observed": true,
+        "outer_newline_trimming_only": false,
+        "full_skill_body_observed": false,
+        "command_expansion_verified": true,
+        "task_evidence_scope": "native root conversation JSONL user-context stream before first assistant;not SDK replay alone,init advertisement or model self-report"
+      },
+      "grade_valid": true,
+      "solved": true,
+      "quota_before": {
+        "seven_day": {
+          "utilization": 0.76,
+          "reset": 1792353600,
+          "observed_epoch": 1792348096.3462107,
+          "origin": "prior-natural-smoke",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.81,
+          "inflight": 0,
+          "observation_age_seconds": 20.27305841445923
+        },
+        "five_hour": {
+          "utilization": 0.0,
+          "reset": 1792365600,
+          "observed_epoch": 1792348096.3461854,
+          "origin": "prior-natural-smoke",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.05,
+          "inflight": 0,
+          "observation_age_seconds": 20.27308702468872
+        }
+      },
+      "quota_after": {
+        "seven_day": {
+          "utilization": 0.76,
+          "reset": 1792353600,
+          "observed_epoch": 1792348124.2099223,
+          "origin": "django__django-12663/none/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.76,
+          "inflight": 0,
+          "observation_age_seconds": 53.823342084884644
+        },
+        "five_hour": {
+          "utilization": 0.0,
+          "reset": 1792365600,
+          "observed_epoch": 1792348124.2097964,
+          "origin": "django__django-12663/none/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.0,
+          "inflight": 0,
+          "observation_age_seconds": 53.823471784591675
+        }
+      },
+      "rate_events": [
+        {
+          "status": "allowed_warning",
+          "resetsAt": 1792353600,
+          "rateLimitType": "seven_day",
+          "utilization": 0.76,
+          "overageStatus": "rejected",
+          "overageDisabledReason": "org_level_disabled",
+          "isUsingOverage": false,
+          "surpassedThreshold": 0.75,
+          "unifiedWindows": {
+            "five_hour": {
+              "utilization": 0,
+              "resetsAt": 1792365600
+            },
+            "seven_day": {
+              "utilization": 0.76,
+              "resetsAt": 1792353600
+            }
+          }
+        }
+      ],
+      "owned_actor_absent": true,
+      "owned_graders_absent": true,
+      "attempt_metadata_sha256": [
+        "36dd2c6e2e45cd5c7593ccd149de2e8afb8567199d4ee6ddc66af165e950e6d0"
+      ],
+      "context_sha256": "4b99ee3fe144b0074f2d1a4f784ea4cf491fd917c29e45f3dee06e0bbfbbc75c",
+      "error": null
+    },
+    {
+      "task": "matplotlib__matplotlib-25311",
+      "arm": "ours",
+      "activation_mode": "explicit-v2",
+      "native_attempts": 1,
+      "attempts_retained": 1,
+      "native_wall_seconds": 66.70762334018946,
+      "provider_models": [
+        "claude-opus-5-5"
+      ],
+      "usage_complete": true,
+      "per_model": [
+        {
+          "claude-opus-5-5": {
+            "uncached_input": 16,
+            "cache_creation": 8740,
+            "cache_read": 138763,
+            "output": 1768
+          }
+        }
+      ],
+      "totals": {
+        "uncached_input": 16,
+        "cache_creation": 8740,
+        "cache_read": 138763,
+        "output": 1768
+      },
+      "reported_token_volume": 149287,
+      "cache_adjusted_5m_proxy": 26585.300000000003,
+      "plugins": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "guard_readjudication": null,
+      "plugin_version_note": "builtin independent version absent/null;code bound to CLI2.1.302/frozen binary SHA",
+      "configuration_guard_failed": false,
+      "expansion": {
+        "activation_mode": "explicit-v2",
+        "submitted_task_sha256": "fd7fcc4014c54b039cde457473169e56a0c273edcfdbff6595672496bd782d6f",
+        "submitted_prompt_sha256": "b4016b5d9667e29e240b29482e9d4e5cb675ae8150d6d2799f40a8294038c53a",
+        "skill_body_sha256": "c712dcfdac77968ce4a87db91e91364d2926fcdf34e88297fd420051430563ee",
+        "pre_assistant_user_event_indices": [
+          2,
+          3
+        ],
+        "full_task_content_observed": true,
+        "full_task_bytes_observed": false,
+        "outer_newline_trimming_only": true,
+        "full_skill_body_observed": true,
+        "command_expansion_verified": true,
+        "task_evidence_scope": "native root conversation JSONL user-context stream before first assistant;not SDK replay alone,init advertisement or model self-report"
+      },
+      "grade_valid": true,
+      "solved": true,
+      "quota_before": {
+        "seven_day": {
+          "utilization": 0.76,
+          "reset": 1792353600,
+          "observed_epoch": 1792348124.2099223,
+          "origin": "django__django-12663/none/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.81,
+          "inflight": 0,
+          "observation_age_seconds": 82.63827729225159
+        },
+        "five_hour": {
+          "utilization": 0.0,
+          "reset": 1792365600,
+          "observed_epoch": 1792348124.2097964,
+          "origin": "django__django-12663/none/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.05,
+          "inflight": 0,
+          "observation_age_seconds": 82.6384072303772
+        }
+      },
+      "quota_after": {
+        "seven_day": {
+          "utilization": 0.76,
+          "reset": 1792353600,
+          "observed_epoch": 1792348212.0181458,
+          "origin": "matplotlib__matplotlib-25311/ours/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.76,
+          "inflight": 0,
+          "observation_age_seconds": 61.664633989334106
+        },
+        "five_hour": {
+          "utilization": 0.0,
+          "reset": 1792365600,
+          "observed_epoch": 1792348212.0180392,
+          "origin": "matplotlib__matplotlib-25311/ours/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.0,
+          "inflight": 0,
+          "observation_age_seconds": 61.66474509239197
+        }
+      },
+      "rate_events": [
+        {
+          "status": "allowed_warning",
+          "resetsAt": 1792353600,
+          "rateLimitType": "seven_day",
+          "utilization": 0.76,
+          "overageStatus": "rejected",
+          "overageDisabledReason": "org_level_disabled",
+          "isUsingOverage": false,
+          "surpassedThreshold": 0.75,
+          "unifiedWindows": {
+            "five_hour": {
+              "utilization": 0,
+              "resetsAt": 1792365600
+            },
+            "seven_day": {
+              "utilization": 0.76,
+              "resetsAt": 1792353600
+            }
+          }
+        }
+      ],
+      "owned_actor_absent": true,
+      "owned_graders_absent": true,
+      "attempt_metadata_sha256": [
+        "6af937ebff9c1c4ba335de52d480b92dc773260aae6191da84054d27191b3b10"
+      ],
+      "context_sha256": "ad87936065ac28b103db845cf49ee1775a5d34b9692d34f5719d84291ceeb5c8",
+      "error": null
+    },
+    {
+      "task": "matplotlib__matplotlib-25311",
+      "arm": "none",
+      "activation_mode": "explicit-v2",
+      "native_attempts": 1,
+      "attempts_retained": 1,
+      "native_wall_seconds": 76.06115199625492,
+      "provider_models": [
+        "claude-opus-5-5"
+      ],
+      "usage_complete": true,
+      "per_model": [
+        {
+          "claude-opus-5-5": {
+            "uncached_input": 16,
+            "cache_creation": 7562,
+            "cache_read": 129696,
+            "output": 1704
+          }
+        }
+      ],
+      "totals": {
+        "uncached_input": 16,
+        "cache_creation": 7562,
+        "cache_read": 129696,
+        "output": 1704
+      },
+      "reported_token_volume": 138978,
+      "cache_adjusted_5m_proxy": 24142.1,
+      "plugins": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "guard_readjudication": null,
+      "plugin_version_note": "builtin independent version absent/null;code bound to CLI2.1.302/frozen binary SHA",
+      "configuration_guard_failed": false,
+      "expansion": {
+        "activation_mode": "explicit-v2",
+        "submitted_task_sha256": "fd7fcc4014c54b039cde457473169e56a0c273edcfdbff6595672496bd782d6f",
+        "submitted_prompt_sha256": "fd7fcc4014c54b039cde457473169e56a0c273edcfdbff6595672496bd782d6f",
+        "skill_body_sha256": "c712dcfdac77968ce4a87db91e91364d2926fcdf34e88297fd420051430563ee",
+        "pre_assistant_user_event_indices": [
+          2
+        ],
+        "full_task_content_observed": true,
+        "full_task_bytes_observed": true,
+        "outer_newline_trimming_only": false,
+        "full_skill_body_observed": false,
+        "command_expansion_verified": true,
+        "task_evidence_scope": "native root conversation JSONL user-context stream before first assistant;not SDK replay alone,init advertisement or model self-report"
+      },
+      "grade_valid": true,
+      "solved": true,
+      "quota_before": {
+        "seven_day": {
+          "utilization": 0.76,
+          "reset": 1792353600,
+          "observed_epoch": 1792348212.0181458,
+          "origin": "matplotlib__matplotlib-25311/ours/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.81,
+          "inflight": 0,
+          "observation_age_seconds": 113.83519458770752
+        },
+        "five_hour": {
+          "utilization": 0.0,
+          "reset": 1792365600,
+          "observed_epoch": 1792348212.0180392,
+          "origin": "matplotlib__matplotlib-25311/ours/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.05,
+          "inflight": 0,
+          "observation_age_seconds": 113.83530473709106
+        }
+      },
+      "quota_after": {
+        "seven_day": {
+          "utilization": 0.76,
+          "reset": 1792353600,
+          "observed_epoch": 1792348329.3993616,
+          "origin": "matplotlib__matplotlib-25311/none/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.76,
+          "inflight": 0,
+          "observation_age_seconds": 72.63459467887878
+        },
+        "five_hour": {
+          "utilization": 0.0,
+          "reset": 1792365600,
+          "observed_epoch": 1792348329.399302,
+          "origin": "matplotlib__matplotlib-25311/none/1",
+          "reservation": 0.05,
+          "unknown": false,
+          "projected": 0.0,
+          "inflight": 0,
+          "observation_age_seconds": 72.63465785980225
+        }
+      },
+      "rate_events": [
+        {
+          "status": "allowed_warning",
+          "resetsAt": 1792353600,
+          "rateLimitType": "seven_day",
+          "utilization": 0.76,
+          "overageStatus": "rejected",
+          "overageDisabledReason": "org_level_disabled",
+          "isUsingOverage": false,
+          "surpassedThreshold": 0.75,
+          "unifiedWindows": {
+            "five_hour": {
+              "utilization": 0,
+              "resetsAt": 1792365600
+            },
+            "seven_day": {
+              "utilization": 0.76,
+              "resetsAt": 1792353600
+            }
+          }
+        }
+      ],
+      "owned_actor_absent": true,
+      "owned_graders_absent": true,
+      "attempt_metadata_sha256": [
+        "80d0d82b2121e39911fdec89284ae77309e164b59c4f618d3400f9007987d5b8"
+      ],
+      "context_sha256": "1a8c61b75b51ec5ccd3958326cf239a480b2c293b18df4a3699e4b8748b05f31",
+      "error": null
+    }
+  ],
+  "quota_policy": "live reported scopes;projection with all in-flight reservations strictly below0.90;unknown never zero;no reset-clock imputation;unreported scopes unobserved;external account usage can race",
+  "awaiting_explicit_study_go": true,
+  "authenticated_stock_skill_count": 17,
+  "effective_exact_plugin_guard_passed_for_all_four": true,
+  "stock_skills_consistent_across_arms": true,
+  "configured_issue_workers": 2,
+  "highest_admission_projection": 0.81,
+  "all_smoke_reported_token_volume_cost_bookkeeping_only": 812369,
+  "replacement_cache_adjusted_5m_proxy": 96794.6,
+  "metadata_correction": "First explicit cell retained with original guard flag and immutable hash;stock schedule restored to authenticated17 baseline;no model/grade rerun;remaining3 cells only",
+  "future_inference_requires_new_frozen_allowance": true
+}

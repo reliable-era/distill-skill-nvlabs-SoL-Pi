@@ -19,9 +19,11 @@ class Admissions:
     def __init__(self,root):
         self.root=root;self.lock=threading.RLock();self.until=0;self.stopped=False;self.recent=collections.deque(maxlen=16);self.stop_file=root/'ADMISSIONS-STOP-explicit-v2'
         seed=[]
-        files=[f for phase in ('smoke','smoke-explicit-v2') for f in (root/phase).glob('*/*/attempt-result.json') if (f.parent/'native.jsonl').exists()]
+        files=[f for phase in ('smoke','smoke-explicit-v2','study') for f in (root/phase).glob('*/*/attempt-result.json') if (f.parent/'native.jsonl').exists()]
         for f in sorted(files,key=lambda f:f.stat().st_mtime):
-            for event in json.loads(f.read_text()).get('stream',{}).get('rate_limit_events',[]):seed.append(dict(info=event,observed_epoch=(f.parent/'native.jsonl').stat().st_mtime))
+            metadata=json.loads(f.read_text()).get('stream',{})
+            for event in metadata.get('rate_limit_events',[]):seed.append(dict(info=event,observed_epoch=(f.parent/'native.jsonl').stat().st_mtime))
+            if metadata.get('rate_limited'):seed.append(dict(require_refresh=True))
         self.quota=Quota(seed,self.log)
     def stop(self,reason):
         self.stopped=True;save(self.stop_file,dict(reason=reason))
