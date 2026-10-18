@@ -1438,8 +1438,38 @@
     "sdk_max_retries": 0
   },
   "budget_note": "Claude turns are runner-specific,not G5 Codex requests;nested calls count toward token totals",
-  "prompt": "Byte-identical G5 prepare_source canonical issue/task prompt in both arms;omit Codex-specific budget/inline-skill suffix;no forced skill invocation",
-  "isolation": "Fresh disposable HOME;user settings only from that empty HOME plus fixed runner settings;no host config,CLAUDE.md,memory,skills,hooks or credentials;control disables all skills and has no plugin mount;treatment uses normal local marketplace add/install from frozen snapshot",
+  "prompt": "Explicit-v2: control is canonical G5 task bytes alone; treatment is ASCII /distill-sol-pi:efficient-coding followed by one space and exactly those same task bytes. Both arms enable slash commands and identical pinned stock skills. JSON stream stdin/replay only changes transport encoding,not task text. Verify expanded skill body and full task in native user-context stream before assistant output; input advertisement alone is insufficient.",
+  "amendment_explicit_v2": {
+    "authorization": "Supervisor advisor-reviewed A/B/C ruling after partial natural-activation smoke; replacement smoke only,study still unauthorized",
+    "disclosure": "B was motivated by activation observations AFTER TWO treatment outcomes (both solved) had been seen: efficient-coding advertised but no explicit invocation/full-body load proven. This is an outcome-informed protocol amendment,not an original preregistration. Do not mix natural-activation and explicit-activation evidence or claim this change was outcome-blind.",
+    "estimand": "Incremental effect of explicitly invoking efficient-coding over this pinned CLI stock configuration;not natural activation and not a claim that all users have these built-ins",
+    "runtime_revision": "explicit-v2",
+    "smoke_phase": "smoke-explicit-v2",
+    "sample_binding_sha256": "9341ed43fb126642ba4dd8e9a6894be6e9692096537a243d9c1e61e0aa84c89a",
+    "exclude_all_smoke_from_scoring": true,
+    "retain_prior_smoke_charges_and_evidence": true,
+    "prior_native_runs": 3,
+    "prior_reported_tokens": 314731,
+    "prior_guard_control": "incomplete smoke cell;unknown quality,not failure",
+    "slash_commands": "enabled in BOTH arms;identical stock skill availability required;only treatment adds distill-sol-pi:efficient-coding",
+    "builtin_plugins": [
+      {"name":"cc-plugin-agents-md","path":"builtin","source":"cc-plugin-agents-md@builtin","version":null},
+      {"name":"cc-plugin-plugin-authoring","path":"builtin","source":"cc-plugin-plugin-authoring@builtin","version":null}
+    ],
+    "builtin_version_note": "Prior native init does not report separate plugin versions. Record null explicitly;code/package version is CLI2.1.302 with the frozen binary SHA. Reject new or changed reported versions/source IDs;do not invent per-plugin versions.",
+    "stock_skills": ["batch","claude-api","code-review","dataviz","debug","deep-research","doctor","fewer-permission-prompts","loop","plugin-authoring","run","run-skill-generator","schedule","simplify","update-config","verify","workflow-authoring"],
+    "plugin_guard": "Control exactly verified built-ins;treatment exactly identical built-ins plus distill-sol-pi source distill-sol-pi@sol-pi-skills version1.0.0. Reject extras,duplicates,path/source/version drift. Keep HOME/mount/settings/hooks/memory/instruction-source audits. Capture and grade retained source even on stream guard violation;stop fresh admissions.",
+    "activation_evidence": "Native user-context events before first assistant output must contain full frontmatter-stripped frozen SKILL.md body and entire task (outer newline trimming by CLI recorded separately). Submitted prompt hash/suffix prove exact task input bytes. Original slash string or init skill advertisement is not expansion evidence. Missing proof stops further admissions;no post-hoc forcing/retry.",
+    "quota": {
+      "stop_projection_at": 0.90,
+      "per_inflight_run_reservation": 0.05,
+      "adaptive_reservation": "For every reported window/model scope,max(0.05,2*largest observed positive utilization change between native runs/events). Sum outstanding run reservations with latest actual utilization;reject admission if any projection >=0.90. No finite reservation is a provider guarantee;unrelated account use can race observations.",
+      "live": "Consume stream rate events while inference is running,not only final results;track all seven_day,shorter-window/model-specific scopes reported. Missing utilization is unknown,never zero;new unknown scopes block fresh admissions. Seed last actual seven_day0.75 observation conservatively;do not reset it to zero on elapsed reset time. Report timestamp/staleness and unreported-window coverage limitations.",
+      "resume": "Quota holds admit nothing until newer actual numeric observations show headroom with all in-flight reservations. In-flight calls drain;without fresh observations,stop as incomplete and require verified refreshed stream evidence for restart. No inference-only quota probes. N stays150;budget exhaustion means incomplete study,not smaller N.",
+      "initial_concurrency": 2
+    }
+  },
+  "isolation": "Explicit-v2: fresh disposable HOME and fixed runner settings;no host config,CLAUDE.md,memory,skills,hooks or credentials. Both arms enable the same pinned stock skills/built-ins;control has no external plugin mount;treatment normally installs frozen distill-sol-pi only. Exact stream plugin/skill-set guard plus continuing mount/config/instruction-source audit.",
   "network": "Actors on owned Docker internal network;only CONNECT api.anthropic.com:443 via owned allowlist proxy;no8000 route,no host network or Docker socket",
   "resources": {
     "cpus": 1,
