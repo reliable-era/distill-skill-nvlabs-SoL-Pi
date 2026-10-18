@@ -1,0 +1,346 @@
+{
+  "method": "Zero-call scope audit:each root result.usage is one segment;each result.modelUsage equals cumulative prefix sum of segments. Compare,never add both. Final aggregate also covers observed messages per frozen parser. No counter/grade/cell change,no imputation,no runtime parser change.",
+  "native_runs": 12,
+  "runtime_false_flags": 1,
+  "all_runs_scope_reconciled": true,
+  "reported_tokens_unchanged": 1873521,
+  "cache_proxy_unchanged": 329896.3,
+  "receipts": [
+    {
+      "task": "django__django-11880",
+      "arm": "none",
+      "native_sha256": "6a9d1314c0211ddaf0d032ffc8e19dd0864c7a1705217937ab5e818bece84d7a",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 12,
+            "cache_creation": 5863,
+            "cache_read": 92155,
+            "output": 819
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 12,
+            "cache_creation": 5863,
+            "cache_read": 92155,
+            "output": 819
+          },
+          "num_turns": 6
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "django__django-11880",
+      "arm": "ours",
+      "native_sha256": "8311b0d55c0defc4b2c47c1a08eac30532bbafc0e304b39f6bf96649cf5853c3",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 8,
+            "cache_creation": 6852,
+            "cache_read": 63273,
+            "output": 631
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 8,
+            "cache_creation": 6852,
+            "cache_read": 63273,
+            "output": 631
+          },
+          "num_turns": 4
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "django__django-13410",
+      "arm": "none",
+      "native_sha256": "4f5b61b6859c67b01bffd402d2a9eaeb605d4f2375b210033c7b335b2d3735aa",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 8,
+            "cache_creation": 5622,
+            "cache_read": 59653,
+            "output": 944
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 8,
+            "cache_creation": 5622,
+            "cache_read": 59653,
+            "output": 944
+          },
+          "num_turns": 4
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "django__django-13410",
+      "arm": "ours",
+      "native_sha256": "c9c5d9e73011bc5ca2a524e037a76105af300d3ba05a881e9f25412ca9a05bc3",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 6,
+            "cache_creation": 6817,
+            "cache_read": 46079,
+            "output": 987
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 6,
+            "cache_creation": 6817,
+            "cache_read": 46079,
+            "output": 987
+          },
+          "num_turns": 3
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "django__django-16801",
+      "arm": "none",
+      "native_sha256": "08a99d64de38f1db8668302d2dea30c2b63709f9c5a416e364fd96d6db9d8787",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 10,
+            "cache_creation": 5538,
+            "cache_read": 75807,
+            "output": 718
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 10,
+            "cache_creation": 5538,
+            "cache_read": 75807,
+            "output": 718
+          },
+          "num_turns": 5
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "django__django-16801",
+      "arm": "ours",
+      "native_sha256": "a8c966db1ca571cff1ccfdfe339a7b02a7a66b4db4b294ca86aa0095083d2342",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 8,
+            "cache_creation": 6493,
+            "cache_read": 62316,
+            "output": 567
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 8,
+            "cache_creation": 6493,
+            "cache_read": 62316,
+            "output": 567
+          },
+          "num_turns": 4
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "matplotlib__matplotlib-26342",
+      "arm": "none",
+      "native_sha256": "b5fb1962a3a6aae68d2406ba53d28979c809dc67b7b1272a4246424dc3df7e0b",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 16,
+            "cache_creation": 9338,
+            "cache_read": 139305,
+            "output": 1612
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 16,
+            "cache_creation": 9338,
+            "cache_read": 139305,
+            "output": 1612
+          },
+          "num_turns": 8
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "matplotlib__matplotlib-26342",
+      "arm": "ours",
+      "native_sha256": "2471e995fee3452cd18e8ead76d389436edd8c012151a3be3f61003021ff56f4",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 16,
+            "cache_creation": 10734,
+            "cache_read": 150422,
+            "output": 1751
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 16,
+            "cache_creation": 10734,
+            "cache_read": 150422,
+            "output": 1751
+          },
+          "num_turns": 8
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "scikit-learn__scikit-learn-26194",
+      "arm": "none",
+      "native_sha256": "ec94f661f0c29213378f4f18eda4adaa7edc5b6ef8230f4f101c87206988f63b",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 14,
+            "cache_creation": 8471,
+            "cache_read": 113846,
+            "output": 2360
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 14,
+            "cache_creation": 8471,
+            "cache_read": 113846,
+            "output": 2360
+          },
+          "num_turns": 7
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "scikit-learn__scikit-learn-26194",
+      "arm": "ours",
+      "native_sha256": "5585bbeda1f71f49420e9dad5af9f8c99c5e6eb6357debc7a6a35d6df1e6903d",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 10,
+            "cache_creation": 7772,
+            "cache_read": 82812,
+            "output": 1165
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 10,
+            "cache_creation": 7772,
+            "cache_read": 82812,
+            "output": 1165
+          },
+          "num_turns": 5
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "sympy__sympy-16597",
+      "arm": "none",
+      "native_sha256": "460c4fdd5d8f62bc4700a63b913d4a7459dd74178388c504682af9b1def3597f",
+      "runtime_usage_complete": false,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 62,
+            "cache_creation": 22917,
+            "cache_read": 723225,
+            "output": 8836
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 62,
+            "cache_creation": 22917,
+            "cache_read": 723225,
+            "output": 8836
+          },
+          "num_turns": 32
+        },
+        {
+          "root_usage": {
+            "uncached_input": 4,
+            "cache_creation": 1109,
+            "cache_read": 34175,
+            "output": 122
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 66,
+            "cache_creation": 24026,
+            "cache_read": 757400,
+            "output": 8958
+          },
+          "num_turns": 1
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    },
+    {
+      "task": "sympy__sympy-16597",
+      "arm": "ours",
+      "native_sha256": "e5a15ba7213f8268d97712c653ea80d66b7e44fa4709389c9f50d62f11015f09",
+      "runtime_usage_complete": true,
+      "scope_reconciled_usage_complete": true,
+      "root_result_segments": [
+        {
+          "root_usage": {
+            "uncached_input": 12,
+            "cache_creation": 8456,
+            "cache_read": 101510,
+            "output": 2263
+          },
+          "cumulative_model_usage": {
+            "uncached_input": 12,
+            "cache_creation": 8456,
+            "cache_read": 101510,
+            "output": 2263
+          },
+          "num_turns": 6
+        }
+      ],
+      "counters_not_imputed_or_changed": true
+    }
+  ],
+  "preregistered_secondary_on_reconciled_counts": {
+    "all_attempt_token_TPS_ratio": {
+      "value": 0.4273782323259643,
+      "CI95": [
+        0.2086550108325666,
+        0.9580265475764499
+      ],
+      "undefined_bootstrap_draws": 0
+    },
+    "cache_proxy_TPS_ratio": {
+      "value": 0.5493464633973947,
+      "CI95": [
+        0.29454741157517284,
+        1.0364811337701014
+      ],
+      "undefined_bootstrap_draws": 0
+    }
+  },
+  "bootstrap_seed": 2026101704,
+  "draws": 20000,
+  "scope": "INTERIM six paired tasks only,not full150-task result;descriptive/no promotion"
+}

@@ -1,36 +1,31 @@
 {
   "target_issues": 150,
   "target_cells": 300,
-  "pause_classification": "False-positive quota stop:stale pre-study learning anchors;not actual quota exhaustion or model failure",
-  "estimator_rates_valid_as_study_rates": false,
-  "pair_completeness_exception": "Django13410 second arm blocked before inference by live quota guard;one half-pair,one complete pair",
-  "interpretation": "One complete pair only;bootstrap intervals are degenerate/uninformative,not full150-task evidence",
-  "continuation_requires_supervisor_decision": true,
-  "admitted_cells": 3,
-  "native_attempts": 3,
-  "known_outcomes": 3,
-  "complete_pairs": 1,
+  "admitted_cells": 12,
+  "native_attempts": 12,
+  "known_outcomes": 12,
+  "complete_pairs": 6,
   "arms": {
     "none": {
       "target": 150,
-      "admitted": 2,
-      "known_outcomes": 2,
-      "solves_among_known": 2,
-      "solve_rate_among_known": 1.0,
+      "admitted": 6,
+      "known_outcomes": 6,
+      "solves_among_known": 5,
+      "solve_rate_among_known": 0.8333333333333334,
       "full_fixed_N_solve_rate": null,
-      "all_attempt_tokens_lower_bound": 216498,
-      "all_attempt_cache_proxy_lower_bound": 41175.8,
-      "all_admitted_usage_complete": true
+      "all_attempt_tokens_lower_bound": 1312561,
+      "all_attempt_cache_proxy_lower_bound": 212926.1,
+      "all_admitted_usage_complete": false
     },
     "ours": {
       "target": 150,
-      "admitted": 1,
-      "known_outcomes": 1,
-      "solves_among_known": 1,
-      "solve_rate_among_known": 1.0,
+      "admitted": 6,
+      "known_outcomes": 6,
+      "solves_among_known": 5,
+      "solve_rate_among_known": 0.8333333333333334,
       "full_fixed_N_solve_rate": null,
-      "all_attempt_tokens_lower_bound": 162923,
-      "all_attempt_cache_proxy_lower_bound": 30226.7,
+      "all_attempt_tokens_lower_bound": 560960,
+      "all_attempt_cache_proxy_lower_bound": 116970.2,
       "all_admitted_usage_complete": true
     }
   },
@@ -47,19 +42,13 @@
     "ours_only": 0,
     "none_only": 0
   },
-  "paired_all_cost_TPS_ratio": 1.0841945551703256,
-  "paired_all_cost_TPS_ratio_CI": [
-    1.0841945551703256,
-    1.0841945551703256
-  ],
-  "paired_cache_proxy_ratio": 1.110010649627263,
-  "paired_cache_proxy_ratio_CI": [
-    1.110010649627263,
-    1.110010649627263
-  ],
-  "study_reported_token_volume_lower_bound": 379421,
-  "study_cache_proxy_lower_bound": 71402.5,
-  "usage_complete": true,
+  "paired_all_cost_TPS_ratio": null,
+  "paired_all_cost_TPS_ratio_CI": null,
+  "paired_cache_proxy_ratio": null,
+  "paired_cache_proxy_ratio_CI": null,
+  "study_reported_token_volume_lower_bound": 1873521,
+  "study_cache_proxy_lower_bound": 329896.3,
+  "usage_complete": false,
   "paired_analysis_scope": "INTERIM known complete-pair subset only;not full fixed-N inference",
   "unstarted_not_failures": true,
   "no_smoke_pooling": true,
@@ -78,6 +67,7 @@
       "attempts": [
         {
           "attempt": 1,
+          "allowance_commit": null,
           "provider_models": [
             "claude-opus-5-5"
           ],
@@ -212,6 +202,7 @@
       "attempts": [
         {
           "attempt": 1,
+          "allowance_commit": null,
           "provider_models": [
             "claude-opus-5-5"
           ],
@@ -352,6 +343,7 @@
       "attempts": [
         {
           "attempt": 1,
+          "allowance_commit": null,
           "provider_models": [
             "claude-opus-5-5"
           ],
@@ -476,110 +468,1384 @@
     {
       "task": "django__django-13410",
       "arm": "ours",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
-      "usage_complete": false,
-      "attempts": []
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": true,
+      "all_attempt_token_volume": 53889,
+      "all_attempt_cache_proxy": 14122.150000000001,
+      "usage_complete": true,
+      "attempts": [
+        {
+          "attempt": 2,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": true,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 6,
+              "cache_creation": 6817,
+              "cache_read": 46079,
+              "output": 987
+            }
+          },
+          "totals": {
+            "uncached_input": 6,
+            "cache_creation": 6817,
+            "cache_read": 46079,
+            "output": 987
+          },
+          "native_wall_seconds": 13.946480177342892,
+          "grade_valid": true,
+          "solved": true,
+          "plugins": [
+            {
+              "name": "distill-sol-pi",
+              "path": "/opt/g6/marketplace",
+              "source": "distill-sol-pi@sol-pi-skills",
+              "version": "1.0.0"
+            },
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.8,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": false,
+              "last_live_utilization": 0.8,
+              "reset": 1792353600,
+              "observed_epoch": 1792351626.8396928,
+              "origin": "replayed-study-native-stream",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.81,
+              "inflight_native": 0,
+              "reserved_cells": 1,
+              "completed_study_cells": 3,
+              "observation_age_seconds": 1382.3694818019867
+            },
+            "five_hour": {
+              "utilization": 0.2,
+              "rate": 0.0025,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 0,
+              "observed_delta": 0.0,
+              "learning_active": false,
+              "last_live_utilization": 0.2,
+              "reset": 1792365600,
+              "observed_epoch": 1792351626.839566,
+              "origin": "replayed-study-native-stream",
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.2025,
+              "inflight_native": 0,
+              "reserved_cells": 1,
+              "completed_study_cells": 3,
+              "observation_age_seconds": 1382.369614124298
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": false,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353012.9726582,
+              "origin": "django__django-13410/ours/2",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.81,
+              "inflight_native": 0,
+              "reserved_cells": 0,
+              "completed_study_cells": 3,
+              "observation_age_seconds": 10.308208703994751
+            },
+            "five_hour": {
+              "utilization": 0.26,
+              "rate": 0.0025,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 0,
+              "observed_delta": 0.0,
+              "learning_active": false,
+              "last_live_utilization": 0.26,
+              "reset": 1792365600,
+              "observed_epoch": 1792353012.9724467,
+              "origin": "django__django-13410/ours/2",
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.26,
+              "inflight_native": 0,
+              "reserved_cells": 0,
+              "completed_study_cells": 3,
+              "observation_age_seconds": 10.308425664901733
+            }
+          },
+          "native_sha256": "c9c5d9e73011bc5ca2a524e037a76105af300d3ba05a881e9f25412ca9a05bc3",
+          "context_sha256": "d30100f79799d7075ad67f08d2a7ea1c5991d6a9ebcfaad86f03116d5c536b0e",
+          "prompt_sha256": "bda2c031050897b6e40aa5cb50ffd30c588390b205e1193d881af6e460291dbf",
+          "patch_sha256": "99db51541ccf3fb6480798095aae4e86a151f23b32ac201c1684be6a3d3d533f",
+          "grade_sha256": "759fc065207f5c18ca17d87cd3ff78ba51774bf0c5f68d7e6e3601cb18a3a071",
+          "error": null
+        }
+      ]
     },
     {
       "task": "sympy__sympy-16597",
       "arm": "none",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": false,
+      "all_attempt_token_volume": 790450,
+      "all_attempt_cache_proxy": 114796.5,
       "usage_complete": false,
-      "attempts": []
+      "attempts": [
+        {
+          "attempt": 1,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": false,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 66,
+              "cache_creation": 24026,
+              "cache_read": 757400,
+              "output": 8958
+            }
+          },
+          "totals": {
+            "uncached_input": 66,
+            "cache_creation": 24026,
+            "cache_read": 757400,
+            "output": 8958
+          },
+          "native_wall_seconds": 5567.192111089826,
+          "grade_valid": true,
+          "solved": false,
+          "plugins": [
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": false,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353012.9726582,
+              "origin": "django__django-13410/ours/2",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8500000000000001,
+              "inflight_native": 0,
+              "reserved_cells": 4,
+              "completed_study_cells": 4,
+              "observation_age_seconds": 65.58831930160522
+            },
+            "five_hour": {
+              "utilization": 0.26,
+              "rate": 0.0025,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 0,
+              "observed_delta": 0.0,
+              "learning_active": false,
+              "last_live_utilization": 0.26,
+              "reset": 1792365600,
+              "observed_epoch": 1792353012.9724467,
+              "origin": "django__django-13410/ours/2",
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.27,
+              "inflight_native": 0,
+              "reserved_cells": 4,
+              "completed_study_cells": 4,
+              "observation_age_seconds": 65.58853697776794
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.02,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0,
+              "anchor_completed": 10,
+              "last_step": 0,
+              "observed_delta": 0.02,
+              "learning_active": false,
+              "last_live_utilization": 0.02,
+              "reset": 1792958400,
+              "observed_epoch": 1792358645.6633146,
+              "origin": "sympy__sympy-16597/none/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.7,
+              "projected": 0.03,
+              "inflight_native": 0,
+              "reserved_cells": 1,
+              "completed_study_cells": 10,
+              "observation_age_seconds": 0.22759461402893066
+            },
+            "five_hour": {
+              "utilization": 0.44,
+              "rate": 0.00333333333333333,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 3,
+              "observed_delta": 0.18,
+              "learning_active": false,
+              "last_live_utilization": 0.44,
+              "reset": 1792365600,
+              "observed_epoch": 1792358645.6631835,
+              "origin": "sympy__sympy-16597/none/1",
+              "uncapped_rate": 0.00333333333333333,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.44333333333333336,
+              "inflight_native": 0,
+              "reserved_cells": 1,
+              "completed_study_cells": 10,
+              "observation_age_seconds": 0.22773146629333496
+            }
+          },
+          "native_sha256": "460c4fdd5d8f62bc4700a63b913d4a7459dd74178388c504682af9b1def3597f",
+          "context_sha256": "2b1a828c33ec19425ead429c51a0eb0dbb00f739ce43da4e0e5f86278e86c230",
+          "prompt_sha256": "222f6e6f76549d81cfe6be7dc75f386feb01f0562743cd5137e420abb650480b",
+          "patch_sha256": "950fcd3c4c5a37637b24f819cbe18681b5187389cc626d80691319bfc306c0e0",
+          "grade_sha256": "f7317127db149138bc9f1f9a8917cbdc7015f8000df6abc5ae77a8adc16189c0",
+          "error": null
+        }
+      ]
     },
     {
       "task": "sympy__sympy-16597",
       "arm": "ours",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
-      "usage_complete": false,
-      "attempts": []
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": false,
+      "all_attempt_token_volume": 112241,
+      "all_attempt_cache_proxy": 22996.0,
+      "usage_complete": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": true,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 12,
+              "cache_creation": 8456,
+              "cache_read": 101510,
+              "output": 2263
+            }
+          },
+          "totals": {
+            "uncached_input": 12,
+            "cache_creation": 8456,
+            "cache_read": 101510,
+            "output": 2263
+          },
+          "native_wall_seconds": 102.82057820819318,
+          "grade_valid": true,
+          "solved": false,
+          "plugins": [
+            {
+              "name": "distill-sol-pi",
+              "path": "/opt/g6/marketplace",
+              "source": "distill-sol-pi@sol-pi-skills",
+              "version": "1.0.0"
+            },
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.02,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0,
+              "anchor_completed": 10,
+              "last_step": 2,
+              "observed_delta": 0.02,
+              "learning_active": false,
+              "last_live_utilization": 0.02,
+              "reset": 1792958400,
+              "observed_epoch": 1792358645.6633146,
+              "origin": "sympy__sympy-16597/none/1",
+              "uncapped_rate": 0.02,
+              "observation_window_expired": false,
+              "threshold": 0.7,
+              "projected": 0.03,
+              "inflight_native": 0,
+              "reserved_cells": 1,
+              "completed_study_cells": 11,
+              "observation_age_seconds": 43.979881048202515
+            },
+            "five_hour": {
+              "utilization": 0.44,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 18,
+              "observed_delta": 0.18,
+              "learning_active": false,
+              "last_live_utilization": 0.44,
+              "reset": 1792365600,
+              "observed_epoch": 1792358645.6631835,
+              "origin": "sympy__sympy-16597/none/1",
+              "uncapped_rate": 0.01636363636363636,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.45,
+              "inflight_native": 0,
+              "reserved_cells": 1,
+              "completed_study_cells": 11,
+              "observation_age_seconds": 43.9800181388855
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.02,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0,
+              "anchor_completed": 10,
+              "last_step": 2,
+              "observed_delta": 0.02,
+              "learning_active": false,
+              "last_live_utilization": 0.02,
+              "reset": 1792958400,
+              "observed_epoch": 1792358697.8716593,
+              "origin": "sympy__sympy-16597/ours/1",
+              "uncapped_rate": 0.02,
+              "observation_window_expired": false,
+              "threshold": 0.7,
+              "projected": 0.02,
+              "inflight_native": 0,
+              "reserved_cells": 0,
+              "completed_study_cells": 11,
+              "observation_age_seconds": 94.71294736862183
+            },
+            "five_hour": {
+              "utilization": 0.44,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 18,
+              "observed_delta": 0.18,
+              "learning_active": false,
+              "last_live_utilization": 0.44,
+              "reset": 1792365600,
+              "observed_epoch": 1792358697.8715131,
+              "origin": "sympy__sympy-16597/ours/1",
+              "uncapped_rate": 0.01636363636363636,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.44,
+              "inflight_native": 0,
+              "reserved_cells": 0,
+              "completed_study_cells": 11,
+              "observation_age_seconds": 94.71309971809387
+            }
+          },
+          "native_sha256": "e5a15ba7213f8268d97712c653ea80d66b7e44fa4709389c9f50d62f11015f09",
+          "context_sha256": "05bb4c89cb97c830d34af1f95b4ac0109594d01d6fb51d624a94006cbafae2ed",
+          "prompt_sha256": "8b1ce8d3512d6624f503719a72a1e18af069f7f100d995e6ef3e88bbc5c4bc8d",
+          "patch_sha256": "950fcd3c4c5a37637b24f819cbe18681b5187389cc626d80691319bfc306c0e0",
+          "grade_sha256": "7f789432195b2091bae4bcf5c278f765d365605924603bad96bd36e6a48b5e22",
+          "error": null
+        }
+      ]
     },
     {
       "task": "django__django-11880",
       "arm": "none",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
-      "usage_complete": false,
-      "attempts": []
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": true,
+      "all_attempt_token_volume": 98849,
+      "all_attempt_cache_proxy": 17375.25,
+      "usage_complete": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": true,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 12,
+              "cache_creation": 5863,
+              "cache_read": 92155,
+              "output": 819
+            }
+          },
+          "totals": {
+            "uncached_input": 12,
+            "cache_creation": 5863,
+            "cache_read": 92155,
+            "output": 819
+          },
+          "native_wall_seconds": 39.443618573248386,
+          "grade_valid": true,
+          "solved": true,
+          "plugins": [
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353083.651338,
+              "origin": "sympy__sympy-16597/none/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8500000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 4,
+              "completed_study_cells": 4,
+              "observation_age_seconds": 4.498850107192993
+            },
+            "five_hour": {
+              "utilization": 0.26,
+              "rate": 0.0025,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 0,
+              "observed_delta": 0.0,
+              "learning_active": true,
+              "last_live_utilization": 0.26,
+              "reset": 1792365600,
+              "observed_epoch": 1792353083.6511586,
+              "origin": "sympy__sympy-16597/none/1",
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.27,
+              "inflight_native": 1,
+              "reserved_cells": 4,
+              "completed_study_cells": 4,
+              "observation_age_seconds": 4.4990339279174805
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353091.675416,
+              "origin": "django__django-11880/none/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8400000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 4,
+              "observation_age_seconds": 36.03650689125061
+            },
+            "five_hour": {
+              "utilization": 0.26,
+              "rate": 0.0025,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 0,
+              "observed_delta": 0.0,
+              "learning_active": true,
+              "last_live_utilization": 0.26,
+              "reset": 1792365600,
+              "observed_epoch": 1792353091.6752617,
+              "origin": "django__django-11880/none/1",
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.2675,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 4,
+              "observation_age_seconds": 36.036667346954346
+            }
+          },
+          "native_sha256": "6a9d1314c0211ddaf0d032ffc8e19dd0864c7a1705217937ab5e818bece84d7a",
+          "context_sha256": "052933129be3339354f6dc18c85f160d33eca4f72f67aa0b0c5ed1f7562e97c7",
+          "prompt_sha256": "0ecedc75c928219fda5b2ae9791ff5b01044683e7188d678651a999e19601b3e",
+          "patch_sha256": "4f158701b6d4d384471341f2c89eef6468bb670c3695551482b2060b6be891a5",
+          "grade_sha256": "97faeb2cabbf1f97f5784f70f74c7d84ccec2b0555dc7931afd435479548e0a9",
+          "error": null
+        }
+      ]
     },
     {
       "task": "django__django-11880",
       "arm": "ours",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
-      "usage_complete": false,
-      "attempts": []
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": true,
+      "all_attempt_token_volume": 70764,
+      "all_attempt_cache_proxy": 15531.3,
+      "usage_complete": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": true,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 8,
+              "cache_creation": 6852,
+              "cache_read": 63273,
+              "output": 631
+            }
+          },
+          "totals": {
+            "uncached_input": 8,
+            "cache_creation": 6852,
+            "cache_read": 63273,
+            "output": 631
+          },
+          "native_wall_seconds": 30.622482744976878,
+          "grade_valid": true,
+          "solved": true,
+          "plugins": [
+            {
+              "name": "distill-sol-pi",
+              "path": "/opt/g6/marketplace",
+              "source": "distill-sol-pi@sol-pi-skills",
+              "version": "1.0.0"
+            },
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353091.675416,
+              "origin": "django__django-11880/none/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8400000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 5,
+              "observation_age_seconds": 84.16803574562073
+            },
+            "five_hour": {
+              "utilization": 0.26,
+              "rate": 0.0025,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 0,
+              "observed_delta": 0.0,
+              "learning_active": true,
+              "last_live_utilization": 0.26,
+              "reset": 1792365600,
+              "observed_epoch": 1792353091.6752617,
+              "origin": "django__django-11880/none/1",
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.2675,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 5,
+              "observation_age_seconds": 84.16819477081299
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353179.8551874,
+              "origin": "django__django-11880/ours/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8300000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 2,
+              "completed_study_cells": 5,
+              "observation_age_seconds": 26.7384295463562
+            },
+            "five_hour": {
+              "utilization": 0.27,
+              "rate": 0.0025,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 0,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.27,
+              "reset": 1792365600,
+              "observed_epoch": 1792353179.8550644,
+              "origin": "django__django-11880/ours/1",
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.275,
+              "inflight_native": 1,
+              "reserved_cells": 2,
+              "completed_study_cells": 5,
+              "observation_age_seconds": 26.73855710029602
+            }
+          },
+          "native_sha256": "8311b0d55c0defc4b2c47c1a08eac30532bbafc0e304b39f6bf96649cf5853c3",
+          "context_sha256": "e7a6e14007db12e261086fabb3948100f9fb409266b9597cb4cf7a62a344c9ea",
+          "prompt_sha256": "9246d41d939ecd754c7034a9fd977c9ad132d86689fff8e9260b3a42523a72b3",
+          "patch_sha256": "4f158701b6d4d384471341f2c89eef6468bb670c3695551482b2060b6be891a5",
+          "grade_sha256": "2156b944afcc96eec9bd946261c5696035af7eac3f39c1d649122e348027ccf2",
+          "error": null
+        }
+      ]
     },
     {
       "task": "scikit-learn__scikit-learn-26194",
       "arm": "none",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
-      "usage_complete": false,
-      "attempts": []
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": true,
+      "all_attempt_token_volume": 124691,
+      "all_attempt_cache_proxy": 24347.35,
+      "usage_complete": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": true,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 14,
+              "cache_creation": 8471,
+              "cache_read": 113846,
+              "output": 2360
+            }
+          },
+          "totals": {
+            "uncached_input": 14,
+            "cache_creation": 8471,
+            "cache_read": 113846,
+            "output": 2360
+          },
+          "native_wall_seconds": 34.18830502219498,
+          "grade_valid": true,
+          "solved": true,
+          "plugins": [
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353316.7626119,
+              "origin": "scikit-learn__scikit-learn-26194/ours/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8400000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 7,
+              "observation_age_seconds": 65.78640794754028
+            },
+            "five_hour": {
+              "utilization": 0.28,
+              "rate": 0.0028571428571428597,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 2,
+              "observed_delta": 0.020000000000000018,
+              "learning_active": true,
+              "last_live_utilization": 0.28,
+              "reset": 1792365600,
+              "observed_epoch": 1792353316.7624757,
+              "origin": "scikit-learn__scikit-learn-26194/ours/1",
+              "uncapped_rate": 0.0028571428571428597,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.2885714285714286,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 7,
+              "observation_age_seconds": 65.786550283432
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353385.8958216,
+              "origin": "scikit-learn__scikit-learn-26194/none/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8300000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 2,
+              "completed_study_cells": 7,
+              "observation_age_seconds": 30.955145359039307
+            },
+            "five_hour": {
+              "utilization": 0.28,
+              "rate": 0.0028571428571428597,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 2,
+              "observed_delta": 0.020000000000000018,
+              "learning_active": true,
+              "last_live_utilization": 0.28,
+              "reset": 1792365600,
+              "observed_epoch": 1792353385.8956838,
+              "origin": "scikit-learn__scikit-learn-26194/none/1",
+              "uncapped_rate": 0.0028571428571428597,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.28571428571428575,
+              "inflight_native": 1,
+              "reserved_cells": 2,
+              "completed_study_cells": 7,
+              "observation_age_seconds": 30.955287218093872
+            }
+          },
+          "native_sha256": "ec94f661f0c29213378f4f18eda4adaa7edc5b6ef8230f4f101c87206988f63b",
+          "context_sha256": "e54cc3f39087d03e3693c0a4f5edfaac3ae4bb18a81d6d0a562d8d3b880648b5",
+          "prompt_sha256": "dc8a54a65af0cde45e18375b4478566003fda3417d68714e702bbc47fcf250b1",
+          "patch_sha256": "46a108f1d01a548cffa5897505b77f2e2d014fde576564425c02f2b44bc26d39",
+          "grade_sha256": "5764f4d4ed926599b68020b2f31f1ef92f1f0b8840771b8ffba16e42511e4be0",
+          "error": null
+        }
+      ]
     },
     {
       "task": "scikit-learn__scikit-learn-26194",
       "arm": "ours",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
-      "usage_complete": false,
-      "attempts": []
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": true,
+      "all_attempt_token_volume": 91759,
+      "all_attempt_cache_proxy": 19171.2,
+      "usage_complete": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": true,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 10,
+              "cache_creation": 7772,
+              "cache_read": 82812,
+              "output": 1165
+            }
+          },
+          "totals": {
+            "uncached_input": 10,
+            "cache_creation": 7772,
+            "cache_read": 82812,
+            "output": 1165
+          },
+          "native_wall_seconds": 20.85519678890705,
+          "grade_valid": true,
+          "solved": true,
+          "plugins": [
+            {
+              "name": "distill-sol-pi",
+              "path": "/opt/g6/marketplace",
+              "source": "distill-sol-pi@sol-pi-skills",
+              "version": "1.0.0"
+            },
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353179.8551874,
+              "origin": "django__django-11880/ours/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8500000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 4,
+              "completed_study_cells": 6,
+              "observation_age_seconds": 133.64005398750305
+            },
+            "five_hour": {
+              "utilization": 0.27,
+              "rate": 0.001666666666666668,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.27,
+              "reset": 1792365600,
+              "observed_epoch": 1792353179.8550644,
+              "origin": "django__django-11880/ours/1",
+              "uncapped_rate": 0.001666666666666668,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.27666666666666667,
+              "inflight_native": 1,
+              "reserved_cells": 4,
+              "completed_study_cells": 6,
+              "observation_age_seconds": 133.64018416404724
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353316.7626119,
+              "origin": "scikit-learn__scikit-learn-26194/ours/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8400000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 6,
+              "observation_age_seconds": 17.742796897888184
+            },
+            "five_hour": {
+              "utilization": 0.28,
+              "rate": 0.001666666666666668,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.020000000000000018,
+              "learning_active": true,
+              "last_live_utilization": 0.28,
+              "reset": 1792365600,
+              "observed_epoch": 1792353316.7624757,
+              "origin": "scikit-learn__scikit-learn-26194/ours/1",
+              "uncapped_rate": 0.001666666666666668,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.28500000000000003,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 6,
+              "observation_age_seconds": 17.742939233779907
+            }
+          },
+          "native_sha256": "5585bbeda1f71f49420e9dad5af9f8c99c5e6eb6357debc7a6a35d6df1e6903d",
+          "context_sha256": "f9044658f20fc34ded8c3b4104f42d8eac6d68c0f1ac442f1e63ee686d0b4eb4",
+          "prompt_sha256": "7992a3738cace1f4759ca21a46e47f3ae42b9b5ab942055c66cf6599c2a24d9d",
+          "patch_sha256": "6052d7fa2be211e9c1ccc53a86bf95bdefd51faaad64e9ee085a3660662306bd",
+          "grade_sha256": "97cd468a9b94695610ab8433b9a0a51ed57e4c3c5866c691a9d5530a517d711f",
+          "error": null
+        }
+      ]
     },
     {
       "task": "django__django-16801",
       "arm": "none",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
-      "usage_complete": false,
-      "attempts": []
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": true,
+      "all_attempt_token_volume": 82073,
+      "all_attempt_cache_proxy": 15231.2,
+      "usage_complete": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": true,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 10,
+              "cache_creation": 5538,
+              "cache_read": 75807,
+              "output": 718
+            }
+          },
+          "totals": {
+            "uncached_input": 10,
+            "cache_creation": 5538,
+            "cache_read": 75807,
+            "output": 718
+          },
+          "native_wall_seconds": 23.160161746665835,
+          "grade_valid": true,
+          "solved": true,
+          "plugins": [
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353495.911746,
+              "origin": "django__django-16801/ours/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8400000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 9,
+              "observation_age_seconds": 66.20861291885376
+            },
+            "five_hour": {
+              "utilization": 0.29,
+              "rate": 0.00333333333333333,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 3,
+              "observed_delta": 0.02999999999999997,
+              "learning_active": true,
+              "last_live_utilization": 0.29,
+              "reset": 1792365600,
+              "observed_epoch": 1792353495.9116046,
+              "origin": "django__django-16801/ours/1",
+              "uncapped_rate": 0.00333333333333333,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.3,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 9,
+              "observation_age_seconds": 66.20875787734985
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353566.500228,
+              "origin": "django__django-16801/none/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8300000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 2,
+              "completed_study_cells": 9,
+              "observation_age_seconds": 18.898462295532227
+            },
+            "five_hour": {
+              "utilization": 0.29,
+              "rate": 0.00333333333333333,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 3,
+              "observed_delta": 0.02999999999999997,
+              "learning_active": true,
+              "last_live_utilization": 0.29,
+              "reset": 1792365600,
+              "observed_epoch": 1792353566.500093,
+              "origin": "django__django-16801/none/1",
+              "uncapped_rate": 0.00333333333333333,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.29666666666666663,
+              "inflight_native": 1,
+              "reserved_cells": 2,
+              "completed_study_cells": 9,
+              "observation_age_seconds": 18.89860248565674
+            }
+          },
+          "native_sha256": "08a99d64de38f1db8668302d2dea30c2b63709f9c5a416e364fd96d6db9d8787",
+          "context_sha256": "8e15687f1d2bb898c91bbf88d0fa7f70f227526b8f5ceb977aaa28b42efffbc2",
+          "prompt_sha256": "2e0b7114e01a30663bc5a49726d64bf77f9cfaafa80bdf0b16bcaa6df95268d3",
+          "patch_sha256": "2fa047e6c9909df39b0b350914b89f8b6a67e4ca6baa290866c85676ce6dcf8c",
+          "grade_sha256": "e8312637925a2b729f30ef04efc25c691aaf8ee04e444fedb6eae97ffc14e5cb",
+          "error": null
+        }
+      ]
     },
     {
       "task": "django__django-16801",
       "arm": "ours",
-      "admitted": false,
-      "native_attempts": 0,
-      "outcome_known": false,
-      "solved": null,
-      "all_attempt_token_volume": 0,
-      "all_attempt_cache_proxy": 0,
-      "usage_complete": false,
-      "attempts": []
+      "admitted": true,
+      "native_attempts": 1,
+      "outcome_known": true,
+      "solved": true,
+      "all_attempt_token_volume": 69384,
+      "all_attempt_cache_proxy": 14922.85,
+      "usage_complete": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+          "provider_models": [
+            "claude-opus-5-5"
+          ],
+          "usage_complete": true,
+          "per_model": {
+            "claude-opus-5-5": {
+              "uncached_input": 8,
+              "cache_creation": 6493,
+              "cache_read": 62316,
+              "output": 567
+            }
+          },
+          "totals": {
+            "uncached_input": 8,
+            "cache_creation": 6493,
+            "cache_read": 62316,
+            "output": 567
+          },
+          "native_wall_seconds": 22.008189979940653,
+          "grade_valid": true,
+          "solved": true,
+          "plugins": [
+            {
+              "name": "distill-sol-pi",
+              "path": "/opt/g6/marketplace",
+              "source": "distill-sol-pi@sol-pi-skills",
+              "version": "1.0.0"
+            },
+            {
+              "name": "cc-plugin-agents-md",
+              "path": "builtin",
+              "source": "cc-plugin-agents-md@builtin",
+              "version": null
+            },
+            {
+              "name": "cc-plugin-plugin-authoring",
+              "path": "builtin",
+              "source": "cc-plugin-plugin-authoring@builtin",
+              "version": null
+            }
+          ],
+          "expansion_verified": true,
+          "quota_before": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353385.8958216,
+              "origin": "scikit-learn__scikit-learn-26194/none/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8500000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 4,
+              "completed_study_cells": 8,
+              "observation_age_seconds": 105.76873445510864
+            },
+            "five_hour": {
+              "utilization": 0.28,
+              "rate": 0.0028571428571428597,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 2,
+              "observed_delta": 0.020000000000000018,
+              "learning_active": true,
+              "last_live_utilization": 0.28,
+              "reset": 1792365600,
+              "observed_epoch": 1792353385.8956838,
+              "origin": "scikit-learn__scikit-learn-26194/none/1",
+              "uncapped_rate": 0.0028571428571428597,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.2914285714285715,
+              "inflight_native": 1,
+              "reserved_cells": 4,
+              "completed_study_cells": 8,
+              "observation_age_seconds": 105.76887583732605
+            }
+          },
+          "quota_after": {
+            "seven_day": {
+              "utilization": 0.81,
+              "rate": 0.01,
+              "unknown": false,
+              "anchor_utilization": 0.79,
+              "anchor_completed": 0,
+              "last_step": 1,
+              "observed_delta": 0.010000000000000009,
+              "learning_active": true,
+              "last_live_utilization": 0.81,
+              "reset": 1792353600,
+              "observed_epoch": 1792353495.911746,
+              "origin": "django__django-16801/ours/1",
+              "uncapped_rate": 0.010000000000000009,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.8400000000000001,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 8,
+              "observation_age_seconds": 17.875762701034546
+            },
+            "five_hour": {
+              "utilization": 0.29,
+              "rate": 0.0028571428571428597,
+              "unknown": false,
+              "anchor_utilization": 0.19,
+              "anchor_completed": 0,
+              "last_step": 2,
+              "observed_delta": 0.02999999999999997,
+              "learning_active": true,
+              "last_live_utilization": 0.29,
+              "reset": 1792365600,
+              "observed_epoch": 1792353495.9116046,
+              "origin": "django__django-16801/ours/1",
+              "uncapped_rate": 0.0028571428571428597,
+              "observation_window_expired": false,
+              "threshold": 0.9,
+              "projected": 0.29857142857142854,
+              "inflight_native": 1,
+              "reserved_cells": 3,
+              "completed_study_cells": 8,
+              "observation_age_seconds": 17.875908136367798
+            }
+          },
+          "native_sha256": "a8c966db1ca571cff1ccfdfe339a7b02a7a66b4db4b294ca86aa0095083d2342",
+          "context_sha256": "9bc78a4fc5b3f9e911d3e658338a5526ed8e787e58aec6e99a84a9ae1e6bc806",
+          "prompt_sha256": "2ea81479a47ea62f5b001daabbe2ee8b1df80c0d5c4b4ab5d7c4940a865a9aa8",
+          "patch_sha256": "2fa047e6c9909df39b0b350914b89f8b6a67e4ca6baa290866c85676ce6dcf8c",
+          "grade_sha256": "293575195b5769d525b712d60b60ff9b37d00b793bf919d65439f5a020cfe8b8",
+          "error": null
+        }
+      ]
     },
     {
       "task": "django__django-11728",
@@ -4038,64 +5304,108 @@
       "attempts": []
     }
   ],
-  "paired_cost_usage_complete": true,
-  "paired_all_cost_TPS_ratio_undefined_bootstrap_draws": 0,
-  "paired_cache_proxy_ratio_undefined_bootstrap_draws": 0,
+  "paired_cost_usage_complete": false,
   "status": {
-    "utc": "2026-10-18T19:28:34.807265+00:00",
+    "utc": "2026-10-18T21:27:14.706985+00:00",
     "state": "paused",
-    "cells_done": 3,
+    "cells_done": 12,
     "target_cells": 300,
-    "completed_pairs": 1,
+    "completed_pairs": 6,
     "quota": {
       "seven_day": {
-        "utilization": 0.8,
-        "rate": 0.040000000000000036,
+        "utilization": 0.02,
+        "rate": 0.01,
         "unknown": false,
-        "anchor_utilization": 0.76,
-        "anchor_completed": 0,
-        "last_step": 4,
-        "reset": 1792353600,
-        "observed_epoch": 1792351626.8396928,
-        "origin": "matplotlib__matplotlib-26342/none/1",
+        "anchor_utilization": 0,
+        "anchor_completed": 10,
+        "last_step": 2,
+        "observed_delta": 0.02,
+        "learning_active": false,
+        "last_live_utilization": 0.02,
+        "reset": 1792958400,
+        "observed_epoch": 1792358697.8716593,
+        "origin": "sympy__sympy-16597/ours/1",
+        "uncapped_rate": 0.02,
         "observation_window_expired": false,
-        "threshold": 0.9,
-        "projected": 0.8,
+        "threshold": 0.7,
+        "projected": 0.02,
         "inflight_native": 0,
         "reserved_cells": 0,
-        "completed_study_cells": 3,
-        "observation_age_seconds": 87.96772384643555
+        "completed_study_cells": 12,
+        "observation_age_seconds": 136.83571696281433
       },
       "five_hour": {
-        "utilization": 0.2,
-        "rate": 0.1,
+        "utilization": 0.44,
+        "rate": 0.01,
         "unknown": false,
-        "anchor_utilization": 0.0,
+        "anchor_utilization": 0.19,
         "anchor_completed": 0,
-        "last_step": 20,
+        "last_step": 18,
+        "observed_delta": 0.18,
+        "learning_active": false,
+        "last_live_utilization": 0.44,
         "reset": 1792365600,
-        "observed_epoch": 1792351626.839566,
-        "origin": "matplotlib__matplotlib-26342/none/1",
+        "observed_epoch": 1792358697.8715131,
+        "origin": "sympy__sympy-16597/ours/1",
+        "uncapped_rate": 0.01636363636363636,
         "observation_window_expired": false,
         "threshold": 0.9,
-        "projected": 0.2,
+        "projected": 0.44,
         "inflight_native": 0,
         "reserved_cells": 0,
-        "completed_study_cells": 3,
-        "observation_age_seconds": 87.96785616874695
+        "completed_study_cells": 12,
+        "observation_age_seconds": 136.83587002754211
       }
     },
     "adverse_api_event_seen": false,
     "issue_workers_limit": 2,
-    "next_issue_index": 2,
-    "pause_reason": "Issue quota/native/isolation/cleanup guard;supervisor input required",
+    "next_issue_index": 6,
+    "pause_reason": "Next whole pair reaches quota threshold;drain reserved pairs then await reset and supervisor decision",
     "hard_stop": false,
-    "errors": [
-      {
-        "task": "django__django-13410",
-        "type": "QuotaHold",
-        "detail": "Sanitized per-attempt evidence retained;no credential exception text"
+    "errors": []
+  },
+  "pause_classification": "expired-old-week observation at transition to70% ceiling;normal checkpoint,not actual new-week exhaustion",
+  "all_three_previous_valid_cells_retained": true,
+  "zero_call_blocked_attempt_retained": true,
+  "half_pairs": 0,
+  "unstarted_cells": 288,
+  "scope_reconciliation": {
+    "reference": "study-usage-reconciliation.json",
+    "sha256": "24a9c7b5c894c4c16477dd1297e4db92dbdecd861975942db8a20d9183c58368",
+    "runtime_usage_complete_flag": false,
+    "runtime_flag_preserved_unchanged": true,
+    "audit_reported_usage_complete": true,
+    "reported_token_counters_unchanged": 1873521,
+    "cache_proxy_unchanged": 329896.3,
+    "explanation": "Two root results in Sympy control:usage fields are segment-local,modelUsage cumulative. Every prefix exactly reconciles;compare instead of double-counting. Raw records/runtime parser unchanged,no imputation,no call rerun.",
+    "interim_secondary_on_reconciled_counts": {
+      "all_attempt_token_TPS_ratio": {
+        "value": 0.4273782323259643,
+        "CI95": [
+          0.2086550108325666,
+          0.9580265475764499
+        ],
+        "undefined_bootstrap_draws": 0
+      },
+      "cache_proxy_TPS_ratio": {
+        "value": 0.5493464633973947,
+        "CI95": [
+          0.29454741157517284,
+          1.0364811337701014
+        ],
+        "undefined_bootstrap_draws": 0
       }
-    ]
-  }
+    }
+  },
+  "interpretation": "INTERIM six complete paired tasks only. Both arms5/6;zero discordants;degenerate solve bootstrap interval is not full150-task inference/equivalence. Raw generator usage flag false is preserved,while receipt-level scope audit reconciles all12 aggregate counts. Secondary values descriptive,not promotion or guarantees.",
+  "latest_actual_utilization": {
+    "seven_day": 0.02,
+    "five_hour": 0.44
+  },
+  "running_rates_capped": {
+    "seven_day": 0.01,
+    "five_hour": 0.01
+  },
+  "await_supervisor_continuation": true,
+  "no_automatic_restart": true
 }

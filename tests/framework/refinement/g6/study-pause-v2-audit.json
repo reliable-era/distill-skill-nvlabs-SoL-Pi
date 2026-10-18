@@ -1,0 +1,618 @@
+{
+  "status": "PAUSED at weekly reset checkpoint;all reserved pairs drained",
+  "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+  "study_target": 300,
+  "N": 150,
+  "study_native_calls": 12,
+  "new_native_calls_this_continuation": 9,
+  "retained_valid_cells": 3,
+  "retained_reported_tokens": 379421,
+  "known_outcomes": 12,
+  "solves": 10,
+  "complete_pairs": 6,
+  "half_pairs": 0,
+  "unstarted_cells": 288,
+  "setup_only_no_native_attempts": [
+    {
+      "task": "django__django-13410",
+      "arm": "ours",
+      "attempt": 1,
+      "native_started": false
+    }
+  ],
+  "totals": {
+    "uncached_input": 186,
+    "cache_creation": 105982,
+    "cache_read": 1744578,
+    "output": 22775
+  },
+  "reported_study_token_volume": 1873521,
+  "runtime_usage_complete": false,
+  "audit_scope_reconciled_usage_complete": true,
+  "reported_cache_proxy": 329896.3,
+  "prior_smoke_tokens_separate": 812369,
+  "no_quality_pooling": true,
+  "rows": [
+    {
+      "task": "django__django-11880",
+      "arm": "none",
+      "attempt": 1,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T19:51:28.150345+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 12,
+        "cache_creation": 5863,
+        "cache_read": 92155,
+        "output": 819
+      },
+      "token_volume": 98849,
+      "cache_proxy": 17375.25,
+      "wall_seconds": 39.443618573248386,
+      "num_root_segment_turns": 6,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "6a9d1314c0211ddaf0d032ffc8e19dd0864c7a1705217937ab5e818bece84d7a",
+      "context_sha256": "052933129be3339354f6dc18c85f160d33eca4f72f67aa0b0c5ed1f7562e97c7",
+      "grade_sha256": "97faeb2cabbf1f97f5784f70f74c7d84ccec2b0555dc7931afd435479548e0a9"
+    },
+    {
+      "task": "django__django-11880",
+      "arm": "ours",
+      "attempt": 1,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T19:52:55.843656+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 8,
+        "cache_creation": 6852,
+        "cache_read": 63273,
+        "output": 631
+      },
+      "token_volume": 70764,
+      "cache_proxy": 15531.3,
+      "wall_seconds": 30.622482744976878,
+      "num_root_segment_turns": 4,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "8311b0d55c0defc4b2c47c1a08eac30532bbafc0e304b39f6bf96649cf5853c3",
+      "context_sha256": "e7a6e14007db12e261086fabb3948100f9fb409266b9597cb4cf7a62a344c9ea",
+      "grade_sha256": "2156b944afcc96eec9bd946261c5696035af7eac3f39c1d649122e348027ccf2"
+    },
+    {
+      "task": "django__django-13410",
+      "arm": "none",
+      "attempt": 1,
+      "allowance_commit": "671d86c770c00e8d305e39a175e58d8d72bae914",
+      "started_utc": "2026-10-18T19:23:42.206831+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 8,
+        "cache_creation": 5622,
+        "cache_read": 59653,
+        "output": 944
+      },
+      "token_volume": 66227,
+      "cache_proxy": 13944.8,
+      "wall_seconds": 26.374552376568317,
+      "num_root_segment_turns": 4,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "4f5b61b6859c67b01bffd402d2a9eaeb605d4f2375b210033c7b335b2d3735aa",
+      "context_sha256": "6687de2f35b09883d00053ec32bd0aa9627a45a5ea1c277b80afcb7f239844cd",
+      "grade_sha256": "1d4ef94fd9d3ec9744cca0a87f650202434be0c475743a72c95189573f32751b"
+    },
+    {
+      "task": "django__django-13410",
+      "arm": "ours",
+      "attempt": 2,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T19:50:09.209463+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 6,
+        "cache_creation": 6817,
+        "cache_read": 46079,
+        "output": 987
+      },
+      "token_volume": 53889,
+      "cache_proxy": 14122.150000000001,
+      "wall_seconds": 13.946480177342892,
+      "num_root_segment_turns": 3,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "c9c5d9e73011bc5ca2a524e037a76105af300d3ba05a881e9f25412ca9a05bc3",
+      "context_sha256": "d30100f79799d7075ad67f08d2a7ea1c5991d6a9ebcfaad86f03116d5c536b0e",
+      "grade_sha256": "759fc065207f5c18ca17d87cd3ff78ba51774bf0c5f68d7e6e3601cb18a3a071"
+    },
+    {
+      "task": "django__django-16801",
+      "arm": "none",
+      "attempt": 1,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T19:59:22.120498+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 10,
+        "cache_creation": 5538,
+        "cache_read": 75807,
+        "output": 718
+      },
+      "token_volume": 82073,
+      "cache_proxy": 15231.2,
+      "wall_seconds": 23.160161746665835,
+      "num_root_segment_turns": 5,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "08a99d64de38f1db8668302d2dea30c2b63709f9c5a416e364fd96d6db9d8787",
+      "context_sha256": "8e15687f1d2bb898c91bbf88d0fa7f70f227526b8f5ceb977aaa28b42efffbc2",
+      "grade_sha256": "e8312637925a2b729f30ef04efc25c691aaf8ee04e444fedb6eae97ffc14e5cb"
+    },
+    {
+      "task": "django__django-16801",
+      "arm": "ours",
+      "attempt": 1,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T19:58:11.664705+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 8,
+        "cache_creation": 6493,
+        "cache_read": 62316,
+        "output": 567
+      },
+      "token_volume": 69384,
+      "cache_proxy": 14922.85,
+      "wall_seconds": 22.008189979940653,
+      "num_root_segment_turns": 4,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "a8c966db1ca571cff1ccfdfe339a7b02a7a66b4db4b294ca86aa0095083d2342",
+      "context_sha256": "9bc78a4fc5b3f9e911d3e658338a5526ed8e787e58aec6e99a84a9ae1e6bc806",
+      "grade_sha256": "293575195b5769d525b712d60b60ff9b37d00b793bf919d65439f5a020cfe8b8"
+    },
+    {
+      "task": "matplotlib__matplotlib-26342",
+      "arm": "none",
+      "attempt": 1,
+      "allowance_commit": "671d86c770c00e8d305e39a175e58d8d72bae914",
+      "started_utc": "2026-10-18T19:27:01.313439+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 16,
+        "cache_creation": 9338,
+        "cache_read": 139305,
+        "output": 1612
+      },
+      "token_volume": 150271,
+      "cache_proxy": 27231.0,
+      "wall_seconds": 40.5359452906996,
+      "num_root_segment_turns": 8,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "b5fb1962a3a6aae68d2406ba53d28979c809dc67b7b1272a4246424dc3df7e0b",
+      "context_sha256": "bc9fd0435fad05236c4e186935fa6f7b9d8953d630fc8b103e98c9d063853ec6",
+      "grade_sha256": "5d719cbfd6c9a4eae0124be994dd83c22e1544788488bfe2c670e337916d04c8"
+    },
+    {
+      "task": "matplotlib__matplotlib-26342",
+      "arm": "ours",
+      "attempt": 1,
+      "allowance_commit": "671d86c770c00e8d305e39a175e58d8d72bae914",
+      "started_utc": "2026-10-18T19:25:24.902050+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 16,
+        "cache_creation": 10734,
+        "cache_read": 150422,
+        "output": 1751
+      },
+      "token_volume": 162923,
+      "cache_proxy": 30226.7,
+      "wall_seconds": 42.651016825810075,
+      "num_root_segment_turns": 8,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "2471e995fee3452cd18e8ead76d389436edd8c012151a3be3f61003021ff56f4",
+      "context_sha256": "b22570799cc1de94d1581e1587269186e7798f57a98e3f607ada031f08e9d717",
+      "grade_sha256": "7dac4e8b9f5ff4862824fb788572e2c2615219ec498ecc79f2aa8e2e02edb201"
+    },
+    {
+      "task": "scikit-learn__scikit-learn-26194",
+      "arm": "none",
+      "attempt": 1,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T19:56:22.549301+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 14,
+        "cache_creation": 8471,
+        "cache_read": 113846,
+        "output": 2360
+      },
+      "token_volume": 124691,
+      "cache_proxy": 24347.35,
+      "wall_seconds": 34.18830502219498,
+      "num_root_segment_turns": 7,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "ec94f661f0c29213378f4f18eda4adaa7edc5b6ef8230f4f101c87206988f63b",
+      "context_sha256": "e54cc3f39087d03e3693c0a4f5edfaac3ae4bb18a81d6d0a562d8d3b880648b5",
+      "grade_sha256": "5764f4d4ed926599b68020b2f31f1ef92f1f0b8840771b8ffba16e42511e4be0"
+    },
+    {
+      "task": "scikit-learn__scikit-learn-26194",
+      "arm": "ours",
+      "attempt": 1,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T19:55:13.495525+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 10,
+        "cache_creation": 7772,
+        "cache_read": 82812,
+        "output": 1165
+      },
+      "token_volume": 91759,
+      "cache_proxy": 19171.2,
+      "wall_seconds": 20.85519678890705,
+      "num_root_segment_turns": 5,
+      "official_solved": true,
+      "plugin_set": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "5585bbeda1f71f49420e9dad5af9f8c99c5e6eb6357debc7a6a35d6df1e6903d",
+      "context_sha256": "f9044658f20fc34ded8c3b4104f42d8eac6d68c0f1ac442f1e63ee686d0b4eb4",
+      "grade_sha256": "97cd468a9b94695610ab8433b9a0a51ed57e4c3c5866c691a9d5530a517d711f"
+    },
+    {
+      "task": "sympy__sympy-16597",
+      "arm": "none",
+      "attempt": 1,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T19:51:18.561223+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 66,
+        "cache_creation": 24026,
+        "cache_read": 757400,
+        "output": 8958
+      },
+      "token_volume": 790450,
+      "cache_proxy": 114796.5,
+      "wall_seconds": 5567.192111089826,
+      "num_root_segment_turns": 33,
+      "official_solved": false,
+      "plugin_set": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "460c4fdd5d8f62bc4700a63b913d4a7459dd74178388c504682af9b1def3597f",
+      "context_sha256": "2b1a828c33ec19425ead429c51a0eb0dbb00f739ce43da4e0e5f86278e86c230",
+      "grade_sha256": "f7317127db149138bc9f1f9a8917cbdc7015f8000df6abc5ae77a8adc16189c0"
+    },
+    {
+      "task": "sympy__sympy-16597",
+      "arm": "ours",
+      "attempt": 1,
+      "allowance_commit": "6d36e9a9182418bd07bbac35f3ac60d11e08dbfc",
+      "started_utc": "2026-10-18T21:24:49.643449+00:00",
+      "model_ids": [
+        "claude-opus-5-5"
+      ],
+      "cli_version": "2.1.302",
+      "totals": {
+        "uncached_input": 12,
+        "cache_creation": 8456,
+        "cache_read": 101510,
+        "output": 2263
+      },
+      "token_volume": 112241,
+      "cache_proxy": 22996.0,
+      "wall_seconds": 102.82057820819318,
+      "num_root_segment_turns": 6,
+      "official_solved": false,
+      "plugin_set": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion_verified": true,
+      "native_sha256": "e5a15ba7213f8268d97712c653ea80d66b7e44fa4709389c9f50d62f11015f09",
+      "context_sha256": "05bb4c89cb97c830d34af1f95b4ac0109594d01d6fb51d624a94006cbafae2ed",
+      "grade_sha256": "7f789432195b2091bae4bcf5c278f765d365605924603bad96bd36e6a48b5e22"
+    }
+  ],
+  "latest_utilization": {
+    "seven_day": 0.02,
+    "five_hour": 0.44
+  },
+  "reported_running_rates": {
+    "seven_day": 0.01,
+    "five_hour": 0.01
+  },
+  "weekly_threshold": 0.7,
+  "five_hour_threshold": 0.9,
+  "all_rates_capped_at_one_pp": true,
+  "priority_missing_Django_completed_before_other_new_native": true,
+  "all_three_prior_cells_hashes_costs_grades_unchanged": true,
+  "all_python_hashes_match_inference_allowance": true,
+  "controller_absent": true,
+  "owned_actors_graders_proxy_network_absent": true,
+  "owned_stage_image_ids_absent": [
+    "sha256:005276f8388eeee1caec470c4d8da926cccaa959a74ef22545ad857f62c6bde8",
+    "sha256:11bba6b4d40a8935bc8eb84c7a42c199de121201bea21cc8206bb8fb7675f43e",
+    "sha256:472ee82cf5f13b8c96a24720db5a01437ae39b88fb0266a856e7de2dab6376ca",
+    "sha256:48d65a3272b52cf61b12119525aaa30dc9cb735b228474db71462f4fc51fd3b2",
+    "sha256:5921aa25dda61210b45c0109a02b9bf703b9e517c624cee96871e4e0aa5825bf",
+    "sha256:59c3feb43ef65a47e9d969d41d058cc5e9e664a27900fb750311a05b04733629",
+    "sha256:5a724dd035e4beb06ede8a8fe5873f9f75df8b33d123de890fa3d2a83dc688b4",
+    "sha256:5e9aad7a4b57a598bf5216bb97dc893c0349a4053aeb3baff56a19ea896774c5",
+    "sha256:6ed9aa56ac3507254811ed94aed2ceb83affd98a7f7064d763c1f1ccaffde785",
+    "sha256:759aeac26fa8ad55e2b7bcf85bc16b903ac3cd986c71f0a316947a44bbf29c11",
+    "sha256:b0224e25a922b8d65d3e569ff7aaf78afe3a4996e77281ca72d6c0b56c331eab",
+    "sha256:b1d1dbf9523e5e0cc574b873cbef6478c1fd0d52040c1403dabcfdff1623f9e6",
+    "sha256:baba2f10e4dc2c9a8bfdde76b1db7f6c0ce525dc1426e75665af3569a3eb609e",
+    "sha256:c0106ba42e5c38c8001149ee7b9cbac57abec3dd198c737fb443f5b27098571d",
+    "sha256:c08faf1cf27f65df27cdee0e478d129896801b7305f2857009e8b779b9d11331",
+    "sha256:c0c42eb15475ada29a7037d7ee48978198a32b7d65607a70d24d7de191861aee",
+    "sha256:c5db3fedacf35554ac795b78ae01b0ef820fe1d386060425fb251e85ee7306f2",
+    "sha256:d53f7aa080220946ebc12246c9f9d811e1fb2547f88078640b1a9d9d230950be",
+    "sha256:d6896564fa21b1acb3229a97c0792b61daafedca3f80a06506b4931f6eade039",
+    "sha256:df8dceb37c4307f79035ddb9903cbd72818ee6f3d9f6fe8270ceb5628be4247b",
+    "sha256:df9e4c9df8b97f9764cd4cea5914a651442403cc9022ab19d99870ac4244d0ee",
+    "sha256:dff50089f52fa36cd223565ec299da7bc538850bc3c0e49eef8718e49b185574",
+    "sha256:e7181c98a4c02ba664181cfab4211b562dca11f5f4c5a440b3b689383dc384e7",
+    "sha256:e776403748fce622e5ae46152be29836ff5b30a06c08f0ddef432e7c6d3d0962",
+    "sha256:f32226dd5f0099b4bf536032897757226f230a17d77c87b147c84201d5bc1436",
+    "sha256:f3cf41baa15e4ba5b88407769e600f0d5ff35ab43de0d147702420e4df8a0ac3"
+  ],
+  "preserved_preexisting_base_ids": [
+    "sha256:f5fa79b26f52016a0cdaf12d7f41b37ad9534d392d61a3399f504de9c5a8600e"
+  ],
+  "force_image_removal_or_parent_pruning": false,
+  "literal_credential_scan_regular_files": 328508,
+  "symlinks_not_followed": 114,
+  "native_context_redactions": 0,
+  "literal_scan_not_arbitrary_encoding_guarantee": true,
+  "no_429_5xx_overloaded": true,
+  "new_week_sixty_crossing_observed": false,
+  "concurrency_remained_two": true,
+  "no_automatic_restart": true,
+  "offline_tests_passed": 62,
+  "verification_script_sha256": "fef12aac4ec8de9cbd7302d91c45e2be945b95200ae4ef90187a273153f6c3fb",
+  "weekly_reset_checkpoint_utc": "2026-10-18T20:00:29.620647+00:00",
+  "first_actual_new_week_counter_utc": "2026-10-18T20:01:45.055402+00:00",
+  "first_actual_new_week_counter": 0.0,
+  "pause_classification": "expired-old-week observation at transition to70% ceiling;normal checkpoint,not actual new-week exhaustion",
+  "runtime_usage_flag_retained": true,
+  "scope_reconciliation_reference": "study-usage-reconciliation.json",
+  "no_runtime_source_change_after_inference": true
+}
