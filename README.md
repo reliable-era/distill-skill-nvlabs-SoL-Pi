@@ -13,7 +13,7 @@ Use it when an agent keeps rereading files, drowning in test output, repeating f
 - **A small core with useful depth.** The entrypoint is just **2,584 bytes**. References and helpers load when needed, keeping ordinary fixes simple.
 - **One workflow from source to verification.** Focus reads on relevant source, check diagnostic evidence, make the targeted edit, and run the affected checks. Batch independent searches and reconcile prior work before resuming.
 - **Offline tools for trustworthy log handling.** Archive exact output, recall bounded pages, and check source hashes, recorded status, and exact quotations with the bundled Python helper.
-- **Public evidence behind the design.** Inspect comparisons against no skill and Karpathy, frozen inputs, independent grades, failure-inclusive costs, and the reasons earlier revisions were rejected.
+- **Measured on full SWE-bench Verified.** Across 444 issues it solved 40.8% versus 32.9% with no skill, at about the same tokens per solve. Inspect comparisons against no skill and Karpathy, frozen inputs, independent grades, failure-inclusive costs, and the reasons earlier revisions were rejected.
 
 The package combines [one skill](skills/efficient-coding/SKILL.md), [worked examples](skills/efficient-coding/references/worked-examples.md), and optional [evidence tools](skills/efficient-coding/references/execution.md). Install the skill to use the workflow; explore the evaluation framework when you want to assess it.
 
@@ -48,6 +48,38 @@ The Claude Code marketplace installation is tested in Docker and GitHub Actions.
 
 ## Measured results
 
+**On the full SWE-bench Verified benchmark, `efficient-coding` raised the solve rate from 32.9% to 40.8%** without increasing tokens per solve. No token saving has been established on any benchmark.
+
+### Full SWE-bench Verified
+
+All 444 SWE-bench Verified issues that pass the official gold/no-op grader controls (56 of 500 fail them), one run per issue and condition. Codex 0.160.0 · Qwen3.8-27B.
+
+| Condition | Solved ↑ | Tokens / solve ↓ |
+|---|---:|---:|
+| No skill | 146/444 (32.9%) | ≥553k |
+| Karpathy | 161/444 (36.3%) | **≥541k** |
+| **Ours: `efficient-coding`** | **181/444 (40.8%)** | ≥555k |
+| Ours + Karpathy | 161/444 (36.3%) | ≥606k |
+
+Our skill solved **7.9 percentage points more issues than no skill** (paired 95% interval +2.9 to +12.8; exact McNemar p = 0.002) at about the same tokens per solve. Its lead over Karpathy (+4.5 points, interval −0.5 to +9.5) is not conclusive, and adding Karpathy to our skill did not help. No tokens-per-solve difference is established.
+
+Scope: one model, one agent and one run per issue. About 5% of runs per condition have incomplete usage records, so costs are lower bounds. Results vary by repository; for example, our skill solved fewer scikit-learn issues than no skill (13 vs 19 of 31). [G5 report](tests/framework/refinement/g5/report.md)
+
+### Terminal-Bench 2.0
+
+Codex 0.160.0 · Qwen3.8-27B · 9 sealed tasks × 3 rounds.
+
+| Condition | Solved ↑ | Tokens / solve ↓ |
+|---|---:|---:|
+| No skill | 11/27 | ≥2.40M |
+| Karpathy | 13/27 | **≥1.75M** |
+| **Ours: `efficient-coding`** | 12/27 | ≥2.34M |
+| Ours + Karpathy | **14/27** | ≥2.16M |
+
+This sample is too small to separate the conditions: every paired cost-ratio interval includes 1. [G4 report](tests/framework/refinement/g4-A/report.md)
+
+### Earlier pilots: synthetic diagnostics and 6 SWE-bench issues
+
 Compare `efficient-coding` with standalone and combined baselines. **SoL-Pi below means NVlabs' original Pi extension**; our portable skill is listed separately.
 
 | Condition | Synthetic solved ↑ | Synthetic tokens / solve ↓ | SWE-bench solved ↑ | SWE-bench tokens / solve ↓ |
@@ -67,20 +99,7 @@ Our standalone skill solved more attempts than no skill and than Ours + Karpathy
 
 Token results against no skill remain mixed: synthetic cost per solve increased, and SWE-bench lower bounds do not establish an exact saving. On solve counts, NVlabs SoL-Pi matched no skill on synthetic diagnostics and solved fewer SWE-bench attempts than every Claude Code condition, but its harness differs. These small pilots do not establish a general performance advantage or superiority to NVlabs SoL-Pi.
 
-### Full SWE-bench Verified
-
-All 444 SWE-bench Verified issues that pass the official gold/no-op grader controls (56 of 500 fail them), one run per issue and condition. Codex 0.160.0 · Qwen3.8-27B.
-
-| Condition | Solved ↑ | Tokens / solve ↓ |
-|---|---:|---:|
-| No skill | 146/444 (32.9%) | ≥553k |
-| Karpathy | 161/444 (36.3%) | **≥541k** |
-| **Ours: `efficient-coding`** | **181/444 (40.8%)** | ≥555k |
-| Ours + Karpathy | 161/444 (36.3%) | ≥606k |
-
-Our skill solved **7.9 percentage points more issues than no skill** (paired 95% interval +2.9 to +12.8; exact McNemar p = 0.002) at about the same tokens per solve. Its lead over Karpathy (+4.5 points, interval −0.5 to +9.5) is not conclusive, and adding Karpathy to our skill did not help. No tokens-per-solve difference is established. [G5 report](tests/framework/refinement/g5/report.md)
-
-[Full comparison and development history](docs/evaluation.md) · [Original report](tests/report.md) · [Comparison chart](assets/benchmark-numbers.svg)
+[Full comparison and development history](docs/evaluation.md) · [Evaluation report](tests/report.md) · [Comparison chart](assets/benchmark-numbers.svg)
 
 ## Installation
 
@@ -132,7 +151,7 @@ The [workflow](.github/workflows/validate.yml) checks manifests, installation, r
 | [docs/evaluation.md](docs/evaluation.md) | Detailed results, comparison conditions, development history, and limitations |
 | [tests/framework/](tests/framework/) | Docker evaluation framework, benchmark adapters, and analysis |
 | [tests/goal.md](tests/goal.md) | Preregistered evaluation contracts |
-| [tests/report.md](tests/report.md) | Original skill evaluation report |
+| [tests/report.md](tests/report.md) | Evaluation report, from the first pilots to the current conclusion |
 | [tests/eval/](tests/eval/) | Frozen inputs, grades, and audits |
 
 ## Sources and license
