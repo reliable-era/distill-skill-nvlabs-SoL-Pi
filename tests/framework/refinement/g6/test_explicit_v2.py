@@ -24,6 +24,15 @@ class Explicit(unittest.TestCase):
         q=self.quota();q.reserve('a');q.observe(dict(rateLimitType='seven_day',utilization=.83,resetsAt=123),'live')
         with self.assertRaises(QuotaHold):q.reserve('b')
         self.assertGreaterEqual(q.scopes['seven_day']['reservation'],.159)
+    def test_rejected_missing_counter_needs_actual_refresh(self):
+        q=self.quota();q.observe(dict(rateLimitType='seven_day',status='rejected',resetsAt=1),'rejected')
+        with self.assertRaises(QuotaHold):q.reserve('a')
+        q.observe(dict(rateLimitType='seven_day',status='allowed',utilization=.4,resetsAt=2),'actual');q.reserve('a')
+        q.require_refresh()
+        with self.assertRaises(QuotaHold):q.reserve('b')
+    def test_nested_model_scope(self):
+        q=self.quota();q.observe(dict(seven_day_opus=dict(utilization=.89,resetsAt=1)),'actual')
+        with self.assertRaises(QuotaHold):q.reserve('a')
     def test_stale_seed_disclosed(self):self.assertGreater(self.quota().snapshot()['seven_day']['observation_age_seconds'],90)
     def test_plugin_ids_versions_extras_and_stock(self):
         a=json.loads((H/'preregistration.json').read_text())['amendment_explicit_v2'];m=dict(plugins=a['builtin_plugins'],loaded_skills=a['stock_skills']);plugin_guard(m,'none',a)

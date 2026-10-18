@@ -19,7 +19,8 @@ class Admissions:
     def __init__(self,root):
         self.root=root;self.lock=threading.RLock();self.until=0;self.stopped=False;self.recent=collections.deque(maxlen=16);self.stop_file=root/'ADMISSIONS-STOP-explicit-v2'
         seed=[]
-        for f in sorted((root/'smoke').glob('*/*/attempt-result.json'),key=lambda f:f.stat().st_mtime):
+        files=[f for phase in ('smoke','smoke-explicit-v2') for f in (root/phase).glob('*/*/attempt-result.json') if (f.parent/'native.jsonl').exists()]
+        for f in sorted(files,key=lambda f:f.stat().st_mtime):
             for event in json.loads(f.read_text()).get('stream',{}).get('rate_limit_events',[]):seed.append(dict(info=event,observed_epoch=(f.parent/'native.jsonl').stat().st_mtime))
         self.quota=Quota(seed,self.log)
     def stop(self,reason):
@@ -38,6 +39,7 @@ class Admissions:
         with self.lock:
             for event in metadata['native_error_events']:self.log(dict(kind='native_error',cell=cell,attempt=number,**event))
             if metadata['rate_limited']:
+                self.quota.require_refresh() # Reset clock alone cannot authorize another call.
                 reset=metadata['reset_epoch'];self.log(dict(kind='rate_limit_pause',cell=cell,attempt=number,reset_epoch=reset))
                 if reset is None:self.stopped=True;save(self.stop_file,dict(reason='rate-limit reset unavailable',cell=cell))
                 else:self.until=max(self.until,reset)
@@ -150,14 +152,22 @@ def guard(commit,phase):
     return p
 
 def main(commit,phase):
-    p=guard(commit,phase);root=private_root();launch=root/(phase+'-launch.json')
+    p=guard(commit,phase);root=private_root();continuation=(root/(phase+'-launch.json')).exists();launch=root/(phase+('-continuation-launch.json' if continuation else '-launch.json'))
     with launch.open('x') as out:json.dump(dict(utc=utc(),allowance_commit=commit,pid=__import__('os').getpid()),out)
     tasks=p['smoke_sample'] if phase=='smoke-explicit-v2' else p['study_issue_order'];network=Network();admissions=Admissions(root);results=[];lock=threading.RLock()
     def issue(task):
-        directory=root/phase/task;directory.mkdir(parents=True);images=IssueImages(task,directory)
+        directory=root/phase/task;directory.mkdir(parents=True,exist_ok=True);resources=directory/('resources-continuation' if continuation else 'resources');resources.mkdir();images=IssueImages(task,resources)
         try:
-            actor_image=images.acquire();dataset=json.loads((root/'dataset.json').read_text());taskdata=next(t for t in dataset if t['instance_id']==task);baseline=directory/'source';prepare(taskdata,images.base,baseline)
+            actor_image=images.acquire();dataset=json.loads((root/'dataset.json').read_text());taskdata=next(t for t in dataset if t['instance_id']==task);baseline=directory/'source'
+            if not (baseline/'manifest.json').exists():prepare(taskdata,images.base,baseline)
             for arm in p['arm_orders'][task]:
+                previous=directory/(arm+'-a1/attempt-result.json')
+                if continuation and previous.exists():
+                    row=json.loads(previous.read_text());assert row['grade_valid'] and not row['error'] and row['expansion']['command_expansion_verified'];verified=plugin_guard(row['stream'],arm,p['amendment_explicit_v2'])
+                    save(directory/(arm+'-guard-readjudication.json'),dict(original_attempt_sha256=sha(previous),verified_plugins=verified,reason='offline fake-token schedule omission;authenticated stock17;no model/grader rerun',grade_unchanged=True,cost_unchanged=True))
+                    summary=dict(task=task,arm=arm,phase=phase,scored_attempt=1,solved=row['solved'],grade_valid=True,infra_exhausted=False,attempts=[row],retained_without_model_or_grade_rerun=True)
+                    with lock:results.append(summary);save(root/(phase+'-summary.json'),results)
+                    continue
                 admissions.wait();rows=[];budget=0
                 while budget<5:
                     admissions.wait();number=len(rows)+1;d=directory/(arm+'-a'+str(number));row=attempt(task,arm,number,d,baseline,actor_image,images.base,network,admissions,phase);rows.append(row);save(directory/(arm+'-all-attempts.json'),rows);m=row['stream'];admissions.finished(m,task+'/'+arm,number)

@@ -14,6 +14,8 @@ class Quota:
             return
         if not isinstance(event,dict):return
         scope=event.get('rateLimitType') or event.get('rate_limit_type')
+        rejected=event.get('status') in ('rejected','denied')
+        if rejected and not scope:scope='provider_rejected_unscoped'
         if scope:
             value=event.get('utilization');reset=event.get('resetsAt',event.get('reset_at'))
             with self.lock:
@@ -21,12 +23,16 @@ class Quota:
                 # An unquantified observation cannot establish returned headroom.
                 if numeric:
                     delta=max(0,value-prior) if prior is not None and reset==old.get('reset') else 0
-                    old.update(utilization=float(value),reset=reset,observed_epoch=observed_epoch or time.time(),origin=origin,reservation=max(.05,old.get('reservation',.05),2*delta),unknown=False)
+                    old.update(utilization=float(value),reset=reset,observed_epoch=observed_epoch or time.time(),origin=origin,reservation=max(.05,old.get('reservation',.05),2*delta),unknown=rejected)
                 elif not old:old=dict(utilization=None,reservation=.05,unknown=True,origin=origin,reset=reset)
+                elif rejected:old.update(unknown=True,origin=origin)
                 self.scopes[scope]=old;self.record(dict(kind='quota_observation',scope=scope,**old))
         for key,child in event.items():
             if isinstance(child,dict) and 'utilization' in child and not child.get('rateLimitType') and any(w in key for w in ('hour','day','opus','sonnet')):child=dict(child,rateLimitType=key)
             if isinstance(child,(list,dict)):self.observe(child,origin)
+    def require_refresh(self):
+        with self.lock:
+            for v in self.scopes.values():v['unknown']=True
     def snapshot(self,extra=0):
         with self.lock:
             return {s:dict(v,projected=None if v.get('utilization') is None else v['utilization']+(len(self.active)+extra)*v['reservation'],inflight=len(self.active),observation_age_seconds=time.time()-v.get('observed_epoch',time.time())) for s,v in self.scopes.items()}
