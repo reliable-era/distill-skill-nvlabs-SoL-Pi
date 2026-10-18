@@ -52,6 +52,9 @@ class Protocol(unittest.TestCase):
         p=json.loads((pathlib.Path(__file__).parent/'preregistration.json').read_text());self.assertEqual(len(p['study_sample']),150);self.assertEqual(len(p['smoke_sample']),2);self.assertFalse(set(p['smoke_sample'])&set(p['study_sample']));self.assertFalse(p['gates']['study_authorized'])
     def test_generated_bytecode_removed_not_real_binary_asset(self):
         raw=b'diff --git a/__pycache__/x.pyc b/__pycache__/x.pyc\nnew file mode 100644\nindex 0000000..1111111\nGIT binary patch\nliteral 1\nA\n\ndiff --git a/asset.png b/asset.png\nnew file mode 100644\nindex 0000000..1111111\nGIT binary patch\nliteral 1\nA\n\n';clean,_=project(raw);self.assertNotIn(b'x.pyc',clean);self.assertIn(b'asset.png',clean)
+    def test_native_argv_forwards_stdin_and_not_credential_value(self):
+        from runner import native_argv
+        args=native_argv('owned','/dev/shm/example/runtime.env','ours');self.assertEqual(args[:4],['docker','exec','-i','--env-file']);self.assertNotIn('not-a-real-token',args)
     def test_study_guard_stops_before_credential_access(self):
         import runner,hashlib,types
         with tempfile.TemporaryDirectory() as d:

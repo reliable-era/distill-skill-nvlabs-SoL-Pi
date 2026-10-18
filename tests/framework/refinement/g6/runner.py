@@ -10,6 +10,8 @@ from security import read_token,env_file,filtered_copy
 from stream import parse
 PYTHON='/tmp/solpi-refinement-harbor-venv/bin/python'
 def utc():return datetime.datetime.now(datetime.timezone.utc).isoformat()
+def native_argv(name,credential_file,arm):
+    return ['docker','exec','-i','--env-file',credential_file,name,'python3','/opt/g6/entry.py','run',arm]
 
 class Admissions:
     def __init__(self,root):self.root=root;self.lock=threading.RLock();self.until=0;self.stopped=False;self.recent=collections.deque(maxlen=16)
@@ -46,7 +48,7 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
         prompt=(baseline/'prompt.txt').read_bytes();assert sha(baseline/'prompt.txt')==json.loads((baseline/'manifest.json').read_text())['prompt_sha256'];(directory/'prompt.txt').write_bytes(prompt)
         admissions.wait();token=read_token();start=time.monotonic();result.update(native_started=True,started_utc=utc(),prompt_sha256=sha(directory/'prompt.txt'));save(directory/'attempt-progress.json',result)
         with env_file(token) as credential_file,(directory/'prompt.txt').open('rb') as source,(directory/'native.jsonl').open('wb') as output:
-            process=subprocess.Popen(['docker','exec','--env-file',credential_file,name,'python3','/opt/g6/entry.py','run',arm],stdin=source,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+            process=subprocess.Popen(native_argv(name,credential_file,arm),stdin=source,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
             redactions=[]
             def drain():redactions.append(filtered_copy(process.stdout,output,token))
             reader=threading.Thread(target=drain,daemon=True);reader.start()
