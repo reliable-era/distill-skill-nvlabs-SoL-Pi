@@ -1,4 +1,64 @@
-# Active goal (G5): full SWE-bench Verified
+# Active contract (G6): Claude Opus 5.5 transfer check
+
+User-approved, advisor-reviewed design, fixed before any G6 treatment result.
+
+- Compare **none vs ours only**, one round, Claude Code CLI **2.1.302**, requested
+  model **claude-opus-5-5**, headless stream-json. Freeze the current committed
+  efficient-coding plugin snapshot; record CLI version, plugin commit and actual
+  provider-reported model IDs for every run. No model fallback or Qwen route.
+- Population: the **444 G5 control-eligible issues**. Draw150 outcome-blind using
+  proportional repository strata and recorded seed; draw2 seeded smoke issues
+  from the remaining294. `framework/refinement/g6/preregistration.json` fixes
+  exact IDs, Hamilton rounding, seeds, issue order and randomized arm orders.
+  Never read G5 model outcomes to allocate. Smoke is excluded from scoring.
+- Two issue workers initially: run each issue's randomized arms consecutively.
+  **60 Claude turns /120 minutes**, not60 G5 requests; retain nested/subagent usage.
+  Both arms receive the identical canonical G5 issue/task prompt, without the
+  Codex-specific request-budget or inline-skill suffix. Treatment installs the
+  plugin normally from its frozen local marketplace; control has no plugins or
+  skills. Record activation/invocation but analyze every admitted run.
+- Disposable HOME per attempt; no host CLAUDE.md, settings, memories, skills or
+  hooks. Reuse frozen G5 issue images, official controls/grader, sanitized source,
+  source-only projection and empty-patch rule. Actors never see gold/control
+  records. Owned internal Docker network plus an API-only egress proxy; no host
+  network, Docker socket, other backend operations or unrelated cleanup.
+- Use only the dedicated setup-token file at `$HOME/.config/solpi-g6/claude-oauth-token`
+  (mode600); never read/mount/copy host `.claude/.credentials.json`. Supply the
+  token only at runtime via an owned tmpfs env file. Never persist its value in
+  images, command lines, logs, archives or Git; redact before writing streams.
+- Charge all attempts. Keep uncached input, cache-creation, cache-read and output
+  per model from result/modelUsage, including subagents. Report token volume and
+  the preregistered cache-adjusted token-volume proxy separately, not dollar cost.
+  No usage imputation; incomplete coverage makes this a solve-rate study.
+- Terminal API5xx/529 overload: max5 budget-counted clean attempts, G5 backoff and
+  circuit rule, latest quality/all costs.429/subscription limit: pause admissions
+  until explicit reset and rerun, outside that failure budget; unknown reset
+  requires supervisor input. Ordinary caps/timeouts/empty/model outcomes do not
+  earn retries. Harness or cleanup uncertainty stops admissions with costs saved.
+- Primary: paired solve difference,95% task-bootstrap CI (20,000 draws, recorded
+  seed), exact McNemar. Secondary: paired all-attempt tokens/solve ratio where
+  usage permits; cache-adjusted estimate separately. Descriptive, no promotion
+  gate; claim limited to this eligible cohort/Claude Code configuration and state
+  contamination cannot be ruled out. Do not pool with G5.
+- Verify runner with unit tests and **no-model Docker plumbing before any Opus
+  call**. If dedicated token missing, STOP and report. When available, run only
+  **2x2 smoke**, report per-run tokens, wall time, provider model ID, skill
+  activation, grade and rate-limit events, then **WAIT for explicit go** before
+  the300-run study. No study authorization is implied by smoke success.
+- G6-only code/summaries plus this contract; private raw evidence in a new owned
+  `/tmp/solpi-g6-*` root. Preserve all preexisting/unrelated Docker/Git objects;
+  root free strictly above300GB,80GB reserve per active issue. Commit locally,
+  no push; do not change shipped plugin, README, docs, G4/G5 records or backends.
+
+Verification is the committed allocation/configuration, tests and actual isolated
+Docker source/plugin/network/capture/grader/cleanup evidence; then the four smoke
+summaries. Between steps recheck frozen hashes and admission gates. If credentials,
+API access, reset timing or isolation cannot be verified, stop with retained
+cost/evidence and the exact next input needed; do not relax scope or silently retry.
+
+---
+
+# Closed goal (G5): full SWE-bench Verified
 
 Set 2026-10-14 at the user's request ("execute the full version of benchmark, SWE-bench").
 Choices made by the user: **SWE-bench Verified, all 500 issues**; **4 arms, Codex, 1 round**.
