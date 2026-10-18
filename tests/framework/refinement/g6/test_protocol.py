@@ -49,7 +49,7 @@ class Protocol(unittest.TestCase):
         for row in ds.values():row['outcome']='changed'
         self.assertEqual(allocate(ids,ds)[0],sample)
     def test_frozen_sample_disjoint_and_closed_study(self):
-        p=json.loads((pathlib.Path(__file__).parent/'preregistration.json').read_text());self.assertEqual(len(p['study_sample']),150);self.assertEqual(len(p['smoke_sample']),2);self.assertFalse(set(p['smoke_sample'])&set(p['study_sample']));self.assertFalse(p['gates']['study_authorized'])
+        p=json.loads((pathlib.Path(__file__).parent/'preregistration.json').read_text());self.assertEqual(len(p['study_sample']),150);self.assertEqual(len(p['smoke_sample']),2);self.assertFalse(set(p['smoke_sample'])&set(p['study_sample']));self.assertTrue(p['gates']['study_authorized']);self.assertFalse(p['gates']['study_admissions_open'])
     def test_generated_bytecode_removed_not_real_binary_asset(self):
         raw=b'diff --git a/__pycache__/x.pyc b/__pycache__/x.pyc\nnew file mode 100644\nindex 0000000..1111111\nGIT binary patch\nliteral 1\nA\n\ndiff --git a/asset.png b/asset.png\nnew file mode 100644\nindex 0000000..1111111\nGIT binary patch\nliteral 1\nA\n\n';clean,_=project(raw);self.assertNotIn(b'x.pyc',clean);self.assertIn(b'asset.png',clean)
     def test_native_argv_forwards_stdin_and_not_credential_value(self):

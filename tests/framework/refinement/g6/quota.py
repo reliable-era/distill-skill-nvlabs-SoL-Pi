@@ -4,8 +4,8 @@ Only actual rate observations lower utilization;clock reset alone never does.
 import threading,time
 class QuotaHold(RuntimeError):pass
 class Quota:
-    def __init__(self,seed,record=lambda x:None):
-        self.lock=threading.RLock();self.scopes={};self.active={};self.record=record;self.seen=set()
+    def __init__(self,seed,record=lambda x:None,study_mode=False,clock=time.time):
+        self.lock=threading.RLock();self.scopes={};self.active={};self.record=record;self.seen=set();self.study_mode=study_mode;self.clock=clock;self.sixty_notices=set()
         for event in seed:
             if event.get('require_refresh'):self.require_refresh()
             else:self.observe(event['info'],'prior-retained-native-stream',event['observed_epoch'])
@@ -29,6 +29,11 @@ class Quota:
                 elif not old:old=dict(utilization=None,reservation=.05,unknown=True,origin=origin,reset=reset)
                 elif rejected:old.update(unknown=True,origin=origin)
                 self.scopes[scope]=old;self.record(dict(kind='quota_observation',scope=scope,**old))
+                if self.study_mode and numeric:
+                    from study_policy import RESET,notify_new_week_sixty
+                    notice=(scope,int((old['observed_epoch']-RESET)//604800))
+                    if notify_new_week_sixty(scope,value,old['observed_epoch']) and notice not in self.sixty_notices:
+                        self.sixty_notices.add(notice);self.record(dict(kind='supervisor_notice',reason='New-week weekly utilization >=0.60',scope=scope,utilization=value,observation_epoch=old['observed_epoch']))
         for key,child in event.items():
             if isinstance(child,dict) and 'utilization' in child and not child.get('rateLimitType') and any(w in key for w in ('hour','day','opus','sonnet')):child=dict(child,rateLimitType=key)
             if isinstance(child,(list,dict)):self.observe(child,origin)
@@ -37,12 +42,17 @@ class Quota:
             for v in self.scopes.values():v['unknown']=True
     def snapshot(self,extra=0):
         with self.lock:
-            return {s:dict(v,projected=None if v.get('utilization') is None else v['utilization']+(len(self.active)+extra)*v['reservation'],inflight=len(self.active),observation_age_seconds=time.time()-v.get('observed_epoch',time.time())) for s,v in self.scopes.items()}
+            return {s:dict(v,threshold=self.threshold(s),projected=None if v.get('utilization') is None else v['utilization']+(len(self.active)+extra)*v['reservation'],inflight=len(self.active),observation_age_seconds=time.time()-v.get('observed_epoch',time.time())) for s,v in self.scopes.items()}
+    def threshold(self,scope):
+        if self.study_mode and 'seven_day' in scope:
+            from study_policy import weekly_threshold
+            return float(weekly_threshold(self.clock()))
+        return .90
     def reserve(self,key):
         with self.lock:
             projection=self.snapshot(extra=1)
-            if not projection or any(v.get('unknown') or v['projected'] is None or v['projected']>=.90-1e-12 for v in projection.values()):
-                self.record(dict(kind='quota_hold',projections=projection));raise QuotaHold('Projected quota >=0.90 or actual utilization unavailable;wait for actual headroom')
+            if not projection or any(v.get('unknown') or v['projected'] is None or v['projected']>=v['threshold']-1e-12 for v in projection.values()):
+                self.record(dict(kind='quota_hold',projections=projection));raise QuotaHold('Projected quota reaches active threshold or actual utilization unavailable;wait for actual headroom')
             assert key not in self.active;self.active[key]=time.time();self.record(dict(kind='quota_reservation',run=key,projections=projection));return projection
     def release(self,key):
         with self.lock:

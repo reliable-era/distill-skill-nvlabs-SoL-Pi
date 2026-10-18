@@ -1525,12 +1525,34 @@
     "secondary": "all-attempt token-volume/solve ratio paired bootstrap;cache-adjusted proxy separately;undefined if usage incomplete",
     "population_claim": "This444-eligible cohort,sampled150,in this pinned Claude Code configuration;contamination cannot be ruled out;not pooled with G5"
   },
+  "supervisor_study_go": {
+    "baseline_commit": "9d95eb828fac8e65139b38c3eca98aec39d60789",
+    "go_received": true,
+    "target_issues_fixed": 150,
+    "target_cells_fixed": 300,
+    "weekly_reset_epoch": 1792353600,
+    "before_reset_weekly_projection_threshold": 0.90,
+    "after_reset_weekly_projection_threshold": 0.70,
+    "threshold_comparison": "Stop before projection reaches threshold;strictly below required;no reset-clock utilization imputation",
+    "forecast_increment_percentage_points_per_run": 0.25,
+    "forecast_rate_source": "Supervisor estimate from smoke;forecast only,not actual usage imputation",
+    "existing_guards_preserved": "Retain minimum5pp per-inflight-run reservation/adaptive increases and all scope/activation/plugin/source/credential/retry guards;0.25pp forecast is not authority to lower the5pp reservation",
+    "remaining_N_gate": "If forecast N cannot finish under thresholds,pause/report incomplete;never shrink N or spend calls to recalibrate while blocked",
+    "cross_reset_optimistic_bound": "Even allowing current plus next weekly window,76% latest observed weekly use and existing5pp minimum reservation give at most36+260=296 calls at0.25pp/call,ignoring retries,external use,shorter quotas,parallel padding and preparation time. Do not silently assume additional weekly windows or relax the reservation.",
+    "concurrency_plan": "2 for first20 study cells;4 only after20 cells and zero429/5xx/overloaded events across retained attempts;paired-adjacent frozen randomized arm order unchanged",
+    "notifications": "Report completion,any guard stop,and actual new-week seven-day utilization crossing0.60;do not relabel an old-week observation as a new-week crossing",
+    "status": "quota preflight pause;no study admission",
+    "study_admissions_open": false
+  },
   "gates": {
     "preregistration_commit_before_model": true,
     "no_model_plumbing_before_smoke": true,
     "smoke_authorized_if_dedicated_token_exists": true,
-    "study_authorized": false,
-    "study_requires_explicit_supervisor_go_after_smoke": true
+    "study_authorized": true,
+    "study_requires_explicit_supervisor_go_after_smoke": true,
+    "supervisor_go_received": true,
+    "study_admissions_open": false,
+    "budget_preflight_pass_required_before_credentials_or_Docker": true
   },
   "credential": "Dedicated setup-token file only;mode600,no symlinks;runtime docker exec env-file in owned tmpfs;never host credentials.json;no token in image,command line,log,archive or Git",
   "no_push": true

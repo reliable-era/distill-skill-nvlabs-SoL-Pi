@@ -16,7 +16,7 @@ def native_argv(name,credential_file,arm):
     return ['docker','exec','-i','--env-file',credential_file,name,'python3','/opt/g6/entry.py','run',arm]
 
 class Admissions:
-    def __init__(self,root):
+    def __init__(self,root,study_mode=False):
         self.root=root;self.lock=threading.RLock();self.until=0;self.stopped=False;self.recent=collections.deque(maxlen=16);self.stop_file=root/'ADMISSIONS-STOP-explicit-v2'
         seed=[]
         files=[f for phase in ('smoke','smoke-explicit-v2','study') for f in (root/phase).glob('*/*/attempt-result.json') if (f.parent/'native.jsonl').exists()]
@@ -24,12 +24,13 @@ class Admissions:
             metadata=json.loads(f.read_text()).get('stream',{})
             for event in metadata.get('rate_limit_events',[]):seed.append(dict(info=event,observed_epoch=(f.parent/'native.jsonl').stat().st_mtime))
             if metadata.get('rate_limited'):seed.append(dict(require_refresh=True))
-        self.quota=Quota(seed,self.log)
+        self.quota=Quota(seed,self.log,study_mode=study_mode)
     def stop(self,reason):
         self.stopped=True;save(self.stop_file,dict(reason=reason))
     def log(self,event):
         with self.lock:
             with (self.root/'admission-events-explicit-v2.jsonl').open('a') as f:f.write(json.dumps(dict(utc=utc(),**event))+'\n')
+            if event.get('kind')=='supervisor_notice':save(self.root/'STUDY-SUPERVISOR-NOTICE.json',event)
     def wait(self):
         while True:
             with self.lock:
@@ -138,7 +139,12 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
     return result
 
 def guard(commit,phase):
-    p=check_frozen();root=private_root();stage=json.loads((H/'runner-stage.json').read_text());relative=str((H/'runner-stage.json').relative_to(R))
+    p=check_frozen();root=private_root()
+    if phase=='study' and p.get('supervisor_study_go'):
+        from study_preflight import current_budget
+        budget=current_budget();save(root/'study-latest-budget-check.json',budget)
+        if not budget['admissions_allowed']:raise QuotaHold('Study GO is conditional:fixed remaining-N forecast exceeds available weekly windows with existing guards')
+    stage=json.loads((H/'runner-stage.json').read_text());relative=str((H/'runner-stage.json').relative_to(R))
     assert command(['git','show',commit+':'+relative]).stdout==(H/'runner-stage.json').read_bytes(),'Committed allowance required'
     assert sha(H/'preregistration.json')==stage['preregistration_sha256'];assert phase in stage['authorized_phases'],'Study waits for explicit supervisor go'
     assert stage['no_model_plumbing_passed'] and sha(H/'plumbing-summary.json')==stage['plumbing_summary_sha256']
@@ -156,7 +162,7 @@ def guard(commit,phase):
 def main(commit,phase):
     p=guard(commit,phase);root=private_root();continuation=(root/(phase+'-launch.json')).exists();launch=root/(phase+('-continuation-launch.json' if continuation else '-launch.json'))
     with launch.open('x') as out:json.dump(dict(utc=utc(),allowance_commit=commit,pid=__import__('os').getpid()),out)
-    tasks=p['smoke_sample'] if phase=='smoke-explicit-v2' else p['study_issue_order'];network=Network();admissions=Admissions(root);results=[];lock=threading.RLock()
+    tasks=p['smoke_sample'] if phase=='smoke-explicit-v2' else p['study_issue_order'];network=Network();admissions=Admissions(root,study_mode=phase=='study');results=[];lock=threading.RLock()
     def issue(task):
         directory=root/phase/task;directory.mkdir(parents=True,exist_ok=True);resources=directory/('resources-continuation' if continuation else 'resources');resources.mkdir();images=IssueImages(task,resources)
         try:

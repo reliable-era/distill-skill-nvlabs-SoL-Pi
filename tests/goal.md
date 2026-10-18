@@ -1,5 +1,7 @@
 # Active contract (G6): Claude Opus 5.5 transfer check
 
+**Study GO received after `9d95eb8`;admissions PAUSED by quota preflight at0/300.** N remains150. Before weekly reset1792353600 require projection<0.90;afterward<0.70,keeping all existing guards. Supervisor forecast0.25pp/run plus existing5pp in-flight reservation permits an optimistic36 current-window +260 new-window calls =296<300,so do not spend calls or reduce N. Concurrency2 for first20 cells,then4 only with no429/5xx/overloaded events;if ever admitted. Report at completion,any guard stop,or actual new-week weekly utilization crossing0.60. Current paused analysis is undefined,not zero-effect/failure data. Details/evidence: `framework/refinement/g6/study-report.md`.
+
 User-approved, advisor-reviewed design. Initial v1 was fixed before treatment results;the explicit-v2 A/B/C amendment was approved AFTER two treatment outcomes were seen,and activation observations motivated the change. `framework/refinement/g6/protocol.md` and preregistration disclose it;do not pool natural and explicit activation.
 
 - Compare **none vs ours only**, one round, Claude Code CLI **2.1.302**, requested
