@@ -1525,6 +1525,16 @@
     "secondary": "all-attempt token-volume/solve ratio paired bootstrap;cache-adjusted proxy separately;undefined if usage incomplete",
     "population_claim": "This444-eligible cohort,sampled150,in this pinned Claude Code configuration;contamination cannot be ruled out;not pooled with G5"
   },
+  "automatic_quota_resume": {
+    "enabled": true,
+    "supervisor_go_after_commit": "508c4c0bd95aa0911caf5be29c6c7d62c71ad9b3",
+    "start_after_retained_cells": 12,
+    "quota_policy": "Normal quota pauses auto-resume only after LIVE numeric post-reset headroom for every blocking window and a fresh projection check. Reset clock alone never authorizes admission. Emit/persist an interim status line at every pause/resume;no supervisor wait for normal quota pauses.",
+    "live_refresh": "Prefer native headers. When paused,poll the same account's read-only api.anthropic.com/api/oauth/usage through the owned CONNECT proxy,without a model request. Normalize real HTTP unified headers and numeric provider quota-response scopes;never invent zeros. Token runtime-only env file,no host HOME/settings/refresh state. Poll60s;retain non-model status/counter records separately,never count as study cells or token-bearing inference.",
+    "report_stops": ["completion","actual new-week weekly utilization crossing0.60","any429/subscription rejection","terminal5xx exhaustion","isolation/configuration/guard failure","harness/cleanup failure","credential literal scan hit"],
+    "sixty_policy": "Stop new issue admissions and report;drain already reserved pairs within safety guards. No automatic resume across a supervisor stop.429/rejection,terminal5xx exhaustion and other fatal guards stop ALL admissions including promised arms.",
+    "retention": "Keep all12 valid prior cells,all costs,and the frozen issue/arm order. Normal reserved-arm quota holds wait without new model attempts;resume the same promised arm after actual reset headroom. Rates,weekly70%/five-hour90% caps,20-clean-cell concurrency ramp and every isolation/credential constraint unchanged."
+  },
   "live_baseline_correction": {
     "approved_after_pause_commit": "c752fadaae27ceba7b2ba23fe18c3a10693c5d44",
     "complete_first_task": "django__django-13410",

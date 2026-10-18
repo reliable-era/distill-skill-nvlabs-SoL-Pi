@@ -2,7 +2,17 @@
 
 Design/sample are fixed by `preregistration.json` (initial contract commit `d1fe82a`). The plugin snapshot is commit `920c32eb69fff4227fe1e3991046b43a805ec61e`, not the dirty worktree. Hamilton proportional allocation gives150 issues; the single Flask issue receives quota0. Two independently seeded smoke issues are outside those150. No G5 model-outcome file is read by allocation or execution.
 
-## ACTIVE approved live-baseline correction after c752fad
+## ACTIVE supervisor GO after508c4c0 — automatic quota resume from cell13
+
+Retain all12 valid cells/6 pairs and all charges;continue the frozen queue from its next cell. Normal quota holds (five-hour90%,weekly projected70%,or expired reset observations) now pause WITHOUT waiting for supervisor approval. Persist/print one interim status line at each pause/resume. Resume only when actual LIVE numeric observations establish post-reset headroom for EVERY blocking window,and the current active/promised/candidate projection passes. No clock-derived zero and no bypass of other scopes. Keep promised second arms waiting in the same pre-native attempt rather than manufacturing retries/half-pairs.
+
+Native headers remain the primary live source. To avoid a no-inflight/header deadlock after draining,poll the same account's read-only HTTPS `api.anthropic.com/api/oauth/usage` at60s intervals through the owned CONNECT proxy. Use real unified quota headers when available and the provider's numeric usage-response counters,normalize percent to fractions and explicit reset timestamps. This is live HTTP provider evidence,not reset-clock inference or a paid inference probe. Extra account metadata/bodies/auth headers are never retained. Token passes only via runtime `/dev/shm` env file;no host HOME/settings/refresh-state mounts. Poll observations update headroom ONLY,not study-rate learning. All reported temporal/model-specific scopes remain guarded. Failed authentication/unsupported response/isolation uncertainty is a supervisor guard stop,not a reason to create a model probe.429 is global fatal;5xx polling failures have5 retained attempts with60–900s jittered backoff,then fatal exhaustion.
+
+Stop/report ONLY at completion;actual weekly utilization crossing60%;any429/subscription rejection;terminal5xx exhaustion;isolation/configuration/guard/harness/cleanup failure;or credential literal scan hit. Weekly60% stops NEW pairs and reports while reserved pairs drain safely;it is never auto-resumed. Fatal API/guard/credential events stop ALL new native admissions,including promised arms. Stream/context/capture redactors now raise an immediate admission-stop signal on any literal credential hit while preserving redacted evidence. No unattended controller restart after a reportable stop.
+
+Everything else remains:weekly70%,five-hour90%,per-cell learned rate cap1pp,first-live anchors/idle exclusion,all-attempt costs,150 fixed issues,2 issue workers through20 clean cells then4 only without adverse API events,unchanged CLI/model/plugin/prompt/quality rules. Re-freeze and commit changed host runtime before any new model call. Prior manual quota-checkpoint policy below is historical/superseded ONLY for ordinary quota pauses.
+
+## Previously approved live-baseline correction after c752fad
 
 Supervisor approved retaining all3 valid study cells/379,421 tokens and continuing,with missing Django13410 treatment completed BEFORE any other new issue. No model/grader rerun of completed cells. Frozen issue/arm queue and150-issue N remain unchanged. The blocked zero-call treatment ordinal1 stays retained;next directory ordinal2 is its first actual model call.
 

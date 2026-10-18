@@ -77,7 +77,7 @@ class Running(unittest.TestCase):
         import study_runner as sr
         from common import prereg
         with tempfile.TemporaryDirectory() as d:
-            root=pathlib.Path(d);p=prereg();p['live_baseline_correction']={};p['study_issue_order']=['fixture'];p['arm_orders']={'fixture':['ours','none']};(root/'dataset.json').write_text(json.dumps([dict(instance_id='fixture')]))
+            root=pathlib.Path(d);p=prereg();p['automatic_quota_resume']={};p['live_baseline_correction']={};p['study_issue_order']=['fixture'];p['arm_orders']={'fixture':['ours','none']};(root/'dataset.json').write_text(json.dumps([dict(instance_id='fixture')]))
             f=root/'smoke-explicit-v2/fixture/ours-a1';f.mkdir(parents=True);(f/'native.jsonl').write_text('');(f/'attempt-result.json').write_text(json.dumps(dict(stream=dict(rate_limit_events=[dict(rateLimitType='seven_day',utilization=.76,resetsAt=RESET)]))))
             calls=[]
             def prep(data,base,path):path.mkdir();(path/'manifest.json').write_text('{}')
@@ -93,7 +93,7 @@ class Running(unittest.TestCase):
         import study_runner as sr
         from common import prereg
         with tempfile.TemporaryDirectory() as d:
-            root=pathlib.Path(d);p=prereg();p['study_issue_order']=['priority','later'];p['arm_orders']={t:['none','ours'] for t in p['study_issue_order']};p['live_baseline_correction']={'complete_first_task':'priority'};(root/'dataset.json').write_text(json.dumps([dict(instance_id=t) for t in p['study_issue_order']]))
+            root=pathlib.Path(d);p=prereg();p['automatic_quota_resume']={};p['study_issue_order']=['priority','later'];p['arm_orders']={t:['none','ours'] for t in p['study_issue_order']};p['live_baseline_correction']={'complete_first_task':'priority'};(root/'dataset.json').write_text(json.dumps([dict(instance_id=t) for t in p['study_issue_order']]))
             smoke=root/'smoke-explicit-v2/fixture/none-a1';smoke.mkdir(parents=True);(smoke/'native.jsonl').write_text('');(smoke/'attempt-result.json').write_text(json.dumps(dict(stream=dict(rate_limit_events=[dict(rateLimitType='seven_day',utilization=.76,resetsAt=RESET)]))))
             def row(task,arm):return dict(task=task,arm=arm,attempt=1,native_started=True,started_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),wall_seconds=0.,grade_valid=True,solved=True,expansion=dict(command_expansion_verified=True),stream=dict(rate_limited=False,terminal_5xx=False,blocked_native=False,native_error_events=[]))
             old=root/'study/priority/none-a1';old.mkdir(parents=True);(old/'attempt-result.json').write_text(json.dumps(row('priority','none')));calls=[]

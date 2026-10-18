@@ -61,7 +61,7 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
     try:
         template=json.loads((root/'grader-template.json').read_text());actor(name,image,baseline,directory,network,arm,template['wheelhouse'])
         task_bytes=(baseline/'prompt.txt').read_bytes();assert sha(baseline/'prompt.txt')==json.loads((baseline/'manifest.json').read_text())['prompt_sha256'];(directory/'prompt.txt').write_bytes(prompt_bytes(task_bytes,arm));(directory/'input.jsonl').write_bytes(input_bytes(task_bytes,arm))
-        admissions.wait();result['quota_before']=admissions.quota.reserve(reservation);reserved=True;token=read_token();start=time.monotonic();result.update(native_started=True,activation_mode='explicit-v2',started_utc=utc(),canonical_task_sha256=sha(baseline/'prompt.txt'),prompt_sha256=sha(directory/'prompt.txt'));save(directory/'attempt-progress.json',result)
+        admissions.wait();result['quota_before']=admissions.reserve_native(reservation) if hasattr(admissions,'reserve_native') else admissions.quota.reserve(reservation);reserved=True;token=read_token();start=time.monotonic();result.update(native_started=True,activation_mode='explicit-v2',started_utc=utc(),canonical_task_sha256=sha(baseline/'prompt.txt'),prompt_sha256=sha(directory/'prompt.txt'));save(directory/'attempt-progress.json',result)
         with env_file(token) as credential_file,(directory/'input.jsonl').open('rb') as source,(directory/'native.jsonl').open('wb') as output:
             process=subprocess.Popen(native_argv(name,credential_file,arm),stdin=source,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
             redactions=[]
@@ -78,7 +78,7 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
                     if event.get('type')=='system' and event.get('subtype')=='init':
                         try:plugin_guard(dict(plugins=event.get('plugins',[]),loaded_skills=event.get('skills',[])),arm,p['amendment_explicit_v2'])
                         except RuntimeError:admissions.stop('Unexpected plugin or stock skill set')
-            def drain():redactions.append(filtered_copy(process.stdout,output,token,observe))
+            def drain():redactions.append(filtered_copy(process.stdout,output,token,observe,on_hit=lambda:admissions.stop('Credential literal hit in native stream;drain and report')))
             reader=threading.Thread(target=drain,daemon=True);reader.start()
             try:process.wait(timeout=7200)
             except subprocess.TimeoutExpired:result['timeout']=True;command(['docker','stop','-t','10',name]);process.wait(timeout=30)
@@ -93,7 +93,7 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
         context=directory/'context.jsonl'
         with context.open('wb') as output:
             cp=subprocess.Popen(['docker','exec',name,'python3','/opt/g6/entry.py','context',metadata['session_id']],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-            result['context_secret_redactions']=filtered_copy(cp.stdout,output,token);cp.stderr.read();assert cp.wait(timeout=30)==0
+            result['context_secret_redactions']=filtered_copy(cp.stdout,output,token,on_hit=lambda:admissions.stop('Credential literal hit in context;drain and report'));cp.stderr.read();assert cp.wait(timeout=30)==0
         result['context_sha256']=sha(context);result['expansion']=expansion_evidence(context,task_bytes,(root/'marketplace/skills/efficient-coding/SKILL.md').read_bytes(),arm)
         if not result['expansion']['command_expansion_verified']:admissions.stop('Native context did not prove full task/skill expansion')
         result['quota_after']=admissions.quota.release(reservation);reserved=False
@@ -101,7 +101,7 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
         command(['docker','stop','-t','10',name])
         with (directory/'captured.tar').open('wb') as output:
             cp=subprocess.Popen(['docker','cp',name+':/testbed/.','-'],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-            redacted=filtered_copy(cp.stdout,output,token);stderr=cp.stderr.read();code=cp.wait(timeout=120)
+            redacted=filtered_copy(cp.stdout,output,token,on_hit=lambda:admissions.stop('Credential literal hit in source capture;quarantine and report'));stderr=cp.stderr.read();code=cp.wait(timeout=120)
             (directory/'capture.stderr').write_bytes(stderr.replace(token,b'X'*len(token)))
             if redacted:raise RuntimeError('Credential content quarantined from capture;stop,do not grade altered source')
             if code:raise RuntimeError('Docker source capture failed')
