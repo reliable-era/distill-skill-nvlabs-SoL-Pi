@@ -71,7 +71,7 @@ def parse(path):
     blocked=bool(terminal and any(s in (401,403,404) for s in terminal['statuses']))
     loaded=init.get('skills',[])
     return dict(final_result_present=bool(final),result_subtype=(final or {}).get('subtype'),num_turns=(final or {}).get('num_turns'),
-        cli_version=init.get('claude_code_version'),requested_init_model=init.get('model'),provider_reported_model_ids=sorted(models),main_provider_model_ids=sorted(main_models),model_usage_ids=sorted(per_model),
+        session_id=init.get('session_id'),cli_version=init.get('claude_code_version'),requested_init_model=init.get('model'),provider_reported_model_ids=sorted(models),main_provider_model_ids=sorted(main_models),model_usage_ids=sorted(per_model),
         per_model=per_model,totals=total,usage_source=usage_source,usage_complete=complete,usage_issues=issues,invalid_stream_lines=invalid,
         token_volume_lower_bound=sum(total.values()),cache_adjusted_volume_5m_proxy=sum(total[k]*w for k,w in zip(FIELDS,(1,1.25,.1,1))),
         subagent_message_count=sum(bool(e.get('parent_tool_use_id')) for e in events if e.get('type')=='assistant'),

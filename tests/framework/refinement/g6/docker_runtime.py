@@ -1,7 +1,7 @@
 """G6-owned Docker objects only;preserve existing/shared images,no pruning."""
 import json,os,pathlib,subprocess,uuid
 from build import inspect
-from common import command,private_root,save,disk_free
+from common import command,private_root,save,disk_free,sha
 from source_archive import archive_source
 
 class Network:
@@ -11,7 +11,7 @@ class Network:
     def start(self):
         command(['docker','network','create','--internal','--label','solpi.g6='+self.root.name,self.name]);self.created=True
         assert json.loads(command(['docker','network','inspect',self.name]).stdout)[0]['Internal'] is True
-        image=json.loads((self.root/'tool-image.json').read_text())['image_id']
+        image=json.loads((self.root/'tool-image-explicit-v2.json').read_text())['image_id']
         command(['docker','create','--pull=never','--name',self.proxy,'--label','solpi.g6='+self.root.name,'--network','bridge','--user','1000:1000','--cap-drop','ALL','--security-opt','no-new-privileges','--read-only','--tmpfs','/tmp:rw','--entrypoint','python3',image,'/opt/g6/egress_proxy.py']);self.proxy_created=True
         command(['docker','network','connect','--alias','g6-egress',self.name,self.proxy]);command(['docker','start',self.proxy])
     def close(self):
@@ -38,7 +38,7 @@ class IssueImages:
             with (self.directory/'pull.log').open('wb') as log:subprocess.run(['docker','pull',reference],check=True,stdout=log,stderr=subprocess.STDOUT,timeout=1800)
         self.base=expected;self.base_owned=before is None and expected not in pre;actual=inspect(expected);assert actual and actual['Id']==expected
         self.allowed_tags=set(actual.get('RepoTags') or [])
-        tools=json.loads((self.root/'tool-image.json').read_text())['tag'];context=self.directory/'actor-image-context';context.mkdir()
+        tools=json.loads((self.root/'tool-image-explicit-v2.json').read_text())['tag'];context=self.directory/'actor-image-context';context.mkdir()
         (context/'Dockerfile').write_text('ARG BASE_IMAGE\nFROM ${BASE_IMAGE}\nLABEL solpi.g6="'+self.root.name+'"\nCOPY --from='+tools+' /opt/g6 /opt/g6\nRUN rm -rf /testbed && mkdir /testbed && chown 1000:1000 /testbed && if ! getent passwd 1000 >/dev/null; then useradd -M -u 1000 -d /home/g6 -s /bin/bash g6; fi\n')
         tag='solpi-g6-actor:'+uuid.uuid4().hex[:16];self.derived=tag
         save(self.directory/'image-lease.json',dict(task=self.task,base_id=self.base,base_created_by_g6=self.base_owned,allowed_base_tags=sorted(self.allowed_tags),derived_tag=tag))
@@ -75,7 +75,7 @@ def actor(name,image,baseline,directory,network,arm,wheelhouse):
     assert actual['HostConfig']['NetworkMode']==network.name and actual['HostConfig']['Memory']==8*1024**3
     assert actual['HostConfig']['NanoCpus']==1000000000 and actual['HostConfig']['PidsLimit']==512 and not actual['HostConfig']['Privileged']
     assert (arm=='ours')==any(m['Destination']=='/opt/g6/marketplace' for m in actual['Mounts'])
-    save(directory/'actor-proof.json',dict(image_id=actual['Image'],network_internal=True,uid='1000:1000',disposable_home=True,host_home_mounted=False,credentials_mounted=False,plugin_mounted=arm=='ours',mount_destinations=[m['Destination'] for m in actual['Mounts']]))
+    save(directory/'actor-proof.json',dict(image_id=actual['Image'],network_internal=True,uid='1000:1000',disposable_home=True,host_home_mounted=False,credentials_mounted=False,plugin_mounted=arm=='ours',mount_destinations=[m['Destination'] for m in actual['Mounts']],repo_instruction_sources={str(f.relative_to(baseline/'workspace')):sha(f) for f in (baseline/'workspace').rglob('*.md') if f.name in ('AGENTS.md','CLAUDE.md','CLAUDE.local.md') or '.claude/rules/' in str(f)},fixed_user_settings=True,hooks_disabled=True,auto_memory_disabled=True,stock_slash_commands_enabled=True,context_log_scope='root-session JSONL only;tmpfs HOME;no host or auth-state archive'))
     setup=command(['docker','exec',name,'python3','/opt/g6/entry.py','setup',arm],timeout=180)
     (directory/'plugin-install.stdout').write_bytes(setup.stdout);(directory/'plugin-install.stderr').write_bytes(setup.stderr)
     return setup.stdout.decode(errors='replace')

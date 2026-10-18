@@ -8,20 +8,29 @@ from prepare_source import prepare
 from capture_patch import capture
 from security import read_token,env_file,filtered_copy
 from stream import parse
+from activation import prompt_bytes,input_bytes,plugin_guard,expansion_evidence
+from quota import Quota,QuotaHold
 PYTHON='/tmp/solpi-refinement-harbor-venv/bin/python'
 def utc():return datetime.datetime.now(datetime.timezone.utc).isoformat()
 def native_argv(name,credential_file,arm):
     return ['docker','exec','-i','--env-file',credential_file,name,'python3','/opt/g6/entry.py','run',arm]
 
 class Admissions:
-    def __init__(self,root):self.root=root;self.lock=threading.RLock();self.until=0;self.stopped=False;self.recent=collections.deque(maxlen=16)
+    def __init__(self,root):
+        self.root=root;self.lock=threading.RLock();self.until=0;self.stopped=False;self.recent=collections.deque(maxlen=16);self.stop_file=root/'ADMISSIONS-STOP-explicit-v2'
+        seed=[]
+        for f in sorted((root/'smoke').glob('*/*/attempt-result.json'),key=lambda f:f.stat().st_mtime):
+            for event in json.loads(f.read_text()).get('stream',{}).get('rate_limit_events',[]):seed.append(dict(info=event,observed_epoch=(f.parent/'native.jsonl').stat().st_mtime))
+        self.quota=Quota(seed,self.log)
+    def stop(self,reason):
+        self.stopped=True;save(self.stop_file,dict(reason=reason))
     def log(self,event):
         with self.lock:
-            with (self.root/'admission-events.jsonl').open('a') as f:f.write(json.dumps(dict(utc=utc(),**event))+'\n')
+            with (self.root/'admission-events-explicit-v2.jsonl').open('a') as f:f.write(json.dumps(dict(utc=utc(),**event))+'\n')
     def wait(self):
         while True:
             with self.lock:
-                if self.stopped or (self.root/'ADMISSIONS-STOP').exists():raise RuntimeError('G6 admissions paused;retained costs require supervisor input')
+                if self.stopped or self.stop_file.exists():raise RuntimeError('G6 admissions paused;retained costs require supervisor input')
                 delay=self.until-time.time()
             if delay<=0:return
             time.sleep(min(delay,1))
@@ -30,27 +39,39 @@ class Admissions:
             for event in metadata['native_error_events']:self.log(dict(kind='native_error',cell=cell,attempt=number,**event))
             if metadata['rate_limited']:
                 reset=metadata['reset_epoch'];self.log(dict(kind='rate_limit_pause',cell=cell,attempt=number,reset_epoch=reset))
-                if reset is None:self.stopped=True;save(self.root/'ADMISSIONS-STOP',dict(reason='rate-limit reset unavailable',cell=cell))
+                if reset is None:self.stopped=True;save(self.stop_file,dict(reason='rate-limit reset unavailable',cell=cell))
                 else:self.until=max(self.until,reset)
             else:
                 self.recent.append(metadata['terminal_5xx'])
                 if len(self.recent)==16 and sum(self.recent)>=8:
                     self.until=max(self.until,time.time()+600);self.log(dict(kind='circuit_pause',pause_seconds=600))
             if metadata['blocked_native']:
-                self.stopped=True;save(self.root/'ADMISSIONS-STOP',dict(reason='native authentication/model access error',cell=cell))
+                self.stopped=True;save(self.stop_file,dict(reason='native authentication/model access error',cell=cell))
 
 def attempt(task,arm,number,directory,baseline,image,base_image,network,admissions,phase):
     root=private_root();p=prereg();directory.mkdir();name='solpi-g6-actor-'+uuid.uuid4().hex[:16]
     result=dict(task=task,arm=arm,phase=phase,attempt=number,actor=name,plugin_commit=p['plugin_commit'],cli_version=p['agent']['cli_version'],requested_model=p['agent']['requested_model'],native_started=False,grade_valid=False,solved=None,timeout=False,wall_seconds=None,error=None)
-    token=None;process=None;reader=None
+    token=None;process=None;reader=None;reservation=task+'/'+arm+'/'+str(number);reserved=False
     try:
         template=json.loads((root/'grader-template.json').read_text());actor(name,image,baseline,directory,network,arm,template['wheelhouse'])
-        prompt=(baseline/'prompt.txt').read_bytes();assert sha(baseline/'prompt.txt')==json.loads((baseline/'manifest.json').read_text())['prompt_sha256'];(directory/'prompt.txt').write_bytes(prompt)
-        admissions.wait();token=read_token();start=time.monotonic();result.update(native_started=True,started_utc=utc(),prompt_sha256=sha(directory/'prompt.txt'));save(directory/'attempt-progress.json',result)
-        with env_file(token) as credential_file,(directory/'prompt.txt').open('rb') as source,(directory/'native.jsonl').open('wb') as output:
+        task_bytes=(baseline/'prompt.txt').read_bytes();assert sha(baseline/'prompt.txt')==json.loads((baseline/'manifest.json').read_text())['prompt_sha256'];(directory/'prompt.txt').write_bytes(prompt_bytes(task_bytes,arm));(directory/'input.jsonl').write_bytes(input_bytes(task_bytes,arm))
+        admissions.wait();result['quota_before']=admissions.quota.reserve(reservation);reserved=True;token=read_token();start=time.monotonic();result.update(native_started=True,activation_mode='explicit-v2',started_utc=utc(),canonical_task_sha256=sha(baseline/'prompt.txt'),prompt_sha256=sha(directory/'prompt.txt'));save(directory/'attempt-progress.json',result)
+        with env_file(token) as credential_file,(directory/'input.jsonl').open('rb') as source,(directory/'native.jsonl').open('wb') as output:
             process=subprocess.Popen(native_argv(name,credential_file,arm),stdin=source,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
             redactions=[]
-            def drain():redactions.append(filtered_copy(process.stdout,output,token))
+            pending=b''
+            def observe(block):
+                nonlocal pending
+                pending+=block
+                while b'\n' in pending:
+                    line,pending=pending.split(b'\n',1)
+                    try:event=json.loads(line)
+                    except ValueError:continue
+                    if event.get('type')=='rate_limit_event':admissions.quota.observe(event.get('rate_limit_info',{}),reservation)
+                    if event.get('type')=='system' and event.get('subtype')=='init':
+                        try:plugin_guard(dict(plugins=event.get('plugins',[]),loaded_skills=event.get('skills',[])),arm,p['amendment_explicit_v2'])
+                        except RuntimeError:admissions.stop('Unexpected plugin or stock skill set')
+            def drain():redactions.append(filtered_copy(process.stdout,output,token,observe))
             reader=threading.Thread(target=drain,daemon=True);reader.start()
             try:process.wait(timeout=7200)
             except subprocess.TimeoutExpired:result['timeout']=True;command(['docker','stop','-t','10',name]);process.wait(timeout=30)
@@ -60,7 +81,15 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
         metadata=parse(directory/'native.jsonl');result['stream']=metadata
         if metadata['cli_version'] and metadata['cli_version']!=p['agent']['cli_version']:raise RuntimeError('Stream CLI version drift')
         if any(not m.startswith('claude-opus-5-5') for m in metadata['main_provider_model_ids']):raise RuntimeError('Unexpected primary provider model;no fallback authorized')
-        if arm=='none' and (metadata['plugins'] or metadata['loaded_skills']):raise RuntimeError('Control customization contamination')
+        try:result['verified_plugins']=plugin_guard(metadata,arm,p['amendment_explicit_v2'])
+        except RuntimeError:result['configuration_guard_failed']=True;admissions.stop('Unexpected plugin or stock skill set')
+        context=directory/'context.jsonl'
+        with context.open('wb') as output:
+            cp=subprocess.Popen(['docker','exec',name,'python3','/opt/g6/entry.py','context',metadata['session_id']],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+            result['context_secret_redactions']=filtered_copy(cp.stdout,output,token);cp.stderr.read();assert cp.wait(timeout=30)==0
+        result['context_sha256']=sha(context);result['expansion']=expansion_evidence(context,task_bytes,(root/'marketplace/skills/efficient-coding/SKILL.md').read_bytes(),arm)
+        if not result['expansion']['command_expansion_verified']:admissions.stop('Native context did not prove full task/skill expansion')
+        result['quota_after']=admissions.quota.release(reservation);reserved=False
         if not metadata['final_result_present'] and not result['timeout'] and not metadata['terminal_5xx'] and not metadata['rate_limited'] and not metadata['blocked_native']:raise RuntimeError('Native exited without final result;not an ordinary model outcome')
         command(['docker','stop','-t','10',name])
         with (directory/'captured.tar').open('wb') as output:
@@ -76,12 +105,16 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
             if graded.returncode:raise RuntimeError('Official grader process failed')
             grade=json.loads((directory/'grade/grade-result.json').read_text());assert grade['owned_containers_absent'];result.update(solved=grade['solved'],grade_valid=grade['grade_valid'],grade_sha256=sha(directory/'grade/grade-result.json'))
             if not result['grade_valid']:raise RuntimeError('Official Boolean outcome unavailable')
+    except QuotaHold:
+        result['quota_admission_blocked']=True;save(root/(phase+'-quota-hold.json'),dict(projections=admissions.quota.snapshot(extra=1),reason='Budget headroom unavailable;N unchanged;fresh actual observations required'))
+        raise
     except Exception as e:
         # No exception can interpolate credentials:only fixed runner messages/type.
         result['error']=dict(type=type(e).__name__,message='G6 attempt stopped;see sanitized per-attempt metadata')
-        admissions.stopped=True;save(root/'ADMISSIONS-STOP',dict(reason='harness/cleanup uncertainty',cell=task+'/'+arm,attempt=number))
+        admissions.stopped=True;save(admissions.stop_file,dict(reason='harness/cleanup uncertainty',cell=task+'/'+arm,attempt=number))
         raise
     finally:
+        if reserved:result['quota_after']=admissions.quota.release(reservation)
         try:remove(name,root.name);result['owned_actor_absent']=True
         except Exception:result['owned_actor_absent']=False;admissions.stopped=True
         owned=directory/'grade/owned.json'
@@ -94,7 +127,7 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
                     after=subprocess.run(['docker','inspect',grader],capture_output=True);assert after.returncode and b'No such' in after.stderr
             result['owned_graders_absent']=True
         except Exception:
-            result['owned_graders_absent']=False;admissions.stopped=True;save(root/'ADMISSIONS-STOP',dict(reason='owned grader cleanup uncertain'))
+            result['owned_graders_absent']=False;admissions.stopped=True;save(admissions.stop_file,dict(reason='owned grader cleanup uncertain'))
         if reader and reader.is_alive():reader.join(timeout=30)
         if 'stream' not in result and (directory/'native.jsonl').exists():result['stream']=parse(directory/'native.jsonl')
         save(directory/'attempt-result.json',result)
@@ -105,20 +138,21 @@ def guard(commit,phase):
     assert command(['git','show',commit+':'+relative]).stdout==(H/'runner-stage.json').read_bytes(),'Committed allowance required'
     assert sha(H/'preregistration.json')==stage['preregistration_sha256'];assert phase in stage['authorized_phases'],'Study waits for explicit supervisor go'
     assert stage['no_model_plumbing_passed'] and sha(H/'plumbing-summary.json')==stage['plumbing_summary_sha256']
+    assert sha(H/'plumbing-explicit-v2-summary.json')==stage['explicit_plumbing_sha256']
     assert set(stage['source_sha256'])=={f.name for f in H.glob('*.py')}
-    assert sha(root/'tool-image.json')==stage['tool_image_manifest_sha256']
-    tools=json.loads((root/'tool-image.json').read_text())
+    assert sha(root/'tool-image-explicit-v2.json')==stage['tool_image_manifest_sha256']
+    tools=json.loads((root/'tool-image-explicit-v2.json').read_text())
     for name in ('entry.py','egress_proxy.py'):assert sha(H/name)==tools['context_sha256'][name]
     actual={str(f.relative_to(root/'marketplace')):sha(f) for f in (root/'marketplace').rglob('*') if f.is_file()}
     assert actual==stage['plugin_tree_sha256']
     for f,d in stage['source_sha256'].items():assert sha(H/f)==d,'Frozen G6 runner changed'
-    assert not (root/'ADMISSIONS-STOP').exists();read_token() # No Docker/model work if missing/unsafe.
+    assert not (root/'ADMISSIONS-STOP-explicit-v2').exists();read_token() # No Docker/model work if missing/unsafe.
     return p
 
 def main(commit,phase):
     p=guard(commit,phase);root=private_root();launch=root/(phase+'-launch.json')
     with launch.open('x') as out:json.dump(dict(utc=utc(),allowance_commit=commit,pid=__import__('os').getpid()),out)
-    tasks=p['smoke_sample'] if phase=='smoke' else p['study_issue_order'];network=Network();admissions=Admissions(root);results=[];lock=threading.RLock()
+    tasks=p['smoke_sample'] if phase=='smoke-explicit-v2' else p['study_issue_order'];network=Network();admissions=Admissions(root);results=[];lock=threading.RLock()
     def issue(task):
         directory=root/phase/task;directory.mkdir(parents=True);images=IssueImages(task,directory)
         try:
@@ -143,7 +177,7 @@ def main(commit,phase):
         with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
             futures=[pool.submit(issue,t) for t in tasks]
             for f in concurrent.futures.as_completed(futures):f.result()
-        save(root/(phase+'-complete.json'),dict(cells=len(results),study_authorized=False if phase=='smoke' else True))
+        save(root/(phase+'-complete.json'),dict(cells=len(results),study_authorized=False if phase=='smoke-explicit-v2' else True))
     finally:network.close()
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--allowance-commit',required=True);parser.add_argument('--phase',choices=('smoke','study'),default='smoke');a=parser.parse_args();main(a.allowance_commit,a.phase)
+    parser=argparse.ArgumentParser();parser.add_argument('--allowance-commit',required=True);parser.add_argument('--phase',choices=('smoke-explicit-v2','study'),default='smoke-explicit-v2');a=parser.parse_args();main(a.allowance_commit,a.phase)

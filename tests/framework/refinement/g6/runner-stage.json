@@ -1,31 +1,36 @@
 {
   "authorized_phases": [
-    "smoke"
+    "smoke-explicit-v2"
   ],
   "study_authorized": false,
   "requires_explicit_supervisor_go_after_smoke": true,
-  "preregistration_sha256": "7f33b508aea17728b0bc0e9ff4ce004ef184f5b20fb012f5cdaa75c72e79276a",
+  "preregistration_sha256": "64b6501aeab6c1ef4bd4556f8cbfe6935c6c918cad720c504da941bae2d1c61b",
   "source_sha256": {
-    "build.py": "b847712a008e2c6616589608a71d3a6e214013a8fa731df9d45a3a436423a7ea",
+    "activation.py": "5aa8b074446a19eab167cd4009873099138148e2ee97de24031e48cabffd1f71",
+    "build.py": "21db6e0530429ba3fe103c836be1453006f26112d128f90b4794ff0166eb07e3",
     "capture_patch.py": "8fb69b9efc6b4ed913060fb502fc3289312c55a808253e2496a988faae5bc0ea",
-    "common.py": "c461d72e4a90f3aa96443589266685d4679a416d016b6dbbbf73d91d5aff2962",
-    "docker_runtime.py": "bf036800c2d134ffa0eadb5cbe4f7e6adc9a0165b5d671c99a4445765c2bdb77",
+    "common.py": "c2f8d524e4540338fb44dc414ff4f477a82843b2a3fb50ef59b5a6d7d5f88b52",
+    "docker_runtime.py": "21e904e568bf3d3164401b5738041a5bc63047cdfd1d27c603189d79049ff3e5",
     "egress_proxy.py": "02297f5ac32bf08e72d5780f05b9c7d303fabd34e25cf4bda4a1fcb2b4dac04b",
-    "entry.py": "5b93805df8b5b7a57a9215724a7eb1837b36baf3719c4abc2596f4219670b0b2",
-    "freeze_runner.py": "146dbcc96d330dac6aa6869b46acccdf9cdb0576d8b1de83157d3c68b42aadf7",
+    "entry.py": "1d5b9bd4a4967e1eae985950f86d2c1ea386dc420f313174b44e0f24363551ff",
+    "freeze_runner.py": "224308a5568c53f0cf28eb8d97900ecf424a142b38aa29cd75ffa6ac80d713bb",
     "grade_swe.py": "3fdca553477e31ccb3111fdb14f1ab4277c7694fb49d1edb890e7831252480bd",
     "patch_outcomes.py": "f032a4c3981049216077c824785fa85e162f0831dd07f99c91ee4ca06bc1cb05",
     "plumbing.py": "08b9c1a4595e1a96c288b083219c94bc4d16daacbc97ead8afb7c57ebfb14028",
+    "plumbing_v2.py": "cd378e6d05bb1a92092d970d565c2722341be83f8a74f1a3da46357959c2c901",
     "prepare_source.py": "f3216bba6b58d41d608bb8a712eadb40898c284953bfa49c5be4cab8a2d66c6e",
     "preregister.py": "8b12d3639f9857257f9700849fe49f058f7da0f8690f73f4d01086b4ab5a44d4",
+    "quota.py": "64ebf1ee13cce95349f9dfc7b831305089149c19f8f9d18abd7370f678fbd764",
     "recover_ignored_capture_links.py": "680b6c957e68fe5e065650538392d91288516b3cf7834a65af590b72e2165f6d",
     "report_outcome.py": "f6554fdd040989d6b9a72bd00faeb6905638875f830e95f5901899d6e6244b48",
-    "runner.py": "b3ec718059f38da0b1e601bbdb6f2f4e38b36252bee12a0549b2069e688edcc2",
-    "security.py": "eb083a72317064dbed6a2a17741e68ebd5b28f87ae56dc5a44a9ec4e7966c1e1",
+    "runner.py": "ce1ce56c97b00cb8c2aa7bebd77b2de478864f3ba1123e5ebd56d3ed2b1b40bf",
+    "security.py": "5a85fd366173062d5b19489fb5fed146a8451c5ef335f79ca5f6d7624b52bdd2",
     "source_archive.py": "ee815c66695fbbc00823351515fe3004139c798bb79854a2179e91a5ba4cbc02",
     "source_patch.py": "81e9651c91b298bbca585d93aa00acc2e3bdca065710d6201048ff82783826f9",
-    "stream.py": "2f8ecf19845128907030134692fd1f84bc833dfd47ab65ea01d704837a049ca9",
+    "stream.py": "7508f2891e52bc18386ddab3536e491bdcd6e97475fe1c331b0f3a0b7f8edece",
+    "summarize_explicit.py": "56a9587dbbbad4661b769b4e0fc5839ac2d40aa082f0aa0287dc23bbdb9106ed",
     "summarize_smoke.py": "8bc276ab3acced1b10bd75f886233e550ea8aaac682d441a0b044251994a1c30",
+    "test_explicit_v2.py": "f2ad1527f63bb2b86de172250305aa7cbe641711cfde439c9c425003b2659ab6",
     "test_protocol.py": "4746c11e6c362460b06246345d98f732b5ef94563d8cfba04b48f7510f055eba"
   },
   "plugin_tree_sha256": {
@@ -44,10 +49,13 @@
     "skills/efficient-coding/references/coordination.md": "d72969979e74aa8d9c22e9744e1c063a3a2f5a30fd96188674a7ad1289609ed2",
     "skills/efficient-coding/references/sol-pi-evidence.md": "d7798a212ca16b738fc699e335055c3cb609533c285b55086e9e013fd2a15719"
   },
-  "tool_image_manifest_sha256": "bdaeec8c9572f4459058d70a407d8bc17471de9f3079c81c3f6b815d9be6642f",
+  "tool_image_manifest_sha256": "5acefe1bf259f3a0e97a378cc33ec00c786fa07f45fef987abb0340cb6d08bb6",
   "plumbing_summary_sha256": "5669486f55b981aabe88c1a65dc04806d1007d3584b5eab6a98a752759d8cfe7",
   "no_model_plumbing_passed": true,
   "unit_tests_passed": true,
-  "unit_test_log_sha256": "3514f40417cab3ec95c16ce43bca73edbc5cf8e65c769e4f09efe50382070287",
-  "model_calls_at_freeze": 0
+  "unit_test_log_sha256": "843cf7bc8755b96edeb09072009995475a6b48542e9bb7fdb8a19d1c1cf7ad46",
+  "prior_natural_native_runs": 3,
+  "prior_natural_reported_tokens": 314731,
+  "explicit_v2_native_calls_at_freeze": 0,
+  "explicit_plumbing_sha256": "a779d3b2ed4f4236534885c1b603d0936675df25db3a7f6d61912c050137a868"
 }

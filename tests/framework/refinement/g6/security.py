@@ -17,14 +17,17 @@ def env_file(token):
         p=pathlib.Path(directory)/'runtime.env';fd=os.open(p,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
         with os.fdopen(fd,'wb') as out: out.write(b'CLAUDE_CODE_OAUTH_TOKEN='+token+b'\n')
         yield str(p)
-def filtered_copy(source,destination,token):
+def filtered_copy(source,destination,token,on_data=None):
     """Same-length replacement also preserves ordinary tar payload framing."""
     pending=b'';count=0;size=len(token)
     assert size
     while True:
-        chunk=source.read(65536)
+        chunk=(source.read1 if hasattr(source,'read1') else source.read)(65536)
         if not chunk: break
         pending+=chunk;count+=pending.count(token);pending=pending.replace(token,b'X'*size)
-        end=max(0,len(pending)-size+1);destination.write(pending[:end]);pending=pending[end:]
-    count+=pending.count(token);destination.write(pending.replace(token,b'X'*size))
+        end=max(0,len(pending)-size+1,pending.rfind(b'\n')+1);block=pending[:end];destination.write(block);destination.flush()
+        if on_data:on_data(block)
+        pending=pending[end:]
+    count+=pending.count(token);block=pending.replace(token,b'X'*size);destination.write(block);destination.flush()
+    if on_data:on_data(block)
     return count

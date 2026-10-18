@@ -1,0 +1,88 @@
+{
+  "network_none": true,
+  "dedicated_token_read": false,
+  "remote_model_calls": 0,
+  "checks": [
+    {
+      "arm": "ours",
+      "plugins": [
+        {
+          "name": "distill-sol-pi",
+          "path": "/opt/g6/marketplace",
+          "source": "distill-sol-pi@sol-pi-skills",
+          "version": "1.0.0"
+        },
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion": {
+        "activation_mode": "explicit-v2",
+        "submitted_task_sha256": "3e5362d33d1c6cde408dbd2798a7398eaec71364baf093062d7fa08224f4b2a4",
+        "submitted_prompt_sha256": "14433abca033e47aee4805ed2bdbc463bb3ad85d9512d6e112fb1cfcb0fc1291",
+        "skill_body_sha256": "c712dcfdac77968ce4a87db91e91364d2926fcdf34e88297fd420051430563ee",
+        "pre_assistant_user_event_indices": [
+          2,
+          3
+        ],
+        "full_task_content_observed": true,
+        "full_task_bytes_observed": false,
+        "outer_newline_trimming_only": true,
+        "full_skill_body_observed": true,
+        "command_expansion_verified": true,
+        "task_evidence_scope": "native root conversation JSONL user-context stream before first assistant;not SDK replay alone,init advertisement or model self-report"
+      },
+      "network": "none",
+      "dedicated_token_read": false,
+      "remote_model_calls": 0,
+      "native_sha256": "0ff5b451fd3035e77d463baf8a17b6f15c5825269db91d542d8ce69a60b3bbdf"
+    },
+    {
+      "arm": "none",
+      "plugins": [
+        {
+          "name": "cc-plugin-agents-md",
+          "path": "builtin",
+          "source": "cc-plugin-agents-md@builtin",
+          "version": null
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "path": "builtin",
+          "source": "cc-plugin-plugin-authoring@builtin",
+          "version": null
+        }
+      ],
+      "expansion": {
+        "activation_mode": "explicit-v2",
+        "submitted_task_sha256": "3e5362d33d1c6cde408dbd2798a7398eaec71364baf093062d7fa08224f4b2a4",
+        "submitted_prompt_sha256": "3e5362d33d1c6cde408dbd2798a7398eaec71364baf093062d7fa08224f4b2a4",
+        "skill_body_sha256": "c712dcfdac77968ce4a87db91e91364d2926fcdf34e88297fd420051430563ee",
+        "pre_assistant_user_event_indices": [
+          2
+        ],
+        "full_task_content_observed": true,
+        "full_task_bytes_observed": true,
+        "outer_newline_trimming_only": false,
+        "full_skill_body_observed": false,
+        "command_expansion_verified": true,
+        "task_evidence_scope": "native root conversation JSONL user-context stream before first assistant;not SDK replay alone,init advertisement or model self-report"
+      },
+      "network": "none",
+      "dedicated_token_read": false,
+      "remote_model_calls": 0,
+      "native_sha256": "7e8d5a2263c57de65a3fdd84413323177adfc63d6ee3ced000b3dd09aa51ae27"
+    }
+  ],
+  "proof_sha256": "8816773e1449d64fe09b70a59aed2123f80877b4ea67fa041008db516778f897",
+  "passed": true
+}

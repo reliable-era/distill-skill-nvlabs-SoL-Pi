@@ -25,13 +25,18 @@ def main():
         subprocess.run([CLI,'plugin','list','--json'],env=e,check=True)
         print(json.dumps(dict(g6_setup=True,cli_version=version,arm=arm)),flush=True)
         return
+    if mode=='context':
+        import re
+        assert re.fullmatch(r'[0-9a-f-]{36}',arm)
+        files=list(pathlib.Path('/home/g6/.claude/projects').rglob(arm+'.jsonl'));assert len(files)==1
+        sys.stdout.buffer.write(files[0].read_bytes());return
     if mode!='run': raise RuntimeError('Unknown entry mode')
     if not e.get('CLAUDE_CODE_OAUTH_TOKEN'): raise RuntimeError('Dedicated runtime token required')
-    args=[CLI,'-p','--verbose','--output-format','stream-json','--forward-subagent-text',
+    args=[CLI,'-p','--verbose','--input-format','stream-json','--replay-user-messages','--output-format','stream-json','--forward-subagent-text',
         '--max-turns','60','--model','claude-opus-5-5','--dangerously-skip-permissions',
         '--setting-sources','user','--settings','/opt/g6/settings.json',
         '--strict-mcp-config','--mcp-config','{"mcpServers":{}}','--no-chrome',
-        '--no-session-persistence','--include-hook-events']
-    if arm=='none': args.append('--disable-slash-commands')
+        '--include-hook-events']
+    # Explicit-v2:slash commands and stock skills enabled identically in BOTH arms.
     os.execve(CLI,args,e)  # Prompt arrives on stdin,identical canonical G5 bytes.
 if __name__=='__main__': main()

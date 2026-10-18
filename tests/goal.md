@@ -1,6 +1,6 @@
 # Active contract (G6): Claude Opus 5.5 transfer check
 
-User-approved, advisor-reviewed design, fixed before any G6 treatment result.
+User-approved, advisor-reviewed design. Initial v1 was fixed before treatment results;the explicit-v2 A/B/C amendment was approved AFTER two treatment outcomes were seen,and activation observations motivated the change. `framework/refinement/g6/protocol.md` and preregistration disclose it;do not pool natural and explicit activation.
 
 - Compare **none vs ours only**, one round, Claude Code CLI **2.1.302**, requested
   model **claude-opus-5-5**, headless stream-json. Freeze the current committed
@@ -13,10 +13,15 @@ User-approved, advisor-reviewed design, fixed before any G6 treatment result.
   Never read G5 model outcomes to allocate. Smoke is excluded from scoring.
 - Two issue workers initially: run each issue's randomized arms consecutively.
   **60 Claude turns /120 minutes**, not60 G5 requests; retain nested/subagent usage.
-  Both arms receive the identical canonical G5 issue/task prompt, without the
-  Codex-specific request-budget or inline-skill suffix. Treatment installs the
-  plugin normally from its frozen local marketplace; control has no plugins or
-  skills. Record activation/invocation but analyze every admitted run.
+  Both use identical canonical G5 task bytes,without the Codex-specific suffix;
+  treatment prepends `/distill-sol-pi:efficient-coding `,control does not. Both
+  enable the same stock skills. Control has exactly the two verified CLI built-ins;
+  treatment adds only the normally installed frozen distill-sol-pi plugin. Record
+  IDs/versions and reject extras. Verify full skill body/task in native root
+  conversation stream,not just advertisement. Claim explicitly invoking the skill.
+  Before projected utilization reaches0.90,stop admissions using live all-reported
+  quota scopes and in-flight reservations;resume only on actual headroom evidence.
+  Keep N150 even if budget forces an incomplete study;all smoke remains excluded.
 - Disposable HOME per attempt; no host CLAUDE.md, settings, memories, skills or
   hooks. Reuse frozen G5 issue images, official controls/grader, sanitized source,
   source-only projection and empty-patch rule. Actors never see gold/control
