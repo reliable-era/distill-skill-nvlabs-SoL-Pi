@@ -5407,5 +5407,57 @@
     "five_hour": 0.01
   },
   "await_supervisor_continuation": true,
-  "no_automatic_restart": true
+  "no_automatic_restart": true,
+  "latest_admission_guard": {
+    "status": "SUPERVISOR GUARD STOP beforecell13",
+    "allowance_commit": "c550c69eeff408a49c67f5ef9876c3af0d7fae9c",
+    "offline_tests_passed": 75,
+    "automatic_quota_resume_implemented": true,
+    "live_transport_validated": false,
+    "live_transport_guard": "HTTP403 from read-only OAuth usage request;cause/scope not established",
+    "remote_model_calls_after_new_GO": 0,
+    "quota_only_http_requests": 1,
+    "quota_only_response_status": 403,
+    "retained_native_cells": 12,
+    "retained_complete_pairs": 6,
+    "retained_known_outcomes": 12,
+    "retained_solves": 10,
+    "retained_reported_tokens_unchanged": 1873521,
+    "retained_cache_proxy_unchanged": 329896.3,
+    "prior_twelve_native_context_grade_hashes_unchanged": true,
+    "old_setup_only_refusal_retained": true,
+    "no_new_attempt_progress_or_source_image_lease": true,
+    "all_source_hashes_match_committed_allowance": true,
+    "controller_launched": false,
+    "prior_controller_absent": true,
+    "owned_containers_proxy_network_absent": true,
+    "runtime_env_files_absent": true,
+    "credential_literal_scan_passed": true,
+    "literal_scan_regular_files": 328510,
+    "not_arbitrary_encoding_absence_guarantee": true,
+    "inference_auth_not_retested": true,
+    "subscription_exhaustion_not_established": true,
+    "no_paid_inference_probe": true,
+    "no_host_credential_config_refresh_state_access": true,
+    "no_automatic_retry_or_restart": true,
+    "stop_marker_retained": true,
+    "latest_actual_numeric_observations_remain_historical": "2026-10-18T21:24:57.872Z:weekly0.02/five_hour0.44;403 produced no new numeric evidence",
+    "next_input": "Quota-read-capable approved credential or authorized live-header feed;or explicit decision on native-header-only automatic mode and its no-inflight observation gap.",
+    "live_validation_receipt": {
+      "utc": "2026-10-18T22:03:36.959390+00:00",
+      "allowance_commit": "c550c69eeff408a49c67f5ef9876c3af0d7fae9c",
+      "remote_model_calls": 0,
+      "retained_cells": 12,
+      "requests": [
+        {
+          "attempt": 1,
+          "status": 403
+        }
+      ],
+      "passed": false,
+      "owned_proxy_network_removed": true
+    },
+    "verification_script_sha256": "9bb19295511fd6baa523616424f9c2ca51ba8d07efb211df9379b4193cfa9df0"
+  },
+  "no_new_model_calls_after_latest_GO": true
 }

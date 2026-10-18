@@ -1,6 +1,22 @@
-# G6 interim report — PAUSED after12/300 cells,6 complete pairs
+# G6 — quota-refresh access GUARD STOP beforecell13
 
-**Status:** all reserved pairs drained;controller3731292 exited. Await supervisor continuation decision;no automatic restart. Fixed target remains150 issues ×2 arms. **288 cells/144 issues are unstarted,not failures.**
+## Latest supervisor GO and pre-model guard (2026-10-18)
+
+The supervisor authorized continuing fromcell13 with automatic ordinary-quota resume. Host changes were implemented,tested (**75 offline tests**) and re-frozen/committed as **`c550c69eeff408a49c67f5ef9876c3af0d7fae9c`** BEFORE any further model call. Normal quota waits now retain promised arms and auto-resume only on actual post-reset headroom plus projection checks;weekly60% and fatal API/isolation/harness/credential events remain reporting stops. No clock-derived zero or paid inference probe.
+
+A prelaunch,non-inference validation of the same account's read-only `https://api.anthropic.com/api/oauth/usage` through the owned CONNECT proxy returned **HTTP403** at22:03:36 UTC. The exact access/endpoint-policy cause is not established;this is NOT proof that inference access is invalid or subscription headroom exhausted. No attempt to bypass403,read host Claude credentials/refresh state,or generate paid inference was made. The quota-refresh access guard stopped continuation beforecell13.
+
+**No continuation controller was launched;0 new model calls.** All12 earlier cells,6 complete pairs,10 solves,1,873,521 reported tokens and329,896.3 cache proxy are unchanged. All previous native/context/grade hashes match the checkpoint.288 cells remain unstarted. The403 supplied NO new numeric headroom;weekly2%/five-hour44% are still only historical native observations from21:24:57.872 UTC,not a current refresh.
+
+The single validation HTTP request and failure receipt are retained. Temporary owned proxy/network and runtime env file are absent. Literal credential scan passed over328,510 regular retained study/guard-receipt files;no arbitrary-encoding absence guarantee. All runtime Python hashes match committed allowancec550c69. The reportable stop marker is retained;no automatic retry/restart after this guard. See **`auto-quota-guard-audit.json`**. No push or unrelated-work changes.
+
+**Input needed:**an approved working read-only quota source/credential permission,or an authorized live-header feed. Alternatively,the supervisor can explicitly choose native-header-only automatic resume,with the limitation that no fresh header may arrive after every native run has drained. Do not silently replace missing observations with reset-clock zeros or paid probes.
+
+## Historical12-cell checkpoint below — as of508c4c0,before the new GO/runtime amendment
+
+The prior report and allowance/hash statements below describe that completed inference batch;they are preserved as historical evidence,not assertions that current host code still equals6d36e9a.
+
+**Status at that checkpoint:** all reserved pairs drained;controller3731292 exited. Await supervisor continuation decision;no automatic restart. Fixed target remains150 issues ×2 arms. **288 cells/144 issues are unstarted,not failures.**
 
 ## Approved correction and execution provenance
 
