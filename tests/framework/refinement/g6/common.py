@@ -1,11 +1,11 @@
 """G6 private state and frozen-input checks;no credential or model access."""
-import hashlib,json,os,pathlib,shutil,subprocess
+import hashlib,json,os,pathlib,shutil,subprocess,uuid
 H=pathlib.Path(__file__).resolve().parent
 R=H.parents[3]
 def sha(path): return hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()
 def save(path,value):
     path=pathlib.Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    tmp=path.with_suffix(path.suffix+'.tmp');tmp.write_text(json.dumps(value,indent=2)+'\n');os.replace(tmp,path)
+    tmp=path.with_name(path.name+'.'+uuid.uuid4().hex+'.tmp');tmp.write_text(json.dumps(value,indent=2)+'\n');os.replace(tmp,path)
 def command(args,timeout=120,**kw): return subprocess.run(args,check=True,capture_output=True,timeout=timeout,**kw)
 def private_root(): return pathlib.Path(json.loads((H/'launch.json').read_text())['private_root'])
 def prereg(): return json.loads((H/'preregistration.json').read_text())

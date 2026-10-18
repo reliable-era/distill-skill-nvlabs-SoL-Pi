@@ -1525,6 +1525,25 @@
     "secondary": "all-attempt token-volume/solve ratio paired bootstrap;cache-adjusted proxy separately;undefined if usage incomplete",
     "population_claim": "This444-eligible cohort,sampled150,in this pinned Claude Code configuration;contamination cannot be ruled out;not pooled with G5"
   },
+  "running_quota_amendment": {
+    "enabled": true,
+    "authority": "Supervisor clarification after16aab94;supersedes remaining-N preflight veto and5pp in-flight reservation",
+    "start_now": true,
+    "N_fixed": 150,
+    "cells_fixed": 300,
+    "weekly_reset_epoch": 1792353600,
+    "before_reset_threshold": 0.90,
+    "after_reset_threshold": 0.70,
+    "initial_rate": 0.0025,
+    "rate_estimator": "For each reported scope,carry the initial/current rate until an actual positive1pp step;update rate=cumulative actual utilization increase since observed-window anchor/completed study cells since anchor. Update on cell completion;keep rate across actual reset/drop until new steps. Account-wide deltas may include external use;no attribution guarantee.",
+    "projection": "Latest actual observed utilization+(active native cells+reserved pending arms+candidate admissions)*running rate;no5pp floor and no full-N veto. All reported shorter/model scopes remain guarded.",
+    "pair_policy": "Reserve both frozen-order arms before starting an issue;second arm next after first with no unrelated arm inside the issue. Pending second arms count as reserved cells. Normal quota stop blocks NEW pairs and drains reserved pairs. An unexpected actual counter jump/unknown reset observation can still fail a reserved-arm live guard;report incomplete pair explicitly rather than override quota/auth/isolation rules.",
+    "concurrency": "2 issue workers through first20 completed study cells;4 only after20 with no429/5xx/overloaded event;drop future worker limit to2 if adverse event later appears",
+    "pause": "Stop new pairs on next projection reaching cap;drain;write interim cells/utilization/rate and report. Cross-week continuation permitted but no unattended continuation after pause;supervisor decides and actual numeric headroom is required. No reset-clock zero imputation.",
+    "429": "Any429/subscription rejection stops ALL admissions immediately,including promised arms;drain all in-flight work,retain charges,and use existing explicit reset/headroom and record-and-rerun rule",
+    "notice": "Report actual new-week weekly utilization crossing0.60 without interpreting old-week observations as crossings",
+    "prior_preflight_evidence": "Retained as historical;not an active start veto"
+  },
   "supervisor_study_go": {
     "baseline_commit": "9d95eb828fac8e65139b38c3eca98aec39d60789",
     "go_received": true,
@@ -1541,8 +1560,8 @@
     "cross_reset_optimistic_bound": "Even allowing current plus next weekly window,76% latest observed weekly use and existing5pp minimum reservation give at most36+260=296 calls at0.25pp/call,ignoring retries,external use,shorter quotas,parallel padding and preparation time. Do not silently assume additional weekly windows or relax the reservation.",
     "concurrency_plan": "2 for first20 study cells;4 only after20 cells and zero429/5xx/overloaded events across retained attempts;paired-adjacent frozen randomized arm order unchanged",
     "notifications": "Report completion,any guard stop,and actual new-week seven-day utilization crossing0.60;do not relabel an old-week observation as a new-week crossing",
-    "status": "quota preflight pause;no study admission",
-    "study_admissions_open": false
+    "status": "Historical preflight pause SUPERSEDED by running_quota_amendment;study start authorized",
+    "study_admissions_open": true
   },
   "gates": {
     "preregistration_commit_before_model": true,
@@ -1551,8 +1570,8 @@
     "study_authorized": true,
     "study_requires_explicit_supervisor_go_after_smoke": true,
     "supervisor_go_received": true,
-    "study_admissions_open": false,
-    "budget_preflight_pass_required_before_credentials_or_Docker": true
+    "study_admissions_open": true,
+    "budget_preflight_pass_required_before_credentials_or_Docker": false
   },
   "credential": "Dedicated setup-token file only;mode600,no symlinks;runtime docker exec env-file in owned tmpfs;never host credentials.json;no token in image,command line,log,archive or Git",
   "no_push": true

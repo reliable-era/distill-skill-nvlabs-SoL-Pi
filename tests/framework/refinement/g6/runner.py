@@ -72,6 +72,7 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
                     line,pending=pending.split(b'\n',1)
                     try:event=json.loads(line)
                     except ValueError:continue
+                    if hasattr(admissions,'observe_native'):admissions.observe_native(event,reservation)
                     if event.get('type')=='rate_limit_event':admissions.quota.observe(event.get('rate_limit_info',{}),reservation)
                     if event.get('type')=='system' and event.get('subtype')=='init':
                         try:plugin_guard(dict(plugins=event.get('plugins',[]),loaded_skills=event.get('skills',[])),arm,p['amendment_explicit_v2'])
@@ -140,7 +141,7 @@ def attempt(task,arm,number,directory,baseline,image,base_image,network,admissio
 
 def guard(commit,phase):
     p=check_frozen();root=private_root()
-    if phase=='study' and p.get('supervisor_study_go'):
+    if phase=='study' and p.get('supervisor_study_go') and not p.get('running_quota_amendment',{}).get('enabled'):
         from study_preflight import current_budget
         budget=current_budget();save(root/'study-latest-budget-check.json',budget)
         if not budget['admissions_allowed']:raise QuotaHold('Study GO is conditional:fixed remaining-N forecast exceeds available weekly windows with existing guards')
@@ -160,6 +161,9 @@ def guard(commit,phase):
     return p
 
 def main(commit,phase):
+    if phase=='study':
+        from study_runner import main as study_main
+        return study_main(commit)
     p=guard(commit,phase);root=private_root();continuation=(root/(phase+'-launch.json')).exists();launch=root/(phase+('-continuation-launch.json' if continuation else '-launch.json'))
     with launch.open('x') as out:json.dump(dict(utc=utc(),allowance_commit=commit,pid=__import__('os').getpid()),out)
     tasks=p['smoke_sample'] if phase=='smoke-explicit-v2' else p['study_issue_order'];network=Network();admissions=Admissions(root,study_mode=phase=='study');results=[];lock=threading.RLock()

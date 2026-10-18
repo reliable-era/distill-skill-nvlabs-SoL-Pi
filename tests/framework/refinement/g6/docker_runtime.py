@@ -27,10 +27,10 @@ def remove(name,owner):
     p=subprocess.run(['docker','inspect',name],capture_output=True);assert p.returncode and b'No such' in p.stderr
 
 class IssueImages:
-    def __init__(self,task,directory):
-        self.root=private_root();self.task=task;self.directory=pathlib.Path(directory);self.base=None;self.derived=None;self.base_owned=False;self.allowed_tags=set();self.chain=[]
+    def __init__(self,task,directory,safety_workers=2):
+        self.safety_workers=safety_workers;self.root=private_root();self.task=task;self.directory=pathlib.Path(directory);self.base=None;self.derived=None;self.base_owned=False;self.allowed_tags=set();self.chain=[]
     def acquire(self):
-        assert disk_free()>300_000_000_000+2*80_000_000_000,'G6 two-issue reserve required'
+        assert disk_free()>300_000_000_000+self.safety_workers*80_000_000_000,'G6 active-issue disk reserve required'
         control=json.loads((self.root/'frozen-control-images.json').read_text())[self.task];expected=control['image_id'];before=inspect(expected)
         pre=set((self.root/'preexisting-image-ids.txt').read_text().splitlines())
         if before is None:
