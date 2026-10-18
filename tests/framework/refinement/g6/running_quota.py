@@ -70,12 +70,22 @@ class RunningQuota:
         if not snap or not any('seven_day' in s for s in snap) or any(s['unknown'] or s['observation_window_expired'] or s['projected'] is None or s['projected']>=s['threshold']-1e-12 for s in snap.values()):
             self.record(dict(kind='quota_hold',projections=snap));raise QuotaHold('Next admission reaches quota threshold or actual headroom is unknown')
         return snap
-    def reserve_pair(self,task,arms):
+    def admission_check(self,extra,reset_permit=None):
+        if reset_permit is None:return self.check(extra)
+        snap=self.snapshot(extra)
+        if self.active or not snap or not any('seven_day' in s for s in snap):raise QuotaHold('Single-cell reset admission requires drained native work')
+        for name,s in snap.items():
+            if s['unknown'] or s['projected'] is None:raise QuotaHold('Reset admission never overrides unknown/rejected counters')
+            if s['observation_window_expired'] or s['projected']>=s['threshold']-1e-12:
+                reset=reset_permit.get(name)
+                if reset is None or s.get('reset')!=reset or self.clock()<reset+120:raise QuotaHold('Binding reset+120s not established for this scope')
+        return {name:dict(s,single_cell_reset_admission=True,headroom_not_assumed=True) for name,s in snap.items()}
+    def reserve_pair(self,task,arms,reset_permit=None):
         with self.lock:
-            assert task not in self.pending;snap=self.check(len(arms));self.pending[task]=list(arms);self.record(dict(kind='pair_reservation',task=task,arms=list(arms),projections=snap));return snap
-    def reserve(self,key):
+            assert task not in self.pending;snap=self.admission_check(len(arms),reset_permit);self.pending[task]=list(arms);self.record(dict(kind='pair_reservation',task=task,arms=list(arms),projections=snap));return snap
+    def reserve(self,key,reset_permit=None):
         with self.lock:
-            task,arm,number=key.split('/');promised=arm in self.pending.get(task,[]);snap=self.check(0 if promised else 1)
+            task,arm,number=key.split('/');promised=arm in self.pending.get(task,[]);snap=self.admission_check(0 if promised else 1,reset_permit)
             assert key not in self.active
             if promised:
                 assert self.pending[task][0]==arm,'Frozen sequential arm order required'

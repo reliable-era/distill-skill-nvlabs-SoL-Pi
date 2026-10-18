@@ -1,4 +1,4 @@
-"""Quota-only auto-resume;never use a reset clock as numeric headroom."""
+"""Native-only reset admission:one normal frozen cell,no fabricated headroom."""
 import math
 from quota import QuotaHold
 
@@ -14,11 +14,5 @@ def blocked_windows(snapshot):
     if not blocked:raise RuntimeError('Quota hold has no explainable blocking window')
     return blocked
 
-def reset_headroom(quota,windows,extra=0):
-    snapshot=quota.snapshot(extra)
-    for name,old_reset in windows.items():
-        s=snapshot.get(name,{})
-        if s.get('observed_epoch',0)<old_reset or not isinstance(s.get('reset'),(int,float)) or s['reset']<=old_reset:return False
-    try:quota.check(extra)
-    except QuotaHold:return False
-    return True
+def reset_due(quota,windows,used):
+    return bool(windows) and not quota.active and all(quota.clock()>=reset+120 and (name,reset) not in used for name,reset in windows.items())

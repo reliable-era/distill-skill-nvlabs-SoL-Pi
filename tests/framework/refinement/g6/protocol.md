@@ -2,7 +2,17 @@
 
 Design/sample are fixed by `preregistration.json` (initial contract commit `d1fe82a`). The plugin snapshot is commit `920c32eb69fff4227fe1e3991046b43a805ec61e`, not the dirty worktree. Hamilton proportional allocation gives150 issues; the single Flask issue receives quota0. Two independently seeded smoke issues are outside those150. No G5 model-outcome file is read by allocation or execution.
 
-## ACTIVE supervisor GO after508c4c0 — automatic quota resume from cell13
+## ACTIVE native-header-only GO afterbceecdd — launch from cell13
+
+The setup-token is inference-only;the OAuth usage403 was EXPECTED and does not invalidate inference credentials. **Do not use the OAuth usage endpoint.** Its client is deleted;no profile polling or paid inference probes. Archive the specifically superseded403 stop marker under this explicit GO,retain its receipt,and preserve all12 valid cells/charges.
+
+At ordinary quota pause,record the last native rate event's reset epoch for EACH binding window. After those epochs **plus120 seconds**,and after existing native/grading work drains,admit exactly ONE cell:the next unfinished cell in the frozen task/arm order. This is an authorized single-cell admission exception on the recorded stale windows,NOT a claim that numeric utilization is zero or headroom has returned. Log its key/window/epoch and count its normal study outcome/all costs. No other unstarted cell may enter concurrently. Unknown/rejected scopes or unrelated guard failures are NEVER bypassed.
+
+Read that cell's fresh native headers for every binding scope. If the latest utilization/projection/reset guards pass,admit its pair partner next under ordinary quota guards,and complete the pair before reopening normal issue concurrency. If no headroom,retain the completed cell and pause until the NEXT reported binding reset+120s;do not reuse the old window's exception for a second cell. Store used reset epochs in the durable admission log. A same-cell budgeted terminal5xx retry remains the same study cell,subject to the existing5-attempt/backoff budget and inability to override contrary fresh headers. Any429/subscription rejection remains global fatal.
+
+Emit interim pause/single-cell/partner/resume status lines. Stop/report only completion,actual weekly60% crossing,429/subscription rejection,terminal5xx exhaustion,isolation/configuration/guard/harness/cleanup failure,or credential hit.60% stops new pairs and drains reserved pairs safely;fatal events stop ALL new native admissions. All sampling,prompt,plugin,CLI/model,quality/accounting,rate-learning/cap,weekly70%/five-hour90%,and2→4 worker constraints remain unchanged. Re-test/re-freeze/commit before model calls. The prior OAuth transport design below is historical and SUPERSEDED,not an active dependency.
+
+## Historical GO after508c4c0 — OAuth refresh design superseded above
 
 Retain all12 valid cells/6 pairs and all charges;continue the frozen queue from its next cell. Normal quota holds (five-hour90%,weekly projected70%,or expired reset observations) now pause WITHOUT waiting for supervisor approval. Persist/print one interim status line at each pause/resume. Resume only when actual LIVE numeric observations establish post-reset headroom for EVERY blocking window,and the current active/promised/candidate projection passes. No clock-derived zero and no bypass of other scopes. Keep promised second arms waiting in the same pre-native attempt rather than manufacturing retries/half-pairs.
 

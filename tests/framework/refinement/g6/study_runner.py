@@ -8,8 +8,7 @@ from study_policy import concurrency_after_cells
 from docker_runtime import Network,IssueImages
 from prepare_source import prepare
 from activation import plugin_guard
-from auto_quota import blocked_windows,reset_headroom
-from quota_refresh import refresh
+from auto_quota import blocked_windows,reset_due
 
 def attempts(root,task,arm):
     return [json.loads(f.read_text()) for f in sorted((root/'study'/task).glob(arm+'-a*/attempt-result.json'),key=lambda f:int(f.parent.name.rsplit('-a',1)[1]))]
@@ -20,13 +19,14 @@ def finished_cell(rows):
     return bool(rows and (valid(rows[-1]) or rows[-1].get('stream',{}).get('terminal_5xx') and sum(bool(r.get('native_started') and not r.get('stream',{}).get('rate_limited')) for r in rows)>=5))
 class StudyAdmissions(Admissions):
     def __init__(self,root,automatic=False):
-        self.automatic=automatic;self.replaying=True;self.quota_paused=False;self.quota_windows={};self.report_stop=False;self.quota_changed=threading.Event();self.next_refresh=0;self.refresh_errors=0;self.resume_lock=threading.RLock()
+        self.automatic=automatic;self.replaying=True;self.quota_paused=False;self.quota_windows={};self.report_stop=False;self.quota_changed=threading.Event();self.resume_lock=threading.RLock();self.reentry=None;self.used_resets=set();self.cell_order=[]
         self.root=root;self.lock=threading.RLock();self.log_lock=threading.RLock();self.stop_lock=threading.RLock();self.until=0;self.stopped=False;self.recent=__import__('collections').deque(maxlen=16);self.stop_file=root/'STUDY-ADMISSIONS-STOP';self.adverse=0;self.pause_new_pairs=False;self.pause_reason=None
         seed=[]
         for phase in ('smoke','smoke-explicit-v2'):
             for f in sorted((root/phase).glob('*/*/attempt-result.json'),key=lambda f:f.stat().st_mtime):
                 for e in json.loads(f.read_text()).get('stream',{}).get('rate_limit_events',[]):seed.append(dict(info=e,observed_epoch=(f.parent/'native.jsonl').stat().st_mtime))
         history_path=root/'study-admission-events.jsonl';history=[json.loads(x) for x in history_path.read_text().splitlines()] if history_path.exists() else []
+        self.used_resets={(name,reset) for e in history if e.get('kind')=='reset_reentry_admitted' for name,reset in e['blocked_windows'].items()}
         if any(e.get('kind')=='quota_refresh_status' and isinstance(e.get('status'),int) and (e['status']==429 or e['status']>=500) for e in history):self.adverse=1
         self.quota=RunningQuota(seed,self.log)
         # Replay actual observations during retained native intervals,not old
@@ -80,6 +80,10 @@ class StudyAdmissions(Admissions):
         if m['rate_limited'] or any(e['rate_limited'] or 429 in e['statuses'] for e in m['native_error_events']):
             self.quota.require_refresh();self.stop('429/subscription rejection;all charges retained;supervisor continuation required')
         if m['blocked_native']:self.stop('Native authentication/model access guard')
+        if m['terminal_5xx'] and self.reentry and self.reentry['cell']==cell:
+            # A budgeted retry is still the SAME admitted study cell;fresh
+            # contrary quota headers cannot be overridden by its old permit.
+            self.reentry['started']=False
         with self.lock:
             self.recent.append(m['terminal_5xx'])
             if len(self.recent)==16 and sum(self.recent)>=8:self.until=max(self.until,time.time()+600);self.log(dict(kind='circuit_pause',pause_seconds=600))
@@ -87,53 +91,81 @@ class StudyAdmissions(Admissions):
     def quota_pause(self,reason,extra=0):
         if not self.automatic:self.pause(reason);return
         with self.resume_lock:
-            if self.quota_paused or self.report_stop or self.stopped:return
+            if self.report_stop or self.stopped:return
             try:windows=blocked_windows(self.quota.snapshot(extra))
             except RuntimeError:self.stop('Quota observation/reset guard failure');raise
-            self.quota_windows=windows;self.quota_paused=True;self.pause_new_pairs=True;self.pause_reason=reason;self.next_refresh=0
+            self.quota_windows=windows;self.quota_paused=True;self.pause_new_pairs=True;self.pause_reason=reason;self.reentry=None
             self.status_line('quota_pause')
     def status_line(self,kind):
-        event=dict(kind=kind,completed_cells=self.quota.completed,quota=self.quota.snapshot(),blocked_windows=self.quota_windows,reason=self.pause_reason)
+        event=dict(kind=kind,completed_cells=self.quota.completed,quota=self.quota.snapshot(),blocked_windows=self.quota_windows,reentry=self.reentry,reason=self.pause_reason)
         self.log(event);save(self.root/'study-quota-live-status.json',dict(utc=utc(),**event));print('study',kind,json.dumps(event),flush=True)
+    def next_frozen_cell(self):
+        # Any unresolved native/grading attempt must drain before the one-cell gate.
+        if any(not (f.parent/'attempt-result.json').exists() for f in (self.root/'study').glob('*/*/attempt-progress.json')):return None
+        for task,arm in self.cell_order:
+            if not finished_cell(attempts(self.root,task,arm)):return task+'/'+arm
+        return None
     def try_resume(self,extra=0):
         with self.resume_lock:
-            if not self.quota_paused or self.stopped or self.report_stop:return False
-            if not reset_headroom(self.quota,self.quota_windows,extra):return False
-            self.quota_paused=False;self.pause_new_pairs=False;self.pause_reason=None;self.status_line('quota_resume');self.quota_windows={};self.quota_changed.set();return True
+            if not self.quota_paused or self.stopped or self.report_stop or self.reentry:return False
+            if not reset_due(self.quota,self.quota_windows,self.used_resets):return False
+            cell=self.next_frozen_cell()
+            if not cell:return False
+            self.reentry=dict(cell=cell,stage='first',started=False,epoch=None);self.status_line('quota_single_cell_ready');self.quota_changed.set();return True
+    def new_pair_allowed(self,task):
+        return not self.pause_new_pairs or bool(self.quota_paused and self.reentry and self.reentry['cell'].split('/')[0]==task)
     def reserve_pair(self,task,arms):
         with self.quota.lock:
-            if self.pause_new_pairs or self.stopped or self.stop_file.exists():raise RuntimeError('New pair admissions stopped')
-            return self.quota.reserve_pair(task,arms)
+            if not self.new_pair_allowed(task) or self.stopped or self.stop_file.exists():raise RuntimeError('New pair admissions stopped')
+            permit=self.quota_windows if self.quota_paused and self.reentry and self.reentry['stage']=='first' else None
+            return self.quota.reserve_pair(task,arms,reset_permit=permit)
+    def observe_rate(self,info,key):
+        self.quota.observe(info,key)
+    def reentry_headers_pass(self):
+        gate=self.reentry
+        if not gate or gate['epoch'] is None:return False
+        if gate['stage']=='first' and any(self.quota.scopes.get(name,{}).get('observed_epoch',0)<gate['epoch'] or self.quota.scopes.get(name,{}).get('origin')!=gate.get('run') for name in self.quota_windows):return False
+        try:self.quota.check(0)
+        except QuotaHold:return False
+        return True
+    def cell_completed(self,cell):
+        with self.resume_lock:
+            if not self.reentry or self.reentry['cell']!=cell:return
+            if self.stopped or self.report_stop:return
+            if self.reentry['stage']=='first' and any(self.quota.scopes.get(name,{}).get('observed_epoch',0)<self.reentry['epoch'] or self.quota.scopes.get(name,{}).get('origin')!=self.reentry.get('run') for name in self.quota_windows):
+                self.stop('Reset-admitted study cell supplied no fresh binding native header');return
+            if not self.reentry_headers_pass():
+                try:self.quota_windows=blocked_windows(self.quota.snapshot())
+                except RuntimeError:self.stop('Reset-admitted study cell did not supply usable native quota headers');return
+                self.reentry=None;self.status_line('quota_pause_after_single_cell');return
+            task,arm=cell.split('/');partner=next((a for t,a in self.cell_order if t==task and a!=arm and not finished_cell(attempts(self.root,t,a))),None)
+            if partner:
+                self.reentry=dict(cell=task+'/'+partner,stage='partner',started=False,epoch=None);self.status_line('quota_guarded_partner_ready');self.quota_changed.set();return
+            self.quota_paused=False;self.pause_new_pairs=False;self.pause_reason=None;self.status_line('quota_resume');self.reentry=None;self.quota_windows={};self.quota_changed.set()
     def reserve_native(self,key):
         while True:
             self.wait()
             if self.quota_paused:
                 self.try_resume()
-                if self.quota_paused:
+                gate=self.reentry
+                if not gate or gate['cell']!=key.rsplit('/',1)[0] or gate['started']:
                     if self.report_stop:raise QuotaHold('Supervisor reporting stop;reserved arm remains unstarted')
                     self.quota_changed.wait(2);self.quota_changed.clear();continue
             try:
                 with self.quota.lock:
                     if self.stopped or self.stop_file.exists():raise RuntimeError('All native admissions stopped')
-                    return self.quota.reserve(key)
+                    gate=self.reentry if self.quota_paused else None
+                    if self.quota_paused and (not gate or gate['cell']!=key.rsplit('/',1)[0] or gate['started']):continue
+                    permit=self.quota_windows if gate and gate['stage']=='first' else None
+                    snap=self.quota.reserve(key,reset_permit=permit)
+                    if gate:
+                        gate.update(started=True,epoch=self.quota.clock(),run=key)
+                        if permit:
+                            self.used_resets.update(permit.items());self.log(dict(kind='reset_reentry_admitted',cell=gate['cell'],run=key,blocked_windows=dict(permit),ordinary_study_cell=True,not_a_probe=True));self.status_line('quota_single_cell_admitted')
+                    return snap
             except QuotaHold:
                 if not self.automatic or self.report_stop:raise
-                self.quota_pause('Reserved native arm waiting for actual post-reset headroom')
-    def poll_quota(self,network):
-        if not self.automatic or not self.quota_paused or self.stopped or self.report_stop or time.time()<self.next_refresh:return
-        self.next_refresh=time.time()+60
-        try:data=refresh(network)
-        except Exception:self.stop('Quota-only refresh credential/isolation/transport guard failure');return
-        status=data.get('status');self.log(dict(kind='quota_refresh_status',status=status,remote_model_calls=0))
-        if status==429:self.quota.require_refresh();self.stop('429/subscription rejection during quota-only refresh');return
-        if isinstance(status,int) and status>=500:
-            self.adverse=1;self.refresh_errors+=1;self.next_refresh=time.time()+min(900,60*2**(self.refresh_errors-1)*(1+random.uniform(0,.2)))
-            if self.refresh_errors>=5:self.stop('Terminal5xx quota-refresh exhaustion after5 retained requests')
-            return
-        if status!=200:self.stop('Quota-only refresh authentication/access/response guard failure');return
-        self.refresh_errors=0
-        self.quota.observe(data['scopes'],'quota-refresh',learning=False)
-        if not self.try_resume() and self.quota_windows:self.next_refresh=max(self.next_refresh,min(self.quota_windows.values()))
+                self.quota_pause('Reserved native arm waiting for reset+120s single-cell admission')
 
 def main(commit):
     p=guard(commit,'study');root=private_root();phase='study';continuation=(root/'study-launch.json').exists();launch=root/('study-continuation-'+str(time.time_ns())+'-launch.json' if continuation else 'study-launch.json')
@@ -141,12 +173,12 @@ def main(commit):
     # Do not silently reconcile an interrupted native stream/unknown spend.
     for f in (root/'study').glob('*/*/attempt-progress.json'):
         if not (f.parent/'attempt-result.json').exists():raise RuntimeError('Interrupted study native attempt;reconcile costs before restarting')
-    admissions=StudyAdmissions(root,automatic=p.get('automatic_quota_resume',{}).get('enabled',False));admissions.allowance_commit=commit;network=Network();lock=threading.RLock();results=[];dataset={t['instance_id']:t for t in json.loads((root/'dataset.json').read_text())};tasks=p['study_issue_order'];index=0;failures=[]
+    admissions=StudyAdmissions(root,automatic=p.get('automatic_quota_resume',{}).get('enabled',False));admissions.allowance_commit=commit;admissions.cell_order=[(t,a) for t in p['study_issue_order'] for a in p['arm_orders'][t]];network=Network();lock=threading.RLock();results=[];dataset={t['instance_id']:t for t in json.loads((root/'dataset.json').read_text())};tasks=p['study_issue_order'];index=0;failures=[]
     priority=p.get('live_baseline_correction',{}).get('complete_first_task');priority_pending=bool(priority and not all(finished_cell(attempts(root,priority,a)) for a in p['arm_orders'][priority]))
     if priority_pending:assert all(all(finished_cell(attempts(root,t,a)) for a in p['arm_orders'][t]) for t in tasks[:tasks.index(priority)]),'Priority continuation must not reorder unfinished earlier issues'
     def write_status(state):
         with lock:
-            status=dict(utc=utc(),state=state,cells_done=len(results),target_cells=300,completed_pairs=sum(all(any(r['task']==t and r['arm']==a for r in results) for a in ('none','ours')) for t in tasks),quota=admissions.quota.snapshot(),adverse_api_event_seen=bool(admissions.adverse),issue_workers_limit=concurrency_after_cells(len(results),admissions.adverse),next_issue_index=index,pause_reason=admissions.pause_reason,hard_stop=admissions.stopped,automatic_quota_resume=admissions.automatic,quota_waiting=admissions.quota_paused,blocked_windows=admissions.quota_windows,supervisor_report_stop=admissions.report_stop,errors=failures)
+            status=dict(utc=utc(),state=state,cells_done=len(results),target_cells=300,completed_pairs=sum(all(any(r['task']==t and r['arm']==a for r in results) for a in ('none','ours')) for t in tasks),quota=admissions.quota.snapshot(),adverse_api_event_seen=bool(admissions.adverse),issue_workers_limit=concurrency_after_cells(len(results),admissions.adverse),next_issue_index=index,pause_reason=admissions.pause_reason,hard_stop=admissions.stopped,automatic_quota_resume=admissions.automatic,quota_waiting=admissions.quota_paused,blocked_windows=admissions.quota_windows,reentry_state=admissions.reentry,supervisor_report_stop=admissions.report_stop,errors=failures)
             save(root/'study-status.json',status);save(root/'study-summary.json',results)
     def issue(task):
         directory=root/'study'/task;directory.mkdir(parents=True,exist_ok=True);resources=directory/('resources-'+str(time.time_ns()));resources.mkdir();images=IssueImages(task,resources,safety_workers=4)
@@ -173,7 +205,7 @@ def main(commit):
                 elif not (last.get('stream',{}).get('terminal_5xx') and budget==5):raise RuntimeError('No valid latest quality;admission/activation/harness guard')
                 summary=dict(task=task,arm=arm,phase=phase,scored_attempt=last['attempt'],solved=last.get('solved'),grade_valid=last.get('grade_valid',False),infra_exhausted=last.get('stream',{}).get('terminal_5xx',False) and budget==5 if not valid(last) else False,attempts=rows)
                 with lock:
-                    results.append(summary);admissions.quota.completed_cell(task+'/'+arm);write_status('running');print('study completed',len(results),'of300',task,arm,flush=True)
+                    results.append(summary);admissions.quota.completed_cell(task+'/'+arm);admissions.cell_completed(task+'/'+arm);write_status('running');print('study completed',len(results),'of300',task,arm,flush=True)
         except QuotaHold:
             admissions.pause('Reserved native quota/supervisor guard;retained half-pair requires reporting');raise
         except Exception:
@@ -188,19 +220,20 @@ def main(commit):
             active={}
             while index<len(tasks) or active:
                 limit=concurrency_after_cells(len(results),admissions.adverse)
-                while index<len(tasks) and len(active)<limit and not admissions.pause_new_pairs and not admissions.stopped:
+                while index<len(tasks) and len(active)<limit and not admissions.stopped:
                     if priority_pending and active:break # Complete missing Django treatment BEFORE new issue admission.
                     task=tasks[index];remaining=[a for a in p['arm_orders'][task] if not finished_cell(attempts(root,task,a))]
                     if not remaining:
                         for arm in p['arm_orders'][task]:
                             rows=attempts(root,task,arm);last=rows[-1];results.append(dict(task=task,arm=arm,phase=phase,scored_attempt=last['attempt'],solved=last.get('solved'),grade_valid=last.get('grade_valid',False),infra_exhausted=not valid(last),attempts=rows))
                         index+=1;continue
+                    if not admissions.new_pair_allowed(task):break
                     try:admissions.wait();admissions.reserve_pair(task,remaining)
                     except QuotaHold:admissions.quota_pause('Next whole pair reaches quota threshold;await actual post-reset headroom',len(remaining));break
                     except RuntimeError:break
                     index+=1;active[pool.submit(issue,task)]=task;write_status('running')
                 if admissions.quota_paused:
-                    admissions.try_resume();admissions.poll_quota(network)
+                    admissions.try_resume()
                 if not active:
                     if admissions.quota_paused and not admissions.stopped and not admissions.report_stop:
                         write_status('quota_waiting');time.sleep(2);continue
