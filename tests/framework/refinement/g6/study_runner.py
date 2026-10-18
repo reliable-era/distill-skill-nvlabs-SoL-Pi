@@ -1,5 +1,5 @@
 """Fixed150 paired study;bounded admission,drain and explicit pause checkpoints."""
-import concurrent.futures,json,random,re,threading,time
+import concurrent.futures,datetime,json,random,re,threading,time
 from common import H,private_root,prereg,save,sha
 from runner import Admissions,attempt,guard,utc,PYTHON
 from running_quota import RunningQuota
@@ -23,16 +23,30 @@ class StudyAdmissions(Admissions):
         for phase in ('smoke','smoke-explicit-v2'):
             for f in sorted((root/phase).glob('*/*/attempt-result.json'),key=lambda f:f.stat().st_mtime):
                 for e in json.loads(f.read_text()).get('stream',{}).get('rate_limit_events',[]):seed.append(dict(info=e,observed_epoch=(f.parent/'native.jsonl').stat().st_mtime))
+        history_path=root/'study-admission-events.jsonl';history=[json.loads(x) for x in history_path.read_text().splitlines()] if history_path.exists() else []
         self.quota=RunningQuota(seed,self.log)
-        # Retained study costs/observations survive supervisor-approved restarts.
-        rows=sorted((root/'study').glob('*/*/attempt-result.json'),key=lambda f:f.stat().st_mtime)
-        for f in rows:
-            row=json.loads(f.read_text());m=row.get('stream',{})
-            for e in m.get('rate_limit_events',[]):self.quota.observe(e,'retained-study-stream',(f.parent/'native.jsonl').stat().st_mtime)
-            self.note_errors(m)
+        # Replay actual observations during retained native intervals,not old
+        # smoke-to-study gaps. Keep original timestamps and all completed cells.
+        replay=[];native_keys=set()
+        for f in sorted((root/'study').glob('*/*/attempt-result.json'),key=lambda f:f.stat().st_mtime):
+            row=json.loads(f.read_text());m=row.get('stream',{});self.note_errors(m)
+            if not row.get('native_started'):continue
+            key=row['task']+'/'+row['arm']+'/'+str(row['attempt']);native_keys.add(key)
+            start=datetime.datetime.fromisoformat(row['started_utc']).timestamp();end=start+row['wall_seconds'];replay.extend([(start,0,'start',key),(end,2,'end',key)])
             retained=attempts(root,row['task'],row['arm'])
-            if retained and row['attempt']==retained[-1]['attempt'] and finished_cell(retained):self.quota.completed_cell(row['task']+'/'+row['arm'])
-            if m.get('rate_limited'):self.quota.require_refresh()
+            if row['attempt']==retained[-1]['attempt'] and finished_cell(retained):replay.append((f.stat().st_mtime,3,'complete',row['task']+'/'+row['arm']))
+            if m.get('rate_limited'):replay.append((f.stat().st_mtime,4,'reject',key))
+            self.recent.append(m.get('terminal_5xx',False))
+        for event in history:
+            if event.get('kind')=='quota_observation' and event.get('origin') in native_keys:replay.append((event['observed_epoch'],1,'observe',event))
+        for epoch,_,kind,value in sorted(replay,key=lambda e:e[:2]):
+            if kind=='start':self.quota.active[value]=epoch
+            elif kind=='end':self.quota.release(value)
+            elif kind=='complete':self.quota.completed_cell(value)
+            elif kind=='reject':self.quota.require_refresh()
+            else:self.quota.observe(dict(rateLimitType=value['scope'],utilization=value['utilization'],resetsAt=value.get('reset'),status='rejected' if value.get('unknown') else 'allowed'),'replayed-study-native-stream',epoch)
+        assert not self.quota.active
+        self.log(dict(kind='study_rate_history_replayed',completed_cells=self.quota.completed,native_attempts=len(native_keys)))
     def stop(self,reason):
         with self.stop_lock:self.stopped=True;save(self.stop_file,dict(utc=utc(),reason=reason))
     def log(self,event):
@@ -65,7 +79,9 @@ def main(commit):
     # Do not silently reconcile an interrupted native stream/unknown spend.
     for f in (root/'study').glob('*/*/attempt-progress.json'):
         if not (f.parent/'attempt-result.json').exists():raise RuntimeError('Interrupted study native attempt;reconcile costs before restarting')
-    admissions=StudyAdmissions(root);network=Network();lock=threading.RLock();results=[];dataset={t['instance_id']:t for t in json.loads((root/'dataset.json').read_text())};tasks=p['study_issue_order'];index=0;failures=[]
+    admissions=StudyAdmissions(root);admissions.allowance_commit=commit;network=Network();lock=threading.RLock();results=[];dataset={t['instance_id']:t for t in json.loads((root/'dataset.json').read_text())};tasks=p['study_issue_order'];index=0;failures=[]
+    priority=p.get('live_baseline_correction',{}).get('complete_first_task');priority_pending=bool(priority and not all(finished_cell(attempts(root,priority,a)) for a in p['arm_orders'][priority]))
+    if priority_pending:assert all(all(finished_cell(attempts(root,t,a)) for a in p['arm_orders'][t]) for t in tasks[:tasks.index(priority)]),'Priority continuation must not reorder unfinished earlier issues'
     def write_status(state):
         with lock:
             status=dict(utc=utc(),state=state,cells_done=len(results),target_cells=300,completed_pairs=sum(all(any(r['task']==t and r['arm']==a for r in results) for a in ('none','ours')) for t in tasks),quota=admissions.quota.snapshot(),adverse_api_event_seen=bool(admissions.adverse),issue_workers_limit=concurrency_after_cells(len(results),admissions.adverse),next_issue_index=index,pause_reason=admissions.pause_reason,hard_stop=admissions.stopped,errors=failures)
@@ -110,6 +126,7 @@ def main(commit):
             while index<len(tasks) or active:
                 limit=concurrency_after_cells(len(results),admissions.adverse)
                 while index<len(tasks) and len(active)<limit and not admissions.pause_new_pairs and not admissions.stopped:
+                    if priority_pending and active:break # Complete missing Django treatment BEFORE new issue admission.
                     task=tasks[index];remaining=[a for a in p['arm_orders'][task] if not finished_cell(attempts(root,task,a))]
                     if not remaining:
                         for arm in p['arm_orders'][task]:
@@ -123,7 +140,9 @@ def main(commit):
                 done,_=concurrent.futures.wait(active,return_when=concurrent.futures.FIRST_COMPLETED,timeout=2)
                 for future in done:
                     task=active.pop(future)
-                    try:future.result()
+                    try:
+                        future.result()
+                        if priority_pending and task==priority:priority_pending=False
                     except Exception as e:failures.append(dict(task=task,type=type(e).__name__,detail='Sanitized per-attempt evidence retained;no credential exception text'));admissions.pause('Issue quota/native/isolation/cleanup guard;supervisor input required')
                 write_status('draining' if admissions.pause_new_pairs or admissions.stopped else 'running')
     finally:

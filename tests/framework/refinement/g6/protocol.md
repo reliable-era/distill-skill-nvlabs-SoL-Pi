@@ -2,7 +2,17 @@
 
 Design/sample are fixed by `preregistration.json` (initial contract commit `d1fe82a`). The plugin snapshot is commit `920c32eb69fff4227fe1e3991046b43a805ec61e`, not the dirty worktree. Hamilton proportional allocation gives150 issues; the single Flask issue receives quota0. Two independently seeded smoke issues are outside those150. No G5 model-outcome file is read by allocation or execution.
 
-## ACTIVE supervisor clarification — running quota;start authorized
+## ACTIVE approved live-baseline correction after c752fad
+
+Supervisor approved retaining all3 valid study cells/379,421 tokens and continuing,with missing Django13410 treatment completed BEFORE any other new issue. No model/grader rerun of completed cells. Frozen issue/arm queue and150-issue N remain unchanged. The blocked zero-call treatment ordinal1 stays retained;next directory ordinal2 is its first actual model call.
+
+Learning anchors now come from each window's first LIVE study observation,not stale smoke seeds. Reconstruct prior live79%→80% weekly observations by replaying actual native start/end,observations and cell-completion timestamps;do not erase later observed steps or rewrite original snapshots. Historical counters still establish admission headroom. Accumulate deltas only within intervals where G6 native cells are active;unobserved idle gaps are excluded from the rate but always reflected in actual utilization. Shared-account activity during G6 intervals remains inseparable;cap the learned per-cell estimate at **0.01 (1pp)**,never clip actual counters. Initial estimate0.0025 until an actual1pp step;retain capped estimates until new steps. First live observation/reset reanchors the learning window.
+
+Guard **five-hour utilization/projection below0.90**,including its reported model-specific scopes. An expired five-hour or weekly observation cannot establish reset headroom;resume only with actual numeric evidence after reset. Weekly cap0.90 before1792353600 (04:00+08),0.70 afterward. Normal quota pauses drain reserved pairs,write status and report;supervisor continuation decision remains required. API429/rejection and every existing isolation/source/capture/cleanup guard still stop admissions. Concurrency2 until20 clean completed cells,then4 only without adverse API events. No5pp floor or full-N veto.
+
+This is an approved infrastructure correction after3 study outcomes had been seen,triggered by the counter-timing defect,not their solved values. All costs/quality retained. Add stale-seed/first-live,idle-use,1pp cap,five-hour reset and priority-order regressions;re-freeze/commit before further inference. Original pause evidence is checkpointed,not overwritten or hidden.
+
+## Running-quota clarification — subject to live-baseline correction above
 
 This clarification supersedes the16aab94 full-N preflight veto and5pp reservation. Start the fixed300-cell study now,using frozen issue/arm order. No remaining-N feasibility test blocks admission. Initial per-cell rate0.0025 (0.25pp),then estimate cumulative actual utilization delta /completed study cells since an observed-window anchor after each positive1pp step. Update on completed cells,not invented usage. Actual reset/drop reanchors the observations while retaining the learned rate until new steps. Account-wide counters can include external activity;this is a running forecast,not causal cost measurement. No5pp floor. Apply to every reported quota scope;seven-day cap0.90 before1792353600 and0.70 afterward;shorter/model scopes retain0.90. No clock-only utilization reset.
 

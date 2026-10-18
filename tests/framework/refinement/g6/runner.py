@@ -56,6 +56,7 @@ class Admissions:
 def attempt(task,arm,number,directory,baseline,image,base_image,network,admissions,phase):
     root=private_root();p=prereg();directory.mkdir();name='solpi-g6-actor-'+uuid.uuid4().hex[:16]
     result=dict(task=task,arm=arm,phase=phase,attempt=number,actor=name,plugin_commit=p['plugin_commit'],cli_version=p['agent']['cli_version'],requested_model=p['agent']['requested_model'],native_started=False,grade_valid=False,solved=None,timeout=False,wall_seconds=None,error=None)
+    result['allowance_commit']=getattr(admissions,'allowance_commit',None)
     token=None;process=None;reader=None;reservation=task+'/'+arm+'/'+str(number);reserved=False
     try:
         template=json.loads((root/'grader-template.json').read_text());actor(name,image,baseline,directory,network,arm,template['wheelhouse'])

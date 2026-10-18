@@ -11,13 +11,13 @@ class RunningQuota:
         self.lock=threading.RLock();self.clock=clock;self.record=record;self.scopes={};self.active={};self.pending={};self.completed=0;self.seen_cells=set();self.notices=set()
         for event in seed:
             if event.get('require_refresh'):self.require_refresh()
-            else:self.observe(event['info'],'retained-native-stream',event['observed_epoch'])
+            else:self.observe(event['info'],'retained-native-stream',event['observed_epoch'],learning=False)
         self.begin_study()
     def begin_study(self):
-        for s in self.scopes.values():s.update(anchor_utilization=s['utilization'],anchor_completed=self.completed,last_step=0)
-    def observe(self,event,origin,observed_epoch=None):
+        for s in self.scopes.values():s.update(anchor_utilization=None,anchor_completed=self.completed,last_step=0,observed_delta=0.,learning_active=False,last_live_utilization=None)
+    def observe(self,event,origin,observed_epoch=None,learning=True):
         if isinstance(event,list):
-            for item in event:self.observe(item,origin,observed_epoch)
+            for item in event:self.observe(item,origin,observed_epoch,learning)
             return
         if not isinstance(event,dict):return
         scope=event.get('rateLimitType') or event.get('rate_limit_type');rejected=event.get('status') in ('rejected','denied')
@@ -25,10 +25,20 @@ class RunningQuota:
         if scope:
             with self.lock:
                 value=event.get('utilization');numeric=type(value) in (int,float) and 0<=value<=1;reset=event.get('resetsAt',event.get('reset_at'));epoch=observed_epoch if observed_epoch is not None else self.clock()
-                old=self.scopes.get(scope,dict(utilization=None,rate=.0025,unknown=True,anchor_utilization=None,anchor_completed=self.completed,last_step=0))
+                old=self.scopes.get(scope,dict(utilization=None,rate=.0025,unknown=True,anchor_utilization=None,anchor_completed=self.completed,last_step=0,observed_delta=0.,learning_active=False,last_live_utilization=None))
                 if numeric:
-                    if old['utilization'] is None or reset!=old.get('reset') or value<old['utilization']:
-                        old.update(anchor_utilization=value,anchor_completed=self.completed,last_step=0)
+                    new_window=reset!=old.get('reset') or old['utilization'] is not None and value<old['utilization']
+                    if learning and self.active:
+                        if old['anchor_utilization'] is None or new_window:
+                            old.update(anchor_utilization=value,anchor_completed=self.completed,last_step=0,observed_delta=0.,last_live_utilization=value)
+                            self.record(dict(kind='first_live_learning_anchor',scope=scope,utilization=value,completed_cells=self.completed,observed_epoch=epoch))
+                        elif old['learning_active']:
+                            old['observed_delta']+=max(0,value-old['last_live_utilization'])
+                        elif value!=old['last_live_utilization']:
+                            self.record(dict(kind='idle_counter_gap_excluded_from_rate',scope=scope,previous=old['last_live_utilization'],current=value))
+                        old.update(learning_active=True,last_live_utilization=value)
+                    elif new_window:
+                        old.update(anchor_utilization=None,learning_active=False)
                     old.update(utilization=float(value),reset=reset,observed_epoch=epoch,origin=origin,unknown=rejected)
                 elif rejected:old['unknown']=True
                 self.scopes[scope]=old;self.record(dict(kind='quota_observation',scope=scope,**old))
@@ -38,7 +48,7 @@ class RunningQuota:
                     self.notices.add((scope,week));self.record(dict(kind='supervisor_notice',scope=scope,utilization=value,observed_epoch=epoch,reason='actual new-week weekly utilization >=0.60'))
         for key,child in event.items():
             if isinstance(child,dict) and 'utilization' in child and not child.get('rateLimitType') and any(w in key for w in ('hour','day','opus','sonnet')):child=dict(child,rateLimitType=key)
-            if isinstance(child,(list,dict)):self.observe(child,origin,observed_epoch)
+            if isinstance(child,(list,dict)):self.observe(child,origin,observed_epoch,learning)
     def require_refresh(self):
         with self.lock:
             for s in self.scopes.values():s['unknown']=True
@@ -48,13 +58,13 @@ class RunningQuota:
             self.seen_cells.add(key);self.completed+=1
             for name,s in self.scopes.items():
                 if s['unknown'] or s['anchor_utilization'] is None:continue
-                delta=s['utilization']-s['anchor_utilization'];steps=int((delta+1e-10)*100);count=self.completed-s['anchor_completed']
+                delta=s['observed_delta'];steps=int((delta+1e-10)*100);count=self.completed-s['anchor_completed']
                 if steps>s['last_step'] and count>0:
-                    s.update(rate=delta/count,last_step=steps);self.record(dict(kind='running_rate_update',scope=name,completed_cells=self.completed,delta=delta,denominator_completed_cells=count,rate=s['rate']))
+                    s.update(rate=min(.01,delta/count),uncapped_rate=delta/count,last_step=steps);self.record(dict(kind='running_rate_update',scope=name,completed_cells=self.completed,delta=delta,denominator_completed_cells=count,rate=s['rate']))
     def snapshot(self,extra=0):
         with self.lock:
             reserved=len(self.active)+sum(len(a) for a in self.pending.values())+extra
-            return {name:dict(s,observation_window_expired='seven_day' in name and self.clock()>=RESET and (s.get('observed_epoch',0)<RESET or isinstance(s.get('reset'),(int,float)) and s['reset']<=self.clock()),threshold=float(weekly_threshold(self.clock())) if 'seven_day' in name else .90,projected=None if s['utilization'] is None else s['utilization']+reserved*s['rate'],inflight_native=len(self.active),reserved_cells=reserved,completed_study_cells=self.completed,observation_age_seconds=self.clock()-s.get('observed_epoch',self.clock())) for name,s in self.scopes.items()}
+            return {name:dict(s,observation_window_expired=(isinstance(s.get('reset'),(int,float)) and s['reset']<=self.clock()) or ('seven_day' in name and self.clock()>=RESET and s.get('observed_epoch',0)<RESET),threshold=float(weekly_threshold(self.clock())) if 'seven_day' in name else .90,projected=None if s['utilization'] is None else s['utilization']+reserved*s['rate'],inflight_native=len(self.active),reserved_cells=reserved,completed_study_cells=self.completed,observation_age_seconds=self.clock()-s.get('observed_epoch',self.clock())) for name,s in self.scopes.items()}
     def check(self,extra):
         snap=self.snapshot(extra)
         if not snap or not any('seven_day' in s for s in snap) or any(s['unknown'] or s['observation_window_expired'] or s['projected'] is None or s['projected']>=s['threshold']-1e-12 for s in snap.values()):
@@ -72,6 +82,10 @@ class RunningQuota:
                 self.pending[task].remove(arm)
             self.active[key]=self.clock();self.record(dict(kind='native_reservation',run=key,pre_reserved_pair_arm=promised,projections=snap));return snap
     def release(self,key):
-        with self.lock:self.active.pop(key,None);return self.snapshot()
+        with self.lock:
+            self.active.pop(key,None)
+            if not self.active:
+                for s in self.scopes.values():s['learning_active']=False
+            return self.snapshot()
     def close_pair(self,task):
         with self.lock:self.pending.pop(task,None)
