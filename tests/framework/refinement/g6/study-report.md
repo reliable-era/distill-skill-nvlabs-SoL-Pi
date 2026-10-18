@@ -1,4 +1,8 @@
-# G6 — quota-refresh access GUARD STOP beforecell13
+# G6 — native-header-only continuation RUNNING
+
+**Live execution update as of2026-10-18 22:30:47 UTC:**supervisor confirms the inference-only token's OAuth403 was expected and explicitly supersedes that guard. The OAuth client was deleted;allowance **123723733e800ba97007fb8af858434e018b5849** passed75 tests and was committed before further calls. Controller4016691 launched;frozen cell13 (`django__django-11728/ours`) started22:24:20.530572 UTC.20 cells/10 pairs have completed cleanly;worker limit is now4 after20 clean cells. Latest native observations4% weekly/53% five-hour,not guaranteed future headroom. No further quota-endpoint validation or polling. Ordinary quota waits now use the authorized single next frozen normal study cell at binding reset+120s,then actual-header-guarded partner/normal queue;all other reportable stops remain. Live private status:`/tmp/solpi-g6-09e98b4cb8f4/study-status.json`;controller log:`study-controller-v3.log`. No source/runtime changes during this allowance's active inference. Prior analysis/cost tables below remain historical checkpoint data,not a regenerated20-cell analysis.
+
+## Historical quota-refresh access GUARD STOP beforecell13 — superseded by explicit supervisor GO above
 
 ## Latest supervisor GO and pre-model guard (2026-10-18)
 
