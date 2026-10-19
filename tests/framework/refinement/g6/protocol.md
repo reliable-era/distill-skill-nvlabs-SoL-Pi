@@ -2,7 +2,9 @@
 
 Design/sample are fixed by `preregistration.json` (initial contract commit `d1fe82a`). The plugin snapshot is commit `920c32eb69fff4227fe1e3991046b43a805ec61e`, not the dirty worktree. Hamilton proportional allocation gives150 issues; the single Flask issue receives quota0. Two independently seeded smoke issues are outside those150. No G5 model-outcome file is read by allocation or execution.
 
-## ACTIVE native-header-only GO afterbceecdd — launch from cell13
+## Completed native-header-only GO afterbceecdd — historical execution contract
+
+**Final status:**300 cells/150 complete pairs at2026-10-19 00:55:51UTC;controller exited,owned resources cleaned. See `study-report.md`,`study-final-audit.json` and `study-usage-reconciliation.json`. The reset+120s single normal cell auto-resume was exercised live. This completed contract does NOT authorize additional inference or automatic restart. The following policy records what was executed.
 
 The setup-token is inference-only;the OAuth usage403 was EXPECTED and does not invalidate inference credentials. **Do not use the OAuth usage endpoint.** Its client is deleted;no profile polling or paid inference probes. Archive the specifically superseded403 stop marker under this explicit GO,retain its receipt,and preserve all12 valid cells/charges.
 
