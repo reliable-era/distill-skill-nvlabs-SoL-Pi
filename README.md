@@ -13,7 +13,7 @@ Use it when an agent keeps rereading files, drowning in test output, repeating f
 - **A small core with useful depth.** The entrypoint is just **2,584 bytes**. References and helpers load when needed, keeping ordinary fixes simple.
 - **One workflow from source to verification.** Focus reads on relevant source, check diagnostic evidence, make the targeted edit, and run the affected checks. Batch independent searches and reconcile prior work before resuming.
 - **Offline tools for trustworthy log handling.** Archive exact output, recall bounded pages, and check source hashes, recorded status, and exact quotations with the bundled Python helper.
-- **Measured on full SWE-bench Verified.** Across 444 issues it solved 40.8% versus 32.9% with no skill, at about the same tokens per solve. Inspect comparisons against no skill and Karpathy, frozen inputs, independent grades, failure-inclusive costs, and the reasons earlier revisions were rejected.
+- **Measured on full SWE-bench Verified.** With Codex and Qwen3.8-27B, across 444 issues it solved 40.8% versus 32.9% with no skill, at about the same recorded tokens per solve. With Claude Code and Opus 5.5 it did not help (92% vs 94% on 150 issues). Inspect comparisons against no skill and Karpathy, frozen inputs, independent grades, failure-inclusive costs, and the reasons earlier revisions were rejected.
 
 The package combines [one skill](skills/efficient-coding/SKILL.md), [worked examples](skills/efficient-coding/references/worked-examples.md), and optional [evidence tools](skills/efficient-coding/references/execution.md). Install the skill to use the workflow; explore the evaluation framework when you want to assess it.
 
@@ -48,7 +48,7 @@ The Claude Code marketplace installation is tested in Docker and GitHub Actions.
 
 ## Measured results
 
-**On the full SWE-bench Verified benchmark, `efficient-coding` raised the solve rate from 32.9% to 40.8%** without increasing tokens per solve. No token saving has been established on any benchmark.
+**On the full SWE-bench Verified benchmark, `efficient-coding` raised the solve rate from 32.9% to 40.8%** on 444 of its 500 issues (the other 56: TBD), at about the same recorded tokens per solve. **With Claude Code and Opus 5.5 it did not help:** 138/150 vs 141/150 solved, at the same tokens per solve. No token saving has been established on any benchmark.
 
 ### Full SWE-bench Verified
 
@@ -60,10 +60,27 @@ All 444 SWE-bench Verified issues that pass the official gold/no-op grader contr
 | Karpathy | 161/444 (36.3%) | **≥541k** |
 | **Ours: `efficient-coding`** | **181/444 (40.8%)** | ≥555k |
 | Ours + Karpathy | 161/444 (36.3%) | ≥606k |
+| *All 500 issues* | *TBD* | *TBD* |
 
-Our skill solved **7.9 percentage points more issues than no skill** (paired 95% interval +2.9 to +12.8; exact McNemar p = 0.002) at about the same tokens per solve. Its lead over Karpathy (+4.5 points, interval −0.5 to +9.5) is not conclusive, and adding Karpathy to our skill did not help. No tokens-per-solve difference is established.
+Our skill solved **7.9 percentage points more issues than no skill** (paired 95% interval +2.9 to +12.8; exact McNemar p = 0.002) at about the same recorded tokens per solve. Its lead over Karpathy (+4.5 points, interval −0.5 to +9.5) is not conclusive, and adding Karpathy to our skill did not help. No tokens-per-solve difference is established.
 
-Scope: one model, one agent and one run per issue. About 5% of runs per condition have incomplete usage records, so costs are lower bounds. Results vary by repository; for example, our skill solved fewer scikit-learn issues than no skill (13 vs 19 of 31). [G5 report](tests/framework/refinement/g5/report.md)
+**Incomplete results, marked TBD:**
+
+- **The other 56 issues: TBD.** They were removed because the official grader controls failed (53 gold patches not resolved, 2 no-op patches resolved, 1 without reports). They include all 44 Sphinx issues. No condition was run on them, so a 500-issue result is TBD.
+- **Exact tokens per solve and cost ratios: TBD.** 91 cells (22–23 per condition) have earlier attempts with missing usage records. Missing usage is not imputed, so the table shows lower bounds (`≥`).
+
+Scope: one model, one agent and one run per issue. Results vary by repository; for example, our skill solved fewer scikit-learn issues than no skill (13 vs 19 of 31). [G5 report](tests/framework/refinement/g5/report.md)
+
+### SWE-bench Verified with Claude Opus 5.5
+
+150 of the 444 issues, drawn at random and stratified by repository, one run per issue and condition. Claude Code 2.1.302 · `claude-opus-5-5`. The skill condition invokes it explicitly (`/distill-sol-pi:efficient-coding` + the same task text); both conditions have Claude Code's stock built-in plugins.
+
+| Condition | Solved ↑ | Tokens / solve ↓ |
+|---|---:|---:|
+| No skill | **141/150 (94.0%)** | **111k** |
+| Ours: `efficient-coding` | 138/150 (92.0%) | 112k |
+
+The skill did not help Opus 5.5: −2.0 percentage points (paired 95% interval −4.7 to 0.0; exact McNemar p = 0.25; 3 issues solved only without the skill, none only with it). Tokens per solve were about the same (ratio 1.01, interval 0.91 to 1.11). Usage records are complete; one record the runner flagged was reconciled from its receipt. Opus solves most of these issues either way, which leaves little room for a gain; the result does not show the skill is harmless either. Natural activation (plugin installed but not invoked) was not measured: in two trial runs Opus never invoked the skill on its own. [G6 report](tests/framework/refinement/g6/study-report.md)
 
 ### Terminal-Bench 2.0
 
@@ -76,7 +93,7 @@ Codex 0.160.0 · Qwen3.8-27B · 9 sealed tasks × 3 rounds.
 | **Ours: `efficient-coding`** | 12/27 | ≥2.34M |
 | Ours + Karpathy | **14/27** | ≥2.16M |
 
-This sample is too small to separate the conditions: every paired cost-ratio interval includes 1. [G4 report](tests/framework/refinement/g4-A/report.md)
+This sample is too small to separate the conditions: every paired cost-ratio interval includes 1. Costs are lower bounds; exact tokens per solve: TBD. [G4 report](tests/framework/refinement/g4-A/report.md)
 
 ### Earlier pilots: synthetic diagnostics and 6 SWE-bench issues
 
@@ -91,7 +108,7 @@ Compare `efficient-coding` with standalone and combined baselines. **SoL-Pi belo
 | **Ours: `efficient-coding`** | **23/25** | 253k | **11/12** | **≥1.42M** |
 | Ours + Karpathy | 22/25 | 288k | 8/12 | ≥1.94M |
 
-**Completed comparisons:** Claude Code 2.1.286 · Qwen3.8-27B-FP8. † NVlabs SoL-Pi rows: Pi 0.85.1 harness · Qwen3.8-27B (FP8 and full precision treated as one model), same tasks, prompts, caps and graders. These are solved attempts, not unique tasks: 10 synthetic fixtures, including development data, and 6 SWE-bench issues. Tokens per solve include failed attempts. `k` = thousand; `M` = million; `≥` marks incomplete cost accounting.
+**Completed comparisons:** Claude Code 2.1.286 · Qwen3.8-27B-FP8. † NVlabs SoL-Pi rows: Pi 0.85.1 harness · Qwen3.8-27B (FP8 and full precision treated as one model), same tasks, prompts, caps and graders. These are solved attempts, not unique tasks: 10 synthetic fixtures, including development data, and 6 SWE-bench issues. Tokens per solve include failed attempts. `k` = thousand; `M` = million; `≥` marks incomplete cost accounting (exact value TBD).
 
 **Baseline definitions:** “Ours + Karpathy” is the condition called “Both” in the existing reports: two skills loaded into one agent task. NVlabs SoL-Pi is the unmodified extension at the pinned commit, with all four mechanisms enabled, and needs the Pi runtime. **† Its token counts are not comparable with the Claude Code rows:** the harnesses send very different system prompts and tools on every turn. Compare solve counts only, with caution. 9 of its 74 runs hit the 1800 s cap, mostly while waiting in a shared model-server queue. The upstream paper's results use a different setup and are not substituted here.
 

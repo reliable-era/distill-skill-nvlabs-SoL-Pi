@@ -1,6 +1,6 @@
 # Report: efficient-coding (nvlab-sol-pi-skills) vs. karpathy-guidelines
 
-Final original matrix, 2026-10-02: 60/60 stress and 96/96 SWE-bench runs graded. Plan: [goal.md](goal.md). Raw data: `eval/runs/` and `eval/results/`. **Updated 2026-10-18:** later campaigns, including the full SWE-bench Verified run (G5), and the current conclusion are [at the end](#later-campaigns-and-current-conclusion-2026-10-18).
+Final original matrix, 2026-10-02: 60/60 stress and 96/96 SWE-bench runs graded. Plan: [goal.md](goal.md). Raw data: `eval/runs/` and `eval/results/`. **Updated 2026-10-22:** later campaigns, including the full SWE-bench Verified run (G5) and the Opus 5.5 check (G6), and the current conclusion are [at the end](#later-campaigns-and-current-conclusion-2026-10-18).
 
 ## Setup
 
@@ -223,6 +223,7 @@ The campaigns above are small pilots. Later campaigns used a portable framework 
 | G3 | Aider polyglot, 196 tasks × 1 round | Negative: all four conditions statistically indistinguishable | [G3](framework/refinement/g3/report.md) |
 | G4 | NVlabs SoL-Pi on Pi; Terminal-Bench 2.0, 9 tasks × 3 rounds; SWE-bench Verified, 18 issues | Descriptive; every cost-ratio interval includes 1 | [G4](framework/refinement/g4-A/report.md) |
 | **G5** | **SWE-bench Verified, all 444 control-eligible issues × 1 round** | **Shipped skill solves more issues than no skill** | [G5](framework/refinement/g5/report.md) |
+| G6 | SWE-bench Verified, 150 of the 444 issues × 1 round, Claude Code + Opus 5.5 | No gain: 138 vs 141 solved, same tokens per solve | [G6](framework/refinement/g6/study-report.md) |
 
 ### G5: full SWE-bench Verified
 
@@ -247,8 +248,21 @@ All 500 issues got official gold and no-op grader controls. Eligible means gold 
 - **Costs.** Roughly 5% of cells per condition have incomplete historical usage, so token figures are lower bounds. The quotients above use recorded tokens only and do not establish savings or regressions.
 - **Heterogeneity.** Django is 229 of the 444 issues. The skill solved fewer scikit-learn issues than no skill (13 vs 19 of 31).
 
+### G6: SWE-bench Verified with Claude Opus 5.5
+
+150 issues drawn from the 444 eligible ones (seeded, stratified by repository, without using G5 outcomes), no skill vs the shipped skill, one run each: Claude Code 2.1.302 with `claude-opus-5-5`, 60 turns / 120 min. The skill condition invokes it explicitly (`/distill-sol-pi:efficient-coding` + the same task text); every run's context was checked to contain the full skill body. Both conditions carry Claude Code's two stock built-in plugins.
+
+| Condition | Solved | Tokens / solve |
+|---|---:|---:|
+| No skill | **141/150 (94.0%)** | **111k** |
+| Shipped skill | 138/150 (92.0%) | 112k |
+
+- Solve-rate difference −2.0 pp [−4.7, 0.0], exact McNemar p = 0.25 (0 issues solved only with the skill, 3 only without). Tokens-per-solve ratio 1.01 [0.91, 1.11]. Usage is complete, so these are exact token counts. Counts and the McNemar test were recomputed independently from the run summary.
+- Explicit invocation was adopted after a 2-issue trial in which Opus, with the plugin installed, never invoked the skill on its own; that change was made after seeing two solved trial runs, and trial runs are not scored. Natural activation was not measured.
+- No 5xx or rate-limit events occurred. SWE-bench Verified is public, so contamination cannot be ruled out.
+
 ### Conclusion
 
-On the largest and most representative test so far, the shipped `efficient-coding` skill **improved the solve rate on SWE-bench Verified by about 8 percentage points over no skill** (a relative gain of about 24%), at no measurable change in tokens per solve. It is not clearly better than Karpathy's guidelines alone, and stacking both gives no extra benefit. The research question of whether instructions alone **reduce tokens per verified solve** is still unanswered: no campaign, small or large, established a token saving.
+On the largest and most representative test so far, the shipped `efficient-coding` skill **improved the solve rate on SWE-bench Verified by about 8 percentage points over no skill** (a relative gain of about 24%) with Codex and Qwen3.8-27B, at no measurable change in tokens per solve. **With Claude Code and Opus 5.5 it gave no gain** (138 vs 141 of 150 solved, same tokens per solve); that model solves nearly every issue unaided, so the G5 gain did not carry over to this stronger model and agent. It is not clearly better than Karpathy's guidelines alone, and stacking both gives no extra benefit. The research question of whether instructions alone **reduce tokens per verified solve** is still unanswered: no campaign, small or large, established a token saving.
 
-These results hold for one model (Qwen3.8-27B), one agent (Codex), one round, and the 444 control-eligible issues. Repeating them with another model or agent, and broadening Terminal-Bench beyond 9 tasks, are the most useful next steps.
+These results come from one round each, on the 444 control-eligible issues (150 of them for Opus 5.5); the 56 control-failed issues remain TBD. Testing a mid-strength model, measuring natural activation of the installed plugin, and broadening Terminal-Bench beyond 9 tasks are the most useful next steps.
